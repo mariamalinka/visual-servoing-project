@@ -1,0 +1,88 @@
+{
+  "status": "converged",
+  "scope": "One fixed-offset marker IBVS trial; not the randomized benchmark",
+  "initial_error_px": 45.13802940487848,
+  "terminal_error_px": 0.9859236210723596,
+  "error_px_after_1s_stopped": 0.9859235882759094,
+  "terminal_time_s": 3.6319999999998216,
+  "observed_hold_s": 0.4999999999999982,
+  "error_definition": "sqrt(mean over four corners of squared Euclidean pixel distance)",
+  "initial_offset_degrees": [
+    3.0,
+    -3.0,
+    4.0,
+    3.0,
+    -2.0,
+    2.0
+  ],
+  "desired_corners_px": [
+    [
+      194.5382080078125,
+      112.40008544921875
+    ],
+    [
+      444.4495849609375,
+      112.41372680664062
+    ],
+    [
+      444.42364501953125,
+      362.3205871582031
+    ],
+    [
+      194.5653076171875,
+      362.3246765136719
+    ]
+  ],
+  "camera_K": [
+    [
+      461.03571047307986,
+      0.0,
+      320.0
+    ],
+    [
+      0.0,
+      461.03571047307986,
+      240.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "config": {
+    "camera_width": 640,
+    "camera_height": 480,
+    "camera_hz": 30,
+    "jog_velocity_rad_s": 0.18,
+    "jog_duration_s": 0.25,
+    "max_joint_velocity_rad_s": 0.6,
+    "marker_dictionary": "DICT_4X4_50",
+    "marker_id": 7,
+    "marker_side_m": 0.24,
+    "ibvs": {
+      "gain_per_s": 1.2,
+      "interaction_damping": 0.0001,
+      "joint_damping": 0.005,
+      "max_linear_velocity_m_s": 0.12,
+      "max_angular_velocity_rad_s": 0.4,
+      "max_joint_velocity_rad_s": 0.35,
+      "success_error_px": 1.0,
+      "success_hold_s": 0.5,
+      "timeout_s": 20.0,
+      "max_pnp_reprojection_error_px": 3.0,
+      "start_offset_degrees": [
+        3.0,
+        -3.0,
+        4.0,
+        3.0,
+        -2.0,
+        2.0
+      ]
+    }
+  },
+  "python": "3.12.14",
+  "mujoco": "3.12.0",
+  "opencv": "5.0.0",
+  "control_uses_target_ground_truth": false
+}

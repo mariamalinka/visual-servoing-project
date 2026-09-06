@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "trial_count": 200,
+  "trace_count": 200,
+  "source_hashes_match": true,
+  "replay_checks": [
+    {
+      "trial_id": 66,
+      "outcome": "converged",
+      "all_trace_arrays_exact_match": true
+    },
+    {
+      "trial_id": 4,
+      "outcome": "tracking_loss",
+      "all_trace_arrays_exact_match": true
+    }
+  ],
+  "automated_tests_passed": 20,
+  "scene_and_app_acceptance": "PASS",
+  "launcher_benchmark_and_report": "PASS"
+}
