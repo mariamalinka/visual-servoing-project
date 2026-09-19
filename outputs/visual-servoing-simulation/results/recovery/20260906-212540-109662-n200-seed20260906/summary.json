@@ -1,0 +1,22 @@
+{
+  "trials": 200,
+  "successes": 200,
+  "success_rate": 1.0,
+  "success_ci95": [
+    0.9811546736227335,
+    1.0
+  ],
+  "initially_undetected": 114,
+  "undetected_starts_converged": 114,
+  "undetected_success_ci95": [
+    0.9674014658411585,
+    1.0
+  ],
+  "median_convergence_s_successes": 5.065999999999664,
+  "median_final_error_px_successes": 0.9735262989997864,
+  "median_first_confirmed_reacquisition_s": 0.9490000000000007,
+  "outcomes": {
+    "converged": 200
+  },
+  "trace_validation": "PASS"
+}

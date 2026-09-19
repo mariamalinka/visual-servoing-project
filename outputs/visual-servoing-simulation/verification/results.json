@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "scope": "Scene, manual motion, and stage 2 app alignment acceptance checks",
+  "scope": "Scene, manual motion, alignment and immediate recovery braking checks",
   "python": "3.12.14",
   "mujoco": "3.12.0",
   "opencv": "5.0.0",
@@ -28,7 +28,7 @@
   "pause_resume_stop_and_demo": true,
   "app_alignment_initial_error_px": 45.13802719116211,
   "app_alignment_final_error_px": 0.9859235882759094,
-  "app_alignment_and_tracking_loss_stop": true,
+  "app_alignment_and_recovery_braking": true,
   "K": [
     [
       461.03571047307986,

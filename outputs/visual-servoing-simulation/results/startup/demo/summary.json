@@ -1,0 +1,24 @@
+{
+  "outcome": "converged",
+  "acquisition_s": 24.46666666666704,
+  "transitions": [
+    {
+      "time_s": 0.032000000000000015,
+      "status": "scanning"
+    },
+    {
+      "time_s": 24.431999999997338,
+      "status": "confirming"
+    },
+    {
+      "time_s": 24.4999999999973,
+      "status": "running"
+    },
+    {
+      "time_s": 29.29999999999464,
+      "status": "converged"
+    }
+  ],
+  "reference_contains_robot_pose": false,
+  "animation_speed": "2x simulated time; one frame per 0.2 simulated seconds"
+}

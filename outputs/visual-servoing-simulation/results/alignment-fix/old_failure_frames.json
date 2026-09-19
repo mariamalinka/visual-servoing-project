@@ -1,0 +1,272 @@
+[
+  {
+    "trial_id": 4,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 8,
+    "old_outcome": "initial_tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 9,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 11,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 16,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 20,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 28,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 31,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 33,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 36,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 40,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 42,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 45,
+    "old_outcome": "initial_tracking_loss",
+    "detected_now": false
+  },
+  {
+    "trial_id": 47,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 49,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 52,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 53,
+    "old_outcome": "initial_tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 55,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 58,
+    "old_outcome": "initial_tracking_loss",
+    "detected_now": false
+  },
+  {
+    "trial_id": 60,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 62,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 79,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 85,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 93,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 95,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 96,
+    "old_outcome": "initial_tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 101,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 106,
+    "old_outcome": "initial_tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 107,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 115,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 118,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 122,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 132,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 133,
+    "old_outcome": "initial_tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 135,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 144,
+    "old_outcome": "initial_tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 148,
+    "old_outcome": "initial_tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 152,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 153,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 154,
+    "old_outcome": "initial_tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 155,
+    "old_outcome": "initial_tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 158,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 162,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 165,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 167,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 168,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 177,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 178,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 180,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 182,
+    "old_outcome": "initial_tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 184,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 186,
+    "old_outcome": "initial_tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 188,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  },
+  {
+    "trial_id": 193,
+    "old_outcome": "tracking_loss",
+    "detected_now": true
+  }
+]

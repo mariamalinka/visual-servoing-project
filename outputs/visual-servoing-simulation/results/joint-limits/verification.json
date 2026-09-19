@@ -1,0 +1,59 @@
+{
+  "recorded_utc": "2026-09-12T17:21:47.744701+00:00",
+  "unit_and_integration_tests": {
+    "status": "PASS",
+    "count": 91,
+    "elapsed_seconds": 54.973,
+    "command": "python -m unittest discover -s tests",
+    "reporting_tests_rechecked_after_reporting_edits": 2
+  },
+  "scene_app_acceptance": {
+    "status": "PASS",
+    "evidence": "../../verification/results.json"
+  },
+  "paired_study": {
+    "status": "PASS",
+    "directory": "20260912-131706-003699",
+    "rows": 408,
+    "new_simulations": 204,
+    "recorded_baseline_rows": 204,
+    "target_present_scenes": 200,
+    "negative_controls": 4,
+    "baseline_converged": 196,
+    "supervised_converged": 198,
+    "improved_trial_ids": [
+      13,
+      167
+    ],
+    "regressed_trial_ids": [],
+    "remaining_search_misses": 2,
+    "trace_validation": "PASS",
+    "current_source_hashes_match": true,
+    "scope": "Regression comparison using fixed gain; not held-out."
+  },
+  "gui_demo": {
+    "outcome": "converged",
+    "trial_id": 13,
+    "retries": 1,
+    "evidence": "demo/summary.json",
+    "visually_inspected": [
+      "demo/repositioning.png",
+      "demo/realigning.png",
+      "demo/final.png"
+    ],
+    "inspection_result": "Status labels and messages readable; final marker corners match the reference."
+  },
+  "plot_inspection": {
+    "path": "20260912-131706-003699/joint_limit_recovery.png",
+    "result": "Axes, legends, retry intervals and both cases are readable."
+  },
+  "adaptive_gain_smoke": {
+    "status": "PASS",
+    "trial_ids": [
+      13,
+      167
+    ],
+    "evidence": "adaptive-smoke.json",
+    "scope": "Two difficult cases only; not a 200-scene adaptive-gain benchmark."
+  }
+}

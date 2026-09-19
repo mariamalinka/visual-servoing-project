@@ -1,0 +1,34 @@
+{
+  "trial_id": 203,
+  "profile": "negative_control",
+  "case": "unreachable_target",
+  "offset_degrees": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "target_shift_m": [
+    0,
+    2,
+    0
+  ],
+  "method": "search",
+  "outcome": "recovery_limit",
+  "initial_detected": false,
+  "first_detection_s": 60.40000000002785,
+  "acquisition_s": 60.46600000002793,
+  "terminal_time_s": 61.000000000028585,
+  "alignment_after_acquisition_s": 0.5340000000006526,
+  "final_error_px": 287.09722900390625,
+  "sample_count": 1861,
+  "started_without_memory": true,
+  "search_stop_reason": null,
+  "search_bounds_ok": true,
+  "max_search_excursion_rad": 0.8374756995059104,
+  "max_search_command_rad_s": 0.25,
+  "max_command_rad_s": 0.3133688017688247,
+  "stopped_command_zero": true
+}

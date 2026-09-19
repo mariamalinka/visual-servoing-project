@@ -1,0 +1,43 @@
+{
+  "natural": {
+    "cases": 4,
+    "converged": 4,
+    "initially_undetected": 1,
+    "outcomes": {
+      "converged": 4
+    },
+    "median_total_s_successes": 3.765999999999807,
+    "negative_outcomes": {
+      "target_not_found": 2
+    },
+    "median_per_trial_detector_ms": 41.62402497604489
+  },
+  "learned": {
+    "cases": 4,
+    "converged": 4,
+    "initially_undetected": 1,
+    "outcomes": {
+      "converged": 4
+    },
+    "median_total_s_successes": 6.332999999999524,
+    "negative_outcomes": {
+      "target_not_found": 2
+    },
+    "median_per_trial_detector_ms": 476.17757496482227
+  },
+  "trace_validation": "PASS",
+  "image_probes": {
+    "natural": {
+      "cases": 12,
+      "accepted": 12,
+      "median_corner_rms_px": 0.19414053857326508,
+      "within_2px": 12
+    },
+    "learned": {
+      "cases": 12,
+      "accepted": 12,
+      "median_corner_rms_px": 1.0953063368797302,
+      "within_2px": 9
+    }
+  }
+}

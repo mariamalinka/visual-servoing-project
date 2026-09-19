@@ -1,0 +1,29 @@
+{
+  "aruco": {
+    "cases": 12,
+    "converged": 12,
+    "initially_undetected": 7,
+    "outcomes": {
+      "converged": 12
+    },
+    "median_total_s_successes": 7.165999999999729,
+    "negative_outcomes": {
+      "target_not_found": 2
+    },
+    "median_per_trial_detector_ms": 2.172674998291768
+  },
+  "natural": {
+    "cases": 12,
+    "converged": 12,
+    "initially_undetected": 7,
+    "outcomes": {
+      "converged": 12
+    },
+    "median_total_s_successes": 7.132999999999726,
+    "negative_outcomes": {
+      "target_not_found": 2
+    },
+    "median_per_trial_detector_ms": 46.38057500415016
+  },
+  "trace_validation": "PASS"
+}

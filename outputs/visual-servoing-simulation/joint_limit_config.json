@@ -1,0 +1,17 @@
+{
+  "enabled": true,
+  "joint_limit_margin_rad": 0.06,
+  "influence_degrees": 25,
+  "retry_joint_damping": 0.06,
+  "centering_velocity_rad_s": 0.2,
+  "stall_window_s": 2,
+  "minimum_improvement_px": 1,
+  "minimum_improvement_fraction": 0.02,
+  "stall_min_error_px": 3,
+  "max_retries": 1,
+  "reposition_velocity_rad_s": 0.25,
+  "max_reposition_time_s": 12,
+  "max_reposition_excursion_degrees": 140,
+  "reposition_arrival_tolerance_rad": 0.02,
+  "reposition_position_gain_per_s": 3
+}

@@ -1,0 +1,30 @@
+{
+  "trial_id": 1,
+  "method": "open_loop",
+  "profile": "medium",
+  "scenario": "static",
+  "outcome": "initial_out_of_view",
+  "initial_detected": false,
+  "offset_degrees": [
+    -0.8130658685452481,
+    3.605923598707337,
+    5.845410233766206,
+    -5.816519679560218,
+    7.104223377612421,
+    -7.12241880234488
+  ],
+  "initial_error_px": null,
+  "terminal_error_px": null,
+  "final_error_px": null,
+  "peak_error_px": null,
+  "peak_error_increase_pct": null,
+  "terminal_time_s": 0.0,
+  "settling_time_s": null,
+  "observed_time_s": 0.0,
+  "sample_count": 1,
+  "max_command_rad_s": 0.0,
+  "max_joint_condition": 10.898052857942403,
+  "wall_time_s": 0.00404769997112453,
+  "target_step_time_s": null,
+  "trace": "traces/static_open_loop_0001.npz"
+}

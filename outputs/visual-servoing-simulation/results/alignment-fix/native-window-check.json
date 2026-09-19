@@ -1,0 +1,13 @@
+{
+  "status": "converged",
+  "trial_id": 4,
+  "final_error_px": 0.9673828482627869,
+  "observed_time_s": 5.399999999999627,
+  "wall_time_s": 8.167555500054732,
+  "frames": 162,
+  "cursor_over_picture_frames": 0,
+  "cursor_outside_picture_frames": 0,
+  "input": "Alignment was started programmatically, then the real OpenCV window loop ran. No mouse or keyboard input was injected.",
+  "cursor_position_available": false,
+  "limitation": "The OS cursor position could not be read in this environment. Picture/toolbar/outside motion is separately covered by callback-level regression tests."
+}

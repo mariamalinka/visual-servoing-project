@@ -77,7 +77,7 @@ def main() -> None:
         require(np.allclose(sim.camera_pose(), pose_before), "Reset did not restore camera pose")
 
         # Exercise the same manual pulse used by the desktop buttons.
-        lab = Lab(sim)
+        lab = Lab(sim, auto_start=False)
         lab.draw()
         rect = next(rect for rect, action in lab.buttons if action == "jog:0:1")
         lab.on_mouse(cv2.EVENT_LBUTTONDOWN, rect[0] + 10, rect[1] + 10, 0, None)
@@ -104,7 +104,7 @@ def main() -> None:
         require(not np.any(sim.velocity_command), "Stop did not cancel demo velocity")
 
         sim.reset()
-        lab = Lab(sim)
+        lab = Lab(sim, auto_start=False)
         # Exercise the real app click dispatch and controller, from an offset.
         lab.draw()
         for action in ("offset", "align"):
@@ -128,12 +128,12 @@ def main() -> None:
         sim.reset([40, 0, 0, 0, 0, 0])
         lab.align()
         lab.advance(1/30)
-        require(lab.alignment_status == "tracking_loss", "App did not report tracking loss")
-        require(not np.any(sim.velocity_command), "App did not stop on lost tracking")
+        require(lab.alignment_status == "waiting" and lab.aligning, "App did not begin marker recovery")
+        require(not np.any(sim.velocity_command), "App did not brake immediately on lost tracking")
         sim.reset()
         report = {
             "status": "PASS",
-            "scope": "Scene, manual motion, and stage 2 app alignment acceptance checks",
+            "scope": "Scene, manual motion, alignment and immediate recovery braking checks",
             "python": platform.python_version(), "mujoco": mujoco.__version__, "opencv": cv2.__version__,
             "joint_count": sim.model.nv,
             "camera_resolution": [sim.width, sim.height],
@@ -149,7 +149,7 @@ def main() -> None:
             "pause_resume_stop_and_demo": True,
             "app_alignment_initial_error_px": initial_alignment_error,
             "app_alignment_final_error_px": final_alignment_error,
-            "app_alignment_and_tracking_loss_stop": True,
+            "app_alignment_and_recovery_braking": True,
             "K": sim.camera_intrinsics().tolist(),
             "world_from_optical_at_home": sim.camera_pose().tolist()
         }

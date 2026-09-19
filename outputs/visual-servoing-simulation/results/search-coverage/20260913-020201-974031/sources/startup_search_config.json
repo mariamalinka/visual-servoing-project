@@ -1,0 +1,23 @@
+{
+  "max_search_time_s": 180,
+  "max_joint_velocity_rad_s": 0.25,
+  "position_gain_per_s": 3,
+  "arrival_tolerance_rad": 0.02,
+  "joint_limit_margin_rad": 0.06,
+  "confirmation_frames": 3,
+  "ring_radii_degrees": [
+    12,
+    24,
+    36,
+    48
+  ],
+  "demo_offset_degrees": [
+    35,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "refine_after_coarse": true
+}

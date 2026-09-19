@@ -1,0 +1,68 @@
+{
+  "recorded_utc": "2026-09-13T00:24:45.423142+00:00",
+  "status": "PASS",
+  "tests": {
+    "full_suite": {
+      "count": 100,
+      "elapsed_seconds": 111.907,
+      "status": "PASS"
+    },
+    "added_reporting_tests": {
+      "count": 3,
+      "elapsed_seconds": 0.155,
+      "status": "PASS"
+    },
+    "total_passed": 103
+  },
+  "scene_app_acceptance": {
+    "status": "PASS",
+    "evidence": "../../verification/results.json"
+  },
+  "study": {
+    "directory": "20260913-020201-974031",
+    "completed_rows": 616,
+    "recorded_baseline_rows": 204,
+    "new_simulations": 412,
+    "trace_validation": "PASS",
+    "regression": {
+      "baseline": 198,
+      "updated": 200,
+      "total": 200,
+      "improved": [
+        56,
+        118
+      ],
+      "regressed": []
+    },
+    "holdout": {
+      "baseline": 100,
+      "updated": 100,
+      "total": 100,
+      "seed": 20260913,
+      "refinement_used": 0,
+      "regressed": []
+    },
+    "negative_control_scenes_per_cohort": 4,
+    "current_source_hashes_match": true,
+    "scope": "Known misses were used during development. Fresh scenes exercised only the coarse pass."
+  },
+  "gui_demo": {
+    "trial_id": 56,
+    "outcome": "converged",
+    "gain_mode": "adaptive",
+    "auto_enabled": true,
+    "post_stop_max_error_px": 0.9846159815788269,
+    "terminal_command_zero": true,
+    "evidence": "demo/summary.json"
+  },
+  "visual_inspection": {
+    "files": [
+      "20260913-020201-974031/coverage.png",
+      "demo/refined.png",
+      "demo/final.png"
+    ],
+    "result": "Readable axes, labels and UI messages; final detected corners match the reference."
+  },
+  "historical_joint_study_compatibility": "PASS: archived single-pass settings load with all 204 baseline scenes",
+  "git_diff_check": "PASS"
+}

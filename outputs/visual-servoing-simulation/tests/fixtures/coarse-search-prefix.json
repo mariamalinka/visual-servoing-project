@@ -1,0 +1,28 @@
+{
+  "source": "results\\joint-limits\\20260912-131706-003699\\traces\\0056-supervised.npz",
+  "trial_id": 56,
+  "scope": "Recorded old coarse-search commands and measured joints, before terminal stop.",
+  "search_source_sha256": "2d767122cc86c6955b986c7a7873bdf81086a236dd333da903422aaa31ffe32c",
+  "search_config": {
+    "max_search_time_s": 90,
+    "max_joint_velocity_rad_s": 0.25,
+    "position_gain_per_s": 3,
+    "arrival_tolerance_rad": 0.02,
+    "joint_limit_margin_rad": 0.06,
+    "confirmation_frames": 3,
+    "ring_radii_degrees": [
+      12,
+      24,
+      36,
+      48
+    ],
+    "demo_offset_degrees": [
+      35,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

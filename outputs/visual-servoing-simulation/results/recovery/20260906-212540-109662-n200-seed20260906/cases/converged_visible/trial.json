@@ -1,0 +1,39 @@
+{
+  "trial_id": 3,
+  "profile": "medium",
+  "offset_degrees": [
+    2.8717161482197646,
+    0.5131953458820373,
+    -5.8431355255964545,
+    2.491762690898515,
+    6.532682785629813,
+    -7.251546253014333
+  ],
+  "outcome": "converged",
+  "initial_detected": true,
+  "initial_error_px": 53.76506042480469,
+  "final_error_px": 0.948555588722229,
+  "first_detection_s": 0.0,
+  "first_confirmed_reacquisition_s": null,
+  "terminal_time_s": 3.7319999999998106,
+  "observed_time_s": 4.731999999999701,
+  "recovery_episodes": 0,
+  "reacquisitions": 0,
+  "recovery_time_s": 0.0,
+  "used_scan": false,
+  "sample_count": 143,
+  "transitions": [
+    {
+      "time_s": 0.0,
+      "phase": "running"
+    },
+    {
+      "time_s": 3.7319999999998106,
+      "phase": "converged"
+    },
+    {
+      "time_s": 3.765999999999807,
+      "phase": "post_stop"
+    }
+  ]
+}

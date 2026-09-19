@@ -1,0 +1,139 @@
+{
+  "status": "complete",
+  "confidence_level": 0.95,
+  "interval_method": "Wilson score, two-sided",
+  "overall": {
+    "trials": 200,
+    "initially_detected": 86,
+    "successes": 86,
+    "success_rate_all": 0.43,
+    "success_ci95_all": [
+      0.36334322333434416,
+      0.4992951223584731
+    ],
+    "success_rate_initially_detected": 1.0,
+    "success_ci95_initially_detected": [
+      0.9572418027142576,
+      0.9999999999999999
+    ],
+    "median_convergence_time_s_successes": 4.048999999999776,
+    "median_settling_time_s_successes": 3.5489999999998307,
+    "median_final_error_px_successes": 0.9735686182975769,
+    "outcomes": {
+      "converged": 86,
+      "initial_out_of_view": 112,
+      "initial_tracking_loss": 2,
+      "fov_loss": 0,
+      "tracking_loss": 0,
+      "invalid_depth": 0,
+      "joint_limit_stall": 0,
+      "singularity_stall": 0,
+      "stalled": 0,
+      "timeout": 0,
+      "unstable_after_stop": 0
+    }
+  },
+  "profiles": {
+    "small": {
+      "trials": 60,
+      "initially_detected": 57,
+      "successes": 57,
+      "success_rate_all": 0.95,
+      "success_ci95_all": [
+        0.8629948352365148,
+        0.9828504978356042
+      ],
+      "success_rate_initially_detected": 1.0,
+      "success_ci95_initially_detected": [
+        0.9368611651470211,
+        1.0
+      ],
+      "median_convergence_time_s_successes": 3.9319999999997886,
+      "median_settling_time_s_successes": 3.4319999999998436,
+      "median_final_error_px_successes": 0.9731318354606628,
+      "outcomes": {
+        "converged": 57,
+        "initial_out_of_view": 3,
+        "initial_tracking_loss": 0,
+        "fov_loss": 0,
+        "tracking_loss": 0,
+        "invalid_depth": 0,
+        "joint_limit_stall": 0,
+        "singularity_stall": 0,
+        "stalled": 0,
+        "timeout": 0,
+        "unstable_after_stop": 0
+      }
+    },
+    "medium": {
+      "trials": 69,
+      "initially_detected": 23,
+      "successes": 23,
+      "success_rate_all": 0.3333333333333333,
+      "success_ci95_all": [
+        0.23351050701686715,
+        0.45073524571281676
+      ],
+      "success_rate_initially_detected": 1.0,
+      "success_ci95_initially_detected": [
+        0.8568833815495731,
+        1.0
+      ],
+      "median_convergence_time_s_successes": 4.331999999999745,
+      "median_settling_time_s_successes": 3.8319999999997996,
+      "median_final_error_px_successes": 0.9744278788566589,
+      "outcomes": {
+        "converged": 23,
+        "initial_out_of_view": 44,
+        "initial_tracking_loss": 2,
+        "fov_loss": 0,
+        "tracking_loss": 0,
+        "invalid_depth": 0,
+        "joint_limit_stall": 0,
+        "singularity_stall": 0,
+        "stalled": 0,
+        "timeout": 0,
+        "unstable_after_stop": 0
+      }
+    },
+    "large": {
+      "trials": 71,
+      "initially_detected": 6,
+      "successes": 6,
+      "success_rate_all": 0.08450704225352113,
+      "success_ci95_all": [
+        0.03930650771071115,
+        0.17236038214304278
+      ],
+      "success_rate_initially_detected": 1.0,
+      "success_ci95_initially_detected": [
+        0.6096657120978348,
+        1.0
+      ],
+      "median_convergence_time_s_successes": 4.665999999999708,
+      "median_settling_time_s_successes": 4.165999999999763,
+      "median_final_error_px_successes": 0.9704370498657227,
+      "outcomes": {
+        "converged": 6,
+        "initial_out_of_view": 65,
+        "initial_tracking_loss": 0,
+        "fov_loss": 0,
+        "tracking_loss": 0,
+        "invalid_depth": 0,
+        "joint_limit_stall": 0,
+        "singularity_stall": 0,
+        "stalled": 0,
+        "timeout": 0,
+        "unstable_after_stop": 0
+      }
+    }
+  },
+  "definitions": {
+    "success": "Controller holds error <1 px for 0.5 s and all samples during 1 further stopped second also stay <1 px.",
+    "conditional_rate": "Successes divided by starts where OpenCV detected the marker; invisible starts remain in the all-start denominator.",
+    "settling_time": "Start of the final sustained below-threshold streak, successful trials only.",
+    "convergence_time": "Time when the controller declares success, including the hold window but excluding the additional stopped observation.",
+    "stall": "Error span <=0.15 px and all actual joint speeds <0.01 rad/s over 3 s; descriptive, not proof of a local minimum.",
+    "missing_data": "Missing image measurements are null in JSON and NaN in numeric NPZ traces."
+  }
+}

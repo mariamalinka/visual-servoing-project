@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "tests": 41,
+  "new_tests": 8,
+  "unittest_command": "python -m unittest discover -s tests -v",
+  "unittest_elapsed_s": 18.17,
+  "scene_acceptance": "verify.py PASS",
+  "comparison_trials": 603,
+  "comparison_run": "results/comparison/20260907-005242-736914-n200-seed20260906",
+  "comparison_source_sha256": {
+    "baselines.py": "50f381af192e33a195b2cc481f88bd0818cac85072cab81ea679f33b83dd653d",
+    "control.py": "aa976f99985d26a1ad68f72dfc59596368ee511dedd737579d4f1a67b15b938b",
+    "simulation.py": "ac84afd3a78e776aca94dda5a6d964e11fff0cb9d4a56052e1af62f4fdb50703",
+    "scene.xml": "0aa2b16322a827db490872066b8c1485f5bba1f15370cd946d0efa1053624ef7",
+    "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+    "benchmark.py": "1be0fc0dff13a7474b9dbef6acec64ead0137c773f57cde4462620ea9bd96de7",
+    "benchmark_config.json": "4e873ce4baed5efb76c9550bffbd261dc2677b13626c09b0de138ed6b7d07700",
+    "compare_controllers.py": "6c34eca6c9da7968d50d34e75efd2e05f8f1086ef9386457ca49bc263b7f35e1",
+    "comparison_config.json": "4e1b8e7ab84c08b0ede5de60ce961abf9c72ace5d727a96e8d13d0e2dadb610f",
+    "analyze_comparison.py": "f45f2b6764eece1c0fd907262760e1d5d9872349f37b6440f522c5439e512b5e"
+  }
+}

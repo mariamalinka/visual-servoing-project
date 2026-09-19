@@ -1,0 +1,34 @@
+{
+  "trial_id": 3,
+  "profile": "small",
+  "offset_degrees": [
+    2.2164606380997336,
+    -0.8639641839921892,
+    3.022270255248274,
+    1.5883858553493972,
+    -2.987791788621195,
+    -1.8043627867622822
+  ],
+  "case": "random_target",
+  "target_shift_m": [
+    -0.007817568918201137,
+    -0.11434988977279928,
+    -0.03548684469560408
+  ],
+  "method": "search",
+  "outcome": "converged",
+  "initial_detected": true,
+  "first_detection_s": 0.0,
+  "acquisition_s": 0.06600000000000004,
+  "terminal_time_s": 4.665999999999708,
+  "alignment_after_acquisition_s": 4.599999999999708,
+  "final_error_px": 0.9692685008049011,
+  "sample_count": 171,
+  "started_without_memory": true,
+  "search_stop_reason": null,
+  "search_bounds_ok": true,
+  "max_search_excursion_rad": 0.0,
+  "max_search_command_rad_s": 0.0,
+  "max_command_rad_s": 0.31337083049351677,
+  "stopped_command_zero": true
+}

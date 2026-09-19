@@ -1,0 +1,41 @@
+{
+  "trial_id": 56,
+  "profile": "large",
+  "offset_degrees": [
+    -15.293768147182478,
+    11.427292573956041,
+    -17.750944706835973,
+    21.975897186552345,
+    -8.58153596834909,
+    19.64612273953906
+  ],
+  "case": "random_target",
+  "target_shift_m": [
+    -0.04288012055497713,
+    -0.1428980318202401,
+    -0.008438245132589436
+  ],
+  "method": "search",
+  "outcome": "converged",
+  "initial_detected": false,
+  "first_detection_s": 91.2659999999687,
+  "acquisition_s": 91.33199999996855,
+  "terminal_time_s": 96.66599999995611,
+  "alignment_after_acquisition_s": 5.333999999987569,
+  "final_error_px": 0.9907717108726501,
+  "sample_count": 2931,
+  "started_without_memory": true,
+  "search_stop_reason": null,
+  "search_refinement_started_s": 76.19999999999824,
+  "search_bounds_ok": true,
+  "max_search_excursion_rad": 0.837602959113845,
+  "max_search_command_rad_s": 0.25,
+  "max_command_rad_s": 0.35000000000000003,
+  "stopped_command_zero": true,
+  "joint_supervision_enabled": true,
+  "adjusted_alignment_frames": 0,
+  "alignment_retries": 0,
+  "stall_events": 0,
+  "motion_events": [],
+  "min_joint_margin_rad": 0.06028802586014903
+}

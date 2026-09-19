@@ -1,0 +1,18 @@
+{
+  "trial_id": 56,
+  "anchor_degrees": [
+    -15.293768147182478,
+    -28.572707426173917,
+    62.24905529342394,
+    21.975897186552345,
+    -48.581535968479045,
+    19.64612273953906
+  ],
+  "visible_grid_offsets_degrees": [
+    [
+      18,
+      6
+    ]
+  ],
+  "scope": "Offline diagnostic encoder grid only; controller never receives these visibility samples."
+}

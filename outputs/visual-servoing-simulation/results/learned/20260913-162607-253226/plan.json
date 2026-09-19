@@ -1,0 +1,122 @@
+[
+  {
+    "trial_id": 1,
+    "case": "fixed_offset",
+    "profile": "fixed_offset",
+    "offset_degrees": [
+      3,
+      -3,
+      4,
+      3,
+      -2,
+      2
+    ],
+    "target_shift_m": [
+      0,
+      0,
+      0
+    ],
+    "negative_control": false,
+    "search_deadline_s": 180
+  },
+  {
+    "trial_id": 2,
+    "case": "opposite_offset",
+    "profile": "opposite_offset",
+    "offset_degrees": [
+      -3,
+      3,
+      -4,
+      -3,
+      2,
+      -2
+    ],
+    "target_shift_m": [
+      0,
+      0,
+      0
+    ],
+    "negative_control": false,
+    "search_deadline_s": 180
+  },
+  {
+    "trial_id": 3,
+    "case": "shifted_picture",
+    "profile": "shifted_picture",
+    "offset_degrees": [
+      5,
+      -3,
+      4,
+      2,
+      -2,
+      1
+    ],
+    "target_shift_m": [
+      0,
+      0.06,
+      0.03
+    ],
+    "negative_control": false,
+    "search_deadline_s": 180
+  },
+  {
+    "trial_id": 4,
+    "case": "cold_right",
+    "profile": "cold_right",
+    "offset_degrees": [
+      35,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "target_shift_m": [
+      0,
+      0,
+      0
+    ],
+    "negative_control": false,
+    "search_deadline_s": 180
+  },
+  {
+    "trial_id": 5,
+    "case": "absent_marker",
+    "profile": "absent_marker",
+    "offset_degrees": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "target_shift_m": [
+      0,
+      0,
+      0
+    ],
+    "negative_control": true,
+    "search_deadline_s": 3
+  },
+  {
+    "trial_id": 6,
+    "case": "wrong_target",
+    "profile": "wrong_target",
+    "offset_degrees": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "target_shift_m": [
+      0,
+      0,
+      0
+    ],
+    "negative_control": true,
+    "search_deadline_s": 3
+  }
+]

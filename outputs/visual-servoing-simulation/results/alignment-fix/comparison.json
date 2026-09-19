@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "baseline": "results/benchmark/20260906-155544-117220-n200-seed20260906",
+  "fixed": "results/benchmark/20260906-164904-307850-n200-seed20260906",
+  "holdout": "results/benchmark/20260906-165404-850153-n100-seed42",
+  "same_200_starting_poses": true,
+  "controller_unchanged": true,
+  "reference_corners_unchanged": true,
+  "previous_successes_preserved": 34,
+  "previous_motion_losses_now_converged": 41,
+  "baseline_overall": {
+    "trials": 200,
+    "initially_detected": 75,
+    "successes": 34,
+    "success_rate_all": 0.17,
+    "success_ci95_all": [
+      0.12427907912586972,
+      0.22815883628312622
+    ],
+    "success_rate_initially_detected": 0.4533333333333333,
+    "success_ci95_initially_detected": [
+      0.3456979638413221,
+      0.565516261457073
+    ],
+    "median_convergence_time_s_successes": 3.7319999999998106,
+    "median_settling_time_s_successes": 3.2319999999998656,
+    "median_final_error_px_successes": 0.9734378457069397,
+    "outcomes": {
+      "converged": 34,
+      "initial_out_of_view": 112,
+      "initial_tracking_loss": 13,
+      "fov_loss": 0,
+      "tracking_loss": 41,
+      "invalid_depth": 0,
+      "joint_limit_stall": 0,
+      "singularity_stall": 0,
+      "stalled": 0,
+      "timeout": 0,
+      "unstable_after_stop": 0
+    }
+  },
+  "fixed_overall": {
+    "trials": 200,
+    "initially_detected": 86,
+    "successes": 86,
+    "success_rate_all": 0.43,
+    "success_ci95_all": [
+      0.36334322333434416,
+      0.4992951223584731
+    ],
+    "success_rate_initially_detected": 1.0,
+    "success_ci95_initially_detected": [
+      0.9572418027142576,
+      0.9999999999999999
+    ],
+    "median_convergence_time_s_successes": 4.048999999999776,
+    "median_settling_time_s_successes": 3.5489999999998307,
+    "median_final_error_px_successes": 0.9735686182975769,
+    "outcomes": {
+      "converged": 86,
+      "initial_out_of_view": 112,
+      "initial_tracking_loss": 2,
+      "fov_loss": 0,
+      "tracking_loss": 0,
+      "invalid_depth": 0,
+      "joint_limit_stall": 0,
+      "singularity_stall": 0,
+      "stalled": 0,
+      "timeout": 0,
+      "unstable_after_stop": 0
+    }
+  },
+  "holdout_overall": {
+    "trials": 100,
+    "initially_detected": 44,
+    "successes": 44,
+    "success_rate_all": 0.44,
+    "success_ci95_all": [
+      0.346720266301608,
+      0.5377189534832302
+    ],
+    "success_rate_initially_detected": 1.0,
+    "success_ci95_initially_detected": [
+      0.9197043962415193,
+      0.9999999999999999
+    ],
+    "median_convergence_time_s_successes": 4.031999999999778,
+    "median_settling_time_s_successes": 3.5319999999998326,
+    "median_final_error_px_successes": 0.9760655462741852,
+    "outcomes": {
+      "converged": 44,
+      "initial_out_of_view": 56,
+      "initial_tracking_loss": 0,
+      "fov_loss": 0,
+      "tracking_loss": 0,
+      "invalid_depth": 0,
+      "joint_limit_stall": 0,
+      "singularity_stall": 0,
+      "stalled": 0,
+      "timeout": 0,
+      "unstable_after_stop": 0
+    }
+  },
+  "tests_passed": 24,
+  "cursor_callback_trials": "picture, toolbar, outside and no events: identical joint trajectories",
+  "native_window": {
+    "status": "converged",
+    "trial_id": 4,
+    "final_error_px": 0.9673828482627869,
+    "observed_time_s": 5.399999999999627,
+    "wall_time_s": 8.167555500054732,
+    "frames": 162,
+    "cursor_over_picture_frames": 0,
+    "cursor_outside_picture_frames": 0,
+    "input": "Alignment was started programmatically, then the real OpenCV window loop ran. No mouse or keyboard input was injected.",
+    "cursor_position_available": false,
+    "limitation": "The OS cursor position could not be read in this environment. Picture/toolbar/outside motion is separately covered by callback-level regression tests."
+  },
+  "helper_removed": true
+}

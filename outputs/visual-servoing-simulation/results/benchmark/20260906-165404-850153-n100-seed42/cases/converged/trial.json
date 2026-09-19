@@ -1,0 +1,32 @@
+{
+  "trial_id": 1,
+  "profile": "small",
+  "outcome": "converged",
+  "initial_detected": true,
+  "initial_in_frame_ground_truth": true,
+  "initial_error_px": 107.93829345703125,
+  "terminal_error_px": 0.972724199295044,
+  "final_error_px": 0.972724199295044,
+  "peak_error_px": 107.93829345703125,
+  "peak_error_increase_pct": 0.0,
+  "terminal_time_s": 4.3999999999997375,
+  "settling_time_s": 3.899999999999792,
+  "observed_time_s": 5.399999999999627,
+  "sample_count": 163,
+  "max_joint_condition": 10.671935796231027,
+  "max_command_rad_s": 0.08712691497718099,
+  "wall_time_s": 1.3253423999994993,
+  "initial_camera_position_m": [
+    0.6888333205409671,
+    0.001404760304984092,
+    0.22096284190232937
+  ],
+  "offset_degrees": [
+    -0.3667293614876863,
+    2.151587519468295,
+    1.5789442324749112,
+    -3.2465812168988037,
+    2.853734109820536,
+    2.0891176159228237
+  ]
+}

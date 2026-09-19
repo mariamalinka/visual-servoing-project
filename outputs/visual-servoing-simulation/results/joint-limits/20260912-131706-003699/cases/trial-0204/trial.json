@@ -1,0 +1,90 @@
+{
+  "trial_id": 204,
+  "profile": "negative_control",
+  "case": "unreachable_target",
+  "offset_degrees": [
+    -35,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "target_shift_m": [
+    0,
+    -2,
+    0
+  ],
+  "method": "search",
+  "outcome": "reposition_timeout",
+  "initial_detected": false,
+  "first_detection_s": 0.1320000000000001,
+  "acquisition_s": 0.20000000000000015,
+  "terminal_time_s": 15.600000000001879,
+  "alignment_after_acquisition_s": 15.40000000000188,
+  "final_error_px": null,
+  "sample_count": 499,
+  "started_without_memory": true,
+  "search_stop_reason": null,
+  "search_bounds_ok": true,
+  "max_search_excursion_rad": 0.032210285284631324,
+  "max_search_command_rad_s": 0.25,
+  "max_command_rad_s": 0.35000000000000003,
+  "stopped_command_zero": true,
+  "joint_supervision_enabled": true,
+  "adjusted_alignment_frames": 0,
+  "alignment_retries": 1,
+  "stall_events": 1,
+  "motion_events": [
+    {
+      "time_s": 3.5666666666666638,
+      "kind": "stalled",
+      "error_px": 299.6616066691353,
+      "qpos_rad": [
+        -1.015572622083185,
+        -0.1683577450131994,
+        0.40003281894844644,
+        -1.0901251800029554,
+        -0.4839853429880706,
+        1.0133184756783071
+      ]
+    },
+    {
+      "time_s": 3.5666666666666638,
+      "kind": "retry_started",
+      "error_px": 299.6616066691353,
+      "qpos_rad": [
+        -1.015572622083185,
+        -0.1683577450131994,
+        0.40003281894844644,
+        -1.0901251800029554,
+        -0.4839853429880706,
+        1.0133184756783071
+      ],
+      "reason": "stalled",
+      "goal_qpos_rad": [
+        -0.6432104147427882,
+        -0.6981194373660128,
+        1.39623349629309,
+        1.599569505878151e-05,
+        -0.6981317035674965,
+        -4.256643372856496e-10
+      ]
+    },
+    {
+      "time_s": 15.599999999999955,
+      "kind": "reposition_timeout",
+      "error_px": null,
+      "qpos_rad": [
+        -0.6485009764269433,
+        -0.6901650980640907,
+        1.3805794332654924,
+        -0.019238985736390362,
+        -0.6943479050203554,
+        0.01975885103577176
+      ]
+    }
+  ],
+  "min_joint_margin_rad": 0.5744098241514144,
+  "policy": "supervised"
+}

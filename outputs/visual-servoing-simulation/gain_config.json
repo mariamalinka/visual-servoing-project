@@ -1,0 +1,10 @@
+{
+  "adaptive": {
+    "near_gain_per_s": 0.8,
+    "far_gain_per_s": 2.4,
+    "error_scale_px": 8
+  },
+  "fixed_high_gain_per_s": 2.4,
+  "near_goal_error_px": 5,
+  "notes": "Declared before the 200-pose study. Adaptive gain increases smoothly with RMS image error. Fixed baseline inherits gain 1.2 from config.json. All methods keep the same limits, success threshold and timeout. GUI starts in fixed mode; T toggles adaptive gain."
+}

@@ -1,0 +1,30 @@
+{
+  "trial_id": 0,
+  "method": "ibvs",
+  "profile": "fixed_demo",
+  "scenario": "target_step",
+  "outcome": "converged",
+  "initial_detected": true,
+  "offset_degrees": [
+    3.0,
+    -3.0,
+    4.0,
+    3.0,
+    -2.0,
+    2.0
+  ],
+  "initial_error_px": 45.13802719116211,
+  "terminal_error_px": 0.9240765571594238,
+  "final_error_px": 0.9240765571594238,
+  "peak_error_px": 45.13802719116211,
+  "peak_error_increase_pct": 0.0,
+  "terminal_time_s": 3.5319999999998326,
+  "settling_time_s": 3.0319999999998877,
+  "observed_time_s": 4.531999999999723,
+  "sample_count": 137,
+  "max_command_rad_s": 0.08228462923712604,
+  "max_joint_condition": 10.66121320866292,
+  "wall_time_s": 1.0221870001405478,
+  "target_step_time_s": 1.0000000000000007,
+  "trace": "traces/target_step_ibvs_0000.npz"
+}

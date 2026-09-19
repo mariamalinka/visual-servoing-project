@@ -1,0 +1,43 @@
+{
+  "baseline": {
+    "trials": 200,
+    "converged": 196,
+    "initially_undetected": 122,
+    "aligned_initially_undetected": 118,
+    "outcomes": {
+      "converged": 196,
+      "timeout": 2,
+      "target_not_found": 2
+    },
+    "retried": 0,
+    "converged_after_retry": 0,
+    "negative_control_outcomes": {
+      "target_not_found": 2,
+      "recovery_limit": 1,
+      "timeout": 1
+    }
+  },
+  "supervised": {
+    "trials": 200,
+    "converged": 198,
+    "initially_undetected": 122,
+    "aligned_initially_undetected": 120,
+    "outcomes": {
+      "converged": 198,
+      "target_not_found": 2
+    },
+    "retried": 2,
+    "converged_after_retry": 2,
+    "negative_control_outcomes": {
+      "target_not_found": 2,
+      "recovery_limit": 1,
+      "reposition_timeout": 1
+    }
+  },
+  "improved_trial_ids": [
+    13,
+    167
+  ],
+  "regressed_trial_ids": [],
+  "trace_validation": "PASS"
+}

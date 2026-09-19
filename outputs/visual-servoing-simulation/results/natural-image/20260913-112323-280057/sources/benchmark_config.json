@@ -1,0 +1,17 @@
+{
+  "trials": 200,
+  "seed": 20260906,
+  "sampling": "Each trial chooses a profile uniformly, then samples six independent uniform joint offsets within that profile. No invisible starts are rejected. Camera poses follow the joint kinematics; they are not uniform in Cartesian space.",
+  "profiles_degrees": {
+    "small": [3, 3, 4, 4, 3, 4],
+    "medium": [8, 8, 10, 12, 8, 12],
+    "large": [18, 18, 25, 30, 18, 30]
+  },
+  "post_stop_observation_s": 1.0,
+  "stall_window_s": 3.0,
+  "stall_error_span_px": 0.15,
+  "stall_actual_joint_speed_rad_s": 0.01,
+  "singular_condition_threshold": 10000.0,
+  "joint_limit_margin_rad": 0.031,
+  "confidence_level": 0.95
+}

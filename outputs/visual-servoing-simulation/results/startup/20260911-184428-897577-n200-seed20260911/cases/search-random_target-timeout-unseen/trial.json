@@ -1,0 +1,34 @@
+{
+  "trial_id": 13,
+  "profile": "large",
+  "offset_degrees": [
+    10.668024557616857,
+    -12.62205026741451,
+    -21.88085612957976,
+    -26.152661914588442,
+    13.976265686796786,
+    23.177247402794343
+  ],
+  "case": "random_target",
+  "target_shift_m": [
+    -0.03042033404997666,
+    -0.08271976297733005,
+    -0.02442621219350831
+  ],
+  "method": "search",
+  "outcome": "timeout",
+  "initial_detected": false,
+  "first_detection_s": 69.1660000000202,
+  "acquisition_s": 69.23200000002005,
+  "terminal_time_s": 89.23199999997344,
+  "alignment_after_acquisition_s": 19.99999999995339,
+  "final_error_px": 157.2698974609375,
+  "sample_count": 2708,
+  "started_without_memory": true,
+  "search_stop_reason": null,
+  "search_bounds_ok": true,
+  "max_search_excursion_rad": 0.8375729268170322,
+  "max_search_command_rad_s": 0.25,
+  "max_command_rad_s": 0.35000000000000003,
+  "stopped_command_zero": true
+}

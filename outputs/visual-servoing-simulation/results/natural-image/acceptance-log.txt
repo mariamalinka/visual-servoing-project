@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "scope": "Scene, manual motion, alignment and immediate recovery braking checks",
+  "python": "3.12.14",
+  "mujoco": "3.12.0",
+  "opencv": "5.0.0",
+  "joint_count": 6,
+  "camera_resolution": [
+    640,
+    480
+  ],
+  "physics_hz": 500.0,
+  "camera_sample_hz_simulated": 30,
+  "j1_motion_degrees": 4.212924964152215,
+  "camera_translation_m": 0.051354299233976095,
+  "marker_centroid_shift_px": 90.51185607910156,
+  "each_joint_response_degrees": [
+    1.6250947491860632,
+    1.6179506993323605,
+    1.6459805540620596,
+    1.626206205051115,
+    1.6257943643823949,
+    1.5841449518824424
+  ],
+  "zero_command_drift_rad_2s": 1.149290384827812e-37,
+  "reset_image_exact_match": true,
+  "manual_pulse_stops": true,
+  "pause_resume_stop_and_demo": true,
+  "app_alignment_initial_error_px": 45.13802719116211,
+  "app_alignment_final_error_px": 0.9859235882759094,
+  "app_alignment_and_recovery_braking": true,
+  "K": [
+    [
+      461.03571047307986,
+      0.0,
+      320.0
+    ],
+    [
+      0.0,
+      461.03571047307986,
+      240.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "world_from_optical_at_home": [
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.6985706657510891
+    ],
+    [
+      -1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      -1.0,
+      0.0,
+      0.26786061951558615
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ]
+}

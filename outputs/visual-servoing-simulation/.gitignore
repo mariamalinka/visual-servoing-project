@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 captures/
 MUJOCO_LOG.TXT
+
+# Optional downloaded pretrained weights; manifest and setup code are tracked.
+models/*.pth
+models/*.part

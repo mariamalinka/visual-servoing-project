@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "automated_tests_passed": 33,
+  "same_200_starts_as_baseline": true,
+  "source_hashes_match": true,
+  "baseline_successes": 86,
+  "recovery_successes": 200,
+  "initially_undetected_starts_recovered": 114,
+  "max_recovery_command_rad_s": 0.18,
+  "absent_target_real_simulation": {
+    "outcome": "search_timeout",
+    "recovery_time_s": 20.000000000000153,
+    "max_joint_excursion_degrees": 21.574352417997236,
+    "stopped_actual_joint_rates": [
+      -2.3657901809139917e-38,
+      5.700658020772553e-32,
+      3.4443741478177485e-32,
+      4.882845170667052e-18,
+      7.401486830834381e-18,
+      -4.017807943341866e-18
+    ],
+    "phases": [
+      "scanning",
+      "search_timeout",
+      "waiting"
+    ]
+  },
+  "reset_during_recovery": false,
+  "scope": "Remembered-view recovery + optional local scan + unchanged IBVS in the static teaching scene."
+}

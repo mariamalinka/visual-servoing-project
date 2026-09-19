@@ -1,0 +1,8 @@
+{
+  "origin": "Generated with the built-in image_gen tool",
+  "prompt": "Use case: photorealistic-natural. Asset type: square picture to print on a flat board in a visual-servoing simulation. Create one square 1024 x 1024 detailed natural photograph of a cozy botanical study desk viewed from above: several different dried leaves, a fern sprig, a small open illustrated botany notebook, a pencil, a ceramic coffee cup and an old brass magnifying glass on a weathered wooden surface. Arrange these as a believable asymmetric still life with distinctive non-repeating details spread throughout the image. Everything sharply in focus, soft daylight, clear local contrast, natural colors. The complete image itself will become a planar texture: no external frame, no simulated scene or robot, no fiducial markers, no QR codes, no barcodes, no watermark, no prominent lettering. Make a normal photograph, not an artificial feature pattern.",
+  "source_image": "natural-target-source.png",
+  "template_image": "natural-target.png",
+  "render_texture": "natural-board.png",
+  "processing": "Resize to 384x384, place on a 512x512 white board, mirror only the MuJoCo texture to compensate for the box face UVs. No encoded marker or barcode."
+}

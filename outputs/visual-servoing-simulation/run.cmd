@@ -13,6 +13,16 @@ if /i "%~1"=="--verify" goto verify
 if /i "%~1"=="--trial" goto trial
 if /i "%~1"=="--benchmark" goto benchmark
 if /i "%~1"=="--report" goto report
+if /i "%~1"=="--recovery" goto recovery
+if /i "%~1"=="--compare" goto compare
+if /i "%~1"=="--compare-report" goto compare_report
+if /i "%~1"=="--joint-study" goto joint_study
+if /i "%~1"=="--startup-study" goto startup_study
+if /i "%~1"=="--coverage-study" goto coverage_study
+if /i "%~1"=="--natural-study" goto natural_study
+if /i "%~1"=="--learned-study" goto learned_study
+if /i "%~1"=="--gain-study" goto gain_study
+if /i "%~1"=="--gain-report" goto gain_report
 "%VSERVO_PYTHON%" "%~dp0app.py" %*
 if errorlevel 1 goto failure
 exit /b 0
@@ -32,6 +42,46 @@ if errorlevel 1 goto failure
 exit /b 0
 :report
 "%VSERVO_PYTHON%" "%~dp0analyze_benchmark.py"
+if errorlevel 1 goto failure
+exit /b 0
+:recovery
+"%VSERVO_PYTHON%" "%~dp0run_recovery.py"
+if errorlevel 1 goto failure
+exit /b 0
+:compare
+"%VSERVO_PYTHON%" "%~dp0compare_controllers.py"
+if errorlevel 1 goto failure
+exit /b 0
+:compare_report
+"%VSERVO_PYTHON%" "%~dp0analyze_comparison.py"
+if errorlevel 1 goto failure
+exit /b 0
+:joint_study
+"%VSERVO_PYTHON%" "%~dp0run_joint_limit_study.py"
+if errorlevel 1 goto failure
+exit /b 0
+:learned_study
+"%VSERVO_PYTHON%" "%~dp0run_learned_study.py"
+if errorlevel 1 goto failure
+exit /b 0
+:natural_study
+"%VSERVO_PYTHON%" "%~dp0run_natural_image_study.py"
+if errorlevel 1 goto failure
+exit /b 0
+:coverage_study
+"%VSERVO_PYTHON%" "%~dp0run_search_coverage.py"
+if errorlevel 1 goto failure
+exit /b 0
+:startup_study
+"%VSERVO_PYTHON%" "%~dp0run_startup_search.py"
+if errorlevel 1 goto failure
+exit /b 0
+:gain_study
+"%VSERVO_PYTHON%" "%~dp0run_gain_study.py"
+if errorlevel 1 goto failure
+exit /b 0
+:gain_report
+"%VSERVO_PYTHON%" "%~dp0analyze_gain_study.py"
 if errorlevel 1 goto failure
 exit /b 0
 :failure

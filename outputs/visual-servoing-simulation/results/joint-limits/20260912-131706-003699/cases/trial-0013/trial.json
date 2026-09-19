@@ -1,0 +1,90 @@
+{
+  "trial_id": 13,
+  "profile": "large",
+  "offset_degrees": [
+    10.668024557616857,
+    -12.62205026741451,
+    -21.88085612957976,
+    -26.152661914588442,
+    13.976265686796786,
+    23.177247402794343
+  ],
+  "case": "random_target",
+  "target_shift_m": [
+    -0.03042033404997666,
+    -0.08271976297733005,
+    -0.02442621219350831
+  ],
+  "method": "search",
+  "outcome": "converged",
+  "initial_detected": false,
+  "first_detection_s": 69.1660000000202,
+  "acquisition_s": 69.23200000002005,
+  "terminal_time_s": 92.1659999999666,
+  "alignment_after_acquisition_s": 22.93399999994655,
+  "final_error_px": 0.9886307120323181,
+  "sample_count": 2796,
+  "started_without_memory": true,
+  "search_stop_reason": null,
+  "search_bounds_ok": true,
+  "max_search_excursion_rad": 0.8375729268170322,
+  "max_search_command_rad_s": 0.25,
+  "max_command_rad_s": 0.35000000000000003,
+  "stopped_command_zero": true,
+  "joint_supervision_enabled": true,
+  "adjusted_alignment_frames": 190,
+  "alignment_retries": 1,
+  "stall_events": 1,
+  "motion_events": [
+    {
+      "time_s": 76.33333333333157,
+      "kind": "stalled",
+      "error_px": 78.86859088677735,
+      "qpos_rad": [
+        0.05812317571909907,
+        -0.9214165009147004,
+        1.3759726871680276,
+        -2.6782657424453107,
+        0.3022336995246238,
+        2.653554311180909
+      ]
+    },
+    {
+      "time_s": 76.33333333333157,
+      "kind": "retry_started",
+      "error_px": 78.86859088677735,
+      "qpos_rad": [
+        0.05812317571909907,
+        -0.9214165009147004,
+        1.3759726871680276,
+        -2.6782657424453107,
+        0.3022336995246238,
+        2.653554311180909
+      ],
+      "reason": "stalled",
+      "goal_qpos_rad": [
+        0.1414177004857195,
+        -0.9176307099805044,
+        1.0142663934914014,
+        -0.45649227842547574,
+        0.37432792529227027,
+        0.4045196554688605
+      ]
+    },
+    {
+      "time_s": 86.29999999999767,
+      "kind": "retry_confirmed",
+      "error_px": null,
+      "qpos_rad": [
+        0.14095051497092576,
+        -0.9177391657786014,
+        1.0165474859350239,
+        -0.4729347475196622,
+        0.37378342544004073,
+        0.42331227365823487
+      ]
+    }
+  ],
+  "min_joint_margin_rad": 0.28864737521499695,
+  "policy": "supervised"
+}

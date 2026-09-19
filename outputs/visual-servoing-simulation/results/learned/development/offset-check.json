@@ -1,0 +1,35 @@
+{
+  "outcome": "invalid_depth",
+  "wall_seconds": 2.24097449996043,
+  "sim_seconds": 0.1320000000000001,
+  "rows": [
+    {
+      "step": 0,
+      "state": "running",
+      "reason": "accepted",
+      "inliers": 87,
+      "error": 44.618412017822266
+    },
+    {
+      "step": 1,
+      "state": "running",
+      "reason": "accepted",
+      "inliers": 81,
+      "error": 43.66727828979492
+    },
+    {
+      "step": 2,
+      "state": "running",
+      "reason": "accepted",
+      "inliers": 96,
+      "error": 42.02971267700195
+    },
+    {
+      "step": 3,
+      "state": "invalid_depth",
+      "reason": "accepted",
+      "inliers": 86,
+      "error": 40.98204803466797
+    }
+  ]
+}

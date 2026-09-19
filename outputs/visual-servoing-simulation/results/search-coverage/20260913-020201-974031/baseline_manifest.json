@@ -1,0 +1,201 @@
+{
+  "status": "complete",
+  "completed_rows": 408,
+  "requested_rows": 408,
+  "created_utc": "2026-09-12T11:17:06.030554+00:00",
+  "baseline_directory": "C:\\Users\\marys\\Documents\\Codex\\2026-09-06\\visual-servoing-project\\outputs\\visual-servoing-simulation\\results\\startup\\20260911-184428-897577-n200-seed20260911",
+  "baseline_origin": "Recorded earlier; copied without rerunning physics",
+  "motion_config": {
+    "enabled": true,
+    "joint_limit_margin_rad": 0.06,
+    "influence_degrees": 25,
+    "retry_joint_damping": 0.06,
+    "centering_velocity_rad_s": 0.2,
+    "stall_window_s": 2,
+    "minimum_improvement_px": 1,
+    "minimum_improvement_fraction": 0.02,
+    "stall_min_error_px": 3,
+    "max_retries": 1,
+    "reposition_velocity_rad_s": 0.25,
+    "max_reposition_time_s": 12,
+    "max_reposition_excursion_degrees": 140,
+    "reposition_arrival_tolerance_rad": 0.02,
+    "reposition_position_gain_per_s": 3
+  },
+  "search_config": {
+    "max_search_time_s": 90,
+    "max_joint_velocity_rad_s": 0.25,
+    "position_gain_per_s": 3,
+    "arrival_tolerance_rad": 0.02,
+    "joint_limit_margin_rad": 0.06,
+    "confirmation_frames": 3,
+    "ring_radii_degrees": [
+      12,
+      24,
+      36,
+      48
+    ],
+    "demo_offset_degrees": [
+      35,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "recovery_config": {
+    "loss_hold_s": 0.2,
+    "confirmation_frames": 3,
+    "max_recovery_time_s": 20,
+    "max_total_time_s": 45,
+    "max_recovery_episodes": 3,
+    "max_joint_velocity_rad_s": 0.18,
+    "position_gain_per_s": 2,
+    "joint_limit_margin_rad": 0.06,
+    "arrival_tolerance_rad": 0.015,
+    "max_excursion_degrees": 60,
+    "scan_offsets_degrees": [
+      [
+        10,
+        0
+      ],
+      [
+        -10,
+        0
+      ],
+      [
+        -10,
+        12
+      ],
+      [
+        10,
+        12
+      ],
+      [
+        20,
+        12
+      ],
+      [
+        20,
+        -12
+      ],
+      [
+        -20,
+        -12
+      ],
+      [
+        -20,
+        24
+      ],
+      [
+        20,
+        24
+      ],
+      [
+        20,
+        -24
+      ],
+      [
+        -20,
+        -24
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "lost_view_demo_offset_degrees": [
+      35,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "source_sha256": {
+    "startup_search.py": "2d767122cc86c6955b986c7a7873bdf81086a236dd333da903422aaa31ffe32c",
+    "startup_search_config.json": "5860e97999d65a27b7ced67f95a6c7946ad3639edb273854144d0440c714b567",
+    "recovery.py": "fbc6c7f0dbd313f61ad43b985d8d660700dc261c97b1973d83c761f8f39af622",
+    "recovery_config.json": "32b436f0cc0e4272680f163e76861cf358a50d1dacc9a8ce96d878fd02d6b7c5",
+    "reference_image.py": "5e1e3eac7008f235d87d89a7de7b1b9a138642f725d1e9cef10941b6770b4d05",
+    "control.py": "aa976f99985d26a1ad68f72dfc59596368ee511dedd737579d4f1a67b15b938b",
+    "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+    "simulation.py": "ac84afd3a78e776aca94dda5a6d964e11fff0cb9d4a56052e1af62f4fdb50703",
+    "scene.xml": "0aa2b16322a827db490872066b8c1485f5bba1f15370cd946d0efa1053624ef7",
+    "benchmark.py": "1be0fc0dff13a7474b9dbef6acec64ead0137c773f57cde4462620ea9bd96de7",
+    "benchmark_config.json": "4e873ce4baed5efb76c9550bffbd261dc2677b13626c09b0de138ed6b7d07700",
+    "run_startup_search.py": "f3cfe8941e676512370806ea5a3f7e1c5794cade3ac0d4d9bb6e9a51c5fa9511",
+    "joint_limits.py": "96f2d26017186b2ffc4c3f3cb7780f064786cf9667dc5b27d854d372ff750049",
+    "joint_limit_config.json": "f8855a46a7aca71867fa730d4ea092686b72267c0351883421f31c574134f841",
+    "run_joint_limit_study.py": "adb3c18d59aa76bc4b899b7fec6e30660c36c5447bc093aa579af79e4d13ec92",
+    "app.py": "07b9bfdcc6c179f56c7d714974bd02b4e4719bc2c5ebe72544a4c066195390c0"
+  },
+  "reference_sha256": "3d6e7376c549ae47f74fd12ec9a0afc134ae8482301ec2a3ced0d16113dc989d",
+  "python": "3.12.14",
+  "numpy": "2.5.2",
+  "opencv": "5.0.0",
+  "mujoco": "3.12.0",
+  "joint_limits_rad": [
+    [
+      -2.9670597283903604,
+      2.9670597283903604
+    ],
+    [
+      -1.7453292519943295,
+      1.3962634015954636
+    ],
+    [
+      -0.17453292519943295,
+      2.530727415391778
+    ],
+    [
+      -2.9670597283903604,
+      2.9670597283903604
+    ],
+    [
+      -1.7453292519943295,
+      1.7453292519943295
+    ],
+    [
+      -2.9670597283903604,
+      2.9670597283903604
+    ]
+  ],
+  "simulation_config": {
+    "camera_width": 640,
+    "camera_height": 480,
+    "camera_hz": 30,
+    "jog_velocity_rad_s": 0.18,
+    "jog_duration_s": 0.25,
+    "max_joint_velocity_rad_s": 0.6,
+    "marker_dictionary": "DICT_4X4_50",
+    "marker_id": 7,
+    "marker_side_m": 0.24,
+    "ibvs": {
+      "gain_per_s": 1.2,
+      "interaction_damping": 0.0001,
+      "joint_damping": 0.005,
+      "max_linear_velocity_m_s": 0.12,
+      "max_angular_velocity_rad_s": 0.4,
+      "max_joint_velocity_rad_s": 0.35,
+      "success_error_px": 1.0,
+      "success_hold_s": 0.5,
+      "timeout_s": 20.0,
+      "max_pnp_reprojection_error_px": 3.0,
+      "start_offset_degrees": [
+        3.0,
+        -3.0,
+        4.0,
+        3.0,
+        -2.0,
+        2.0
+      ]
+    },
+    "marker_detection": {
+      "min_marker_distance_rate": 0.03
+    }
+  },
+  "finished_utc": "2026-09-12T11:24:32.830890+00:00"
+}

@@ -1,0 +1,178 @@
+{
+  "status": "PASS",
+  "tests": 127,
+  "test_seconds": 163.263,
+  "test_log": "results/natural-image/full-test-suite.txt",
+  "scene_acceptance": "PASS",
+  "study_path": "results\\natural-image\\20260913-112323-280057",
+  "study_summary": {
+    "aruco": {
+      "cases": 12,
+      "converged": 12,
+      "initially_undetected": 7,
+      "outcomes": {
+        "converged": 12
+      },
+      "median_total_s_successes": 7.165999999999729,
+      "negative_outcomes": {
+        "target_not_found": 2
+      },
+      "median_per_trial_detector_ms": 2.172674998291768
+    },
+    "natural": {
+      "cases": 12,
+      "converged": 12,
+      "initially_undetected": 7,
+      "outcomes": {
+        "converged": 12
+      },
+      "median_total_s_successes": 7.132999999999726,
+      "negative_outcomes": {
+        "target_not_found": 2
+      },
+      "median_per_trial_detector_ms": 46.38057500415016
+    },
+    "trace_validation": "PASS"
+  },
+  "source_asset_and_reference_hashes_match": true,
+  "source_sha256": {
+    "startup_search.py": "f99b2dcb9351f5a4bb1e83d18dae0775665f26be74c15fd4939e2732968f94fd",
+    "startup_search_config.json": "72e915e3699b029821ec8a9b85b104330a7bab2a96338a3b0538faf0350d75f9",
+    "recovery.py": "fbc6c7f0dbd313f61ad43b985d8d660700dc261c97b1973d83c761f8f39af622",
+    "recovery_config.json": "32b436f0cc0e4272680f163e76861cf358a50d1dacc9a8ce96d878fd02d6b7c5",
+    "reference_image.py": "3a883d1015831290b07f2b312a086da2d70478fe1cee5b6b4ef6887c7f167f3a",
+    "control.py": "aa976f99985d26a1ad68f72dfc59596368ee511dedd737579d4f1a67b15b938b",
+    "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+    "simulation.py": "624558ffd180c3da5a1bc56481ec15b159715e5e47d1298aa507d209b31e3683",
+    "scene.xml": "7bf39021e9dc620cfe1d75dbd9a45a4258adb7ef626ecb523a9f2543ffa95a8d",
+    "benchmark.py": "1be0fc0dff13a7474b9dbef6acec64ead0137c773f57cde4462620ea9bd96de7",
+    "benchmark_config.json": "4e873ce4baed5efb76c9550bffbd261dc2677b13626c09b0de138ed6b7d07700",
+    "run_startup_search.py": "48a6f8d4f58c3f6d4438a889a9e1cacd4f3be30e0510afbd0bde1e0a143050cb",
+    "joint_limits.py": "96f2d26017186b2ffc4c3f3cb7780f064786cf9667dc5b27d854d372ff750049",
+    "joint_limit_config.json": "f8855a46a7aca71867fa730d4ea092686b72267c0351883421f31c574134f841",
+    "perception.py": "e694aa89b4976a9b17a0b2220b58d5be2ce7024449dac90dc36446e38cf22658",
+    "natural_feature_config.json": "284d6107ba8a739fb3c5731ad4545de16d44be48adc6e3ad43f34e08efe4a2fb",
+    "app.py": "98f528f0415ad27667258cef663089646a3c45844711c4e1286133a48fb3ccaa",
+    "run_natural_image_study.py": "f2d98e8e93de6b1aee0f8d33ceac32b5a2816ab0e2052d0a390d99133b8e5c15"
+  },
+  "demo": {
+    "offset": {
+      "outcome": "converged",
+      "auto_enabled": true,
+      "perception_mode": "natural",
+      "transitions": [
+        {
+          "time_s": 0.032000000000000015,
+          "state": "confirming"
+        },
+        {
+          "time_s": 0.10000000000000007,
+          "state": "running"
+        },
+        {
+          "time_s": 3.7319999999998106,
+          "state": "converged"
+        }
+      ],
+      "post_stop_errors_px": [
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757,
+        0.9476634860038757
+      ],
+      "terminal_command_zero": true
+    },
+    "cold": {
+      "outcome": "converged",
+      "auto_enabled": true,
+      "perception_mode": "natural",
+      "transitions": [
+        {
+          "time_s": 0.032000000000000015,
+          "state": "scanning"
+        },
+        {
+          "time_s": 24.431999999997338,
+          "state": "confirming"
+        },
+        {
+          "time_s": 24.4999999999973,
+          "state": "running"
+        },
+        {
+          "time_s": 29.29999999999464,
+          "state": "converged"
+        }
+      ],
+      "post_stop_errors_px": [
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491,
+        0.9908595681190491
+      ],
+      "terminal_command_zero": true
+    }
+  },
+  "visual_inspection": [
+    "comparison.png",
+    "demo/matches.png"
+  ],
+  "notes": [
+    "Initial functional comparison with one known flat natural picture; not a broad success-rate estimate.",
+    "SIFT/RANSAC projects four virtual boundary corners for existing IBVS; learned matching is not implemented.",
+    "Synthetic-warp tests check outline geometry; convergence is estimated-outline error.",
+    "Detector-call timing includes identical-frame cache hits; simulated 30 Hz is not a real-time FPS claim."
+  ]
+}

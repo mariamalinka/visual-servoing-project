@@ -1,0 +1,15 @@
+{
+  "outcome": "converged",
+  "initial_error_px": 45.0870246887207,
+  "final_error_px": 0.9369301795959473,
+  "steps": 110,
+  "simulated_time_s": 3.665999999999818,
+  "wall_time_s": 6.126957900007255,
+  "median_detector_ms": 53.23374998988584,
+  "p95_detector_ms": 67.25591502327006,
+  "final_inliers": 290,
+  "states": [
+    "converged",
+    "running"
+  ]
+}

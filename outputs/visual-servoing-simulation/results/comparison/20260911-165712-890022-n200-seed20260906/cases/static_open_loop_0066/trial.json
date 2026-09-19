@@ -1,0 +1,30 @@
+{
+  "trial_id": 66,
+  "method": "open_loop",
+  "profile": "large",
+  "scenario": "static",
+  "outcome": "open_loop_residual",
+  "initial_detected": true,
+  "offset_degrees": [
+    -5.078328060479887,
+    -15.34373299017259,
+    24.06448937716101,
+    -5.810565450144253,
+    -4.847380071010479,
+    27.661357629279102
+  ],
+  "initial_error_px": 90.89916229248047,
+  "terminal_error_px": 1.276226282119751,
+  "final_error_px": 1.276226282119751,
+  "peak_error_px": 90.89916229248047,
+  "peak_error_increase_pct": 0.0,
+  "terminal_time_s": 6.499999999999506,
+  "settling_time_s": null,
+  "observed_time_s": 7.499999999999396,
+  "sample_count": 226,
+  "max_command_rad_s": 0.35000000000000003,
+  "max_joint_condition": 10.78881103384738,
+  "wall_time_s": 1.445262699999148,
+  "target_step_time_s": null,
+  "trace": "traces/static_open_loop_0066.npz"
+}

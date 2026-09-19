@@ -1,0 +1,246 @@
+{
+  "status": "complete",
+  "requested_runs": 12,
+  "completed_runs": 12,
+  "created_utc": "2026-09-13T14:26:07.273455+00:00",
+  "perception_configs": {
+    "natural": {
+      "template_size_px": 384,
+      "max_features": 600,
+      "contrast_threshold": 0.025,
+      "ratio_test": 0.72,
+      "min_inliers": 12,
+      "min_inlier_ratio": 0.55,
+      "ransac_reprojection_px": 2.5,
+      "max_reprojection_rms_px": 1.5,
+      "min_template_coverage": 0.18,
+      "min_projected_area_px": 1600,
+      "image_margin_px": 2,
+      "max_side_ratio": 5,
+      "detection_width_px": 640
+    },
+    "learned": {
+      "template_size_px": 384,
+      "detection_width_px": 384,
+      "max_keypoints": 256,
+      "cpu_threads": 8,
+      "device": "cpu",
+      "detection_threshold": 0.0005,
+      "filter_threshold": 0.1,
+      "depth_confidence": 0.9,
+      "width_confidence": -1,
+      "min_inliers": 12,
+      "min_inlier_ratio": 0.55,
+      "ransac_reprojection_px": 2.5,
+      "max_reprojection_rms_px": 1.5,
+      "min_template_coverage": 0.18,
+      "min_projected_area_px": 1600,
+      "image_margin_px": 2,
+      "max_side_ratio": 5,
+      "template_extract_width_px": 192
+    }
+  },
+  "search_config": {
+    "max_search_time_s": 180,
+    "max_joint_velocity_rad_s": 0.25,
+    "position_gain_per_s": 3,
+    "arrival_tolerance_rad": 0.02,
+    "joint_limit_margin_rad": 0.06,
+    "confirmation_frames": 3,
+    "ring_radii_degrees": [
+      12,
+      24,
+      36,
+      48
+    ],
+    "demo_offset_degrees": [
+      35,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "refine_after_coarse": true
+  },
+  "recovery_config": {
+    "loss_hold_s": 0.2,
+    "confirmation_frames": 3,
+    "max_recovery_time_s": 20,
+    "max_total_time_s": 45,
+    "max_recovery_episodes": 3,
+    "max_joint_velocity_rad_s": 0.18,
+    "position_gain_per_s": 2,
+    "joint_limit_margin_rad": 0.06,
+    "arrival_tolerance_rad": 0.015,
+    "max_excursion_degrees": 60,
+    "scan_offsets_degrees": [
+      [
+        10,
+        0
+      ],
+      [
+        -10,
+        0
+      ],
+      [
+        -10,
+        12
+      ],
+      [
+        10,
+        12
+      ],
+      [
+        20,
+        12
+      ],
+      [
+        20,
+        -12
+      ],
+      [
+        -20,
+        -12
+      ],
+      [
+        -20,
+        24
+      ],
+      [
+        20,
+        24
+      ],
+      [
+        20,
+        -24
+      ],
+      [
+        -20,
+        -24
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "lost_view_demo_offset_degrees": [
+      35,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "motion_config": {
+    "enabled": true,
+    "joint_limit_margin_rad": 0.06,
+    "influence_degrees": 25,
+    "retry_joint_damping": 0.06,
+    "centering_velocity_rad_s": 0.2,
+    "stall_window_s": 2,
+    "minimum_improvement_px": 1,
+    "minimum_improvement_fraction": 0.02,
+    "stall_min_error_px": 3,
+    "max_retries": 1,
+    "reposition_velocity_rad_s": 0.25,
+    "max_reposition_time_s": 12,
+    "max_reposition_excursion_degrees": 140,
+    "reposition_arrival_tolerance_rad": 0.02,
+    "reposition_position_gain_per_s": 3
+  },
+  "source_sha256": {
+    "startup_search.py": "f99b2dcb9351f5a4bb1e83d18dae0775665f26be74c15fd4939e2732968f94fd",
+    "startup_search_config.json": "72e915e3699b029821ec8a9b85b104330a7bab2a96338a3b0538faf0350d75f9",
+    "recovery.py": "fbc6c7f0dbd313f61ad43b985d8d660700dc261c97b1973d83c761f8f39af622",
+    "recovery_config.json": "32b436f0cc0e4272680f163e76861cf358a50d1dacc9a8ce96d878fd02d6b7c5",
+    "reference_image.py": "3a883d1015831290b07f2b312a086da2d70478fe1cee5b6b4ef6887c7f167f3a",
+    "control.py": "6578d9ce47832945d6c99737b2b88004190fc11fbc4bb07f236226758da1fc4a",
+    "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+    "simulation.py": "624558ffd180c3da5a1bc56481ec15b159715e5e47d1298aa507d209b31e3683",
+    "scene.xml": "7bf39021e9dc620cfe1d75dbd9a45a4258adb7ef626ecb523a9f2543ffa95a8d",
+    "benchmark.py": "1be0fc0dff13a7474b9dbef6acec64ead0137c773f57cde4462620ea9bd96de7",
+    "benchmark_config.json": "4e873ce4baed5efb76c9550bffbd261dc2677b13626c09b0de138ed6b7d07700",
+    "run_startup_search.py": "48a6f8d4f58c3f6d4438a889a9e1cacd4f3be30e0510afbd0bde1e0a143050cb",
+    "joint_limits.py": "96f2d26017186b2ffc4c3f3cb7780f064786cf9667dc5b27d854d372ff750049",
+    "joint_limit_config.json": "f8855a46a7aca71867fa730d4ea092686b72267c0351883421f31c574134f841",
+    "perception.py": "4ba1a47241708674384790097609dc622adf786e31fa38f8a764ec70dcc770ff",
+    "natural_feature_config.json": "284d6107ba8a739fb3c5731ad4545de16d44be48adc6e3ad43f34e08efe4a2fb",
+    "app.py": "3a161116a1f5611393c5596dbe35cfd1f4be6add907734b7efb366288734102d",
+    "run_natural_image_study.py": "ef9a56e1a55fcff194bf640ad5a584efbaf763203a31a008fe9c90b6d77e4815",
+    "learned_perception.py": "d8124ff9442d9f9af4bc270409b971cda9cf6f31f691d12b8a25a8b9a7e2ea82",
+    "learned_feature_config.json": "8dba0ec45abc3f73305e8fb5e3824d045a8b803e189d2765dfbd3d7c9fca4061",
+    "run_learned_study.py": "8e45a62729df0d4906524a533bae7e1a11f72ae2e3d83625de271e02308a57d3",
+    "models/manifest.json": "4ce943f21304b7934d724250c0bb1dac2839ab43975d202a008404c8e190692e",
+    "requirements-learned.txt": "4fe869c136fe10a545393b84438be931582d64a8752e3c984caf83c3183e75ed"
+  },
+  "asset_sha256": {
+    "assets/marker.png": "ab2472414444ee33daf910b6d1e3048c2cd1409cc5b9c6838ea203a7e9744a40",
+    "assets/natural-target.png": "6dc880cf2c20520b9b0dba3aa30f3accce6379d2d61e5edaa9ea4f44a030f8ab",
+    "assets/natural-board.png": "851e7345adfb70a0fcb4e95dde970d6d9007d1cdb209e64188635acc33c9b067"
+  },
+  "model_manifest": {
+    "lightglue_commit": "eb42fee2d71449efb0aa5c10549752b5d75384d8",
+    "weights": {
+      "superpoint_v1": {
+        "url": "https://github.com/cvg/LightGlue/releases/download/v0.1_arxiv/superpoint_v1.pth",
+        "file": "superpoint_v1.pth",
+        "bytes": 5206086,
+        "sha256": "52b6708629640ca883673b5d5c097c4ddad37d8048b33f09c8ca0d69db12c40e"
+      },
+      "superpoint_lightglue": {
+        "url": "https://github.com/cvg/LightGlue/releases/download/v0.1_arxiv/superpoint_lightglue.pth",
+        "file": "superpoint_lightglue.pth",
+        "bytes": 47500279,
+        "sha256": "6ff7040d0a497fc6639337946d7538dae07428c18f77a067a0b5a960e7cc551a"
+      }
+    }
+  },
+  "versions": {
+    "torch": "2.13.0+cpu",
+    "torchvision": "0.28.0+cpu",
+    "kornia": "0.8.3",
+    "lightglue": "0.0",
+    "numpy": "2.5.2",
+    "mujoco": "3.12.0",
+    "opencv-python": "5.0.0.93"
+  },
+  "reference_sha256": "661eedf8085d1079a99d105af482206341724c474791ff8f2d7d2ee9ef865038",
+  "reference_outline_difference_px": 1.2741191387176514,
+  "simulation_config": {
+    "camera_width": 640,
+    "camera_height": 480,
+    "camera_hz": 30,
+    "jog_velocity_rad_s": 0.18,
+    "jog_duration_s": 0.25,
+    "max_joint_velocity_rad_s": 0.6,
+    "marker_dictionary": "DICT_4X4_50",
+    "marker_id": 7,
+    "marker_side_m": 0.24,
+    "ibvs": {
+      "gain_per_s": 1.2,
+      "interaction_damping": 0.0001,
+      "joint_damping": 0.005,
+      "max_linear_velocity_m_s": 0.12,
+      "max_angular_velocity_rad_s": 0.4,
+      "max_joint_velocity_rad_s": 0.35,
+      "success_error_px": 1.0,
+      "success_hold_s": 0.5,
+      "timeout_s": 20.0,
+      "max_pnp_reprojection_error_px": 3.0,
+      "start_offset_degrees": [
+        3.0,
+        -3.0,
+        4.0,
+        3.0,
+        -2.0,
+        2.0
+      ]
+    },
+    "marker_detection": {
+      "min_marker_distance_rate": 0.03
+    }
+  },
+  "finished_utc": "2026-09-13T14:38:20.529904+00:00"
+}

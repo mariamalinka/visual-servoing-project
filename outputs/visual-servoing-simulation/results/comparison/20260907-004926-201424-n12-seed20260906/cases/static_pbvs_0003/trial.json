@@ -1,0 +1,30 @@
+{
+  "trial_id": 3,
+  "method": "pbvs",
+  "profile": "medium",
+  "scenario": "static",
+  "outcome": "converged",
+  "initial_detected": true,
+  "offset_degrees": [
+    2.8717161482197646,
+    0.5131953458820373,
+    -5.8431355255964545,
+    2.491762690898515,
+    6.532682785629813,
+    -7.251546253014333
+  ],
+  "initial_error_px": 53.76506042480469,
+  "terminal_error_px": 0.9574007391929626,
+  "final_error_px": 0.9574007391929626,
+  "peak_error_px": 53.76506042480469,
+  "peak_error_increase_pct": 0.0,
+  "terminal_time_s": 3.799999999999803,
+  "settling_time_s": 3.299999999999858,
+  "observed_time_s": 4.799999999999693,
+  "sample_count": 145,
+  "max_command_rad_s": 0.2171597218972634,
+  "max_joint_condition": 11.441005416285103,
+  "wall_time_s": 1.1371480000671,
+  "target_step_time_s": null,
+  "trace": "traces/static_pbvs_0003.npz"
+}

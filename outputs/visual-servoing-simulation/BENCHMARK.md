@@ -1,52 +1,29 @@
-# Step 3: randomized alignment evaluation
+# Randomized alignment benchmark
 
-The project can now test automatic alignment from 200 different robot starting poses and save a reproducible record of every attempt. It uses the same camera-based controller as the interactive Align button.
+**Stage 4:** the desktop Align button now includes automatic target reacquisition. The experiments below remain the pure-IBVS baselines. [Find-and-align results and instructions](RECOVERY.md). Run `.\run.cmd --recovery` to evaluate the new behavior.
 
-## What the new mode does
+The benchmark places the simulated robot in different starting poses, runs the camera-based Align controller, and saves each attempt's outcome, timing, error and motion trace.
 
-1. Save a seeded plan of random offsets from the home joint angles, with small, medium and large offset ranges.
-2. Reset the simulated robot to each planned starting pose.
-3. Run the existing visual feedback controller using rendered camera images.
-4. Record errors, image corners, commands, joint motion, camera pose and the outcome.
-5. For successful alignments, check that the error remains below 1 pixel for one additional second after stopping.
-6. Generate the CSV, statistics, confidence intervals, plots and example images.
+**Latest development:** an intermittent detection failure has been fixed. See [the explanation and validation](ALIGNMENT_FIX.md).
 
-This is an automatic experiment mode. The normal desktop interface still opens through run.cmd, and Align can still be started after manual jogging.
+## Recorded experiments
 
-## Measured results
+| Experiment | Trials | Initially detected | Aligned | Detection lost during movement |
+|---|---:|---:|---:|---:|
+| Original detector, seed 20260906 | 200 | 75 | 34 | 41 |
+| Fixed detector, same exact poses | 200 | 86 | 86 | 0 |
+| Fixed detector, new seed 42 | 100 | 44 | 44 | 0 |
 
-Completed 200 trials with seed 20260906. Every sampled start is included.
+All sampled starts are counted, including those with no marker in view. Successful trials must remain below 1 pixel of error for the controller's 0.5-second hold and one additional stopped second.
 
-| Outcome | Trials |
-|---|---:|
-| Successfully aligned and remained aligned after stopping | 34 |
-| Marker geometry outside the camera view at the start | 112 |
-| Marker inside the view but not detected at the start | 13 |
-| Detection lost during movement while marker geometry remained in frame | 41 |
-| Other outcomes | 0 |
+- [Original step-3 report](results/benchmark/20260906-155544-117220-n200-seed20260906/REPORT.md)
+- [Same-pose report after the detector fix](results/benchmark/20260906-164904-307850-n200-seed20260906/REPORT.md)
+- [Separate 100-pose validation report](results/benchmark/20260906-165404-850153-n100-seed42/REPORT.md)
+- [Before/after comparison](results/alignment-fix/comparison.json)
 
-Success was **34/200 = 17.0%** over all sampled starts (95% Wilson interval: 12.4-22.8%).
-Among the **75 starts with a detected marker**, success was **34/75 = 45.3%** (95% interval: 34.6-56.6%).
+The after-fix 200-trial run achieved 43% success over all starts and 86/86 success among initially detected starts. Its remaining failures were 112 out-of-view starts and 2 in-frame starts without a detection. These numbers apply to the declared sampling distribution and idealized scene.
 
-Successful trials took a median **3.73 simulated seconds** to declare convergence, including the 0.5-second hold window. Median final RMS corner error was **0.973 pixels**. All 34 successful trials stayed below 1 pixel during the additional stopped observation.
-
-| Offset profile | All trials | Initially detected | Successful |
-|---|---:|---:|---:|
-| Small | 60 | 51 | 28 |
-| Medium | 69 | 18 | 4 |
-| Large | 71 | 6 | 2 |
-
-![Success rates and outcomes](results/benchmark/20260906-155544-117220-n200-seed20260906/benchmark_overview.png)
-
-## What this means for Align
-
-Align works from starting poses other than the Offset preset: this experiment recorded 34 such successes. It currently needs continuous marker detection and stops as soon as detection is lost. It does not automatically search for a marker outside the image.
-
-The low overall score includes deliberately unfiltered random starts, many of which point the camera away from the target. The conditional score also shows that detection during movement needs improvement. Being geometrically in frame does not guarantee a successful OpenCV detection; the diagnostic alone does not identify its cause.
-
-The results describe these declared joint-offset ranges, this marker, fixed lighting and idealized simulation dynamics. They do not establish arbitrary-pose or physical-robot reliability. The controller and detector were not tuned after seeing this dataset.
-
-## Run it yourself
+## Run a new benchmark
 
 Open PowerShell in this project folder:
 
@@ -54,42 +31,34 @@ Open PowerShell in this project folder:
 .\run.cmd --benchmark
 ~~~
 
-This runs a new 200-trial experiment in a new timestamped directory, preserving earlier runs. It uses the installed Python environment automatically.
+This uses 200 trials and the seed/bounds in [benchmark_config.json](benchmark_config.json). A new timestamped output directory is created each time. Prior results are preserved.
+
+To regenerate the latest report from logs, or run checks:
 
 ~~~powershell
 .\run.cmd --report
-~~~
-
-This rebuilds the latest run's report and plots from saved logs. To run checks:
-
-~~~powershell
 .\run.cmd --verify
 ~~~
 
-The existing desktop controls are available by double-clicking run.cmd.
-
-For custom trial counts or exact-pose replay, use the project environment's Python. On this computer:
+For custom counts or exact replay, use the project's installed Python. On this computer:
 
 ~~~powershell
 ..\..\work\vservo-venv\Scripts\python.exe benchmark.py --trials 20 --seed 42
-..\..\work\vservo-venv\Scripts\python.exe benchmark.py --replay-run "results/benchmark/20260906-155544-117220-n200-seed20260906" --trial-id 66
+..\..\work\vservo-venv\Scripts\python.exe benchmark.py --replay-run "results/benchmark/20260906-164904-307850-n200-seed20260906" --trial-id 4
 ~~~
 
 On another computer set up with setup.cmd, substitute .\.venv\Scripts\python.exe.
 
-The sampling settings are in [benchmark_config.json](benchmark_config.json). Replay checks source hashes and uses the exact saved offsets. Numerical replay can depend on package versions, graphics driver and platform.
+Replay checks source hashes, so a baseline run requires the baseline source from the original step-3 archive. Its earlier measurements have been preserved. Replaying the new run uses the current source. Numerical replay can depend on platform, graphics driver and package versions.
 
-## Inspect the evidence
+## What each run contains
 
-- [Detailed generated report, sampling bounds and per-profile confidence intervals](results/benchmark/20260906-155544-117220-n200-seed20260906/REPORT.md)
-- [One row per trial (CSV)](results/benchmark/20260906-155544-117220-n200-seed20260906/trials.csv)
-- [Summary statistics (JSON)](results/benchmark/20260906-155544-117220-n200-seed20260906/summary.json)
-- [Source hashes, versions and configuration](results/benchmark/20260906-155544-117220-n200-seed20260906/manifest.json)
-- [Verification record](results/benchmark/20260906-155544-117220-n200-seed20260906/verification.json)
-- [First successful trial images](results/benchmark/20260906-155544-117220-n200-seed20260906/cases/converged/)
-- [First detection-loss trial images](results/benchmark/20260906-155544-117220-n200-seed20260906/cases/tracking_loss/)
-- [All 200 per-frame traces (NPZ)](results/benchmark/20260906-155544-117220-n200-seed20260906/traces/)
+- plan.json: exact joint offsets, profile and trial ID, saved before execution.
+- manifest.json: source hashes, versions, reference, calibration and settings.
+- trials.jsonl and trials.csv: one outcome per sampled start.
+- traces/trial_NNNN.npz: time, corners, commands, depth, joint motion and camera pose.
+- summary.json: overall and per-profile statistics with 95% Wilson intervals.
+- REPORT.md and PNG/SVG plots: readable results.
+- cases/: unmodified camera images from the first occurrence of each outcome.
 
-Verification passed: 20 automated tests; scene and app acceptance checks; 200 complete trace files; report regeneration; exact replay of successful trial 66 and failed trial 4, with every saved trace array matching on this computer.
-
-A useful next development step is to diagnose the detection losses and compare an improved version on these same saved starting poses.
+These are joint-space samples around home, with no visibility filtering. Camera poses are not uniform in Cartesian space. The reports distinguish missing initial features from failures during motion.

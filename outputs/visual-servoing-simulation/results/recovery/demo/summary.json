@@ -1,0 +1,27 @@
+{
+  "status": "converged",
+  "final_error_px": 0.9822330474853516,
+  "transitions": [
+    {
+      "time_s": 0.032000000000000015,
+      "status": "waiting"
+    },
+    {
+      "time_s": 0.23200000000000018,
+      "status": "returning"
+    },
+    {
+      "time_s": 2.899999999999902,
+      "status": "confirming"
+    },
+    {
+      "time_s": 2.965999999999895,
+      "status": "running"
+    },
+    {
+      "time_s": 7.799999999999363,
+      "status": "converged"
+    }
+  ],
+  "note": "Recorded live MuJoCo state and the desktop draw/click logic. No pose reset occurs during recovery."
+}

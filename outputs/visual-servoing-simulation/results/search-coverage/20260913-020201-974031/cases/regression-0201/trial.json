@@ -1,0 +1,43 @@
+{
+  "trial_id": 201,
+  "profile": "negative_control",
+  "case": "absent_marker",
+  "offset_degrees": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "target_shift_m": [
+    0,
+    0,
+    0
+  ],
+  "cohort": "regression",
+  "method": "search",
+  "outcome": "target_not_found",
+  "initial_detected": false,
+  "first_detection_s": null,
+  "acquisition_s": null,
+  "terminal_time_s": 141.599999999948,
+  "alignment_after_acquisition_s": null,
+  "final_error_px": null,
+  "sample_count": 4279,
+  "started_without_memory": true,
+  "search_stop_reason": "coverage_complete",
+  "search_refinement_started_s": 76.19999999999824,
+  "search_bounds_ok": true,
+  "max_search_excursion_rad": 0.8375863709856152,
+  "max_search_command_rad_s": 0.25,
+  "max_command_rad_s": 0.25,
+  "stopped_command_zero": true,
+  "joint_supervision_enabled": true,
+  "adjusted_alignment_frames": 0,
+  "alignment_retries": 0,
+  "stall_events": 0,
+  "motion_events": [],
+  "min_joint_margin_rad": 0.20972185168841917,
+  "policy": "refined"
+}
