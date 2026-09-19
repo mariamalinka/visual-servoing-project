@@ -1,5 +1,8 @@
 # Search coverage comparison
 
+> Published snapshot: bulk per-frame traces remain local. See the [dataset policy](../../README.md) before regenerating this report.
+
+
 Both missed targets were visible within the existing +/-48-degree yaw/pitch box,
 between the original coarse scan paths. The new policy preserves the original
 12/24/36/48-degree rectangles, then scans the midpoint rings 6/18/30/42 degrees

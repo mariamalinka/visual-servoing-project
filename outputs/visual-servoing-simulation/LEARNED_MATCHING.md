@@ -104,6 +104,7 @@ does not advance the controller or count as another confirmation frame.
 | Working camera image | 384×288 |
 | Template extraction image | 192×192 |
 | Maximum requested keypoints per image | 256 |
+| Inference device | auto: CUDA GPU when available, otherwise CPU |
 | PyTorch CPU threads | 8 |
 | Minimum geometric inliers | 12 |
 | Minimum inlier fraction | 55% |
@@ -114,11 +115,58 @@ The feature and outline gates retain the SIFT thresholds. The smaller extraction
 images and keypoint budget reduce CPU work. The saved picture and goal image
 keep their original resolutions.
 
-**All 149 automated tests passed** in 291.053 seconds, with the optional learned
+The earlier CPU baseline recorded **149 automated tests passed** in 291.053 seconds, with the optional learned
 tests enabled. They cover independent geometry, partial occlusion, negative
 images, cache invalidation, offline weights, no SIFT/ArUco fallback, cancellation,
 matcher switching, shared teaching, tracking-loss recovery and the original
 controller/search regressions. [Complete test log](results/learned/full-test-suite.txt).
+
+## GPU acceleration
+
+The RTX 3050 check measured **55–57 ms** per picture versus **425–437 ms** on CPU
+(about **8x faster**), and all **162 tests passed**.
+[Timing details, alignment results and evidence](LEARNED_PERFORMANCE.md).
+
+The default device setting is **auto**. It uses the NVIDIA GPU when the installed
+PyTorch runtime and driver support CUDA, and CPU otherwise. The camera status
+shows **Learned GPU** or **Learned CPU**. An explicit **cuda** setting reports an
+error when CUDA is unavailable; inference errors still stop visual tracking.
+
+For NVIDIA acceleration on Windows x64 / Python 3.12, close the simulator and run:
+
+~~~powershell
+.\setup-learned.cmd --cuda
+.\run.cmd --learned
+~~~
+
+This installs the pinned PyTorch 2.13.0 / torchvision 0.28.0 CUDA 12.6 builds
+(about 2.6 GB to download) into the existing environment. On this RTX 3050 laptop,
+driver 577.02 supports that runtime. A separate CUDA toolkit is unnecessary.
+Normal setup preserves an installed CUDA build. Use **setup-learned.cmd --cpu**
+to select CPU packages explicitly, or set **device** to **cpu** in
+**learned_feature_config.json** to run on CPU with either runtime.
+
+Both neural networks, the template descriptors and each input image are placed
+on the selected device. Geometry and controller calculations still use the same
+CPU code and calibrated image coordinates. GPU support keeps the original image
+resolution, keypoint limit and acceptance thresholds. It does not skip camera
+measurements or use stale detections to drive motion.
+
+**benchmark_learned.py** compares synchronized, uncached CPU/GPU inference on
+identical saved, perspective-transformed, occluded, dimmed and blank frames. Its
+reported timings include image transfer and the geometry checks; they exclude
+GUI rendering. **verify_learned_repair.py** records actual matcher-button and
+alignment callbacks, including the device used and elapsed wall time.
+
+~~~powershell
+.\.venv\Scripts\python.exe benchmark_learned.py
+.\.venv\Scripts\python.exe verify_learned_repair.py --output results/learned/gpu-check
+~~~
+
+The GPU selection and CUDA package choices follow the
+[official LightGlue implementation](https://github.com/cvg/LightGlue),
+[PyTorch 2.13 installation matrix](https://pytorch.org/get-started/previous-versions/)
+and [NVIDIA driver compatibility guidance](https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html).
 
 ## Installation and offline use
 
@@ -128,8 +176,27 @@ For another Windows x64 computer with Python 3.12, run **setup.cmd**, then
 LightGlue packages, downloads the two official weight files and verifies hashes.
 
 The installer uses Windows extended paths for PyTorch's deeply nested license
-files. It does not change Windows registry settings. Existing ArUco and SIFT
-usage does not require these optional packages.
+files. It installs directly into the selected virtual environment with pip's
+`--prefix`, so package directories inherit that destination's permissions. The
+previous `--target` method moved temporary directories and could retain Windows
+permissions that prevented the normal user from importing PyTorch.
+It does not change Windows registry settings. Existing ArUco and SIFT usage does
+not require these optional packages. Setup verifies imports, a tensor operation,
+dependency consistency and real learned inference before reporting success.
+
+If selecting Learned fails, the status line now identifies the stage and error
+type. The full chained traceback, interpreter path and setup guidance are written
+to **logs/learned-matcher.log** and the launch console. The previous mode remains
+selected and motion stops. If the log directory cannot be written, the status
+directs you to the console instead.
+
+For an old `work/vservo-venv` with unreadable PyTorch files, close the simulator
+and run **setup-learned.cmd --fresh**. This creates the launcher's preferred local
+**.venv**, installs the same pinned dependencies, and preserves the old environment.
+It refuses to overwrite an existing `.venv`; normal **setup-learned.cmd** repairs
+readable but incomplete installations. An existing `.venv` with inaccessible
+files requires its Windows permissions to be restored before setup can repair it.
+After setup, reopen **run.cmd** so the new process uses the repaired environment.
 
 After setup, inference works offline. The GUI resolves upstream model requests
 to verified local files and loads only tensor weights; it never downloads during
@@ -137,7 +204,8 @@ motion. Missing or changed weights produce an installation message.
 
 The weight files are kept locally under **models/** and excluded from Git;
 **models/manifest.json** and the setup scripts are retained for reproduction.
-Dependency pins and archive hashes are in **requirements-learned.txt**.
+Dependency pins and archive hashes are in **requirements-learned.txt**,
+**requirements-learned-cuda.txt** and **requirements-learned-common.txt**.
 
 ## Limits and interpretation
 

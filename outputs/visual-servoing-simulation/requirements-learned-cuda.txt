@@ -1,0 +1,4 @@
+# NVIDIA CUDA 12.6 runtime, Windows x64 / Python 3.12.
+-r requirements-learned-common.txt
+torch @ https://download.pytorch.org/whl/cu126/torch-2.13.0%2Bcu126-cp312-cp312-win_amd64.whl#sha256=380081ea098bf2b9e727aa85205d94790d884d17c62df3bb00a4f6a1047010a2
+torchvision @ https://download.pytorch.org/whl/cu126/torchvision-0.28.0%2Bcu126-cp312-cp312-win_amd64.whl#sha256=4a82a21e12ef9025ec37d1bab065bfb4c56815290861d3ac4bfc10b0d745e919

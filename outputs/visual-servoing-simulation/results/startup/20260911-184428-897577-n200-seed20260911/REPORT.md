@@ -1,5 +1,8 @@
 # Systematic startup-search evaluation
 
+> Published snapshot: bulk per-frame traces remain local. See the [dataset policy](../../README.md) before regenerating this report.
+
+
 Seed 20260911; 200 randomized scenes, each run with both methods.
 No sampled scene was rejected for visibility or reachability. Four negative controls
 are reported separately from the randomized target-present group.

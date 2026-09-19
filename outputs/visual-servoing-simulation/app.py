@@ -3,7 +3,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import time
+import traceback
 from datetime import datetime
 
 import cv2
@@ -51,6 +53,23 @@ def make_perception(mode,sim):
         from learned_perception import LearnedImagePerception
         return LearnedImagePerception()
     raise ValueError("Unknown perception mode")
+
+
+def report_perception_error(mode, exc):
+    """Keep the full exception chain even when the GUI retains its old mode."""
+    details = (f"\n{datetime.now().isoformat()} selecting {mode}\n"
+               f"Python: {sys.executable}\n" + traceback.format_exc())
+    print(details, file=sys.stderr, flush=True)
+    log_path = ROOT / "logs" / "learned-matcher.log"
+    try:
+        log_path.parent.mkdir(parents=True, exist_ok=True)
+        with log_path.open("a", encoding="utf-8") as stream:
+            stream.write(details)
+        location = "logs/learned-matcher.log"
+    except OSError as log_error:
+        print(f"Could not save {log_path}: {log_error}", file=sys.stderr, flush=True)
+        location = "console (log write failed)"
+    return f"Mode unchanged: {getattr(exc, 'summary', str(exc))}. Details: {location}"
 
 
 class Lab:
@@ -115,7 +134,7 @@ class Lab:
             rgb, reference = load_reference(path, self.sim.camera_intrinsics(),
                 perception.reference_config(self.sim.config), lambda frame: perception.observe(frame).corners)
         except (OSError, ValueError) as exc:
-            self.message = f"Target mode unchanged: {exc}"
+            self.message = report_perception_error(mode, exc)
             return
         self.sim.set_target_mode("aruco" if mode=="aruco" else "natural")
         self.perception_mode, self.perception = mode, perception
@@ -404,7 +423,8 @@ class Lab:
                 label(canvas, message, 608, 551, 0.40, AMBER)
             else:
                 error = np.sqrt(np.mean(np.sum((corners-self.reference)**2,axis=1)))
-                label(canvas, f"Picture | {observation.inliers} inliers | error {error:.2f} px | {observation.processing_ms:.0f} ms",
+                backend = ("Learned GPU" if self.perception.device.type == "cuda" else "Learned CPU") if self.perception_mode == "learned" else "Picture"
+                label(canvas, f"{backend} | {observation.inliers} inliers | error {error:.2f} px | {observation.processing_ms:.0f} ms",
                       608, 551, 0.42, TEAL)
         elif corners is None:
             message = "Marker not detected - finding target" if self.aligning else "Marker not detected - Align [G] can try to recover"

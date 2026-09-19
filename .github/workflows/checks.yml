@@ -1,0 +1,36 @@
+name: Repository and control maths
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    env:
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          architecture: x64
+          cache: pip
+          cache-dependency-path: outputs/visual-servoing-simulation/requirements.txt
+      - name: Check repository contents and documentation
+        run: python -B tools/check_repository.py
+      - name: Install base simulation dependencies
+        run: python -m pip install -r outputs/visual-servoing-simulation/requirements.txt
+      - name: Check dependency consistency
+        run: python -m pip check
+      - name: Verify control mathematics
+        working-directory: outputs/visual-servoing-simulation
+        run: |
+          python -B -m unittest discover -s tests -p test_control.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -B -m unittest discover -s tests -p test_depth_refinement.py -v

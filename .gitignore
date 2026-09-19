@@ -1,0 +1,25 @@
+# Machine-local environments, caches, backups and old exports.
+/work/
+/archive/
+.cache/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.whl
+*.log
+MUJOCO_LOG.TXT
+.DS_Store
+Thumbs.db
+# Results have their own curated allowlist; runtime assets and fixtures are kept.

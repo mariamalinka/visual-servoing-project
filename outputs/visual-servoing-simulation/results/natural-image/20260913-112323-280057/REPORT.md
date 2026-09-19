@@ -1,5 +1,8 @@
 # Initial natural-picture comparison
 
+> Published snapshot: bulk per-frame traces remain local. See the [dataset policy](../../README.md) before regenerating this report.
+
+
 The same fixed-gain IBVS, startup search, recovery and joint-limit handling are used
 with two perception backends: ArUco corners or SIFT matches plus a RANSAC homography
 that estimates the four corners of a flat picture. This is classical feature matching,

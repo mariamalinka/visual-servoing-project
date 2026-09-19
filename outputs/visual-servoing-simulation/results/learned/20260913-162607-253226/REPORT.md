@@ -1,5 +1,8 @@
 # Learned matching: initial comparison
 
+> Published snapshot: bulk per-frame traces remain local. See the [dataset policy](../../README.md) before regenerating this report.
+
+
 Both matchers see the same natural photograph and use the same saved RGB goal,
 four virtual boundary corners, geometry gates, fixed-gain IBVS, startup search,
 recovery and joint-limit handling. SuperPoint and LightGlue use pretrained weights;

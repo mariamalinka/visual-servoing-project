@@ -1,5 +1,8 @@
 # Joint-limit supervision evaluation
 
+> Published snapshot: bulk per-frame traces remain local. See the [dataset policy](../../README.md) before regenerating this report.
+
+
 The same 200 randomized target-present scenes and four negative controls
 were evaluated. Baseline traces are copied from the completed, earlier startup
 study; the supervised controller was run anew. Physics, camera, marker, search,

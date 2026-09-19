@@ -1,5 +1,8 @@
 # Adaptive-gain IBVS study
 
+> Published snapshot: bulk per-frame traces remain local. See the [dataset policy](../../README.md) before regenerating this report.
+
+
 **600 trials: 200 identical starting poses per gain policy**, seed 20260906. Search/recovery disabled.
 
 ![Gain comparison](gain_comparison.png)

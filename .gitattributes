@@ -1,0 +1,8 @@
+# Keep Windows entry points usable after checkout.
+*.cmd text eol=crlf
+# Binary assets and regression fixtures must retain their bytes.
+*.png binary
+*.gif binary
+*.npz binary
+# Saved experiment evidence should not dominate source statistics or reviews.
+outputs/visual-servoing-simulation/results/** linguist-generated=true

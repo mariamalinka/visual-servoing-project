@@ -1,0 +1,29 @@
+{
+  "outcome": "converged",
+  "alignment_mode": "learned",
+  "switch_back": "natural",
+  "python": "C:\\Users\\marys\\Documents\\Codex\\2026-09-06\\visual-servoing-project\\outputs\\visual-servoing-simulation\\.venv\\Scripts\\python.exe",
+  "initial_error_px": 44.618412017822266,
+  "final_error_px": 0.3561296761035919,
+  "post_stop_max_error_px": 0.3561296761035919,
+  "pose_preserved_on_switch": true,
+  "saved_goal_preserved": true,
+  "offline": true,
+  "classical_fallback": false,
+  "stopped_command_zero": true,
+  "transitions": [
+    {
+      "state": "confirming",
+      "simulation_s": 0.032000000000000015
+    },
+    {
+      "state": "running",
+      "simulation_s": 0.10000000000000007
+    },
+    {
+      "state": "converged",
+      "simulation_s": 7.2319999999994256
+    }
+  ],
+  "wall_seconds": 108.9599841000163
+}

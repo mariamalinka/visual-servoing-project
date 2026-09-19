@@ -1,5 +1,8 @@
 # Find-and-align evaluation
 
+> Published snapshot: bulk per-frame traces remain local. See the [dataset policy](../../README.md) before regenerating this report.
+
+
 Completed 200 trials with seed 20260906. Every sampled start is counted.
 
 - Converged and stayed below 1 px after stopping: **200/200 (100.0%)**.

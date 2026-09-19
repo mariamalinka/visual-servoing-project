@@ -1,5 +1,8 @@
 # Alignment controller comparison
 
+> Published snapshot: bulk per-frame traces remain local. See the [dataset policy](../../README.md) before regenerating this report.
+
+
 **600 static trials: 200 identical starting poses per controller**, seed 20260906. Three additional target-step runs are a separate demonstration.
 
 ![Controller comparison](comparison.png)

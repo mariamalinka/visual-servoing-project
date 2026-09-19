@@ -61,7 +61,7 @@ The experiment provides a remembered viewpoint that was observed before each tri
 
 - [Full generated report](results/recovery/20260906-212540-109662-n200-seed20260906/REPORT.md)
 - [One row per trial](results/recovery/20260906-212540-109662-n200-seed20260906/trials.csv)
-- [Numeric per-frame traces](results/recovery/20260906-212540-109662-n200-seed20260906/traces/)
+- [Numeric per-frame traces](results/README.md#raw-traces)
 - [Configuration, source hashes and taught viewpoint](results/recovery/20260906-212540-109662-n200-seed20260906/manifest.json)
 - [Validation and absent-target check](results/recovery/verification.json)
 - [Previous pure-IBVS baseline](results/benchmark/20260906-164904-307850-n200-seed20260906/REPORT.md)

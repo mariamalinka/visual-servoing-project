@@ -1,5 +1,8 @@
 # Randomized visual-servoing benchmark
 
+> Published snapshot: bulk per-frame traces remain local. See the [dataset policy](../../README.md) before regenerating this report.
+
+
 Completed **200 trials**, RNG seed **20260906**. Controller: unchanged step-2 fixed-gain marker IBVS.
 
 - All starts: **34/200** converged; 17.0% [12.4, 22.8].

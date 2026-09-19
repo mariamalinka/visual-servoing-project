@@ -1,0 +1,144 @@
+{
+  "torch": "2.13.0+cu126",
+  "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+  "config": {
+    "template_size_px": 384,
+    "detection_width_px": 384,
+    "max_keypoints": 256,
+    "cpu_threads": 8,
+    "device": "auto",
+    "detection_threshold": 0.0005,
+    "filter_threshold": 0.1,
+    "depth_confidence": 0.9,
+    "width_confidence": -1,
+    "min_inliers": 12,
+    "min_inlier_ratio": 0.55,
+    "ransac_reprojection_px": 2.5,
+    "max_reprojection_rms_px": 1.5,
+    "min_template_coverage": 0.18,
+    "min_projected_area_px": 1600,
+    "image_margin_px": 2,
+    "max_side_ratio": 5,
+    "template_extract_width_px": 192
+  },
+  "samples_per_probe": 12,
+  "cache": "disabled for each timed call",
+  "includes": "image transfer, extraction, matching, CPU coordinates and geometry; excludes GUI rendering",
+  "source_sha256": {
+    "learned_perception.py": "336d6ff1fd7fc3d3832c330bb24b7028da3e68d921d72b371976a126136eff47",
+    "perception.py": "4ba1a47241708674384790097609dc622adf786e31fa38f8a764ec70dcc770ff",
+    "learned_feature_config.json": "0145983cbf3bafef87e80ca079628744f69edf175764137e36d373786353a708"
+  },
+  "rows": [
+    {
+      "device": "cpu",
+      "probe": "saved_camera",
+      "median_ms": 436.81859999196604,
+      "p95_ms": 457.8832900064299,
+      "min_ms": 407.1028000325896,
+      "max_ms": 458.5642999736592,
+      "inliers": 97,
+      "reason": "accepted",
+      "outline_rms_px": null
+    },
+    {
+      "device": "cpu",
+      "probe": "perspective",
+      "median_ms": 434.5744000165723,
+      "p95_ms": 443.55775498843286,
+      "min_ms": 411.961900012102,
+      "max_ms": 444.3001999752596,
+      "inliers": 145,
+      "reason": "accepted",
+      "outline_rms_px": 0.8096445798873901
+    },
+    {
+      "device": "cpu",
+      "probe": "occluded",
+      "median_ms": 425.0966999970842,
+      "p95_ms": 446.1626349715516,
+      "min_ms": 403.18740002112463,
+      "max_ms": 454.93089995579794,
+      "inliers": 107,
+      "reason": "accepted",
+      "outline_rms_px": 1.9671539068222046
+    },
+    {
+      "device": "cpu",
+      "probe": "dimmed",
+      "median_ms": 437.40095003158785,
+      "p95_ms": 446.07518500706647,
+      "min_ms": 425.9707999881357,
+      "max_ms": 447.49160000355914,
+      "inliers": 121,
+      "reason": "accepted",
+      "outline_rms_px": 1.139609456062317
+    },
+    {
+      "device": "cpu",
+      "probe": "blank",
+      "median_ms": 325.01244999002665,
+      "p95_ms": 343.35938000585884,
+      "min_ms": 295.3059999854304,
+      "max_ms": 347.6616999832913,
+      "inliers": 0,
+      "reason": "too_few_features",
+      "outline_rms_px": null
+    },
+    {
+      "device": "cuda",
+      "probe": "saved_camera",
+      "median_ms": 57.09755001589656,
+      "p95_ms": 63.37360499019269,
+      "min_ms": 51.883800013456494,
+      "max_ms": 63.46320000011474,
+      "inliers": 97,
+      "reason": "accepted",
+      "outline_rms_px": null
+    },
+    {
+      "device": "cuda",
+      "probe": "perspective",
+      "median_ms": 54.69799999264069,
+      "p95_ms": 72.81015499320347,
+      "min_ms": 51.187400007620454,
+      "max_ms": 73.95849999738857,
+      "inliers": 136,
+      "reason": "accepted",
+      "outline_rms_px": 1.127866268157959
+    },
+    {
+      "device": "cuda",
+      "probe": "occluded",
+      "median_ms": 55.11664997902699,
+      "p95_ms": 56.75030000275001,
+      "min_ms": 52.61890002293512,
+      "max_ms": 56.851500004995614,
+      "inliers": 106,
+      "reason": "accepted",
+      "outline_rms_px": 1.7345424890518188
+    },
+    {
+      "device": "cuda",
+      "probe": "dimmed",
+      "median_ms": 56.52350001037121,
+      "p95_ms": 63.75985500635579,
+      "min_ms": 53.59219998354092,
+      "max_ms": 64.53969998983666,
+      "inliers": 136,
+      "reason": "accepted",
+      "outline_rms_px": 0.7640140652656555
+    },
+    {
+      "device": "cuda",
+      "probe": "blank",
+      "median_ms": 13.625849998788908,
+      "p95_ms": 14.623464978649281,
+      "min_ms": 12.35670002643019,
+      "max_ms": 15.05449996329844,
+      "inliers": 0,
+      "reason": "too_few_features",
+      "outline_rms_px": null
+    }
+  ]
+}

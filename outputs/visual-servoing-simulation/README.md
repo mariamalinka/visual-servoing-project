@@ -1,6 +1,8 @@
 # Visual Servoing Simulation
 
-**New: pretrained SuperPoint + LightGlue matching.** Select Picture with **V**, then switch **SIFT / Learned [K]**. Or launch `run.cmd --learned`. Both use the same picture goal and automatic alignment/search flow. The learned CPU mode is slower; SIFT remains available. [Controls, important code, installation and measured results](LEARNED_MATCHING.md).
+[Project overview](../../README.md) · [Documentation index](../../docs/README.md) · [Published results and raw-trace policy](results/README.md)
+
+**New: pretrained SuperPoint + LightGlue matching.** Select Picture with **V**, then switch **SIFT / Learned [K]**. Or launch `run.cmd --learned`. Both use the same picture goal and automatic alignment/search flow. Learned now uses an available NVIDIA GPU automatically; install its CUDA runtime with `setup-learned.cmd --cuda`. The status shows Learned GPU or Learned CPU. CPU mode and SIFT remain available. [Controls, important code, installation and measured results](LEARNED_MATCHING.md).
 
 **New: alignment to a normal picture.** Press **V** to switch between ArUco and the photograph, **F** to inspect feature matches, and **O** or **N** to try automatic alignment or an unseen start. Or launch `run.cmd --natural`. The new mode uses SIFT and RANSAC with the existing IBVS/search controller. [Usage, important code and evaluation](NATURAL_IMAGE.md).
 
@@ -36,7 +38,7 @@ Close an older simulator window and reopen **run.cmd**. Click **Lost view [L]**,
 
 You can also jog a joint manually, then click Align. If the marker is missing and a viewpoint has been observed, the arm pauses, moves toward its most recent visible viewpoint, and tries a local sweep if needed. Without a remembered viewpoint, it performs the bounded startup search. Three consecutive detections switch it back to IBVS. Reset instantly restores home; Align instead returns using the visual feedback loop. **Demo** remains a separate scripted joint-motion demonstration.
 
-The software is already installed on this computer. The launcher finds the project-local environment at `../../work/vservo-venv`; renaming the project folder does not break that relative path.
+Install the base runtime with **setup.cmd**. The launcher prefers the application-local **.venv** and supports an existing legacy **../../work/vservo-venv** as a fallback. Root-level launchers delegate here. See the [repository quick start](../../README.md).
 
 ## Fixed-offset example (step 2)
 

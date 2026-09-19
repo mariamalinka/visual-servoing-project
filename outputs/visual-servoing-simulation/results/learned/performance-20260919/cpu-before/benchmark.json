@@ -1,0 +1,89 @@
+{
+  "torch": "2.13.0+cpu",
+  "gpu": null,
+  "config": {
+    "template_size_px": 384,
+    "detection_width_px": 384,
+    "max_keypoints": 256,
+    "cpu_threads": 8,
+    "device": "auto",
+    "detection_threshold": 0.0005,
+    "filter_threshold": 0.1,
+    "depth_confidence": 0.9,
+    "width_confidence": -1,
+    "min_inliers": 12,
+    "min_inlier_ratio": 0.55,
+    "ransac_reprojection_px": 2.5,
+    "max_reprojection_rms_px": 1.5,
+    "min_template_coverage": 0.18,
+    "min_projected_area_px": 1600,
+    "image_margin_px": 2,
+    "max_side_ratio": 5,
+    "template_extract_width_px": 192
+  },
+  "samples_per_probe": 8,
+  "cache": "disabled for each timed call",
+  "includes": "image transfer, extraction, matching, CPU coordinates and geometry; excludes GUI rendering",
+  "source_sha256": {
+    "learned_perception.py": "336d6ff1fd7fc3d3832c330bb24b7028da3e68d921d72b371976a126136eff47",
+    "perception.py": "4ba1a47241708674384790097609dc622adf786e31fa38f8a764ec70dcc770ff",
+    "learned_feature_config.json": "0145983cbf3bafef87e80ca079628744f69edf175764137e36d373786353a708"
+  },
+  "rows": [
+    {
+      "device": "cpu",
+      "probe": "saved_camera",
+      "median_ms": 537.492299976293,
+      "p95_ms": 562.6471100054914,
+      "min_ms": 505.28749998193234,
+      "max_ms": 566.6901000076905,
+      "inliers": 97,
+      "reason": "accepted",
+      "outline_rms_px": null
+    },
+    {
+      "device": "cpu",
+      "probe": "perspective",
+      "median_ms": 523.13234997564,
+      "p95_ms": 555.3132750152145,
+      "min_ms": 467.4587000044994,
+      "max_ms": 557.8926000162028,
+      "inliers": 145,
+      "reason": "accepted",
+      "outline_rms_px": 0.8096445798873901
+    },
+    {
+      "device": "cpu",
+      "probe": "occluded",
+      "median_ms": 509.1805999982171,
+      "p95_ms": 521.0404450044734,
+      "min_ms": 481.6251999582164,
+      "max_ms": 523.2865000143647,
+      "inliers": 107,
+      "reason": "accepted",
+      "outline_rms_px": 1.9671539068222046
+    },
+    {
+      "device": "cpu",
+      "probe": "dimmed",
+      "median_ms": 512.0214999769814,
+      "p95_ms": 539.8114950308809,
+      "min_ms": 487.6819999772124,
+      "max_ms": 542.0964000513777,
+      "inliers": 121,
+      "reason": "accepted",
+      "outline_rms_px": 1.139609456062317
+    },
+    {
+      "device": "cpu",
+      "probe": "blank",
+      "median_ms": 388.7131500232499,
+      "p95_ms": 408.98451003304217,
+      "min_ms": 372.72380001377314,
+      "max_ms": 411.5834000403993,
+      "inliers": 0,
+      "reason": "too_few_features",
+      "outline_rms_px": null
+    }
+  ]
+}

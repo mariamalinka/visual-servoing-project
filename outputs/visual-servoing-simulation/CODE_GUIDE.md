@@ -294,7 +294,7 @@ The four output features are the projected picture boundary corners. They keep s
 
 ## Pretrained learned matching
 
-**learned_perception.py / LearnedImagePerception** replaces SIFT extraction/matching with pretrained SuperPoint and LightGlue. Template features are extracted once; each changed camera frame supplies new matches. Resizing is reversed before geometric checks, so all controller features remain in the calibrated 640×480 camera coordinates.
+**learned_perception.py / LearnedImagePerception** replaces SIFT extraction/matching with pretrained SuperPoint and LightGlue. The auto device setting selects an available CUDA GPU, otherwise CPU. Both models, template features and input tensors stay on the selected device; only matched coordinates/scores return to CPU for geometry. Template features are extracted once; each changed camera frame supplies new matches. Resizing is reversed before geometric checks, so all controller features remain in the calibrated 640×480 camera coordinates.
 
 **perception.py / PlanarImagePerception** contains the shared image cache, canonical target handling, RANSAC homography and rejection gates. The SIFT backend now inherits this common code. Learned inference cannot silently call SIFT or ArUco.
 

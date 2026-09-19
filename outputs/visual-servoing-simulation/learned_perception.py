@@ -18,6 +18,36 @@ LIGHTGLUE_COMMIT="eb42fee2d71449efb0aa5c10549752b5d75384d8"
 class LearnedUnavailable(ValueError):
     pass
 
+def unavailable(stage, exc):
+    error = LearnedUnavailable(
+        f"Learned {stage} failed: {type(exc).__name__}: {exc}. "
+        "Run setup-learned.cmd; for unreadable packages use setup-learned.cmd --fresh.")
+    error.summary = f"Learned {stage}: {type(exc).__name__}"
+    if isinstance(exc, PermissionError) and exc.filename:
+        path = Path(exc.filename)
+        error.summary += f" ({path.parent.name}/{path.name})"
+    return error
+
+
+def load_dependencies():
+    try:
+        import torch
+        from lightglue import SuperPoint, LightGlue
+        return torch, SuperPoint, LightGlue
+    except (ImportError, OSError, RuntimeError, AttributeError) as exc:
+        raise unavailable("import", exc) from exc
+
+
+def select_device(torch, requested):
+    if requested == "cpu":
+        return torch.device("cpu")
+    available = torch.cuda.is_available()
+    if requested == "cuda" and not available:
+        raise LearnedUnavailable("NVIDIA GPU requested but CUDA is unavailable. "
+                                 "Run setup-learned.cmd --cuda and check the NVIDIA driver.")
+    return torch.device("cuda" if available else "cpu")
+
+
 def load_learned_config():
     return json.loads((ROOT/"learned_feature_config.json").read_text(encoding="utf-8"))
 
@@ -37,7 +67,7 @@ def check_model_files(directory=MODEL_DIR):
                 raise ValueError(f"Model checksum mismatch: {name}")
         return manifest
     except (OSError,ValueError,KeyError) as exc:
-        raise LearnedUnavailable("Learned matcher unavailable. Run setup-learned.cmd to install/check its models.") from exc
+        raise unavailable("model check", exc) from exc
 
 class LearnedImagePerception(PlanarImagePerception):
     mode="learned"
@@ -49,8 +79,8 @@ class LearnedImagePerception(PlanarImagePerception):
         for key in ("max_keypoints","cpu_threads","template_extract_width_px"):
             if type(c[key]) is not int or c[key]<1 or (key=="max_keypoints" and c[key]<c["min_inliers"]):
                 raise ValueError(f"Invalid {key}")
-        if c["device"]!="cpu":
-            raise ValueError("This tested configuration uses CPU inference")
+        if c["device"] not in ("auto", "cpu", "cuda"):
+            raise ValueError("Device must be auto, cpu or cuda")
         for key in ("detection_threshold","filter_threshold"):
             if not np.isfinite(c[key]) or not 0<c[key]<1:
                 raise ValueError(f"Invalid {key}")
@@ -58,13 +88,10 @@ class LearnedImagePerception(PlanarImagePerception):
             if not np.isfinite(c[key]) or not (c[key]==-1 or 0<c[key]<1):
                 raise ValueError(f"Invalid {key}")
         self.model_manifest=check_model_files(model_dir)
-        try:
-            import torch
-            from lightglue import SuperPoint,LightGlue
-        except (ImportError,OSError) as exc:
-            raise LearnedUnavailable("Learned matcher unavailable. Run setup-learned.cmd to install its dependencies.") from exc
+        torch, SuperPoint, LightGlue = load_dependencies()
         self.torch=torch
-        torch.set_num_threads(c["cpu_threads"])
+        self.device=select_device(torch,c["device"])
+        self.name=f"Picture / SuperPoint + LightGlue ({self.device.type.upper()})"
         # Upstream constructors request URL weights. Resolve those exact URLs to
         # checksum-verified local files with weights_only=True. Never download in
         # a GUI frame or silently substitute another detector.
@@ -75,20 +102,22 @@ class LearnedImagePerception(PlanarImagePerception):
             return torch.load(by_url[url],map_location="cpu",weights_only=True)
         try:
             with patch.object(torch.hub,"load_state_dict_from_url",side_effect=local_weights):
+                torch.set_num_threads(c["cpu_threads"])
                 self.extractor=SuperPoint(max_num_keypoints=c["max_keypoints"],
-                    detection_threshold=c["detection_threshold"]).eval().to("cpu")
+                    detection_threshold=c["detection_threshold"]).eval().to(self.device)
                 self.matcher=LightGlue(features="superpoint",flash=True,mp=False,
                     depth_confidence=c["depth_confidence"],width_confidence=c["width_confidence"],
-                    filter_threshold=c["filter_threshold"]).eval().to("cpu")
+                    filter_threshold=c["filter_threshold"]).eval().to(self.device)
             with torch.inference_mode():
                 self.template_features=self.extractor.extract(self._tensor(self.template_rgb),resize=c["template_extract_width_px"])
-        except (RuntimeError,OSError) as exc:
-            raise LearnedUnavailable("Could not load learned models. Run setup-learned.cmd to check the installation.") from exc
+        except (ImportError,RuntimeError,OSError,ValueError,AttributeError) as exc:
+            raise unavailable("model load", exc) from exc
         if self.template_features["keypoints"].shape[1]<c["min_inliers"]:
             raise ValueError("Target picture has too few distinctive learned features")
 
     def _tensor(self,rgb):
-        return self.torch.from_numpy(np.ascontiguousarray(rgb.transpose(2,0,1))).float()/255.
+        return self.torch.from_numpy(np.ascontiguousarray(rgb.transpose(2,0,1))).to(
+            device=self.device,dtype=self.torch.float32)/255.
 
     def _detect(self,rgb):
         torch=self.torch

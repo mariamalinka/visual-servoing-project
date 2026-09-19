@@ -1,0 +1,36 @@
+# Publish selected evidence; new runs and scratch files stay local.
+*
+!*/
+!/.gitignore
+!/README.md
+
+!/alignment/**
+!/alignment-fix/**
+!/benchmark/20260906-155544-117220-n200-seed20260906/**
+!/benchmark/20260906-164904-307850-n200-seed20260906/**
+!/benchmark/20260906-165404-850153-n100-seed42/**
+!/comparison/20260907-005242-736914-n200-seed20260906/**
+!/gain/20260911-173457-385483-n200-seed20260906/**
+!/joint-limits/20260912-131706-003699/**
+!/joint-limits/demo/**
+!/learned/20260913-162607-253226/**
+!/learned/performance-20260919/**
+!/natural-image/20260913-112323-280057/**
+!/natural-image/demo/**
+!/recovery/20260906-212540-109662-n200-seed20260906/**
+!/recovery/demo/**
+!/search-coverage/20260913-020201-974031/**
+!/search-coverage/demo/**
+!/startup/20260911-184428-897577-n200-seed20260911/**
+!/startup/demo/**
+!/gain/app-adaptive.png
+!/learned/full-test-suite.txt
+!/natural-image/full-test-suite.txt
+!/recovery/verification.json
+!/search-coverage/verification.json
+
+# Bulk per-frame data and local pointers are not published.
+**/traces/
+**/latest.json
+*.log
+!/learned/performance-20260919/full-tests.log
