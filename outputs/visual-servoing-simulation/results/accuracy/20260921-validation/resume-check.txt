@@ -1,0 +1,7 @@
+Accuracy experiment: C:\Users\marys\Documents\Codex\2026-09-06\visual-servoing-project\outputs\visual-servoing-simulation\results\accuracy\20260921-resume-check
+2 planned; 0 saved.
+[1/2] aruco-nominal-0000: converged; physical tolerance met
+Accuracy experiment: C:\Users\marys\Documents\Codex\2026-09-06\visual-servoing-project\outputs\visual-servoing-simulation\results\accuracy\20260921-resume-check
+2 planned; 1 saved.
+[2/2] aruco-combined-0000: converged; physical tolerance met
+PASS: interruption/resume kept the completed row and trace, report-only worked, and goal tampering was rejected.

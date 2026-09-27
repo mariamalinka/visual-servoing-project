@@ -1,0 +1,21 @@
+test_duplicate_and_changed_trial_metadata_fail (test_accuracy.AccuracyPlanTests.test_duplicate_and_changed_trial_metadata_fail) ... ok
+test_failures_pixel_only_passes_and_paired_denominators_are_kept (test_accuracy.AccuracyPlanTests.test_failures_pixel_only_passes_and_paired_denominators_are_kept) ... ok
+test_invalid_settings_and_missing_baseline_fail (test_accuracy.AccuracyPlanTests.test_invalid_settings_and_missing_baseline_fail) ... ok
+test_profiles_pair_identical_starts_and_perception_seeds (test_accuracy.AccuracyPlanTests.test_profiles_pair_identical_starts_and_perception_seeds) ... ok
+test_report_rebuilds_from_json_without_raw_traces (test_accuracy.AccuracyPlanTests.test_report_rebuilds_from_json_without_raw_traces) ... ok
+test_bad_calibration_is_rejected (test_accuracy.CalibrationMathTests.test_bad_calibration_is_rejected) ... ok
+test_intrinsics_and_target_size_change_only_copies (test_accuracy.CalibrationMathTests.test_intrinsics_and_target_size_change_only_copies) ... ok
+test_mount_rotation_rotates_both_velocity_blocks (test_accuracy.CalibrationMathTests.test_mount_rotation_rotates_both_velocity_blocks) ... ok
+test_nominal_calibration_preserves_exact_values (test_accuracy.CalibrationMathTests.test_nominal_calibration_preserves_exact_values) ... ok
+test_translated_mount_has_the_correct_lever_arm_sign (test_accuracy.CalibrationMathTests.test_translated_mount_has_the_correct_lever_arm_sign) ... ok
+test_common_world_transform_cannot_change_the_score (test_accuracy.PoseAccuracyTests.test_common_world_transform_cannot_change_the_score) ... ok
+test_identity_and_known_metric_units (test_accuracy.PoseAccuracyTests.test_identity_and_known_metric_units) ... ok
+test_nonrigid_nonfinite_and_wrong_shape_are_rejected (test_accuracy.PoseAccuracyTests.test_nonrigid_nonfinite_and_wrong_shape_are_rejected) ... ok
+test_physical_acceptance_requires_both_frames_and_orientation (test_accuracy.PoseAccuracyTests.test_physical_acceptance_requires_both_frames_and_orientation) ... ok
+test_rotation_wrap_and_half_turn (test_accuracy.PoseAccuracyTests.test_rotation_wrap_and_half_turn) ... ok
+test_translation_components_use_taught_axes (test_accuracy.PoseAccuracyTests.test_translation_components_use_taught_axes) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 2.395s
+
+OK

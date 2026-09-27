@@ -12,13 +12,13 @@
     <joint damping="0.8" armature="0.015" limited="true"/>
     <geom friction="0.7 0.01 0.001" condim="3"/>
     <default class="arm">
-      <!-- Collision-free teaching arm; collision planning is outside stage 1. -->
+      <!-- Physical contacts are enabled; adjacent welded/jointed parts use MuJoCo filtering. -->
       <geom type="capsule" size="0.035" rgba="0.13 0.62 0.67 1"
-            contype="0" conaffinity="0" density="800"/>
+            contype="1" conaffinity="1" density="800"/>
     </default>
     <default class="joint_shell">
       <geom type="sphere" size="0.046" rgba="0.13 0.18 0.23 1"
-            contype="0" conaffinity="0"/>
+            contype="1" conaffinity="1"/>
     </default>
   </default>
   <asset>
@@ -39,32 +39,37 @@
           rgba="0.10 0.14 0.19 1"/>
     <geom name="pedestal" type="cylinder" pos="0 0 0.16" size="0.065 0.09"
           rgba="0.68 0.74 0.79 1"/>
+    <!-- Optional mapped obstacle; enabled explicitly from the app or study. -->
+    <body name="obstacle" mocap="true" pos="0.48 0.16 0.20">
+      <geom name="obstacle_box" type="box" size="0.03 0.035 0.20"
+            rgba="0.9 0.32 0.18 0" contype="0" conaffinity="0"/>
+    </body>
     <body name="base_yaw" pos="0 0 0.30" gravcomp="1">
       <joint name="joint1" axis="0 0 1" range="-170 170"/>
-      <geom class="joint_shell"/>
+      <geom name="base_shell" class="joint_shell"/>
       <body name="shoulder" gravcomp="1">
         <joint name="joint2" axis="0 1 0" range="-100 80"/>
-        <geom class="arm" fromto="0 0 0 0.32 0 0"/>
+        <geom name="upper_arm" class="arm" fromto="0 0 0 0.32 0 0"/>
         <body name="elbow" pos="0.32 0 0" gravcomp="1">
           <joint name="joint3" axis="0 1 0" range="-10 145"/>
-          <geom class="joint_shell"/>
-          <geom class="arm" fromto="0 0 0 0.27 0 0"/>
+          <geom name="elbow_shell" class="joint_shell"/>
+          <geom name="forearm" class="arm" fromto="0 0 0 0.27 0 0"/>
           <body name="wrist_roll" pos="0.27 0 0" gravcomp="1">
             <joint name="joint4" axis="1 0 0" range="-170 170"/>
-            <geom class="joint_shell" size="0.038"/>
-            <geom class="arm" fromto="0 0 0 0.10 0 0" size="0.026"/>
+            <geom name="wrist_roll_shell" class="joint_shell" size="0.038"/>
+            <geom name="wrist_roll_link" class="arm" fromto="0 0 0 0.10 0 0" size="0.026"/>
             <body name="wrist_pitch" pos="0.10 0 0" gravcomp="1">
               <joint name="joint5" axis="0 1 0" range="-100 100"/>
-              <geom class="joint_shell" size="0.033"/>
-              <geom class="arm" fromto="0 0 0 0.06 0 0" size="0.022"/>
+              <geom name="wrist_pitch_shell" class="joint_shell" size="0.033"/>
+              <geom name="wrist_pitch_link" class="arm" fromto="0 0 0 0.06 0 0" size="0.022"/>
               <body name="tool_roll" pos="0.06 0 0" gravcomp="1">
                 <joint name="joint6" axis="1 0 0" range="-170 170"/>
-                <geom class="arm" fromto="0 0 0 0.06 0 0" size="0.019"/>
+                <geom name="tool_link" class="arm" fromto="0 0 0 0.06 0 0" size="0.019"/>
                 <body name="camera_mount" pos="0.07 0 0" gravcomp="1">
                   <geom name="camera_case" type="box" size="0.022 0.038 0.028"
-                        rgba="0.10 0.13 0.18 1" contype="0" conaffinity="0" mass="0.08"/>
+                        rgba="0.10 0.13 0.18 1" contype="1" conaffinity="1" mass="0.08"/>
                   <geom name="lens" type="cylinder" size="0.015 0.007" pos="0.027 0 0"
-                        euler="0 90 0" rgba="0.25 0.65 0.95 1" contype="0" conaffinity="0" mass="0.01"/>
+                        euler="0 90 0" rgba="0.25 0.65 0.95 1" contype="1" conaffinity="1" mass="0.01"/>
                   <!-- MuJoCo camera looks along local -Z; +Y is image up.
                        Optical convention used in Python: +X right, +Y down, +Z forward. -->
                   <camera name="wrist" pos="0.04 0 0" xyaxes="0 -1 0 0 0 1" fovy="55"/>

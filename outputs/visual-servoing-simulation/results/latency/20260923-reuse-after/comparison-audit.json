@@ -1,0 +1,1305 @@
+{
+  "plan_identical": true,
+  "runtime_versions_identical": true,
+  "changed_source": [
+    "learned_perception.py",
+    "realtime.py",
+    "run_latency_stress.py"
+  ],
+  "added_source": [
+    "learned_cuda_graphs.py"
+  ],
+  "controller_calibration_scene_model_configuration_and_assets_identical": true,
+  "baseline_manifest_sha256": "937026308c9eccb824ed651a6e7786578dcdd95033ca93f09eb9abb1bd91bc88",
+  "before": {
+    "late_all_stops": {
+      "natural": {
+        "control_overrun": 4
+      },
+      "learned": {
+        "stale_camera": 653
+      }
+    },
+    "execution": {
+      "natural-session-000": {},
+      "learned-session-000": {},
+      "natural-session-001": {},
+      "learned-session-001": {},
+      "natural-session-002": {},
+      "learned-session-002": {},
+      "natural-session-003": {},
+      "learned-session-003": {},
+      "natural-session-004": {},
+      "learned-session-004": {},
+      "natural-session-005": {},
+      "learned-session-005": {},
+      "natural-session-006": {},
+      "learned-session-006": {},
+      "natural-session-007": {},
+      "learned-session-007": {},
+      "natural-session-008": {},
+      "learned-session-008": {},
+      "natural-session-009": {},
+      "learned-session-009": {},
+      "natural-session-010": {},
+      "learned-session-010": {},
+      "natural-session-011": {},
+      "learned-session-011": {},
+      "natural-session-012": {},
+      "learned-session-012": {},
+      "natural-session-013": {},
+      "learned-session-013": {},
+      "natural-session-014": {},
+      "learned-session-014": {},
+      "natural-session-015": {},
+      "learned-session-015": {},
+      "natural-session-016": {},
+      "learned-session-016": {},
+      "natural-session-017": {},
+      "learned-session-017": {},
+      "natural-session-018": {},
+      "learned-session-018": {},
+      "natural-session-019": {},
+      "learned-session-019": {}
+    },
+    "power_boundaries": [
+      {
+        "session": "natural-session-000",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-000",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-001",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-001",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-002",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-002",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-003",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-003",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-004",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-004",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-005",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-005",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-006",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-006",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-007",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-007",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-008",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-008",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-009",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-009",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-010",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-010",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-011",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-011",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-012",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-012",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-013",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-013",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-014",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-014",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-015",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-015",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-016",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-016",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-017",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-017",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-018",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-018",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "natural-session-019",
+        "before": null,
+        "after": null
+      },
+      {
+        "session": "learned-session-019",
+        "before": null,
+        "after": null
+      }
+    ],
+    "graph_calls": {
+      "natural": {
+        "replays": 0,
+        "fallbacks": 0
+      },
+      "learned": {
+        "replays": 0,
+        "fallbacks": 0
+      }
+    }
+  },
+  "after": {
+    "late_all_stops": {
+      "natural": {
+        "stale_camera": 27,
+        "converged": 2,
+        "control_overrun": 7
+      },
+      "learned": {
+        "stale_camera": 575,
+        "control_overrun": 11
+      }
+    },
+    "execution": {
+      "natural-session-000": {},
+      "learned-session-000": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 146.7629999970086,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-001": {},
+      "learned-session-001": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 108.10990002937615,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-002": {},
+      "learned-session-002": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 95.16079997410998,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-003": {},
+      "learned-session-003": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 87.92989997891709,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-004": {},
+      "learned-session-004": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 122.09479999728501,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-005": {},
+      "learned-session-005": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 118.33119997754693,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-006": {},
+      "learned-session-006": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 94.7176999761723,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-007": {},
+      "learned-session-007": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 81.02909999433905,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-008": {},
+      "learned-session-008": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 103.32009999547154,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-009": {},
+      "learned-session-009": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 119.51950000366196,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-010": {},
+      "learned-session-010": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 118.59450000338256,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-011": {},
+      "learned-session-011": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 86.7992999847047,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-012": {},
+      "learned-session-012": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 79.20029998058453,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-013": {},
+      "learned-session-013": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 116.63110001245514,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-014": {},
+      "learned-session-014": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 160.56679998291656,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-015": {},
+      "learned-session-015": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 89.47429998079315,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-016": {},
+      "learned-session-016": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 81.21350000146776,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-017": {},
+      "learned-session-017": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 76.47690002340823,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-018": {},
+      "learned-session-018": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 106.5507999737747,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "natural-session-019": {},
+      "learned-session-019": {
+        "device": "cuda",
+        "cpu_threads": 8,
+        "cuda_graph_blocks": 9,
+        "graph_initialization_ms": 124.26620000042021,
+        "image_conversion": "upload_uint8_then_float32",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      }
+    },
+    "power_boundaries": [
+      {
+        "session": "natural-session-000",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-000",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-001",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-001",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-002",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-002",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-003",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-003",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-004",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-004",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-005",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-005",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-006",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-006",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-007",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-007",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-008",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-008",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-009",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-009",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-010",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-010",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-011",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-011",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-012",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-012",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-013",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-013",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-014",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-014",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-015",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-015",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-016",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-016",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-017",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-017",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-018",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-018",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "natural-session-019",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      },
+      {
+        "session": "learned-session-019",
+        "before": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        },
+        "after": {
+          "ACLineStatus": 1,
+          "BatteryFlag": 1,
+          "BatteryLifePercent": 100,
+          "SystemStatusFlag": 0,
+          "BatteryLifeTime": 4294967295,
+          "BatteryFullLifeTime": 4294967295
+        }
+      }
+    ],
+    "graph_calls": {
+      "natural": {
+        "replays": 0,
+        "fallbacks": 0
+      },
+      "learned": {
+        "replays": 73542,
+        "fallbacks": 0
+      }
+    }
+  }
+}

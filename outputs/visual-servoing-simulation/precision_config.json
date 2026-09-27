@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "entry_error_px": 8.0,
+  "ecc_iterations": 12,
+  "ecc_epsilon": 1e-06,
+  "min_correlation": 0.97,
+  "max_refinement_shift_px": 8.0,
+  "roi_margin_px": 20,
+  "stop": {
+    "rms_error_px": 0.25,
+    "max_corner_error_px": 0.5,
+    "position_correction_mm": 0.8,
+    "rotation_correction_deg": 0.1,
+    "min_scaled_singular_value": 0.01
+  },
+  "ecc_coarse_iterations": 8,
+  "ecc_coarse_scale": 0.5
+}

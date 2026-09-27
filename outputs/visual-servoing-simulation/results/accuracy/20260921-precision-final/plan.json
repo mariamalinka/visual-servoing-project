@@ -1,0 +1,2916 @@
+{
+  "schema_version": 1,
+  "seed": 20260921,
+  "starts": 2,
+  "modes": [
+    "aruco",
+    "natural",
+    "learned"
+  ],
+  "profiles": [
+    {
+      "name": "nominal",
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      }
+    },
+    {
+      "name": "focal-minus-5",
+      "calibration": {
+        "focal_scale": [
+          0.95,
+          0.95
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      }
+    },
+    {
+      "name": "focal-plus-5",
+      "calibration": {
+        "focal_scale": [
+          1.05,
+          1.05
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      }
+    },
+    {
+      "name": "principal-minus-5",
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          -5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      }
+    },
+    {
+      "name": "principal-plus-5",
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      }
+    },
+    {
+      "name": "mount-x-minus-10",
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          -10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      }
+    },
+    {
+      "name": "mount-x-plus-10",
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      }
+    },
+    {
+      "name": "mount-yaw-minus-5",
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          -5.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      }
+    },
+    {
+      "name": "mount-yaw-plus-5",
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          5.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      }
+    },
+    {
+      "name": "size-minus-10",
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 0.9
+      }
+    },
+    {
+      "name": "size-plus-10",
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.1
+      }
+    },
+    {
+      "name": "combined",
+      "calibration": {
+        "focal_scale": [
+          1.05,
+          1.05
+        ],
+        "principal_offset_px": [
+          5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          5.0,
+          0.0
+        ],
+        "target_size_scale": 1.1
+      }
+    }
+  ],
+  "camera_delay_s": 0.1,
+  "max_trial_s": 60,
+  "post_stop_frames": 30,
+  "position_tolerance_mm": 2,
+  "orientation_tolerance_deg": 1,
+  "trials": [
+    {
+      "id": "aruco-nominal-0000",
+      "mode": "aruco",
+      "profile": "nominal",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "aruco-nominal-0001",
+      "mode": "aruco",
+      "profile": "nominal",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "aruco-focal-minus-5-0000",
+      "mode": "aruco",
+      "profile": "focal-minus-5",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          0.95,
+          0.95
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "aruco-focal-minus-5-0001",
+      "mode": "aruco",
+      "profile": "focal-minus-5",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          0.95,
+          0.95
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "aruco-focal-plus-5-0000",
+      "mode": "aruco",
+      "profile": "focal-plus-5",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.05,
+          1.05
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "aruco-focal-plus-5-0001",
+      "mode": "aruco",
+      "profile": "focal-plus-5",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.05,
+          1.05
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "aruco-principal-minus-5-0000",
+      "mode": "aruco",
+      "profile": "principal-minus-5",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          -5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "aruco-principal-minus-5-0001",
+      "mode": "aruco",
+      "profile": "principal-minus-5",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          -5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "aruco-principal-plus-5-0000",
+      "mode": "aruco",
+      "profile": "principal-plus-5",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "aruco-principal-plus-5-0001",
+      "mode": "aruco",
+      "profile": "principal-plus-5",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "aruco-mount-x-minus-10-0000",
+      "mode": "aruco",
+      "profile": "mount-x-minus-10",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          -10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "aruco-mount-x-minus-10-0001",
+      "mode": "aruco",
+      "profile": "mount-x-minus-10",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          -10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "aruco-mount-x-plus-10-0000",
+      "mode": "aruco",
+      "profile": "mount-x-plus-10",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "aruco-mount-x-plus-10-0001",
+      "mode": "aruco",
+      "profile": "mount-x-plus-10",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "aruco-mount-yaw-minus-5-0000",
+      "mode": "aruco",
+      "profile": "mount-yaw-minus-5",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          -5.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "aruco-mount-yaw-minus-5-0001",
+      "mode": "aruco",
+      "profile": "mount-yaw-minus-5",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          -5.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "aruco-mount-yaw-plus-5-0000",
+      "mode": "aruco",
+      "profile": "mount-yaw-plus-5",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          5.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "aruco-mount-yaw-plus-5-0001",
+      "mode": "aruco",
+      "profile": "mount-yaw-plus-5",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          5.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "aruco-size-minus-10-0000",
+      "mode": "aruco",
+      "profile": "size-minus-10",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 0.9
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "aruco-size-minus-10-0001",
+      "mode": "aruco",
+      "profile": "size-minus-10",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 0.9
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "aruco-size-plus-10-0000",
+      "mode": "aruco",
+      "profile": "size-plus-10",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.1
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "aruco-size-plus-10-0001",
+      "mode": "aruco",
+      "profile": "size-plus-10",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.1
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "aruco-combined-0000",
+      "mode": "aruco",
+      "profile": "combined",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.05,
+          1.05
+        ],
+        "principal_offset_px": [
+          5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          5.0,
+          0.0
+        ],
+        "target_size_scale": 1.1
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "aruco-combined-0001",
+      "mode": "aruco",
+      "profile": "combined",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.05,
+          1.05
+        ],
+        "principal_offset_px": [
+          5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          5.0,
+          0.0
+        ],
+        "target_size_scale": 1.1
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "natural-nominal-0000",
+      "mode": "natural",
+      "profile": "nominal",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "natural-nominal-0001",
+      "mode": "natural",
+      "profile": "nominal",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "natural-focal-minus-5-0000",
+      "mode": "natural",
+      "profile": "focal-minus-5",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          0.95,
+          0.95
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "natural-focal-minus-5-0001",
+      "mode": "natural",
+      "profile": "focal-minus-5",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          0.95,
+          0.95
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "natural-focal-plus-5-0000",
+      "mode": "natural",
+      "profile": "focal-plus-5",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.05,
+          1.05
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "natural-focal-plus-5-0001",
+      "mode": "natural",
+      "profile": "focal-plus-5",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.05,
+          1.05
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "natural-principal-minus-5-0000",
+      "mode": "natural",
+      "profile": "principal-minus-5",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          -5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "natural-principal-minus-5-0001",
+      "mode": "natural",
+      "profile": "principal-minus-5",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          -5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "natural-principal-plus-5-0000",
+      "mode": "natural",
+      "profile": "principal-plus-5",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "natural-principal-plus-5-0001",
+      "mode": "natural",
+      "profile": "principal-plus-5",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "natural-mount-x-minus-10-0000",
+      "mode": "natural",
+      "profile": "mount-x-minus-10",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          -10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "natural-mount-x-minus-10-0001",
+      "mode": "natural",
+      "profile": "mount-x-minus-10",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          -10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "natural-mount-x-plus-10-0000",
+      "mode": "natural",
+      "profile": "mount-x-plus-10",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "natural-mount-x-plus-10-0001",
+      "mode": "natural",
+      "profile": "mount-x-plus-10",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "natural-mount-yaw-minus-5-0000",
+      "mode": "natural",
+      "profile": "mount-yaw-minus-5",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          -5.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "natural-mount-yaw-minus-5-0001",
+      "mode": "natural",
+      "profile": "mount-yaw-minus-5",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          -5.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "natural-mount-yaw-plus-5-0000",
+      "mode": "natural",
+      "profile": "mount-yaw-plus-5",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          5.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "natural-mount-yaw-plus-5-0001",
+      "mode": "natural",
+      "profile": "mount-yaw-plus-5",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          5.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "natural-size-minus-10-0000",
+      "mode": "natural",
+      "profile": "size-minus-10",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 0.9
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "natural-size-minus-10-0001",
+      "mode": "natural",
+      "profile": "size-minus-10",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 0.9
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "natural-size-plus-10-0000",
+      "mode": "natural",
+      "profile": "size-plus-10",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.1
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "natural-size-plus-10-0001",
+      "mode": "natural",
+      "profile": "size-plus-10",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.1
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "natural-combined-0000",
+      "mode": "natural",
+      "profile": "combined",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.05,
+          1.05
+        ],
+        "principal_offset_px": [
+          5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          5.0,
+          0.0
+        ],
+        "target_size_scale": 1.1
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "natural-combined-0001",
+      "mode": "natural",
+      "profile": "combined",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.05,
+          1.05
+        ],
+        "principal_offset_px": [
+          5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          5.0,
+          0.0
+        ],
+        "target_size_scale": 1.1
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "learned-nominal-0000",
+      "mode": "learned",
+      "profile": "nominal",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "learned-nominal-0001",
+      "mode": "learned",
+      "profile": "nominal",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "learned-focal-minus-5-0000",
+      "mode": "learned",
+      "profile": "focal-minus-5",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          0.95,
+          0.95
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "learned-focal-minus-5-0001",
+      "mode": "learned",
+      "profile": "focal-minus-5",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          0.95,
+          0.95
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "learned-focal-plus-5-0000",
+      "mode": "learned",
+      "profile": "focal-plus-5",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.05,
+          1.05
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "learned-focal-plus-5-0001",
+      "mode": "learned",
+      "profile": "focal-plus-5",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.05,
+          1.05
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "learned-principal-minus-5-0000",
+      "mode": "learned",
+      "profile": "principal-minus-5",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          -5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "learned-principal-minus-5-0001",
+      "mode": "learned",
+      "profile": "principal-minus-5",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          -5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "learned-principal-plus-5-0000",
+      "mode": "learned",
+      "profile": "principal-plus-5",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "learned-principal-plus-5-0001",
+      "mode": "learned",
+      "profile": "principal-plus-5",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "learned-mount-x-minus-10-0000",
+      "mode": "learned",
+      "profile": "mount-x-minus-10",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          -10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "learned-mount-x-minus-10-0001",
+      "mode": "learned",
+      "profile": "mount-x-minus-10",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          -10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "learned-mount-x-plus-10-0000",
+      "mode": "learned",
+      "profile": "mount-x-plus-10",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "learned-mount-x-plus-10-0001",
+      "mode": "learned",
+      "profile": "mount-x-plus-10",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "learned-mount-yaw-minus-5-0000",
+      "mode": "learned",
+      "profile": "mount-yaw-minus-5",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          -5.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "learned-mount-yaw-minus-5-0001",
+      "mode": "learned",
+      "profile": "mount-yaw-minus-5",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          -5.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "learned-mount-yaw-plus-5-0000",
+      "mode": "learned",
+      "profile": "mount-yaw-plus-5",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          5.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "learned-mount-yaw-plus-5-0001",
+      "mode": "learned",
+      "profile": "mount-yaw-plus-5",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          5.0,
+          0.0
+        ],
+        "target_size_scale": 1.0
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "learned-size-minus-10-0000",
+      "mode": "learned",
+      "profile": "size-minus-10",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 0.9
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "learned-size-minus-10-0001",
+      "mode": "learned",
+      "profile": "size-minus-10",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 0.9
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "learned-size-plus-10-0000",
+      "mode": "learned",
+      "profile": "size-plus-10",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.1
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "learned-size-plus-10-0001",
+      "mode": "learned",
+      "profile": "size-plus-10",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.0,
+          1.0
+        ],
+        "principal_offset_px": [
+          0.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "target_size_scale": 1.1
+      },
+      "perception_seed": 1171479987
+    },
+    {
+      "id": "learned-combined-0000",
+      "mode": "learned",
+      "profile": "combined",
+      "case": 0,
+      "offset_degrees": [
+        4.464148707913244,
+        -2.9525441799735987,
+        -0.2718478726196718,
+        -2.2393105750771998,
+        0.8596634674134265,
+        5.869143553348987
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.05,
+          1.05
+        ],
+        "principal_offset_px": [
+          5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          5.0,
+          0.0
+        ],
+        "target_size_scale": 1.1
+      },
+      "perception_seed": 2089453918
+    },
+    {
+      "id": "learned-combined-0001",
+      "mode": "learned",
+      "profile": "combined",
+      "case": 1,
+      "offset_degrees": [
+        6.800782211512386,
+        -0.5334518288166468,
+        0.45664277183644764,
+        -3.5121945890194546,
+        -1.5770691151647815,
+        2.02559241725125
+      ],
+      "calibration": {
+        "focal_scale": [
+          1.05,
+          1.05
+        ],
+        "principal_offset_px": [
+          5.0,
+          0.0
+        ],
+        "mount_translation_mm": [
+          10.0,
+          0.0,
+          0.0
+        ],
+        "mount_rotation_vector_deg": [
+          0.0,
+          5.0,
+          0.0
+        ],
+        "target_size_scale": 1.1
+      },
+      "perception_seed": 1171479987
+    }
+  ],
+  "precision_enabled": true,
+  "precision_settings": {
+    "enabled": true,
+    "entry_error_px": 8.0,
+    "ecc_iterations": 45,
+    "ecc_epsilon": 1e-06,
+    "min_correlation": 0.97,
+    "max_refinement_shift_px": 8.0,
+    "roi_margin_px": 20,
+    "stop": {
+      "rms_error_px": 0.25,
+      "max_corner_error_px": 0.5,
+      "position_correction_mm": 0.8,
+      "rotation_correction_deg": 0.1,
+      "min_scaled_singular_value": 0.01
+    }
+  }
+}

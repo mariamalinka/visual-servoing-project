@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import numpy as np
 from control import ControlSample
+from motion_path import MotionPath
 
 CONFIG_PATH = Path(__file__).resolve().parent / "startup_search_config.json"
 
@@ -20,7 +21,7 @@ class StartupSearch:
     target coordinates, simulator object or home configuration is accepted.
     Detection interrupts motion even between waypoints.
     """
-    def __init__(self, qpos, joint_limits, config=None):
+    def __init__(self, qpos, joint_limits, config=None, path_planner=None, detour_degrees=0):
         self.config = dict(load_startup_config() if config is None else config)
         c = self.config
         for key in ("max_search_time_s", "max_joint_velocity_rad_s",
@@ -81,6 +82,10 @@ class StartupSearch:
         self.confirmed_frames = 0
         self.status = "scanning"
         self.stop_reason = None
+        self.path = MotionPath(path_planner)
+        self.blocked_waypoints = 0
+        self.route_lower = np.maximum(limits[:,0]+margin, np.minimum(self.lower,self.anchor-np.deg2rad(detour_degrees)))
+        self.route_upper = np.minimum(limits[:,1]-margin, np.maximum(self.upper,self.anchor+np.deg2rad(detour_degrees)))
 
     @property
     def stage(self):
@@ -100,6 +105,11 @@ class StartupSearch:
 
     def cancel(self):
         self.status = "canceled"
+
+    def skip_blocked_motion(self):
+        self.blocked_waypoints += 1
+        self.index += 1
+        self.path.reset()
 
     def update(self, corners, qpos, dt):
         q = self._q(qpos)
@@ -123,18 +133,27 @@ class StartupSearch:
                 return self._sample("acquired")
             return self._sample("confirming")
         self.confirmed_frames = 0
+        blocked_this_update = 0
         while self.index < len(self.waypoints):
             if self.stage == "refined" and self.refinement_started_s is None:
                 self.refinement_started_s = stamp
-            delta = self.waypoints[self.index] - q
+            goal = self.waypoints[self.index]
+            delta = goal-q
             if np.max(np.abs(delta)) > self.config["arrival_tolerance_rad"]:
-                velocity = self.config["position_gain_per_s"]*delta
+                target = self.path.target(q,goal,self.route_lower,self.route_upper,self.config["arrival_tolerance_rad"])
+                if target is None:
+                    self.skip_blocked_motion()
+                    blocked_this_update += 1
+                    if blocked_this_update >= 4 and self.index < len(self.waypoints):
+                        return self._sample("scanning")
+                    continue
+                velocity = self.config["position_gain_per_s"]*(target-q)
                 # Uniform scaling keeps coordinated yaw/pitch paths straight.
                 limit = self.config["max_joint_velocity_rad_s"]
                 velocity *= min(1., limit/max(float(np.max(np.abs(velocity))), 1e-12))
-                velocity = np.clip(velocity, np.minimum(0., (self.lower-q)/dt),
-                                   np.maximum(0., (self.upper-q)/dt))
+                velocity = np.clip(velocity, np.minimum(0., (self.route_lower-q)/dt),
+                                   np.maximum(0., (self.route_upper-q)/dt))
                 return self._sample("scanning", velocity)
             self.index += 1
-        self.stop_reason = "coverage_complete"
-        return self._sample("target_not_found")
+        self.stop_reason = "collision_blocked" if self.blocked_waypoints else "coverage_complete"
+        return self._sample("collision_blocked" if self.blocked_waypoints else "target_not_found")

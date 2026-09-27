@@ -1,0 +1,570 @@
+[
+  {
+    "mode": "natural",
+    "backend": "Picture / SIFT",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.0,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "max_queue_age_s": 0.05,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.8,
+      "render_stall_s": 0.0
+    },
+    "counts": {
+      "captures": 31,
+      "capture_slots": 100,
+      "busy_capture_skips": 69,
+      "input_dropped": 0,
+      "transport_dropped": 0,
+      "stale_results": 1,
+      "obsolete_results": 0,
+      "pre_inference_dropped": 0,
+      "accepted": 21,
+      "control_ticks": 1396,
+      "moving_ticks": 802,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 1,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "mean": 0.5588666646785679,
+        "count": 21,
+        "p50": 0.5442000110633671,
+        "p95": 0.7839000027161092,
+        "p99": 0.9498199855443091,
+        "max": 0.991299981251359
+      },
+      "render_ms": {
+        "mean": 4.032209525272871,
+        "count": 21,
+        "p50": 3.641100018285215,
+        "p95": 7.13840001844801,
+        "p99": 8.119680016534403,
+        "max": 8.365000016056001
+      },
+      "inference_ms": {
+        "mean": 67.17970000075486,
+        "count": 21,
+        "p50": 64.73040001583286,
+        "p95": 105.76279999804683,
+        "p99": 107.66119999461807,
+        "max": 108.13579999376088
+      },
+      "ipc_ms": {
+        "mean": 3.373995238992696,
+        "count": 21,
+        "p50": 3.0279000056907535,
+        "p95": 5.3804999915882945,
+        "p99": 7.034100010059776,
+        "max": 7.447500014677644
+      },
+      "delivery_wait_ms": {
+        "mean": 0.03970952128015813,
+        "count": 21,
+        "p50": 0.037699996028095484,
+        "p95": 0.05639999289996922,
+        "p99": 0.05792000447399914,
+        "max": 0.05830000736750662
+      },
+      "control_ms": {
+        "mean": 1.4540571442228698,
+        "count": 21,
+        "p50": 1.3605999993160367,
+        "p95": 2.1918999846093357,
+        "p99": 3.0091000138781974,
+        "max": 3.2134000211954117
+      },
+      "apply_ms": {
+        "mean": 0.48253809550910126,
+        "count": 21,
+        "p50": 0.450699997600168,
+        "p95": 0.7511000148952007,
+        "p99": 0.8875799831002952,
+        "max": 0.9216999751515687
+      },
+      "capture_to_command_ms": {
+        "mean": 77.12107619071114,
+        "count": 21,
+        "p50": 79.71700001507998,
+        "p95": 115.06109999027103,
+        "p99": 115.56133998092264,
+        "max": 115.68639997858554
+      }
+    },
+    "control_gap_ms": {
+      "mean": 2.461622134662456,
+      "count": 1396,
+      "p50": 2.0549500186461955,
+      "p95": 4.949850001139566,
+      "p99": 6.125260010594501,
+      "max": 9.432699996978045
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 201652.463682,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "stale_camera",
+        "at_s": 201654.7712009,
+        "last_capture_s": 201654.370724,
+        "deadline_s": 201654.770724,
+        "stopped_s": 201654.7717192
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "inference-stall",
+    "expected": "stale_camera",
+    "outcome": "stale_camera",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 3.514521354483193,
+    "watchdog_lateness_ms": 0.9952000109478831,
+    "stopped_while_sensor_busy": true,
+    "expected_pass": true,
+    "id": "natural-inference-stall-00"
+  },
+  {
+    "mode": "natural",
+    "backend": "Picture / SIFT",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.0,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "max_queue_age_s": 0.05,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.0,
+      "render_stall_s": 0.8
+    },
+    "counts": {
+      "captures": 36,
+      "capture_slots": 99,
+      "busy_capture_skips": 63,
+      "input_dropped": 0,
+      "transport_dropped": 0,
+      "stale_results": 1,
+      "obsolete_results": 0,
+      "pre_inference_dropped": 0,
+      "accepted": 24,
+      "control_ticks": 1344,
+      "moving_ticks": 774,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 1,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "mean": 0.6139958337977683,
+        "count": 24,
+        "p50": 0.5873499903827906,
+        "p95": 0.8927700167987496,
+        "p99": 1.1239459842909125,
+        "max": 1.1928999738302082
+      },
+      "render_ms": {
+        "mean": 3.8886333350092173,
+        "count": 24,
+        "p50": 3.232300005038269,
+        "p95": 6.389159982791169,
+        "p99": 7.792276999971363,
+        "max": 8.164900005795062
+      },
+      "inference_ms": {
+        "mean": 63.90563749907111,
+        "count": 24,
+        "p50": 58.59124999551568,
+        "p95": 114.00670998555141,
+        "p99": 119.63882399752038,
+        "max": 121.009900001809
+      },
+      "ipc_ms": {
+        "mean": 3.416370828441965,
+        "count": 24,
+        "p50": 3.284249993157573,
+        "p95": 5.348519999824929,
+        "p99": 6.163962007558439,
+        "max": 6.391800008714199
+      },
+      "delivery_wait_ms": {
+        "mean": 0.05584583535285977,
+        "count": 24,
+        "p50": 0.04259998968336731,
+        "p95": 0.06495500419987364,
+        "p99": 0.2614029942196793,
+        "max": 0.3197999903932214
+      },
+      "control_ms": {
+        "mean": 1.5068833393646248,
+        "count": 24,
+        "p50": 1.553650014102459,
+        "p95": 1.939769995806273,
+        "p99": 2.5388009910238902,
+        "max": 2.716199989663437
+      },
+      "apply_ms": {
+        "mean": 0.8708083332749084,
+        "count": 24,
+        "p50": 0.4965499974787235,
+        "p95": 1.2002150018815878,
+        "p99": 6.696521990525067,
+        "max": 8.326899987878278
+      },
+      "capture_to_command_ms": {
+        "mean": 74.25817500431246,
+        "count": 24,
+        "p50": 68.76320000446867,
+        "p95": 123.90093499852809,
+        "p99": 129.5885220018681,
+        "max": 130.9705000021495
+      }
+    },
+    "control_gap_ms": {
+      "mean": 2.554771205355099,
+      "count": 1344,
+      "p50": 2.061050006886944,
+      "p95": 5.361950008955317,
+      "p99": 7.477315018477376,
+      "max": 16.53919997625053
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 201657.4322971,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "stale_camera",
+        "at_s": 201659.7529326,
+        "last_capture_s": 201659.3478885,
+        "deadline_s": 201659.7478885,
+        "stopped_s": 201659.7533626
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "render-stall",
+    "expected": "stale_camera",
+    "outcome": "stale_camera",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 3.4636229085180252,
+    "watchdog_lateness_ms": 5.474100005812943,
+    "stopped_while_sensor_busy": true,
+    "expected_pass": true,
+    "id": "natural-render-stall-00"
+  },
+  {
+    "mode": "learned",
+    "backend": "Picture / SuperPoint + LightGlue (CUDA)",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.0,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "max_queue_age_s": 0.05,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.8,
+      "render_stall_s": 0.0
+    },
+    "counts": {
+      "captures": 32,
+      "capture_slots": 99,
+      "busy_capture_skips": 67,
+      "input_dropped": 0,
+      "transport_dropped": 0,
+      "stale_results": 1,
+      "obsolete_results": 0,
+      "pre_inference_dropped": 0,
+      "accepted": 20,
+      "control_ticks": 1395,
+      "moving_ticks": 801,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 1,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "mean": 0.5692849998013116,
+        "count": 20,
+        "p50": 0.5119499983265996,
+        "p95": 0.8587600226746875,
+        "p99": 1.2001520121702918,
+        "max": 1.2855000095441937
+      },
+      "render_ms": {
+        "mean": 4.705454999930225,
+        "count": 20,
+        "p50": 4.216150016873144,
+        "p95": 9.318905005056877,
+        "p99": 10.012100996973457,
+        "max": 10.185399994952604
+      },
+      "inference_ms": {
+        "mean": 67.5831750020734,
+        "count": 20,
+        "p50": 67.59039999451488,
+        "p95": 103.36457500088727,
+        "p99": 107.34203500644071,
+        "max": 108.33640000782907
+      },
+      "ipc_ms": {
+        "mean": 2.9325700001209043,
+        "count": 20,
+        "p50": 2.9680500010726973,
+        "p95": 4.8424150052596815,
+        "p99": 5.056962980015669,
+        "max": 5.110599973704666
+      },
+      "delivery_wait_ms": {
+        "mean": 0.04446499951882288,
+        "count": 20,
+        "p50": 0.04150001041125506,
+        "p95": 0.06685498228762299,
+        "p99": 0.07377099071163683,
+        "max": 0.0754999928176403
+      },
+      "control_ms": {
+        "mean": 1.7911500006448478,
+        "count": 20,
+        "p50": 1.6776499978732318,
+        "p95": 2.5872249956591995,
+        "p99": 3.5771249906974827,
+        "max": 3.824599989457056
+      },
+      "apply_ms": {
+        "mean": 0.6027399955200963,
+        "count": 20,
+        "p50": 0.5281499761622399,
+        "p95": 0.863764992391225,
+        "p99": 0.878432993486058,
+        "max": 0.8820999937597662
+      },
+      "capture_to_command_ms": {
+        "mean": 78.22883999760961,
+        "count": 20,
+        "p50": 78.32529999723192,
+        "p95": 118.53080498549389,
+        "p99": 119.74840098904679,
+        "max": 120.05279998993501
+      }
+    },
+    "control_gap_ms": {
+      "mean": 2.449059139771928,
+      "count": 1395,
+      "p50": 2.046000008704141,
+      "p95": 4.998369998065754,
+      "p99": 6.53543799358885,
+      "max": 9.404899989021942
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 201671.4812117,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "stale_camera",
+        "at_s": 201673.7607285,
+        "last_capture_s": 201673.356424,
+        "deadline_s": 201673.756424,
+        "stopped_s": 201673.7612701
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "inference-stall",
+    "expected": "stale_camera",
+    "outcome": "stale_camera",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 3.6246520408528564,
+    "watchdog_lateness_ms": 4.8460999969393015,
+    "stopped_while_sensor_busy": true,
+    "expected_pass": true,
+    "id": "learned-inference-stall-00"
+  },
+  {
+    "mode": "learned",
+    "backend": "Picture / SuperPoint + LightGlue (CUDA)",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.0,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "max_queue_age_s": 0.05,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.0,
+      "render_stall_s": 0.8
+    },
+    "counts": {
+      "captures": 32,
+      "capture_slots": 101,
+      "busy_capture_skips": 69,
+      "input_dropped": 0,
+      "transport_dropped": 0,
+      "stale_results": 1,
+      "obsolete_results": 0,
+      "pre_inference_dropped": 0,
+      "accepted": 20,
+      "control_ticks": 1360,
+      "moving_ticks": 755,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 1,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "mean": 0.6535700027598068,
+        "count": 20,
+        "p50": 0.5548000044655055,
+        "p95": 1.2556549918372186,
+        "p99": 1.476890995400026,
+        "max": 1.5321999962907284
+      },
+      "render_ms": {
+        "mean": 4.452999999921303,
+        "count": 20,
+        "p50": 3.424099995754659,
+        "p95": 7.807910018891562,
+        "p99": 7.988942003867123,
+        "max": 8.034200000111014
+      },
+      "inference_ms": {
+        "mean": 74.45465499768034,
+        "count": 20,
+        "p50": 73.30565000302158,
+        "p95": 107.65945000021021,
+        "p99": 120.62276999262392,
+        "max": 123.86359999072738
+      },
+      "ipc_ms": {
+        "mean": 3.200195005047135,
+        "count": 20,
+        "p50": 2.742750002653338,
+        "p95": 5.909360003715848,
+        "p99": 6.54563200456323,
+        "max": 6.704700004775077
+      },
+      "delivery_wait_ms": {
+        "mean": 0.047054997412487864,
+        "count": 20,
+        "p50": 0.0425000034738332,
+        "p95": 0.0660349993268028,
+        "p99": 0.08176698640454558,
+        "max": 0.08569998317398131
+      },
+      "control_ms": {
+        "mean": 1.6797199976281263,
+        "count": 20,
+        "p50": 1.682649992289953,
+        "p95": 2.270330004103016,
+        "p99": 2.320946013496723,
+        "max": 2.3336000158451498
+      },
+      "apply_ms": {
+        "mean": 0.6186800033901818,
+        "count": 20,
+        "p50": 0.637100005405955,
+        "p95": 0.7615950045874342,
+        "p99": 0.7675990060670301,
+        "max": 0.7691000064369291
+      },
+      "capture_to_command_ms": {
+        "mean": 85.10687500383938,
+        "count": 20,
+        "p50": 88.04329999838956,
+        "p95": 119.76483500329779,
+        "p99": 132.67320699756962,
+        "max": 135.90029999613762
+      }
+    },
+    "control_gap_ms": {
+      "mean": 2.556098235307967,
+      "count": 1360,
+      "p50": 2.059549995465204,
+      "p95": 5.188140009704512,
+      "p99": 7.000024000008132,
+      "max": 8.880200010025874
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 201685.9970745,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "stale_camera",
+        "at_s": 201688.3554798,
+        "last_capture_s": 201687.9544642,
+        "deadline_s": 201688.3544642,
+        "stopped_s": 201688.3558125
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "render-stall",
+    "expected": "stale_camera",
+    "outcome": "stale_camera",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 3.2990733493813242,
+    "watchdog_lateness_ms": 1.3482999929692596,
+    "stopped_while_sensor_busy": true,
+    "expected_pass": true,
+    "id": "learned-render-stall-00"
+  }
+]

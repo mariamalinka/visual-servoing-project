@@ -82,6 +82,70 @@ class LearnedPerceptionTests(unittest.TestCase):
         b=d.observe(self.frame)
         np.testing.assert_allclose(a.corners,b.corners,rtol=0,atol=1e-5)
 
+    def test_byte_upload_preserves_all_intensities_and_noncontiguous_input(self):
+        d=self.detector
+        rgb=np.tile(np.arange(256,dtype=np.uint8),(24,3,1)).transpose(0,2,1)[::2,::-1]
+        self.assertFalse(rgb.flags.c_contiguous)
+        tensor=d._tensor(rgb)
+        self.assertEqual(tensor.device.type,d.device.type)
+        self.assertEqual(tensor.dtype,d.torch.float32)
+        expected=np.ascontiguousarray(rgb.transpose(2,0,1)).astype(np.float32)/255.
+        old_route=d.torch.from_numpy(np.ascontiguousarray(rgb.transpose(2,0,1))).to(
+            device=d.device,dtype=d.torch.float32)/255.
+        np.testing.assert_array_equal(tensor.cpu().numpy(),old_route.cpu().numpy())
+        np.testing.assert_allclose(tensor.cpu().numpy(),expected,rtol=0,atol=1e-7)
+
+    def test_cuda_graph_replay_matches_eager_and_keeps_dynamic_shape_fallback(self):
+        d=self.detector
+        if not d.cuda_graph_blocks:self.skipTest('CUDA graph backend unavailable on CPU')
+        torch=d.torch
+        with torch.inference_mode():
+            features=d.extractor.extract(d._tensor(cv2.resize(self.frame,(384,288))),resize=None)
+            original_blocks=list(d.matcher.transformers)
+            for count in (features['keypoints'].shape[1],32):
+                current={key:(value[:,:count] if key in ('keypoints','keypoint_scores','descriptors') else value)
+                         for key,value in features.items()}
+                for block,graph in zip(original_blocks,d.cuda_graph_blocks):block.forward=graph.forward
+                try:
+                    expected=d.matcher(dict(image0=d.template_features,image1=current))
+                    expected={key:(value[0].cpu().numpy().copy() if key in ('matches','scores') else value)
+                              for key,value in expected.items() if key in ('matches','scores','stop')}
+                finally:
+                    for block,graph in zip(original_blocks,d.cuda_graph_blocks):block.forward=graph
+                got=d.matcher(dict(image0=d.template_features,image1=current))
+                self.assertEqual(got['stop'],expected['stop'])
+                np.testing.assert_array_equal(got['matches'][0].cpu().numpy(),expected['matches'])
+                np.testing.assert_allclose(got['scores'][0].cpu().numpy(),expected['scores'],rtol=1e-5,atol=1e-7)
+        self.assertGreater(sum(g.replays for g in d.cuda_graph_blocks),0)
+        self.assertGreater(sum(g.fallbacks for g in d.cuda_graph_blocks),0)
+        self.assertEqual(len(d.cuda_graph_blocks),d.matcher.conf.n_layers)
+
+    def test_cuda_graph_buffers_are_reused_and_changed_images_change_matches(self):
+        d=self.detector
+        if not d.cuda_graph_blocks:self.skipTest('CUDA graph backend unavailable on CPU')
+        pointers=[(tuple(t.data_ptr() for t in g.inputs),tuple(t.data_ptr() for t in g.outputs)) for g in d.cuda_graph_blocks]
+        first=d.observe(self.frame)
+        shifted=cv2.warpAffine(self.frame,np.float32([[1,0,12],[0,1,-7]]),(640,480),borderValue=(22,22,22))
+        later=d.observe(shifted)
+        self.assertIsNotNone(later.corners,later.reason)
+        self.assertGreater(np.linalg.norm(later.corners-first.corners),10.)
+        self.assertEqual(pointers,[(tuple(t.data_ptr() for t in g.inputs),tuple(t.data_ptr() for t in g.outputs)) for g in d.cuda_graph_blocks])
+
+    def test_diagnostic_events_preserve_geometry_without_global_synchronization(self):
+        d=self.detector
+        before=d.observe(self.frame)
+        d.observe(np.zeros_like(self.frame))
+        d.profile_diagnostics=True
+        try:
+            with patch.object(d.torch.cuda,'synchronize',side_effect=AssertionError('No extra synchronization')):
+                after=d.observe(self.frame)
+            np.testing.assert_allclose(after.corners,before.corners,rtol=0,atol=1e-5)
+            if d.device.type=='cuda':
+                for name in ('extract_cuda_stream_ms','match_cuda_stream_ms','gather_cuda_stream_ms'):
+                    self.assertGreaterEqual(after.stage_ms[name],0.)
+        finally:
+            d.profile_diagnostics=False
+
     def test_invalid_learned_settings_fail_before_model_loading(self):
         for override in (dict(cpu_threads=0),dict(max_keypoints=3),dict(filter_threshold=2),
                          dict(detection_threshold=float("nan")),dict(depth_confidence=2),dict(device="invalid")):

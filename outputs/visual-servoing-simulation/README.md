@@ -1,6 +1,16 @@
 # Visual Servoing Simulation
 
+See [precision stopping and pose sensitivity](PRECISION_STOPPING.md) for the default final-alignment checks and the `--legacy-stop` comparison option.
+
 [Project overview](../../README.md) · [Documentation index](../../docs/README.md) · [Published results and raw-trace policy](results/README.md)
+
+**Physical accuracy:** measure camera/tool-frame error in millimetres and degrees with **run.cmd --accuracy-study**. **Calibration [I]** cycles controller assumptions. [Definitions, paired experiments and measured results](PHYSICAL_ACCURACY.md).
+
+**Collision-aware motion:** the guard checks clearance every physics tick and plans bounded search detours. Press **U** for the obstacle, or run **run.cmd --obstacle --cold-start --camera-delay-ms 100**. [Controls, implementation and validation](COLLISION_AWARE.md).
+
+**Robustness experiment:** `run.cmd --robustness` tests seeded delay, jitter, packet loss and outages. [Plan, resume and report guide](CAMERA_ROBUSTNESS.md).
+
+**Camera timing:** press **C** to select a simulated camera delay, or run `run.cmd --camera-delay-ms 100`. **X** interrupts the stream; stale feedback stops motion. [Timing model, controls and study](CAMERA_DELAY.md).
 
 **New: pretrained SuperPoint + LightGlue matching.** Select Picture with **V**, then switch **SIFT / Learned [K]**. Or launch `run.cmd --learned`. Both use the same picture goal and automatic alignment/search flow. Learned now uses an available NVIDIA GPU automatically; install its CUDA runtime with `setup-learned.cmd --cuda`. The status shows Learned GPU or Learned CPU. CPU mode and SIFT remain available. [Controls, important code, installation and measured results](LEARNED_MATCHING.md).
 
@@ -212,7 +222,7 @@ MuJoCo replaces the original Gazebo/ROS 2 stack for the agreed Windows version. 
 
 ## Scope and next step
 
-This is a teaching-arm model with ideal gravity compensation, simple geometry, disabled robot collisions and fixed lighting. Noise, distortion, artificial latency and broader learned-feature evaluation are still future work. The controller comparison now includes fixed-gain IBVS, PBVS and visually open-loop pose execution. No real-world performance claim is made.
+This is a teaching-arm model with ideal gravity compensation, simple collision geometry and fixed lighting. Mapped collision clearance and physical robot contacts are enabled. Camera delay, jitter, packet loss and outages can be simulated. Controller calibration uncertainty is evaluated in the physical-accuracy study. Image noise, distortion, encoder uncertainty and broader learned-feature evaluation remain future work. The controller comparison now includes fixed-gain IBVS, PBVS and visually open-loop pose execution. No real-world performance claim is made.
 
 **Step 3 is complete:** randomized evaluation, structured traces, failure diagnostics, confidence intervals and report generation.
 
@@ -228,7 +238,9 @@ This is a teaching-arm model with ideal gravity compensation, simple geometry, d
 
 **Learned matching:** pretrained SuperPoint + LightGlue is now integrated and compared with SIFT. See [the learned-matching guide](LEARNED_MATCHING.md).
 
-**Next:** study varied targets, noise, latency and calibration errors, and improve CPU inference performance.
+**Collision-aware control:** motion is guarded at physics ticks; search and recovery use checked bounded detours. See [the collision guide](COLLISION_AWARE.md).
+
+**Next:** study varied targets, image noise, lens distortion and encoder errors, and assess controller behavior with uncertain obstacle geometry.
 
 ## Sources
 
@@ -238,3 +250,11 @@ This is a teaching-arm model with ideal gravity compensation, simple geometry, d
 
 
 The current startup-study command includes the latest alignment supervision. Historical joint/coverage studies retain source snapshots and hashes. Their exact replay checks may reject the current changed source; use their --analyze option to rebuild recorded reports, or their archived source version for exact replays. The new **run.cmd --natural-study** evaluates the current ArUco and picture paths together.
+
+## Actual camera processing latency
+
+Run **run.cmd --realtime --learned --max-camera-age-ms 400** for wall-clock control with rendering and matching in a separate process. Press **O**, then **G** to align. The original 250 ms app default remains available; the explicit 400 ms budget includes processing and the interval between results. Run **run.cmd --latency-study** to measure alignment, transport and blocked-camera behavior.
+
+[Runtime, controls and timing limits](REALTIME_CONTROL.md).
+
+[Perception tail latency and the 50 ms transport comparison](PERCEPTION_LATENCY.md).

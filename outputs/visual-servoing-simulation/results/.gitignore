@@ -4,6 +4,12 @@
 !/.gitignore
 !/README.md
 
+!/camera-delay/20260919-validation/**
+!/robustness/20260920-validation/**
+!/collision/20260920-validation/**
+!/accuracy/20260921-validation/**
+!/accuracy/20260921-precision-final/**
+!/accuracy/20260921-precision-fresh-starts/**
 !/alignment/**
 !/alignment-fix/**
 !/benchmark/20260906-155544-117220-n200-seed20260906/**
@@ -29,8 +35,75 @@
 !/recovery/verification.json
 !/search-coverage/verification.json
 
+!/latency/tail-before-profiled/**
+!/latency/tail-after-final-v2/**
+!/latency/tail-stall-validation-v2/**
+!/latency/20260921-tail-optimization/**
+!/accuracy/20260922-tail-precision/**
+
+!/latency/20260922-sustained/**
+!/latency/20260922-probes-off/**
+!/latency/20260922-gpu-diagnostic/**
+!/latency/20260922-native-diagnostic/metadata.json
+
 # Bulk per-frame data and local pointers are not published.
 **/traces/
 **/latest.json
 *.log
 !/learned/performance-20260919/full-tests.log
+
+!/latency/20260921-validation/**
+
+# Reused-worker evidence; giant profiler exports remain local.
+!/latency/20260923-reuse-after/*.md
+!/latency/20260923-reuse-after/*.json
+!/latency/20260923-reuse-after/*.png
+!/latency/20260923-reuse-after/full-tests.txt
+!/latency/20260923-native-diagnostic/metadata.json
+!/latency/20260923-ac-baseline/metadata.json
+!/latency/20260923-ac-baseline/gpu-samples.csv
+!/latency/20260923-ac-baseline/gpu-correlation.json
+!/latency/20260923-ac-baseline/gpu-timeline.png
+!/latency/20260923-ac-optimized/metadata.json
+!/latency/20260923-ac-optimized/gpu-samples.csv
+!/latency/20260923-ac-optimized/gpu-correlation.json
+!/latency/20260923-ac-optimized/gpu-timeline.png
+!/latency/20260923-baseline-gpu/metadata.json
+!/latency/20260923-baseline-gpu/gpu-samples.csv
+!/latency/20260923-baseline-gpu/gpu-correlation.json
+!/latency/20260923-baseline-gpu/gpu-timeline.png
+!/latency/20260923-replay-*/metadata.json
+!/latency/20260923-replay-*/gpu-samples.csv
+!/latency/20260923-replay-*/profile-*.txt
+**/traces/
+
+# Native scheduling iteration: reports only; system-wide traces remain local.
+!/latency/20260925-native-scheduling-after/*.md
+!/latency/20260925-native-scheduling-after/*.json
+!/latency/20260925-native-scheduling-after/*.png
+!/latency/20260925-native-scheduling-after/full-tests.txt
+!/latency/20260924-native-learned-004/gpu-correlation.json
+!/latency/20260924-native-learned-004/gpu-timeline.png
+**/traces/
+
+# Worker lifetime diagnostic summaries; raw system-wide traces stay local.
+!/latency/20260925-worker-lifetime/DIAGNOSIS.md
+!/latency/20260925-worker-lifetime/COMPARISON.md
+!/latency/20260925-worker-lifetime/comparison.json
+!/latency/20260925-worker-lifetime/manifest.json
+!/latency/20260925-worker-lifetime/metadata.json
+!/latency/20260925-worker-lifetime/completion.json
+!/latency/20260925-worker-lifetime/sessions.json
+!/latency/20260925-lifetime-native/native-summary.json
+!/latency/20260925-lifetime-native/metadata.json
+!/latency/20260925-lifetime-native/manifest.json
+!/latency/20260925-lifetime-native/completion.json
+**/traces/
+# Matched GPU/power-settings rerun; bulk telemetry remains local.
+!/latency/20260926-power-settings/*.md
+!/latency/20260926-power-settings/*.json
+**/traces/
+# Underlying Python executable GPU preference rerun; raw traces remain local.
+!/latency/20260926-base-executable-settings/*.md
+!/latency/20260926-base-executable-settings/*.json
+**/traces/

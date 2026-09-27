@@ -7,6 +7,11 @@ import sys
 import time
 import traceback
 from datetime import datetime
+from dataclasses import replace
+from camera_timing import TimedCamera, load_camera_timing
+from collision import CollisionPoseError
+from calibration import ControlCalibration, calibration_profiles
+from precision import GoalRefinedPerception, load_precision_config
 
 import cv2
 import numpy as np
@@ -18,7 +23,7 @@ from benchmark import BENCH_CONFIG, read_json, sample_plan
 from recovery import ACTIVE_STATES, ReacquiringIBVS
 from reference_image import DEFAULT_REFERENCE, load_reference, save_reference
 from startup_search import load_startup_config
-from perception import ArucoPerception, NaturalImagePerception, NATURAL_REFERENCE
+from perception import ArucoPerception, NaturalImagePerception, NATURAL_REFERENCE, Observation
 
 WINDOW = "Visual Servoing Simulation | Auto align and search"
 # Colors are RGB, because MuJoCo returns RGB.
@@ -74,8 +79,18 @@ def report_perception_error(mode, exc):
 
 class Lab:
     def __init__(self, sim: Simulation, reference_path=None,
-                 cold_start=False, auto_start=True, perception_mode="aruco") -> None:
+                 cold_start=False, auto_start=True, perception_mode="aruco", camera_timing=None, calibration=None, precision=True) -> None:
         self.sim = sim
+        self.precision_settings = load_precision_config()
+        self.precision_enabled = bool(precision and self.precision_settings["enabled"])
+        self.calibration = ControlCalibration(calibration)
+        self.calibration_name = next((name for name,settings in calibration_profiles().items()
+                                      if settings == self.calibration.settings),"custom")
+        self.camera = None if camera_timing is None else TimedCamera(camera_timing, sim.config["camera_hz"])
+        if self.camera is not None:
+            self.camera.reset(float(sim.data.time))
+        self._camera_below_since = None
+        self.last_camera_failure = None
         self.auto_enabled = auto_start
         self.selected = 0
         self.gain_mode = "fixed"
@@ -87,6 +102,7 @@ class Lab:
         self.buttons: list[tuple[tuple[int, int, int, int], str]] = []
         self.message = "Jog or load a starting pose, then Align. Lost view [L] demonstrates target recovery."
         self.last_rgb: np.ndarray | None = None
+        self.last_image_info = None
         self.demo_origin = sim.data.qpos.copy()
         if perception_mode not in ("aruco", "natural", "learned"):
             raise ValueError("Perception mode must be aruco, natural or learned")
@@ -105,13 +121,55 @@ class Lab:
         self.cold_start_pending = cold_start
         self.reference_rgb, self.reference = load_reference(
             self.reference_path, sim.camera_intrinsics(), self.perception.reference_config(sim.config), self.detect_target)
-        self.controller = ReacquiringIBVS(self.reference, sim.camera_intrinsics(), sim.config,
-                                         sim.model.jnt_range)
-        if not cold_start:
+        self._refine_perception()
+        self.controller = ReacquiringIBVS(self.reference, self.control_intrinsics(), self.control_config(),
+                                         sim.model.jnt_range, path_planner=sim.collision.plan_path,
+                                         collision_detour_degrees=sim.collision.config["search_detour_degrees"])
+        if not cold_start and self.camera is None:
             self.controller.remember_view(self.detect_target(sim.image()), sim.data.qpos)
         self.aligning = False
         self.alignment_status = "idle"
         self._start_if_auto()
+
+    def control_intrinsics(self):
+        return self.calibration.intrinsics(self.sim.camera_intrinsics())
+
+    def _refine_perception(self):
+        base = self.perception.base if isinstance(self.perception,GoalRefinedPerception) else self.perception
+        self.perception = (GoalRefinedPerception(base,self.reference_rgb,self.reference,self.precision_settings)
+                           if self.precision_enabled else base)
+
+    def control_config(self):
+        config = self.calibration.controller_config(self.sim.config)
+        if self.precision_enabled:
+            config["precision_stop"] = self.precision_settings["stop"].copy()
+        return config
+
+    def control_jacobian(self):
+        return self.calibration.jacobian(self.sim.camera_jacobian())
+
+    def cycle_calibration(self):
+        try:
+            profiles = calibration_profiles()
+            names = list(profiles)
+            index = names.index(self.calibration_name) if self.calibration_name in names else -1
+            name = names[(index+1)%len(names)]
+            calibration = ControlCalibration(profiles[name])
+        except (OSError,ValueError) as exc:
+            self.stop()
+            self.message = f"Calibration profile unavailable: {exc}"
+            return
+        self.stop()
+        view = self.controller.last_visible_qpos
+        self.calibration, self.calibration_name = calibration, name
+        self.controller = ReacquiringIBVS(self.reference,self.control_intrinsics(),self.control_config(),
+            self.sim.model.jnt_range,path_planner=self.sim.collision.plan_path,
+            collision_detour_degrees=self.sim.collision.config["search_detour_degrees"])
+        self.controller.ibvs = make_gain_controller(self.gain_mode,self.reference,
+            self.control_intrinsics(),self.control_config(),self.gain_settings)
+        self.controller.last_visible_qpos = None if view is None else view.copy()
+        self._clear_camera()
+        self.message = f"Calibration assumption: {name}. Click Align [G] to test this controller model."
 
     def detect_target(self, rgb):
         self.last_observation = self.perception.observe(rgb)
@@ -141,12 +199,15 @@ class Lab:
         if mode!="aruco":
             self.picture_mode=mode
         self.reference_path, self.reference_rgb, self.reference = path, rgb, reference
+        self._refine_perception()
         self.last_observation = None
         self.show_matches = False
-        self.controller = ReacquiringIBVS(reference, self.sim.camera_intrinsics(),
-                                          self.sim.config, self.sim.model.jnt_range)
+        self.controller = ReacquiringIBVS(reference, self.control_intrinsics(),
+                                          self.control_config(), self.sim.model.jnt_range,
+                                          path_planner=self.sim.collision.plan_path,
+                                          collision_detour_degrees=self.sim.collision.config["search_detour_degrees"])
         self.controller.ibvs = make_gain_controller(self.gain_mode, reference,
-            self.sim.camera_intrinsics(), self.sim.config, self.gain_settings)
+            self.control_intrinsics(), self.control_config(), self.gain_settings)
         self.cold_start_pending = True
         self.message = f"{perception.name} selected. Align [G] checks the current view."
         self._start_if_auto()
@@ -175,27 +236,37 @@ class Lab:
         self.stop()
         self.gain_mode = "adaptive" if self.gain_mode == "fixed" else "fixed"
         self.controller.ibvs = make_gain_controller(
-            self.gain_mode, self.reference, self.sim.camera_intrinsics(),
-            self.sim.config, self.gain_settings)
+            self.gain_mode, self.reference, self.control_intrinsics(),
+            self.control_config(), self.gain_settings)
         self.message = f"{self.gain_mode.capitalize()} gain selected. Click Align [G] to start."
 
     def offset(self) -> None:
         self.stop()
-        self.sim.reset(self.sim.config["ibvs"]["start_offset_degrees"])
+        if not self._reset_pose(self.sim.config["ibvs"]["start_offset_degrees"]):
+            return
+        self._clear_camera()
         self.paused = False
         self.alignment_status = "idle"
         self.message = "Offset pose loaded. Click Align [G] to close the visual feedback loop."
         self._start_if_auto()
 
     def lost_view(self) -> None:
-        self.reset(start_automatically=False)
-        self.sim.reset(self.controller.config["lost_view_demo_offset_degrees"])
+        # Retain only an actually observed viewpoint, including with delayed delivery.
+        # Validate the requested preset before changing the current pose.
+        self.stop()
+        if not self._reset_pose(self.controller.config["lost_view_demo_offset_degrees"]):
+            return
+        self._clear_camera()
+        self.cold_start_pending = False
+        self.paused = False
         self.message = "Target is outside the view. Click Align [G] to find it and align."
         self._start_if_auto()
 
     def cold_start(self) -> None:
         self.stop()
-        self.sim.reset(load_startup_config()["demo_offset_degrees"])
+        if not self._reset_pose(load_startup_config()["demo_offset_degrees"]):
+            return
+        self._clear_camera()
         self.controller.last_visible_qpos = None
         self.cold_start_pending = True
         self.paused = False
@@ -204,7 +275,9 @@ class Lab:
 
     def random_start(self, seed=None) -> None:
         self.stop()
-        self.sim.reset(random_start_offset(seed))
+        if not self._reset_pose(random_start_offset(seed)):
+            return
+        self._clear_camera()
         self.controller.last_visible_qpos = None
         self.cold_start_pending = True
         self.paused = False
@@ -216,13 +289,16 @@ class Lab:
         rgb = self.sim.image()
         try:
             reference = save_reference(self.reference_path, rgb, self.sim.camera_intrinsics(),
-                                       self.perception.reference_config(self.sim.config), self.detect_target)
+                                       self.perception.reference_config(self.sim.config),
+                                       lambda frame: (self.perception.base if isinstance(self.perception,GoalRefinedPerception) else self.perception).observe(frame).corners)
         except (ValueError, OSError) as exc:
             self.message = str(exc)
             return
         self.reference_rgb, self.reference = rgb.copy(), reference
+        self._refine_perception()
+        self._clear_camera()
         self.controller.ibvs = make_gain_controller(
-            self.gain_mode, reference, self.sim.camera_intrinsics(), self.sim.config, self.gain_settings)
+            self.gain_mode, reference, self.control_intrinsics(), self.control_config(), self.gain_settings)
         self.cold_start_pending = False
         self.controller.remember_view(reference, self.sim.data.qpos)
         self.message = "Reference image saved for future sessions. This visible view is now the alignment goal."
@@ -240,10 +316,13 @@ class Lab:
         self.controller.cancel()
         self.aligning = False
         self.alignment_status = "idle"
-        self.sim.reset()
+        if not self._reset_pose():
+            return
+        self._clear_camera()
         self.cold_start_pending = False
         self.controller.last_visible_qpos = None
-        self.controller.remember_view(self.detect_target(self.sim.image()), self.sim.data.qpos)
+        if self.camera is None:
+            self.controller.remember_view(self.detect_target(self.sim.image()), self.sim.data.qpos)
         self.demo = False
         self.paused = False
         self.pulse_end = 0
@@ -252,6 +331,7 @@ class Lab:
             self._start_if_auto()
 
     def jog(self, joint: int, direction: int) -> None:
+        self._clear_camera()
         self.controller.cancel()
         self.aligning = False
         self.alignment_status = "idle"
@@ -275,12 +355,14 @@ class Lab:
             self.message = "Scripted motion demo. Click Stop, then Align to return using image feedback."
 
     def stop(self) -> None:
+        self._clear_camera()
         self.controller.cancel()
         self.aligning = False
         self.alignment_status = "idle"
         self.demo = False
         self.pulse_end = 0
         self.sim.command_velocity(np.zeros(6))
+        self.sim.collision_event = None
         self.message = "Stopped. Click Align [G] or load a new starting pose to begin another run."
 
     def toggle_pause(self) -> None:
@@ -289,43 +371,215 @@ class Lab:
         self.stop()
         self.message = "Simulation paused." if self.paused else "Simulation resumed."
 
+
+    def _reset_pose(self, offset=None):
+        try:
+            self.sim.reset(offset)
+            return True
+        except CollisionPoseError as exc:
+            self.sim.command_velocity(np.zeros(6))
+            self.demo = False
+            self.pulse_end = 0
+            self.message = str(exc)
+            return False
+
+    def toggle_obstacle(self):
+        self.stop()
+        try:
+            self.sim.set_obstacle(not self.sim.obstacle_enabled)
+        except CollisionPoseError as exc:
+            self.message = str(exc)
+            return
+        self.controller.last_visible_qpos = None
+        self.message = ("Obstacle enabled. Cold start [N] demonstrates checked search paths." if self.sim.obstacle_enabled
+                        else "Obstacle removed. Collision checks remain active.")
+
+    def _handle_collision(self):
+        event = self.sim.collision_event
+        if event is None:
+            return
+        self.sim.collision_event = None
+        if self.aligning and self.controller.skip_blocked_motion():
+            self.sim.command_velocity(np.zeros(6))
+            self.message = "Search path blocked by geometry. Checking another bounded waypoint."
+            return
+        if self.alignment_status in ("stale_camera","camera_error","camera_run_timeout"):
+            return
+        self.stop()
+        self.alignment_status = "collision_blocked"
+        pair = " / ".join(event["pair"] or ())
+        self.message = f"Stopped for collision clearance: {pair}. Choose another path and Align [G]."
+
+    def _clear_camera(self):
+        if self.camera is not None:
+            self.camera.reset(float(self.sim.data.time))
+            self.last_observation = None
+            self.last_rgb = None
+            self.last_image_info = None
+            self._camera_below_since = None
+            self.last_camera_failure = None
+
+    def cycle_camera_delay(self):
+        self.stop()
+        presets = (None, 0.0, 0.05, 0.1, 0.2)
+        current = None if self.camera is None else self.camera.config["delay_s"]
+        index = next((i for i, value in enumerate(presets) if value == current), 0)
+        delay = presets[(index + 1) % len(presets)]
+        self.camera = (None if delay is None else
+                       TimedCamera(load_camera_timing(delay), self.sim.config["camera_hz"]))
+        self._clear_camera()
+        self.message = ("Immediate camera selected. Click Align [G]." if delay is None else
+                        f"Camera delay {delay*1000:.0f} ms. Click Align [G]; X interrupts the camera stream.")
+
+    def toggle_camera_stream(self):
+        if self.camera is None:
+            self.message = "Select a camera delay with C before interrupting its stream."
+            return
+        self.camera.stream_enabled = not self.camera.stream_enabled
+        self.message = ("Camera stream restored. Align [G] starts a stopped run." if self.camera.stream_enabled
+                        else "Camera stream interrupted. Motion stops when the last observation expires.")
+
+    def _camera_failure(self, status):
+        self.last_camera_failure = dict(status=status, simulation_time_s=float(self.sim.data.time),
+                                        captured_s=None if self.camera.latest is None else self.camera.latest.captured_s)
+        self.controller.cancel()
+        self.aligning = False
+        self.alignment_status = status
+        self.demo = False
+        self.pulse_end = 0
+        self.sim.command_velocity(np.zeros(6))
+        self.message = ("Stopped: camera feedback is too old. Restore the stream [X], then Align [G]."
+                        if status == "stale_camera" else "Stopped: timed-camera run deadline reached.")
+
+    def _camera_tick(self):
+        camera = self.camera
+        now = float(self.sim.data.time)
+        if camera.failure(now) == "camera_clock_reset":
+            self._camera_failure("camera_clock_reset")
+            failure = self.last_camera_failure
+            self._clear_camera()
+            self.controller.last_visible_qpos = None
+            self.last_camera_failure = failure
+            self.message = "Stopped: simulation clock changed. Align [G] starts with a fresh camera queue."
+            return
+        if camera.capture_due(now):
+            rgb = self.sim.image()
+            qpos = self.sim.data.qpos.copy()
+            camera_pose = self.sim.camera_pose()
+            started = time.perf_counter()
+            try:
+                observation = self.perception.observe(rgb)
+                camera.submit(now, rgb, qpos, observation, 1000*(time.perf_counter()-started), camera_pose)
+            except (RuntimeError, OSError, ValueError, cv2.error) as exc:
+                self._camera_failure("camera_error")
+                camera.stream_enabled = False
+                camera.pending.clear()
+                self.message = f"Stopped: camera error {type(exc).__name__}: {str(exc)[:95]}. See console."
+                traceback.print_exc()
+                return
+        frame = camera.receive(now)
+        if frame is not None:
+            self.last_observation = frame.observation
+            if frame.observation.reason == "inference_failed":
+                self._camera_failure("camera_error")
+                camera.stream_enabled = False
+                camera.pending.clear()
+                self.message = "Stopped: camera inference failed. Check the matcher, then restart Align [G]."
+                return
+            if self.aligning:
+                sample = self.controller.update(
+                    frame.observation.corners, self.control_jacobian(),
+                    self.sim.data.qpos, camera.capture_elapsed_s, observation_qpos=frame.qpos)
+                # The hold window must span distinct captured images, not GUI
+                # draws, repeated reads, or a period with no new camera frames.
+                if sample.stop_candidate:
+                    if self._camera_below_since is None:
+                        self._camera_below_since = frame.captured_s
+                    held = frame.captured_s - self._camera_below_since
+                    if sample.status == "converged" and held + 1e-9 < self.sim.config["ibvs"]["success_hold_s"]:
+                        sample = replace(sample, status="running")
+                        self.controller.status = self.controller.ibvs.status = "running"
+                else:
+                    self._camera_below_since = None
+                self._apply_control_sample(sample)
+            elif not self.cold_start_pending:
+                self.controller.remember_view(frame.observation.corners, frame.qpos)
+        if self.aligning:
+            failure = camera.failure(now)
+            if failure is not None:
+                self._camera_failure(failure)
+
     def advance(self, seconds: float) -> None:
+        if self.camera is None:
+            self._advance_immediate(seconds)
+            return
+        if not np.isfinite(seconds) or seconds < 0:
+            raise ValueError("Duration must be finite and nonnegative")
+        if self.paused:
+            return
+        # Rendering and MuJoCo stay on the context's owning thread. Delivery and
+        # the watchdog are checked at every physics tick, including without an
+        # observation. Held commands therefore move the arm during camera delay.
+        remaining = seconds
+        while remaining > 1e-10:
+            self._camera_tick()
+            step = min(float(self.sim.model.opt.timestep), remaining)
+            if self.aligning:
+                self.sim.advance(step)
+            else:
+                self._advance_immediate(step)
+            self._handle_collision()
+            remaining -= step
+        # Enforce expiry at the endpoint too; a caller cannot observe an expired
+        # nonzero command between calls to advance().
+        if self.aligning and self.camera.failure(float(self.sim.data.time)) is not None:
+            self._camera_failure(self.camera.failure(float(self.sim.data.time)))
+
+    def _apply_control_sample(self, sample):
+        self.sim.command_velocity(sample.velocity)
+        self.alignment_status = sample.status
+        if sample.status in ACTIVE_STATES:
+            self.message = {
+                "running": "Aligning from camera images. Green corners approach the amber reference.",
+                "joint_limited": "Aligning while keeping room at the joint limits.",
+                "repositioning": "Alignment needs a retry. Returning toward a previously observed view.",
+                "retry_confirming": "Checking the returned view before retrying alignment.",
+                "realigning": "Retrying alignment with less wrist rotation.",
+                "waiting": "Target lost. Holding still briefly before recovery.",
+                "returning": "Finding target: moving toward the last visible viewpoint.",
+                "scanning": "Finding target: scanning nearby views.",
+                "confirming": "Target found. Confirming detection before resuming alignment.",
+            }[sample.status]
+            if sample.stop_metrics is not None and sample.error_px <= self.precision_settings["entry_error_px"]:
+                m=sample.stop_metrics
+                self.message=(f"Final alignment: {sample.error_px:.2f} px | estimated camera correction "
+                              f"{m['position_correction_mm']:.2f} mm / {m['rotation_correction_deg']:.2f} deg.")
+            if self.controller.mode == "startup":
+                search = self.controller.startup
+                detail = "confirming target" if sample.status == "confirming" else "no remembered viewpoint"
+                self.message = (f"Startup search ({search.stage}): view {min(search.index+1,len(search.waypoints))}/{len(search.waypoints)}"
+                                f" | {search.elapsed_s:.1f}/{search.config['max_search_time_s']:g} s | {detail}")
+        else:
+            self.aligning = False
+            self.alignment_status = sample.status
+            if sample.status == "converged":
+                cfg = self.sim.config["ibvs"]
+                self.message = (f"Aligned: {sample.error_px:.2f} px; precision image/motion checks held {cfg['success_hold_s']:g} s." if self.precision_enabled else
+                                f"Aligned: {sample.error_px:.2f} px RMS corner error, held below "
+                                f"{cfg['success_error_px']:g} px for {cfg['success_hold_s']:g} s.")
+            elif sample.status == "target_not_found":
+                self.message = "Target not found within the search area/budget. Stopped. Jog to a new start and try Align."
+            else:
+                self.message = f"Stopped: {sample.status}. Jog to another view, then try Align again."
+
+    def _advance_immediate(self, seconds: float) -> None:
         if self.paused:
             return
         if self.aligning:
             corners = self.detect_target(self.sim.image())
-            sample = self.controller.update(corners, self.sim.camera_jacobian(),
+            sample = self.controller.update(corners, self.control_jacobian(),
                                             self.sim.data.qpos, seconds)
-            self.sim.command_velocity(sample.velocity)
-            self.alignment_status = sample.status
-            if sample.status in ACTIVE_STATES:
-                self.message = {
-                    "running": "Aligning from camera images. Green corners approach the amber reference.",
-                    "joint_limited": "Aligning while keeping room at the joint limits.",
-                    "repositioning": "Alignment needs a retry. Returning toward a previously observed view.",
-                    "retry_confirming": "Checking the returned view before retrying alignment.",
-                    "realigning": "Retrying alignment with less wrist rotation.",
-                    "waiting": "Target lost. Holding still briefly before recovery.",
-                    "returning": "Finding target: moving toward the last visible viewpoint.",
-                    "scanning": "Finding target: scanning nearby views.",
-                    "confirming": "Target found. Confirming detection before resuming alignment.",
-                }[sample.status]
-                if self.controller.mode == "startup":
-                    search = self.controller.startup
-                    detail = "confirming target" if sample.status == "confirming" else "no remembered viewpoint"
-                    self.message = (f"Startup search ({search.stage}): view {min(search.index+1,len(search.waypoints))}/{len(search.waypoints)}"
-                                    f" | {search.elapsed_s:.1f}/{search.config['max_search_time_s']:g} s | {detail}")
-            else:
-                self.aligning = False
-                self.alignment_status = sample.status
-                if sample.status == "converged":
-                    cfg = self.sim.config["ibvs"]
-                    self.message = (f"Aligned: {sample.error_px:.2f} px RMS corner error, held below "
-                                    f"{cfg['success_error_px']:g} px for {cfg['success_hold_s']:g} s.")
-                elif sample.status == "target_not_found":
-                    self.message = "Target not found within the search area/budget. Stopped. Jog to a new start and try Align."
-                else:
-                    self.message = f"Stopped: {sample.status}. Jog to another view, then try Align again."
+            self._apply_control_sample(sample)
         elif self.demo:
             t = self.sim.data.time - self.demo_start
             amplitudes = np.array([0.026, 0.016, 0.020, 0.025, 0.016, 0.03])
@@ -345,6 +599,7 @@ class Lab:
             self.sim.command_velocity(np.zeros(6))
         if seconds > 1e-10:
             self.sim.advance(seconds)
+        self._handle_collision()
 
     def button(self, canvas: np.ndarray, rect: tuple[int, int, int, int],
                text: str, action: str, active: bool = False) -> None:
@@ -354,7 +609,7 @@ class Lab:
         self.buttons.append((rect, action))
 
     def draw(self) -> np.ndarray:
-        canvas = np.full((766, 1200, 3), BG, dtype=np.uint8)
+        canvas = np.full((830, 1200, 3), BG, dtype=np.uint8)
         self.buttons.clear()
         label(canvas, "Visual Servoing", 24, 36, 0.85, TEAL, 2)
         gain = self.controller.ibvs.config["gain_per_s"]
@@ -377,22 +632,34 @@ class Lab:
                     self.perception_mode != "aruco")
         self.button(canvas, (1000, 73, 176, 24), "Matches [F]", "matches", matching_view)
         label(canvas, "WRIST CAMERA / 640 x 480", 608, 92, 0.46, MUTED)
-        rgb = self.sim.image()
+        delay_label = "Delay [C]" if self.camera is None else f"{self.camera.config['delay_s']*1000:.0f} ms [C]"
+        self.button(canvas, (870,73,118,24), delay_label, "camera_delay", self.camera is not None)
+        frame = None if self.camera is None else self.camera.latest
+        rgb = self.sim.image() if frame is None else frame.rgb
         self.last_rgb = rgb
+        self.last_image_info = dict(
+            simulation_time_s=float(self.sim.data.time) if frame is None else frame.captured_s,
+            frame_id=None if frame is None else frame.sequence,
+            frame_source="live_preview" if frame is None else "delivered_camera",
+            delivered_simulation_time_s=None if frame is None else self.camera.delivered_s,
+            qpos_rad=(self.sim.data.qpos if frame is None else frame.qpos).tolist(),
+            world_from_optical=(self.sim.camera_pose().tolist() if frame is None else
+                                None if frame.world_from_optical is None else frame.world_from_optical.tolist()))
         world = None if matching_view else self.sim.image("world")
         annotated = rgb.copy()
         cv2.polylines(annotated, [self.reference.astype(np.int32)], True, AMBER, 2, cv2.LINE_AA)
         for point in self.reference:
             cv2.drawMarker(annotated, tuple(point.astype(int)), AMBER, cv2.MARKER_CROSS, 12, 1)
-        corners = self.detect_target(rgb)
-        if not self.aligning and not self.cold_start_pending:
+        corners = (self.detect_target(rgb) if self.camera is None else
+                   None if frame is None else frame.observation.corners)
+        if self.camera is None and not self.aligning and not self.cold_start_pending:
             self.controller.remember_view(corners, self.sim.data.qpos)
         if corners is not None:
             cv2.polylines(annotated, [corners.astype(np.int32)], True, TEAL, 2, cv2.LINE_AA)
             for i, corner in enumerate(corners):
                 cv2.circle(annotated, tuple(corner.astype(int)), 4, TEAL, -1)
                 label(annotated, str(i), int(corner[0])+7, int(corner[1])-6, 0.45, TEAL)
-        observation = self.last_observation
+        observation = self.last_observation or Observation(reason="waiting_for_camera")
         if self.perception_mode != "aruco" and observation is not None:
             color = TEAL if corners is not None else AMBER
             for point in observation.image_points:
@@ -415,7 +682,7 @@ class Lab:
                         "returning": "RETURNING TO LAST VIEW", "scanning": "SEARCHING",
                         "confirming": "CONFIRMING TARGET"}.get(self.alignment_status, "ALIGNING")
         state = ("PAUSED" if self.paused else active_state if self.aligning else "DEMO" if self.demo
-                 else self.alignment_status.upper() if self.alignment_status != "idle" else "MANUAL")
+                 else self.alignment_status.upper().replace("_", " ") if self.alignment_status != "idle" else "MANUAL")
         label(canvas, f"{state}   |   simulation time {self.sim.data.time:7.2f} s", 24, 551, 0.45, TEAL)
         if self.perception_mode != "aruco":
             if corners is None:
@@ -433,6 +700,12 @@ class Lab:
             error = np.sqrt(np.mean(np.sum((corners - self.reference)**2, axis=1)))
             label(canvas, f"Marker 7 visible   |   RMS corner error {error:.2f} px",
                   608, 551, 0.45, TEAL)
+        if self.camera is not None:
+            age = self.camera.age_s(float(self.sim.data.time))
+            timing = ("Waiting for delivered image" if frame is None else
+                      f"Frame {frame.sequence} | captured {frame.captured_s:.2f}s | age {age*1000:.0f} ms")
+            stream = "ON" if self.camera.stream_enabled else "OFF"
+            label(canvas, f"{timing} | camera {stream} [X]", 608, 566, 0.34, MUTED)
         cv2.line(canvas, (24, 571), (1176, 571), PANEL, 1)
         self.button(canvas, (24, 580, 170, 28), "Cold start [N]", "cold_start", self.cold_start_pending)
         self.button(canvas, (208, 580, 170, 28), "Random [P]", "random_start")
@@ -450,8 +723,18 @@ class Lab:
             label(canvas, f"{np.rad2deg(self.sim.data.qpos[i]):+7.1f} deg", x+250, y+21, 0.47, MUTED)
             self.button(canvas, (x+406, y, 65, 29), "-", f"jog:{i}:-1")
             self.button(canvas, (x+483, y, 65, 29), "+", f"jog:{i}:1")
-        label(canvas, self.message, 24, 738, 0.44, MUTED)
-        label(canvas, "V: target   K: matcher   F: matches   B: auto   P: random   N: cold   H: teach   T: gain   O/L: offsets   G: align   1-6: joint   A/D: jog   Space: pause   Esc: quit", 24, 758, 0.39, MUTED)
+        decision = self.sim.collision.last
+        distance = "not measured" if decision.clearance_m is None else f"{decision.clearance_m*1000:.1f} mm"
+        skips = self.controller.blocked_waypoints + (0 if self.controller.startup is None else self.controller.startup.blocked_waypoints)
+        label(canvas, f"Collision guard: {decision.status.upper()} | clearance {distance} | detours {self.sim.collision.detours} | skipped {skips}",
+              24, 742, 0.40, AMBER if decision.status in ("limited","blocked") else MUTED)
+        self.button(canvas, (1000,725,176,28), "Obstacle [U]", "obstacle", self.sim.obstacle_enabled)
+        label(canvas, f"Calibration assumption: {self.calibration_name}", 24, 774, 0.43,
+              MUTED if self.calibration_name == "nominal" else AMBER)
+        self.button(canvas,(960,758,216,28),"Calibration [I]","calibration",
+                    self.calibration_name != "nominal")
+        label(canvas, self.message, 24, 804, 0.44, MUTED)
+        label(canvas, "I: calibration   U: obstacle   C: delay   X: camera   V: target   K: matcher   B: auto   P: random   N: cold   G: align   1-6: joint   A/D: jog   Space: pause   Esc: quit", 24, 824, 0.37, MUTED)
         return canvas
 
     def on_mouse(self, event: int, x: int, y: int, flags: int, param: object) -> None:
@@ -469,7 +752,9 @@ class Lab:
                      "gain": self.toggle_gain, "cold_start": self.cold_start,
                      "teach": self.teach_reference, "auto": self.toggle_auto,
                      "random_start": self.random_start, "perception": self.toggle_perception,
-                     "matches": self.toggle_matches, "matcher": self.toggle_matcher}[action]()
+                     "matches": self.toggle_matches, "matcher": self.toggle_matcher,
+                     "camera_delay": self.cycle_camera_delay, "obstacle": self.toggle_obstacle,
+                     "calibration": self.cycle_calibration}[action]()
                 break
 
     def save(self) -> None:
@@ -479,18 +764,26 @@ class Lab:
         directory.mkdir(parents=True)
         Image.fromarray(self.last_rgb).save(directory / "wrist.png")
         metadata = {"simulation_time_s": self.sim.data.time,
+                    "precision_enabled": self.precision_enabled,
+                    "precision_settings": self.precision_settings if self.precision_enabled else None,
+                    "stop_metrics": self.controller.ibvs.stop_metrics,
+                    "calibration_profile": self.calibration_name,
+                    "controller_calibration": self.calibration.settings,
+                    "assumed_K": self.control_intrinsics().tolist(),
                     "gain_mode": self.gain_mode,
                     "perception_mode": self.perception_mode,
                     "gain_per_s": self.controller.ibvs.config["gain_per_s"],
                     "qpos_rad": self.sim.data.qpos.tolist(),
                     "K": self.sim.camera_intrinsics().tolist(),
                     "world_from_optical": self.sim.camera_pose().tolist()}
+        metadata.update(self.last_image_info or {})
+        metadata["saved_simulation_time_s"] = float(self.sim.data.time)
         (directory / "camera.json").write_text(json.dumps(metadata, indent=2))
         self.message = "Saved raw wrist.png and camera.json in captures/."
 
     def run(self) -> None:
         cv2.namedWindow(WINDOW, cv2.WINDOW_NORMAL | cv2.WINDOW_KEEPRATIO)
-        cv2.resizeWindow(WINDOW, 1200, 766)
+        cv2.resizeWindow(WINDOW, 1200, 830)
         cv2.setMouseCallback(WINDOW, self.on_mouse)
         period = 1 / self.sim.config["camera_hz"]
         try:
@@ -529,6 +822,14 @@ class Lab:
                     self.toggle_matcher()
                 elif key in (ord("f"), ord("F")):
                     self.toggle_matches()
+                elif key in (ord("i"), ord("I")):
+                    self.cycle_calibration()
+                elif key in (ord("u"), ord("U")):
+                    self.toggle_obstacle()
+                elif key in (ord("c"), ord("C")):
+                    self.cycle_camera_delay()
+                elif key in (ord("x"), ord("X")):
+                    self.toggle_camera_stream()
                 elif key in (ord("h"), ord("H")):
                     self.teach_reference()
                 elif key in (ord("g"), ord("G")):
@@ -546,23 +847,55 @@ def main() -> None:
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument("--natural", action="store_true", help="Use the picture with SIFT matching")
     modes.add_argument("--learned", action="store_true", help="Use the picture with pretrained SuperPoint + LightGlue")
+    parser.add_argument("--legacy-stop", action="store_true", help="Use the original 1 px stopping rule without image refinement")
     parser.add_argument("--snapshot", action="store_true", help="Render a preview without opening a window")
     starts = parser.add_mutually_exclusive_group()
     starts.add_argument("--cold-start", action="store_true", help="Start out of view with no remembered viewpoint")
     starts.add_argument("--random-start", action="store_true", help="Start at a sampled pose without a remembered viewpoint")
     parser.add_argument("--seed", type=int, help="Reproduce a random start (requires --random-start)")
+    parser.add_argument("--calibration-profile", choices=tuple(calibration_profiles()), default="nominal",
+                        help="Assumed controller calibration; rendering and collision geometry stay fixed")
+    parser.add_argument("--obstacle", action="store_true", help="Enable the mapped obstacle column for collision-aware search")
     parser.add_argument("--manual", action="store_true", help="Start with Auto OFF and wait for Align")
+    parser.add_argument("--camera-delay-ms", type=float, help="Enable timestamped camera delivery with this simulated delay")
+    parser.add_argument("--max-camera-age-ms", type=float, default=250, help="Stop if observation age reaches this bound (default: 250 ms)")
+    parser.add_argument("--realtime", action="store_true", help="Run wall-clock control with isolated rendering/perception and an independent freshness watchdog")
     args = parser.parse_args()
+    timing = None
+    if args.camera_delay_ms is not None:
+        timing = dict(load_camera_timing(args.camera_delay_ms/1000), max_observation_age_s=args.max_camera_age_ms/1000)
+        try:
+            TimedCamera(timing, 30)
+        except (ValueError, TypeError) as exc:
+            parser.error(str(exc))
     if args.seed is not None and (not args.random_start or args.seed < 0):
         parser.error("--seed must be nonnegative and used with --random-start")
+    if args.realtime:
+        if args.snapshot:
+            parser.error("--realtime is interactive; omit --snapshot")
+        from realtime import RuntimeConfig
+        from realtime_app import run_interactive
+        try:
+            RuntimeConfig(transport_s=(args.camera_delay_ms or 0)/1000,
+                          max_age_s=args.max_camera_age_ms/1000)
+        except ValueError as exc:
+            parser.error(str(exc))
+        run_interactive(args)
+        return
     with Simulation() as sim:
-        if args.cold_start:
-            # Set the start before any live image can supply a remembered view.
-            sim.reset(load_startup_config()["demo_offset_degrees"])
-        elif args.random_start:
-            sim.reset(random_start_offset(args.seed))
+        try:
+            if args.obstacle:
+                sim.set_obstacle(True)
+            if args.cold_start:
+                # Set the start before any live image can supply a remembered view.
+                sim.reset(load_startup_config()["demo_offset_degrees"])
+            elif args.random_start:
+                sim.reset(random_start_offset(args.seed))
+        except CollisionPoseError as exc:
+            parser.error(str(exc))
         lab = Lab(sim, cold_start=args.cold_start or args.random_start, auto_start=not args.manual,
-                  perception_mode="learned" if args.learned else "natural" if args.natural else "aruco")
+                  perception_mode="learned" if args.learned else "natural" if args.natural else "aruco", camera_timing=timing,
+                  calibration=calibration_profiles()[args.calibration_profile],precision=not args.legacy_stop)
         if args.manual and (args.cold_start or args.random_start):
             lab.message = "Starting pose loaded without a remembered view. Click Align [G] when ready."
         if args.snapshot:

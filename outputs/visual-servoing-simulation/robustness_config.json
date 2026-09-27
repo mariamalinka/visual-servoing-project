@@ -1,0 +1,66 @@
+{
+  "seed": 20260920,
+  "starts": 10,
+  "offset_limit_degrees": [
+    8,
+    6,
+    8,
+    6,
+    6,
+    6
+  ],
+  "max_trial_s": 60,
+  "post_stop_frames": 30,
+  "profiles": [
+    {
+      "name": "baseline",
+      "delay_s": 0
+    },
+    {
+      "name": "delay-100",
+      "delay_s": 0.1
+    },
+    {
+      "name": "delay-200",
+      "delay_s": 0.2
+    },
+    {
+      "name": "jitter",
+      "delay_s": 0.1,
+      "jitter_s": 0.08
+    },
+    {
+      "name": "drops",
+      "delay_s": 0.1,
+      "drop_probability": 0.2
+    },
+    {
+      "name": "combined",
+      "delay_s": 0.15,
+      "jitter_s": 0.08,
+      "drop_probability": 0.2
+    },
+    {
+      "name": "brief-outage",
+      "delay_s": 0.1,
+      "outages_s": [
+        [
+          0.75,
+          0.83
+        ]
+      ]
+    },
+    {
+      "name": "long-outage",
+      "delay_s": 0.1,
+      "outages_s": [
+        [
+          0.75,
+          1.35
+        ]
+      ],
+      "expected": "stale_camera"
+    }
+  ]
+}
+

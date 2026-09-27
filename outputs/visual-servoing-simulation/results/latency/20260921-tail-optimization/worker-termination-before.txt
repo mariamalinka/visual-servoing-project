@@ -1,0 +1,38 @@
+Terminating during blocking fault, accepted: 8
+Traceback (most recent call last):
+  File "C:\Users\marys\Documents\Codex\2026-09-06\visual-servoing-project\outputs\visual-servoing-simulation\realtime.py", line 344, in _run
+    raise RuntimeError(failed.get('traceback',
+RuntimeError: Sensor process exited with code -15
+
+Thread 0x00006e70 (most recent call first):
+  File "C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\threading.py", line 355 in wait
+  File "C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\multiprocessing\queues.py", line 251 in _feed
+  File "C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\threading.py", line 1012 in run
+  File "C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\threading.py", line 1075 in _bootstrap_inner
+  File "C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\threading.py", line 1032 in _bootstrap
+
+Thread 0x00007f98 (most recent call first):
+  File "C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\multiprocessing\synchronize.py", line 297 in notify
+  File "C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\multiprocessing\synchronize.py", line 304 in notify_all
+  File "C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\multiprocessing\synchronize.py", line 345 in set
+  File "C:\Users\marys\Documents\Codex\2026-09-06\visual-servoing-project\outputs\visual-servoing-simulation\realtime.py", line 524 in _run
+  File "C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\threading.py", line 1012 in run
+  File "C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\threading.py", line 1075 in _bootstrap_inner
+  File "C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\threading.py", line 1032 in _bootstrap
+
+Current thread 0x0000766c (most recent call first):
+  File "../../archive/perception-tail-validation/diagnose_worker_fault_exit.py", line 16 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 98 in _run_module_code
+  File "<frozen runpy>", line 287 in run_path
+  File "<string>", line 1 in <module>
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "../../archive/perception-tail-validation/diagnose_worker_fault_exit.py", line 14, in <module>
+    session.close()
+  File "C:\Users\marys\Documents\Codex\2026-09-06\visual-servoing-project\outputs\visual-servoing-simulation\realtime.py", line 232, in close
+    raise RuntimeError('Control loop did not shut down within five seconds')
+RuntimeError: Control loop did not shut down within five seconds

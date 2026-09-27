@@ -8,6 +8,12 @@ what is included in Git. New experiment directories are local by default.
 
 | Study | Report |
 |---|---|
+| Perception tail latency | [Paired before/after transport and validation](latency/20260921-tail-optimization/REPORT.md) |
+| Precision stopping | [72 paired trials, 12 new-start trials and pose sensitivity](accuracy/20260921-precision-final/COMPARISON.md) |
+| Physical accuracy and calibration | [Paired physical-pose evaluation](accuracy/20260921-validation/REPORT.md) |
+| Collision-aware motion | [Alignment, cold search and recovery](collision/20260920-validation/REPORT.md) |
+| Camera robustness | [48-trial disturbance validation](robustness/20260920-validation/VALIDATION.md) |
+| Camera delay | [Timestamped feedback and stream interruption](camera-delay/20260919-validation/REPORT.md) |
 | Initial IBVS benchmark | [200 starts](benchmark/20260906-155544-117220-n200-seed20260906/REPORT.md) |
 | Updated IBVS benchmark | [200 starts](benchmark/20260906-164904-307850-n200-seed20260906/REPORT.md) |
 | IBVS holdout | [100 starts, seed 42](benchmark/20260906-165404-850153-n100-seed42/REPORT.md) |
@@ -51,3 +57,19 @@ results have not been recalculated as part of this repository cleanup.
 
 Downloadable source snapshots can be generated from Git tags. Old step ZIPs are
 local archives and are not part of the application or its runtime dependencies.
+
+- [Actual camera latency and worker-stall validation](latency/20260921-validation/REPORT.md). Source/runtime fingerprints and per-trial timing evidence are retained.
+
+- [Sustained latency campaign](latency/20260922-sustained/REPORT.md): 20 sessions per method; the longer run exposed repeated Learned freshness failures and occasional control overruns. [Diagnosis and limits](latency/20260922-sustained/DIAGNOSIS.md).
+
+- [Reused Learned GPU worker candidate](latency/20260923-reuse-after/COMPARISON.md): 40 sessions, 10,506 uncached Learned frames and 14,297 uncached SIFT frames. Average Learned latency improved, but sustained stability failed. [State, clock, profiler and control-overrun diagnosis](latency/20260923-reuse-after/DIAGNOSIS.md).
+
+- [Native scheduling iteration](latency/20260925-native-scheduling-after/COMPARISON.md):
+  40 sessions; fewer control misses, continued Learned degradation and increased
+  freshness trips. [Native/GC diagnosis](latency/20260925-native-scheduling-after/DIAGNOSIS.md).
+
+- [Learned worker lifetime diagnostics](latency/20260925-worker-lifetime/DIAGNOSIS.md): fresh/reused comparison, continuous GPU telemetry and native CPU attribution; no production changes.
+
+- [GPU/power-settings rerun](latency/20260926-power-settings/POWER_COMPARISON.md): matched reused-worker comparison after laptop settings changes.
+
+- [Underlying Python executable GPU-settings rerun](latency/20260926-base-executable-settings/SETTINGS_COMPARISON.md): three-way comparison; 184/184 reused-worker alignments and zero freshness trips in the matched campaign.

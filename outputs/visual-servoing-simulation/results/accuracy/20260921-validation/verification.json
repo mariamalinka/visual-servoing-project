@@ -1,0 +1,76 @@
+{
+  "checked_utc": "2026-09-21T10:16:14.785913+00:00",
+  "full_tests": {
+    "count": 240,
+    "seconds": 376.961,
+    "passed": true,
+    "log_sha256": "be3117a02abb9cf755e69fb58eddd28511a3aaa164c36ab90e866ba4c685925f"
+  },
+  "app_scene_verify_passed": true,
+  "interruption_resume_trace_preservation_and_tamper_rejection_passed": true,
+  "resume_check_log_sha256": "18394ae7f4f596ff8c3115a2f597edb239b0eb20d22315ce9b60d0fca6f7b4da",
+  "source_assets_runtime_fingerprint_matches": true,
+  "plan_goals_private_reference_hashes_match": true,
+  "unique_complete_trial_ids": true,
+  "completed_trials": 72,
+  "by_mode": {
+    "aruco": {
+      "trials": 24,
+      "image_passes": 24,
+      "physical_passes": 24,
+      "outcomes": {
+        "converged": 24
+      },
+      "tool_error_range_mm_among_image_passes": [
+        0.32147632406473664,
+        0.7167090705321684
+      ]
+    },
+    "natural": {
+      "trials": 24,
+      "image_passes": 24,
+      "physical_passes": 24,
+      "outcomes": {
+        "converged": 24
+      },
+      "tool_error_range_mm_among_image_passes": [
+        0.2603139516440333,
+        0.7922184404104684
+      ]
+    },
+    "learned": {
+      "trials": 24,
+      "image_passes": 16,
+      "physical_passes": 0,
+      "outcomes": {
+        "timeout": 7,
+        "converged": 16,
+        "invalid_depth": 1
+      },
+      "tool_error_range_mm_among_image_passes": [
+        5.504807546777045,
+        12.723177261732644
+      ]
+    }
+  },
+  "safety_violations": 0,
+  "forbidden_contacts": 0,
+  "minimum_collision_slack_mm": 2.999999999999867,
+  "all_trials_30_fresh_post_stop_captures": true,
+  "all_post_stop_commands_zero": true,
+  "geometry_projection_known_examples_passed": true,
+  "geometry_subpixel_physical_misses": 14,
+  "geometry_analysis_sha256": "92e74b369216915c0c83f029f2ec7efc0a6de5fe46352874b1a20c6de24d8a09",
+  "trials_sha256": "53fd6482e110d550a673781fca671eed1a1b6bb87e90e84facbe2f12c439edb8",
+  "test_sha256": {
+    "test_accuracy.py": "092faed06590d4085022cf97f03e8afba060147240bcf31220cb43a8dc3cbb52",
+    "test_calibration_integration.py": "3d6e5353f006aef6758cab49283e15e8fabcb021b01ff5165f3ad6ba5d1943f2"
+  },
+  "repository_check": {
+    "passed": true,
+    "prospective_files": 738,
+    "size_mib": 60.6,
+    "python_syntax_and_markdown_links": true
+  },
+  "git_diff_check_passed": true
+}

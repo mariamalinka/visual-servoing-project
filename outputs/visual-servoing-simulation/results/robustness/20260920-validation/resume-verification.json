@@ -1,0 +1,10 @@
+{
+  "interrupted_trial_count": 1,
+  "completed_trial_count": 2,
+  "saved_trial_unchanged": true,
+  "only_pending_trial_executed": true,
+  "changed_plan_rejected": true,
+  "changed_fingerprint_rejected": true,
+  "completed_resume_did_not_repeat_trials": true,
+  "report_regeneration": "PASS"
+}

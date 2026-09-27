@@ -29,6 +29,9 @@ class Observation:
     coverage: float = 0.
     reprojection_rms_px: float | None = None
     processing_ms: float = 0.
+    stage_ms: dict = field(default_factory=dict)
+    refinement: str = "none"
+    correlation: float | None = None
     template_points: np.ndarray = field(default_factory=lambda:np.empty((0,2)))
     image_points: np.ndarray = field(default_factory=lambda:np.empty((0,2)))
 
@@ -95,15 +98,19 @@ class PlanarImagePerception:
         if rgb.ndim!=3 or rgb.shape[2]!=3 or rgb.dtype!=np.uint8:
             raise ValueError("Expected an RGB uint8 camera frame")
         if self._last_rgb is not None and np.array_equal(rgb,self._last_rgb):
+            self._last_result.stage_ms={"cache_hit": True}
             return self._last_result
         start=time.perf_counter()
+        self.stage_ms={}
         result=Observation()
         try:
             result=self._detect(rgb)
         except (cv2.error,np.linalg.LinAlgError):
             result.reason="geometry_failure"
         result.processing_ms=1000*(time.perf_counter()-start)
+        result.stage_ms=dict(self.stage_ms)
         self._last_rgb=rgb.copy()
+        self._last_rgb.setflags(write=False)
         self._last_result=result
         return result
 
@@ -199,23 +206,33 @@ class NaturalImagePerception(PlanarImagePerception):
         if self.descriptors is None or len(self.keypoints)<c["min_inliers"]:
             raise ValueError("Target picture has too few distinctive features")
         self.template_points=np.array([p.pt for p in self.keypoints],np.float32)
+        self._rounded_template=np.rint(self.template_points).astype(np.int32)
         self.matcher=cv2.BFMatcher(cv2.NORM_L2)
 
     def _detect(self,rgb):
         c=self.config
         result=Observation()
+        started=time.perf_counter()
         height,width=rgb.shape[:2]
         scale=min(1.,c["detection_width_px"]/width)
         work=rgb if scale==1 else cv2.resize(rgb,(round(width*scale),round(height*scale)),interpolation=cv2.INTER_AREA)
-        keypoints,descriptors=self.sift.detectAndCompute(cv2.cvtColor(work,cv2.COLOR_RGB2GRAY),None)
+        gray=cv2.cvtColor(work,cv2.COLOR_RGB2GRAY)
+        prepared=time.perf_counter()
+        keypoints,descriptors=self.sift.detectAndCompute(gray,None)
+        extracted=time.perf_counter()
+        self.stage_ms.update(prepare_ms=1000*(prepared-started), features_ms=1000*(extracted-prepared))
         # OpenCV resize uses pixel centers. Return all measurements in the original
         # camera coordinates, so K and the existing control law remain unchanged.
-        image_points=np.array([((np.array(p.pt)+.5)/[work.shape[1]/width,work.shape[0]/height]-.5)
-                               for p in keypoints],np.float32)
+        image_points=np.asarray([p.pt for p in keypoints],dtype=np.float64).reshape(-1,2)
+        image_points=((image_points+.5)/[work.shape[1]/width,work.shape[0]/height]-.5).astype(np.float32)
+        rounded_image=np.rint(image_points).astype(np.int32)
         if descriptors is None or len(keypoints)<2:
             result.reason="too_few_features"
             return result
+        matching=time.perf_counter()
         pairs=self.matcher.knnMatch(self.descriptors,descriptors,k=2)
+        matched=time.perf_counter()
+        self.stage_ms.update(points_ms=1000*(matching-extracted), matching_ms=1000*(matched-matching))
         candidates=[p[0] for p in pairs if len(p)==2 and p[0].distance<c["ratio_test"]*p[1].distance]
         # Several scale/orientation copies must not inflate the evidence count.
         candidates.sort(key=lambda p:(p.distance,p.queryIdx,p.trainIdx))
@@ -224,8 +241,8 @@ class NaturalImagePerception(PlanarImagePerception):
         template_used=set()
         for m in candidates:
             # SIFT can describe the same location with different orientations.
-            tp=tuple(np.round(self.template_points[m.queryIdx]).astype(int))
-            ip=tuple(np.round(image_points[m.trainIdx]).astype(int))
+            tp=tuple(self._rounded_template[m.queryIdx])
+            ip=tuple(rounded_image[m.trainIdx])
             if tp not in template_used and ip not in used:
                 unique.append(m); template_used.add(tp); used.add(ip)
         result.matches=len(unique)
@@ -234,4 +251,8 @@ class NaturalImagePerception(PlanarImagePerception):
             return result
         src=np.array([self.template_points[m.queryIdx] for m in unique],np.float32)
         dst=np.array([image_points[m.trainIdx] for m in unique],np.float32)
-        return self.fit_outline(src,dst,rgb.shape,result)
+        filtered=time.perf_counter()
+        self.stage_ms["filter_ms"]=1000*(filtered-matched)
+        result=self.fit_outline(src,dst,rgb.shape,result)
+        self.stage_ms["geometry_ms"]=1000*(time.perf_counter()-filtered)
+        return result

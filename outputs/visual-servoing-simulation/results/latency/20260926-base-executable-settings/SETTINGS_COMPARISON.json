@@ -1,0 +1,394 @@
+{
+  "matched_inputs": true,
+  "definition": "Uncached active-frame processing; first/later means alignment position within each reused worker. Slow means >=200 ms; GPU clocks use samples strictly inside those processing intervals. All runs use eight 120-second reused sessions and 32 interleaved fresh-worker controls.",
+  "campaigns": [
+    {
+      "sessions": 8,
+      "attempts": 364,
+      "alignments": 12,
+      "success_rate_percent": 3.2967032967032965,
+      "freshness_trips": 352,
+      "processing_ms": {
+        "p95": 272.0297000254504,
+        "p99": 313.48377204965783,
+        "max": 358.2531000720337
+      },
+      "first_alignment_processing_ms": {
+        "count": 241,
+        "mean": 95.84507095642944,
+        "p50": 98.20369991939515,
+        "p95": 131.65630004368722,
+        "p99": 147.7733400184661,
+        "p99_9": 177.7036639722069,
+        "max": 183.84259997401386
+      },
+      "later_alignment_processing_ms": {
+        "count": 2934,
+        "mean": 129.9477812189554,
+        "p50": 101.05304996250197,
+        "p95": 275.02780507202255,
+        "p99": 313.9646940154489,
+        "p99_9": 342.85895149607717,
+        "max": 358.2531000720337
+      },
+      "first_alignment_successes": 8,
+      "later_alignment_successes": 4,
+      "slow_frame_gpu": {
+        "samples": 430,
+        "states": {
+          "P3": 188,
+          "P0": 162,
+          "P5": 80
+        },
+        "clocks.sm": {
+          "count": 430,
+          "mean": 141.8186046511628,
+          "p50": 95.0,
+          "p95": 247.0,
+          "p99": 247.0,
+          "p99_9": 478.2550000000107,
+          "max": 652.0
+        },
+        "clocks.mem": {
+          "count": 430,
+          "mean": 4408.837209302325,
+          "p50": 5000.0,
+          "p95": 5500.0,
+          "p99": 5500.0,
+          "p99_9": 5500.0,
+          "max": 5500.0
+        },
+        "utilization.gpu": {
+          "count": 430,
+          "mean": 50.86976744186047,
+          "p50": 59.0,
+          "p95": 88.0,
+          "p99": 94.41999999999996,
+          "p99_9": 96.57100000000003,
+          "max": 97.0
+        },
+        "power.draw": {
+          "count": 430,
+          "mean": 13.800232558139536,
+          "p50": 14.07,
+          "p95": 14.841,
+          "p99": 15.341299999999999,
+          "p99_9": 15.715680000000003,
+          "max": 15.75
+        },
+        "temperature.gpu": {
+          "count": 430,
+          "mean": 53.38837209302326,
+          "p50": 54.0,
+          "p95": 55.0,
+          "p99": 55.0,
+          "p99_9": 55.0,
+          "max": 55.0
+        },
+        "memory.used": {
+          "count": 430,
+          "mean": 361.0,
+          "p50": 361.0,
+          "p95": 361.0,
+          "p99": 361.0,
+          "p99_9": 361.0,
+          "max": 361.0
+        }
+      },
+      "per_session": [
+        {
+          "id": "reused-b00-a00",
+          "alignments": 5,
+          "attempts": 43,
+          "freshness_trips": 38
+        },
+        {
+          "id": "reused-b01-a00",
+          "alignments": 1,
+          "attempts": 45,
+          "freshness_trips": 44
+        },
+        {
+          "id": "reused-b02-a00",
+          "alignments": 1,
+          "attempts": 46,
+          "freshness_trips": 45
+        },
+        {
+          "id": "reused-b03-a00",
+          "alignments": 1,
+          "attempts": 45,
+          "freshness_trips": 44
+        },
+        {
+          "id": "reused-b04-a00",
+          "alignments": 1,
+          "attempts": 45,
+          "freshness_trips": 44
+        },
+        {
+          "id": "reused-b05-a00",
+          "alignments": 1,
+          "attempts": 47,
+          "freshness_trips": 46
+        },
+        {
+          "id": "reused-b06-a00",
+          "alignments": 1,
+          "attempts": 46,
+          "freshness_trips": 45
+        },
+        {
+          "id": "reused-b07-a00",
+          "alignments": 1,
+          "attempts": 47,
+          "freshness_trips": 46
+        }
+      ],
+      "directory": "20260925-worker-lifetime",
+      "created_utc": "2026-09-25T21:03:35.935210+00:00",
+      "ac_at_all_session_boundaries": true
+    },
+    {
+      "sessions": 8,
+      "attempts": 194,
+      "alignments": 156,
+      "success_rate_percent": 80.41237113402062,
+      "freshness_trips": 38,
+      "processing_ms": {
+        "p95": 85.28310002293438,
+        "p99": 178.313983939588,
+        "max": 356.8520999979228
+      },
+      "first_alignment_processing_ms": {
+        "count": 436,
+        "mean": 47.6031584866503,
+        "p50": 50.21499999566004,
+        "p95": 66.12222499097697,
+        "p99": 74.09039499470957,
+        "p99_9": 78.8109295081814,
+        "max": 79.76110000163317
+      },
+      "later_alignment_processing_ms": {
+        "count": 7753,
+        "mean": 58.259774409841754,
+        "p50": 56.63459992501885,
+        "p95": 86.76358000375328,
+        "p99": 180.664856075309,
+        "p99_9": 290.44053435046396,
+        "max": 356.8520999979228
+      },
+      "first_alignment_successes": 8,
+      "later_alignment_successes": 148,
+      "slow_frame_gpu": {
+        "samples": 52,
+        "states": {
+          "P3": 46,
+          "P5": 6
+        },
+        "clocks.sm": {
+          "count": 52,
+          "mean": 136.53846153846155,
+          "p50": 97.0,
+          "p95": 247.0,
+          "p99": 247.0,
+          "p99_9": 247.0,
+          "max": 247.0
+        },
+        "clocks.mem": {
+          "count": 52,
+          "mean": 4516.538461538462,
+          "p50": 5000.0,
+          "p95": 5000.0,
+          "p99": 5000.0,
+          "p99_9": 5000.0,
+          "max": 5000.0
+        },
+        "utilization.gpu": {
+          "count": 52,
+          "mean": 65.67307692307692,
+          "p50": 66.0,
+          "p95": 86.44999999999999,
+          "p99": 88.98,
+          "p99_9": 89.89800000000001,
+          "max": 90.0
+        },
+        "power.draw": {
+          "count": 52,
+          "mean": 14.573846153846155,
+          "p50": 14.89,
+          "p95": 15.2345,
+          "p99": 15.3143,
+          "p99_9": 15.34643,
+          "max": 15.35
+        },
+        "temperature.gpu": {
+          "count": 52,
+          "mean": 63.36538461538461,
+          "p50": 63.0,
+          "p95": 65.0,
+          "p99": 65.0,
+          "p99_9": 65.0,
+          "max": 65.0
+        },
+        "memory.used": {
+          "count": 52,
+          "mean": 361.0,
+          "p50": 361.0,
+          "p95": 361.0,
+          "p99": 361.0,
+          "p99_9": 361.0,
+          "max": 361.0
+        }
+      },
+      "per_session": [
+        {
+          "id": "reused-b00-a00",
+          "alignments": 22,
+          "attempts": 22,
+          "freshness_trips": 0
+        },
+        {
+          "id": "reused-b01-a00",
+          "alignments": 22,
+          "attempts": 22,
+          "freshness_trips": 0
+        },
+        {
+          "id": "reused-b02-a00",
+          "alignments": 22,
+          "attempts": 22,
+          "freshness_trips": 0
+        },
+        {
+          "id": "reused-b03-a00",
+          "alignments": 22,
+          "attempts": 22,
+          "freshness_trips": 0
+        },
+        {
+          "id": "reused-b04-a00",
+          "alignments": 22,
+          "attempts": 22,
+          "freshness_trips": 0
+        },
+        {
+          "id": "reused-b05-a00",
+          "alignments": 22,
+          "attempts": 22,
+          "freshness_trips": 0
+        },
+        {
+          "id": "reused-b06-a00",
+          "alignments": 22,
+          "attempts": 22,
+          "freshness_trips": 0
+        },
+        {
+          "id": "reused-b07-a00",
+          "alignments": 2,
+          "attempts": 40,
+          "freshness_trips": 38
+        }
+      ],
+      "directory": "20260926-power-settings",
+      "created_utc": "2026-09-26T20:46:20.979812+00:00",
+      "ac_at_all_session_boundaries": true
+    },
+    {
+      "sessions": 8,
+      "attempts": 184,
+      "alignments": 184,
+      "success_rate_percent": 100.0,
+      "freshness_trips": 0,
+      "processing_ms": {
+        "p95": 107.64045000541955,
+        "p99": 115.77404002891853,
+        "max": 130.8297999203205
+      },
+      "first_alignment_processing_ms": {
+        "count": 380,
+        "mean": 58.58079315359263,
+        "p50": 51.46960000274703,
+        "p95": 107.29605002561584,
+        "p99": 115.93821303569707,
+        "p99_9": 123.18012824736097,
+        "max": 125.83399994764477
+      },
+      "later_alignment_processing_ms": {
+        "count": 7691,
+        "mean": 64.47814163251667,
+        "p50": 57.64000001363456,
+        "p95": 107.64569998718798,
+        "p99": 115.77208003727719,
+        "p99_9": 124.53516903216995,
+        "max": 130.8297999203205
+      },
+      "first_alignment_successes": 8,
+      "later_alignment_successes": 176,
+      "slow_frame_gpu": {
+        "samples": 0,
+        "states": {},
+        "clocks.sm": null,
+        "clocks.mem": null,
+        "utilization.gpu": null,
+        "power.draw": null,
+        "temperature.gpu": null,
+        "memory.used": null
+      },
+      "per_session": [
+        {
+          "id": "reused-b00-a00",
+          "alignments": 22,
+          "attempts": 22,
+          "freshness_trips": 0
+        },
+        {
+          "id": "reused-b01-a00",
+          "alignments": 22,
+          "attempts": 22,
+          "freshness_trips": 0
+        },
+        {
+          "id": "reused-b02-a00",
+          "alignments": 23,
+          "attempts": 23,
+          "freshness_trips": 0
+        },
+        {
+          "id": "reused-b03-a00",
+          "alignments": 23,
+          "attempts": 23,
+          "freshness_trips": 0
+        },
+        {
+          "id": "reused-b04-a00",
+          "alignments": 24,
+          "attempts": 24,
+          "freshness_trips": 0
+        },
+        {
+          "id": "reused-b05-a00",
+          "alignments": 23,
+          "attempts": 23,
+          "freshness_trips": 0
+        },
+        {
+          "id": "reused-b06-a00",
+          "alignments": 24,
+          "attempts": 24,
+          "freshness_trips": 0
+        },
+        {
+          "id": "reused-b07-a00",
+          "alignments": 23,
+          "attempts": 23,
+          "freshness_trips": 0
+        }
+      ],
+      "directory": "20260926-base-executable-settings",
+      "created_utc": "2026-09-26T21:20:18.670436+00:00",
+      "ac_at_all_session_boundaries": true
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "template_size_px": 384,
+  "max_features": 600,
+  "contrast_threshold": 0.025,
+  "ratio_test": 0.72,
+  "min_inliers": 12,
+  "min_inlier_ratio": 0.55,
+  "ransac_reprojection_px": 2.5,
+  "max_reprojection_rms_px": 1.5,
+  "min_template_coverage": 0.18,
+  "min_projected_area_px": 1600,
+  "image_margin_px": 2,
+  "max_side_ratio": 5,
+  "detection_width_px": 640
+}

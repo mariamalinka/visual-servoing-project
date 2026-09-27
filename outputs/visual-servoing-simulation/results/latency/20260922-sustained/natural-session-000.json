@@ -1,0 +1,234 @@
+{
+  "id": "natural-session-000",
+  "mode": "natural",
+  "attempts": 24,
+  "alignments": 24,
+  "outcomes": {
+    "converged": 24
+  },
+  "elapsed_s": 125.6177372999955,
+  "initialization_error": null,
+  "processing_ms": {
+    "count": 1053,
+    "mean": 65.01348917407903,
+    "p50": 67.3988000198733,
+    "p95": 106.48400000063702,
+    "p99": 118.76918800873685,
+    "p99_9": 134.62680441257632,
+    "max": 142.07790000364184
+  },
+  "uncached_processing_ms": {
+    "count": 849,
+    "mean": 80.55459552429298,
+    "p50": 84.70560002024285,
+    "p95": 107.87094000843354,
+    "p99": 121.473504002206,
+    "p99_9": 136.17675281176375,
+    "max": 142.07790000364184
+  },
+  "capture_to_command_ms": {
+    "count": 1029,
+    "mean": 124.65320097215667,
+    "p50": 128.4643999824766,
+    "p95": 164.75789999822152,
+    "p99": 176.82564800488768,
+    "p99_9": 193.9097824047801,
+    "max": 203.23059998918325
+  },
+  "stage_ms": {
+    "prepare_ms": {
+      "count": 849,
+      "mean": 0.24026442808400755,
+      "p50": 0.21299999207258224,
+      "p95": 0.4142200108617544,
+      "p99": 0.7276160072069611,
+      "p99_9": 0.9600415944587455,
+      "max": 0.9904000035021454
+    },
+    "features_ms": {
+      "count": 849,
+      "mean": 52.42892862244118,
+      "p50": 51.48449999978766,
+      "p95": 60.67669998155907,
+      "p99": 68.46297999494709,
+      "p99_9": 80.80792081588905,
+      "max": 85.65670001553372
+    },
+    "points_ms": {
+      "count": 849,
+      "mean": 0.5750103647070877,
+      "p50": 0.5411000165622681,
+      "p95": 0.9205999900586899,
+      "p99": 1.477136005414649,
+      "p99_9": 1.7888088149484285,
+      "max": 1.8625000084284693
+    },
+    "matching_ms": {
+      "count": 849,
+      "mean": 3.8114994112936973,
+      "p50": 3.5513000038918108,
+      "p95": 5.368319997796787,
+      "p99": 6.275608007563277,
+      "p99_9": 8.16247441642926,
+      "max": 9.781900007510558
+    },
+    "filter_ms": {
+      "count": 849,
+      "mean": 1.2509005892710832,
+      "p50": 1.131199998781085,
+      "p95": 1.9170600047800688,
+      "p99": 2.4388519942294797,
+      "p99_9": 4.036656803917155,
+      "max": 4.3320999830029905
+    },
+    "geometry_ms": {
+      "count": 849,
+      "mean": 1.3528353353914035,
+      "p50": 1.3149000005796552,
+      "p95": 1.9476600107736879,
+      "p99": 2.5530839781276873,
+      "p99_9": 3.0469752138014936,
+      "max": 3.1467000080738217
+    },
+    "coarse_ms": {
+      "count": 849,
+      "mean": 60.243486101452255,
+      "p50": 59.43729999125935,
+      "p95": 69.40875999862327,
+      "p99": 77.07648800336756,
+      "p99_9": 90.03397360607089,
+      "max": 97.42370000458322
+    },
+    "refinement_ms": {
+      "count": 849,
+      "mean": 20.053434864361744,
+      "p50": 25.89230000739917,
+      "p95": 44.78594000102021,
+      "p99": 57.617359993746476,
+      "p99_9": 70.08586720959306,
+      "max": 74.42220000666566
+    },
+    "coarse_thread_cpu_ms": {
+      "count": 849,
+      "mean": 40.525618374558306,
+      "p50": 46.875,
+      "p95": 62.5,
+      "p99": 62.5,
+      "p99_9": 80.50000000000068,
+      "max": 93.75
+    },
+    "coarse_process_cpu_ms": {
+      "count": 849,
+      "mean": 152.86366313309776,
+      "p50": 156.25,
+      "p95": 203.125,
+      "p99": 234.375,
+      "p99_9": 250.0,
+      "max": 250.0
+    },
+    "refinement_thread_cpu_ms": {
+      "count": 849,
+      "mean": 19.47143698468787,
+      "p50": 31.25,
+      "p95": 46.875,
+      "p99": 62.5,
+      "p99_9": 64.87500000000068,
+      "max": 78.125
+    },
+    "refinement_process_cpu_ms": {
+      "count": 849,
+      "mean": 30.495435806831566,
+      "p50": 31.25,
+      "p95": 93.75,
+      "p99": 125.0,
+      "p99_9": 156.25,
+      "max": 156.25
+    },
+    "render_thread_cpu_ms": {
+      "count": 1053,
+      "mean": 2.077397910731244,
+      "p50": 0.0,
+      "p95": 15.625,
+      "p99": 15.625,
+      "p99_9": 15.625,
+      "max": 15.625
+    },
+    "render_process_cpu_ms": {
+      "count": 1053,
+      "mean": 3.8135090218423553,
+      "p50": 0.0,
+      "p95": 31.25,
+      "p99": 46.875,
+      "p99_9": 46.875,
+      "max": 46.875
+    },
+    "inference_thread_cpu_ms": {
+      "count": 1053,
+      "mean": 48.433048433048434,
+      "p50": 46.875,
+      "p95": 93.75,
+      "p99": 109.375,
+      "p99_9": 124.18750000000145,
+      "max": 125.0
+    },
+    "inference_process_cpu_ms": {
+      "count": 1053,
+      "mean": 147.89589268755935,
+      "p50": 171.875,
+      "p95": 265.625,
+      "p99": 281.25,
+      "p99_9": 312.5,
+      "max": 328.125
+    }
+  },
+  "maximum_feedback_age_ms": 335.703899996588,
+  "freshness_watchdog_trips": 0,
+  "late_after_freshness_stop": 0,
+  "late_after_control_stop": 0,
+  "late_results": [],
+  "counters": {
+    "captures": 1861,
+    "capture_slots": 3578,
+    "busy_capture_skips": 1717,
+    "input_dropped": 0,
+    "transport_dropped": 0,
+    "pending_cancelled": 65,
+    "sensor_received": 1861,
+    "sensor_rows_evicted": 0,
+    "command_rows_evicted": 0,
+    "loop_rows_evicted": 0,
+    "stale_results": 0,
+    "obsolete_results": 18,
+    "pre_inference_dropped": 0,
+    "accepted": 1029,
+    "control_ticks": 49478,
+    "moving_ticks": 30174,
+    "unsafe_motion_ticks": 0,
+    "contacts": 0,
+    "post_stop_motion_ticks": 0,
+    "control_deadline_misses": 0,
+    "fault_results": 0,
+    "discarded_physics_s": 0.0,
+    "result_mailbox_dropped": 0,
+    "worker_requests_expired": 0,
+    "completed_but_unreceived": 0,
+    "requests_not_started": 0
+  },
+  "worker_alive": false,
+  "error": null,
+  "telemetry_complete": true,
+  "diagnostic_spikes_evicted": 0,
+  "gc_events_evicted": 0,
+  "gpu_before": {
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 44, 0 %, 9.22 W, 210 MHz",
+    "stderr": ""
+  },
+  "gpu_after": {
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 44, 0 %, 5.62 W, 210 MHz",
+    "stderr": ""
+  },
+  "trace": "traces/natural-session-000.json.gz",
+  "trace_sha256": "512bf0fbfbc5a9441e2cd8e596eae509f6e865b0d71a7d2c4cbca069fcabb5c1"
+}

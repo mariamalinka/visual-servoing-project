@@ -1,0 +1,22 @@
+{
+  "planned": 12,
+  "completed": 12,
+  "expected_passes": 10,
+  "nominal_alignment": "3/3",
+  "injected_stall_checks": "6/6",
+  "transport_alignment": "1/3",
+  "maximum_injected_stall_watchdog_lateness_ms": 2.0332999993115664,
+  "maximum_control_loop_gap_ms": 21.034799981862307,
+  "safety_counters": {
+    "unsafe_motion_ticks": 0,
+    "post_stop_motion_ticks": 0,
+    "contacts": 0,
+    "control_deadline_misses": 0
+  },
+  "all_workers_exited": true,
+  "source_and_runtime_match_manifest": true,
+  "accepted_latency_components_reconcile": true,
+  "no_commands_applied_after_stop": true,
+  "regression_tests": 276,
+  "scene_verification": "PASS"
+}

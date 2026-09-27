@@ -1,0 +1,45 @@
+{
+  "checked_utc": "2026-09-20T01:32:37.471405+00:00",
+  "planned_trials": 48,
+  "completed_trials": 48,
+  "starting_poses_per_profile": 2,
+  "profiles": 8,
+  "matchers": 3,
+  "outcomes": {
+    "converged": 31,
+    "stale_camera": 15,
+    "timeout": 2
+  },
+  "expected_outcomes_met": 37,
+  "expected_long_outage_checks_passed": 6,
+  "safety_violations": 0,
+  "full_suite": {
+    "tests": 200,
+    "seconds": 228.234,
+    "outcome": "PASS",
+    "log": "full-verification.txt",
+    "scene_application": "PASS"
+  },
+  "focused_suite": {
+    "tests": 38,
+    "seconds": 15.573,
+    "outcome": "PASS",
+    "log": "camera-tests.txt"
+  },
+  "resume_checks": {
+    "interrupted_trial_count": 1,
+    "completed_trial_count": 2,
+    "saved_trial_unchanged": true,
+    "only_pending_trial_executed": true,
+    "changed_plan_rejected": true,
+    "changed_fingerprint_rejected": true,
+    "completed_resume_did_not_repeat_trials": true,
+    "report_regeneration": "PASS"
+  },
+  "input_fingerprint_unchanged": true,
+  "saved_reference_images_unchanged": true,
+  "traces_monotonic_and_recorded_commands_respect_age": true,
+  "inference_timing_note": "The regression suite overlapped this run. Wall and inference timings are diagnostics; compare simulated-time outcomes.",
+  "repository_check": "Repository check passed: 676 files, 54.3 MiB.\nPython syntax and relative Markdown file/directory links checked.\nThis checks the current file set; it does not remove old Git history.",
+  "git_diff_check": "PASS"
+}

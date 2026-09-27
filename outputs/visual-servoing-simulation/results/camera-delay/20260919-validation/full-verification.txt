@@ -1,0 +1,301 @@
+test_adaptive_mode_reacquires_lost_target_without_pointer_events (test_adaptive_gain.GainIntegrationTests.test_adaptive_mode_reacquires_lost_target_without_pointer_events) ... ok
+test_adaptive_trial_aligns_with_saved_gain_and_stopped_evidence (test_adaptive_gain.GainIntegrationTests.test_adaptive_trial_aligns_with_saved_gain_and_stopped_evidence) ... ok
+test_constant_schedule_reproduces_fixed_commands_exactly (test_adaptive_gain.GainIntegrationTests.test_constant_schedule_reproduces_fixed_commands_exactly) ... ok
+test_gain_button_cancels_motion_and_preserves_remembered_view (test_adaptive_gain.GainIntegrationTests.test_gain_button_cancels_motion_and_preserves_remembered_view) ... ok
+test_gain_updates_before_speed_limits_and_loss_stops (test_adaptive_gain.GainIntegrationTests.test_gain_updates_before_speed_limits_and_loss_stops) ... ok
+test_incomplete_gain_study_is_not_reported (test_adaptive_gain.GainMathTests.test_incomplete_gain_study_is_not_reported) ... ok
+test_invalid_policy_and_error_are_rejected (test_adaptive_gain.GainMathTests.test_invalid_policy_and_error_are_rejected) ... ok
+test_metric_distinguishes_goal_crossing_from_error_growth (test_adaptive_gain.GainMathTests.test_metric_distinguishes_goal_crossing_from_error_growth) ... ok
+test_paired_timing_does_not_compare_different_success_groups (test_adaptive_gain.GainMathTests.test_paired_timing_does_not_compare_different_success_groups) ... ok
+test_policy_is_bounded_monotonic_and_has_declared_limits (test_adaptive_gain.GainMathTests.test_policy_is_bounded_monotonic_and_has_declared_limits) ... ok
+test_blank_wrong_id_and_occluded_images_are_rejected (test_alignment_regression.AlignmentRegressionTests.test_blank_wrong_id_and_occluded_images_are_rejected) ... ok
+test_failed_motion_now_aligns_with_and_without_pointer_events (test_alignment_regression.AlignmentRegressionTests.test_failed_motion_now_aligns_with_and_without_pointer_events) ... ok
+test_previous_failure_images_decode_the_black_marker (test_alignment_regression.AlignmentRegressionTests.test_previous_failure_images_decode_the_black_marker) ... ok
+test_previously_undetected_start_now_aligns (test_alignment_regression.AlignmentRegressionTests.test_previously_undetected_start_now_aligns) ... ok
+test_auto_off_keeps_new_poses_manual_and_button_on_restarts (test_automatic_start.AutomaticStartTests.test_auto_off_keeps_new_poses_manual_and_button_on_restarts) ... ok
+test_fresh_visible_start_confirms_without_search_motion (test_automatic_start.AutomaticStartTests.test_fresh_visible_start_confirms_without_search_motion) ... ok
+test_random_button_clears_memory_and_starts_without_an_align_click (test_automatic_start.AutomaticStartTests.test_random_button_clears_memory_and_starts_without_an_align_click) ... ok
+test_random_starts_are_reproducible_and_do_not_filter_hidden_views (test_automatic_start.AutomaticStartTests.test_random_starts_are_reproducible_and_do_not_filter_hidden_views) ... ok
+test_start_buttons_run_automatically_but_demo_keeps_scripted_control (test_automatic_start.AutomaticStartTests.test_start_buttons_run_automatically_but_demo_keeps_scripted_control) ... ok
+test_terminal_success_and_missing_target_do_not_restart_forever (test_automatic_start.AutomaticStartTests.test_terminal_success_and_missing_target_do_not_restart_forever) ... ok
+test_unseen_start_searches_and_aligns_without_click_or_home_observation (test_automatic_start.AutomaticStartTests.test_unseen_start_searches_and_aligns_without_click_or_home_observation) ... ok
+test_user_interruption_does_not_rearm_from_idle (test_automatic_start.AutomaticStartTests.test_user_interruption_does_not_rearm_from_idle) ... ok
+test_visible_start_aligns_without_click_or_reset (test_automatic_start.AutomaticStartTests.test_visible_start_aligns_without_click_or_reset) ... ok
+test_ibvs_comparison_matches_original_runner_exactly (test_baselines.ComparisonIntegrationTests.test_ibvs_comparison_matches_original_runner_exactly) ... ok
+test_target_step_feedback_and_restoration (test_baselines.ComparisonIntegrationTests.test_target_step_feedback_and_restoration) ... ok
+test_incomplete_comparison_is_not_reported (test_baselines.PoseMathTests.test_incomplete_comparison_is_not_reported) ... ok
+test_initial_loss_and_pbvs_runtime_loss_stop (test_baselines.PoseMathTests.test_initial_loss_and_pbvs_runtime_loss_stop) ... ok
+test_open_loop_command_is_independent_of_all_later_images (test_baselines.PoseMathTests.test_open_loop_command_is_independent_of_all_later_images) ... ok
+test_pbvs_command_reduces_translation_and_rotation_error (test_baselines.PoseMathTests.test_pbvs_command_reduces_translation_and_rotation_error) ... ok
+test_pose_estimate_recovers_independent_projection (test_baselines.PoseMathTests.test_pose_estimate_recovers_independent_projection) ... ok
+test_timeout_and_speed_bounds (test_baselines.PoseMathTests.test_timeout_and_speed_bounds) ... ok
+test_empty_group_is_undefined_not_zero_percent (test_benchmark.BenchmarkTests.test_empty_group_is_undefined_not_zero_percent) ... ok
+test_incomplete_run_cannot_be_reported_as_complete (test_benchmark.BenchmarkTests.test_incomplete_run_cannot_be_reported_as_complete) ... ok
+test_initial_and_runtime_loss_are_distinct (test_benchmark.BenchmarkTests.test_initial_and_runtime_loss_are_distinct) ... ok
+test_invalid_sampling (test_benchmark.BenchmarkTests.test_invalid_sampling) ... ok
+test_invisible_starts_remain_in_overall_denominator (test_benchmark.BenchmarkTests.test_invisible_starts_remain_in_overall_denominator) ... ok
+test_sampling_seed_prefix_bounds_and_profiles (test_benchmark.BenchmarkTests.test_sampling_seed_prefix_bounds_and_profiles) ... ok
+test_stall_classification_and_precedence (test_benchmark.BenchmarkTests.test_stall_classification_and_precedence) ... ok
+test_wilson_edge_cases_and_known_value (test_benchmark.BenchmarkTests.test_wilson_edge_cases_and_known_value) ... ok
+test_convergence_and_complete_stopped_observation (test_benchmark.TrialIntegrationTests.test_convergence_and_complete_stopped_observation) ... ok
+test_out_of_view_start_is_recorded_and_stopped (test_benchmark.TrialIntegrationTests.test_out_of_view_start_is_recorded_and_stopped) ... ok
+test_control_loop_has_a_deadline_even_with_fresh_images (test_camera_delay_integration.CameraDelayIntegrationTests.test_control_loop_has_a_deadline_even_with_fresh_images) ... ok
+test_controlled_delays_converge_and_hold_on_independent_current_images (test_camera_delay_integration.CameraDelayIntegrationTests.test_controlled_delays_converge_and_hold_on_independent_current_images) ... ok
+test_delay_beyond_age_budget_never_moves (test_camera_delay_integration.CameraDelayIntegrationTests.test_delay_beyond_age_budget_never_moves) ... ok
+test_failed_inference_result_is_not_treated_as_search_permission (test_camera_delay_integration.CameraDelayIntegrationTests.test_failed_inference_result_is_not_treated_as_search_permission) ... ok
+test_inference_exception_brakes_and_is_reported (test_camera_delay_integration.CameraDelayIntegrationTests.test_inference_exception_brakes_and_is_reported) ... ok
+test_missing_target_with_live_camera_still_uses_normal_recovery (test_camera_delay_integration.CameraDelayIntegrationTests.test_missing_target_with_live_camera_still_uses_normal_recovery) ... ok
+test_motion_continues_during_delay_and_memory_uses_capture_pose (test_camera_delay_integration.CameraDelayIntegrationTests.test_motion_continues_during_delay_and_memory_uses_capture_pose) ... ok
+test_no_delivery_no_command_and_drawing_cannot_bypass_delay (test_camera_delay_integration.CameraDelayIntegrationTests.test_no_delivery_no_command_and_drawing_cannot_bypass_delay) ... ok
+test_old_queued_frames_cannot_survive_stop_reset_or_mode_change (test_camera_delay_integration.CameraDelayIntegrationTests.test_old_queued_frames_cannot_survive_stop_reset_or_mode_change) ... ok
+test_pause_jog_gain_and_delay_buttons_cancel_pending_motion (test_camera_delay_integration.CameraDelayIntegrationTests.test_pause_jog_gain_and_delay_buttons_cancel_pending_motion) ... ok
+test_repeated_display_frames_cannot_confirm_convergence (test_camera_delay_integration.CameraDelayIntegrationTests.test_repeated_display_frames_cannot_confirm_convergence) ... ok
+test_saved_image_metadata_uses_its_capture_state (test_camera_delay_integration.CameraDelayIntegrationTests.test_saved_image_metadata_uses_its_capture_state) ... ok
+test_stream_outage_stops_at_capture_age_deadline_and_does_not_restart (test_camera_delay_integration.CameraDelayIntegrationTests.test_stream_outage_stops_at_capture_age_deadline_and_does_not_restart) ... ok
+test_unannounced_clock_reset_stops_old_feedback (test_camera_delay_integration.CameraDelayIntegrationTests.test_unannounced_clock_reset_stops_old_feedback) ... ok
+test_capture_clock_does_not_replay_frames_after_a_gap (test_camera_timing.CameraTimingTests.test_capture_clock_does_not_replay_frames_after_a_gap) ... ok
+test_expired_frame_cannot_refresh_the_watchdog (test_camera_timing.CameraTimingTests.test_expired_frame_cannot_refresh_the_watchdog) ... ok
+test_frame_is_delivered_once_at_its_scheduled_time (test_camera_timing.CameraTimingTests.test_frame_is_delivered_once_at_its_scheduled_time) ... ok
+test_invalid_settings_and_timestamps_are_rejected (test_camera_timing.CameraTimingTests.test_invalid_settings_and_timestamps_are_rejected) ... ok
+test_newest_due_frame_wins_after_a_poll_gap (test_camera_timing.CameraTimingTests.test_newest_due_frame_wins_after_a_poll_gap) ... ok
+test_no_images_and_continuous_images_have_bounded_run_time (test_camera_timing.CameraTimingTests.test_no_images_and_continuous_images_have_bounded_run_time) ... ok
+test_payload_keeps_capture_pixels_joints_and_measurements (test_camera_timing.CameraTimingTests.test_payload_keeps_capture_pixels_joints_and_measurements) ... ok
+test_queue_is_bounded_and_discards_oldest_pending_frame (test_camera_timing.CameraTimingTests.test_queue_is_bounded_and_discards_oldest_pending_frame) ... ok
+test_reset_flushes_pending_old_frames_and_deadlines (test_camera_timing.CameraTimingTests.test_reset_flushes_pending_old_frames_and_deadlines) ... ok
+test_watchdog_uses_capture_age_not_arrival_time (test_camera_timing.CameraTimingTests.test_watchdog_uses_capture_age_not_arrival_time) ... ok
+test_zero_delay_is_available_in_the_capture_tick (test_camera_timing.CameraTimingTests.test_zero_delay_is_available_in_the_capture_tick) ... ok
+test_camera_origin_jacobian_and_optical_axes (test_control.CameraFrameTests.test_camera_origin_jacobian_and_optical_axes) ... ok
+test_full_joint_to_image_chain_against_projection (test_control.CameraFrameTests.test_full_joint_to_image_chain_against_projection) ... ok
+test_bad_math_inputs_rejected (test_control.ControlMathTests.test_bad_math_inputs_rejected) ... ok
+test_damping_stays_bounded_at_singularity (test_control.ControlMathTests.test_damping_stays_bounded_at_singularity) ... ok
+test_known_rotation_depth_recovered_from_pixels (test_control.ControlMathTests.test_known_rotation_depth_recovered_from_pixels) ... ok
+test_pinhole_normalization (test_control.ControlMathTests.test_pinhole_normalization) ... ok
+test_point_matrix_against_camera_motion_finite_differences (test_control.ControlMathTests.test_point_matrix_against_camera_motion_finite_differences) ... ok
+test_success_requires_full_observed_hold_window (test_control.ControlMathTests.test_success_requires_full_observed_hold_window) ... ok
+test_timeout_stops (test_control.ControlMathTests.test_timeout_stops) ... ok
+test_tracking_loss_stops_until_explicit_restart (test_control.ControlMathTests.test_tracking_loss_stops_until_explicit_restart) ... ok
+test_already_valid_depth_uses_the_original_numeric_path (test_depth_refinement.DepthRefinementTests.test_already_valid_depth_uses_the_original_numeric_path) ... ok
+test_noisy_near_frontal_square_recovers_independent_depth (test_depth_refinement.DepthRefinementTests.test_noisy_near_frontal_square_recovers_independent_depth) ... ok
+test_refinement_does_not_bypass_the_residual_threshold (test_depth_refinement.DepthRefinementTests.test_refinement_does_not_bypass_the_residual_threshold) ... ok
+test_both_previous_joint_limit_failures_now_reposition_and_converge (test_joint_limits.JointLimitIntegrationTests.test_both_previous_joint_limit_failures_now_reposition_and_converge) ... ok
+test_disabled_supervision_reproduces_original_ibvs_commands (test_joint_limits.JointLimitIntegrationTests.test_disabled_supervision_reproduces_original_ibvs_commands) ... ok
+test_overall_deadline_includes_repositioning_and_is_terminal (test_joint_limits.JointLimitIntegrationTests.test_overall_deadline_includes_repositioning_and_is_terminal) ... ok
+test_stop_pause_jog_and_gain_cancel_a_stalled_plant_retry (test_joint_limits.JointLimitIntegrationTests.test_stop_pause_jog_and_gain_cancel_a_stalled_plant_retry) ... ok
+test_active_set_matches_independent_exhaustive_face_search (test_joint_limits.JointLimitMathTests.test_active_set_matches_independent_exhaustive_face_search) ... ok
+test_constrained_command_obeys_joint_and_actual_camera_speed_limits (test_joint_limits.JointLimitMathTests.test_constrained_command_obeys_joint_and_actual_camera_speed_limits) ... ok
+test_feasible_original_command_is_preserved_exactly (test_joint_limits.JointLimitMathTests.test_feasible_original_command_is_preserved_exactly) ... ok
+test_invalid_optimizer_inputs_are_rejected (test_joint_limits.JointLimitMathTests.test_invalid_optimizer_inputs_are_rejected) ... ok
+test_optimizer_failure_commands_zero (test_joint_limits.JointLimitMathTests.test_optimizer_failure_commands_zero) ... ok
+test_singular_problem_and_fixed_joint_obey_kkt_conditions (test_joint_limits.JointLimitMathTests.test_singular_problem_and_fixed_joint_obey_kkt_conditions) ... ok
+test_stall_brakes_return_is_bounded_and_confirmation_requires_fresh_frames (test_joint_limits.JointLimitMathTests.test_stall_brakes_return_is_bounded_and_confirmation_requires_fresh_frames) ... ok
+test_unobserved_return_view_has_a_deadline_and_bad_settings_are_rejected (test_joint_limits.JointLimitMathTests.test_unobserved_return_view_has_a_deadline_and_bad_settings_are_rejected) ... ok
+test_velocity_damper_slows_outward_commands_but_allows_retreat (test_joint_limits.JointLimitMathTests.test_velocity_damper_slows_outward_commands_but_allows_retreat) ... ok
+test_incomplete_study_is_rejected (test_joint_study.JointStudyTests.test_incomplete_study_is_rejected) ... ok
+test_reporting_preserves_failed_starts_and_identifies_regressions (test_joint_study.JointStudyTests.test_reporting_preserves_failed_starts_and_identifies_regressions) ... ok
+test_auto_places_both_models_and_template_on_available_device (test_learned_device.DeviceInferenceTests.test_auto_places_both_models_and_template_on_available_device) ... C:\Users\marys\Documents\Codex\2026-09-06\visual-servoing-project\outputs\visual-servoing-simulation\.venv\Lib\site-packages\torch\jit\_script.py:1488: DeprecationWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+ok
+test_cpu_remains_usable_and_keeps_features_on_cpu (test_learned_device.DeviceInferenceTests.test_cpu_remains_usable_and_keeps_features_on_cpu) ... ok
+test_auto_uses_gpu_when_available_and_cpu_otherwise (test_learned_device.DeviceSelectionTests.test_auto_uses_gpu_when_available_and_cpu_otherwise) ... ok
+test_explicit_cpu_does_not_initialize_cuda (test_learned_device.DeviceSelectionTests.test_explicit_cpu_does_not_initialize_cuda) ... ok
+test_explicit_cuda_does_not_silently_run_on_cpu (test_learned_device.DeviceSelectionTests.test_explicit_cuda_does_not_silently_run_on_cpu) ... ok
+test_license_only_metadata_cannot_make_setup_downgrade_cuda (test_learned_device.DeviceSelectionTests.test_license_only_metadata_cannot_make_setup_downgrade_cuda) ... ok
+test_setup_preserves_existing_cuda_and_honors_explicit_overrides (test_learned_device.DeviceSelectionTests.test_setup_preserves_existing_cuda_and_honors_explicit_overrides) ... ok
+test_gui_reports_root_cause_and_saves_complete_chain_and_interpreter (test_learned_errors.LearnedErrorTests.test_gui_reports_root_cause_and_saves_complete_chain_and_interpreter) ... ok
+test_import_failures_retain_cause_and_actionable_details (test_learned_errors.LearnedErrorTests.test_import_failures_retain_cause_and_actionable_details) ... ok
+test_unwritable_log_does_not_hide_original_error_or_crash (test_learned_errors.LearnedErrorTests.test_unwritable_log_does_not_hide_original_error_or_crash) ... ok
+test_broken_import_is_reinstalled_even_when_pip_reports_satisfied (test_learned_errors.LearnedInstallerTests.test_broken_import_is_reinstalled_even_when_pip_reports_satisfied) ... ok
+test_fresh_refuses_to_overwrite_an_existing_environment (test_learned_errors.LearnedInstallerTests.test_fresh_refuses_to_overwrite_an_existing_environment) ... ok
+test_unreadable_runtime_is_not_mistaken_for_installed_success (test_learned_errors.LearnedInstallerTests.test_unreadable_runtime_is_not_mistaken_for_installed_success) ... ok
+test_cold_start_uses_only_current_images_and_starts_bounded_search (test_learned_integration.LearnedIntegrationTests.test_cold_start_uses_only_current_images_and_starts_bounded_search) ... ok
+test_drawing_matches_never_advances_search_confirmation (test_learned_integration.LearnedIntegrationTests.test_drawing_matches_never_advances_search_confirmation) ... ok
+test_loss_brakes_and_recovers_on_real_restored_images (test_learned_integration.LearnedIntegrationTests.test_loss_brakes_and_recovers_on_real_restored_images) ... ok
+test_manual_interruptions_cancel_learned_automatic_motion (test_learned_integration.LearnedIntegrationTests.test_manual_interruptions_cancel_learned_automatic_motion) ... ok
+test_offset_aligns_without_any_aruco_or_sift_fallback (test_learned_integration.LearnedIntegrationTests.test_offset_aligns_without_any_aruco_or_sift_fallback) ... ok
+test_switching_matchers_keeps_pose_goal_and_gain_but_stops_old_command (test_learned_integration.LearnedIntegrationTests.test_switching_matchers_keeps_pose_goal_and_gain_but_stops_old_command) ... ok
+test_teaching_preserves_one_shared_picture_goal (test_learned_integration.LearnedIntegrationTests.test_teaching_preserves_one_shared_picture_goal) ... ok
+test_unavailable_matcher_leaves_existing_mode_stopped (test_learned_integration.LearnedIntegrationTests.test_unavailable_matcher_leaves_existing_mode_stopped) ... 
+2026-09-19T23:11:20.863038 selecting learned
+Python: C:\Users\marys\Documents\Codex\2026-09-06\visual-servoing-project\outputs\visual-servoing-simulation\.venv\Scripts\python.exe
+Traceback (most recent call last):
+  File "C:\Users\marys\Documents\Codex\2026-09-06\visual-servoing-project\outputs\visual-servoing-simulation\app.py", line 140, in select_perception
+    perception = make_perception(mode,self.sim)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\mock.py", line 1198, in _execute_mock_call
+    raise effect
+learned_perception.LearnedUnavailable: Run setup-learned.cmd
+
+ok
+test_blank_wrong_mirrored_and_tiny_evidence_are_rejected (test_learned_perception.LearnedPerceptionTests.test_blank_wrong_mirrored_and_tiny_evidence_are_rejected) ... ok
+test_cache_reuses_only_identical_pixels_and_failures_clear_features (test_learned_perception.LearnedPerceptionTests.test_cache_reuses_only_identical_pixels_and_failures_clear_features) ... ok
+test_invalid_learned_settings_fail_before_model_loading (test_learned_perception.LearnedPerceptionTests.test_invalid_learned_settings_fail_before_model_loading) ... ok
+test_outside_boundary_does_not_drive_alignment (test_learned_perception.LearnedPerceptionTests.test_outside_boundary_does_not_drive_alignment) ... ok
+test_partial_occlusion_still_localizes_the_picture (test_learned_perception.LearnedPerceptionTests.test_partial_occlusion_still_localizes_the_picture) ... ok
+test_real_learned_matches_recover_independent_camera_geometry (test_learned_perception.LearnedPerceptionTests.test_real_learned_matches_recover_independent_camera_geometry) ... ok
+test_repeated_inference_is_deterministic (test_learned_perception.LearnedPerceptionTests.test_repeated_inference_is_deterministic) ... ok
+test_missing_models_give_an_actionable_error (test_learned_perception.LearnedSetupTests.test_missing_models_give_an_actionable_error) ... ok
+test_shared_geometry_rejects_nonfinite_or_insufficient_evidence (test_learned_perception.LearnedSetupTests.test_shared_geometry_rejects_nonfinite_or_insufficient_evidence) ... ok
+test_incomplete_learned_comparison_is_rejected (test_learned_study.LearnedStudyTests.test_incomplete_learned_comparison_is_rejected) ... ok
+test_predeclared_plan_and_summary_keep_failed_starts (test_learned_study.LearnedStudyTests.test_predeclared_plan_and_summary_keep_failed_starts) ... ok
+test_actual_tracking_loss_brakes_before_recovery_and_reacquires (test_natural_integration.NaturalIntegrationTests.test_actual_tracking_loss_brakes_before_recovery_and_reacquires) ... ok
+test_cold_picture_start_searches_without_a_live_home_observation (test_natural_integration.NaturalIntegrationTests.test_cold_picture_start_searches_without_a_live_home_observation) ... ok
+test_failed_mode_switch_preserves_material_and_reference_and_stops (test_natural_integration.NaturalIntegrationTests.test_failed_mode_switch_preserves_material_and_reference_and_stops) ... 
+2026-09-19T23:12:04.567393 selecting natural
+Python: C:\Users\marys\Documents\Codex\2026-09-06\visual-servoing-project\outputs\visual-servoing-simulation\.venv\Scripts\python.exe
+Traceback (most recent call last):
+  File "C:\Users\marys\Documents\Codex\2026-09-06\visual-servoing-project\outputs\visual-servoing-simulation\app.py", line 142, in select_perception
+    rgb, reference = load_reference(path, self.sim.camera_intrinsics(),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marys\Documents\Codex\2026-09-06\visual-servoing-project\outputs\visual-servoing-simulation\reference_image.py", line 52, in load_reference
+    with np.load(path, allow_pickle=False) as saved:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marys\Documents\Codex\2026-09-06\visual-servoing-project\outputs\visual-servoing-simulation\.venv\Lib\site-packages\numpy\lib\_npyio_impl.py", line 454, in load
+    fid = stack.enter_context(open(os.fspath(file), "rb"))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marys\\AppData\\Local\\Temp\\tmpm9flwm6g\\missing.npz'
+
+ok
+test_fixed_and_adaptive_picture_alignment_stay_aligned_after_stop (test_natural_integration.NaturalIntegrationTests.test_fixed_and_adaptive_picture_alignment_stay_aligned_after_stop) ... ok
+test_match_display_cannot_advance_confirmation_or_motion (test_natural_integration.NaturalIntegrationTests.test_match_display_cannot_advance_confirmation_or_motion) ... ok
+test_natural_mode_never_uses_the_aruco_detector (test_natural_integration.NaturalIntegrationTests.test_natural_mode_never_uses_the_aruco_detector) ... ok
+test_natural_teaching_is_atomic_and_reference_metadata_is_checked (test_natural_integration.NaturalIntegrationTests.test_natural_teaching_is_atomic_and_reference_metadata_is_checked) ... ok
+test_stop_pause_jog_and_gain_cancel_natural_search (test_natural_integration.NaturalIntegrationTests.test_stop_pause_jog_and_gain_cancel_natural_search) ... ok
+test_switching_modes_stops_command_preserves_pose_and_clears_memory (test_natural_integration.NaturalIntegrationTests.test_switching_modes_stops_command_preserves_pose_and_clears_memory) ... ok
+test_wrong_and_absent_targets_cannot_supply_natural_measurements (test_natural_integration.NaturalIntegrationTests.test_wrong_and_absent_targets_cannot_supply_natural_measurements) ... ok
+test_blank_unrelated_and_mirrored_images_do_not_produce_control_features (test_natural_perception.NaturalPerceptionTests.test_blank_unrelated_and_mirrored_images_do_not_produce_control_features) ... ok
+test_cache_cannot_reuse_detection_after_frame_changes (test_natural_perception.NaturalPerceptionTests.test_cache_cannot_reuse_detection_after_frame_changes) ... ok
+test_invalid_input_and_settings_are_rejected (test_natural_perception.NaturalPerceptionTests.test_invalid_input_and_settings_are_rejected) ... ok
+test_known_projective_warp_localizes_picture_in_camera_coordinates (test_natural_perception.NaturalPerceptionTests.test_known_projective_warp_localizes_picture_in_camera_coordinates) ... ok
+test_optional_downscaling_returns_original_camera_coordinates (test_natural_perception.NaturalPerceptionTests.test_optional_downscaling_returns_original_camera_coordinates) ... ok
+test_outline_outside_frame_is_rejected_even_with_visible_texture (test_natural_perception.NaturalPerceptionTests.test_outline_outside_frame_is_rejected_even_with_visible_texture) ... ok
+test_partial_occlusion_can_retain_distributed_matches (test_natural_perception.NaturalPerceptionTests.test_partial_occlusion_can_retain_distributed_matches) ... ok
+test_picture_contains_no_aruco_code (test_natural_perception.NaturalPerceptionTests.test_picture_contains_no_aruco_code) ... ok
+test_repeated_calls_are_deterministic (test_natural_perception.NaturalPerceptionTests.test_repeated_calls_are_deterministic) ... ok
+test_saved_goal_contains_no_robot_or_target_pose (test_natural_perception.NaturalPerceptionTests.test_saved_goal_contains_no_robot_or_target_pose) ... ok
+test_small_isolated_patch_is_not_sufficient_evidence (test_natural_perception.NaturalPerceptionTests.test_small_isolated_patch_is_not_sufficient_evidence) ... ok
+test_textureless_template_is_rejected (test_natural_perception.NaturalPerceptionTests.test_textureless_template_is_rejected) ... ok
+test_incomplete_study_cannot_be_reported (test_natural_study.NaturalStudyTests.test_incomplete_study_cannot_be_reported) ... ok
+test_plan_and_summary_retain_all_cases (test_natural_study.NaturalStudyTests.test_plan_and_summary_retain_all_cases) ... ok
+test_absent_target_times_out_with_bounded_commands (test_recovery.RecoveryTests.test_absent_target_times_out_with_bounded_commands) ... ok
+test_brief_occlusion_during_alignment_resumes (test_recovery.RecoveryTests.test_brief_occlusion_during_alignment_resumes) ... ok
+test_invalid_recovery_configuration_is_rejected (test_recovery.RecoveryTests.test_invalid_recovery_configuration_is_rejected) ... ok
+test_local_scan_when_remembered_view_no_longer_sees_target (test_recovery.RecoveryTests.test_local_scan_when_remembered_view_no_longer_sees_target) ... ok
+test_loss_brakes_and_requires_consecutive_real_detections (test_recovery.RecoveryTests.test_loss_brakes_and_requires_consecutive_real_detections) ... ok
+test_lost_view_button_then_align_reacquires_without_reset (test_recovery.RecoveryTests.test_lost_view_button_then_align_reacquires_without_reset) ... ok
+test_repeated_losses_and_total_deadline_cannot_restart_forever (test_recovery.RecoveryTests.test_repeated_losses_and_total_deadline_cannot_restart_forever) ... ok
+test_scan_finds_a_target_that_moved_from_the_taught_view (test_recovery.RecoveryTests.test_scan_finds_a_target_that_moved_from_the_taught_view) ... ok
+test_stop_pause_and_jog_cancel_automatic_recovery (test_recovery.RecoveryTests.test_stop_pause_and_jog_cancel_automatic_recovery) ... ok
+test_complete_fine_path_is_bounded_near_limits (test_search_coverage.RefinedSearchTests.test_complete_fine_path_is_bounded_near_limits) ... ok
+test_deadline_covers_both_passes_and_never_restarts (test_search_coverage.RefinedSearchTests.test_deadline_covers_both_passes_and_never_restarts) ... ok
+test_finer_pass_finds_a_narrow_view_between_original_rings (test_search_coverage.RefinedSearchTests.test_finer_pass_finds_a_narrow_view_between_original_rings) ... ok
+test_preserves_recorded_coarse_commands_and_legacy_missing_setting (test_search_coverage.RefinedSearchTests.test_preserves_recorded_coarse_commands_and_legacy_missing_setting) ... ok
+test_refinement_confirmation_brakes_flicker_and_cancel (test_search_coverage.RefinedSearchTests.test_refinement_confirmation_brakes_flicker_and_cancel) ... ok
+test_refinement_uses_configured_gaps_and_requires_boolean (test_search_coverage.RefinedSearchTests.test_refinement_uses_configured_gaps_and_requires_boolean) ... ok
+test_gui_stop_pause_jog_and_gain_cancel_fine_pass (test_search_coverage.RefinedSimulationTests.test_gui_stop_pause_jog_and_gain_cancel_fine_pass) ... ok
+test_previous_miss_118_finds_and_aligns (test_search_coverage.RefinedSimulationTests.test_previous_miss_118_finds_and_aligns) ... ok
+test_previous_miss_56_finds_and_aligns (test_search_coverage.RefinedSimulationTests.test_previous_miss_56_finds_and_aligns) ... ok
+test_incomplete_results_cannot_be_reported (test_search_coverage_study.CoverageStudyTests.test_incomplete_results_cannot_be_reported) ... ok
+test_summary_keeps_failures_and_cohorts_separate (test_search_coverage_study.CoverageStudyTests.test_summary_keeps_failures_and_cohorts_separate) ... ok
+test_trace_check_rejects_changed_prefix_and_nonzero_stopped_command (test_search_coverage_study.CoverageStudyTests.test_trace_check_rejects_changed_prefix_and_nonzero_stopped_command) ... ok
+test_incomplete_evaluation_cannot_be_reported (test_startup_search.StartupEvaluationTests.test_incomplete_evaluation_cannot_be_reported) ... ok
+test_plan_keeps_all_draws_pairs_and_negative_controls (test_startup_search.StartupEvaluationTests.test_plan_keeps_all_draws_pairs_and_negative_controls) ... ok
+test_confirmation_brakes_and_flicker_restarts_count (test_startup_search.StartupMathTests.test_confirmation_brakes_and_flicker_restarts_count) ... ok
+test_coverage_exhaustion_stops_and_rejects_stale_nan_corners (test_startup_search.StartupMathTests.test_coverage_exhaustion_stops_and_rejects_stale_nan_corners) ... ok
+test_invalid_configuration_and_inputs_fail (test_startup_search.StartupMathTests.test_invalid_configuration_and_inputs_fail) ... ok
+test_near_limit_start_only_moves_inward_and_obeys_step_bounds (test_startup_search.StartupMathTests.test_near_limit_start_only_moves_inward_and_obeys_step_bounds) ... ok
+test_scan_is_deterministic_and_expands_from_measured_start (test_startup_search.StartupMathTests.test_scan_is_deterministic_and_expands_from_measured_start) ... ok
+test_timeout_is_terminal_even_if_marker_appears_later (test_startup_search.StartupMathTests.test_timeout_is_terminal_even_if_marker_appears_later) ... ok
+test_absent_marker_stops_in_real_scene_and_stays_stopped (test_startup_search.StartupSimulationTests.test_absent_marker_stops_in_real_scene_and_stays_stopped) ... ok
+test_cold_demo_searches_then_aligns_with_adaptive_gain_without_mouse (test_startup_search.StartupSimulationTests.test_cold_demo_searches_then_aligns_with_adaptive_gain_without_mouse) ... ok
+test_cold_initialization_never_renders_a_live_home_view (test_startup_search.StartupSimulationTests.test_cold_initialization_never_renders_a_live_home_view) ... ok
+test_failed_teach_preserves_file_and_successful_teach_survives_restart (test_startup_search.StartupSimulationTests.test_failed_teach_preserves_file_and_successful_teach_survives_restart) ... ok
+test_late_startup_acquisition_has_a_separate_alignment_budget (test_startup_search.StartupSimulationTests.test_late_startup_acquisition_has_a_separate_alignment_budget) ... ok
+test_reset_does_not_invent_detection_for_a_moved_target (test_startup_search.StartupSimulationTests.test_reset_does_not_invent_detection_for_a_moved_target) ... ok
+test_saved_goal_has_no_pose_and_rejects_mismatched_calibration (test_startup_search.StartupSimulationTests.test_saved_goal_has_no_pose_and_rejects_mismatched_calibration) ... ok
+test_stop_pause_jog_and_gain_cancel_startup_search (test_startup_search.StartupSimulationTests.test_stop_pause_jog_and_gain_cancel_startup_search) ... ok
+
+----------------------------------------------------------------------
+Ran 187 tests in 298.726s
+
+OK
+{
+  "status": "PASS",
+  "scope": "Scene, manual motion, alignment and immediate recovery braking checks",
+  "python": "3.12.14",
+  "mujoco": "3.12.0",
+  "opencv": "5.0.0",
+  "joint_count": 6,
+  "camera_resolution": [
+    640,
+    480
+  ],
+  "physics_hz": 500.0,
+  "camera_sample_hz_simulated": 30,
+  "j1_motion_degrees": 4.212924964152215,
+  "camera_translation_m": 0.051354299233976095,
+  "marker_centroid_shift_px": 90.51185607910156,
+  "each_joint_response_degrees": [
+    1.6250947491860632,
+    1.6179506993323605,
+    1.6459805540620596,
+    1.626206205051115,
+    1.6257943643823949,
+    1.5841449518824424
+  ],
+  "zero_command_drift_rad_2s": 1.149290384827812e-37,
+  "reset_image_exact_match": true,
+  "manual_pulse_stops": true,
+  "pause_resume_stop_and_demo": true,
+  "app_alignment_initial_error_px": 45.13802719116211,
+  "app_alignment_final_error_px": 0.9859235882759094,
+  "app_alignment_and_recovery_braking": true,
+  "K": [
+    [
+      461.03571047307986,
+      0.0,
+      320.0
+    ],
+    [
+      0.0,
+      461.03571047307986,
+      240.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "world_from_optical_at_home": [
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.6985706657510891
+    ],
+    [
+      -1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      -1.0,
+      0.0,
+      0.26786061951558615
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ]
+}

@@ -305,3 +305,82 @@ The four output features are the projected picture boundary corners. They keep s
 **run_learned_study.py** records a small paired robot comparison and independent perspective/brightness/blur/occlusion image probes. CPU wall time is recorded separately from simulated time.
 
 [Usage, model installation, limitations and full explanation](LEARNED_MATCHING.md).
+
+
+## Timestamped camera delivery
+
+`camera_timing.py` models capture and transport delay on the simulation clock.
+`Lab.advance` checks deliveries and the observation-age watchdog at physics ticks
+when timing is enabled. `Lab._advance_immediate` preserves the historical path.
+Drawing uses a delivered frame without taking another controller measurement.
+Recovery and joint-limit supervision accept an optional capture-time joint vector
+for storing observed views; motion constraints still use current joints.
+
+[Model, user controls and measured study](CAMERA_DELAY.md).
+
+## Automated camera robustness
+
+`camera_timing.py` accepts seeded jitter, packet loss and capture-outage windows.
+Its bounded queue allows out-of-order arrival but never returns an older
+observation after a newer one. `camera_robustness.py` builds paired plans and
+regenerates reports from saved JSON; `run_camera_robustness.py` runs those plans
+through `Lab.advance`, checking feedback age and commands on each physics tick.
+Completed trial records are saved atomically and skipped on resume.
+[Experiment guide](CAMERA_ROBUSTNESS.md).
+
+## Collision-aware motion and search
+
+**collision.py** constructs mapped collision pairs and queries separation using
+scratch MuJoCo state. **CollisionGuard.filter_velocity** imposes closing-speed
+bounds, including measured-speed braking reserve, by uniformly scaling the
+requested motion. **Simulation.advance** rechecks it at every physics tick.
+**Simulation.reset** validates initialization first; **set_obstacle** atomically
+validates the column's mocap placement.
+
+**CollisionGuard.segment_clear** certifies swept joint segments using adaptive
+subdivision and conservative motion bounds. **plan_path** tries a direct segment
+and bounded three-segment detours, with a total distance-query budget.
+**motion_path.py** caches/follows routes for startup, recovery and repositioning.
+The live guard handles tracking deviations while following a planned path.
+
+**Lab._handle_collision** either skips a blocked search waypoint or stops the
+alignment/manual command. The U control toggles the column, stops motion and
+clears view memory. **run_collision_study.py** evaluates all three matchers through
+the real timed-camera loop and independently audits geometry every physics tick.
+[Policy, controls and measured results](COLLISION_AWARE.md).
+
+## Physical accuracy and controller calibration
+
+**calibration.py / ControlCalibration** transforms nominal intrinsics, assumed
+target size and the camera Jacobian without modifying rendering or collision
+geometry. The mount transform changes the assumed evaluation point and optical
+axes. **Lab.control_intrinsics**, **control_config** and **control_jacobian** route
+these assumptions consistently through alignment, retries and gain changes.
+Reference-file validation continues to check the actual sensor metadata.
+
+**Simulation.tool_pose** exposes the defined tool_roll body frame for evaluation.
+**accuracy.py / pose_accuracy** scores true camera/tool poses against separately
+recorded teaching poses, using translation in taught axes and a geodesic rotation
+angle. These teaching poses never enter the visual controller.
+
+**run_accuracy_study.py** creates private reference images and immutable evaluation
+goals, runs a seeded paired calibration matrix through the actual timed app loop,
+audits collision/feedback constraints at physics ticks, and scores physical
+acceptance independently of pixel convergence. Reports distinguish failed runs,
+pixel-only passes, and physical passes. Resume preserves completed outcomes.
+[Definitions, controls and validation](PHYSICAL_ACCURACY.md).
+
+## Precision stopping
+
+`precision.py` registers the current target patch against the reference camera image, then evaluates local image sensitivity and estimated residual camera correction. `control.py` requires every enabled stop gate for the full hold. `Lab` preserves the policy through gain/calibration/target changes and clears old frames when teaching. Ground-truth poses remain evaluation-only.
+
+[Method, limits and validation](PRECISION_STOPPING.md).
+
+## Wall-clock execution
+
+[realtime.py](realtime.py) provides a separate execution path: a control thread
+owns headless physics and a command lease; a spawned process owns camera rendering
+and perception. [realtime_app.py](realtime_app.py) draws published state without
+accessing live physics. [run_latency_study.py](run_latency_study.py) drives the same
+runtime for overload measurements. See [ownership, timestamps and limits](REALTIME_CONTROL.md).
+The original Lab.advance path remains the deterministic experiment interface.

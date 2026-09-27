@@ -1,0 +1,10 @@
+{
+  "completed_utc": "2026-09-24T23:58:58.196854+00:00",
+  "sessions": 40,
+  "sample_targets_met": true,
+  "telemetry_complete": true,
+  "all_alignments_succeeded": false,
+  "control_deadline_misses": 2,
+  "freshness_watchdog_trips": 753,
+  "source_unchanged": true
+}

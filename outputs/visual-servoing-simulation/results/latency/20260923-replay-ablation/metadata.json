@@ -1,0 +1,47 @@
+{
+  "before": {
+    "perf_counter_s": 331161.0831377,
+    "time_ns": 1790167918278753000,
+    "utc": "2026-09-23T12:51:58.278753+00:00",
+    "power": {
+      "ACLineStatus": 1,
+      "BatteryFlag": 10,
+      "BatteryLifePercent": 30,
+      "SystemStatusFlag": 0,
+      "BatteryLifeTime": 4294967295,
+      "BatteryFullLifeTime": 4294967295
+    }
+  },
+  "gpu_query_fields": [
+    "timestamp",
+    "name",
+    "pstate",
+    "temperature.gpu",
+    "utilization.gpu",
+    "utilization.memory",
+    "clocks.sm",
+    "clocks.mem",
+    "power.draw",
+    "power.limit",
+    "enforced.power.limit",
+    "clocks_event_reasons.active",
+    "clocks_event_reasons.gpu_idle",
+    "clocks_event_reasons.sw_power_cap",
+    "clocks_event_reasons.sw_thermal_slowdown",
+    "clocks_event_reasons.hw_thermal_slowdown",
+    "clocks_event_reasons.hw_power_brake_slowdown"
+  ],
+  "after": {
+    "perf_counter_s": 331401.1159808,
+    "time_ns": 1790168158310751000,
+    "utc": "2026-09-23T12:55:58.310751+00:00",
+    "power": {
+      "ACLineStatus": 1,
+      "BatteryFlag": 8,
+      "BatteryLifePercent": 39,
+      "SystemStatusFlag": 0,
+      "BatteryLifeTime": 4294967295,
+      "BatteryFullLifeTime": 4294967295
+    }
+  }
+}

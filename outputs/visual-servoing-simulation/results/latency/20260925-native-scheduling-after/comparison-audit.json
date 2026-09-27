@@ -1,0 +1,3583 @@
+{
+  "plan_identical": true,
+  "dependencies_and_fixed_inputs_identical": true,
+  "changed": [
+    "realtime.py"
+  ],
+  "added": [
+    "native_scheduling.py"
+  ],
+  "baseline_manifest_sha256": "6dfa8f7b78592fd10b5a0ad88a8339accce012fccc8bb72ba9409a0702cbcd81",
+  "sessions": {
+    "Before": [
+      {
+        "id": "natural-session-000",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-000",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-001",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-001",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-002",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-002",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-003",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-003",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-004",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-004",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-005",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-005",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-006",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-006",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-007",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-007",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-008",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-008",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-009",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-009",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-010",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-010",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-011",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-011",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-012",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-012",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-013",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-013",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-014",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-014",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-015",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-015",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-016",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-016",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-017",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-017",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-018",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-018",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-019",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-019",
+        "control": null,
+        "sensor": null,
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      }
+    ],
+    "After": [
+      {
+        "id": "natural-session-000",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 41752,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 34352,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-000",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 13900,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 50444,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-001",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 33776,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 39000,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-001",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 30204,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 18616,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-002",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 52620,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 39380,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-002",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 5552,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 22936,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-003",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 36788,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 6960,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-003",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 31004,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 29972,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-004",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 6156,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 39080,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-004",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 32072,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 23396,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-005",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 33340,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 6072,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-005",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 48132,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 30704,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-006",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 45016,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 30340,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-006",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 48884,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 54252,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-007",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 19252,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 41468,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-007",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 18672,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 33216,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-008",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 25348,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 20452,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-008",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 248,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 9300,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-009",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 22816,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 53512,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-009",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 41316,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 2748,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-010",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 49928,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 23416,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-010",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 33628,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 8704,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-011",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 38016,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 33356,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-011",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 14684,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 29744,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-012",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 31260,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 18612,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-012",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 48252,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 54664,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-013",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 55228,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 47616,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-013",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 40260,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 52720,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-014",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 5060,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 35144,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-014",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 40740,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 48964,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-015",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 33024,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 51924,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-015",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 12672,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 25664,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-016",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 54516,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 19620,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-016",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 54016,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 26240,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-017",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 54000,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 18112,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-017",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 48884,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 50696,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-018",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 48240,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 5572,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-018",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 54288,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 31308,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "natural-session-019",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 47988,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 37108,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      },
+      {
+        "id": "learned-session-019",
+        "control": {
+          "role": "control",
+          "scope": "thread",
+          "platform": "nt",
+          "thread_id": 54384,
+          "qos_applied": true,
+          "priority_applied": true,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ],
+          "priority_previous": 0,
+          "priority_requested": 1,
+          "priority_observed": 1
+        },
+        "sensor": {
+          "role": "sensor",
+          "scope": "process",
+          "platform": "nt",
+          "thread_id": 46256,
+          "qos_applied": true,
+          "priority_applied": false,
+          "errors": [],
+          "qos_previous": [
+            0,
+            0
+          ],
+          "qos_requested": [
+            1,
+            0
+          ],
+          "qos_observed": [
+            1,
+            0
+          ]
+        },
+        "ac": [
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          },
+          {
+            "ACLineStatus": 1,
+            "BatteryFlag": 1,
+            "BatteryLifePercent": 100,
+            "SystemStatusFlag": 0,
+            "BatteryLifeTime": 4294967295,
+            "BatteryFullLifeTime": 4294967295
+          }
+        ]
+      }
+    ]
+  },
+  "tests": 299,
+  "test_log_sha256": "210f92353a1ce1a6ecb4b0584294cb3f65bbd47c0542894519d97ffd2657d775",
+  "all_stops_latched": true,
+  "unsafe_motion_ticks": 0,
+  "post_stop_motion_ticks": 0,
+  "contacts": 0
+}

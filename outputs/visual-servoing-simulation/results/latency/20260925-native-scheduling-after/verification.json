@@ -1,0 +1,21 @@
+{
+  "verified_utc": "2026-09-25T15:42:03.093607+00:00",
+  "source_matches_completed_campaign": true,
+  "baseline_manifest_sha256": "6dfa8f7b78592fd10b5a0ad88a8339accce012fccc8bb72ba9409a0702cbcd81",
+  "all_80_raw_checksums_verified": true,
+  "identical_fixed_inputs_and_dependencies": true,
+  "identical_campaign_plan": true,
+  "tests": 299,
+  "all_stops_latched": true,
+  "unsafe_motion_ticks": 0,
+  "post_stop_motion_ticks": 0,
+  "contacts": 0,
+  "limits": {
+    "freshness_ms": 400,
+    "control_deadline_ms": 50,
+    "transport_delay_ms": 50
+  },
+  "sustained_stability_passed": false,
+  "sift_nonregression_demonstrated": false,
+  "scope": "Completed scheduling candidate; Learned degradation and GC-associated control misses remain."
+}

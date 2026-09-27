@@ -1,0 +1,15 @@
+{
+  "kind": "UTF-8 display-string correction only",
+  "changed_lines": [
+    204,
+    217,
+    196,
+    201,
+    201,
+    202,
+    165
+  ],
+  "before_sha256": "fa9fbc2c54941ad53badbab0b169525ef19d783de09e7366a02440f4860db2c7",
+  "after_sha256": "f2864e7270fa4c4c803978cb22123455b5c48f15f20954a8e0229e496eae06a2",
+  "ast_identical_except_verified_non_ascii_report_strings": true
+}

@@ -1,0 +1,234 @@
+{
+  "id": "natural-session-015",
+  "mode": "natural",
+  "attempts": 24,
+  "alignments": 24,
+  "outcomes": {
+    "converged": 24
+  },
+  "elapsed_s": 125.4681275000039,
+  "initialization_error": null,
+  "processing_ms": {
+    "count": 1102,
+    "mean": 63.960954356142494,
+    "p50": 64.59609999728855,
+    "p95": 102.39890500088222,
+    "p99": 115.05749698815634,
+    "p99_9": 149.22412398972784,
+    "max": 154.4043000030797
+  },
+  "uncached_processing_ms": {
+    "count": 893,
+    "mean": 78.8777451292812,
+    "p50": 84.40559997688979,
+    "p95": 103.45874000922777,
+    "p99": 116.90837199916135,
+    "p99_9": 150.72738679079364,
+    "max": 154.4043000030797
+  },
+  "capture_to_command_ms": {
+    "count": 1078,
+    "mean": 123.02459100250424,
+    "p50": 124.31430000287946,
+    "p95": 161.07219999248628,
+    "p99": 174.3267569941236,
+    "p99_9": 207.24325461933265,
+    "max": 211.15069999359548
+  },
+  "stage_ms": {
+    "prepare_ms": {
+      "count": 893,
+      "mean": 0.20740313631714993,
+      "p50": 0.20730000687763095,
+      "p95": 0.3137799911201,
+      "p99": 0.4059200012125079,
+      "p99_9": 0.593478799331936,
+      "max": 0.6346000009216368
+    },
+    "features_ms": {
+      "count": 893,
+      "mean": 52.33590358307414,
+      "p50": 51.44109998946078,
+      "p95": 58.71286001056433,
+      "p99": 72.56506798672508,
+      "p99_9": 105.6501556042351,
+      "max": 108.46950000268407
+    },
+    "points_ms": {
+      "count": 893,
+      "mean": 0.491301679256563,
+      "p50": 0.4385999927762896,
+      "p95": 0.6510599923785776,
+      "p99": 0.9242639900185171,
+      "p99_9": 1.4028359891381232,
+      "max": 1.5740999951958656
+    },
+    "matching_ms": {
+      "count": 893,
+      "mean": 4.3381051515181595,
+      "p50": 4.289000004064292,
+      "p95": 5.304220010293648,
+      "p99": 6.350243977503854,
+      "p99_9": 8.559401203296257,
+      "max": 10.177399992244318
+    },
+    "filter_ms": {
+      "count": 893,
+      "mean": 1.1745958568745742,
+      "p50": 1.1113999935332686,
+      "p95": 1.5897799981757998,
+      "p99": 1.7423079907894137,
+      "p99_9": 1.9425991891184857,
+      "max": 1.9937999895773828
+    },
+    "geometry_ms": {
+      "count": 893,
+      "mean": 1.255526427246843,
+      "p50": 1.2215999886393547,
+      "p95": 1.6713200078811496,
+      "p99": 1.98230401147157,
+      "p99_9": 2.527482394129069,
+      "max": 2.9848999984096736
+    },
+    "coarse_ms": {
+      "count": 893,
+      "mean": 60.21724580064904,
+      "p50": 59.40210001426749,
+      "p95": 66.98832001420669,
+      "p99": 83.60660802340145,
+      "p99_9": 114.85778641083763,
+      "max": 117.66829999396577
+    },
+    "refinement_ms": {
+      "count": 893,
+      "mean": 18.481288017677183,
+      "p50": 24.812699994072318,
+      "p95": 40.89338000048883,
+      "p99": 48.472072010627095,
+      "p99_9": 57.673068803735156,
+      "max": 58.77790000522509
+    },
+    "coarse_thread_cpu_ms": {
+      "count": 893,
+      "mean": 41.94078947368421,
+      "p50": 46.875,
+      "p95": 62.5,
+      "p99": 62.5,
+      "p99_9": 78.125,
+      "max": 78.125
+    },
+    "coarse_process_cpu_ms": {
+      "count": 893,
+      "mean": 159.13703807390817,
+      "p50": 156.25,
+      "p95": 203.125,
+      "p99": 234.375,
+      "p99_9": 267.31250000000097,
+      "max": 281.25
+    },
+    "refinement_thread_cpu_ms": {
+      "count": 893,
+      "mean": 18.03961366181411,
+      "p50": 15.625,
+      "p95": 46.875,
+      "p99": 46.875,
+      "p99_9": 62.5,
+      "max": 62.5
+    },
+    "refinement_process_cpu_ms": {
+      "count": 893,
+      "mean": 30.130179171332585,
+      "p50": 31.25,
+      "p95": 93.75,
+      "p99": 125.0,
+      "p99_9": 149.06250000000477,
+      "max": 218.75
+    },
+    "render_thread_cpu_ms": {
+      "count": 1102,
+      "mean": 1.9708484573502723,
+      "p50": 0.0,
+      "p95": 15.625,
+      "p99": 15.625,
+      "p99_9": 15.625,
+      "max": 15.625
+    },
+    "render_process_cpu_ms": {
+      "count": 1102,
+      "mean": 3.6864791288566243,
+      "p50": 0.0,
+      "p95": 31.25,
+      "p99": 46.875,
+      "p99_9": 46.875,
+      "max": 46.875
+    },
+    "inference_thread_cpu_ms": {
+      "count": 1102,
+      "mean": 48.633166969147005,
+      "p50": 46.875,
+      "p95": 93.75,
+      "p99": 109.375,
+      "p99_9": 109.375,
+      "max": 125.0
+    },
+    "inference_process_cpu_ms": {
+      "count": 1102,
+      "mean": 153.40006805807622,
+      "p50": 171.875,
+      "p95": 265.625,
+      "p99": 296.875,
+      "p99_9": 342.1718750000018,
+      "max": 375.0
+    }
+  },
+  "maximum_feedback_age_ms": 349.3367000191938,
+  "freshness_watchdog_trips": 0,
+  "late_after_freshness_stop": 0,
+  "late_after_control_stop": 0,
+  "late_results": [],
+  "counters": {
+    "captures": 1909,
+    "capture_slots": 3613,
+    "busy_capture_skips": 1704,
+    "input_dropped": 0,
+    "transport_dropped": 0,
+    "pending_cancelled": 61,
+    "sensor_received": 1909,
+    "sensor_rows_evicted": 0,
+    "command_rows_evicted": 0,
+    "loop_rows_evicted": 0,
+    "stale_results": 0,
+    "obsolete_results": 17,
+    "pre_inference_dropped": 0,
+    "accepted": 1078,
+    "control_ticks": 54236,
+    "moving_ticks": 34164,
+    "unsafe_motion_ticks": 0,
+    "contacts": 0,
+    "post_stop_motion_ticks": 0,
+    "control_deadline_misses": 0,
+    "fault_results": 0,
+    "discarded_physics_s": 0.0,
+    "result_mailbox_dropped": 0,
+    "worker_requests_expired": 0,
+    "completed_but_unreceived": 0,
+    "requests_not_started": 0
+  },
+  "worker_alive": false,
+  "error": null,
+  "telemetry_complete": true,
+  "diagnostic_spikes_evicted": 0,
+  "gc_events_evicted": 0,
+  "gpu_before": {
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 53, 1 %, 10.59 W, 52 MHz",
+    "stderr": ""
+  },
+  "gpu_after": {
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 49, 0 %, 9.41 W, 52 MHz",
+    "stderr": ""
+  },
+  "trace": "traces/natural-session-015.json.gz",
+  "trace_sha256": "d7a3582d7e7d117f7af0f4beece39db825d8238bd0f1d5271684cce4463417b0"
+}

@@ -1,0 +1,3014 @@
+[
+  {
+    "id": "natural-nominal-0000",
+    "mode": "natural",
+    "profile": "nominal",
+    "case": 0,
+    "outcome": "converged",
+    "pixel_success": true,
+    "physical_success": true,
+    "completion_s": 5.369999999999631,
+    "initial_error_px": 128.86785888671875,
+    "max_post_stop_error_px": 0.20958766341209412,
+    "post_stop_frames": 30,
+    "commands_zero_after_stop": true,
+    "post_stop_precision_passes": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "initial_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -58.69482198226277,
+          -35.62101926537331,
+          -0.6368532867234711
+        ],
+        "position_error_mm": 68.66108594496903,
+        "orientation_error_deg": 7.589604136087766
+      },
+      "tool": {
+        "translation_error_mm": [
+          0.033069227254434175,
+          47.43789484337845,
+          31.12482662156635
+        ],
+        "position_error_mm": 56.73719937543435,
+        "orientation_error_deg": 7.589604136087771
+      }
+    },
+    "stop_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -0.07112166586192677,
+          -0.009467146240116353,
+          0.031757256477749074
+        ],
+        "position_error_mm": 0.07846299479309239,
+        "orientation_error_deg": 0.01794467015882293
+      },
+      "tool": {
+        "translation_error_mm": [
+          0.03176026955653555,
+          0.04870723303858368,
+          -0.0032005485008368417
+        ],
+        "position_error_mm": 0.05823532247085875,
+        "orientation_error_deg": 0.017944670158826566
+      }
+    },
+    "final_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -0.07112166586192677,
+          -0.009467146240116353,
+          0.031757256477749074
+        ],
+        "position_error_mm": 0.07846299479309239,
+        "orientation_error_deg": 0.01794467015882293
+      },
+      "tool": {
+        "translation_error_mm": [
+          0.03176026955653555,
+          0.04870723303858368,
+          -0.0032005485008368417
+        ],
+        "position_error_mm": 0.05823532247085875,
+        "orientation_error_deg": 0.017944670158826566
+      }
+    },
+    "worst_post_stop_accuracy": {
+      "camera": {
+        "position_error_mm": 0.07846299479309239,
+        "orientation_error_deg": 0.01794467015882293
+      },
+      "tool": {
+        "position_error_mm": 0.05823532247085875,
+        "orientation_error_deg": 0.017944670158826566
+      }
+    },
+    "final_camera_world": [
+      [
+        0.00020379153206009915,
+        0.00011511845409084565,
+        0.9999999726083761,
+        0.6986024230075668
+      ],
+      [
+        -0.9999999575834626,
+        0.00020811499278244883,
+        0.00020376757112122723,
+        7.112166586192677e-05
+      ],
+      [
+        -0.0002080915296739927,
+        -0.9999999717179453,
+        0.00011516086128107728,
+        0.26787008666182627
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "final_tool_world": [
+      [
+        0.999999972608376,
+        -0.0002037915320601495,
+        -0.00011511845409089674,
+        0.5886024260206455
+      ],
+      [
+        0.00020376757112130074,
+        0.9999999575834625,
+        -0.00020811499278240356,
+        4.870723303858368e-05
+      ],
+      [
+        0.00011516086128119432,
+        0.0002080915296740146,
+        0.9999999717179452,
+        0.2678574189670853
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "reference_features_px": [
+      [
+        194.50453186035156,
+        112.25738525390625
+      ],
+      [
+        444.705322265625,
+        112.17535400390625
+      ],
+      [
+        444.5869445800781,
+        362.3709411621094
+      ],
+      [
+        194.55189514160156,
+        362.435302734375
+      ]
+    ],
+    "assumed_K": [
+      [
+        461.03571047307986,
+        0.0,
+        320.0
+      ],
+      [
+        0.0,
+        461.03571047307986,
+        240.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "assumed_target_side_m": 0.24,
+    "calibration": {
+      "focal_scale": [
+        1.0,
+        1.0
+      ],
+      "principal_offset_px": [
+        0.0,
+        0.0
+      ],
+      "mount_translation_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mount_rotation_vector_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_size_scale": 1.0
+    },
+    "minimum_collision_slack_mm": 2.9999999999999227,
+    "forbidden_contacts": 0,
+    "safety_violations": [],
+    "joint_travel_rad": 0.34459819616281845,
+    "peak_joint_command_rad_s": 0.1302440938358376,
+    "matcher": "Picture / SIFT",
+    "precision_enabled": true,
+    "stopping_settings": {
+      "rms_error_px": 0.25,
+      "max_corner_error_px": 0.5,
+      "position_correction_mm": 0.8,
+      "rotation_correction_deg": 0.1,
+      "min_scaled_singular_value": 0.01
+    },
+    "stop_metrics": {
+      "candidate": true,
+      "observable": true,
+      "position_correction_mm": 0.08588564218710276,
+      "rotation_correction_deg": 0.02239622976824521,
+      "scaled_min_singular_value": 0.08251459467867976,
+      "rms_error_px": 0.20958767608577067,
+      "max_corner_error_px": 0.24291727074178035
+    },
+    "wall_s": 15.163650500006042,
+    "trace": "traces/natural-nominal-0000.jsonl",
+    "snapshot": "natural-nominal-0000.png"
+  },
+  {
+    "id": "natural-nominal-0001",
+    "mode": "natural",
+    "profile": "nominal",
+    "case": 1,
+    "outcome": "converged",
+    "pixel_success": true,
+    "physical_success": true,
+    "completion_s": 5.669999999999598,
+    "initial_error_px": 179.02333068847656,
+    "max_post_stop_error_px": 0.21597348153591156,
+    "post_stop_frames": 30,
+    "commands_zero_after_stop": true,
+    "post_stop_precision_passes": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "initial_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -89.37083385733281,
+          -7.397523215066593,
+          -7.534789513198414
+        ],
+        "position_error_mm": 89.99245716770177,
+        "orientation_error_deg": 9.28515950555003
+      },
+      "tool": {
+        "translation_error_mm": [
+          -6.0983829141803,
+          71.92023016357943,
+          4.327894802727994
+        ],
+        "position_error_mm": 72.30795567829092,
+        "orientation_error_deg": 9.285159505550025
+      }
+    },
+    "stop_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -0.0463295728418243,
+          0.01810400936019807,
+          0.03919220426562564
+        ],
+        "position_error_mm": 0.0633262453475537,
+        "orientation_error_deg": 0.018044603557508535
+      },
+      "tool": {
+        "translation_error_mm": [
+          0.03919759037851467,
+          0.013457429026713381,
+          -0.02832002462815897
+        ],
+        "position_error_mm": 0.05019539104768867,
+        "orientation_error_deg": 0.018044603557506648
+      }
+    },
+    "final_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -0.0463295728418243,
+          0.01810400936019807,
+          0.03919220426562564
+        ],
+        "position_error_mm": 0.0633262453475537,
+        "orientation_error_deg": 0.018044603557508535
+      },
+      "tool": {
+        "translation_error_mm": [
+          0.03919759037851467,
+          0.013457429026713381,
+          -0.02832002462815897
+        ],
+        "position_error_mm": 0.05019539104768867,
+        "orientation_error_deg": 0.018044603557506648
+      }
+    },
+    "worst_post_stop_accuracy": {
+      "camera": {
+        "position_error_mm": 0.0633262453475537,
+        "orientation_error_deg": 0.018044603557508535
+      },
+      "tool": {
+        "position_error_mm": 0.05019539104768867,
+        "orientation_error_deg": 0.018044603557506648
+      }
+    },
+    "final_camera_world": [
+      [
+        0.00029884096287996487,
+        9.286227325444596e-05,
+        0.9999999510353376,
+        0.6986098579553547
+      ],
+      [
+        -0.999999954719302,
+        3.546040843385723e-05,
+        0.0002988376710464924,
+        4.63295728418243e-05
+      ],
+      [
+        -3.5432655952072345e-05,
+        -0.999999995059579,
+        9.287286607223555e-05,
+        0.26784251550622595
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "final_tool_world": [
+      [
+        0.9999999510353375,
+        -0.00029884096287984224,
+        -9.28622732545726e-05,
+        0.5886098633414675
+      ],
+      [
+        0.0002988376710464629,
+        0.9999999547193019,
+        -3.5460408433943583e-05,
+        1.3457429026713381e-05
+      ],
+      [
+        9.287286607230453e-05,
+        3.5432655952169164e-05,
+        0.9999999950595788,
+        0.267832299490958
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "reference_features_px": [
+      [
+        194.50453186035156,
+        112.25738525390625
+      ],
+      [
+        444.705322265625,
+        112.17535400390625
+      ],
+      [
+        444.5869445800781,
+        362.3709411621094
+      ],
+      [
+        194.55189514160156,
+        362.435302734375
+      ]
+    ],
+    "assumed_K": [
+      [
+        461.03571047307986,
+        0.0,
+        320.0
+      ],
+      [
+        0.0,
+        461.03571047307986,
+        240.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "assumed_target_side_m": 0.24,
+    "calibration": {
+      "focal_scale": [
+        1.0,
+        1.0
+      ],
+      "principal_offset_px": [
+        0.0,
+        0.0
+      ],
+      "mount_translation_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mount_rotation_vector_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_size_scale": 1.0
+    },
+    "minimum_collision_slack_mm": 2.9999999999999227,
+    "forbidden_contacts": 0,
+    "safety_violations": [],
+    "joint_travel_rad": 0.4586882557651745,
+    "peak_joint_command_rad_s": 0.18627688912956844,
+    "matcher": "Picture / SIFT",
+    "precision_enabled": true,
+    "stopping_settings": {
+      "rms_error_px": 0.25,
+      "max_corner_error_px": 0.5,
+      "position_correction_mm": 0.8,
+      "rotation_correction_deg": 0.1,
+      "min_scaled_singular_value": 0.01
+    },
+    "stop_metrics": {
+      "candidate": true,
+      "observable": true,
+      "position_correction_mm": 0.10176545620721401,
+      "rotation_correction_deg": 0.02276590851216332,
+      "scaled_min_singular_value": 0.08251008626914888,
+      "rms_error_px": 0.21597348419025383,
+      "max_corner_error_px": 0.24116175841332785
+    },
+    "wall_s": 15.72972140001366,
+    "trace": "traces/natural-nominal-0001.jsonl",
+    "snapshot": null
+  },
+  {
+    "id": "natural-nominal-0002",
+    "mode": "natural",
+    "profile": "nominal",
+    "case": 2,
+    "outcome": "converged",
+    "pixel_success": true,
+    "physical_success": true,
+    "completion_s": 4.069999999999774,
+    "initial_error_px": 31.799741744995117,
+    "max_post_stop_error_px": 0.1969413161277771,
+    "post_stop_frames": 30,
+    "commands_zero_after_stop": true,
+    "post_stop_precision_passes": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "initial_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          19.74859725421525,
+          -26.370271717858994,
+          -7.48897101608903
+        ],
+        "position_error_mm": 33.785840390061836,
+        "orientation_error_deg": 2.5505238406972044
+      },
+      "tool": {
+        "translation_error_mm": [
+          -7.478943047377284,
+          -19.22529255904454,
+          27.760309398074
+        ],
+        "position_error_mm": 34.58585319120467,
+        "orientation_error_deg": 2.550523840697206
+      }
+    },
+    "stop_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          0.2162947886299943,
+          -0.12204997548742602,
+          -0.07962885680878884
+        ],
+        "position_error_mm": 0.2608071834548462,
+        "orientation_error_deg": 0.03463418282481715
+      },
+      "tool": {
+        "translation_error_mm": [
+          -0.07962540075456825,
+          -0.2370554878130678,
+          0.14019729689851435
+        ],
+        "position_error_mm": 0.2866893629091727,
+        "orientation_error_deg": 0.03463418282482398
+      }
+    },
+    "final_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          0.2162947886299943,
+          -0.12204997548742602,
+          -0.07962885680878884
+        ],
+        "position_error_mm": 0.2608071834548462,
+        "orientation_error_deg": 0.03463418282481715
+      },
+      "tool": {
+        "translation_error_mm": [
+          -0.07962540075456825,
+          -0.2370554878130678,
+          0.14019729689851435
+        ],
+        "position_error_mm": 0.2866893629091727,
+        "orientation_error_deg": 0.03463418282482398
+      }
+    },
+    "worst_post_stop_accuracy": {
+      "camera": {
+        "position_error_mm": 0.2608071834548462,
+        "orientation_error_deg": 0.03463418282481715
+      },
+      "tool": {
+        "position_error_mm": 0.2866893629091727,
+        "orientation_error_deg": 0.03463418282482398
+      }
+    },
+    "final_camera_world": [
+      [
+        0.000188642854881238,
+        -0.00016507943790811108,
+        0.9999999685813261,
+        0.6984910368942803
+      ],
+      [
+        -0.9999998309187003,
+        0.0005500383522156482,
+        0.00018873362893706558,
+        -0.0002162947886299943
+      ],
+      [
+        -0.0005500694909756354,
+        -0.9999998351032819,
+        -0.0001649756491912402,
+        0.2679826694910736
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "final_tool_world": [
+      [
+        0.9999999685813261,
+        -0.00018864285488123862,
+        0.00016507943790824148,
+        0.5884910403503344
+      ],
+      [
+        0.00018873362893703162,
+        0.9999998309187004,
+        -0.0005500383522157923,
+        -0.00023705548781306779
+      ],
+      [
+        -0.00016497564919133937,
+        0.0005500694909756958,
+        0.9999998351032819,
+        0.26800081681248467
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "reference_features_px": [
+      [
+        194.50453186035156,
+        112.25738525390625
+      ],
+      [
+        444.705322265625,
+        112.17535400390625
+      ],
+      [
+        444.5869445800781,
+        362.3709411621094
+      ],
+      [
+        194.55189514160156,
+        362.435302734375
+      ]
+    ],
+    "assumed_K": [
+      [
+        461.03571047307986,
+        0.0,
+        320.0
+      ],
+      [
+        0.0,
+        461.03571047307986,
+        240.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "assumed_target_side_m": 0.24,
+    "calibration": {
+      "focal_scale": [
+        1.0,
+        1.0
+      ],
+      "principal_offset_px": [
+        0.0,
+        0.0
+      ],
+      "mount_translation_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mount_rotation_vector_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_size_scale": 1.0
+    },
+    "minimum_collision_slack_mm": 2.9999999999999227,
+    "forbidden_contacts": 0,
+    "safety_violations": [],
+    "joint_travel_rad": 0.3288950480614725,
+    "peak_joint_command_rad_s": 0.11113613945412523,
+    "matcher": "Picture / SIFT",
+    "precision_enabled": true,
+    "stopping_settings": {
+      "rms_error_px": 0.25,
+      "max_corner_error_px": 0.5,
+      "position_correction_mm": 0.8,
+      "rotation_correction_deg": 0.1,
+      "min_scaled_singular_value": 0.01
+    },
+    "stop_metrics": {
+      "candidate": true,
+      "observable": true,
+      "position_correction_mm": 0.26795371600171414,
+      "rotation_correction_deg": 0.04095510322027575,
+      "scaled_min_singular_value": 0.08249227100056353,
+      "rms_error_px": 0.19694131809854226,
+      "max_corner_error_px": 0.26011944559609895
+    },
+    "wall_s": 12.653386599995429,
+    "trace": "traces/natural-nominal-0002.jsonl",
+    "snapshot": null
+  },
+  {
+    "id": "natural-combined-0000",
+    "mode": "natural",
+    "profile": "combined",
+    "case": 0,
+    "outcome": "converged",
+    "pixel_success": true,
+    "physical_success": true,
+    "completion_s": 5.10199999999966,
+    "initial_error_px": 128.86785888671875,
+    "max_post_stop_error_px": 0.21387454867362976,
+    "post_stop_frames": 30,
+    "commands_zero_after_stop": true,
+    "post_stop_precision_passes": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "initial_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -58.69482198226277,
+          -35.62101926537331,
+          -0.6368532867234711
+        ],
+        "position_error_mm": 68.66108594496903,
+        "orientation_error_deg": 7.589604136087766
+      },
+      "tool": {
+        "translation_error_mm": [
+          0.033069227254434175,
+          47.43789484337845,
+          31.12482662156635
+        ],
+        "position_error_mm": 56.73719937543435,
+        "orientation_error_deg": 7.589604136087771
+      }
+    },
+    "stop_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -0.06725066119371448,
+          -0.003680034363351403,
+          -0.02408127214370559
+        ],
+        "position_error_mm": 0.07152693025683707,
+        "orientation_error_deg": 0.021570176971031578
+      },
+      "tool": {
+        "translation_error_mm": [
+          -0.024077934433264225,
+          0.040161236917310564,
+          0.00435778952340149
+        ],
+        "position_error_mm": 0.047028312821439676,
+        "orientation_error_deg": 0.021570176971031717
+      }
+    },
+    "final_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -0.06725066119371448,
+          -0.003680034363351403,
+          -0.02408127214370559
+        ],
+        "position_error_mm": 0.07152693025683707,
+        "orientation_error_deg": 0.021570176971031578
+      },
+      "tool": {
+        "translation_error_mm": [
+          -0.024077934433264225,
+          0.040161236917310564,
+          0.00435778952340149
+        ],
+        "position_error_mm": 0.047028312821439676,
+        "orientation_error_deg": 0.021570176971031717
+      }
+    },
+    "worst_post_stop_accuracy": {
+      "camera": {
+        "position_error_mm": 0.07152693025683707,
+        "orientation_error_deg": 0.021570176971031578
+      },
+      "tool": {
+        "position_error_mm": 0.047028312821439676,
+        "orientation_error_deg": 0.021570176971031717
+      }
+    },
+    "final_camera_world": [
+      [
+        0.00024626572939312474,
+        -6.23151849249437e-06,
+        0.9999999696571786,
+        0.6985465844789454
+      ],
+      [
+        -0.999999929154139,
+        0.0002846823454176195,
+        0.00024626749342193666,
+        6.725066119371448e-05
+      ],
+      [
+        -0.00028468387139996,
+        -0.9999999594585641,
+        -6.161410545602042e-06,
+        0.2678642995499495
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "final_tool_world": [
+      [
+        0.9999999696571789,
+        -0.00024626572939301074,
+        6.231518492721555e-06,
+        0.5885465878166557
+      ],
+      [
+        0.00024626749342185377,
+        0.9999999291541393,
+        -0.0002846823454176867,
+        4.016123691731056e-05
+      ],
+      [
+        -6.161410545804665e-06,
+        0.0002846838714000606,
+        0.9999999594585642,
+        0.26786497730510955
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "reference_features_px": [
+      [
+        194.50453186035156,
+        112.25738525390625
+      ],
+      [
+        444.705322265625,
+        112.17535400390625
+      ],
+      [
+        444.5869445800781,
+        362.3709411621094
+      ],
+      [
+        194.55189514160156,
+        362.435302734375
+      ]
+    ],
+    "assumed_K": [
+      [
+        484.0874959967339,
+        0.0,
+        325.0
+      ],
+      [
+        0.0,
+        484.0874959967339,
+        240.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "assumed_target_side_m": 0.264,
+    "calibration": {
+      "focal_scale": [
+        1.05,
+        1.05
+      ],
+      "principal_offset_px": [
+        5.0,
+        0.0
+      ],
+      "mount_translation_mm": [
+        10.0,
+        0.0,
+        0.0
+      ],
+      "mount_rotation_vector_deg": [
+        0.0,
+        5.0,
+        0.0
+      ],
+      "target_size_scale": 1.1
+    },
+    "minimum_collision_slack_mm": 2.9999999999999227,
+    "forbidden_contacts": 0,
+    "safety_violations": [],
+    "joint_travel_rad": 0.3155712326371507,
+    "peak_joint_command_rad_s": 0.12091296467780027,
+    "matcher": "Picture / SIFT",
+    "precision_enabled": true,
+    "stopping_settings": {
+      "rms_error_px": 0.25,
+      "max_corner_error_px": 0.5,
+      "position_correction_mm": 0.8,
+      "rotation_correction_deg": 0.1,
+      "min_scaled_singular_value": 0.01
+    },
+    "stop_metrics": {
+      "candidate": true,
+      "observable": true,
+      "position_correction_mm": 0.10701244316752508,
+      "rotation_correction_deg": 0.023759603871841943,
+      "scaled_min_singular_value": 0.07290813798539827,
+      "rms_error_px": 0.21387454504291686,
+      "max_corner_error_px": 0.24336695201966232
+    },
+    "wall_s": 14.439280999999028,
+    "trace": "traces/natural-combined-0000.jsonl",
+    "snapshot": "natural-combined-0000.png"
+  },
+  {
+    "id": "natural-combined-0001",
+    "mode": "natural",
+    "profile": "combined",
+    "case": 1,
+    "outcome": "converged",
+    "pixel_success": true,
+    "physical_success": true,
+    "completion_s": 5.46999999999962,
+    "initial_error_px": 179.02333068847656,
+    "max_post_stop_error_px": 0.2132776826620102,
+    "post_stop_frames": 30,
+    "commands_zero_after_stop": true,
+    "post_stop_precision_passes": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "initial_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -89.37083385733281,
+          -7.397523215066593,
+          -7.534789513198414
+        ],
+        "position_error_mm": 89.99245716770177,
+        "orientation_error_deg": 9.28515950555003
+      },
+      "tool": {
+        "translation_error_mm": [
+          -6.0983829141803,
+          71.92023016357943,
+          4.327894802727994
+        ],
+        "position_error_mm": 72.30795567829092,
+        "orientation_error_deg": 9.285159505550025
+      }
+    },
+    "stop_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -0.07532436550537006,
+          0.0018378391880014,
+          -0.018680603202980706
+        ],
+        "position_error_mm": 0.07762797580572837,
+        "orientation_error_deg": 0.01444272186237416
+      },
+      "tool": {
+        "translation_error_mm": [
+          -0.018677366495856162,
+          0.05004368022678958,
+          -0.010379647670200054
+        ],
+        "position_error_mm": 0.054414621524174825,
+        "orientation_error_deg": 0.014442721862376154
+      }
+    },
+    "final_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -0.07532436550537006,
+          0.0018378391880014,
+          -0.018680603202980706
+        ],
+        "position_error_mm": 0.07762797580572837,
+        "orientation_error_deg": 0.01444272186237416
+      },
+      "tool": {
+        "translation_error_mm": [
+          -0.018677366495856162,
+          0.05004368022678958,
+          -0.010379647670200054
+        ],
+        "position_error_mm": 0.054414621524174825,
+        "orientation_error_deg": 0.014442721862376154
+      }
+    },
+    "worst_post_stop_accuracy": {
+      "camera": {
+        "position_error_mm": 0.07762797580572837,
+        "orientation_error_deg": 0.01444272186237416
+      },
+      "tool": {
+        "position_error_mm": 0.054414621524174825,
+        "orientation_error_deg": 0.014442721862376154
+      }
+    },
+    "final_camera_world": [
+      [
+        0.00022982972993465522,
+        7.763706231489476e-05,
+        0.9999999705753906,
+        0.6985519851478861
+      ],
+      [
+        -0.999999971243957,
+        6.850419801801566e-05,
+        0.00022982441162344713,
+        7.532436550537006e-05
+      ],
+      [
+        -6.848635311018647e-05,
+        -0.9999999946398308,
+        7.765280438373767e-05,
+        0.26785878167639815
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "final_tool_world": [
+      [
+        0.9999999705753907,
+        -0.00022982972993464932,
+        -7.763706231500108e-05,
+        0.5885519883845931
+      ],
+      [
+        0.0002298244116234589,
+        0.9999999712439572,
+        -6.850419801806407e-05,
+        5.004368022678958e-05
+      ],
+      [
+        7.765280438379626e-05,
+        6.848635311018807e-05,
+        0.9999999946398309,
+        0.26785023986791595
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "reference_features_px": [
+      [
+        194.50453186035156,
+        112.25738525390625
+      ],
+      [
+        444.705322265625,
+        112.17535400390625
+      ],
+      [
+        444.5869445800781,
+        362.3709411621094
+      ],
+      [
+        194.55189514160156,
+        362.435302734375
+      ]
+    ],
+    "assumed_K": [
+      [
+        484.0874959967339,
+        0.0,
+        325.0
+      ],
+      [
+        0.0,
+        484.0874959967339,
+        240.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "assumed_target_side_m": 0.264,
+    "calibration": {
+      "focal_scale": [
+        1.05,
+        1.05
+      ],
+      "principal_offset_px": [
+        5.0,
+        0.0
+      ],
+      "mount_translation_mm": [
+        10.0,
+        0.0,
+        0.0
+      ],
+      "mount_rotation_vector_deg": [
+        0.0,
+        5.0,
+        0.0
+      ],
+      "target_size_scale": 1.1
+    },
+    "minimum_collision_slack_mm": 2.9999999999999227,
+    "forbidden_contacts": 0,
+    "safety_violations": [],
+    "joint_travel_rad": 0.3898022619753207,
+    "peak_joint_command_rad_s": 0.18262795094030207,
+    "matcher": "Picture / SIFT",
+    "precision_enabled": true,
+    "stopping_settings": {
+      "rms_error_px": 0.25,
+      "max_corner_error_px": 0.5,
+      "position_correction_mm": 0.8,
+      "rotation_correction_deg": 0.1,
+      "min_scaled_singular_value": 0.01
+    },
+    "stop_metrics": {
+      "candidate": true,
+      "observable": true,
+      "position_correction_mm": 0.11899388854503672,
+      "rotation_correction_deg": 0.019990446955633945,
+      "scaled_min_singular_value": 0.07288038522531677,
+      "rms_error_px": 0.21327768419327622,
+      "max_corner_error_px": 0.22369068034220896
+    },
+    "wall_s": 15.649091800005408,
+    "trace": "traces/natural-combined-0001.jsonl",
+    "snapshot": null
+  },
+  {
+    "id": "natural-combined-0002",
+    "mode": "natural",
+    "profile": "combined",
+    "case": 2,
+    "outcome": "converged",
+    "pixel_success": true,
+    "physical_success": true,
+    "completion_s": 4.0359999999997775,
+    "initial_error_px": 31.799741744995117,
+    "max_post_stop_error_px": 0.2277601957321167,
+    "post_stop_frames": 30,
+    "commands_zero_after_stop": true,
+    "post_stop_precision_passes": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "initial_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          19.74859725421525,
+          -26.370271717858994,
+          -7.48897101608903
+        ],
+        "position_error_mm": 33.785840390061836,
+        "orientation_error_deg": 2.5505238406972044
+      },
+      "tool": {
+        "translation_error_mm": [
+          -7.478943047377284,
+          -19.22529255904454,
+          27.760309398074
+        ],
+        "position_error_mm": 34.58585319120467,
+        "orientation_error_deg": 2.550523840697206
+      }
+    },
+    "stop_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          0.16845638645483246,
+          0.03629163665525015,
+          0.014392710617205928
+        ],
+        "position_error_mm": 0.17292133225096082,
+        "orientation_error_deg": 0.03187579482953016
+      },
+      "tool": {
+        "translation_error_mm": [
+          0.014398479506905204,
+          -0.18963547315473028,
+          -0.0076454857108054775
+        ],
+        "position_error_mm": 0.19033492150018957,
+        "orientation_error_deg": 0.03187579482952766
+      }
+    },
+    "final_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          0.16845638645483246,
+          0.03629163665525015,
+          0.014392710617205928
+        ],
+        "position_error_mm": 0.17292133225096082,
+        "orientation_error_deg": 0.03187579482953016
+      },
+      "tool": {
+        "translation_error_mm": [
+          0.014398479506905204,
+          -0.18963547315473028,
+          -0.0076454857108054775
+        ],
+        "position_error_mm": 0.19033492150018957,
+        "orientation_error_deg": 0.03187579482952766
+      }
+    },
+    "worst_post_stop_accuracy": {
+      "camera": {
+        "position_error_mm": 0.17292133225096082,
+        "orientation_error_deg": 0.03187579482953016
+      },
+      "tool": {
+        "position_error_mm": 0.19033492150018957,
+        "orientation_error_deg": 0.03187579482952766
+      }
+    },
+    "final_camera_world": [
+      [
+        0.00019241933074137796,
+        -0.0002605066220147112,
+        0.9999999475555497,
+        0.6985850584617063
+      ],
+      [
+        -0.9999998791647704,
+        0.00045232719411472666,
+        0.00019253715181716258,
+        -0.00016845638645483245
+      ],
+      [
+        -0.00045237732759578764,
+        -0.9999998637681957,
+        -0.0002604195540403531,
+        0.2678243278789309
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "final_tool_world": [
+      [
+        0.9999999475555493,
+        -0.0001924193307413977,
+        0.00026050662201469765,
+        0.5885850642305959
+      ],
+      [
+        0.000192537151817253,
+        0.9999998791647703,
+        -0.00045232719411469354,
+        -0.00018963547315473028
+      ],
+      [
+        -0.00026041955404035235,
+        0.0004523773275956745,
+        0.9999998637681956,
+        0.26785297402987535
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "reference_features_px": [
+      [
+        194.50453186035156,
+        112.25738525390625
+      ],
+      [
+        444.705322265625,
+        112.17535400390625
+      ],
+      [
+        444.5869445800781,
+        362.3709411621094
+      ],
+      [
+        194.55189514160156,
+        362.435302734375
+      ]
+    ],
+    "assumed_K": [
+      [
+        484.0874959967339,
+        0.0,
+        325.0
+      ],
+      [
+        0.0,
+        484.0874959967339,
+        240.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "assumed_target_side_m": 0.264,
+    "calibration": {
+      "focal_scale": [
+        1.05,
+        1.05
+      ],
+      "principal_offset_px": [
+        5.0,
+        0.0
+      ],
+      "mount_translation_mm": [
+        10.0,
+        0.0,
+        0.0
+      ],
+      "mount_rotation_vector_deg": [
+        0.0,
+        5.0,
+        0.0
+      ],
+      "target_size_scale": 1.1
+    },
+    "minimum_collision_slack_mm": 2.9999999999999227,
+    "forbidden_contacts": 0,
+    "safety_violations": [],
+    "joint_travel_rad": 0.330178228018994,
+    "peak_joint_command_rad_s": 0.1152508352682485,
+    "matcher": "Picture / SIFT",
+    "precision_enabled": true,
+    "stopping_settings": {
+      "rms_error_px": 0.25,
+      "max_corner_error_px": 0.5,
+      "position_correction_mm": 0.8,
+      "rotation_correction_deg": 0.1,
+      "min_scaled_singular_value": 0.01
+    },
+    "stop_metrics": {
+      "candidate": true,
+      "observable": true,
+      "position_correction_mm": 0.16174031344713882,
+      "rotation_correction_deg": 0.03921231048061376,
+      "scaled_min_singular_value": 0.07289965415906836,
+      "rms_error_px": 0.22776020073557984,
+      "max_corner_error_px": 0.289121740946438
+    },
+    "wall_s": 11.797468100005062,
+    "trace": "traces/natural-combined-0002.jsonl",
+    "snapshot": null
+  },
+  {
+    "id": "learned-nominal-0000",
+    "mode": "learned",
+    "profile": "nominal",
+    "case": 0,
+    "outcome": "converged",
+    "pixel_success": true,
+    "physical_success": true,
+    "completion_s": 5.73599999999959,
+    "initial_error_px": 128.4527130126953,
+    "max_post_stop_error_px": 0.23289690911769867,
+    "post_stop_frames": 30,
+    "commands_zero_after_stop": true,
+    "post_stop_precision_passes": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "initial_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -58.69482198226277,
+          -35.62101926537331,
+          -0.6368532867234711
+        ],
+        "position_error_mm": 68.66108594496903,
+        "orientation_error_deg": 7.589604136087766
+      },
+      "tool": {
+        "translation_error_mm": [
+          0.033069227254434175,
+          47.43789484337845,
+          31.12482662156635
+        ],
+        "position_error_mm": 56.73719937543435,
+        "orientation_error_deg": 7.589604136087771
+      }
+    },
+    "stop_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          0.024109275752820673,
+          0.11581475692146181,
+          0.00969756500746044
+        ],
+        "position_error_mm": 0.11869438851595619,
+        "orientation_error_deg": 0.037353290228346755
+      },
+      "tool": {
+        "translation_error_mm": [
+          0.009719656511752994,
+          -0.06371280310721454,
+          -0.17318801764087954
+        ],
+        "position_error_mm": 0.18479145666632632,
+        "orientation_error_deg": 0.03735329022834943
+      }
+    },
+    "final_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          0.024109275752820673,
+          0.11581475692146181,
+          0.00969756500746044
+        ],
+        "position_error_mm": 0.11869438851595619,
+        "orientation_error_deg": 0.037353290228346755
+      },
+      "tool": {
+        "translation_error_mm": [
+          0.009719656511752994,
+          -0.06371280310721454,
+          -0.17318801764087954
+        ],
+        "position_error_mm": 0.18479145666632632,
+        "orientation_error_deg": 0.03735329022834943
+      }
+    },
+    "worst_post_stop_accuracy": {
+      "camera": {
+        "position_error_mm": 0.11869438851595619,
+        "orientation_error_deg": 0.037353290228346755
+      },
+      "tool": {
+        "position_error_mm": 0.18479145666632632,
+        "orientation_error_deg": 0.03735329022834943
+      }
+    },
+    "final_camera_world": [
+      [
+        0.00036011177888820023,
+        0.0005215200649552609,
+        0.9999997991681435,
+        0.6985803633160965
+      ],
+      [
+        -0.9999999234944477,
+        0.00015293138410912843,
+        0.00036003206685808475,
+        -2.4109275752820672e-05
+      ],
+      [
+        -0.00015274358944866728,
+        -0.9999998523143953,
+        0.0005215750974488509,
+        0.2677448047586647
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "final_tool_world": [
+      [
+        0.9999997991681435,
+        -0.0003601117788881424,
+        -0.000521520064955316,
+        0.5885803854076007
+      ],
+      [
+        0.000360032066858126,
+        0.9999999234944479,
+        -0.00015293138410910713,
+        -6.371280310721454e-05
+      ],
+      [
+        0.0005215750974489151,
+        0.0001527435894487196,
+        0.9999998523143954,
+        0.26768743149794527
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "reference_features_px": [
+      [
+        194.96046447753906,
+        112.76128387451172
+      ],
+      [
+        443.3038635253906,
+        112.84188079833984
+      ],
+      [
+        445.5624694824219,
+        363.18109130859375
+      ],
+      [
+        194.43301391601562,
+        362.73907470703125
+      ]
+    ],
+    "assumed_K": [
+      [
+        461.03571047307986,
+        0.0,
+        320.0
+      ],
+      [
+        0.0,
+        461.03571047307986,
+        240.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "assumed_target_side_m": 0.24,
+    "calibration": {
+      "focal_scale": [
+        1.0,
+        1.0
+      ],
+      "principal_offset_px": [
+        0.0,
+        0.0
+      ],
+      "mount_translation_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mount_rotation_vector_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_size_scale": 1.0
+    },
+    "minimum_collision_slack_mm": 2.9999999999998743,
+    "forbidden_contacts": 0,
+    "safety_violations": [],
+    "joint_travel_rad": 0.5747257092718517,
+    "peak_joint_command_rad_s": 0.15102110528955864,
+    "matcher": "Picture / SuperPoint + LightGlue (CUDA)",
+    "precision_enabled": true,
+    "stopping_settings": {
+      "rms_error_px": 0.25,
+      "max_corner_error_px": 0.5,
+      "position_correction_mm": 0.8,
+      "rotation_correction_deg": 0.1,
+      "min_scaled_singular_value": 0.01
+    },
+    "stop_metrics": {
+      "candidate": true,
+      "observable": true,
+      "position_correction_mm": 0.1578411211590714,
+      "rotation_correction_deg": 0.04484599831415358,
+      "scaled_min_singular_value": 0.08189767566378464,
+      "rms_error_px": 0.2328969157077186,
+      "max_corner_error_px": 0.2624631036219664
+    },
+    "wall_s": 21.5614726000058,
+    "trace": "traces/learned-nominal-0000.jsonl",
+    "snapshot": "learned-nominal-0000.png"
+  },
+  {
+    "id": "learned-nominal-0001",
+    "mode": "learned",
+    "profile": "nominal",
+    "case": 1,
+    "outcome": "converged",
+    "pixel_success": true,
+    "physical_success": true,
+    "completion_s": 5.935999999999568,
+    "initial_error_px": 178.89669799804688,
+    "max_post_stop_error_px": 0.2211708277463913,
+    "post_stop_frames": 30,
+    "commands_zero_after_stop": true,
+    "post_stop_precision_passes": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "initial_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -89.37083385733281,
+          -7.397523215066593,
+          -7.534789513198414
+        ],
+        "position_error_mm": 89.99245716770177,
+        "orientation_error_deg": 9.28515950555003
+      },
+      "tool": {
+        "translation_error_mm": [
+          -6.0983829141803,
+          71.92023016357943,
+          4.327894802727994
+        ],
+        "position_error_mm": 72.30795567829092,
+        "orientation_error_deg": 9.285159505550025
+      }
+    },
+    "stop_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -0.047891919477218645,
+          0.12227783321455687,
+          0.019559534183533067
+        ],
+        "position_error_mm": 0.13277077925634156,
+        "orientation_error_deg": 0.029983584255238525
+      },
+      "tool": {
+        "translation_error_mm": [
+          0.019574562924007388,
+          0.02131003069947687,
+          -0.1732653400520201
+        ],
+        "position_error_mm": 0.17566490538926874,
+        "orientation_error_deg": 0.029983584255234366
+      }
+    },
+    "final_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -0.047891919477218645,
+          0.12227783321455687,
+          0.019559534183533067
+        ],
+        "position_error_mm": 0.13277077925634156,
+        "orientation_error_deg": 0.029983584255238525
+      },
+      "tool": {
+        "translation_error_mm": [
+          0.019574562924007388,
+          0.02131003069947687,
+          -0.1732653400520201
+        ],
+        "position_error_mm": 0.17566490538926874,
+        "orientation_error_deg": 0.029983584255234366
+      }
+    },
+    "worst_post_stop_accuracy": {
+      "camera": {
+        "position_error_mm": 0.13277077925634156,
+        "orientation_error_deg": 0.029983584255238525
+      },
+      "tool": {
+        "position_error_mm": 0.17566490538926874,
+        "orientation_error_deg": 0.029983584255234366
+      }
+    },
+    "final_camera_world": [
+      [
+        0.0002416649438693741,
+        0.0004635168409964363,
+        0.9999998633750871,
+        0.6985902252852726
+      ],
+      [
+        -0.9999999704974555,
+        2.467097485750469e-05,
+        0.00024165353434324466,
+        4.789191947721865e-05
+      ],
+      [
+        -2.4558961004006452e-05,
+        -0.9999998922717346,
+        0.00046352278943126435,
+        0.2677383416823716
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "final_tool_world": [
+      [
+        0.999999863375087,
+        -0.00024166494386927497,
+        -0.0004635168409964195,
+        0.588590240314013
+      ],
+      [
+        0.0002416535343431071,
+        0.9999999704974555,
+        -2.4670974857451124e-05,
+        2.131003069947687e-05
+      ],
+      [
+        0.00046352278943124754,
+        2.4558961003927e-05,
+        0.9999998922717345,
+        0.26768735417553413
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "reference_features_px": [
+      [
+        194.96046447753906,
+        112.76128387451172
+      ],
+      [
+        443.3038635253906,
+        112.84188079833984
+      ],
+      [
+        445.5624694824219,
+        363.18109130859375
+      ],
+      [
+        194.43301391601562,
+        362.73907470703125
+      ]
+    ],
+    "assumed_K": [
+      [
+        461.03571047307986,
+        0.0,
+        320.0
+      ],
+      [
+        0.0,
+        461.03571047307986,
+        240.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "assumed_target_side_m": 0.24,
+    "calibration": {
+      "focal_scale": [
+        1.0,
+        1.0
+      ],
+      "principal_offset_px": [
+        0.0,
+        0.0
+      ],
+      "mount_translation_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mount_rotation_vector_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_size_scale": 1.0
+    },
+    "minimum_collision_slack_mm": 2.9999999999999227,
+    "forbidden_contacts": 0,
+    "safety_violations": [],
+    "joint_travel_rad": 0.6124293480641915,
+    "peak_joint_command_rad_s": 0.19177963916535512,
+    "matcher": "Picture / SuperPoint + LightGlue (CUDA)",
+    "precision_enabled": true,
+    "stopping_settings": {
+      "rms_error_px": 0.25,
+      "max_corner_error_px": 0.5,
+      "position_correction_mm": 0.8,
+      "rotation_correction_deg": 0.1,
+      "min_scaled_singular_value": 0.01
+    },
+    "stop_metrics": {
+      "candidate": true,
+      "observable": true,
+      "position_correction_mm": 0.17789960467570348,
+      "rotation_correction_deg": 0.038046845129412754,
+      "scaled_min_singular_value": 0.08190005882204639,
+      "rms_error_px": 0.22117083303956012,
+      "max_corner_error_px": 0.2527315494108187
+    },
+    "wall_s": 33.14464760001283,
+    "trace": "traces/learned-nominal-0001.jsonl",
+    "snapshot": null
+  },
+  {
+    "id": "learned-nominal-0002",
+    "mode": "learned",
+    "profile": "nominal",
+    "case": 2,
+    "outcome": "converged",
+    "pixel_success": true,
+    "physical_success": true,
+    "completion_s": 4.069999999999774,
+    "initial_error_px": 32.215736389160156,
+    "max_post_stop_error_px": 0.21029455959796906,
+    "post_stop_frames": 30,
+    "commands_zero_after_stop": true,
+    "post_stop_precision_passes": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "initial_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          19.74859725421525,
+          -26.370271717858994,
+          -7.48897101608903
+        ],
+        "position_error_mm": 33.785840390061836,
+        "orientation_error_deg": 2.5505238406972044
+      },
+      "tool": {
+        "translation_error_mm": [
+          -7.478943047377284,
+          -19.22529255904454,
+          27.760309398074
+        ],
+        "position_error_mm": 34.58585319120467,
+        "orientation_error_deg": 2.550523840697206
+      }
+    },
+    "stop_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          0.27257120000747326,
+          0.01971358970276338,
+          -0.07445506928505097
+        ],
+        "position_error_mm": 0.28324413857081776,
+        "orientation_error_deg": 0.047287139206571384
+      },
+      "tool": {
+        "translation_error_mm": [
+          -0.07443765964643134,
+          -0.32278188371765887,
+          -0.05589379697390484
+        ],
+        "position_error_mm": 0.33593634243725146,
+        "orientation_error_deg": 0.04728713920656508
+      }
+    },
+    "final_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          0.27257120000747326,
+          0.01971358970276338,
+          -0.07445506928505097
+        ],
+        "position_error_mm": 0.28324413857081776,
+        "orientation_error_deg": 0.047287139206571384
+      },
+      "tool": {
+        "translation_error_mm": [
+          -0.07443765964643134,
+          -0.32278188371765887,
+          -0.05589379697390484
+        ],
+        "position_error_mm": 0.33593634243725146,
+        "orientation_error_deg": 0.04728713920656508
+      }
+    },
+    "worst_post_stop_accuracy": {
+      "camera": {
+        "position_error_mm": 0.28324413857081776,
+        "orientation_error_deg": 0.047287139206571384
+      },
+      "tool": {
+        "position_error_mm": 0.33593634243725146,
+        "orientation_error_deg": 0.04728713920656508
+      }
+    },
+    "final_camera_world": [
+      [
+        0.00045665928338156636,
+        0.00032863529152826754,
+        0.9999998417305593,
+        0.698496210681804
+      ],
+      [
+        -0.9999997134724398,
+        0.0006039028164882831,
+        0.0004564607610017535,
+        -0.00027257120000747325
+      ],
+      [
+        -0.0006037527117936925,
+        -0.9999997636500886,
+        0.0003289109751926089,
+        0.2678409059258834
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "final_tool_world": [
+      [
+        0.9999998417305593,
+        -0.0004566592833815197,
+        -0.00032863529152820666,
+        0.5884962280914425
+      ],
+      [
+        0.0004564607610016874,
+        0.9999997134724397,
+        -0.0006039028164882251,
+        -0.00032278188371765885
+      ],
+      [
+        0.00032891097519254805,
+        0.0006037527117936013,
+        0.9999997636500886,
+        0.26780472571861225
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "reference_features_px": [
+      [
+        194.96046447753906,
+        112.76128387451172
+      ],
+      [
+        443.3038635253906,
+        112.84188079833984
+      ],
+      [
+        445.5624694824219,
+        363.18109130859375
+      ],
+      [
+        194.43301391601562,
+        362.73907470703125
+      ]
+    ],
+    "assumed_K": [
+      [
+        461.03571047307986,
+        0.0,
+        320.0
+      ],
+      [
+        0.0,
+        461.03571047307986,
+        240.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "assumed_target_side_m": 0.24,
+    "calibration": {
+      "focal_scale": [
+        1.0,
+        1.0
+      ],
+      "principal_offset_px": [
+        0.0,
+        0.0
+      ],
+      "mount_translation_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mount_rotation_vector_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_size_scale": 1.0
+    },
+    "minimum_collision_slack_mm": 2.9999999999999227,
+    "forbidden_contacts": 0,
+    "safety_violations": [],
+    "joint_travel_rad": 0.3769071979271358,
+    "peak_joint_command_rad_s": 0.1287121852646192,
+    "matcher": "Picture / SuperPoint + LightGlue (CUDA)",
+    "precision_enabled": true,
+    "stopping_settings": {
+      "rms_error_px": 0.25,
+      "max_corner_error_px": 0.5,
+      "position_correction_mm": 0.8,
+      "rotation_correction_deg": 0.1,
+      "min_scaled_singular_value": 0.01
+    },
+    "stop_metrics": {
+      "candidate": true,
+      "observable": true,
+      "position_correction_mm": 0.279676755355997,
+      "rotation_correction_deg": 0.04761601331040643,
+      "scaled_min_singular_value": 0.08184978030722542,
+      "rms_error_px": 0.21029455182248102,
+      "max_corner_error_px": 0.3006363801795104
+    },
+    "wall_s": 23.966476300003706,
+    "trace": "traces/learned-nominal-0002.jsonl",
+    "snapshot": null
+  },
+  {
+    "id": "learned-combined-0000",
+    "mode": "learned",
+    "profile": "combined",
+    "case": 0,
+    "outcome": "converged",
+    "pixel_success": true,
+    "physical_success": true,
+    "completion_s": 5.669999999999598,
+    "initial_error_px": 128.4527130126953,
+    "max_post_stop_error_px": 0.21965675055980682,
+    "post_stop_frames": 30,
+    "commands_zero_after_stop": true,
+    "post_stop_precision_passes": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "initial_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -58.69482198226277,
+          -35.62101926537331,
+          -0.6368532867234711
+        ],
+        "position_error_mm": 68.66108594496903,
+        "orientation_error_deg": 7.589604136087766
+      },
+      "tool": {
+        "translation_error_mm": [
+          0.033069227254434175,
+          47.43789484337845,
+          31.12482662156635
+        ],
+        "position_error_mm": 56.73719937543435,
+        "orientation_error_deg": 7.589604136087771
+      }
+    },
+    "stop_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -0.047583800375966726,
+          -0.01129375688102563,
+          -0.0027571091439915207
+        ],
+        "position_error_mm": 0.048983350779009054,
+        "orientation_error_deg": 0.024005316777260758
+      },
+      "tool": {
+        "translation_error_mm": [
+          -0.002752482679557744,
+          0.022159013786921967,
+          -0.00797804593050122
+        ],
+        "position_error_mm": 0.0237117538317909,
+        "orientation_error_deg": 0.024005316777253306
+      }
+    },
+    "final_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -0.047583800375966726,
+          -0.01129375688102563,
+          -0.0027571091439915207
+        ],
+        "position_error_mm": 0.048983350779009054,
+        "orientation_error_deg": 0.024005316777260758
+      },
+      "tool": {
+        "translation_error_mm": [
+          -0.002752482679557744,
+          0.022159013786921967,
+          -0.00797804593050122
+        ],
+        "position_error_mm": 0.0237117538317909,
+        "orientation_error_deg": 0.024005316777253306
+      }
+    },
+    "worst_post_stop_accuracy": {
+      "camera": {
+        "position_error_mm": 0.048983350779009054,
+        "orientation_error_deg": 0.024005316777260758
+      },
+      "tool": {
+        "position_error_mm": 0.0237117538317909,
+        "orientation_error_deg": 0.024005316777253306
+      }
+    },
+    "final_camera_world": [
+      [
+        0.00023118738540173212,
+        0.00017512831422450414,
+        0.9999999579412326,
+        0.6985679086419451
+      ],
+      [
+        -0.9999999275723951,
+        0.00030237738598079544,
+        0.00023113442353672742,
+        4.7583800375966724e-05
+      ],
+      [
+        -0.00030233689508119,
+        -0.9999999389489934,
+        0.00017519820737765812,
+        0.2678719132724672
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "final_tool_world": [
+      [
+        0.9999999579412325,
+        -0.0002311873854017566,
+        -0.00017512831422436276,
+        0.5885679132684094
+      ],
+      [
+        0.00023113442353677054,
+        0.9999999275723949,
+        -0.0003023773859806577,
+        2.2159013786921968e-05
+      ],
+      [
+        0.00017519820737750785,
+        0.00030233689508108423,
+        0.9999999389489932,
+        0.26785264146965565
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "reference_features_px": [
+      [
+        194.96046447753906,
+        112.76128387451172
+      ],
+      [
+        443.3038635253906,
+        112.84188079833984
+      ],
+      [
+        445.5624694824219,
+        363.18109130859375
+      ],
+      [
+        194.43301391601562,
+        362.73907470703125
+      ]
+    ],
+    "assumed_K": [
+      [
+        484.0874959967339,
+        0.0,
+        325.0
+      ],
+      [
+        0.0,
+        484.0874959967339,
+        240.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "assumed_target_side_m": 0.264,
+    "calibration": {
+      "focal_scale": [
+        1.05,
+        1.05
+      ],
+      "principal_offset_px": [
+        5.0,
+        0.0
+      ],
+      "mount_translation_mm": [
+        10.0,
+        0.0,
+        0.0
+      ],
+      "mount_rotation_vector_deg": [
+        0.0,
+        5.0,
+        0.0
+      ],
+      "target_size_scale": 1.1
+    },
+    "minimum_collision_slack_mm": 2.9999999999999227,
+    "forbidden_contacts": 0,
+    "safety_violations": [],
+    "joint_travel_rad": 0.5649997421507296,
+    "peak_joint_command_rad_s": 0.1797577235212845,
+    "matcher": "Picture / SuperPoint + LightGlue (CUDA)",
+    "precision_enabled": true,
+    "stopping_settings": {
+      "rms_error_px": 0.25,
+      "max_corner_error_px": 0.5,
+      "position_correction_mm": 0.8,
+      "rotation_correction_deg": 0.1,
+      "min_scaled_singular_value": 0.01
+    },
+    "stop_metrics": {
+      "candidate": true,
+      "observable": true,
+      "position_correction_mm": 0.08226110524557367,
+      "rotation_correction_deg": 0.030512101748896313,
+      "scaled_min_singular_value": 0.07236120930801274,
+      "rms_error_px": 0.21965675321244058,
+      "max_corner_error_px": 0.24745715290071948
+    },
+    "wall_s": 30.129979799996363,
+    "trace": "traces/learned-combined-0000.jsonl",
+    "snapshot": "learned-combined-0000.png"
+  },
+  {
+    "id": "learned-combined-0001",
+    "mode": "learned",
+    "profile": "combined",
+    "case": 1,
+    "outcome": "converged",
+    "pixel_success": true,
+    "physical_success": true,
+    "completion_s": 6.001999999999561,
+    "initial_error_px": 178.89669799804688,
+    "max_post_stop_error_px": 0.21781136095523834,
+    "post_stop_frames": 30,
+    "commands_zero_after_stop": true,
+    "post_stop_precision_passes": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "initial_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -89.37083385733281,
+          -7.397523215066593,
+          -7.534789513198414
+        ],
+        "position_error_mm": 89.99245716770177,
+        "orientation_error_deg": 9.28515950555003
+      },
+      "tool": {
+        "translation_error_mm": [
+          -6.0983829141803,
+          71.92023016357943,
+          4.327894802727994
+        ],
+        "position_error_mm": 72.30795567829092,
+        "orientation_error_deg": 9.285159505550025
+      }
+    },
+    "stop_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -0.06537230056620409,
+          0.0009114105516405679,
+          -0.00581988516790144
+        ],
+        "position_error_mm": 0.06563718011827847,
+        "orientation_error_deg": 0.020317199107769992
+      },
+      "tool": {
+        "translation_error_mm": [
+          -0.005814743108567555,
+          0.049760123872486454,
+          -0.030702566156337596
+        ],
+        "position_error_mm": 0.05875822269102527,
+        "orientation_error_deg": 0.02031719910777289
+      }
+    },
+    "final_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          -0.06537230056620409,
+          0.0009114105516405679,
+          -0.00581988516790144
+        ],
+        "position_error_mm": 0.06563718011827847,
+        "orientation_error_deg": 0.020317199107769992
+      },
+      "tool": {
+        "translation_error_mm": [
+          -0.005814743108567555,
+          0.049760123872486454,
+          -0.030702566156337596
+        ],
+        "position_error_mm": 0.05875822269102527,
+        "orientation_error_deg": 0.02031719910777289
+      }
+    },
+    "worst_post_stop_accuracy": {
+      "camera": {
+        "position_error_mm": 0.06563718011827847,
+        "orientation_error_deg": 0.020317199107769992
+      },
+      "tool": {
+        "position_error_mm": 0.05875822269102527,
+        "orientation_error_deg": 0.02031719910777289
+      }
+    },
+    "final_camera_world": [
+      [
+        0.00014197751338843045,
+        0.00027080319471672887,
+        0.9999999532540065,
+        0.6985648458659212
+      ],
+      [
+        -0.9999999737993426,
+        0.00017960375026365716,
+        0.00014192887903380358,
+        6.53723005662041e-05
+      ],
+      [
+        -0.00017956530707402552,
+        -0.9999999472040597,
+        0.00027082868731523324,
+        0.2678597081050345
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "final_tool_world": [
+      [
+        0.9999999532540065,
+        -0.000141977513388449,
+        -0.0002708031947166983,
+        0.5885648510079804
+      ],
+      [
+        0.00014192887903379675,
+        0.9999999737993426,
+        -0.00017960375026369383,
+        4.976012387248646e-05
+      ],
+      [
+        0.0002708286873153343,
+        0.0001795653070740732,
+        0.9999999472040597,
+        0.2678299169494298
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "reference_features_px": [
+      [
+        194.96046447753906,
+        112.76128387451172
+      ],
+      [
+        443.3038635253906,
+        112.84188079833984
+      ],
+      [
+        445.5624694824219,
+        363.18109130859375
+      ],
+      [
+        194.43301391601562,
+        362.73907470703125
+      ]
+    ],
+    "assumed_K": [
+      [
+        484.0874959967339,
+        0.0,
+        325.0
+      ],
+      [
+        0.0,
+        484.0874959967339,
+        240.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "assumed_target_side_m": 0.264,
+    "calibration": {
+      "focal_scale": [
+        1.05,
+        1.05
+      ],
+      "principal_offset_px": [
+        5.0,
+        0.0
+      ],
+      "mount_translation_mm": [
+        10.0,
+        0.0,
+        0.0
+      ],
+      "mount_rotation_vector_deg": [
+        0.0,
+        5.0,
+        0.0
+      ],
+      "target_size_scale": 1.1
+    },
+    "minimum_collision_slack_mm": 2.9999999999999227,
+    "forbidden_contacts": 0,
+    "safety_violations": [],
+    "joint_travel_rad": 0.606093844064413,
+    "peak_joint_command_rad_s": 0.19095300410046745,
+    "matcher": "Picture / SuperPoint + LightGlue (CUDA)",
+    "precision_enabled": true,
+    "stopping_settings": {
+      "rms_error_px": 0.25,
+      "max_corner_error_px": 0.5,
+      "position_correction_mm": 0.8,
+      "rotation_correction_deg": 0.1,
+      "min_scaled_singular_value": 0.01
+    },
+    "stop_metrics": {
+      "candidate": true,
+      "observable": true,
+      "position_correction_mm": 0.07329304883792773,
+      "rotation_correction_deg": 0.027838848636245837,
+      "scaled_min_singular_value": 0.0723589126467372,
+      "rms_error_px": 0.2178113706816786,
+      "max_corner_error_px": 0.23366114463898752
+    },
+    "wall_s": 21.14500920000137,
+    "trace": "traces/learned-combined-0001.jsonl",
+    "snapshot": null
+  },
+  {
+    "id": "learned-combined-0002",
+    "mode": "learned",
+    "profile": "combined",
+    "case": 2,
+    "outcome": "converged",
+    "pixel_success": true,
+    "physical_success": true,
+    "completion_s": 3.5699999999998284,
+    "initial_error_px": 32.215736389160156,
+    "max_post_stop_error_px": 0.20725692808628082,
+    "post_stop_frames": 30,
+    "commands_zero_after_stop": true,
+    "post_stop_precision_passes": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "initial_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          19.74859725421525,
+          -26.370271717858994,
+          -7.48897101608903
+        ],
+        "position_error_mm": 33.785840390061836,
+        "orientation_error_deg": 2.5505238406972044
+      },
+      "tool": {
+        "translation_error_mm": [
+          -7.478943047377284,
+          -19.22529255904454,
+          27.760309398074
+        ],
+        "position_error_mm": 34.58585319120467,
+        "orientation_error_deg": 2.550523840697206
+      }
+    },
+    "stop_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          0.3549749385398865,
+          0.0651860681354921,
+          0.05019113337856318
+        ],
+        "position_error_mm": 0.3643838365517684,
+        "orientation_error_deg": 0.0658671080865505
+      },
+      "tool": {
+        "translation_error_mm": [
+          0.05021371248425943,
+          -0.42508296898942555,
+          -0.07241564511240028
+        ],
+        "position_error_mm": 0.4341209199098356,
+        "orientation_error_deg": 0.06586710808654674
+      }
+    },
+    "final_accuracy": {
+      "camera": {
+        "translation_error_mm": [
+          0.3549749385398865,
+          0.0651860681354921,
+          0.05019113337856318
+        ],
+        "position_error_mm": 0.3643838365517684,
+        "orientation_error_deg": 0.0658671080865505
+      },
+      "tool": {
+        "translation_error_mm": [
+          0.05021371248425943,
+          -0.42508296898942555,
+          -0.07241564511240028
+        ],
+        "position_error_mm": 0.4341209199098356,
+        "orientation_error_deg": 0.06586710808654674
+      }
+    },
+    "worst_post_stop_accuracy": {
+      "camera": {
+        "position_error_mm": 0.3643838365517684,
+        "orientation_error_deg": 0.0658671080865505
+      },
+      "tool": {
+        "position_error_mm": 0.4341209199098356,
+        "orientation_error_deg": 0.06586710808654674
+      }
+    },
+    "final_camera_world": [
+      [
+        0.0006374081732062886,
+        6.511505875650414e-05,
+        0.9999997947354038,
+        0.6986208568844676
+      ],
+      [
+        -0.9999993413522406,
+        0.0009545079902732734,
+        0.0006373457313594844,
+        -0.00035497493853988647
+      ],
+      [
+        -0.0009544662935419002,
+        -0.9999995423371579,
+        6.57234270630691e-05,
+        0.26779543344745066
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "final_tool_world": [
+      [
+        0.9999997947354037,
+        -0.0006374081732062669,
+        -6.511505875641777e-05,
+        0.5886208794635732
+      ],
+      [
+        0.000637345731359446,
+        0.9999993413522407,
+        -0.0009545079902732571,
+        -0.00042508296898942556
+      ],
+      [
+        6.57234270629211e-05,
+        0.0009544662935418143,
+        0.999999542337158,
+        0.26778820387047375
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "reference_features_px": [
+      [
+        194.96046447753906,
+        112.76128387451172
+      ],
+      [
+        443.3038635253906,
+        112.84188079833984
+      ],
+      [
+        445.5624694824219,
+        363.18109130859375
+      ],
+      [
+        194.43301391601562,
+        362.73907470703125
+      ]
+    ],
+    "assumed_K": [
+      [
+        484.0874959967339,
+        0.0,
+        325.0
+      ],
+      [
+        0.0,
+        484.0874959967339,
+        240.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "assumed_target_side_m": 0.264,
+    "calibration": {
+      "focal_scale": [
+        1.05,
+        1.05
+      ],
+      "principal_offset_px": [
+        5.0,
+        0.0
+      ],
+      "mount_translation_mm": [
+        10.0,
+        0.0,
+        0.0
+      ],
+      "mount_rotation_vector_deg": [
+        0.0,
+        5.0,
+        0.0
+      ],
+      "target_size_scale": 1.1
+    },
+    "minimum_collision_slack_mm": 2.9999999999999227,
+    "forbidden_contacts": 0,
+    "safety_violations": [],
+    "joint_travel_rad": 0.37435048882143745,
+    "peak_joint_command_rad_s": 0.22885786773598277,
+    "matcher": "Picture / SuperPoint + LightGlue (CUDA)",
+    "precision_enabled": true,
+    "stopping_settings": {
+      "rms_error_px": 0.25,
+      "max_corner_error_px": 0.5,
+      "position_correction_mm": 0.8,
+      "rotation_correction_deg": 0.1,
+      "min_scaled_singular_value": 0.01
+    },
+    "stop_metrics": {
+      "candidate": true,
+      "observable": true,
+      "position_correction_mm": 0.4426544405418532,
+      "rotation_correction_deg": 0.07310386759241481,
+      "scaled_min_singular_value": 0.07239747849299534,
+      "rms_error_px": 0.20725693556651945,
+      "max_corner_error_px": 0.28110785708736674
+    },
+    "wall_s": 12.30830419997801,
+    "trace": "traces/learned-combined-0002.jsonl",
+    "snapshot": null
+  }
+]

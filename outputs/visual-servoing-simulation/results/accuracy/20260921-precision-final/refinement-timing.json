@@ -1,0 +1,70 @@
+{
+  "method": "Eight saved near-goal poses per matcher; warmed model, forced fresh inference, paired same RGB; excludes rendering and simulated transport delay",
+  "source_sha256": "67f5c07ce76ce265cb8161ded1245fc263ab47d2ff5eac8e3638c00ecbcf8611",
+  "input_sha256": "2822b7bd891bc4dcca950c9ec424a7f43a8a8128627f230cb1bc62e4d27baef5",
+  "reference_sha256": "661eedf8085d1079a99d105af482206341724c474791ff8f2d7d2ee9ef865038",
+  "results": {
+    "natural": {
+      "matcher": "Picture / SIFT",
+      "frames": 8,
+      "refined_frames": 8,
+      "milliseconds": {
+        "matcher_only": [
+          43.256300006760284,
+          46.33900002227165,
+          43.359899980714545,
+          52.16250001103617,
+          45.37149998941459,
+          41.02989999228157,
+          44.650399999227375,
+          45.13009998481721
+        ],
+        "matcher_and_refinement": [
+          81.35940000647679,
+          80.97159999306314,
+          82.03980000689626,
+          93.21449999697506,
+          71.82319997809827,
+          74.97730001341552,
+          70.78179999371059,
+          62.49960002605803
+        ]
+      },
+      "median_ms": {
+        "matcher_only": 44.89024999202229,
+        "matcher_and_refinement": 77.97445000323933
+      }
+    },
+    "learned": {
+      "matcher": "Picture / SuperPoint + LightGlue (CUDA)",
+      "frames": 8,
+      "refined_frames": 8,
+      "milliseconds": {
+        "matcher_only": [
+          58.71709997882135,
+          66.6540999955032,
+          61.032500001601875,
+          69.90500001120381,
+          63.58039999031462,
+          65.97389999660663,
+          63.19749998510815,
+          68.134100001771
+        ],
+        "matcher_and_refinement": [
+          102.41419999510981,
+          98.29910000553355,
+          118.56460000853986,
+          102.23329998552799,
+          109.59330000332557,
+          174.63240001234226,
+          84.16190001298673,
+          97.05949999624863
+        ]
+      },
+      "median_ms": {
+        "matcher_only": 64.77714999346063,
+        "matcher_and_refinement": 102.3237499903189
+      }
+    }
+  }
+}

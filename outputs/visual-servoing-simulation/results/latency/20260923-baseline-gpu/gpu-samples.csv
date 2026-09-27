@@ -1,0 +1,563 @@
+timestamp, name, pstate, temperature.gpu, utilization.gpu [%], utilization.memory [%], clocks.current.sm [MHz], clocks.current.memory [MHz], power.draw [W], power.limit [W], enforced.power.limit [W], clocks_event_reasons.active, clocks_event_reasons.gpu_idle, clocks_event_reasons.sw_power_cap, clocks_event_reasons.sw_thermal_slowdown, clocks_event_reasons.hw_thermal_slowdown, clocks_event_reasons.hw_power_brake_slowdown
+2026/09/23 14:38:28.510, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 420, 405, 9.74, [N/A], 35.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:28.783, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 7.70, [N/A], 35.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:29.045, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 8.77, [N/A], 35.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:29.304, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 7.22, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:29.564, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 6.97, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:29.825, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 6.97, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:30.084, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 6.97, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:30.344, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 6.97, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:30.598, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.33, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:30.854, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.33, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:31.114, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.33, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:31.374, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.33, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:31.641, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.32, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:31.894, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.32, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:32.155, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.32, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:32.408, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.32, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:32.660, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.30, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:32.921, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.30, [N/A], 30.38, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:33.180, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.30, [N/A], 30.38, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:33.434, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.30, [N/A], 30.38, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:33.688, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.22, [N/A], 30.38, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:33.948, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.40, [N/A], 30.38, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:34.209, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.26, [N/A], 30.25, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:34.467, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.32, [N/A], 30.25, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:34.724, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.22, [N/A], 29.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:34.984, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.21, [N/A], 29.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:35.243, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.25, [N/A], 29.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:35.504, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.32, [N/A], 29.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:35.760, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.49, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:36.018, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.22, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:36.271, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.37, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:36.530, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.29, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:36.791, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.48, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:37.044, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 6.04, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:37.302, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.31, [N/A], 29.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:37.564, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.31, [N/A], 29.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:37.817, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.32, [N/A], 29.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:38.079, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.23, [N/A], 29.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:38.332, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.32, [N/A], 29.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:38.592, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 37, 0, 0, 210, 405, 5.33, [N/A], 29.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:38.844, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.43, [N/A], 29.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:39.102, NVIDIA GeForce RTX 3050 6GB Laptop GPU, [Unknown Error], 36, [Unknown Error], [Unknown Error], 420, 405, 10.05, [N/A], 29.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:39.854, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 420, 405, 8.69, [N/A], 29.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:40.107, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 7.72, [N/A], 30.25, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:40.367, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 7.21, [N/A], 30.25, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:40.621, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 6.99, [N/A], 30.25, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:40.882, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 6.65, [N/A], 30.25, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:41.142, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 6.65, [N/A], 30.25, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:41.401, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 6.65, [N/A], 30.25, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:41.661, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 6.65, [N/A], 30.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:41.917, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.46, [N/A], 30.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:42.178, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.24, [N/A], 30.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:42.438, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.26, [N/A], 30.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:42.694, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.42, [N/A], 29.75, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:42.951, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.45, [N/A], 29.75, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:43.211, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.31, [N/A], 29.75, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:43.473, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.67, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:43.731, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.32, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:43.983, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.44, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:44.245, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.27, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:44.500, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.24, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:44.755, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.35, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:45.011, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.35, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:45.272, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.35, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:45.532, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.45, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:45.793, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P8, 38, 0, 0, 210, 405, 5.81, [N/A], 30.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:46.051, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 39, 0, 0, 990, 5000, 7.37, [N/A], 30.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:46.311, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 39, 0, 0, 990, 5000, 11.21, [N/A], 30.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:46.572, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 39, 0, 0, 990, 5000, 11.23, [N/A], 30.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:46.832, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 39, 0, 0, 990, 5000, 11.23, [N/A], 30.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:47.092, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 39, 0, 0, 990, 5000, 11.28, [N/A], 30.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:47.344, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 39, 0, 0, 990, 5000, 11.27, [N/A], 30.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:47.605, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 39, 1, 0, 990, 5000, 11.43, [N/A], 30.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:47.863, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 39, 1, 0, 990, 5000, 12.06, [N/A], 30.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:48.125, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 39, 1, 0, 990, 5000, 12.78, [N/A], 30.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:48.384, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 39, 1, 0, 990, 5000, 13.58, [N/A], 30.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:48.645, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 33, 16, 990, 5000, 14.41, [N/A], 30.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:48.898, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 33, 16, 990, 5000, 14.85, [N/A], 30.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:49.154, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 33, 16, 990, 5000, 15.41, [N/A], 30.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:49.409, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 33, 16, 990, 5000, 15.00, [N/A], 30.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:49.670, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 23, 11, 990, 5000, 14.27, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:49.922, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 23, 11, 990, 5000, 13.97, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:50.178, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 23, 11, 990, 5000, 13.77, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:50.438, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 23, 11, 990, 5000, 13.87, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:50.703, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 24, 11, 990, 5000, 13.83, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:50.961, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 24, 11, 990, 5000, 14.10, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:51.221, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 24, 11, 990, 5000, 13.99, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:51.481, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 23, 11, 990, 5000, 14.07, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:51.732, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 23, 11, 990, 5000, 13.89, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:51.989, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 23, 11, 990, 5000, 13.37, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:52.246, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 23, 11, 990, 5000, 12.68, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:52.505, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 0, 0, 517, 5000, 12.12, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:52.759, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 0, 0, 517, 5000, 11.82, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:53.018, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 40, 0, 0, 397, 810, 11.14, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:53.275, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 40, 0, 0, 397, 810, 11.13, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:53.534, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 40, 42, 33, 450, 810, 11.65, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:53.792, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 40, 42, 33, 450, 810, 12.06, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:54.043, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 42, 33, 982, 5000, 14.91, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:54.302, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 42, 33, 982, 5000, 14.86, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:54.562, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 46, 17, 750, 5000, 14.44, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:54.822, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 46, 17, 750, 5000, 14.13, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:55.082, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 46, 17, 780, 5000, 14.03, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:55.341, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 40, 46, 17, 780, 5000, 13.51, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:55.598, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 26, 11, 780, 5000, 13.32, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:55.850, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 26, 11, 780, 5000, 13.32, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:56.105, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 26, 11, 780, 5000, 13.32, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:56.365, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 26, 11, 780, 5000, 13.30, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:56.618, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 31, 11, 562, 5000, 13.39, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:56.873, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 31, 11, 562, 5000, 13.09, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:57.125, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 31, 11, 495, 5000, 10.88, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:57.381, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 31, 11, 495, 5000, 10.80, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:57.641, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 0, 0, 405, 5000, 10.79, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:57.894, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 0, 0, 405, 5000, 10.79, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:58.154, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 0, 0, 307, 5000, 11.09, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:58.406, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 0, 0, 307, 5000, 11.29, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:58.662, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 41, 42, 31, 322, 810, 11.90, [N/A], 29.25, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:58.916, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 41, 42, 31, 322, 810, 12.20, [N/A], 29.25, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:38:59.171, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 41, 42, 31, 412, 810, 12.91, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:59.424, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 41, 42, 31, 412, 810, 13.07, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:59.685, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 41, 59, 43, 465, 810, 13.06, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:38:59.942, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 41, 59, 43, 465, 810, 13.22, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:00.202, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 59, 43, 630, 5000, 13.23, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:00.462, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 59, 43, 630, 5000, 13.41, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:00.715, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 28, 11, 787, 5000, 13.38, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:00.969, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 28, 11, 787, 5000, 13.34, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:01.225, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 28, 11, 787, 5000, 13.37, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:01.484, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 28, 11, 787, 5000, 13.40, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:01.737, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 28, 11, 787, 5000, 13.37, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:01.995, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 28, 11, 510, 5000, 12.88, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:02.252, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 28, 11, 510, 5000, 12.13, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:02.512, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 0, 0, 427, 5000, 11.36, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:02.767, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 41, 0, 0, 427, 5000, 11.36, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:03.018, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 41, 0, 0, 322, 810, 11.01, [N/A], 29.25, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:03.271, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 41, 0, 0, 322, 810, 11.06, [N/A], 29.25, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:03.532, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 41, 44, 34, 412, 810, 11.82, [N/A], 29.25, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:03.789, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 41, 44, 34, 412, 810, 14.21, [N/A], 29.25, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:04.048, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 44, 34, 1110, 5000, 15.87, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:04.305, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 44, 34, 1110, 5000, 15.59, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:04.557, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 47, 16, 682, 5000, 15.11, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:04.810, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 47, 16, 682, 5000, 14.69, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:05.062, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 47, 16, 727, 5000, 14.13, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:05.323, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 47, 16, 727, 5000, 13.58, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:05.576, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 29, 11, 727, 5000, 13.17, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:05.835, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 29, 11, 727, 5000, 13.23, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:06.093, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 29, 11, 727, 5000, 13.16, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:06.349, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 29, 11, 727, 5000, 13.10, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:06.600, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 35, 11, 532, 5000, 13.19, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:06.859, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 35, 11, 532, 5000, 13.32, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:07.113, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 35, 11, 502, 5000, 12.69, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:07.373, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 35, 11, 502, 5000, 12.30, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:07.633, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 0, 0, 420, 5000, 11.54, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:07.888, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 0, 0, 420, 5000, 10.74, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:08.150, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 0, 0, 315, 5000, 10.73, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:08.409, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 0, 0, 315, 5000, 11.16, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:08.669, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 42, 29, 6, 285, 810, 11.73, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:08.930, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 42, 29, 6, 285, 810, 12.15, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:09.181, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 29, 6, 525, 5000, 12.38, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:09.439, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 42, 29, 6, 525, 5000, 13.41, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:09.699, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 42, 45, 16, 667, 810, 13.83, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:09.956, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 42, 45, 16, 667, 810, 14.00, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:10.216, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 45, 16, 832, 5000, 14.03, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:10.475, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 23, 11, 1080, 5000, 13.95, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:10.734, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 23, 11, 1080, 5000, 15.94, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:10.992, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 23, 11, 1230, 5000, 15.88, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:11.249, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 23, 11, 1230, 5000, 15.28, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:11.510, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 21, 11, 750, 5000, 15.01, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:11.771, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 21, 11, 750, 5000, 13.53, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:12.024, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 21, 11, 697, 5000, 13.62, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:12.284, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 21, 11, 697, 5000, 12.74, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:12.544, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 0, 0, 600, 5000, 12.14, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:12.805, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 0, 0, 600, 5000, 10.94, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:13.063, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 0, 0, 457, 5000, 10.90, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:13.323, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 0, 0, 457, 5000, 10.90, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:13.579, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 0, 0, 375, 5000, 11.30, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:13.839, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 0, 0, 375, 5000, 15.38, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:14.096, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 0, 0, 435, 5000, 13.67, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:14.357, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 0, 0, 435, 5000, 14.11, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:14.612, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 58, 16, 630, 5000, 14.39, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:14.869, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 58, 16, 630, 5000, 14.36, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:15.125, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 58, 16, 735, 5000, 14.27, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:15.385, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 58, 16, 735, 5000, 14.14, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:15.646, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 23, 8, 742, 5000, 13.76, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:15.910, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 23, 8, 742, 5000, 13.54, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:16.162, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 23, 8, 742, 5000, 13.64, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:16.423, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 23, 8, 742, 5000, 13.48, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:16.682, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 25, 10, 570, 5000, 13.33, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:16.942, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 25, 10, 570, 5000, 13.41, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:17.202, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 25, 10, 532, 5000, 13.40, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:17.453, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 25, 10, 532, 5000, 12.95, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:17.711, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 18, 6, 502, 5000, 10.91, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:17.962, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 18, 6, 502, 5000, 10.90, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:18.224, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 18, 6, 382, 5000, 10.91, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:18.484, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 0, 0, 315, 5000, 10.90, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:18.740, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 0, 0, 315, 5000, 11.20, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:18.994, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 43, 0, 0, 352, 810, 13.52, [N/A], 29.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:19.250, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 43, 0, 0, 352, 810, 13.38, [N/A], 29.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:19.503, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 78, 64, 990, 5000, 13.86, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:19.760, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 78, 64, 990, 5000, 14.50, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:20.021, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 78, 64, 637, 5000, 14.73, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:20.280, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 78, 64, 637, 5000, 14.33, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:20.539, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 30, 11, 652, 5000, 14.06, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:20.799, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 30, 11, 652, 5000, 13.97, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:21.060, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 30, 11, 652, 5000, 13.63, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:21.317, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 30, 11, 652, 5000, 13.39, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:21.573, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 23, 10, 652, 5000, 13.28, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:21.830, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 23, 10, 652, 5000, 13.32, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:22.089, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 23, 10, 532, 5000, 13.85, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:22.347, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 23, 10, 532, 5000, 13.65, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:22.603, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 36, 11, 525, 5000, 12.73, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:22.866, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 36, 11, 525, 5000, 12.28, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:23.125, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 36, 11, 412, 5000, 11.92, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:23.385, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 36, 11, 412, 5000, 11.42, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:23.644, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 0, 0, 345, 5000, 11.17, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:23.895, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 43, 0, 0, 345, 5000, 11.18, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:24.153, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 43, 0, 0, 277, 810, 12.49, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:24.410, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 43, 0, 0, 277, 810, 12.99, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:24.667, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 44, 72, 57, 622, 810, 13.35, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:24.923, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 44, 72, 57, 622, 810, 11.58, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:25.182, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 72, 57, 502, 5000, 14.32, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:25.441, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 72, 57, 502, 5000, 13.84, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:25.702, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 31, 9, 592, 5000, 13.63, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:25.963, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 31, 9, 592, 5000, 13.62, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:26.223, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 31, 9, 592, 5000, 13.25, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:26.480, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 29, 8, 592, 5000, 13.25, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:26.736, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 29, 8, 592, 5000, 13.13, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:26.997, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 29, 8, 510, 5000, 13.09, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:27.253, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 29, 8, 510, 5000, 13.04, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:27.513, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 32, 10, 480, 5000, 13.09, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:27.770, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 32, 10, 480, 5000, 13.12, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:28.025, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 32, 10, 442, 5000, 12.64, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:28.284, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 32, 10, 442, 5000, 12.39, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:28.537, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 0, 0, 367, 5000, 11.72, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:28.793, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 0, 0, 367, 5000, 11.01, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:29.050, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 44, 0, 0, 277, 810, 10.81, [N/A], 28.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:29.303, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 44, 0, 0, 277, 810, 11.11, [N/A], 28.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:29.562, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 44, 49, 32, 315, 810, 11.37, [N/A], 28.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:29.816, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 44, 49, 32, 315, 810, 12.21, [N/A], 28.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:30.076, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 49, 32, 855, 5000, 12.78, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:30.337, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 49, 32, 855, 5000, 13.73, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:30.596, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 39, 17, 570, 5000, 14.56, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:30.853, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 39, 17, 570, 5000, 14.62, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:31.113, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 39, 17, 735, 5000, 14.42, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:31.374, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 39, 17, 735, 5000, 14.00, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:31.626, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 28, 11, 810, 5000, 13.55, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:31.877, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 28, 11, 810, 5000, 13.48, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:32.134, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 28, 11, 810, 5000, 13.25, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:32.395, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 28, 11, 810, 5000, 13.15, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:32.650, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 20, 9, 540, 5000, 13.17, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:32.904, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 20, 9, 540, 5000, 13.26, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:33.163, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 20, 9, 510, 5000, 13.14, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:33.417, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 20, 9, 510, 5000, 12.54, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:33.669, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 0, 0, 442, 5000, 12.09, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:33.934, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 0, 0, 442, 5000, 10.91, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:34.191, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 0, 0, 337, 5000, 10.91, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:34.451, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 0, 0, 337, 5000, 13.88, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:34.705, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 44, 8, 7, 285, 810, 12.75, [N/A], 28.75, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:34.964, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 44, 8, 7, 285, 810, 13.06, [N/A], 28.75, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:35.218, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 44, 8, 7, 772, 810, 13.30, [N/A], 28.75, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:35.477, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 44, 8, 7, 772, 810, 13.52, [N/A], 28.75, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:35.740, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 43, 23, 922, 5000, 14.13, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:36.000, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 43, 23, 630, 5000, 13.23, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:36.252, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 43, 23, 630, 5000, 13.36, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:36.511, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 29, 10, 810, 5000, 13.52, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:36.764, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 29, 10, 810, 5000, 13.62, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:37.024, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 29, 10, 922, 5000, 13.82, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:37.279, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 29, 10, 922, 5000, 13.86, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:37.537, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 16, 6, 607, 5000, 13.69, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:37.795, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 16, 6, 607, 5000, 13.67, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:38.053, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 16, 6, 577, 5000, 13.53, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:38.313, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 16, 6, 577, 5000, 13.28, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:38.572, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 19, 6, 540, 5000, 12.95, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:38.830, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 19, 6, 540, 5000, 12.20, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:39.089, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 19, 6, 412, 5000, 11.71, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:39.341, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 19, 6, 412, 5000, 11.01, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:39.600, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 0, 0, 337, 5000, 11.10, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:39.856, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 44, 0, 0, 337, 5000, 11.19, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:40.107, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 44, 0, 0, 360, 810, 11.77, [N/A], 29.50, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:40.368, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 44, 0, 0, 360, 810, 12.28, [N/A], 29.50, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:40.624, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 69, 58, 802, 5000, 13.36, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:40.880, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 69, 58, 802, 5000, 13.75, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:41.137, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 69, 58, 615, 5000, 14.16, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:41.397, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 69, 58, 615, 5000, 14.21, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:41.657, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 27, 9, 765, 5000, 14.06, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:41.914, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 27, 9, 765, 5000, 11.20, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:42.172, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 27, 9, 765, 5000, 13.81, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:42.430, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 27, 9, 765, 5000, 13.52, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:42.690, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 28, 11, 765, 5000, 13.40, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:42.945, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 28, 11, 765, 5000, 13.51, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:43.196, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 28, 11, 555, 5000, 13.50, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:43.455, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 28, 11, 555, 5000, 13.36, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:43.712, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 33, 11, 540, 5000, 13.21, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:43.969, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 33, 11, 540, 5000, 12.70, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:44.228, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 33, 11, 442, 5000, 11.96, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:44.488, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 367, 5000, 10.92, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:44.742, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 367, 5000, 10.94, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:44.995, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 0, 0, 277, 810, 11.23, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:45.254, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 0, 0, 277, 810, 11.36, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:45.505, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 45, 34, 390, 810, 11.94, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:45.760, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 45, 34, 390, 810, 12.33, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:46.019, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 45, 34, 915, 5000, 15.92, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:46.274, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 45, 34, 915, 5000, 15.53, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:46.526, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 41, 13, 540, 5000, 14.72, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:46.785, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 41, 13, 540, 5000, 13.47, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:47.037, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 41, 13, 600, 5000, 13.23, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:47.294, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 41, 13, 600, 5000, 13.35, [N/A], 29.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:47.555, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 29, 10, 600, 5000, 11.06, [N/A], 28.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:47.808, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 29, 10, 600, 5000, 12.81, [N/A], 28.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:48.068, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 29, 10, 600, 5000, 13.06, [N/A], 28.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:48.329, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 29, 10, 600, 5000, 13.02, [N/A], 28.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:48.588, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 30, 10, 480, 5000, 13.02, [N/A], 28.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:48.847, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 30, 10, 480, 5000, 12.56, [N/A], 28.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:49.110, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 30, 10, 405, 5000, 11.99, [N/A], 28.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:49.375, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 30, 10, 405, 5000, 11.69, [N/A], 28.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:49.635, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 337, 5000, 11.18, [N/A], 28.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:49.892, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 337, 5000, 11.18, [N/A], 28.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:50.150, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 0, 0, 255, 810, 12.70, [N/A], 29.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:50.401, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 0, 0, 255, 810, 12.49, [N/A], 29.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:50.662, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 39, 30, 330, 810, 12.79, [N/A], 29.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:50.914, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 39, 30, 330, 810, 13.22, [N/A], 29.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:51.169, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 39, 30, 810, 5000, 13.41, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:51.428, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 39, 30, 810, 5000, 15.08, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:51.681, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 40, 17, 817, 5000, 14.32, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:51.934, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 40, 17, 817, 5000, 13.91, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:52.186, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 40, 17, 817, 5000, 13.91, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:52.446, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 40, 17, 817, 5000, 13.55, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:52.703, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 23, 10, 817, 5000, 13.51, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:52.962, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 23, 10, 817, 5000, 13.53, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:53.223, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 23, 10, 817, 5000, 13.46, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:53.481, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 23, 10, 817, 5000, 13.43, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:53.745, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 27, 8, 570, 5000, 13.57, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:53.999, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 27, 8, 510, 5000, 12.90, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:54.253, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 27, 8, 510, 5000, 12.40, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:54.505, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 420, 5000, 10.96, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:54.762, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 420, 5000, 10.95, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:55.020, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 322, 5000, 10.98, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:55.278, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 322, 5000, 11.26, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:55.540, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 37, 28, 307, 810, 11.79, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:55.796, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 37, 28, 307, 810, 12.59, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:39:56.049, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 37, 28, 990, 5000, 13.11, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:56.306, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 37, 28, 990, 5000, 14.70, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:56.564, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 46, 16, 637, 5000, 14.88, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:56.817, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 46, 16, 637, 5000, 14.80, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:57.072, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 46, 16, 637, 5000, 14.42, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:57.334, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 46, 16, 637, 5000, 13.81, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:57.591, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 29, 11, 637, 5000, 13.51, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:57.847, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 29, 11, 637, 5000, 13.56, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:58.113, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 29, 11, 637, 5000, 13.43, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:58.365, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 29, 11, 637, 5000, 13.38, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:58.617, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 26, 8, 502, 5000, 13.49, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:58.871, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 26, 8, 502, 5000, 13.48, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:59.131, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 26, 8, 472, 5000, 12.86, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:59.396, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 26, 8, 472, 5000, 12.21, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:59.648, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 397, 5000, 11.71, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:39:59.908, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 397, 5000, 11.46, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:00.168, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 0, 0, 300, 810, 10.90, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:00.429, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 0, 0, 300, 810, 11.21, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:00.687, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 45, 30, 307, 810, 14.03, [N/A], 29.38, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:00.945, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 45, 30, 307, 810, 13.58, [N/A], 29.38, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:01.196, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 45, 30, 915, 5000, 14.15, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:01.455, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 45, 30, 915, 5000, 14.49, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:01.714, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 28, 12, 915, 5000, 14.59, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:01.965, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 28, 12, 915, 5000, 14.84, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:02.219, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 28, 12, 915, 5000, 14.61, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:02.479, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 28, 12, 915, 5000, 14.54, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:02.737, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 25, 11, 915, 5000, 14.16, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:02.996, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 25, 11, 675, 5000, 12.89, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:03.247, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 25, 11, 675, 5000, 13.09, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:03.505, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 24, 10, 637, 5000, 13.26, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:03.761, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 24, 10, 637, 5000, 13.31, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:04.018, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 24, 10, 592, 5000, 13.25, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:04.281, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 24, 10, 592, 5000, 11.23, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:04.543, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 487, 5000, 11.01, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:04.799, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 487, 5000, 10.99, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:05.062, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 375, 5000, 10.99, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:05.322, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 375, 5000, 14.18, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:05.579, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 25, 6, 330, 810, 12.49, [N/A], 29.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:05.837, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 25, 6, 330, 810, 13.06, [N/A], 29.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:06.096, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 25, 6, 802, 5000, 15.18, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:06.349, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 25, 6, 802, 5000, 15.28, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:06.602, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 37, 15, 802, 5000, 15.15, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:06.859, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 37, 15, 802, 5000, 14.82, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:07.120, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 37, 15, 667, 5000, 12.50, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:07.382, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 37, 15, 667, 5000, 13.23, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:07.640, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 22, 7, 802, 5000, 13.59, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:07.899, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 22, 7, 802, 5000, 13.32, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:08.151, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 22, 7, 577, 5000, 13.40, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:08.408, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 22, 7, 577, 5000, 12.82, [N/A], 29.25, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:08.669, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 26, 10, 555, 5000, 13.27, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:08.930, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 26, 10, 555, 5000, 13.45, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:09.185, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 26, 10, 525, 5000, 13.19, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:09.446, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 26, 10, 525, 5000, 12.55, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:09.704, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 457, 5000, 11.94, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:09.956, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 457, 5000, 11.45, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:10.216, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 345, 5000, 11.45, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:10.476, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 345, 5000, 11.17, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:10.735, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 49, 34, 285, 810, 11.51, [N/A], 28.75, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:10.986, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 49, 34, 285, 810, 11.99, [N/A], 28.75, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:11.239, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 49, 34, 562, 810, 12.54, [N/A], 28.75, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:11.493, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 37, 16, 915, 5000, 13.93, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:11.749, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 37, 16, 915, 5000, 14.77, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:12.005, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 37, 16, 915, 5000, 15.04, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:12.260, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 37, 16, 915, 5000, 15.09, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:12.514, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 22, 9, 915, 5000, 14.51, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:12.773, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 22, 9, 915, 5000, 14.28, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:13.032, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 22, 9, 690, 5000, 13.97, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:13.283, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 22, 9, 690, 5000, 13.88, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:13.542, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 19, 8, 630, 5000, 13.78, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:13.799, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 19, 8, 630, 5000, 13.61, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:14.055, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 19, 8, 600, 5000, 13.53, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:14.309, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 19, 8, 600, 5000, 13.35, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:14.570, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 13, 3, 532, 5000, 13.16, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:14.823, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 13, 3, 532, 5000, 12.51, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:15.083, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 13, 3, 442, 5000, 12.01, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:15.339, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 13, 3, 442, 5000, 11.38, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:15.593, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 0, 0, 337, 810, 11.38, [N/A], 29.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:15.850, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 0, 0, 337, 810, 14.62, [N/A], 29.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:16.109, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 0, 0, 360, 810, 12.67, [N/A], 29.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:16.363, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 0, 0, 360, 810, 12.74, [N/A], 29.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:16.623, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 68, 57, 810, 5000, 13.27, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:16.886, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 68, 57, 810, 5000, 13.65, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:17.141, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 68, 57, 540, 5000, 14.24, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:17.399, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 68, 57, 540, 5000, 14.37, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:17.660, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 32, 11, 690, 5000, 14.33, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:17.916, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 32, 11, 690, 5000, 13.99, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:18.181, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 32, 11, 690, 5000, 13.72, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:18.436, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 32, 11, 690, 5000, 13.59, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:18.688, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 30, 11, 690, 5000, 13.49, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:18.942, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 30, 11, 690, 5000, 13.48, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:19.199, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 30, 11, 532, 5000, 11.20, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:19.460, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 30, 11, 532, 5000, 13.65, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:19.719, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 36, 11, 510, 5000, 13.12, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:19.971, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 36, 11, 510, 5000, 12.50, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:20.224, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 36, 11, 442, 5000, 12.05, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:20.482, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 36, 11, 442, 5000, 11.70, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:20.741, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 45, 0, 0, 337, 5000, 11.23, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:20.998, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 0, 0, 285, 810, 11.18, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:21.253, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 0, 0, 285, 810, 11.26, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:21.509, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 54, 43, 525, 810, 12.00, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:21.766, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 45, 54, 43, 525, 810, 12.32, [N/A], 29.00, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:22.027, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 54, 43, 877, 5000, 14.97, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:22.280, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 54, 43, 877, 5000, 15.06, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:22.539, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 31, 11, 712, 5000, 14.46, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:22.797, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 31, 11, 712, 5000, 13.99, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:23.056, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 31, 11, 802, 5000, 13.88, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:23.313, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 31, 11, 802, 5000, 13.64, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:23.573, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 27, 11, 802, 5000, 13.57, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:23.827, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 27, 11, 802, 5000, 13.69, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:24.084, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 27, 11, 802, 5000, 13.57, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:24.344, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 27, 11, 802, 5000, 13.57, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:24.603, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 32, 11, 555, 5000, 13.52, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:24.857, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 32, 11, 555, 5000, 13.52, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:25.117, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 32, 11, 525, 5000, 13.01, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:25.377, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 32, 11, 525, 5000, 12.49, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:25.637, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 0, 0, 397, 5000, 11.76, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:25.894, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 0, 0, 397, 5000, 11.27, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:26.153, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 0, 0, 330, 5000, 10.99, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:26.414, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 0, 0, 330, 5000, 11.12, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:26.670, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 49, 34, 352, 810, 12.35, [N/A], 28.75, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:26.927, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 49, 34, 352, 810, 12.80, [N/A], 28.75, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:27.181, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 49, 34, 487, 810, 12.88, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:27.447, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 49, 34, 487, 810, 13.19, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:27.706, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 33, 12, 607, 5000, 13.43, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:27.967, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 33, 12, 607, 5000, 13.41, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:28.225, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 33, 12, 802, 5000, 13.59, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:28.484, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 33, 12, 802, 5000, 13.69, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:28.738, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 25, 11, 900, 5000, 13.79, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:28.993, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 25, 11, 900, 5000, 14.05, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:29.248, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 25, 11, 900, 5000, 14.04, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:29.509, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 28, 10, 600, 5000, 13.90, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:29.764, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 28, 10, 600, 5000, 13.69, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:30.027, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 28, 10, 547, 5000, 13.10, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:30.283, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 28, 10, 547, 5000, 12.33, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:30.538, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 0, 0, 420, 5000, 11.85, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:30.798, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 0, 0, 420, 5000, 11.48, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:31.050, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 0, 0, 345, 5000, 11.48, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:31.306, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 0, 0, 345, 5000, 11.24, [N/A], 28.75, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:31.566, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 47, 34, 367, 810, 13.06, [N/A], 29.50, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:31.821, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 47, 34, 367, 810, 13.36, [N/A], 29.50, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:32.079, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 47, 34, 1005, 5000, 14.26, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:32.339, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 47, 34, 1005, 5000, 14.62, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:32.594, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 47, 17, 787, 5000, 14.81, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:32.846, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 47, 17, 787, 5000, 14.81, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:33.100, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 47, 17, 795, 5000, 14.61, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:33.361, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 47, 17, 795, 5000, 14.19, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:33.621, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 24, 9, 795, 5000, 13.66, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:33.881, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 24, 9, 795, 5000, 13.45, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:34.140, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 24, 9, 795, 5000, 13.43, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:34.400, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 24, 9, 795, 5000, 13.42, [N/A], 29.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:34.661, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 31, 10, 547, 5000, 13.60, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:34.917, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 31, 10, 547, 5000, 13.68, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:35.169, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 31, 10, 532, 5000, 13.39, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:35.424, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 31, 10, 532, 5000, 12.73, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:35.685, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 0, 0, 420, 5000, 11.99, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:35.937, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 0, 0, 420, 5000, 11.48, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:36.190, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 0, 0, 352, 5000, 11.22, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:36.444, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 0, 0, 352, 5000, 11.21, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:36.703, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 29, 6, 285, 810, 11.52, [N/A], 28.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:36.964, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 29, 6, 285, 810, 12.00, [N/A], 28.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:37.221, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 29, 6, 645, 810, 12.77, [N/A], 28.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:37.480, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 29, 6, 645, 810, 15.73, [N/A], 28.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:37.736, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 34, 16, 960, 5000, 15.12, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:37.987, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 34, 16, 960, 5000, 14.53, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:38.248, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 34, 16, 667, 5000, 14.37, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:38.506, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 27, 11, 847, 5000, 14.19, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:38.764, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 27, 11, 847, 5000, 14.18, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:39.024, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 27, 11, 630, 5000, 13.49, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:39.276, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 27, 11, 630, 5000, 13.57, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:39.538, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 18, 6, 577, 5000, 13.35, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:39.794, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 18, 6, 577, 5000, 13.39, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:40.051, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 18, 6, 562, 5000, 13.54, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:40.304, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 18, 6, 562, 5000, 13.51, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:40.563, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 1, 0, 495, 5000, 13.20, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:40.817, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 1, 0, 495, 5000, 12.50, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:41.074, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 1, 0, 412, 5000, 11.99, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:41.335, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 1, 0, 412, 5000, 11.24, [N/A], 29.12, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:41.595, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 0, 0, 315, 810, 11.24, [N/A], 29.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:41.855, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 0, 0, 315, 810, 11.17, [N/A], 29.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:42.111, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 0, 0, 292, 810, 11.56, [N/A], 29.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:42.363, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 0, 0, 292, 810, 13.07, [N/A], 29.12, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:42.620, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 42, 13, 622, 5000, 14.39, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:42.877, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 42, 13, 622, 5000, 15.55, [N/A], 29.00, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:43.137, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 42, 13, 682, 5000, 14.73, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:43.392, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 42, 13, 682, 5000, 14.27, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:43.651, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 30, 11, 682, 5000, 14.16, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:43.911, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 30, 11, 682, 5000, 14.06, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:44.162, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 30, 11, 682, 5000, 13.56, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:44.415, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 30, 11, 682, 5000, 13.47, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:44.673, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 27, 11, 682, 5000, 13.30, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:44.932, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 27, 11, 682, 5000, 11.21, [N/A], 29.38, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:45.191, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 27, 11, 502, 5000, 13.74, [N/A], 28.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:45.444, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 27, 11, 502, 5000, 13.75, [N/A], 28.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:45.700, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 19, 6, 472, 5000, 12.70, [N/A], 28.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:45.956, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 19, 6, 472, 5000, 12.36, [N/A], 28.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:46.216, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 19, 6, 397, 5000, 10.95, [N/A], 28.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:46.474, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 19, 6, 397, 5000, 10.91, [N/A], 28.62, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:46.732, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 0, 0, 300, 5000, 10.91, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:46.992, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 0, 0, 300, 5000, 11.27, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:47.247, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 0, 0, 337, 810, 11.69, [N/A], 28.88, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:47.538, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 68, 57, 802, 5000, 12.32, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:47.791, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 68, 57, 802, 5000, 13.16, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:48.042, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 47, 68, 57, 555, 5000, 13.54, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:48.297, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 47, 68, 57, 555, 5000, 13.95, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:48.550, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 27, 11, 802, 5000, 14.01, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:48.810, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 27, 11, 802, 5000, 14.06, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:49.067, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 27, 11, 802, 5000, 13.87, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:49.335, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 27, 11, 802, 5000, 13.65, [N/A], 28.88, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:49.588, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 47, 24, 9, 577, 5000, 12.40, [N/A], 28.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:49.844, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 47, 24, 9, 577, 5000, 13.25, [N/A], 28.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:50.101, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 47, 24, 9, 547, 5000, 13.39, [N/A], 28.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:50.353, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 47, 24, 9, 547, 5000, 13.47, [N/A], 28.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:50.615, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 8, 1, 495, 5000, 12.90, [N/A], 28.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:50.872, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 46, 8, 1, 495, 5000, 12.53, [N/A], 28.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:51.130, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 47, 8, 1, 412, 5000, 11.83, [N/A], 28.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:51.392, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P3, 47, 8, 1, 412, 5000, 11.32, [N/A], 28.50, 0x0000000000000024, Not Active, Active, Active, Not Active, Not Active
+2026/09/23 14:40:51.652, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 0, 0, 315, 810, 11.32, [N/A], 28.50, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:51.912, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 0, 0, 315, 810, 11.32, [N/A], 28.50, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:52.172, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 0, 0, 262, 810, 11.32, [N/A], 28.25, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:52.432, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 0, 0, 262, 810, 10.50, [N/A], 28.25, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:52.691, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 0, 0, 210, 810, 10.61, [N/A], 28.75, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:52.949, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 0, 0, 210, 810, 8.47, [N/A], 28.75, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:53.208, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 0, 0, 210, 810, 8.19, [N/A], 28.75, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active
+2026/09/23 14:40:53.462, NVIDIA GeForce RTX 3050 6GB Laptop GPU, P5, 46, 0, 0, 210, 810, 8.26, [N/A], 28.75, 0x0000000000000001, Active, Not Active, Not Active, Not Active, Not Active

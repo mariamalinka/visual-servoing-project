@@ -1,0 +1,1442 @@
+[
+  {
+    "mode": "aruco",
+    "backend": "ArUco",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.0,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.0,
+      "render_stall_s": 0.0
+    },
+    "counts": {
+      "captures": 168,
+      "input_dropped": 0,
+      "transport_dropped": 0,
+      "stale_results": 0,
+      "obsolete_results": 0,
+      "accepted": 136,
+      "control_ticks": 2369,
+      "moving_ticks": 1590,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 0,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "p50": 0.5546000029426068,
+        "p95": 1.2425000095390715,
+        "p99": 1.6787250002380463,
+        "max": 3.5601999843493104
+      },
+      "render_ms": {
+        "p50": 4.157749994192272,
+        "p95": 5.492050004249904,
+        "p99": 7.567489999928522,
+        "max": 12.605999974766746
+      },
+      "inference_ms": {
+        "p50": 2.501550014130771,
+        "p95": 3.802025006734766,
+        "p99": 5.326725008490031,
+        "max": 5.929799983277917
+      },
+      "ipc_ms": {
+        "p50": 3.1375500111607835,
+        "p95": 5.275375006021932,
+        "p99": 6.064450000121724,
+        "max": 7.057399983750656
+      },
+      "delivery_wait_ms": {
+        "p50": 0.03779999678954482,
+        "p95": 0.0725499921827577,
+        "p99": 0.11764501541620134,
+        "max": 0.25049998657777905
+      },
+      "control_ms": {
+        "p50": 1.4818500058026984,
+        "p95": 2.0699000015156344,
+        "p99": 2.3627299902727836,
+        "max": 2.500500006135553
+      },
+      "apply_ms": {
+        "p50": 0.4712999798357487,
+        "p95": 0.7862249985919334,
+        "p99": 0.9276850018068221,
+        "max": 0.9960000170394778
+      },
+      "capture_to_command_ms": {
+        "p50": 12.638799991691485,
+        "p95": 16.488724984810688,
+        "p99": 19.399404988507754,
+        "max": 26.333699992392212
+      }
+    },
+    "control_gap_ms": {
+      "p50": 2.049500006251037,
+      "p95": 5.252299987478181,
+      "p99": 6.744832012336737,
+      "max": 9.257300000172108
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 182543.8623904,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "converged",
+        "at_s": 182548.5295476,
+        "last_capture_s": 182548.5215454,
+        "deadline_s": null,
+        "stopped_s": 182548.5297576
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "nominal",
+    "expected": "converged",
+    "outcome": "converged",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 0.23808026329145776,
+    "watchdog_lateness_ms": null,
+    "stopped_while_sensor_busy": false,
+    "expected_pass": true,
+    "id": "aruco-nominal-00"
+  },
+  {
+    "mode": "aruco",
+    "backend": "ArUco",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.05,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.0,
+      "render_stall_s": 0.0
+    },
+    "counts": {
+      "captures": 162,
+      "input_dropped": 0,
+      "transport_dropped": 0,
+      "stale_results": 0,
+      "obsolete_results": 0,
+      "accepted": 128,
+      "control_ticks": 2037,
+      "moving_ticks": 1205,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 0,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "p50": 0.5418500077212229,
+        "p95": 0.8744800012209447,
+        "p99": 1.2153660072362982,
+        "max": 2.0038000075146556
+      },
+      "render_ms": {
+        "p50": 3.667600001790561,
+        "p95": 5.456839996622874,
+        "p99": 8.308379011286895,
+        "max": 14.436400000704452
+      },
+      "inference_ms": {
+        "p50": 2.721099997870624,
+        "p95": 3.9871399814728643,
+        "p99": 5.098853991366924,
+        "max": 8.18440000875853
+      },
+      "ipc_ms": {
+        "p50": 3.6891000054311007,
+        "p95": 6.496490006975363,
+        "p99": 7.482965991948733,
+        "max": 15.85460000205785
+      },
+      "delivery_wait_ms": {
+        "p50": 47.47829998086672,
+        "p95": 50.189884993596934,
+        "p99": 51.694030989019666,
+        "max": 60.257500008447096
+      },
+      "control_ms": {
+        "p50": 1.519949990324676,
+        "p95": 2.2059600058128126,
+        "p99": 3.0042460016557033,
+        "max": 4.0003000176511705
+      },
+      "apply_ms": {
+        "p50": 0.4882500070380047,
+        "p95": 0.8295100036775691,
+        "p99": 1.0699959893827333,
+        "max": 1.2339999957475811
+      },
+      "capture_to_command_ms": {
+        "p50": 60.005100021953695,
+        "p95": 64.50023999786936,
+        "p99": 71.8093879974913,
+        "max": 74.79349998175167
+      }
+    },
+    "control_gap_ms": {
+      "p50": 2.0991000055801123,
+      "p95": 5.402520002098753,
+      "p99": 7.034603996435173,
+      "max": 15.802400012034923
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 182551.1568071,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "converged",
+        "at_s": 182555.6457869,
+        "last_capture_s": 182555.5890504,
+        "deadline_s": null,
+        "stopped_s": 182555.6460178
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "transport-50ms",
+    "expected": "converged",
+    "outcome": "converged",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 0.22293621823242174,
+    "watchdog_lateness_ms": null,
+    "stopped_while_sensor_busy": false,
+    "expected_pass": true,
+    "id": "aruco-transport-50ms-00"
+  },
+  {
+    "mode": "aruco",
+    "backend": "ArUco",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.0,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.8,
+      "render_stall_s": 0.0
+    },
+    "counts": {
+      "captures": 102,
+      "input_dropped": 22,
+      "transport_dropped": 0,
+      "stale_results": 1,
+      "obsolete_results": 0,
+      "accepted": 58,
+      "control_ticks": 1462,
+      "moving_ticks": 895,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 1,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "p50": 0.5635500128846616,
+        "p95": 0.9709399892017239,
+        "p99": 2.316736998327542,
+        "max": 2.605099987704307
+      },
+      "render_ms": {
+        "p50": 3.5205500025767833,
+        "p95": 5.140024982392788,
+        "p99": 6.1181969931931235,
+        "max": 6.259499990846962
+      },
+      "inference_ms": {
+        "p50": 2.4957999994512647,
+        "p95": 4.2172699832008185,
+        "p99": 9.44485400803387,
+        "max": 11.535500001627952
+      },
+      "ipc_ms": {
+        "p50": 3.421899993554689,
+        "p95": 4.92475998762529,
+        "p99": 7.640864002460148,
+        "max": 8.093900018138811
+      },
+      "delivery_wait_ms": {
+        "p50": 0.03414999810047448,
+        "p95": 0.052685009723063544,
+        "p99": 0.06260001100599766,
+        "max": 0.06260001100599766
+      },
+      "control_ms": {
+        "p50": 1.5492500097025186,
+        "p95": 2.164929994614795,
+        "p99": 2.3842890019295737,
+        "max": 2.4255000171251595
+      },
+      "apply_ms": {
+        "p50": 0.5095499800518155,
+        "p95": 0.8486149919917807,
+        "p99": 0.9803670045221224,
+        "max": 1.064100011717528
+      },
+      "capture_to_command_ms": {
+        "p50": 12.343700000201352,
+        "p95": 18.462045010528527,
+        "p99": 22.367092001077253,
+        "max": 24.84339999500662
+      }
+    },
+    "control_gap_ms": {
+      "p50": 2.0535499934339896,
+      "p95": 4.948100016918033,
+      "p99": 6.871835006168117,
+      "max": 8.856600004946813
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 182558.0564215,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "stale_camera",
+        "at_s": 182560.4238456,
+        "last_capture_s": 182560.0223207,
+        "deadline_s": 182560.4223207,
+        "stopped_s": 182560.424354
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "inference-stall",
+    "expected": "stale_camera",
+    "outcome": "stale_camera",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 4.268254209454739,
+    "watchdog_lateness_ms": 2.0332999993115664,
+    "stopped_while_sensor_busy": true,
+    "expected_pass": true,
+    "id": "aruco-inference-stall-00"
+  },
+  {
+    "mode": "aruco",
+    "backend": "ArUco",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.0,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.0,
+      "render_stall_s": 0.8
+    },
+    "counts": {
+      "captures": 102,
+      "input_dropped": 23,
+      "transport_dropped": 0,
+      "stale_results": 1,
+      "obsolete_results": 0,
+      "accepted": 58,
+      "control_ticks": 1450,
+      "moving_ticks": 875,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 1,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "p50": 0.5403999966802076,
+        "p95": 1.1472400088678112,
+        "p99": 1.5318369976012036,
+        "max": 1.535199990030378
+      },
+      "render_ms": {
+        "p50": 3.808900000876747,
+        "p95": 6.112695015326608,
+        "p99": 8.164482008724008,
+        "max": 9.371400024974719
+      },
+      "inference_ms": {
+        "p50": 2.694150010938756,
+        "p95": 4.541974993480835,
+        "p99": 7.14406299550319,
+        "max": 8.42890000785701
+      },
+      "ipc_ms": {
+        "p50": 3.450499993050471,
+        "p95": 5.121905011765193,
+        "p99": 6.759444000781513,
+        "max": 8.116500015603378
+      },
+      "delivery_wait_ms": {
+        "p50": 0.033499993151053786,
+        "p95": 0.049204996321350336,
+        "p99": 0.06581199355423449,
+        "max": 0.0819999841041863
+      },
+      "control_ms": {
+        "p50": 1.553599999169819,
+        "p95": 2.1885650101467036,
+        "p99": 2.3358379950514063,
+        "max": 2.3566999880131334
+      },
+      "apply_ms": {
+        "p50": 0.563749999855645,
+        "p95": 0.7526699861045926,
+        "p99": 1.0004100011428818,
+        "max": 1.198200014187023
+      },
+      "capture_to_command_ms": {
+        "p50": 12.679350009420887,
+        "p95": 18.68610501551302,
+        "p99": 21.231877988611814,
+        "max": 23.041399981593713
+      }
+    },
+    "control_gap_ms": {
+      "p50": 2.0496499782893807,
+      "p95": 5.218579994107131,
+      "p99": 6.969760014326312,
+      "max": 8.606299990788102
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 182562.7904615,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "stale_camera",
+        "at_s": 182565.1615237,
+        "last_capture_s": 182564.7613938,
+        "deadline_s": 182565.1613938,
+        "stopped_s": 182565.16193
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "render-stall",
+    "expected": "stale_camera",
+    "outcome": "stale_camera",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 4.2347249747942595,
+    "watchdog_lateness_ms": 0.5362000083550811,
+    "stopped_while_sensor_busy": true,
+    "expected_pass": true,
+    "id": "aruco-render-stall-00"
+  },
+  {
+    "mode": "natural",
+    "backend": "Picture / SIFT",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.0,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.0,
+      "render_stall_s": 0.0
+    },
+    "counts": {
+      "captures": 153,
+      "input_dropped": 68,
+      "transport_dropped": 0,
+      "stale_results": 0,
+      "obsolete_results": 0,
+      "accepted": 53,
+      "control_ticks": 2233,
+      "moving_ticks": 1464,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 0,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "p50": 17.104200000176206,
+        "p95": 33.36264002136886,
+        "p99": 34.11803600145504,
+        "max": 34.336800017626956
+      },
+      "render_ms": {
+        "p50": 2.894500008551404,
+        "p95": 4.298739990917966,
+        "p99": 4.968111988855524,
+        "max": 5.247299995971844
+      },
+      "inference_ms": {
+        "p50": 69.34389998787083,
+        "p95": 106.08848000410944,
+        "p99": 153.28060799860367,
+        "max": 197.63509999029338
+      },
+      "ipc_ms": {
+        "p50": 2.7392000192776322,
+        "p95": 4.593180009396747,
+        "p99": 5.533343995921314,
+        "max": 5.598499992629513
+      },
+      "delivery_wait_ms": {
+        "p50": 0.03429999924264848,
+        "p95": 0.055040000006556504,
+        "p99": 0.06625199574045836,
+        "max": 0.06749999010935426
+      },
+      "control_ms": {
+        "p50": 1.4859999937471002,
+        "p95": 2.1878800122067332,
+        "p99": 2.6070520083885618,
+        "max": 2.9722999897785485
+      },
+      "apply_ms": {
+        "p50": 0.5569999921135604,
+        "p95": 0.856619991827756,
+        "p99": 0.9320599841885269,
+        "max": 0.9408999758306891
+      },
+      "capture_to_command_ms": {
+        "p50": 103.1086000148207,
+        "p95": 141.1097400181461,
+        "p99": 188.6205399967728,
+        "max": 221.23779999674298
+      }
+    },
+    "control_gap_ms": {
+      "p50": 2.042100008111447,
+      "p95": 4.6410399954766035,
+      "p99": 6.06743600219488,
+      "max": 9.023199992952868
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 182567.7014389,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "converged",
+        "at_s": 182571.8781083,
+        "last_capture_s": 182571.8689799,
+        "deadline_s": null,
+        "stopped_s": 182571.8784352
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "nominal",
+    "expected": "converged",
+    "outcome": "converged",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 0.17221301546378412,
+    "watchdog_lateness_ms": null,
+    "stopped_while_sensor_busy": false,
+    "expected_pass": true,
+    "id": "natural-nominal-00"
+  },
+  {
+    "mode": "natural",
+    "backend": "Picture / SIFT",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.05,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.0,
+      "render_stall_s": 0.0
+    },
+    "counts": {
+      "captures": 112,
+      "input_dropped": 58,
+      "transport_dropped": 0,
+      "stale_results": 0,
+      "obsolete_results": 0,
+      "accepted": 34,
+      "control_ticks": 1569,
+      "moving_ticks": 983,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 0,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "p50": 15.768199984449893,
+        "p95": 33.536224988347385,
+        "p99": 34.86980599438539,
+        "max": 35.216899996157736
+      },
+      "render_ms": {
+        "p50": 2.934650008683093,
+        "p95": 5.065910001576412,
+        "p99": 5.484995014558081,
+        "max": 5.567000014707446
+      },
+      "inference_ms": {
+        "p50": 65.46289999096189,
+        "p95": 115.46296500455355,
+        "p99": 119.16232201387174,
+        "max": 120.37230000714771
+      },
+      "ipc_ms": {
+        "p50": 2.5538000045344234,
+        "p95": 6.2667649923241635,
+        "p99": 9.132777984195856,
+        "max": 9.625599981518462
+      },
+      "delivery_wait_ms": {
+        "p50": 49.21714999363758,
+        "p95": 51.601605003816076,
+        "p99": 55.63323400012451,
+        "max": 57.435099995927885
+      },
+      "control_ms": {
+        "p50": 1.3527000119211152,
+        "p95": 2.1773650005343366,
+        "p99": 2.4625550030032177,
+        "max": 2.5307000032626092
+      },
+      "apply_ms": {
+        "p50": 0.4147999861743301,
+        "p95": 0.6916650076163933,
+        "p99": 0.7481349902809599,
+        "max": 0.7746999908704311
+      },
+      "capture_to_command_ms": {
+        "p50": 142.8001499880338,
+        "p95": 174.93878501845757,
+        "p99": 187.55331500724427,
+        "max": 193.74560000142083
+      }
+    },
+    "control_gap_ms": {
+      "p50": 2.063399995677173,
+      "p95": 4.91922001237981,
+      "p99": 6.40131201129405,
+      "max": 11.34460000321269
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 182574.499657,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "stale_camera",
+        "at_s": 182577.2368658,
+        "last_capture_s": 182576.8348601,
+        "deadline_s": 182577.2348601,
+        "stopped_s": 182577.2375051
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "transport-50ms",
+    "expected": "converged",
+    "outcome": "stale_camera",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 1.302850200765798,
+    "watchdog_lateness_ms": 2.6450000004842877,
+    "stopped_while_sensor_busy": false,
+    "expected_pass": false,
+    "id": "natural-transport-50ms-00"
+  },
+  {
+    "mode": "natural",
+    "backend": "Picture / SIFT",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.0,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.8,
+      "render_stall_s": 0.0
+    },
+    "counts": {
+      "captures": 97,
+      "input_dropped": 55,
+      "transport_dropped": 0,
+      "stale_results": 1,
+      "obsolete_results": 0,
+      "accepted": 28,
+      "control_ticks": 1383,
+      "moving_ticks": 812,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 1,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "p50": 15.468600002350286,
+        "p95": 31.204754978534766,
+        "p99": 32.199178989685606,
+        "max": 32.56429999601096
+      },
+      "render_ms": {
+        "p50": 3.3740999933797866,
+        "p95": 7.130015001166608,
+        "p99": 11.967789004556836,
+        "max": 13.412100001005456
+      },
+      "inference_ms": {
+        "p50": 63.62704999628477,
+        "p95": 91.43587000144178,
+        "p99": 103.46335199690657,
+        "max": 107.0657999953255
+      },
+      "ipc_ms": {
+        "p50": 3.028750012163073,
+        "p95": 7.337420004478188,
+        "p99": 18.84817900136114,
+        "max": 22.96360000036657
+      },
+      "delivery_wait_ms": {
+        "p50": 0.036299999919719994,
+        "p95": 0.06415500538423655,
+        "p99": 0.07138699846109375,
+        "max": 0.07189999450929463
+      },
+      "control_ms": {
+        "p50": 1.647850003791973,
+        "p95": 2.5500999996438622,
+        "p99": 3.172340003366117,
+        "max": 3.3986000053118914
+      },
+      "apply_ms": {
+        "p50": 0.5133499944349751,
+        "p95": 1.1752499907743186,
+        "p99": 1.38766199874226,
+        "max": 1.4604000025428832
+      },
+      "capture_to_command_ms": {
+        "p50": 95.47685000870842,
+        "p95": 128.23514499614248,
+        "p99": 132.40864399063867,
+        "max": 133.48399999085814
+      }
+    },
+    "control_gap_ms": {
+      "p50": 2.0512999908532947,
+      "p95": 4.955720008001658,
+      "p99": 7.361061983974652,
+      "max": 21.034799981862307
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 182579.9177949,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "stale_camera",
+        "at_s": 182582.2092578,
+        "last_capture_s": 182581.8082383,
+        "deadline_s": 182582.2082383,
+        "stopped_s": 182582.2096392
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "inference-stall",
+    "expected": "stale_camera",
+    "outcome": "stale_camera",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 3.311892230610939,
+    "watchdog_lateness_ms": 1.400900015141815,
+    "stopped_while_sensor_busy": true,
+    "expected_pass": true,
+    "id": "natural-inference-stall-00"
+  },
+  {
+    "mode": "natural",
+    "backend": "Picture / SIFT",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.0,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.0,
+      "render_stall_s": 0.8
+    },
+    "counts": {
+      "captures": 101,
+      "input_dropped": 57,
+      "transport_dropped": 0,
+      "stale_results": 1,
+      "obsolete_results": 0,
+      "accepted": 30,
+      "control_ticks": 1448,
+      "moving_ticks": 869,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 1,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "p50": 14.179549994878471,
+        "p95": 31.979340007819697,
+        "p99": 32.430238002853,
+        "max": 32.473100000061095
+      },
+      "render_ms": {
+        "p50": 2.9275499982759356,
+        "p95": 4.236109997145832,
+        "p99": 5.426669996522834,
+        "max": 5.8926999918185174
+      },
+      "inference_ms": {
+        "p50": 62.95439999666996,
+        "p95": 93.87932499230372,
+        "p99": 98.20196999295149,
+        "max": 98.60420000040904
+      },
+      "ipc_ms": {
+        "p50": 2.831050005625002,
+        "p95": 4.347374998906162,
+        "p99": 5.550954987993466,
+        "max": 6.029599986504763
+      },
+      "delivery_wait_ms": {
+        "p50": 0.03705000563059002,
+        "p95": 0.05430499295471236,
+        "p99": 0.09903299534926197,
+        "max": 0.11709998943842947
+      },
+      "control_ms": {
+        "p50": 1.628750003874302,
+        "p95": 2.4811899958876893,
+        "p99": 2.5974769968888722,
+        "max": 2.6405999960843474
+      },
+      "apply_ms": {
+        "p50": 0.5922000127611682,
+        "p95": 0.8308599892188793,
+        "p99": 0.9242040006211029,
+        "max": 0.9452000085730106
+      },
+      "capture_to_command_ms": {
+        "p50": 88.40670000063255,
+        "p95": 116.48383999272482,
+        "p99": 128.09883098583668,
+        "max": 132.58109998423606
+      }
+    },
+    "control_gap_ms": {
+      "p50": 2.0446499984245747,
+      "p95": 4.732815010356714,
+      "p99": 6.362799998314585,
+      "max": 8.999100013170391
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 182584.6864359,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "stale_camera",
+        "at_s": 182587.0466663,
+        "last_capture_s": 182586.6461794,
+        "deadline_s": 182587.0461794,
+        "stopped_s": 182587.0471604
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "render-stall",
+    "expected": "stale_camera",
+    "outcome": "stale_camera",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 3.2020839161171573,
+    "watchdog_lateness_ms": 0.9809999901335686,
+    "stopped_while_sensor_busy": true,
+    "expected_pass": true,
+    "id": "natural-render-stall-00"
+  },
+  {
+    "mode": "learned",
+    "backend": "Picture / SuperPoint + LightGlue (CUDA)",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.0,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.0,
+      "render_stall_s": 0.0
+    },
+    "counts": {
+      "captures": 151,
+      "input_dropped": 66,
+      "transport_dropped": 0,
+      "stale_results": 0,
+      "obsolete_results": 0,
+      "accepted": 53,
+      "control_ticks": 2183,
+      "moving_ticks": 1413,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 0,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "p50": 13.09450002736412,
+        "p95": 32.329619996016845,
+        "p99": 34.45341999758966,
+        "max": 34.7804999910295
+      },
+      "render_ms": {
+        "p50": 3.9729000127408653,
+        "p95": 5.117000010795891,
+        "p99": 6.068815997568889,
+        "max": 6.3310000114142895
+      },
+      "inference_ms": {
+        "p50": 73.55180001468398,
+        "p95": 102.75460001430473,
+        "p99": 211.07453600503504,
+        "max": 211.15550000104122
+      },
+      "ipc_ms": {
+        "p50": 3.4725999867077917,
+        "p95": 5.179360014153644,
+        "p99": 6.399279996985564,
+        "max": 7.356599991908297
+      },
+      "delivery_wait_ms": {
+        "p50": 0.037699996028095484,
+        "p95": 0.14184002066031098,
+        "p99": 0.20734401186928114,
+        "max": 0.27119999867863953
+      },
+      "control_ms": {
+        "p50": 1.5404000005219132,
+        "p95": 2.5095000048168004,
+        "p99": 2.5351759954355657,
+        "max": 2.542300004279241
+      },
+      "apply_ms": {
+        "p50": 0.5801999941468239,
+        "p95": 0.7909400039352477,
+        "p99": 1.1908160080201902,
+        "max": 1.5582999913021922
+      },
+      "capture_to_command_ms": {
+        "p50": 94.98050002730452,
+        "p95": 125.88657998130657,
+        "p99": 238.2692600099835,
+        "max": 246.96340001537465
+      }
+    },
+    "control_gap_ms": {
+      "p50": 2.045200002612546,
+      "p95": 4.684559986344541,
+      "p99": 7.542679996695361,
+      "max": 10.463300015544519
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 182598.7486509,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "converged",
+        "at_s": 182602.8443245,
+        "last_capture_s": 182602.8360208,
+        "deadline_s": null,
+        "stopped_s": 182602.8445093
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "nominal",
+    "expected": "converged",
+    "outcome": "converged",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 0.19582497158651266,
+    "watchdog_lateness_ms": null,
+    "stopped_while_sensor_busy": false,
+    "expected_pass": true,
+    "id": "learned-nominal-00"
+  },
+  {
+    "mode": "learned",
+    "backend": "Picture / SuperPoint + LightGlue (CUDA)",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.05,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.0,
+      "render_stall_s": 0.0
+    },
+    "counts": {
+      "captures": 120,
+      "input_dropped": 53,
+      "transport_dropped": 0,
+      "stale_results": 0,
+      "obsolete_results": 0,
+      "accepted": 38,
+      "control_ticks": 1722,
+      "moving_ticks": 1123,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 0,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "p50": 16.33449998917058,
+        "p95": 31.119855004362762,
+        "p99": 31.413307998736855,
+        "max": 31.524899997748435
+      },
+      "render_ms": {
+        "p50": 3.920200004358776,
+        "p95": 5.803175001346972,
+        "p99": 6.004340007493738,
+        "max": 6.0184000176377594
+      },
+      "inference_ms": {
+        "p50": 63.23610000254121,
+        "p95": 87.24145001324356,
+        "p99": 112.91336501104529,
+        "max": 118.5690000129398
+      },
+      "ipc_ms": {
+        "p50": 2.0320000185165554,
+        "p95": 4.2927550137392245,
+        "p99": 6.0768299966002886,
+        "max": 7.10580000304617
+      },
+      "delivery_wait_ms": {
+        "p50": 49.366199993528426,
+        "p95": 52.93064500729088,
+        "p99": 53.54068699845811,
+        "max": 53.72009999700822
+      },
+      "control_ms": {
+        "p50": 1.4165000029606745,
+        "p95": 4.118304997973608,
+        "p99": 6.2634450008044995,
+        "max": 6.918900005985051
+      },
+      "apply_ms": {
+        "p50": 0.5078499962110072,
+        "p95": 1.6689550073351709,
+        "p99": 2.9032040075981103,
+        "max": 3.5214000090491027
+      },
+      "capture_to_command_ms": {
+        "p50": 143.9317500044126,
+        "p95": 176.09396500483854,
+        "p99": 192.60598100314385,
+        "max": 198.69570000446402
+      }
+    },
+    "control_gap_ms": {
+      "p50": 2.047150017460808,
+      "p95": 4.864895006176078,
+      "p99": 7.4365540029248045,
+      "max": 13.679199997568503
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 182613.3561054,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "stale_camera",
+        "at_s": 182616.3668198,
+        "last_capture_s": 182615.9657309,
+        "deadline_s": 182616.3657309,
+        "stopped_s": 182616.3672529
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "transport-50ms",
+    "expected": "converged",
+    "outcome": "stale_camera",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 0.8109476313826355,
+    "watchdog_lateness_ms": 1.5220000059343874,
+    "stopped_while_sensor_busy": false,
+    "expected_pass": false,
+    "id": "learned-transport-50ms-00"
+  },
+  {
+    "mode": "learned",
+    "backend": "Picture / SuperPoint + LightGlue (CUDA)",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.0,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.8,
+      "render_stall_s": 0.0
+    },
+    "counts": {
+      "captures": 103,
+      "input_dropped": 57,
+      "transport_dropped": 0,
+      "stale_results": 1,
+      "obsolete_results": 0,
+      "accepted": 31,
+      "control_ticks": 1589,
+      "moving_ticks": 1006,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 1,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "p50": 9.81109999702312,
+        "p95": 33.130300012999214,
+        "p99": 33.62239000562113,
+        "max": 33.742900006473064
+      },
+      "render_ms": {
+        "p50": 3.958699991926551,
+        "p95": 4.2801500094356015,
+        "p99": 5.890150001505388,
+        "max": 6.578200001968071
+      },
+      "inference_ms": {
+        "p50": 59.16619999334216,
+        "p95": 84.72790000087116,
+        "p99": 87.12274000572506,
+        "max": 88.1398000055924
+      },
+      "ipc_ms": {
+        "p50": 2.4231999996118248,
+        "p95": 3.8308999937726185,
+        "p99": 4.057909993571229,
+        "max": 4.076899989740923
+      },
+      "delivery_wait_ms": {
+        "p50": 0.03170000854879618,
+        "p95": 0.11965000885538757,
+        "p99": 0.12426999455783516,
+        "max": 0.12489999062381685
+      },
+      "control_ms": {
+        "p50": 2.196100016590208,
+        "p95": 2.7750000008381903,
+        "p99": 2.87934000371024,
+        "max": 2.8980000060983
+      },
+      "apply_ms": {
+        "p50": 0.541499990504235,
+        "p95": 1.3623999984702095,
+        "p99": 1.7087700020056218,
+        "max": 1.7556000093463808
+      },
+      "capture_to_command_ms": {
+        "p50": 82.3810999863781,
+        "p95": 116.04799999622628,
+        "p99": 123.10330999898724,
+        "max": 125.99780000164174
+      }
+    },
+    "control_gap_ms": {
+      "p50": 2.032500022323802,
+      "p95": 4.107200005091721,
+      "p99": 6.639335984364149,
+      "max": 11.917900003027171
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 182626.4817987,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "stale_camera",
+        "at_s": 182628.8789905,
+        "last_capture_s": 182628.4783965,
+        "deadline_s": 182628.8783965,
+        "stopped_s": 182628.8792485
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "inference-stall",
+    "expected": "stale_camera",
+    "outcome": "stale_camera",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 3.1999815456543654,
+    "watchdog_lateness_ms": 0.8519999973941594,
+    "stopped_while_sensor_busy": true,
+    "expected_pass": true,
+    "id": "learned-inference-stall-00"
+  },
+  {
+    "mode": "learned",
+    "backend": "Picture / SuperPoint + LightGlue (CUDA)",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.0,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.0,
+      "render_stall_s": 0.8
+    },
+    "counts": {
+      "captures": 102,
+      "input_dropped": 58,
+      "transport_dropped": 0,
+      "stale_results": 1,
+      "obsolete_results": 0,
+      "accepted": 29,
+      "control_ticks": 1606,
+      "moving_ticks": 996,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 1,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "p50": 14.584000018658116,
+        "p95": 32.20723999547772,
+        "p99": 33.17289599101059,
+        "max": 33.35399998468347
+      },
+      "render_ms": {
+        "p50": 3.952500002924353,
+        "p95": 4.460060008568689,
+        "p99": 4.655419999035075,
+        "max": 4.7158999950625
+      },
+      "inference_ms": {
+        "p50": 67.12970000808127,
+        "p95": 87.91737999417819,
+        "p99": 91.11349200946279,
+        "max": 92.18830001191236
+      },
+      "ipc_ms": {
+        "p50": 2.3874000180512667,
+        "p95": 4.017520003253594,
+        "p99": 4.147335999878123,
+        "max": 4.188999999314547
+      },
+      "delivery_wait_ms": {
+        "p50": 0.031200004741549492,
+        "p95": 0.12319999514147636,
+        "p99": 0.283136013895273,
+        "max": 0.3430000215303153
+      },
+      "control_ms": {
+        "p50": 2.136999974027276,
+        "p95": 2.8528399940114464,
+        "p99": 3.008880013367161,
+        "max": 3.0457000248134136
+      },
+      "apply_ms": {
+        "p50": 0.5606999911833555,
+        "p95": 1.3350199908018112,
+        "p99": 1.5193159994669256,
+        "max": 1.590800005942583
+      },
+      "capture_to_command_ms": {
+        "p50": 90.11879999889061,
+        "p95": 123.65980000467971,
+        "p99": 127.2924959869124,
+        "max": 128.48649997613393
+      }
+    },
+    "control_gap_ms": {
+      "p50": 2.0296000002417713,
+      "p95": 3.5768000161624514,
+      "p99": 6.638355008908549,
+      "max": 7.830799993826076
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 182638.940206,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "stale_camera",
+        "at_s": 182641.3109498,
+        "last_capture_s": 182640.9098012,
+        "deadline_s": 182641.3098012,
+        "stopped_s": 182641.3112025
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "render-stall",
+    "expected": "stale_camera",
+    "outcome": "stale_camera",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 3.2127021750158677,
+    "watchdog_lateness_ms": 1.4012999890837818,
+    "stopped_while_sensor_busy": true,
+    "expected_pass": true,
+    "id": "learned-render-stall-00"
+  }
+]

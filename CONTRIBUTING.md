@@ -16,13 +16,17 @@ The repository check uses Python's standard library and Git. It checks the files
 that would be included by `git add .`: prohibited generated files, oversized
 files, Python syntax and relative Markdown links.
 
-The GitHub workflow runs repository checks and the control/depth mathematics tests
+The GitHub workflow runs repository checks and the control/depth mathematics and camera-timing contract tests
 on Windows with Python 3.12 and the pinned base requirements. It does not claim
 GPU or rendered-integration coverage. Run the full local verification for changes
 to perception, scene physics, recovery or controls; learned tests need the optional
 runtime and downloaded models.
 
 ## Experiments
+
+The [camera robustness experiment](outputs/visual-servoing-simulation/CAMERA_ROBUSTNESS.md)
+runs with `run.cmd --robustness`. Use `--plan-only`, `--resume`, and `--report-only`
+for unattended runs and report regeneration.
 
 Run a study before invoking its report-only command on a fresh checkout. The
 `latest.json` pointers are local and can contain absolute machine paths.
@@ -53,3 +57,11 @@ pretrained weights retain their upstream license terms.
 The cleanup removes generated files from the next committed tree and preserves
 local copies. Existing commits still contain the old environment and cache.
 See [repository maintenance](docs/REPOSITORY.md) for the remaining history issue.
+
+## Collision regression
+
+Run **run.cmd --collision-study** for deterministic alignment, cold-search and
+recovery cases with a mapped column and delayed feedback. This uses rendering;
+the full local test suite also checks collision geometry and physical braking.
+It is separate from the smaller CI mathematics/transport contract subset.
+[Collision design and scope](outputs/visual-servoing-simulation/COLLISION_AWARE.md).

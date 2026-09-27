@@ -1,0 +1,298 @@
+{
+  "id": "natural-session-010",
+  "mode": "natural",
+  "attempts": 25,
+  "alignments": 23,
+  "outcomes": {
+    "converged": 23,
+    "control_overrun": 2
+  },
+  "elapsed_s": 124.38553839997621,
+  "initialization_error": null,
+  "processing_ms": {
+    "count": 974,
+    "mean": 68.67551314193317,
+    "p50": 77.95755000552163,
+    "p95": 116.49666000739667,
+    "p99": 135.11397098191082,
+    "p99_9": 172.49980810038198,
+    "max": 232.339599984698
+  },
+  "uncached_processing_ms": {
+    "count": 775,
+    "mean": 86.23570606476747,
+    "p50": 87.31229999102652,
+    "p95": 118.57727000606243,
+    "p99": 138.43218601658006,
+    "p99_9": 184.7383677971735,
+    "max": 232.339599984698
+  },
+  "capture_to_command_ms": {
+    "count": 949,
+    "mean": 128.54226164419686,
+    "p50": 138.35809999727644,
+    "p95": 176.1828199960291,
+    "p99": 192.53474798868407,
+    "p99_9": 213.24782321474294,
+    "max": 230.45079997973517
+  },
+  "stage_ms": {
+    "prepare_ms": {
+      "count": 775,
+      "mean": 0.23010219375963412,
+      "p50": 0.2167999919038266,
+      "p95": 0.3588999970816075,
+      "p99": 0.6657099991571152,
+      "p99_9": 1.7561530173409068,
+      "max": 3.219400008674711
+    },
+    "features_ms": {
+      "count": 775,
+      "mean": 57.125228774365816,
+      "p50": 54.50430000200868,
+      "p95": 69.27262000972405,
+      "p99": 89.292965993518,
+      "p99_9": 162.24343659333056,
+      "max": 169.35579999699257
+    },
+    "points_ms": {
+      "count": 775,
+      "mean": 0.569601935417121,
+      "p50": 0.5557000113185495,
+      "p95": 0.921969997580163,
+      "p99": 1.27745801990386,
+      "p99_9": 2.334006596065618,
+      "max": 2.515200001653284
+    },
+    "matching_ms": {
+      "count": 775,
+      "mean": 4.522877419367433,
+      "p50": 4.443499987246469,
+      "p95": 5.631679994985461,
+      "p99": 7.204832003335465,
+      "p99_9": 10.905825195136618,
+      "max": 18.243500002427027
+    },
+    "filter_ms": {
+      "count": 775,
+      "mean": 1.282048387520556,
+      "p50": 1.215500000398606,
+      "p95": 1.8751900090137494,
+      "p99": 2.5855920056346795,
+      "p99_9": 3.9436889907812613,
+      "max": 5.163900001207367
+    },
+    "geometry_ms": {
+      "count": 775,
+      "mean": 1.3986681284187663,
+      "p50": 1.338200003374368,
+      "p95": 1.9532299920683724,
+      "p99": 2.8881040104897693,
+      "p99_9": 3.7040933937533578,
+      "max": 4.219499998725951
+    },
+    "coarse_ms": {
+      "count": 775,
+      "mean": 65.62490670904216,
+      "p50": 62.76229998911731,
+      "p95": 79.11253999918699,
+      "p99": 99.56465400580781,
+      "p99_9": 171.36138439463807,
+      "max": 179.73559998790734
+    },
+    "refinement_ms": {
+      "count": 775,
+      "mean": 20.38374619393219,
+      "p50": 25.74730000924319,
+      "p95": 45.80674999742769,
+      "p99": 59.24691200547385,
+      "p99_9": 71.59375880746009,
+      "max": 76.43419998930767
+    },
+    "coarse_thread_cpu_ms": {
+      "count": 775,
+      "mean": 43.28629032258065,
+      "p50": 46.875,
+      "p95": 62.5,
+      "p99": 78.125,
+      "p99_9": 81.65625000000176,
+      "max": 93.75
+    },
+    "coarse_process_cpu_ms": {
+      "count": 775,
+      "mean": 167.19758064516128,
+      "p50": 156.25,
+      "p95": 234.375,
+      "p99": 281.25,
+      "p99_9": 314.5312500000088,
+      "max": 375.0
+    },
+    "refinement_thread_cpu_ms": {
+      "count": 775,
+      "mean": 19.495967741935484,
+      "p50": 15.625,
+      "p95": 46.875,
+      "p99": 62.5,
+      "p99_9": 66.03125000000176,
+      "max": 78.125
+    },
+    "refinement_process_cpu_ms": {
+      "count": 775,
+      "mean": 32.21774193548387,
+      "p50": 31.25,
+      "p95": 93.75,
+      "p99": 140.625,
+      "p99_9": 156.25,
+      "max": 156.25
+    },
+    "render_thread_cpu_ms": {
+      "count": 974,
+      "mean": 2.0213039014373715,
+      "p50": 0.0,
+      "p95": 15.625,
+      "p99": 15.625,
+      "p99_9": 15.625,
+      "max": 15.625
+    },
+    "render_process_cpu_ms": {
+      "count": 974,
+      "mean": 3.834060574948665,
+      "p50": 0.0,
+      "p95": 31.25,
+      "p99": 46.875,
+      "p99_9": 47.29687500000246,
+      "max": 62.5
+    },
+    "inference_thread_cpu_ms": {
+      "count": 974,
+      "mean": 50.03529260780287,
+      "p50": 62.5,
+      "p95": 93.75,
+      "p99": 109.375,
+      "p99_9": 125.0,
+      "max": 125.0
+    },
+    "inference_process_cpu_ms": {
+      "count": 974,
+      "mean": 158.75256673511294,
+      "p50": 171.875,
+      "p95": 281.25,
+      "p99": 359.375,
+      "p99_9": 437.92187500000244,
+      "max": 453.125
+    }
+  },
+  "maximum_feedback_age_ms": 369.7006999864243,
+  "freshness_watchdog_trips": 0,
+  "late_after_freshness_stop": 0,
+  "late_after_control_stop": 2,
+  "late_results": [
+    {
+      "sequence": 168,
+      "generation": 3,
+      "stopped_s": 245945.5075767,
+      "stop_reason": "control_overrun",
+      "captured_s": 245945.4064871,
+      "render_started_s": 245945.4069133,
+      "rendered_s": 245945.4096864,
+      "finished_s": 245945.642026,
+      "received_s": 245945.6454422,
+      "stage_ms": {
+        "prepare_ms": 0.21120000747032464,
+        "features_ms": 169.35579999699257,
+        "points_ms": 0.461799994809553,
+        "matching_ms": 6.381899991538376,
+        "filter_ms": 1.518500008387491,
+        "geometry_ms": 1.1992999934591353,
+        "coarse_ms": 179.73559998790734,
+        "refinement_ms": 52.40780001622625,
+        "coarse_thread_cpu_ms": 46.875,
+        "coarse_process_cpu_ms": 140.625,
+        "refinement_thread_cpu_ms": 46.875,
+        "refinement_process_cpu_ms": 125.0
+      },
+      "cpu_ms": {
+        "render_thread": 0.0,
+        "render_process": 0.0,
+        "inference_thread": 93.75,
+        "inference_process": 265.625
+      }
+    },
+    {
+      "sequence": 1091,
+      "generation": 16,
+      "stopped_s": 246007.9847976,
+      "stop_reason": "control_overrun",
+      "captured_s": 246007.827781,
+      "render_started_s": 246007.8281725,
+      "rendered_s": 246007.830719,
+      "finished_s": 246007.9998676,
+      "received_s": 246008.0068083,
+      "stage_ms": {
+        "prepare_ms": 0.13359999866224825,
+        "features_ms": 160.16669999225996,
+        "points_ms": 0.601400010054931,
+        "matching_ms": 4.495700006373227,
+        "filter_ms": 1.3315000105649233,
+        "geometry_ms": 1.6731999930925667,
+        "coarse_ms": 168.9161999966018,
+        "refinement_ms": 0.10689999908208847,
+        "coarse_thread_cpu_ms": 78.125,
+        "coarse_process_cpu_ms": 140.625,
+        "refinement_thread_cpu_ms": 0.0,
+        "refinement_process_cpu_ms": 0.0
+      },
+      "cpu_ms": {
+        "render_thread": 15.625,
+        "render_process": 15.625,
+        "inference_thread": 78.125,
+        "inference_process": 140.625
+      }
+    }
+  ],
+  "counters": {
+    "captures": 1800,
+    "capture_slots": 3539,
+    "busy_capture_skips": 1739,
+    "input_dropped": 0,
+    "transport_dropped": 1,
+    "pending_cancelled": 61,
+    "sensor_received": 1800,
+    "sensor_rows_evicted": 0,
+    "command_rows_evicted": 0,
+    "loop_rows_evicted": 0,
+    "stale_results": 0,
+    "obsolete_results": 18,
+    "pre_inference_dropped": 0,
+    "accepted": 949,
+    "control_ticks": 48186,
+    "moving_ticks": 28728,
+    "unsafe_motion_ticks": 0,
+    "contacts": 0,
+    "post_stop_motion_ticks": 0,
+    "control_deadline_misses": 2,
+    "fault_results": 0,
+    "discarded_physics_s": 0.08811209999839774,
+    "result_mailbox_dropped": 0,
+    "worker_requests_expired": 0,
+    "completed_but_unreceived": 0,
+    "requests_not_started": 0
+  },
+  "worker_alive": false,
+  "error": null,
+  "telemetry_complete": true,
+  "diagnostic_spikes_evicted": 0,
+  "gc_events_evicted": 0,
+  "gpu_before": {
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 54, 0 %, 9.62 W, 52 MHz",
+    "stderr": ""
+  },
+  "gpu_after": {
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 48, 0 %, 5.75 W, 52 MHz",
+    "stderr": ""
+  },
+  "trace": "traces/natural-session-010.json.gz",
+  "trace_sha256": "0c5117991e8b8f5b0abf8a2ece2712ff3ccbf55b800c3686ea970ffe0d7d5823"
+}

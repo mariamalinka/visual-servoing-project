@@ -1,0 +1,370 @@
+{
+  "created_utc": "2026-09-23T19:02:12.056591+00:00",
+  "fingerprint": {
+    "sha256": {
+      "accuracy.py": "f2864e7270fa4c4c803978cb22123455b5c48f15f20954a8e0229e496eae06a2",
+      "accuracy_config.json": "5bd6bff53bb728bede80fe73b244c545fbd282dbe83d97d14f04d21f6bb8a1d0",
+      "adaptive_gain.py": "0b529c74c553c79675e378874baa81872176aa9422631f147aee75add662a4a7",
+      "analyze_benchmark.py": "51e9d4c4070267e608949804aaf1cf6a98b8568d7b56277404d571d9d8e19344",
+      "analyze_comparison.py": "f45f2b6764eece1c0fd907262760e1d5d9872349f37b6440f522c5439e512b5e",
+      "analyze_gain_study.py": "fe1dc1e97b71de44f3a10430567e5c8b1d22ea2ffba0e86749680c3c284a9709",
+      "app.py": "b668c0a3da6bb056488bc6c3e99f3e10905e9e2169f101851ac8929a67bd852a",
+      "assets/marker.png": "ab2472414444ee33daf910b6d1e3048c2cd1409cc5b9c6838ea203a7e9744a40",
+      "assets/natural-board.png": "851e7345adfb70a0fcb4e95dde970d6d9007d1cdb209e64188635acc33c9b067",
+      "assets/natural-target-source.json": "4d680aa45427481d7328ae8d43c22c0a198443c16888d97c02bdd22eda3bc077",
+      "assets/natural-target-source.png": "f3d7a2eaf08f24345610851cb23574982ca55fdb75a4cf99b2a1c2668cce89c8",
+      "assets/natural-target.png": "6dc880cf2c20520b9b0dba3aa30f3accce6379d2d61e5edaa9ea4f44a030f8ab",
+      "baselines.py": "50f381af192e33a195b2cc481f88bd0818cac85072cab81ea679f33b83dd653d",
+      "benchmark.py": "1be0fc0dff13a7474b9dbef6acec64ead0137c773f57cde4462620ea9bd96de7",
+      "benchmark_config.json": "4e873ce4baed5efb76c9550bffbd261dc2677b13626c09b0de138ed6b7d07700",
+      "benchmark_learned.py": "e945838fbfce52944752319aeddb28fa0d90fdb262ccdea735c9f7ac57626f92",
+      "calibration.py": "c97eecc65705b7b0d9c77f80378d634bd9f3f93213c74d31b1a1e97763551dbe",
+      "camera_robustness.py": "f7d84677008b00e9d8a2517a8620668fcab82effedc1d2f31d05ff9d88c71b07",
+      "camera_timing.py": "8af033010df94fc96fad141b41c94ea3ca1d5162aed09865c6af43f05c467778",
+      "camera_timing_config.json": "20e73da5ca3615d727e35bf854af20b7e34700936526a8e87c19bc572a7a8db2",
+      "collision.py": "eef38870829cdf96a9cb6c8a8d6a0af56c9b7289ae0dcf64e9cdf132e005f662",
+      "collision_config.json": "9fdaf7af4437dae7ea78467a37c9680ab8bed4c7d754d5684ef78963337fd6fb",
+      "compare_controllers.py": "572f8daab2e0b00ed9c39f32129b3a02331d45cc5db0f21a220282fd08716620",
+      "comparison_config.json": "4e1b8e7ab84c08b0ede5de60ce961abf9c72ace5d727a96e8d13d0e2dadb610f",
+      "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+      "control.py": "1f59a1942ec7bce375f7ec7b648cc59f8fc4b0103e85fd515f2e89e4d8e89fe7",
+      "deadline_diagnostics.py": "2477d4908e03926bb6e1e2118950b7765b1a03419bbc3726b71a953bb6fc2653",
+      "download_learned_models.py": "13692f9c1db7d7337943363be008ab49b842fe112dff231c665a21df0df0a404",
+      "gain_config.json": "6186b780e19487b4e1920a3a5538dbc73a0b08488120a70e1253f62e99f65f6a",
+      "joint_limit_config.json": "f8855a46a7aca71867fa730d4ea092686b72267c0351883421f31c574134f841",
+      "joint_limits.py": "3d5e0c8d18c88c7d7d3bafedbd1c4ac8701947240c249ce528f95f32808291d3",
+      "latency_stress.py": "497d416fc92cbbd1f3e13ac9256280e29f2cf2aaa9a4f071e362042082be0406",
+      "learned_cuda_graphs.py": "506d97aa83f6009e9e44f004a765de6e95061df1fd866cb7e5f392b7bd0810d4",
+      "learned_feature_config.json": "0145983cbf3bafef87e80ca079628744f69edf175764137e36d373786353a708",
+      "learned_perception.py": "77515424a30d7556c3174f48da6a9bd30e17190d2864f64d29e2cf22ae51b78a",
+      "models/manifest.json": "4ce943f21304b7934d724250c0bb1dac2839ab43975d202a008404c8e190692e",
+      "motion_path.py": "27f8657b1af0154532a790a7e91f3a0fec11a355ac99cef397c315def74817f7",
+      "natural_feature_config.json": "284d6107ba8a739fb3c5731ad4545de16d44be48adc6e3ad43f34e08efe4a2fb",
+      "perception.py": "34e74c605b5e349a714d7cdf67a5c1e4322f2252a919450944abb182972bfb94",
+      "precision.py": "c249a34cc121835f6fcbcacdfce6ad6034ea5cbca2706aec9bae4e0640752561",
+      "precision_config.json": "bb7749276bf39d39e3c980d7d14e549f2e8f26f9b9480736f6f99891ef5027b7",
+      "prepare_natural_reference.py": "1dab76acce145061258c965f84b63c42723c466b19723056630367c7fb705df9",
+      "realtime.py": "c224ccd728e079f8edde95063745d2c43e266522aee3ecf3652a8bb08331c0d8",
+      "realtime_app.py": "008b6cc5ac59d2162120e701c9f167c5c43c46240fb3170859d317c696496b7c",
+      "record_joint_limit_demo.py": "d4ca6b29e1c257c3633d44f0edda3eb6b1841a97caad934f14b18178124b808e",
+      "record_learned_demo.py": "10dba7fe0733e456fb0c66aae55e0f15a4255efbb0ee44d346361d572171ad13",
+      "record_natural_image_demo.py": "4bfa0237874a299b45e1a7766a22ed9472d3a8eb11b55358b2e77f023e80302d",
+      "record_recovery_demo.py": "652d43ec930db88d118d708cf1afab2ab53d1b6fe4c168173745440d9fcb6dee",
+      "record_search_coverage_demo.py": "f50572e34d2ec245b7b692ee4187db337366d9bb4a907dfe75a6469c4f7576fc",
+      "record_startup_demo.py": "f015ae73cb59c05ad8503d3ee276f1c7199ed6e74ba618e6ecdb8e4623b8b7d2",
+      "recovery.py": "7562013287a778fcc2f546707f1a7d3f2aed122b13c44439ff1690cad7c815c4",
+      "recovery_config.json": "32b436f0cc0e4272680f163e76861cf358a50d1dacc9a8ce96d878fd02d6b7c5",
+      "reference/goal.npz": "3d6e7376c549ae47f74fd12ec9a0afc134ae8482301ec2a3ced0d16113dc989d",
+      "reference/natural_goal.npz": "2912b8b45be09dac9351f27cff974c7e2808f372dd2dd0d006be6f0299f5f900",
+      "reference/natural_goal.png": "06c39b9e7a003b8653f852bc8cad643bb2aed3b718ddcc3aa475c93d85ded0c4",
+      "reference_image.py": "3a883d1015831290b07f2b312a086da2d70478fe1cee5b6b4ef6887c7f167f3a",
+      "robustness_config.json": "63f6b7a3a010c8de08e074b0e2c2f12b1faa9334b34127789f836862e58ad6fc",
+      "run_accuracy_study.py": "d59ff73a87282acfd80e0b4d88496d60910e4ea2eac68d3714793c8d1a3e68ca",
+      "run_alignment.py": "8c2db501849396eeab0ed2e3870862741f62612bb0e794d5122aeeffafd879b1",
+      "run_camera_delay_study.py": "76e7884b521792ec22bdbe2ca5802448abd1d94228e28e576f1e052ef12054c6",
+      "run_camera_robustness.py": "54df8320e59790b144f6d5db583a72670cabf559950daf5503721acd0c568ff5",
+      "run_collision_study.py": "5272275f5086f5d060a8f3332507a85841d03ec5e4e31cb5ec8450261b01a46e",
+      "run_gain_study.py": "013d266ae42575f3f343687083bb78ac3f2d4e1631a7965c719679df7ff0e760",
+      "run_joint_limit_study.py": "5cb174d40d4b67166b9ed4bec97ea910584377e41eb918604181655efe53a3c8",
+      "run_latency_stress.py": "ce132c407398e730317f9d6a47b51136ea85325d330d9ccecc97c34a483c4c61",
+      "run_latency_study.py": "fe41cf48723c7ee6f31c19cff6946b5de7dfb94332d75c3553ba35295c4b4fe6",
+      "run_learned_study.py": "8e45a62729df0d4906524a533bae7e1a11f72ae2e3d83625de271e02308a57d3",
+      "run_natural_image_study.py": "ef9a56e1a55fcff194bf640ad5a584efbaf763203a31a008fe9c90b6d77e4815",
+      "run_recovery.py": "32b6a95b97331b629fc8aafcf86f3ec566010d3ce4f06aac99aee10aef8354d7",
+      "run_search_coverage.py": "b530c1d9a5048f9fc92d5b510e8c00cf3bac3d2d65454f6ab410e7370571dda7",
+      "run_startup_search.py": "48a6f8d4f58c3f6d4438a889a9e1cacd4f3be30e0510afbd0bde1e0a143050cb",
+      "scene.xml": "c390e02323a4d93c4ee6165ed602de1711a7d23c79e5d739fc7d536f70f24e04",
+      "setup_learned.py": "1f32b684efd666668385d3acd726dc2f564b76ee9fd4cb758e3bf1ea3b46b214",
+      "simulation.py": "fdaab73e8d7305cc10c94e42e7865ee05b4d86bea46c6930287c00c91346f160",
+      "startup_search.py": "9e3b1ca1389bd4bb0b57a4f9827ebfdccb3152ea28321b8ade86773c5677bd28",
+      "startup_search_config.json": "72e915e3699b029821ec8a9b85b104330a7bab2a96338a3b0538faf0350d75f9",
+      "verify.py": "de16dd2b666fdd89f286f60ae3f6255b8559703f7c8cbfde4a47d95f6ceb4647",
+      "verify_learned_repair.py": "14b7b1211f98ae6ad930a00bbe91f9ec83ea43117b4c3e4f6f2c508d6b68c0f4"
+    },
+    "runtime": {
+      "python": "3.12.14",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "numpy": "2.5.2",
+      "opencv-python": "5.0.0.93",
+      "mujoco": "3.12.0",
+      "matplotlib": "3.11.1",
+      "pillow": "12.3.0",
+      "torch": "2.13.0+cu126",
+      "torchvision": "0.28.0+cu126",
+      "lightglue": "0.0"
+    }
+  },
+  "baseline_manifest": "C:\\Users\\marys\\Documents\\Codex\\2026-09-06\\visual-servoing-project\\outputs\\visual-servoing-simulation\\results\\latency\\20260922-sustained\\manifest.json",
+  "baseline_manifest_sha256": "937026308c9eccb824ed651a6e7786578dcdd95033ca93f09eb9abb1bd91bc88",
+  "plan": {
+    "schema_version": 1,
+    "minimum_sessions_per_method": 12,
+    "maximum_sessions_per_method": 20,
+    "minimum_session_s": 120.0,
+    "target_uncached_active_frames_per_method": 10000,
+    "modes": [
+      "natural",
+      "learned"
+    ],
+    "diagnostics": true,
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.05,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "max_queue_age_s": 0.05,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.0,
+      "render_stall_s": 0.0
+    },
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "stop_rule": "Finish a complete round after minimum sessions AND uncached-frame targets, or maximum sessions. Never stop early based on successes or latency.",
+    "warmup": "Identical worker initialization and one initial detector.observe(sensor.image()) before auto-arming each new process. Subsequent cycles reuse the worker.",
+    "post_stop_s": 1.1,
+    "telemetry_frames": 8192,
+    "specs": [
+      {
+        "id": "natural-session-000",
+        "mode": "natural",
+        "round": 0
+      },
+      {
+        "id": "learned-session-000",
+        "mode": "learned",
+        "round": 0
+      },
+      {
+        "id": "natural-session-001",
+        "mode": "natural",
+        "round": 1
+      },
+      {
+        "id": "learned-session-001",
+        "mode": "learned",
+        "round": 1
+      },
+      {
+        "id": "natural-session-002",
+        "mode": "natural",
+        "round": 2
+      },
+      {
+        "id": "learned-session-002",
+        "mode": "learned",
+        "round": 2
+      },
+      {
+        "id": "natural-session-003",
+        "mode": "natural",
+        "round": 3
+      },
+      {
+        "id": "learned-session-003",
+        "mode": "learned",
+        "round": 3
+      },
+      {
+        "id": "natural-session-004",
+        "mode": "natural",
+        "round": 4
+      },
+      {
+        "id": "learned-session-004",
+        "mode": "learned",
+        "round": 4
+      },
+      {
+        "id": "natural-session-005",
+        "mode": "natural",
+        "round": 5
+      },
+      {
+        "id": "learned-session-005",
+        "mode": "learned",
+        "round": 5
+      },
+      {
+        "id": "natural-session-006",
+        "mode": "natural",
+        "round": 6
+      },
+      {
+        "id": "learned-session-006",
+        "mode": "learned",
+        "round": 6
+      },
+      {
+        "id": "natural-session-007",
+        "mode": "natural",
+        "round": 7
+      },
+      {
+        "id": "learned-session-007",
+        "mode": "learned",
+        "round": 7
+      },
+      {
+        "id": "natural-session-008",
+        "mode": "natural",
+        "round": 8
+      },
+      {
+        "id": "learned-session-008",
+        "mode": "learned",
+        "round": 8
+      },
+      {
+        "id": "natural-session-009",
+        "mode": "natural",
+        "round": 9
+      },
+      {
+        "id": "learned-session-009",
+        "mode": "learned",
+        "round": 9
+      },
+      {
+        "id": "natural-session-010",
+        "mode": "natural",
+        "round": 10
+      },
+      {
+        "id": "learned-session-010",
+        "mode": "learned",
+        "round": 10
+      },
+      {
+        "id": "natural-session-011",
+        "mode": "natural",
+        "round": 11
+      },
+      {
+        "id": "learned-session-011",
+        "mode": "learned",
+        "round": 11
+      },
+      {
+        "id": "natural-session-012",
+        "mode": "natural",
+        "round": 12
+      },
+      {
+        "id": "learned-session-012",
+        "mode": "learned",
+        "round": 12
+      },
+      {
+        "id": "natural-session-013",
+        "mode": "natural",
+        "round": 13
+      },
+      {
+        "id": "learned-session-013",
+        "mode": "learned",
+        "round": 13
+      },
+      {
+        "id": "natural-session-014",
+        "mode": "natural",
+        "round": 14
+      },
+      {
+        "id": "learned-session-014",
+        "mode": "learned",
+        "round": 14
+      },
+      {
+        "id": "natural-session-015",
+        "mode": "natural",
+        "round": 15
+      },
+      {
+        "id": "learned-session-015",
+        "mode": "learned",
+        "round": 15
+      },
+      {
+        "id": "natural-session-016",
+        "mode": "natural",
+        "round": 16
+      },
+      {
+        "id": "learned-session-016",
+        "mode": "learned",
+        "round": 16
+      },
+      {
+        "id": "natural-session-017",
+        "mode": "natural",
+        "round": 17
+      },
+      {
+        "id": "learned-session-017",
+        "mode": "learned",
+        "round": 17
+      },
+      {
+        "id": "natural-session-018",
+        "mode": "natural",
+        "round": 18
+      },
+      {
+        "id": "learned-session-018",
+        "mode": "learned",
+        "round": 18
+      },
+      {
+        "id": "natural-session-019",
+        "mode": "natural",
+        "round": 19
+      },
+      {
+        "id": "learned-session-019",
+        "mode": "learned",
+        "round": 19
+      }
+    ]
+  },
+  "clock": {
+    "perf_counter": {
+      "implementation": "QueryPerformanceCounter()",
+      "monotonic": true,
+      "adjustable": false,
+      "resolution": 1e-07
+    },
+    "thread_time": {
+      "implementation": "GetThreadTimes()",
+      "monotonic": true,
+      "adjustable": false,
+      "resolution": 1e-07
+    },
+    "process_time": {
+      "implementation": "GetProcessTimes()",
+      "monotonic": true,
+      "adjustable": false,
+      "resolution": 1e-07
+    }
+  },
+  "hardware": {
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 44, 0 %, 5.55 W, 210 MHz",
+    "stderr": "",
+    "power": {
+      "ACLineStatus": 1,
+      "BatteryFlag": 1,
+      "BatteryLifePercent": 100,
+      "SystemStatusFlag": 0,
+      "BatteryLifeTime": 4294967295,
+      "BatteryFullLifeTime": 4294967295
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "camera_width": 640,
+  "camera_height": 480,
+  "camera_hz": 30,
+  "jog_velocity_rad_s": 0.18,
+  "jog_duration_s": 0.25,
+  "max_joint_velocity_rad_s": 0.6,
+  "marker_dictionary": "DICT_4X4_50",
+  "marker_id": 7,
+  "marker_side_m": 0.24,
+  "ibvs": {
+    "gain_per_s": 1.2,
+    "interaction_damping": 0.0001,
+    "joint_damping": 0.005,
+    "max_linear_velocity_m_s": 0.12,
+    "max_angular_velocity_rad_s": 0.4,
+    "max_joint_velocity_rad_s": 0.35,
+    "success_error_px": 1.0,
+    "success_hold_s": 0.5,
+    "timeout_s": 20.0,
+    "max_pnp_reprojection_error_px": 3.0,
+    "start_offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ]
+  },
+  "marker_detection": {
+    "min_marker_distance_rate": 0.03
+  }
+}

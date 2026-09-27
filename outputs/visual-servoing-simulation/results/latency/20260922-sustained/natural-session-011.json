@@ -1,0 +1,234 @@
+{
+  "id": "natural-session-011",
+  "mode": "natural",
+  "attempts": 24,
+  "alignments": 24,
+  "outcomes": {
+    "converged": 24
+  },
+  "elapsed_s": 124.87928359999205,
+  "initialization_error": null,
+  "processing_ms": {
+    "count": 1075,
+    "mean": 65.06530567467603,
+    "p50": 65.133700001752,
+    "p95": 104.85795999120455,
+    "p99": 115.29657199571375,
+    "p99_9": 131.91526419413347,
+    "max": 144.7968000138644
+  },
+  "uncached_processing_ms": {
+    "count": 868,
+    "mean": 80.52836693583265,
+    "p50": 86.08145000471268,
+    "p95": 106.28164000518154,
+    "p99": 118.48510001698754,
+    "p99_9": 133.91187509591882,
+    "max": 144.7968000138644
+  },
+  "capture_to_command_ms": {
+    "count": 1051,
+    "mean": 124.15766336836721,
+    "p50": 126.2191999994684,
+    "p95": 163.06030000851024,
+    "p99": 172.93879999488126,
+    "p99_9": 190.22865500592172,
+    "max": 201.6087000083644
+  },
+  "stage_ms": {
+    "prepare_ms": {
+      "count": 868,
+      "mean": 0.19983790294092346,
+      "p50": 0.20489998860284686,
+      "p95": 0.29758999589830637,
+      "p99": 0.3881899971747772,
+      "p99_9": 0.5283245086029678,
+      "max": 0.5513000069186091
+    },
+    "features_ms": {
+      "count": 868,
+      "mean": 52.87179251168994,
+      "p50": 51.93940000026487,
+      "p95": 60.45703500276431,
+      "p99": 72.9543990042295,
+      "p99_9": 89.64724179625141,
+      "max": 95.12199999880977
+    },
+    "points_ms": {
+      "count": 868,
+      "mean": 0.5284282260157022,
+      "p50": 0.5299500189721584,
+      "p95": 0.6791650012019089,
+      "p99": 0.9126209854730435,
+      "p99_9": 2.4654248017470106,
+      "max": 3.3893000218085945
+    },
+    "matching_ms": {
+      "count": 868,
+      "mean": 4.434624308889758,
+      "p50": 4.353299984359182,
+      "p95": 5.304080012138002,
+      "p99": 6.485382015234794,
+      "p99_9": 18.069841897321496,
+      "max": 33.237399999052286
+    },
+    "filter_ms": {
+      "count": 868,
+      "mean": 1.1986767275533574,
+      "p50": 1.144949987065047,
+      "p95": 1.592099986737594,
+      "p99": 1.899975012929645,
+      "p99_9": 3.3519655917779336,
+      "max": 8.019200002308935
+    },
+    "geometry_ms": {
+      "count": 868,
+      "mean": 1.2849620975954201,
+      "p50": 1.2364000140223652,
+      "p95": 1.6848599858349187,
+      "p99": 2.327670990489424,
+      "p99_9": 3.2273467838243812,
+      "max": 5.2211000001989305
+    },
+    "coarse_ms": {
+      "count": 868,
+      "mean": 60.94719135986527,
+      "p50": 59.94295001437422,
+      "p95": 69.28312000527512,
+      "p99": 82.11342898197478,
+      "p99_9": 115.17302500125083,
+      "max": 132.01450000633486
+    },
+    "refinement_ms": {
+      "count": 868,
+      "mean": 19.400580184275878,
+      "p50": 26.06095001101494,
+      "p95": 42.729959993448574,
+      "p99": 53.676635000156274,
+      "p99_9": 65.6558438024081,
+      "max": 68.43770001432858
+    },
+    "coarse_thread_cpu_ms": {
+      "count": 868,
+      "mean": 42.32070852534562,
+      "p50": 46.875,
+      "p95": 62.5,
+      "p99": 62.5,
+      "p99_9": 80.20312500000237,
+      "max": 93.75
+    },
+    "coarse_process_cpu_ms": {
+      "count": 868,
+      "mean": 160.67828341013825,
+      "p50": 156.25,
+      "p95": 203.125,
+      "p99": 234.375,
+      "p99_9": 254.15625000000475,
+      "max": 281.25
+    },
+    "refinement_thread_cpu_ms": {
+      "count": 868,
+      "mean": 19.27923387096774,
+      "p50": 31.25,
+      "p95": 46.875,
+      "p99": 52.03125000000064,
+      "p99_9": 64.57812500000237,
+      "max": 78.125
+    },
+    "refinement_process_cpu_ms": {
+      "count": 868,
+      "mean": 30.799971198156683,
+      "p50": 31.25,
+      "p95": 93.75,
+      "p99": 125.0,
+      "p99_9": 160.40625000000475,
+      "max": 187.5
+    },
+    "render_thread_cpu_ms": {
+      "count": 1075,
+      "mean": 1.4825581395348837,
+      "p50": 0.0,
+      "p95": 15.625,
+      "p99": 15.625,
+      "p99_9": 15.625,
+      "max": 15.625
+    },
+    "render_process_cpu_ms": {
+      "count": 1075,
+      "mean": 2.8343023255813953,
+      "p50": 0.0,
+      "p95": 31.25,
+      "p99": 46.875,
+      "p99_9": 46.875,
+      "max": 46.875
+    },
+    "inference_thread_cpu_ms": {
+      "count": 1075,
+      "mean": 49.79651162790697,
+      "p50": 62.5,
+      "p95": 93.75,
+      "p99": 109.375,
+      "p99_9": 125.0,
+      "max": 125.0
+    },
+    "inference_process_cpu_ms": {
+      "count": 1075,
+      "mean": 154.65116279069767,
+      "p50": 171.875,
+      "p95": 265.625,
+      "p99": 296.875,
+      "p99_9": 358.2187500000025,
+      "max": 390.625
+    }
+  },
+  "maximum_feedback_age_ms": 338.32780001102947,
+  "freshness_watchdog_trips": 0,
+  "late_after_freshness_stop": 0,
+  "late_after_control_stop": 0,
+  "late_results": [],
+  "counters": {
+    "captures": 1883,
+    "capture_slots": 3595,
+    "busy_capture_skips": 1712,
+    "input_dropped": 0,
+    "transport_dropped": 0,
+    "pending_cancelled": 59,
+    "sensor_received": 1883,
+    "sensor_rows_evicted": 0,
+    "command_rows_evicted": 0,
+    "loop_rows_evicted": 0,
+    "stale_results": 0,
+    "obsolete_results": 19,
+    "pre_inference_dropped": 0,
+    "accepted": 1051,
+    "control_ticks": 54343,
+    "moving_ticks": 34026,
+    "unsafe_motion_ticks": 0,
+    "contacts": 0,
+    "post_stop_motion_ticks": 0,
+    "control_deadline_misses": 0,
+    "fault_results": 0,
+    "discarded_physics_s": 0.0,
+    "result_mailbox_dropped": 0,
+    "worker_requests_expired": 0,
+    "completed_but_unreceived": 0,
+    "requests_not_started": 0
+  },
+  "worker_alive": false,
+  "error": null,
+  "telemetry_complete": true,
+  "diagnostic_spikes_evicted": 0,
+  "gc_events_evicted": 0,
+  "gpu_before": {
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 53, 0 %, 9.51 W, 52 MHz",
+    "stderr": ""
+  },
+  "gpu_after": {
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 49, 0 %, 9.41 W, 52 MHz",
+    "stderr": ""
+  },
+  "trace": "traces/natural-session-011.json.gz",
+  "trace_sha256": "437b001d5c5642f829fa0f8df5477b6b46c4289613dbfa7d9fe63a943b08f565"
+}

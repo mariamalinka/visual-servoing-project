@@ -1,0 +1,50 @@
+{
+  "regression_tests": 294,
+  "regression_duration_s": 398.215,
+  "regression_test_log_sha256": "c60aa10692304686a40e73f9291ae0f42a6798937afca96e007467896676bfbc",
+  "sessions": 40,
+  "raw_trace_checksums_verified": 40,
+  "baseline_raw_trace_checksums_verified": 40,
+  "all_capture_accounting_reconciled": true,
+  "all_stops_stayed_latched": true,
+  "unsafe_motion_ticks": 0,
+  "post_stop_motion_ticks": 0,
+  "contacts": 0,
+  "source_and_runtime_unchanged_after_collection": true,
+  "fixed_inputs_and_campaign_plan_identical": true,
+  "baseline_manifest_sha256": "937026308c9eccb824ed651a6e7786578dcdd95033ca93f09eb9abb1bd91bc88",
+  "timing_requirement_passed": false,
+  "sample_targets_met": true,
+  "graph_initialization_verified": true,
+  "graph_calls": {
+    "natural": {
+      "replays": 0,
+      "fallbacks": 0
+    },
+    "learned": {
+      "replays": 73542,
+      "fallbacks": 0
+    }
+  },
+  "ac_at_all_observed_boundaries": true,
+  "power_boundary_observations": 80,
+  "power_observation_limit": "Boundary samples only; not continuous AC monitoring.",
+  "full_kernel_scheduling_attribution_available": false,
+  "wpr_start": {
+    "returncode": 3310899217,
+    "stdout": "",
+    "stderr": "\n\tFailed to enable the policy to profile system performance.\n\n\n\tProfile Id: CPU.Verbose.Memory\n\t\n\tError code: 0xc5585011\n\t\n\tFailed to enable the policy to profile system performance.\n\n\t\n\t\n"
+  },
+  "analysis_sha256": {
+    "analyze_latency_stress.py": "004e31161c762c1bcb0e315d0528a3d77af1495439f46d6764906c65d4f463a0",
+    "analyze_gpu_latency.py": "bfce2e59c8be77c6a8db42d84b9547a0569afdc9b367898db46d75ac42cf677f",
+    "compare_worker_reuse.py": "4c885e6fcad76d503fc72b9c9b5be804a3c2a8842c1e35282f1ebc0f395460fc",
+    "summarize_worker_probes.py": "66d32e3f5c38a6b36b323a4b4a3270d9ff78f79575e7cca65c20faff59349f52",
+    "verify_worker_reuse.py": "2b1844190f352d9d1bb44604579616c37fbc6c53edf27f44d9127bb05396f7e8",
+    "probe_worker_reuse.py": "3c07db95d878ef9b8b468513a575357d4666ec3bd79339c6232909b37f1d1b57",
+    "analyze_replay_clocks.py": "717e66edc29bac0b6c51607645b319e803535e39e67c66971c5bebd3c543ffb0"
+  },
+  "repository_check_passed": true,
+  "stable_replay_model_template_and_allocation_checks": true,
+  "repository_check_script_sha256": "ecf8c52a4117714ec655d7ae19aaf0e87db9d6998ae0e0834895af0def00a766"
+}

@@ -1,0 +1,854 @@
+[
+  {
+    "mode": "natural",
+    "backend": "Picture / SIFT",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.05,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "max_queue_age_s": 0.05,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.0,
+      "render_stall_s": 0.0
+    },
+    "counts": {
+      "captures": 72,
+      "capture_slots": 145,
+      "busy_capture_skips": 73,
+      "input_dropped": 0,
+      "transport_dropped": 0,
+      "stale_results": 0,
+      "obsolete_results": 0,
+      "pre_inference_dropped": 0,
+      "accepted": 38,
+      "control_ticks": 2143,
+      "moving_ticks": 1304,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 0,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "mean": 0.5272473660481506,
+        "count": 38,
+        "p50": 0.47975000052247196,
+        "p95": 0.7609899970702827,
+        "p99": 0.994081997196191,
+        "max": 1.116700004786253
+      },
+      "render_ms": {
+        "mean": 3.960755265373001,
+        "count": 38,
+        "p50": 3.6684000078821555,
+        "p95": 6.078225000237579,
+        "p99": 7.167589006712661,
+        "max": 7.319399999687448
+      },
+      "inference_ms": {
+        "mean": 74.67126052315028,
+        "count": 38,
+        "p50": 83.52745001320727,
+        "p95": 118.0635900105699,
+        "p99": 120.93724099744577,
+        "max": 121.32969999220222
+      },
+      "ipc_ms": {
+        "mean": 3.0521342138710774,
+        "count": 38,
+        "p50": 2.926000001025386,
+        "p95": 4.644484995515085,
+        "p99": 6.2848350085550955,
+        "max": 6.7860000126529485
+      },
+      "delivery_wait_ms": {
+        "mean": 48.37892105110529,
+        "count": 38,
+        "p50": 48.31344999547582,
+        "p95": 50.223550002556294,
+        "p99": 50.809909994131885,
+        "max": 51.078899996355176
+      },
+      "control_ms": {
+        "mean": 1.408928947057575,
+        "count": 38,
+        "p50": 1.3600499951280653,
+        "p95": 2.3667799949180335,
+        "p99": 2.5118519886746076,
+        "max": 2.5674999924376607
+      },
+      "apply_ms": {
+        "mean": 0.5160789495628131,
+        "count": 38,
+        "p50": 0.4850000113947317,
+        "p95": 0.9786750131752341,
+        "p99": 1.091762005526107,
+        "max": 1.113000005716458
+      },
+      "capture_to_command_ms": {
+        "mean": 132.5153263161682,
+        "count": 38,
+        "p50": 142.76059999247082,
+        "p95": 177.24818502465496,
+        "p99": 178.54715898807626,
+        "max": 179.05749997589737
+      }
+    },
+    "control_gap_ms": {
+      "mean": 2.3331159122766927,
+      "count": 2143,
+      "p50": 2.0429999858606607,
+      "p95": 4.5129500213079154,
+      "p99": 5.701350002200343,
+      "max": 11.17579999845475
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 201438.1849527,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "converged",
+        "at_s": 201442.0669335,
+        "last_capture_s": 201442.0074302,
+        "deadline_s": null,
+        "stopped_s": 201442.0671594
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "transport-50ms",
+    "expected": "converged",
+    "outcome": "converged",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 0.17074925561598067,
+    "watchdog_lateness_ms": null,
+    "stopped_while_sensor_busy": false,
+    "expected_pass": true,
+    "id": "natural-transport-50ms-00"
+  },
+  {
+    "mode": "learned",
+    "backend": "Picture / SuperPoint + LightGlue (CUDA)",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.05,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "max_queue_age_s": 0.05,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.0,
+      "render_stall_s": 0.0
+    },
+    "counts": {
+      "captures": 31,
+      "capture_slots": 40,
+      "busy_capture_skips": 9,
+      "input_dropped": 0,
+      "transport_dropped": 0,
+      "stale_results": 0,
+      "obsolete_results": 0,
+      "pre_inference_dropped": 0,
+      "accepted": 4,
+      "control_ticks": 484,
+      "moving_ticks": 7,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 1,
+      "fault_results": 0,
+      "discarded_physics_s": 0.015946499991696325
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "mean": 0.6541500042658299,
+        "count": 4,
+        "p50": 0.5709000106435269,
+        "p95": 0.9740050169057212,
+        "p99": 1.0221610168810003,
+        "max": 1.03420001687482
+      },
+      "render_ms": {
+        "mean": 3.941975002817344,
+        "count": 4,
+        "p50": 3.9101500005926937,
+        "p95": 4.4363750028423965,
+        "p99": 4.489595002960414,
+        "max": 4.502900002989918
+      },
+      "inference_ms": {
+        "mean": 19.791649996477645,
+        "count": 4,
+        "p50": 0.2265499933855608,
+        "p95": 66.76744998549108,
+        "p99": 76.16068998468107,
+        "max": 78.50899998447858
+      },
+      "ipc_ms": {
+        "mean": 3.188424998370465,
+        "count": 4,
+        "p50": 2.678249991731718,
+        "p95": 5.054080001718829,
+        "p99": 5.322736004309262,
+        "max": 5.389900004956871
+      },
+      "delivery_wait_ms": {
+        "mean": 48.765899999125395,
+        "count": 4,
+        "p50": 48.95399999804795,
+        "p95": 49.17868498887401,
+        "p99": 49.18133698811289,
+        "max": 49.18199998792261
+      },
+      "control_ms": {
+        "mean": 2.359550002438482,
+        "count": 4,
+        "p50": 2.0091500045964494,
+        "p95": 4.7164500152575775,
+        "p99": 5.082090015930588,
+        "max": 5.173500016098842
+      },
+      "apply_ms": {
+        "mean": 10.50464999570977,
+        "count": 4,
+        "p50": 0.5163999885553494,
+        "p95": 34.546214980946374,
+        "p99": 39.34068298171041,
+        "max": 40.53929998190142
+      },
+      "capture_to_command_ms": {
+        "mean": 89.20629999920493,
+        "count": 4,
+        "p50": 81.63079999212641,
+        "p95": 132.15588501334423,
+        "p99": 136.1353370177676,
+        "max": 137.13020001887344
+      }
+    },
+    "control_gap_ms": {
+      "mean": 2.964560950414493,
+      "count": 484,
+      "p50": 2.121650002663955,
+      "p95": 5.677980009932069,
+      "p99": 7.853268017643138,
+      "max": 65.94649999169633
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 201457.6281634,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "control_overrun",
+        "at_s": 201457.9251619,
+        "last_capture_s": 201457.802801,
+        "deadline_s": null,
+        "stopped_s": 201457.9271895
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "transport-50ms",
+    "expected": "converged",
+    "outcome": "control_overrun",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 45.66850598955676,
+    "watchdog_lateness_ms": null,
+    "stopped_while_sensor_busy": false,
+    "expected_pass": false,
+    "id": "learned-transport-50ms-00"
+  },
+  {
+    "mode": "natural",
+    "backend": "Picture / SIFT",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.05,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "max_queue_age_s": 0.05,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.0,
+      "render_stall_s": 0.0
+    },
+    "counts": {
+      "captures": 74,
+      "capture_slots": 147,
+      "busy_capture_skips": 73,
+      "input_dropped": 0,
+      "transport_dropped": 0,
+      "stale_results": 0,
+      "obsolete_results": 0,
+      "pre_inference_dropped": 0,
+      "accepted": 40,
+      "control_ticks": 2002,
+      "moving_ticks": 1190,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 0,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "mean": 0.5191724994801916,
+        "count": 40,
+        "p50": 0.48334999883081764,
+        "p95": 0.7852450042264535,
+        "p99": 0.9114930007490328,
+        "max": 0.978299998678267
+      },
+      "render_ms": {
+        "mean": 3.366582495800685,
+        "count": 40,
+        "p50": 3.0549499933840707,
+        "p95": 4.900310000812169,
+        "p99": 7.465009991137774,
+        "max": 9.103399992454797
+      },
+      "inference_ms": {
+        "mean": 70.4313500013086,
+        "count": 40,
+        "p50": 76.61810000718106,
+        "p95": 112.83287499536526,
+        "p99": 134.49802397924938,
+        "max": 146.8252999766264
+      },
+      "ipc_ms": {
+        "mean": 2.8923975020006765,
+        "count": 40,
+        "p50": 2.68990000768099,
+        "p95": 5.258544998650905,
+        "p99": 5.949400010867975,
+        "max": 6.30430001183413
+      },
+      "delivery_wait_ms": {
+        "mean": 48.48780499887653,
+        "count": 40,
+        "p50": 48.55415000929497,
+        "p95": 50.84817999304505,
+        "p99": 51.4968330055126,
+        "max": 51.830400014296174
+      },
+      "control_ms": {
+        "mean": 1.619504999689525,
+        "count": 40,
+        "p50": 1.4791499997954816,
+        "p95": 2.5244649848900726,
+        "p99": 3.9903540050727306,
+        "max": 4.73970000166446
+      },
+      "apply_ms": {
+        "mean": 0.6057999999029562,
+        "count": 40,
+        "p50": 0.5757500039180741,
+        "p95": 1.0843499825568867,
+        "p99": 1.3820179857430046,
+        "max": 1.5121999895200133
+      },
+      "capture_to_command_ms": {
+        "mean": 127.92261249705916,
+        "count": 40,
+        "p50": 135.1003000017954,
+        "p95": 169.97951999655925,
+        "p99": 191.32058999035505,
+        "max": 202.3103999963496
+      }
+    },
+    "control_gap_ms": {
+      "mean": 2.5276959040947675,
+      "count": 2002,
+      "p50": 2.061400009552017,
+      "p95": 5.121850002615246,
+      "p99": 6.347962995641865,
+      "max": 9.837999998126179
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 201461.8689252,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "converged",
+        "at_s": 201465.814354,
+        "last_capture_s": 201465.7585269,
+        "deadline_s": null,
+        "stopped_s": 201465.8145428
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "transport-50ms",
+    "expected": "converged",
+    "outcome": "converged",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 0.15169919878002536,
+    "watchdog_lateness_ms": null,
+    "stopped_while_sensor_busy": false,
+    "expected_pass": true,
+    "id": "natural-transport-50ms-01"
+  },
+  {
+    "mode": "learned",
+    "backend": "Picture / SuperPoint + LightGlue (CUDA)",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.05,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "max_queue_age_s": 0.05,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.0,
+      "render_stall_s": 0.0
+    },
+    "counts": {
+      "captures": 72,
+      "capture_slots": 147,
+      "busy_capture_skips": 75,
+      "input_dropped": 0,
+      "transport_dropped": 0,
+      "stale_results": 0,
+      "obsolete_results": 0,
+      "pre_inference_dropped": 0,
+      "accepted": 38,
+      "control_ticks": 2104,
+      "moving_ticks": 1273,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 0,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "mean": 0.5910421023145318,
+        "count": 38,
+        "p50": 0.530699995579198,
+        "p95": 0.9956399822840459,
+        "p99": 1.5443399836658505,
+        "max": 1.6101999790407717
+      },
+      "render_ms": {
+        "mean": 4.066047368963298,
+        "count": 38,
+        "p50": 3.615249996073544,
+        "p95": 6.213795002258845,
+        "p99": 8.684782998752782,
+        "max": 8.97120000445284
+      },
+      "inference_ms": {
+        "mean": 73.4601447375577,
+        "count": 38,
+        "p50": 72.61244999244809,
+        "p95": 121.69658499187788,
+        "p99": 130.5677180105704,
+        "max": 131.12220002221875
+      },
+      "ipc_ms": {
+        "mean": 2.6298947348933375,
+        "count": 38,
+        "p50": 2.5247500016121194,
+        "p95": 4.721464992326219,
+        "p99": 5.424061989469922,
+        "max": 5.804199987323955
+      },
+      "delivery_wait_ms": {
+        "mean": 48.74851315827599,
+        "count": 38,
+        "p50": 48.736800003098324,
+        "p95": 50.769500008027535,
+        "p99": 52.019522996270105,
+        "max": 52.54199999035336
+      },
+      "control_ms": {
+        "mean": 1.831268422967313,
+        "count": 38,
+        "p50": 1.5801999979885295,
+        "p95": 3.3787299893447185,
+        "p99": 4.813083021144851,
+        "max": 5.140200024470687
+      },
+      "apply_ms": {
+        "mean": 0.5985815797956955,
+        "count": 38,
+        "p50": 0.5564499879255891,
+        "p95": 0.9503299996140405,
+        "p99": 1.45540900004562,
+        "max": 1.4644000038970262
+      },
+      "capture_to_command_ms": {
+        "mean": 131.92549210476787,
+        "count": 38,
+        "p50": 130.59725001221523,
+        "p95": 180.68822999775875,
+        "p99": 188.3765330078313,
+        "max": 188.60560000757687
+      }
+    },
+    "control_gap_ms": {
+      "mean": 2.4137499524705808,
+      "count": 2104,
+      "p50": 2.054100012173876,
+      "p95": 4.699764990073161,
+      "p99": 6.265497011772818,
+      "max": 11.031900008674711
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 201477.5209908,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "converged",
+        "at_s": 201481.4873261,
+        "last_capture_s": 201481.4268251,
+        "deadline_s": null,
+        "stopped_s": 201481.4875498
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "transport-50ms",
+    "expected": "converged",
+    "outcome": "converged",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 0.18213898782497914,
+    "watchdog_lateness_ms": null,
+    "stopped_while_sensor_busy": false,
+    "expected_pass": true,
+    "id": "learned-transport-50ms-01"
+  },
+  {
+    "mode": "natural",
+    "backend": "Picture / SIFT",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.05,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "max_queue_age_s": 0.05,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.0,
+      "render_stall_s": 0.0
+    },
+    "counts": {
+      "captures": 77,
+      "capture_slots": 147,
+      "busy_capture_skips": 70,
+      "input_dropped": 0,
+      "transport_dropped": 0,
+      "stale_results": 0,
+      "obsolete_results": 0,
+      "pre_inference_dropped": 0,
+      "accepted": 43,
+      "control_ticks": 2135,
+      "moving_ticks": 1348,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 0,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "mean": 0.48720464854891044,
+        "count": 43,
+        "p50": 0.4962999955751002,
+        "p95": 0.6520099996123463,
+        "p99": 0.7055860006948933,
+        "max": 0.7062999939080328
+      },
+      "render_ms": {
+        "mean": 4.253727908457392,
+        "count": 43,
+        "p50": 3.3641000045463443,
+        "p95": 7.819550004205664,
+        "p99": 18.393215999822104,
+        "max": 25.050299998838454
+      },
+      "inference_ms": {
+        "mean": 67.28329069555066,
+        "count": 43,
+        "p50": 64.13319997955114,
+        "p95": 106.27935999655165,
+        "p99": 107.39571001380682,
+        "max": 107.9520000203047
+      },
+      "ipc_ms": {
+        "mean": 3.1251744197973936,
+        "count": 43,
+        "p50": 2.7633999998215586,
+        "p95": 6.237690013949757,
+        "p99": 7.380264013190753,
+        "max": 7.6809000165667385
+      },
+      "delivery_wait_ms": {
+        "mean": 48.519444187594104,
+        "count": 43,
+        "p50": 48.63649999606423,
+        "p95": 51.36893000744749,
+        "p99": 54.01326600753236,
+        "max": 55.49490000703372
+      },
+      "control_ms": {
+        "mean": 1.4982534887886412,
+        "count": 43,
+        "p50": 1.3689999759662896,
+        "p95": 2.180799999041483,
+        "p99": 2.4974639993160954,
+        "max": 2.6867999986279756
+      },
+      "apply_ms": {
+        "mean": 0.5038906955485081,
+        "count": 43,
+        "p50": 0.4616000223904848,
+        "p95": 0.8310700126457958,
+        "p99": 0.960693993256427,
+        "max": 1.042299991240725
+      },
+      "capture_to_command_ms": {
+        "mean": 125.6709860442856,
+        "count": 43,
+        "p50": 124.73339997814037,
+        "p95": 163.7394899938954,
+        "p99": 165.54028000915423,
+        "max": 165.78850001678802
+      }
+    },
+    "control_gap_ms": {
+      "mean": 2.3721520374834415,
+      "count": 2135,
+      "p50": 2.054700016742572,
+      "p95": 4.575939997448586,
+      "p99": 6.07025800505653,
+      "max": 9.28679999196902
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 201485.1131305,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "converged",
+        "at_s": 201489.0455742,
+        "last_capture_s": 201488.9892768,
+        "deadline_s": null,
+        "stopped_s": 201489.0459132
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "transport-50ms",
+    "expected": "converged",
+    "outcome": "converged",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 0.18507739000087184,
+    "watchdog_lateness_ms": null,
+    "stopped_while_sensor_busy": false,
+    "expected_pass": true,
+    "id": "natural-transport-50ms-02"
+  },
+  {
+    "mode": "learned",
+    "backend": "Picture / SuperPoint + LightGlue (CUDA)",
+    "config": {
+      "camera_hz": 30.0,
+      "control_hz": 500.0,
+      "max_age_s": 0.4,
+      "transport_s": 0.05,
+      "max_control_gap_s": 0.05,
+      "max_run_s": 120.0,
+      "max_queue_age_s": 0.05,
+      "fault_after_s": 2.0,
+      "inference_stall_s": 0.0,
+      "render_stall_s": 0.0
+    },
+    "counts": {
+      "captures": 68,
+      "capture_slots": 140,
+      "busy_capture_skips": 72,
+      "input_dropped": 0,
+      "transport_dropped": 0,
+      "stale_results": 0,
+      "obsolete_results": 0,
+      "pre_inference_dropped": 0,
+      "accepted": 34,
+      "control_ticks": 1755,
+      "moving_ticks": 967,
+      "unsafe_motion_ticks": 0,
+      "contacts": 0,
+      "post_stop_motion_ticks": 0,
+      "control_deadline_misses": 0,
+      "fault_results": 0,
+      "discarded_physics_s": 0.0
+    },
+    "latency_ms": {
+      "queue_ms": {
+        "mean": 0.9494411788182333,
+        "count": 34,
+        "p50": 0.6765999860363081,
+        "p95": 2.232989984622691,
+        "p99": 2.6991039994754837,
+        "max": 2.8975000022910535
+      },
+      "render_ms": {
+        "mean": 4.8926970561938905,
+        "count": 34,
+        "p50": 4.50190000992734,
+        "p95": 7.729785003175493,
+        "p99": 9.172827982692983,
+        "max": 9.865299973171204
+      },
+      "inference_ms": {
+        "mean": 79.26051176293507,
+        "count": 34,
+        "p50": 80.561349997879,
+        "p95": 128.80986500822473,
+        "p99": 133.7732659970061,
+        "max": 134.0767999936361
+      },
+      "ipc_ms": {
+        "mean": 3.7747470598654163,
+        "count": 34,
+        "p50": 3.3259499905398116,
+        "p95": 5.89738499984378,
+        "p99": 6.326886996394024,
+        "max": 6.49390000035055
+      },
+      "delivery_wait_ms": {
+        "mean": 47.955411764526026,
+        "count": 34,
+        "p50": 47.894899995299056,
+        "p95": 50.53610500472132,
+        "p99": 52.45392100390746,
+        "max": 53.396500006783754
+      },
+      "control_ms": {
+        "mean": 1.843717647716403,
+        "count": 34,
+        "p50": 1.7254499980481341,
+        "p95": 3.078139998251572,
+        "p99": 3.3393089962191884,
+        "max": 3.3896999957505614
+      },
+      "apply_ms": {
+        "mean": 0.6270647059222135,
+        "count": 34,
+        "p50": 0.6188999977894127,
+        "p95": 1.1040350203984415,
+        "p99": 1.349598996166606,
+        "max": 1.4352999860420823
+      },
+      "capture_to_command_ms": {
+        "mean": 139.30359117597726,
+        "count": 34,
+        "p50": 143.75694999762345,
+        "p95": 187.01656500052195,
+        "p99": 194.1885280032875,
+        "max": 196.2636999960523
+      }
+    },
+    "control_gap_ms": {
+      "mean": 2.759826552713863,
+      "count": 1755,
+      "p50": 2.099699981044978,
+      "p95": 5.359660007525235,
+      "p99": 6.859144005575217,
+      "max": 11.031000001821667
+    },
+    "events": [
+      {
+        "kind": "align",
+        "at_s": 201500.4279475,
+        "generation": 1
+      },
+      {
+        "kind": "stop",
+        "reason": "converged",
+        "at_s": 201504.1620677,
+        "last_capture_s": 201504.1040517,
+        "deadline_s": null,
+        "stopped_s": 201504.1623087
+      }
+    ],
+    "error": null,
+    "worker_alive": false,
+    "profile": "transport-50ms",
+    "expected": "converged",
+    "outcome": "converged",
+    "offset_degrees": [
+      3.0,
+      -3.0,
+      4.0,
+      3.0,
+      -2.0,
+      2.0
+    ],
+    "final_error_px": 0.16479344548341124,
+    "watchdog_lateness_ms": null,
+    "stopped_while_sensor_busy": false,
+    "expected_pass": true,
+    "id": "learned-transport-50ms-02"
+  }
+]

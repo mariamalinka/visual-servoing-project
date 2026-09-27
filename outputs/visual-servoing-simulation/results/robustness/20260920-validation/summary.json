@@ -1,0 +1,413 @@
+[
+  {
+    "mode": "aruco",
+    "profile": "baseline",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 2,
+    "expected_outcomes": 2,
+    "safety_violations": 0,
+    "outcomes": {
+      "converged": 2
+    },
+    "median_success_s": 4.185999999999761,
+    "p95_success_s": 4.7403999999997,
+    "p95_final_error_px": 0.9689733684062958,
+    "median_joint_travel_rad": 0.3692179118541229
+  },
+  {
+    "mode": "aruco",
+    "profile": "delay-100",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 2,
+    "expected_outcomes": 2,
+    "safety_violations": 0,
+    "outcomes": {
+      "converged": 2
+    },
+    "median_success_s": 3.9029999999997917,
+    "p95_success_s": 4.413299999999736,
+    "p95_final_error_px": 0.8954839318990707,
+    "median_joint_travel_rad": 0.3872940660553492
+  },
+  {
+    "mode": "aruco",
+    "profile": "delay-200",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 2,
+    "expected_outcomes": 2,
+    "safety_violations": 0,
+    "outcomes": {
+      "converged": 2
+    },
+    "median_success_s": 3.5689999999998285,
+    "p95_success_s": 3.9892999999997825,
+    "p95_final_error_px": 0.7859791219234467,
+    "median_joint_travel_rad": 0.41618204281839744
+  },
+  {
+    "mode": "aruco",
+    "profile": "jitter",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 2,
+    "expected_outcomes": 2,
+    "safety_violations": 0,
+    "outcomes": {
+      "converged": 2
+    },
+    "median_success_s": 4.029999999999778,
+    "p95_success_s": 4.515999999999725,
+    "p95_final_error_px": 0.9291473388671875,
+    "median_joint_travel_rad": 0.38307157890371896
+  },
+  {
+    "mode": "aruco",
+    "profile": "drops",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 1,
+    "expected_outcomes": 1,
+    "safety_violations": 0,
+    "outcomes": {
+      "converged": 1,
+      "stale_camera": 1
+    },
+    "median_success_s": 4.4359999999997335,
+    "p95_success_s": 4.4359999999997335,
+    "p95_final_error_px": 0.9020548671483993,
+    "median_joint_travel_rad": 0.387698982069257
+  },
+  {
+    "mode": "aruco",
+    "profile": "combined",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 0,
+    "expected_outcomes": 0,
+    "safety_violations": 0,
+    "outcomes": {
+      "stale_camera": 2
+    },
+    "median_success_s": null,
+    "p95_success_s": null,
+    "p95_final_error_px": 148.71667985916136,
+    "median_joint_travel_rad": 0.05762147937834548
+  },
+  {
+    "mode": "aruco",
+    "profile": "brief-outage",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 2,
+    "expected_outcomes": 2,
+    "safety_violations": 0,
+    "outcomes": {
+      "converged": 2
+    },
+    "median_success_s": 3.885999999999794,
+    "p95_success_s": 4.380999999999739,
+    "p95_final_error_px": 0.9176067143678666,
+    "median_joint_travel_rad": 0.3882037715621096
+  },
+  {
+    "mode": "aruco",
+    "profile": "long-outage",
+    "expected": "stale_camera",
+    "planned": 2,
+    "completed": 2,
+    "converged": 0,
+    "expected_outcomes": 2,
+    "safety_violations": 0,
+    "outcomes": {
+      "stale_camera": 2
+    },
+    "median_success_s": null,
+    "p95_success_s": null,
+    "p95_final_error_px": 50.573095703125,
+    "median_joint_travel_rad": 0.26787222147518475
+  },
+  {
+    "mode": "natural",
+    "profile": "baseline",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 2,
+    "expected_outcomes": 2,
+    "safety_violations": 0,
+    "outcomes": {
+      "converged": 2
+    },
+    "median_success_s": 4.218999999999757,
+    "p95_success_s": 4.7742999999996965,
+    "p95_final_error_px": 0.9621421605348587,
+    "median_joint_travel_rad": 0.36802846350609314
+  },
+  {
+    "mode": "natural",
+    "profile": "delay-100",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 2,
+    "expected_outcomes": 2,
+    "safety_violations": 0,
+    "outcomes": {
+      "converged": 2
+    },
+    "median_success_s": 3.9359999999997886,
+    "p95_success_s": 4.416599999999735,
+    "p95_final_error_px": 0.8356666803359986,
+    "median_joint_travel_rad": 0.38664106870167325
+  },
+  {
+    "mode": "natural",
+    "profile": "delay-200",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 2,
+    "expected_outcomes": 2,
+    "safety_violations": 0,
+    "outcomes": {
+      "converged": 2
+    },
+    "median_success_s": 3.602999999999825,
+    "p95_success_s": 4.023299999999779,
+    "p95_final_error_px": 0.6947931796312332,
+    "median_joint_travel_rad": 0.41294419373666336
+  },
+  {
+    "mode": "natural",
+    "profile": "jitter",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 2,
+    "expected_outcomes": 2,
+    "safety_violations": 0,
+    "outcomes": {
+      "converged": 2
+    },
+    "median_success_s": 4.085999999999772,
+    "p95_success_s": 4.521599999999724,
+    "p95_final_error_px": 0.8857530981302262,
+    "median_joint_travel_rad": 0.38365594734922814
+  },
+  {
+    "mode": "natural",
+    "profile": "drops",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 1,
+    "expected_outcomes": 1,
+    "safety_violations": 0,
+    "outcomes": {
+      "converged": 1,
+      "stale_camera": 1
+    },
+    "median_success_s": 4.501999999999726,
+    "p95_success_s": 4.501999999999726,
+    "p95_final_error_px": 0.7960845351219177,
+    "median_joint_travel_rad": 0.38804544927873397
+  },
+  {
+    "mode": "natural",
+    "profile": "combined",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 0,
+    "expected_outcomes": 0,
+    "safety_violations": 0,
+    "outcomes": {
+      "stale_camera": 2
+    },
+    "median_success_s": null,
+    "p95_success_s": null,
+    "p95_final_error_px": 148.73024492263792,
+    "median_joint_travel_rad": 0.057726684420312806
+  },
+  {
+    "mode": "natural",
+    "profile": "brief-outage",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 2,
+    "expected_outcomes": 2,
+    "safety_violations": 0,
+    "outcomes": {
+      "converged": 2
+    },
+    "median_success_s": 3.9199999999997903,
+    "p95_success_s": 4.414999999999735,
+    "p95_final_error_px": 0.8633020490407943,
+    "median_joint_travel_rad": 0.38725959255485487
+  },
+  {
+    "mode": "natural",
+    "profile": "long-outage",
+    "expected": "stale_camera",
+    "planned": 2,
+    "completed": 2,
+    "converged": 0,
+    "expected_outcomes": 2,
+    "safety_violations": 0,
+    "outcomes": {
+      "stale_camera": 2
+    },
+    "median_success_s": null,
+    "p95_success_s": null,
+    "p95_final_error_px": 50.579541301727296,
+    "median_joint_travel_rad": 0.26821822181132027
+  },
+  {
+    "mode": "learned",
+    "profile": "baseline",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 2,
+    "expected_outcomes": 2,
+    "safety_violations": 0,
+    "outcomes": {
+      "converged": 2
+    },
+    "median_success_s": 9.135999999999742,
+    "p95_success_s": 10.246600000000093,
+    "p95_final_error_px": 0.8549717932939529,
+    "median_joint_travel_rad": 1.3242894583775102
+  },
+  {
+    "mode": "learned",
+    "profile": "delay-100",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 2,
+    "expected_outcomes": 2,
+    "safety_violations": 0,
+    "outcomes": {
+      "converged": 2
+    },
+    "median_success_s": 11.453000000000493,
+    "p95_success_s": 11.918300000000649,
+    "p95_final_error_px": 0.9575857669115067,
+    "median_joint_travel_rad": 1.4888726851859073
+  },
+  {
+    "mode": "learned",
+    "profile": "delay-200",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 0,
+    "expected_outcomes": 0,
+    "safety_violations": 0,
+    "outcomes": {
+      "timeout": 2
+    },
+    "median_success_s": null,
+    "p95_success_s": null,
+    "p95_final_error_px": 1.2539302617311479,
+    "median_joint_travel_rad": 5.259511943512022
+  },
+  {
+    "mode": "learned",
+    "profile": "jitter",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 2,
+    "expected_outcomes": 2,
+    "safety_violations": 0,
+    "outcomes": {
+      "converged": 2
+    },
+    "median_success_s": 7.137999999999436,
+    "p95_success_s": 7.794999999999363,
+    "p95_final_error_px": 0.8896066129207612,
+    "median_joint_travel_rad": 1.110933121486809
+  },
+  {
+    "mode": "learned",
+    "profile": "drops",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 1,
+    "expected_outcomes": 1,
+    "safety_violations": 0,
+    "outcomes": {
+      "converged": 1,
+      "stale_camera": 1
+    },
+    "median_success_s": 15.370000000001802,
+    "p95_success_s": 15.370000000001802,
+    "p95_final_error_px": 0.7493008494377136,
+    "median_joint_travel_rad": 1.3242065901345117
+  },
+  {
+    "mode": "learned",
+    "profile": "combined",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 0,
+    "expected_outcomes": 0,
+    "safety_violations": 0,
+    "outcomes": {
+      "stale_camera": 2
+    },
+    "median_success_s": null,
+    "p95_success_s": null,
+    "p95_final_error_px": 148.69092330932617,
+    "median_joint_travel_rad": 0.060323121659482455
+  },
+  {
+    "mode": "learned",
+    "profile": "brief-outage",
+    "expected": "converged",
+    "planned": 2,
+    "completed": 2,
+    "converged": 2,
+    "expected_outcomes": 2,
+    "safety_violations": 0,
+    "outcomes": {
+      "converged": 2
+    },
+    "median_success_s": 12.386000000000806,
+    "p95_success_s": 13.8710000000013,
+    "p95_final_error_px": 0.6852327585220337,
+    "median_joint_travel_rad": 1.6071793154846277
+  },
+  {
+    "mode": "learned",
+    "profile": "long-outage",
+    "expected": "stale_camera",
+    "planned": 2,
+    "completed": 2,
+    "converged": 0,
+    "expected_outcomes": 2,
+    "safety_violations": 0,
+    "outcomes": {
+      "stale_camera": 2
+    },
+    "median_success_s": null,
+    "p95_success_s": null,
+    "p95_final_error_px": 50.17730135917663,
+    "median_joint_travel_rad": 0.3012428554948752
+  }
+]

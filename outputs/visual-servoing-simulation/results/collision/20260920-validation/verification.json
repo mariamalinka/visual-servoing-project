@@ -1,0 +1,53 @@
+{
+  "verified_utc": "2026-09-20T22:08:04.757347+00:00",
+  "passed": true,
+  "source_assets_references_match_manifest": true,
+  "checks": [
+    {
+      "scope": "Full suite before the localized final Lost view correction; includes scene verification",
+      "tests": 216,
+      "duration_s": 321.302,
+      "passed": true,
+      "log": "full-regression.txt"
+    },
+    {
+      "scope": "Final collision tests, including delayed Lost view memory and rejected-preset preservation",
+      "tests": 18,
+      "duration_s": 4.039,
+      "passed": true,
+      "log": "collision-tests.txt"
+    },
+    {
+      "scope": "Final existing recovery, automatic-start and gain tests",
+      "tests": 28,
+      "duration_s": 31.701,
+      "passed": true,
+      "log": "affected-regression.txt"
+    }
+  ],
+  "collision_trials": 9,
+  "collision_trials_passed": 9,
+  "total_forbidden_contacts": 0,
+  "minimum_clearance_slack_mm": 2.999999999999867,
+  "maximum_post_stop_error_px": 0.9171572923660278,
+  "camera_robustness_smoke": [
+    {
+      "id": "aruco-baseline-0000",
+      "outcome": "converged",
+      "expected_pass": true,
+      "minimum_collision_slack_m": 0.002999999999999923,
+      "forbidden_contacts": 0,
+      "commands_zero_after_stop": true,
+      "stopped_capture_age_s": null
+    },
+    {
+      "id": "aruco-long-outage-0000",
+      "outcome": "stale_camera",
+      "expected_pass": true,
+      "minimum_collision_slack_m": 0.002999999999999923,
+      "forbidden_contacts": 0,
+      "commands_zero_after_stop": true,
+      "stopped_capture_age_s": 0.2500000000000002
+    }
+  ]
+}

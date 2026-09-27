@@ -1,0 +1,39 @@
+{
+  "read_only": true,
+  "executable": "C:\\Users\\marys\\Documents\\Codex\\2026-09-06\\visual-servoing-project\\outputs\\visual-servoing-simulation\\.venv\\Scripts\\python.exe",
+  "profiles": [
+    {
+      "scope": "base",
+      "name": "Base Profile",
+      "power_management": {
+        "status": -160,
+        "message": "NVAPI_SETTING_NOT_FOUND",
+        "name": "",
+        "type": null,
+        "location": null,
+        "current": null,
+        "predefined": null,
+        "predefined_valid": null
+      }
+    },
+    {
+      "scope": "current_global",
+      "name": "Base Profile",
+      "power_management": {
+        "status": -160,
+        "message": "NVAPI_SETTING_NOT_FOUND",
+        "name": "",
+        "type": null,
+        "location": null,
+        "current": null,
+        "predefined": null,
+        "predefined_valid": null
+      }
+    }
+  ],
+  "application_lookup": {
+    "status": -166,
+    "message": "NVAPI_EXECUTABLE_NOT_FOUND",
+    "name": ""
+  }
+}

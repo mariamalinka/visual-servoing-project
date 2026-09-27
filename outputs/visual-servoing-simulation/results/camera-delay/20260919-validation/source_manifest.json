@@ -1,0 +1,37 @@
+{
+  "source_sha256": {
+    "adaptive_gain.py": "0b529c74c553c79675e378874baa81872176aa9422631f147aee75add662a4a7",
+    "app.py": "6a912b983a6b916a4d8956e43edf314a86ff8485b6835afad62e80a616e07d1d",
+    "camera_timing.py": "2914d0da1b5a1f0a7f5bc41659aaff4854b5651240b3033b6617b5072728a67f",
+    "camera_timing_config.json": "20e73da5ca3615d727e35bf854af20b7e34700936526a8e87c19bc572a7a8db2",
+    "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+    "control.py": "6578d9ce47832945d6c99737b2b88004190fc11fbc4bb07f236226758da1fc4a",
+    "gain_config.json": "6186b780e19487b4e1920a3a5538dbc73a0b08488120a70e1253f62e99f65f6a",
+    "joint_limits.py": "4e1f6ac1c609df4aed560b9a4000cd535e607948da9c5b8eef9f9590f1e92648",
+    "joint_limit_config.json": "f8855a46a7aca71867fa730d4ea092686b72267c0351883421f31c574134f841",
+    "learned_feature_config.json": "0145983cbf3bafef87e80ca079628744f69edf175764137e36d373786353a708",
+    "learned_perception.py": "336d6ff1fd7fc3d3832c330bb24b7028da3e68d921d72b371976a126136eff47",
+    "natural_feature_config.json": "284d6107ba8a739fb3c5731ad4545de16d44be48adc6e3ad43f34e08efe4a2fb",
+    "perception.py": "4ba1a47241708674384790097609dc622adf786e31fa38f8a764ec70dcc770ff",
+    "recovery.py": "892268ba82b5e814816b97b14d1e9bfa17d9817768b232e18507094538ac0d32",
+    "recovery_config.json": "32b436f0cc0e4272680f163e76861cf358a50d1dacc9a8ce96d878fd02d6b7c5",
+    "reference_image.py": "3a883d1015831290b07f2b312a086da2d70478fe1cee5b6b4ef6887c7f167f3a",
+    "run_camera_delay_study.py": "4a8cf88b987b10b2b0623d65eb3b65cc9eb0e4f3e9ef87a163d5623f91d67835",
+    "scene.xml": "7bf39021e9dc620cfe1d75dbd9a45a4258adb7ef626ecb523a9f2543ffa95a8d",
+    "simulation.py": "624558ffd180c3da5a1bc56481ec15b159715e5e47d1298aa507d209b31e3683",
+    "startup_search.py": "f99b2dcb9351f5a4bb1e83d18dae0775665f26be74c15fd4939e2732968f94fd",
+    "startup_search_config.json": "72e915e3699b029821ec8a9b85b104330a7bab2a96338a3b0538faf0350d75f9"
+  },
+  "versions": {
+    "numpy": "2.5.2",
+    "opencv-python": "5.0.0.93",
+    "mujoco": "3.12.0",
+    "torch": "2.13.0+cu126",
+    "torchvision": "0.28.0+cu126",
+    "lightglue": "0.0"
+  },
+  "reference_sha256": {
+    "reference/goal.npz": "3d6e7376c549ae47f74fd12ec9a0afc134ae8482301ec2a3ced0d16113dc989d",
+    "reference/natural_goal.npz": "2912b8b45be09dac9351f27cff974c7e2808f372dd2dd0d006be6f0299f5f900"
+  }
+}

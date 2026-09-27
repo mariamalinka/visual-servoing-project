@@ -1,0 +1,113 @@
+{
+  "verified_utc": "2026-09-22T01:06:12.463574+00:00",
+  "source_matches_all_final_manifests": true,
+  "original_stopping_and_quality_gates_preserved": true,
+  "transport_trials_passed": 5,
+  "transport_trials_total": 6,
+  "transport_freshness_trips": 0,
+  "transport_control_deadline_misses": 1,
+  "transport_failures": [
+    {
+      "id": "learned-transport-50ms-00",
+      "outcome": "control_overrun",
+      "control_gap_max_ms": 65.94649999169633,
+      "apply_max_ms": 40.53929998190142
+    }
+  ],
+  "stall_trials_passed": 4,
+  "stall_trials_total": 4,
+  "stall_watchdog_lateness_ms": {
+    "min": 0.9952000109478831,
+    "max": 5.474100005812943
+  },
+  "physical_trials_passed": 12,
+  "physical_trials_total": 12,
+  "post_stop_precision_checks_passed": 360,
+  "worst_post_stop_accuracy": {
+    "natural": {
+      "camera": {
+        "position_error_mm": 0.2608071834548462,
+        "orientation_error_deg": 0.03463418282481715
+      },
+      "tool": {
+        "position_error_mm": 0.2866893629091727,
+        "orientation_error_deg": 0.03463418282482398
+      }
+    },
+    "learned": {
+      "camera": {
+        "position_error_mm": 0.3643838365517684,
+        "orientation_error_deg": 0.0658671080865505
+      },
+      "tool": {
+        "position_error_mm": 0.4341209199098356,
+        "orientation_error_deg": 0.06586710808654674
+      }
+    }
+  },
+  "regression_tests": {
+    "passed": 281,
+    "seconds": 428.753
+  },
+  "tests_sha256": {
+    "outputs/visual-servoing-simulation/tests/test_accuracy.py": "092faed06590d4085022cf97f03e8afba060147240bcf31220cb43a8dc3cbb52",
+    "outputs/visual-servoing-simulation/tests/test_adaptive_gain.py": "09bfa951490780bdd22eaded6cdd6eaa121c616da8c578a6a56cb0e0e921bf7d",
+    "outputs/visual-servoing-simulation/tests/test_alignment_regression.py": "05978425e03946885cdc2ab62b8190b9885e5b88c29c4f3cdd1c8394552ba86e",
+    "outputs/visual-servoing-simulation/tests/test_automatic_start.py": "dea8a3c66779f0ffec3626d1b50bf4beaaec7d87d20f8bc9964c0cc7fbc235d1",
+    "outputs/visual-servoing-simulation/tests/test_baselines.py": "b65cf43c650f3c934c9be875aa3c5773e6cd572712e3697c5d740ed17477741a",
+    "outputs/visual-servoing-simulation/tests/test_benchmark.py": "24a010e1ae3bfdf73e033f4c52705b6d42afe84bc1a3317d461cd06b378e6d8c",
+    "outputs/visual-servoing-simulation/tests/test_calibration_integration.py": "3d6e5353f006aef6758cab49283e15e8fabcb021b01ff5165f3ad6ba5d1943f2",
+    "outputs/visual-servoing-simulation/tests/test_camera_delay_integration.py": "2be473518450c2dd7aacb702692b2ff92971dafcfbd7758aa4273b29241cbaf4",
+    "outputs/visual-servoing-simulation/tests/test_camera_robustness.py": "d7317fed7707fb3669a21e7154df126a9ca89adc4646d5cd0c6bc00ff56ff78d",
+    "outputs/visual-servoing-simulation/tests/test_camera_robustness_integration.py": "c6c7f5fe587a68f9917a079ccbc5b4506653b5005ef8eb2d70af6b2039fa32b5",
+    "outputs/visual-servoing-simulation/tests/test_camera_timing.py": "9f58b506bedc7b1898f32566a93a99bb5fdcd0aaca4370b9f7fd169e69c80cb8",
+    "outputs/visual-servoing-simulation/tests/test_collision.py": "a4e1525e6cf245ae0d48e82f19be87b595d7b02d3d9b9f5510254a4b37ef9555",
+    "outputs/visual-servoing-simulation/tests/test_control.py": "ea063c70df1a490134cd5be0a7306205689fa1c333036e5e31fc72b473689893",
+    "outputs/visual-servoing-simulation/tests/test_depth_refinement.py": "1a2dac67bb72f78740c1322f9d3cb475c03ce7d5df9c1c563f6482ce2e58e68a",
+    "outputs/visual-servoing-simulation/tests/test_joint_limits.py": "566443262a4aa9e65ddcc876102290ad34d2f35e65b1045afbbb0bea618f0f7f",
+    "outputs/visual-servoing-simulation/tests/test_joint_study.py": "f53af7ee9d594e9f7bd31517c7e8ef2c0f378381033bf16ddc50fbefb08a2d3d",
+    "outputs/visual-servoing-simulation/tests/test_learned_device.py": "2ee5e4d77754ce58a21763258f06bd1ccf6e28eb60a131369c803e2099b14046",
+    "outputs/visual-servoing-simulation/tests/test_learned_errors.py": "e92d2b38113e597f2e60b1eaf314f6030657f07f16bedfc442b39837b45e304e",
+    "outputs/visual-servoing-simulation/tests/test_learned_integration.py": "088d847b0dab88dd53cb6024d7e48aaeeb53012ccea4ebe60161100aea1164f1",
+    "outputs/visual-servoing-simulation/tests/test_learned_perception.py": "cd8c249f093c64b28fdf7c96249e16600c3d26ea006794a27a14d9fae5d90689",
+    "outputs/visual-servoing-simulation/tests/test_learned_study.py": "adc10d454d7f6d2a08acbd213706b206e6b26296257bf823408c8f6e4d85c110",
+    "outputs/visual-servoing-simulation/tests/test_natural_integration.py": "b3642d7bdf73066ed093440886aec4e6f5bb2db79a2b656741d4e528f1bcbc1d",
+    "outputs/visual-servoing-simulation/tests/test_natural_perception.py": "a9c698550ac30a6fe0f30a3527cd73856e6bf8d91b7817c0d6c636cdd1d5959f",
+    "outputs/visual-servoing-simulation/tests/test_natural_study.py": "3d8d932747b1900c26cad0f4f82e976595da6563af9cb16affe4ba11eca338e8",
+    "outputs/visual-servoing-simulation/tests/test_precision.py": "19e7bc5ecaf828645db7323cd13a86196d60b1144715734194254a8b98ef57b4",
+    "outputs/visual-servoing-simulation/tests/test_precision_integration.py": "3799fa7fd6cc33ee8533be6b9775206c97f9955db9868c721df03151068b3c02",
+    "outputs/visual-servoing-simulation/tests/test_realtime.py": "e914a91bd87f1e8700d6cd936c32adebca9be99f8bb84422fb18e95597543ea7",
+    "outputs/visual-servoing-simulation/tests/test_recovery.py": "355e97d1ec71481badb31ff225727d54fd2eaa46aa94466a02bdcc73e0dab4df",
+    "outputs/visual-servoing-simulation/tests/test_search_coverage.py": "1f936dd2c247bc155686f5436a58e4515b1257f7cda7cd41de20efd40de853a3",
+    "outputs/visual-servoing-simulation/tests/test_search_coverage_study.py": "789b73d7f545c2372f5373fe6e3de205105fd567ca67e234684b5058ce46e007",
+    "outputs/visual-servoing-simulation/tests/test_startup_search.py": "436cf1ac0a45800983f83ac7b15467605caf6b098224e4b0fe8033f04a4f835b"
+  },
+  "evidence_sha256": {
+    "outputs/visual-servoing-simulation/results/latency/20260921-tail-optimization/full-tests.txt": "9c2b800e3c687877cc546d02b803fb0f12efad39c77bf075fc786d5f871eb962",
+    "outputs/visual-servoing-simulation/results/latency/20260921-tail-optimization/worker-termination-before.txt": "308056e3afab4f17f3d6404747a8455ac4086c71845f6f84c3f7f48cfe2bb932",
+    "outputs/visual-servoing-simulation/results/latency/tail-before-profiled/manifest.json": "22a7f71246f67e661960a6b60788162f7c1e505e4b6f72bd069fe3757b94c9b0",
+    "outputs/visual-servoing-simulation/results/latency/tail-before-profiled/natural-transport-50ms-00.json": "144714e746d7121537201611642355a152704a7f3c2b7f875eb15ff39eb5f7e9",
+    "outputs/visual-servoing-simulation/results/latency/tail-before-profiled/learned-transport-50ms-00.json": "71eb5e398de9f0ccc7613655092ae0f945470ea7448cb90d0f3a0b165dbce8c2",
+    "outputs/visual-servoing-simulation/results/latency/tail-before-profiled/natural-transport-50ms-01.json": "704672b8843f16205c3ed5406c56c5092ea76727ef5c3d9791dd4d2c13316154",
+    "outputs/visual-servoing-simulation/results/latency/tail-before-profiled/learned-transport-50ms-01.json": "4a5742af309af16e3f274761e4e9bb089f9e3b6677238cfd1a031b150ae5c67e",
+    "outputs/visual-servoing-simulation/results/latency/tail-before-profiled/natural-transport-50ms-02.json": "1ba2de47f32a840c861dcf3d27e51ac4f7cc83ec34b58cd96fbb551f5c9fa847",
+    "outputs/visual-servoing-simulation/results/latency/tail-before-profiled/learned-transport-50ms-02.json": "4d3c4b0524ca742696dad0ed36a5ad7b7c313a136ab8a5dc7c1d3ebb623d0ca0",
+    "outputs/visual-servoing-simulation/results/latency/tail-after-final-v2/manifest.json": "fd010c9def4cc6c4245ba8bba5a8885a30e0ab4e91c2f6674345b292ff445d71",
+    "outputs/visual-servoing-simulation/results/latency/tail-after-final-v2/natural-transport-50ms-00.json": "df65dcaed60dac637c6d2ba86459163f00db12aba3a66692778786a5f6033cf2",
+    "outputs/visual-servoing-simulation/results/latency/tail-after-final-v2/learned-transport-50ms-00.json": "51a64593d610a66950f0591a0e71c9a8a1a803782eefb8fb2cebb1e66c0b44cd",
+    "outputs/visual-servoing-simulation/results/latency/tail-after-final-v2/natural-transport-50ms-01.json": "75ed293a2cf5a06da9a4f5a0d00cea52a580199ed5e3545f509a7f4052567d53",
+    "outputs/visual-servoing-simulation/results/latency/tail-after-final-v2/learned-transport-50ms-01.json": "42402e51d40e2bf1e1e3adee2e02b890b396806e44aff1d79e030c044004f46f",
+    "outputs/visual-servoing-simulation/results/latency/tail-after-final-v2/natural-transport-50ms-02.json": "a6adcf93e74f3c4e020457bccf5b6aad6c24c5e52388f93779586bd0b776a6fc",
+    "outputs/visual-servoing-simulation/results/latency/tail-after-final-v2/learned-transport-50ms-02.json": "080e95371c27793e9685c957eeec214734b90876cd030c72d5e3abc34328118f",
+    "outputs/visual-servoing-simulation/results/latency/tail-stall-validation-v2/manifest.json": "9a28d270edca2e56135b50438c1352ea4fd28df1c4a3cb14f63e0c6956fa6fad",
+    "outputs/visual-servoing-simulation/results/latency/tail-stall-validation-v2/natural-inference-stall-00.json": "cea4ad8582f74a0489a81c237c48f779bd677791a24cfde074573c4da893e03c",
+    "outputs/visual-servoing-simulation/results/latency/tail-stall-validation-v2/natural-render-stall-00.json": "e861cc66e5534e0a2be229609bad8460093d9b3bd814843ef97230557b84bb2b",
+    "outputs/visual-servoing-simulation/results/latency/tail-stall-validation-v2/learned-inference-stall-00.json": "501ac97d44424c794f604da7e81da539ed2098d3482a20f36e115445f1e76478",
+    "outputs/visual-servoing-simulation/results/latency/tail-stall-validation-v2/learned-render-stall-00.json": "1e17d2ee1ad308364f6aa9d075030c568e04095b541b83a2d9a8acfa84eef7f2",
+    "outputs/visual-servoing-simulation/results/accuracy/20260922-tail-precision/manifest.json": "5ceab9b431577ff6f22d3c7afa659c9e75f4d5fffc0f842b4cd8cb5de7ccb6af",
+    "outputs/visual-servoing-simulation/results/accuracy/20260922-tail-precision/plan.json": "1eb924a5f5279977ca271c8296f43f9c0d434e28f9fb04e1c6f4756042c28dfd",
+    "outputs/visual-servoing-simulation/results/accuracy/20260922-tail-precision/trials.json": "fb8eda9b2d4ced657cd2ddbc9aa2f10896d06b00b014d66592af3b8a1b738d62",
+    "outputs/visual-servoing-simulation/results/latency/20260921-tail-optimization/comparison.json": "4b976c7562eef182eb697578ec5bb2d4738ecf46e7b6180cea58028b57a10da1",
+    "outputs/visual-servoing-simulation/results/latency/20260921-tail-optimization/refinement-probe.json": "73e8311aff91e8d3641a51493a6d18cecfd0def2b8beb02cb4374d10df28b2f6"
+  }
+}

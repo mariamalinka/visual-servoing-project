@@ -1,0 +1,3529 @@
+{
+  "probes": {
+    "20260923-replay-ablation": {
+      "raw_sha256": "ec4c3b59faefbe38912833bcb46806153ba4f069884c31b1d621d9f028c412af",
+      "excluded_from_campaign": true,
+      "fingerprint": {
+        "sha256": {
+          "accuracy.py": "f2864e7270fa4c4c803978cb22123455b5c48f15f20954a8e0229e496eae06a2",
+          "accuracy_config.json": "5bd6bff53bb728bede80fe73b244c545fbd282dbe83d97d14f04d21f6bb8a1d0",
+          "adaptive_gain.py": "0b529c74c553c79675e378874baa81872176aa9422631f147aee75add662a4a7",
+          "analyze_benchmark.py": "51e9d4c4070267e608949804aaf1cf6a98b8568d7b56277404d571d9d8e19344",
+          "analyze_comparison.py": "f45f2b6764eece1c0fd907262760e1d5d9872349f37b6440f522c5439e512b5e",
+          "analyze_gain_study.py": "fe1dc1e97b71de44f3a10430567e5c8b1d22ea2ffba0e86749680c3c284a9709",
+          "app.py": "b668c0a3da6bb056488bc6c3e99f3e10905e9e2169f101851ac8929a67bd852a",
+          "assets/marker.png": "ab2472414444ee33daf910b6d1e3048c2cd1409cc5b9c6838ea203a7e9744a40",
+          "assets/natural-board.png": "851e7345adfb70a0fcb4e95dde970d6d9007d1cdb209e64188635acc33c9b067",
+          "assets/natural-target-source.json": "4d680aa45427481d7328ae8d43c22c0a198443c16888d97c02bdd22eda3bc077",
+          "assets/natural-target-source.png": "f3d7a2eaf08f24345610851cb23574982ca55fdb75a4cf99b2a1c2668cce89c8",
+          "assets/natural-target.png": "6dc880cf2c20520b9b0dba3aa30f3accce6379d2d61e5edaa9ea4f44a030f8ab",
+          "baselines.py": "50f381af192e33a195b2cc481f88bd0818cac85072cab81ea679f33b83dd653d",
+          "benchmark.py": "1be0fc0dff13a7474b9dbef6acec64ead0137c773f57cde4462620ea9bd96de7",
+          "benchmark_config.json": "4e873ce4baed5efb76c9550bffbd261dc2677b13626c09b0de138ed6b7d07700",
+          "benchmark_learned.py": "e945838fbfce52944752319aeddb28fa0d90fdb262ccdea735c9f7ac57626f92",
+          "calibration.py": "c97eecc65705b7b0d9c77f80378d634bd9f3f93213c74d31b1a1e97763551dbe",
+          "camera_robustness.py": "f7d84677008b00e9d8a2517a8620668fcab82effedc1d2f31d05ff9d88c71b07",
+          "camera_timing.py": "8af033010df94fc96fad141b41c94ea3ca1d5162aed09865c6af43f05c467778",
+          "camera_timing_config.json": "20e73da5ca3615d727e35bf854af20b7e34700936526a8e87c19bc572a7a8db2",
+          "collision.py": "eef38870829cdf96a9cb6c8a8d6a0af56c9b7289ae0dcf64e9cdf132e005f662",
+          "collision_config.json": "9fdaf7af4437dae7ea78467a37c9680ab8bed4c7d754d5684ef78963337fd6fb",
+          "compare_controllers.py": "572f8daab2e0b00ed9c39f32129b3a02331d45cc5db0f21a220282fd08716620",
+          "comparison_config.json": "4e1b8e7ab84c08b0ede5de60ce961abf9c72ace5d727a96e8d13d0e2dadb610f",
+          "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+          "control.py": "1f59a1942ec7bce375f7ec7b648cc59f8fc4b0103e85fd515f2e89e4d8e89fe7",
+          "deadline_diagnostics.py": "2477d4908e03926bb6e1e2118950b7765b1a03419bbc3726b71a953bb6fc2653",
+          "download_learned_models.py": "13692f9c1db7d7337943363be008ab49b842fe112dff231c665a21df0df0a404",
+          "gain_config.json": "6186b780e19487b4e1920a3a5538dbc73a0b08488120a70e1253f62e99f65f6a",
+          "joint_limit_config.json": "f8855a46a7aca71867fa730d4ea092686b72267c0351883421f31c574134f841",
+          "joint_limits.py": "3d5e0c8d18c88c7d7d3bafedbd1c4ac8701947240c249ce528f95f32808291d3",
+          "latency_stress.py": "497d416fc92cbbd1f3e13ac9256280e29f2cf2aaa9a4f071e362042082be0406",
+          "learned_feature_config.json": "0145983cbf3bafef87e80ca079628744f69edf175764137e36d373786353a708",
+          "learned_perception.py": "e05531e17c54cc789b437df888daec2b37de835b33d5615e3db1e110ce8f676a",
+          "models/manifest.json": "4ce943f21304b7934d724250c0bb1dac2839ab43975d202a008404c8e190692e",
+          "motion_path.py": "27f8657b1af0154532a790a7e91f3a0fec11a355ac99cef397c315def74817f7",
+          "natural_feature_config.json": "284d6107ba8a739fb3c5731ad4545de16d44be48adc6e3ad43f34e08efe4a2fb",
+          "perception.py": "34e74c605b5e349a714d7cdf67a5c1e4322f2252a919450944abb182972bfb94",
+          "precision.py": "c249a34cc121835f6fcbcacdfce6ad6034ea5cbca2706aec9bae4e0640752561",
+          "precision_config.json": "bb7749276bf39d39e3c980d7d14e549f2e8f26f9b9480736f6f99891ef5027b7",
+          "prepare_natural_reference.py": "1dab76acce145061258c965f84b63c42723c466b19723056630367c7fb705df9",
+          "realtime.py": "4bf7873258a6d8f20fd86794e2b8e26392335edb772ca657fc67453f5f3bd1f6",
+          "realtime_app.py": "008b6cc5ac59d2162120e701c9f167c5c43c46240fb3170859d317c696496b7c",
+          "record_joint_limit_demo.py": "d4ca6b29e1c257c3633d44f0edda3eb6b1841a97caad934f14b18178124b808e",
+          "record_learned_demo.py": "10dba7fe0733e456fb0c66aae55e0f15a4255efbb0ee44d346361d572171ad13",
+          "record_natural_image_demo.py": "4bfa0237874a299b45e1a7766a22ed9472d3a8eb11b55358b2e77f023e80302d",
+          "record_recovery_demo.py": "652d43ec930db88d118d708cf1afab2ab53d1b6fe4c168173745440d9fcb6dee",
+          "record_search_coverage_demo.py": "f50572e34d2ec245b7b692ee4187db337366d9bb4a907dfe75a6469c4f7576fc",
+          "record_startup_demo.py": "f015ae73cb59c05ad8503d3ee276f1c7199ed6e74ba618e6ecdb8e4623b8b7d2",
+          "recovery.py": "7562013287a778fcc2f546707f1a7d3f2aed122b13c44439ff1690cad7c815c4",
+          "recovery_config.json": "32b436f0cc0e4272680f163e76861cf358a50d1dacc9a8ce96d878fd02d6b7c5",
+          "reference/goal.npz": "3d6e7376c549ae47f74fd12ec9a0afc134ae8482301ec2a3ced0d16113dc989d",
+          "reference/natural_goal.npz": "2912b8b45be09dac9351f27cff974c7e2808f372dd2dd0d006be6f0299f5f900",
+          "reference/natural_goal.png": "06c39b9e7a003b8653f852bc8cad643bb2aed3b718ddcc3aa475c93d85ded0c4",
+          "reference_image.py": "3a883d1015831290b07f2b312a086da2d70478fe1cee5b6b4ef6887c7f167f3a",
+          "robustness_config.json": "63f6b7a3a010c8de08e074b0e2c2f12b1faa9334b34127789f836862e58ad6fc",
+          "run_accuracy_study.py": "d59ff73a87282acfd80e0b4d88496d60910e4ea2eac68d3714793c8d1a3e68ca",
+          "run_alignment.py": "8c2db501849396eeab0ed2e3870862741f62612bb0e794d5122aeeffafd879b1",
+          "run_camera_delay_study.py": "76e7884b521792ec22bdbe2ca5802448abd1d94228e28e576f1e052ef12054c6",
+          "run_camera_robustness.py": "54df8320e59790b144f6d5db583a72670cabf559950daf5503721acd0c568ff5",
+          "run_collision_study.py": "5272275f5086f5d060a8f3332507a85841d03ec5e4e31cb5ec8450261b01a46e",
+          "run_gain_study.py": "013d266ae42575f3f343687083bb78ac3f2d4e1631a7965c719679df7ff0e760",
+          "run_joint_limit_study.py": "5cb174d40d4b67166b9ed4bec97ea910584377e41eb918604181655efe53a3c8",
+          "run_latency_stress.py": "7e6f8776b4abbd7f10835091e8e28316220ebdb56008e51c85e9d040806884e5",
+          "run_latency_study.py": "fe41cf48723c7ee6f31c19cff6946b5de7dfb94332d75c3553ba35295c4b4fe6",
+          "run_learned_study.py": "8e45a62729df0d4906524a533bae7e1a11f72ae2e3d83625de271e02308a57d3",
+          "run_natural_image_study.py": "ef9a56e1a55fcff194bf640ad5a584efbaf763203a31a008fe9c90b6d77e4815",
+          "run_recovery.py": "32b6a95b97331b629fc8aafcf86f3ec566010d3ce4f06aac99aee10aef8354d7",
+          "run_search_coverage.py": "b530c1d9a5048f9fc92d5b510e8c00cf3bac3d2d65454f6ab410e7370571dda7",
+          "run_startup_search.py": "48a6f8d4f58c3f6d4438a889a9e1cacd4f3be30e0510afbd0bde1e0a143050cb",
+          "scene.xml": "c390e02323a4d93c4ee6165ed602de1711a7d23c79e5d739fc7d536f70f24e04",
+          "setup_learned.py": "1f32b684efd666668385d3acd726dc2f564b76ee9fd4cb758e3bf1ea3b46b214",
+          "simulation.py": "fdaab73e8d7305cc10c94e42e7865ee05b4d86bea46c6930287c00c91346f160",
+          "startup_search.py": "9e3b1ca1389bd4bb0b57a4f9827ebfdccb3152ea28321b8ade86773c5677bd28",
+          "startup_search_config.json": "72e915e3699b029821ec8a9b85b104330a7bab2a96338a3b0538faf0350d75f9",
+          "verify.py": "de16dd2b666fdd89f286f60ae3f6255b8559703f7c8cbfde4a47d95f6ceb4647",
+          "verify_learned_repair.py": "14b7b1211f98ae6ad930a00bbe91f9ec83ea43117b4c3e4f6f2c508d6b68c0f4"
+        },
+        "runtime": {
+          "python": "3.12.14",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "numpy": "2.5.2",
+          "opencv-python": "5.0.0.93",
+          "mujoco": "3.12.0",
+          "matplotlib": "3.11.1",
+          "pillow": "12.3.0",
+          "torch": "2.13.0+cu126",
+          "torchvision": "0.28.0+cu126",
+          "lightglue": "0.0"
+        }
+      },
+      "tool_sha256": null,
+      "environment": {
+        "KMP_BLOCKTIME": null,
+        "OMP_WAIT_POLICY": null,
+        "OMP_NUM_THREADS": "16",
+        "CUDA_LAUNCH_BLOCKING": null
+      },
+      "options": {
+        "alternate_stream": false,
+        "device_cast": false,
+        "benchmark": null,
+        "channels_last": null,
+        "blas_lt": null,
+        "graphs": null,
+        "prerender": null,
+        "ablation": true
+      },
+      "before": {
+        "model": "1eb75680d5b19595e3219bc537d95d34ed2a91ed8e1a7bb4bdaf6d7ddad7f9a4",
+        "template": "9b8c33d3cf1b7d1860c877bdfa14cec90b1447bda28928cb9f5fce27c1a934c4",
+        "stream": 0,
+        "threads": 8,
+        "training": [
+          false,
+          false
+        ],
+        "memory": {
+          "allocated_bytes.all.current": 61406208,
+          "reserved_bytes.all.current": 186646528,
+          "active_bytes.all.current": 61406208,
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        },
+        "blocktime_ms": 200
+      },
+      "after": {
+        "model": "1eb75680d5b19595e3219bc537d95d34ed2a91ed8e1a7bb4bdaf6d7ddad7f9a4",
+        "template": "9b8c33d3cf1b7d1860c877bdfa14cec90b1447bda28928cb9f5fce27c1a934c4",
+        "stream": 0,
+        "threads": 8,
+        "training": [
+          false,
+          false
+        ],
+        "memory": {
+          "allocated_bytes.all.current": 61406208,
+          "reserved_bytes.all.current": 186646528,
+          "active_bytes.all.current": 61406208,
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        },
+        "blocktime_ms": 0
+      },
+      "cohorts": {
+        "first_30s": {
+          "count": 242,
+          "mean": 91.90875165427127,
+          "p50": 84.43665003869683,
+          "p95": 177.39193502929987,
+          "p99": 221.6262610064587,
+          "p99_9": 233.27111782197616,
+          "max": 234.4940000330098
+        },
+        "later": {
+          "count": 1151,
+          "mean": 147.111162815118,
+          "p50": 128.1264999997802,
+          "p95": 266.1639500001911,
+          "p99": 310.1520000200253,
+          "p99_9": 335.5396299710268,
+          "max": 377.65020004007965
+        }
+      },
+      "memory_over_unprofiled_frames": {
+        "allocated_bytes.all.current": {
+          "min": 61406208,
+          "max": 61406208
+        },
+        "reserved_bytes.all.current": {
+          "min": 186646528,
+          "max": 186646528
+        },
+        "num_alloc_retries": {
+          "min": 0,
+          "max": 0
+        },
+        "num_ooms": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "phases": {
+        "0": {
+          "phase": "baseline",
+          "blocktime_ms": [
+            200
+          ],
+          "processing_ms": {
+            "count": 302,
+            "mean": 98.56586722003308,
+            "p50": 85.88665002025664,
+            "p95": 192.18301496875938,
+            "p99": 229.3884319876088,
+            "p99_9": 299.07861650351026,
+            "max": 313.32600000314415
+          },
+          "process_cpu_ms": {
+            "count": 302,
+            "mean": 710.5753311258278,
+            "p50": 625.0,
+            "p95": 1453.125,
+            "p99": 1577.8125000000002,
+            "p99_9": 1678.0937500000005,
+            "max": 1687.5
+          },
+          "thread_cpu_ms": {
+            "count": 302,
+            "mean": 93.02566225165563,
+            "p50": 78.125,
+            "p95": 187.5,
+            "p99": 234.21875000000014,
+            "p99_9": 276.54687500000017,
+            "max": 281.25
+          },
+          "gap_ms": {
+            "count": 302,
+            "mean": 29.70171787981129,
+            "p50": 0.4298999847378582,
+            "p95": 0.6997499876888466,
+            "p99": 1100.8333769824822,
+            "p99_9": 1100.8943743116688,
+            "max": 1100.8991000126116
+          }
+        },
+        "1": {
+          "phase": "passive",
+          "blocktime_ms": [
+            0
+          ],
+          "processing_ms": {
+            "count": 212,
+            "mean": 153.02619811549414,
+            "p50": 130.63130000955425,
+            "p95": 278.60522499540815,
+            "p99": 312.5771440396781,
+            "p99_9": 319.71736500796396,
+            "max": 319.8619000031613
+          },
+          "process_cpu_ms": {
+            "count": 212,
+            "mean": 151.45931603773585,
+            "p50": 140.625,
+            "p95": 281.25,
+            "p99": 312.5,
+            "p99_9": 365.10937500000074,
+            "max": 375.0
+          },
+          "thread_cpu_ms": {
+            "count": 212,
+            "mean": 134.13915094339623,
+            "p50": 125.0,
+            "p95": 250.0,
+            "p99": 281.25,
+            "p99_9": 305.9062500000005,
+            "max": 312.5
+          },
+          "gap_ms": {
+            "count": 212,
+            "mean": 31.619897640512306,
+            "p50": 0.40520000038668513,
+            "p95": 0.9339149750303436,
+            "p99": 1100.9403809829382,
+            "p99_9": 1103.197171200707,
+            "max": 1103.779700002633
+          }
+        },
+        "2": {
+          "phase": "device_cast",
+          "blocktime_ms": [
+            200
+          ],
+          "processing_ms": {
+            "count": 216,
+            "mean": 150.26235370196108,
+            "p50": 135.0438499939628,
+            "p95": 264.28590003342833,
+            "p99": 306.7897800268838,
+            "p99_9": 330.0857735078902,
+            "max": 333.3553000120446
+          },
+          "process_cpu_ms": {
+            "count": 216,
+            "mean": 144.8929398148148,
+            "p50": 125.0,
+            "p95": 265.625,
+            "p99": 328.125,
+            "p99_9": 368.2812500000008,
+            "max": 375.0
+          },
+          "thread_cpu_ms": {
+            "count": 216,
+            "mean": 130.2806712962963,
+            "p50": 109.375,
+            "p95": 238.28125,
+            "p99": 265.625,
+            "p99_9": 309.1406250000004,
+            "max": 312.5
+          },
+          "gap_ms": {
+            "count": 216,
+            "mean": 31.041790278255508,
+            "p50": 0.41504998807795346,
+            "p95": 0.8688749658176675,
+            "p99": 1101.1593999894103,
+            "p99_9": 1101.646380495804,
+            "max": 1101.7059999867342
+          }
+        },
+        "3": {
+          "phase": "baseline",
+          "blocktime_ms": [
+            200
+          ],
+          "processing_ms": {
+            "count": 236,
+            "mean": 136.63144025337976,
+            "p50": 114.7396499873139,
+            "p95": 248.14435001462698,
+            "p99": 292.605724974419,
+            "p99_9": 295.4379510163563,
+            "max": 295.9440000122413
+          },
+          "process_cpu_ms": {
+            "count": 236,
+            "mean": 955.1112288135594,
+            "p50": 859.375,
+            "p95": 1597.65625,
+            "p99": 1666.40625,
+            "p99_9": 1699.4531250000002,
+            "max": 1703.125
+          },
+          "thread_cpu_ms": {
+            "count": 236,
+            "mean": 130.16419491525423,
+            "p50": 109.375,
+            "p95": 234.375,
+            "p99": 281.25,
+            "p99_9": 293.2031250000002,
+            "max": 296.875
+          },
+          "gap_ms": {
+            "count": 236,
+            "mean": 28.435061862830356,
+            "p50": 0.4401999758556485,
+            "p95": 0.7897249888628721,
+            "p99": 1100.8632849814603,
+            "p99_9": 1101.7328190008993,
+            "max": 1101.9124999875203
+          }
+        },
+        "4": {
+          "phase": "device_cast",
+          "blocktime_ms": [
+            200
+          ],
+          "processing_ms": {
+            "count": 211,
+            "mean": 153.46710474155313,
+            "p50": 135.42790000792593,
+            "p95": 257.909549982287,
+            "p99": 323.39557996601803,
+            "p99_9": 368.1025710213007,
+            "max": 377.65020004007965
+          },
+          "process_cpu_ms": {
+            "count": 211,
+            "mean": 148.1042654028436,
+            "p50": 140.625,
+            "p95": 273.4375,
+            "p99": 312.5,
+            "p99_9": 633.4375000000083,
+            "max": 718.75
+          },
+          "thread_cpu_ms": {
+            "count": 211,
+            "mean": 131.88684834123222,
+            "p50": 125.0,
+            "p95": 234.375,
+            "p99": 265.625,
+            "p99_9": 293.59375000000034,
+            "max": 296.875
+          },
+          "gap_ms": {
+            "count": 211,
+            "mean": 31.805149286707326,
+            "p50": 0.4154000198468566,
+            "p95": 0.9173999715130776,
+            "p99": 1100.9289099893067,
+            "p99_9": 1101.5421160199912,
+            "max": 1101.6724000219256
+          }
+        },
+        "5": {
+          "phase": "passive",
+          "blocktime_ms": [
+            0
+          ],
+          "processing_ms": {
+            "count": 216,
+            "mean": 149.42209722088322,
+            "p50": 130.62735000858083,
+            "p95": 258.86907502717804,
+            "p99": 295.9497050294885,
+            "p99_9": 331.3102969780453,
+            "max": 335.92509996378794
+          },
+          "process_cpu_ms": {
+            "count": 216,
+            "mean": 147.0630787037037,
+            "p50": 125.0,
+            "p95": 253.90625,
+            "p99": 312.5,
+            "p99_9": 340.3906250000004,
+            "max": 343.75
+          },
+          "thread_cpu_ms": {
+            "count": 216,
+            "mean": 132.8125,
+            "p50": 125.0,
+            "p95": 234.375,
+            "p99": 278.9062499999999,
+            "p99_9": 305.7812500000008,
+            "max": 312.5
+          },
+          "gap_ms": {
+            "count": 216,
+            "mean": 31.008333334520337,
+            "p50": 0.41370000690221786,
+            "p95": 0.7585249695694074,
+            "p99": 1100.9170250268653,
+            "p99_9": 1101.2091214917018,
+            "max": 1101.239199982956
+          }
+        }
+      },
+      "profiles": {}
+    },
+    "20260923-replay-baseline": {
+      "raw_sha256": "79e6f5e575ca27adcfd45bb09512e38a7548034f1a49d4f67eb9b78e6d7addc0",
+      "excluded_from_campaign": true,
+      "fingerprint": {
+        "sha256": {
+          "accuracy.py": "f2864e7270fa4c4c803978cb22123455b5c48f15f20954a8e0229e496eae06a2",
+          "accuracy_config.json": "5bd6bff53bb728bede80fe73b244c545fbd282dbe83d97d14f04d21f6bb8a1d0",
+          "adaptive_gain.py": "0b529c74c553c79675e378874baa81872176aa9422631f147aee75add662a4a7",
+          "analyze_benchmark.py": "51e9d4c4070267e608949804aaf1cf6a98b8568d7b56277404d571d9d8e19344",
+          "analyze_comparison.py": "f45f2b6764eece1c0fd907262760e1d5d9872349f37b6440f522c5439e512b5e",
+          "analyze_gain_study.py": "fe1dc1e97b71de44f3a10430567e5c8b1d22ea2ffba0e86749680c3c284a9709",
+          "app.py": "b668c0a3da6bb056488bc6c3e99f3e10905e9e2169f101851ac8929a67bd852a",
+          "assets/marker.png": "ab2472414444ee33daf910b6d1e3048c2cd1409cc5b9c6838ea203a7e9744a40",
+          "assets/natural-board.png": "851e7345adfb70a0fcb4e95dde970d6d9007d1cdb209e64188635acc33c9b067",
+          "assets/natural-target-source.json": "4d680aa45427481d7328ae8d43c22c0a198443c16888d97c02bdd22eda3bc077",
+          "assets/natural-target-source.png": "f3d7a2eaf08f24345610851cb23574982ca55fdb75a4cf99b2a1c2668cce89c8",
+          "assets/natural-target.png": "6dc880cf2c20520b9b0dba3aa30f3accce6379d2d61e5edaa9ea4f44a030f8ab",
+          "baselines.py": "50f381af192e33a195b2cc481f88bd0818cac85072cab81ea679f33b83dd653d",
+          "benchmark.py": "1be0fc0dff13a7474b9dbef6acec64ead0137c773f57cde4462620ea9bd96de7",
+          "benchmark_config.json": "4e873ce4baed5efb76c9550bffbd261dc2677b13626c09b0de138ed6b7d07700",
+          "benchmark_learned.py": "e945838fbfce52944752319aeddb28fa0d90fdb262ccdea735c9f7ac57626f92",
+          "calibration.py": "c97eecc65705b7b0d9c77f80378d634bd9f3f93213c74d31b1a1e97763551dbe",
+          "camera_robustness.py": "f7d84677008b00e9d8a2517a8620668fcab82effedc1d2f31d05ff9d88c71b07",
+          "camera_timing.py": "8af033010df94fc96fad141b41c94ea3ca1d5162aed09865c6af43f05c467778",
+          "camera_timing_config.json": "20e73da5ca3615d727e35bf854af20b7e34700936526a8e87c19bc572a7a8db2",
+          "collision.py": "eef38870829cdf96a9cb6c8a8d6a0af56c9b7289ae0dcf64e9cdf132e005f662",
+          "collision_config.json": "9fdaf7af4437dae7ea78467a37c9680ab8bed4c7d754d5684ef78963337fd6fb",
+          "compare_controllers.py": "572f8daab2e0b00ed9c39f32129b3a02331d45cc5db0f21a220282fd08716620",
+          "comparison_config.json": "4e1b8e7ab84c08b0ede5de60ce961abf9c72ace5d727a96e8d13d0e2dadb610f",
+          "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+          "control.py": "1f59a1942ec7bce375f7ec7b648cc59f8fc4b0103e85fd515f2e89e4d8e89fe7",
+          "deadline_diagnostics.py": "2477d4908e03926bb6e1e2118950b7765b1a03419bbc3726b71a953bb6fc2653",
+          "download_learned_models.py": "13692f9c1db7d7337943363be008ab49b842fe112dff231c665a21df0df0a404",
+          "gain_config.json": "6186b780e19487b4e1920a3a5538dbc73a0b08488120a70e1253f62e99f65f6a",
+          "joint_limit_config.json": "f8855a46a7aca71867fa730d4ea092686b72267c0351883421f31c574134f841",
+          "joint_limits.py": "3d5e0c8d18c88c7d7d3bafedbd1c4ac8701947240c249ce528f95f32808291d3",
+          "latency_stress.py": "497d416fc92cbbd1f3e13ac9256280e29f2cf2aaa9a4f071e362042082be0406",
+          "learned_feature_config.json": "0145983cbf3bafef87e80ca079628744f69edf175764137e36d373786353a708",
+          "learned_perception.py": "e05531e17c54cc789b437df888daec2b37de835b33d5615e3db1e110ce8f676a",
+          "models/manifest.json": "4ce943f21304b7934d724250c0bb1dac2839ab43975d202a008404c8e190692e",
+          "motion_path.py": "27f8657b1af0154532a790a7e91f3a0fec11a355ac99cef397c315def74817f7",
+          "natural_feature_config.json": "284d6107ba8a739fb3c5731ad4545de16d44be48adc6e3ad43f34e08efe4a2fb",
+          "perception.py": "34e74c605b5e349a714d7cdf67a5c1e4322f2252a919450944abb182972bfb94",
+          "precision.py": "c249a34cc121835f6fcbcacdfce6ad6034ea5cbca2706aec9bae4e0640752561",
+          "precision_config.json": "bb7749276bf39d39e3c980d7d14e549f2e8f26f9b9480736f6f99891ef5027b7",
+          "prepare_natural_reference.py": "1dab76acce145061258c965f84b63c42723c466b19723056630367c7fb705df9",
+          "realtime.py": "4bf7873258a6d8f20fd86794e2b8e26392335edb772ca657fc67453f5f3bd1f6",
+          "realtime_app.py": "008b6cc5ac59d2162120e701c9f167c5c43c46240fb3170859d317c696496b7c",
+          "record_joint_limit_demo.py": "d4ca6b29e1c257c3633d44f0edda3eb6b1841a97caad934f14b18178124b808e",
+          "record_learned_demo.py": "10dba7fe0733e456fb0c66aae55e0f15a4255efbb0ee44d346361d572171ad13",
+          "record_natural_image_demo.py": "4bfa0237874a299b45e1a7766a22ed9472d3a8eb11b55358b2e77f023e80302d",
+          "record_recovery_demo.py": "652d43ec930db88d118d708cf1afab2ab53d1b6fe4c168173745440d9fcb6dee",
+          "record_search_coverage_demo.py": "f50572e34d2ec245b7b692ee4187db337366d9bb4a907dfe75a6469c4f7576fc",
+          "record_startup_demo.py": "f015ae73cb59c05ad8503d3ee276f1c7199ed6e74ba618e6ecdb8e4623b8b7d2",
+          "recovery.py": "7562013287a778fcc2f546707f1a7d3f2aed122b13c44439ff1690cad7c815c4",
+          "recovery_config.json": "32b436f0cc0e4272680f163e76861cf358a50d1dacc9a8ce96d878fd02d6b7c5",
+          "reference/goal.npz": "3d6e7376c549ae47f74fd12ec9a0afc134ae8482301ec2a3ced0d16113dc989d",
+          "reference/natural_goal.npz": "2912b8b45be09dac9351f27cff974c7e2808f372dd2dd0d006be6f0299f5f900",
+          "reference/natural_goal.png": "06c39b9e7a003b8653f852bc8cad643bb2aed3b718ddcc3aa475c93d85ded0c4",
+          "reference_image.py": "3a883d1015831290b07f2b312a086da2d70478fe1cee5b6b4ef6887c7f167f3a",
+          "robustness_config.json": "63f6b7a3a010c8de08e074b0e2c2f12b1faa9334b34127789f836862e58ad6fc",
+          "run_accuracy_study.py": "d59ff73a87282acfd80e0b4d88496d60910e4ea2eac68d3714793c8d1a3e68ca",
+          "run_alignment.py": "8c2db501849396eeab0ed2e3870862741f62612bb0e794d5122aeeffafd879b1",
+          "run_camera_delay_study.py": "76e7884b521792ec22bdbe2ca5802448abd1d94228e28e576f1e052ef12054c6",
+          "run_camera_robustness.py": "54df8320e59790b144f6d5db583a72670cabf559950daf5503721acd0c568ff5",
+          "run_collision_study.py": "5272275f5086f5d060a8f3332507a85841d03ec5e4e31cb5ec8450261b01a46e",
+          "run_gain_study.py": "013d266ae42575f3f343687083bb78ac3f2d4e1631a7965c719679df7ff0e760",
+          "run_joint_limit_study.py": "5cb174d40d4b67166b9ed4bec97ea910584377e41eb918604181655efe53a3c8",
+          "run_latency_stress.py": "7e6f8776b4abbd7f10835091e8e28316220ebdb56008e51c85e9d040806884e5",
+          "run_latency_study.py": "fe41cf48723c7ee6f31c19cff6946b5de7dfb94332d75c3553ba35295c4b4fe6",
+          "run_learned_study.py": "8e45a62729df0d4906524a533bae7e1a11f72ae2e3d83625de271e02308a57d3",
+          "run_natural_image_study.py": "ef9a56e1a55fcff194bf640ad5a584efbaf763203a31a008fe9c90b6d77e4815",
+          "run_recovery.py": "32b6a95b97331b629fc8aafcf86f3ec566010d3ce4f06aac99aee10aef8354d7",
+          "run_search_coverage.py": "b530c1d9a5048f9fc92d5b510e8c00cf3bac3d2d65454f6ab410e7370571dda7",
+          "run_startup_search.py": "48a6f8d4f58c3f6d4438a889a9e1cacd4f3be30e0510afbd0bde1e0a143050cb",
+          "scene.xml": "c390e02323a4d93c4ee6165ed602de1711a7d23c79e5d739fc7d536f70f24e04",
+          "setup_learned.py": "1f32b684efd666668385d3acd726dc2f564b76ee9fd4cb758e3bf1ea3b46b214",
+          "simulation.py": "fdaab73e8d7305cc10c94e42e7865ee05b4d86bea46c6930287c00c91346f160",
+          "startup_search.py": "9e3b1ca1389bd4bb0b57a4f9827ebfdccb3152ea28321b8ade86773c5677bd28",
+          "startup_search_config.json": "72e915e3699b029821ec8a9b85b104330a7bab2a96338a3b0538faf0350d75f9",
+          "verify.py": "de16dd2b666fdd89f286f60ae3f6255b8559703f7c8cbfde4a47d95f6ceb4647",
+          "verify_learned_repair.py": "14b7b1211f98ae6ad930a00bbe91f9ec83ea43117b4c3e4f6f2c508d6b68c0f4"
+        },
+        "runtime": {
+          "python": "3.12.14",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "numpy": "2.5.2",
+          "opencv-python": "5.0.0.93",
+          "mujoco": "3.12.0",
+          "matplotlib": "3.11.1",
+          "pillow": "12.3.0",
+          "torch": "2.13.0+cu126",
+          "torchvision": "0.28.0+cu126",
+          "lightglue": "0.0"
+        }
+      },
+      "tool_sha256": null,
+      "environment": {
+        "KMP_BLOCKTIME": null,
+        "OMP_WAIT_POLICY": null,
+        "OMP_NUM_THREADS": "16",
+        "CUDA_LAUNCH_BLOCKING": null
+      },
+      "options": {
+        "alternate_stream": false,
+        "device_cast": null,
+        "benchmark": null,
+        "channels_last": null,
+        "blas_lt": null,
+        "graphs": null,
+        "prerender": null,
+        "ablation": null
+      },
+      "before": {
+        "model": "1eb75680d5b19595e3219bc537d95d34ed2a91ed8e1a7bb4bdaf6d7ddad7f9a4",
+        "template": "9b8c33d3cf1b7d1860c877bdfa14cec90b1447bda28928cb9f5fce27c1a934c4",
+        "stream": 0,
+        "threads": 8,
+        "training": [
+          false,
+          false
+        ],
+        "memory": {
+          "allocated_bytes.all.current": 61406208,
+          "reserved_bytes.all.current": 186646528,
+          "active_bytes.all.current": 61406208,
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        }
+      },
+      "after": {
+        "model": "1eb75680d5b19595e3219bc537d95d34ed2a91ed8e1a7bb4bdaf6d7ddad7f9a4",
+        "template": "9b8c33d3cf1b7d1860c877bdfa14cec90b1447bda28928cb9f5fce27c1a934c4",
+        "stream": 0,
+        "threads": 8,
+        "training": [
+          false,
+          false
+        ],
+        "memory": {
+          "allocated_bytes.all.current": 61406208,
+          "reserved_bytes.all.current": 186646528,
+          "active_bytes.all.current": 61406208,
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        }
+      },
+      "cohorts": {
+        "first_30s": {
+          "count": 251,
+          "mean": 85.66829760974474,
+          "p50": 89.75739998277277,
+          "p95": 108.92304999288172,
+          "p99": 121.61875001038425,
+          "p99_9": 130.8556749863785,
+          "max": 132.54219997907057
+        },
+        "later": {
+          "count": 722,
+          "mean": 88.62459432268244,
+          "p50": 93.37625003536232,
+          "p95": 113.08635497407522,
+          "p99": 128.4707039769273,
+          "p99_9": 136.75619049783668,
+          "max": 143.72789999470115
+        }
+      },
+      "memory_over_unprofiled_frames": {
+        "allocated_bytes.all.current": {
+          "min": 61406208,
+          "max": 61406208
+        },
+        "reserved_bytes.all.current": {
+          "min": 186646528,
+          "max": 186646528
+        },
+        "num_alloc_retries": {
+          "min": 0,
+          "max": 0
+        },
+        "num_ooms": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "phases": {
+        "0": {
+          "phase": "baseline",
+          "blocktime_ms": [],
+          "processing_ms": {
+            "count": 973,
+            "mean": 87.86197307402122,
+            "p50": 92.29619998950511,
+            "p95": 112.70988000323996,
+            "p99": 127.15302402386439,
+            "p99_9": 134.3291459989281,
+            "max": 143.72789999470115
+          },
+          "process_cpu_ms": {
+            "count": 973,
+            "mean": 653.5039825282631,
+            "p50": 671.875,
+            "p95": 890.625,
+            "p99": 1031.25,
+            "p99_9": 1109.812500000002,
+            "max": 1125.0
+          },
+          "thread_cpu_ms": {
+            "count": 973,
+            "mean": 84.21120246659815,
+            "p50": 93.75,
+            "p95": 109.375,
+            "p99": 125.0,
+            "p99_9": 140.625,
+            "max": 140.625
+          },
+          "gap_ms": {
+            "count": 973,
+            "mean": 30.13232281451417,
+            "p50": 0.48699998296797276,
+            "p95": 0.922239990904927,
+            "p99": 1101.321220009122,
+            "p99_9": 1101.9249827961903,
+            "max": 1102.3236000328325
+          }
+        }
+      },
+      "profiles": {
+        "profile-0.json": {
+          "sha256": "d971568a5043f7a49672f2829db608a05b924f276be8e8d2e80056a8d71ac841",
+          "runtime": {
+            "cudaDeviceGetAttribute": {
+              "count": 10,
+              "total_ms": 0.011
+            },
+            "cudaDeviceSynchronize": {
+              "count": 1,
+              "total_ms": 0.0134
+            },
+            "cudaEventElapsedTime": {
+              "count": 3,
+              "total_ms": 0.0038000000000000004
+            },
+            "cudaEventQuery": {
+              "count": 10,
+              "total_ms": 0.0074
+            },
+            "cudaEventRecordWithFlags": {
+              "count": 4,
+              "total_ms": 0.1287
+            },
+            "cudaFuncGetAttributes": {
+              "count": 2,
+              "total_ms": 0.0132
+            },
+            "cudaFuncSetAttribute": {
+              "count": 4,
+              "total_ms": 0.0116
+            },
+            "cudaLaunchKernel": {
+              "count": 930,
+              "total_ms": 22.5448
+            },
+            "cudaLaunchKernelExC": {
+              "count": 3,
+              "total_ms": 0.047
+            },
+            "cudaMemcpyAsync": {
+              "count": 26,
+              "total_ms": 1.1058
+            },
+            "cudaMemsetAsync": {
+              "count": 129,
+              "total_ms": 3.6255
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessor": {
+              "count": 73,
+              "total_ms": 0.2258
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags": {
+              "count": 3,
+              "total_ms": 0.0066
+            },
+            "cudaPeekAtLastError": {
+              "count": 58,
+              "total_ms": 0.0117
+            },
+            "cudaStreamIsCapturing": {
+              "count": 39,
+              "total_ms": 0.3555
+            },
+            "cudaStreamSynchronize": {
+              "count": 20,
+              "total_ms": 8.4613
+            }
+          },
+          "kernel_count": 935,
+          "kernel_duration_sum_ms": 32.926534,
+          "kernel_span_ms": 100.7863759765625,
+          "interpretation": "Separate instrumented frames; durations may include GPU preemption. The kernel sum, stream span and host API waits are not additive."
+        },
+        "profile-1.json": {
+          "sha256": "759f26ae8ccfd0f7761c5231d0ac50494dfd5b35cfe5f1cb9c2e8574d8a523ce",
+          "runtime": {
+            "cudaDeviceGetAttribute": {
+              "count": 10,
+              "total_ms": 0.012
+            },
+            "cudaDeviceSynchronize": {
+              "count": 1,
+              "total_ms": 0.016399999999999998
+            },
+            "cudaEventElapsedTime": {
+              "count": 3,
+              "total_ms": 0.0038
+            },
+            "cudaEventQuery": {
+              "count": 10,
+              "total_ms": 0.0062
+            },
+            "cudaEventRecordWithFlags": {
+              "count": 4,
+              "total_ms": 0.15819999999999998
+            },
+            "cudaFuncGetAttributes": {
+              "count": 2,
+              "total_ms": 0.0167
+            },
+            "cudaFuncSetAttribute": {
+              "count": 4,
+              "total_ms": 0.0154
+            },
+            "cudaLaunchKernel": {
+              "count": 930,
+              "total_ms": 14.587
+            },
+            "cudaLaunchKernelExC": {
+              "count": 3,
+              "total_ms": 0.05040000000000001
+            },
+            "cudaMemcpyAsync": {
+              "count": 26,
+              "total_ms": 1.0372999999999999
+            },
+            "cudaMemsetAsync": {
+              "count": 129,
+              "total_ms": 1.8585
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessor": {
+              "count": 73,
+              "total_ms": 0.1022
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags": {
+              "count": 3,
+              "total_ms": 0.0075
+            },
+            "cudaPeekAtLastError": {
+              "count": 58,
+              "total_ms": 0.0103
+            },
+            "cudaStreamIsCapturing": {
+              "count": 39,
+              "total_ms": 0.060200000000000004
+            },
+            "cudaStreamSynchronize": {
+              "count": 20,
+              "total_ms": 16.548399999999997
+            }
+          },
+          "kernel_count": 932,
+          "kernel_duration_sum_ms": 42.635134,
+          "kernel_span_ms": 75.220970703125,
+          "interpretation": "Separate instrumented frames; durations may include GPU preemption. The kernel sum, stream span and host API waits are not additive."
+        }
+      }
+    },
+    "20260923-replay-cudnn": {
+      "raw_sha256": "cfd01d2a450c0db79689f021b8998b6b321b1da0262401bb6425a98db279be31",
+      "excluded_from_campaign": true,
+      "fingerprint": {
+        "sha256": {
+          "accuracy.py": "f2864e7270fa4c4c803978cb22123455b5c48f15f20954a8e0229e496eae06a2",
+          "accuracy_config.json": "5bd6bff53bb728bede80fe73b244c545fbd282dbe83d97d14f04d21f6bb8a1d0",
+          "adaptive_gain.py": "0b529c74c553c79675e378874baa81872176aa9422631f147aee75add662a4a7",
+          "analyze_benchmark.py": "51e9d4c4070267e608949804aaf1cf6a98b8568d7b56277404d571d9d8e19344",
+          "analyze_comparison.py": "f45f2b6764eece1c0fd907262760e1d5d9872349f37b6440f522c5439e512b5e",
+          "analyze_gain_study.py": "fe1dc1e97b71de44f3a10430567e5c8b1d22ea2ffba0e86749680c3c284a9709",
+          "app.py": "b668c0a3da6bb056488bc6c3e99f3e10905e9e2169f101851ac8929a67bd852a",
+          "assets/marker.png": "ab2472414444ee33daf910b6d1e3048c2cd1409cc5b9c6838ea203a7e9744a40",
+          "assets/natural-board.png": "851e7345adfb70a0fcb4e95dde970d6d9007d1cdb209e64188635acc33c9b067",
+          "assets/natural-target-source.json": "4d680aa45427481d7328ae8d43c22c0a198443c16888d97c02bdd22eda3bc077",
+          "assets/natural-target-source.png": "f3d7a2eaf08f24345610851cb23574982ca55fdb75a4cf99b2a1c2668cce89c8",
+          "assets/natural-target.png": "6dc880cf2c20520b9b0dba3aa30f3accce6379d2d61e5edaa9ea4f44a030f8ab",
+          "baselines.py": "50f381af192e33a195b2cc481f88bd0818cac85072cab81ea679f33b83dd653d",
+          "benchmark.py": "1be0fc0dff13a7474b9dbef6acec64ead0137c773f57cde4462620ea9bd96de7",
+          "benchmark_config.json": "4e873ce4baed5efb76c9550bffbd261dc2677b13626c09b0de138ed6b7d07700",
+          "benchmark_learned.py": "e945838fbfce52944752319aeddb28fa0d90fdb262ccdea735c9f7ac57626f92",
+          "calibration.py": "c97eecc65705b7b0d9c77f80378d634bd9f3f93213c74d31b1a1e97763551dbe",
+          "camera_robustness.py": "f7d84677008b00e9d8a2517a8620668fcab82effedc1d2f31d05ff9d88c71b07",
+          "camera_timing.py": "8af033010df94fc96fad141b41c94ea3ca1d5162aed09865c6af43f05c467778",
+          "camera_timing_config.json": "20e73da5ca3615d727e35bf854af20b7e34700936526a8e87c19bc572a7a8db2",
+          "collision.py": "eef38870829cdf96a9cb6c8a8d6a0af56c9b7289ae0dcf64e9cdf132e005f662",
+          "collision_config.json": "9fdaf7af4437dae7ea78467a37c9680ab8bed4c7d754d5684ef78963337fd6fb",
+          "compare_controllers.py": "572f8daab2e0b00ed9c39f32129b3a02331d45cc5db0f21a220282fd08716620",
+          "comparison_config.json": "4e1b8e7ab84c08b0ede5de60ce961abf9c72ace5d727a96e8d13d0e2dadb610f",
+          "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+          "control.py": "1f59a1942ec7bce375f7ec7b648cc59f8fc4b0103e85fd515f2e89e4d8e89fe7",
+          "deadline_diagnostics.py": "2477d4908e03926bb6e1e2118950b7765b1a03419bbc3726b71a953bb6fc2653",
+          "download_learned_models.py": "13692f9c1db7d7337943363be008ab49b842fe112dff231c665a21df0df0a404",
+          "gain_config.json": "6186b780e19487b4e1920a3a5538dbc73a0b08488120a70e1253f62e99f65f6a",
+          "joint_limit_config.json": "f8855a46a7aca71867fa730d4ea092686b72267c0351883421f31c574134f841",
+          "joint_limits.py": "3d5e0c8d18c88c7d7d3bafedbd1c4ac8701947240c249ce528f95f32808291d3",
+          "latency_stress.py": "497d416fc92cbbd1f3e13ac9256280e29f2cf2aaa9a4f071e362042082be0406",
+          "learned_feature_config.json": "0145983cbf3bafef87e80ca079628744f69edf175764137e36d373786353a708",
+          "learned_perception.py": "e05531e17c54cc789b437df888daec2b37de835b33d5615e3db1e110ce8f676a",
+          "models/manifest.json": "4ce943f21304b7934d724250c0bb1dac2839ab43975d202a008404c8e190692e",
+          "motion_path.py": "27f8657b1af0154532a790a7e91f3a0fec11a355ac99cef397c315def74817f7",
+          "natural_feature_config.json": "284d6107ba8a739fb3c5731ad4545de16d44be48adc6e3ad43f34e08efe4a2fb",
+          "perception.py": "34e74c605b5e349a714d7cdf67a5c1e4322f2252a919450944abb182972bfb94",
+          "precision.py": "c249a34cc121835f6fcbcacdfce6ad6034ea5cbca2706aec9bae4e0640752561",
+          "precision_config.json": "bb7749276bf39d39e3c980d7d14e549f2e8f26f9b9480736f6f99891ef5027b7",
+          "prepare_natural_reference.py": "1dab76acce145061258c965f84b63c42723c466b19723056630367c7fb705df9",
+          "realtime.py": "4bf7873258a6d8f20fd86794e2b8e26392335edb772ca657fc67453f5f3bd1f6",
+          "realtime_app.py": "008b6cc5ac59d2162120e701c9f167c5c43c46240fb3170859d317c696496b7c",
+          "record_joint_limit_demo.py": "d4ca6b29e1c257c3633d44f0edda3eb6b1841a97caad934f14b18178124b808e",
+          "record_learned_demo.py": "10dba7fe0733e456fb0c66aae55e0f15a4255efbb0ee44d346361d572171ad13",
+          "record_natural_image_demo.py": "4bfa0237874a299b45e1a7766a22ed9472d3a8eb11b55358b2e77f023e80302d",
+          "record_recovery_demo.py": "652d43ec930db88d118d708cf1afab2ab53d1b6fe4c168173745440d9fcb6dee",
+          "record_search_coverage_demo.py": "f50572e34d2ec245b7b692ee4187db337366d9bb4a907dfe75a6469c4f7576fc",
+          "record_startup_demo.py": "f015ae73cb59c05ad8503d3ee276f1c7199ed6e74ba618e6ecdb8e4623b8b7d2",
+          "recovery.py": "7562013287a778fcc2f546707f1a7d3f2aed122b13c44439ff1690cad7c815c4",
+          "recovery_config.json": "32b436f0cc0e4272680f163e76861cf358a50d1dacc9a8ce96d878fd02d6b7c5",
+          "reference/goal.npz": "3d6e7376c549ae47f74fd12ec9a0afc134ae8482301ec2a3ced0d16113dc989d",
+          "reference/natural_goal.npz": "2912b8b45be09dac9351f27cff974c7e2808f372dd2dd0d006be6f0299f5f900",
+          "reference/natural_goal.png": "06c39b9e7a003b8653f852bc8cad643bb2aed3b718ddcc3aa475c93d85ded0c4",
+          "reference_image.py": "3a883d1015831290b07f2b312a086da2d70478fe1cee5b6b4ef6887c7f167f3a",
+          "robustness_config.json": "63f6b7a3a010c8de08e074b0e2c2f12b1faa9334b34127789f836862e58ad6fc",
+          "run_accuracy_study.py": "d59ff73a87282acfd80e0b4d88496d60910e4ea2eac68d3714793c8d1a3e68ca",
+          "run_alignment.py": "8c2db501849396eeab0ed2e3870862741f62612bb0e794d5122aeeffafd879b1",
+          "run_camera_delay_study.py": "76e7884b521792ec22bdbe2ca5802448abd1d94228e28e576f1e052ef12054c6",
+          "run_camera_robustness.py": "54df8320e59790b144f6d5db583a72670cabf559950daf5503721acd0c568ff5",
+          "run_collision_study.py": "5272275f5086f5d060a8f3332507a85841d03ec5e4e31cb5ec8450261b01a46e",
+          "run_gain_study.py": "013d266ae42575f3f343687083bb78ac3f2d4e1631a7965c719679df7ff0e760",
+          "run_joint_limit_study.py": "5cb174d40d4b67166b9ed4bec97ea910584377e41eb918604181655efe53a3c8",
+          "run_latency_stress.py": "7e6f8776b4abbd7f10835091e8e28316220ebdb56008e51c85e9d040806884e5",
+          "run_latency_study.py": "fe41cf48723c7ee6f31c19cff6946b5de7dfb94332d75c3553ba35295c4b4fe6",
+          "run_learned_study.py": "8e45a62729df0d4906524a533bae7e1a11f72ae2e3d83625de271e02308a57d3",
+          "run_natural_image_study.py": "ef9a56e1a55fcff194bf640ad5a584efbaf763203a31a008fe9c90b6d77e4815",
+          "run_recovery.py": "32b6a95b97331b629fc8aafcf86f3ec566010d3ce4f06aac99aee10aef8354d7",
+          "run_search_coverage.py": "b530c1d9a5048f9fc92d5b510e8c00cf3bac3d2d65454f6ab410e7370571dda7",
+          "run_startup_search.py": "48a6f8d4f58c3f6d4438a889a9e1cacd4f3be30e0510afbd0bde1e0a143050cb",
+          "scene.xml": "c390e02323a4d93c4ee6165ed602de1711a7d23c79e5d739fc7d536f70f24e04",
+          "setup_learned.py": "1f32b684efd666668385d3acd726dc2f564b76ee9fd4cb758e3bf1ea3b46b214",
+          "simulation.py": "fdaab73e8d7305cc10c94e42e7865ee05b4d86bea46c6930287c00c91346f160",
+          "startup_search.py": "9e3b1ca1389bd4bb0b57a4f9827ebfdccb3152ea28321b8ade86773c5677bd28",
+          "startup_search_config.json": "72e915e3699b029821ec8a9b85b104330a7bab2a96338a3b0538faf0350d75f9",
+          "verify.py": "de16dd2b666fdd89f286f60ae3f6255b8559703f7c8cbfde4a47d95f6ceb4647",
+          "verify_learned_repair.py": "14b7b1211f98ae6ad930a00bbe91f9ec83ea43117b4c3e4f6f2c508d6b68c0f4"
+        },
+        "runtime": {
+          "python": "3.12.14",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "numpy": "2.5.2",
+          "opencv-python": "5.0.0.93",
+          "mujoco": "3.12.0",
+          "matplotlib": "3.11.1",
+          "pillow": "12.3.0",
+          "torch": "2.13.0+cu126",
+          "torchvision": "0.28.0+cu126",
+          "lightglue": "0.0"
+        }
+      },
+      "tool_sha256": null,
+      "environment": {
+        "KMP_BLOCKTIME": null,
+        "OMP_WAIT_POLICY": null,
+        "OMP_NUM_THREADS": "16",
+        "CUDA_LAUNCH_BLOCKING": null
+      },
+      "options": {
+        "alternate_stream": false,
+        "device_cast": true,
+        "benchmark": true,
+        "channels_last": null,
+        "blas_lt": null,
+        "graphs": null,
+        "prerender": null,
+        "ablation": false
+      },
+      "before": {
+        "model": "1eb75680d5b19595e3219bc537d95d34ed2a91ed8e1a7bb4bdaf6d7ddad7f9a4",
+        "template": "8986d6d566d7a9fd739ff0c8b2e0a9dc549f8cb8ef57cef9aefefb199c102459",
+        "stream": 0,
+        "threads": 8,
+        "training": [
+          false,
+          false
+        ],
+        "memory": {
+          "allocated_bytes.all.current": 61406208,
+          "reserved_bytes.all.current": 136314880,
+          "active_bytes.all.current": 61406208,
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        },
+        "blocktime_ms": 200
+      },
+      "after": {
+        "model": "1eb75680d5b19595e3219bc537d95d34ed2a91ed8e1a7bb4bdaf6d7ddad7f9a4",
+        "template": "8986d6d566d7a9fd739ff0c8b2e0a9dc549f8cb8ef57cef9aefefb199c102459",
+        "stream": 0,
+        "threads": 8,
+        "training": [
+          false,
+          false
+        ],
+        "memory": {
+          "allocated_bytes.all.current": 61406208,
+          "reserved_bytes.all.current": 136314880,
+          "active_bytes.all.current": 61406208,
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        },
+        "blocktime_ms": 200
+      },
+      "cohorts": {
+        "first_30s": {
+          "count": 172,
+          "mean": 144.06770348601682,
+          "p50": 128.57490000897087,
+          "p95": 245.70136996044312,
+          "p99": 299.3708759802393,
+          "p99_9": 310.52957419923047,
+          "max": 312.16430000495166
+        },
+        "later": {
+          "count": 492,
+          "mean": 147.35986158520086,
+          "p50": 129.84845001483336,
+          "p95": 257.09879502828693,
+          "p99": 302.6350600161822,
+          "p99_9": 332.3545550731944,
+          "max": 333.5004999535158
+        }
+      },
+      "memory_over_unprofiled_frames": {
+        "allocated_bytes.all.current": {
+          "min": 61406208,
+          "max": 61406208
+        },
+        "reserved_bytes.all.current": {
+          "min": 136314880,
+          "max": 136314880
+        },
+        "num_alloc_retries": {
+          "min": 0,
+          "max": 0
+        },
+        "num_ooms": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "phases": {
+        "0": {
+          "phase": "device_cast",
+          "blocktime_ms": [
+            200
+          ],
+          "processing_ms": {
+            "count": 664,
+            "mean": 146.50707364384596,
+            "p50": 129.20784996822476,
+            "p95": 252.37486996338703,
+            "p99": 302.5169300014386,
+            "p99_9": 331.9531242800879,
+            "max": 333.5004999535158
+          },
+          "process_cpu_ms": {
+            "count": 664,
+            "mean": 145.8019578313253,
+            "p50": 125.0,
+            "p95": 265.625,
+            "p99": 302.65625000000006,
+            "p99_9": 369.9062500000032,
+            "max": 390.625
+          },
+          "thread_cpu_ms": {
+            "count": 664,
+            "mean": 132.67131024096386,
+            "p50": 125.0,
+            "p95": 234.375,
+            "p99": 281.25,
+            "p99_9": 296.875,
+            "max": 296.875
+          },
+          "gap_ms": {
+            "count": 664,
+            "mean": 30.47723825279334,
+            "p50": 0.40900002932175994,
+            "p95": 0.783724989742041,
+            "p99": 1100.9229879704071,
+            "p99_9": 1103.287508710288,
+            "max": 1106.254499987699
+          }
+        }
+      },
+      "profiles": {
+        "profile-0.json": {
+          "sha256": "9023f69f8f1385e9d39edca0c62473075df87bcb6c151193272249c61cd9f42b",
+          "runtime": {
+            "cudaDeviceGetAttribute": {
+              "count": 10,
+              "total_ms": 0.0116
+            },
+            "cudaDeviceSynchronize": {
+              "count": 1,
+              "total_ms": 0.0161
+            },
+            "cudaEventElapsedTime": {
+              "count": 3,
+              "total_ms": 0.005600000000000001
+            },
+            "cudaEventQuery": {
+              "count": 10,
+              "total_ms": 0.0094
+            },
+            "cudaEventRecordWithFlags": {
+              "count": 4,
+              "total_ms": 0.1672
+            },
+            "cudaFuncGetAttributes": {
+              "count": 3,
+              "total_ms": 0.0167
+            },
+            "cudaLaunchKernel": {
+              "count": 923,
+              "total_ms": 22.1745
+            },
+            "cudaLaunchKernelExC": {
+              "count": 4,
+              "total_ms": 0.0619
+            },
+            "cudaMemcpyAsync": {
+              "count": 26,
+              "total_ms": 1.1857
+            },
+            "cudaMemsetAsync": {
+              "count": 129,
+              "total_ms": 3.5773
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessor": {
+              "count": 73,
+              "total_ms": 0.5759
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags": {
+              "count": 3,
+              "total_ms": 0.0062
+            },
+            "cudaPeekAtLastError": {
+              "count": 58,
+              "total_ms": 0.012700000000000001
+            },
+            "cudaStreamIsCapturing": {
+              "count": 39,
+              "total_ms": 0.0848
+            },
+            "cudaStreamSynchronize": {
+              "count": 20,
+              "total_ms": 21.999200000000002
+            }
+          },
+          "kernel_count": 929,
+          "kernel_duration_sum_ms": 61.67015,
+          "kernel_span_ms": 107.924140625,
+          "interpretation": "Separate instrumented frames; durations may include GPU preemption. The kernel sum, stream span and host API waits are not additive."
+        },
+        "profile-1.json": {
+          "sha256": "af47d7a0b250bee4a24b175a5df4c06d511dbacbf74d019d0746a7b15d73c20c",
+          "runtime": {
+            "cudaDeviceGetAttribute": {
+              "count": 10,
+              "total_ms": 0.011800000000000001
+            },
+            "cudaDeviceSynchronize": {
+              "count": 1,
+              "total_ms": 0.018699999999999998
+            },
+            "cudaEventElapsedTime": {
+              "count": 3,
+              "total_ms": 0.0044
+            },
+            "cudaEventQuery": {
+              "count": 10,
+              "total_ms": 0.0088
+            },
+            "cudaEventRecordWithFlags": {
+              "count": 4,
+              "total_ms": 0.1315
+            },
+            "cudaFuncGetAttributes": {
+              "count": 3,
+              "total_ms": 0.0172
+            },
+            "cudaLaunchKernel": {
+              "count": 923,
+              "total_ms": 22.7736
+            },
+            "cudaLaunchKernelExC": {
+              "count": 4,
+              "total_ms": 0.0484
+            },
+            "cudaMemcpyAsync": {
+              "count": 26,
+              "total_ms": 0.9158
+            },
+            "cudaMemsetAsync": {
+              "count": 129,
+              "total_ms": 3.2022
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessor": {
+              "count": 73,
+              "total_ms": 0.2918
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags": {
+              "count": 3,
+              "total_ms": 0.005900000000000001
+            },
+            "cudaPeekAtLastError": {
+              "count": 58,
+              "total_ms": 0.0121
+            },
+            "cudaStreamIsCapturing": {
+              "count": 39,
+              "total_ms": 0.0863
+            },
+            "cudaStreamSynchronize": {
+              "count": 20,
+              "total_ms": 22.371899999999997
+            }
+          },
+          "kernel_count": 926,
+          "kernel_duration_sum_ms": 61.546966,
+          "kernel_span_ms": 112.5326806640625,
+          "interpretation": "Separate instrumented frames; durations may include GPU preemption. The kernel sum, stream span and host API waits are not additive."
+        }
+      }
+    },
+    "20260923-replay-device-cast": {
+      "raw_sha256": "37f88c630b8c85e7a763e241b1b48e223e6645b95a9f3a36e8496797d7db65a1",
+      "excluded_from_campaign": true,
+      "fingerprint": {
+        "sha256": {
+          "accuracy.py": "f2864e7270fa4c4c803978cb22123455b5c48f15f20954a8e0229e496eae06a2",
+          "accuracy_config.json": "5bd6bff53bb728bede80fe73b244c545fbd282dbe83d97d14f04d21f6bb8a1d0",
+          "adaptive_gain.py": "0b529c74c553c79675e378874baa81872176aa9422631f147aee75add662a4a7",
+          "analyze_benchmark.py": "51e9d4c4070267e608949804aaf1cf6a98b8568d7b56277404d571d9d8e19344",
+          "analyze_comparison.py": "f45f2b6764eece1c0fd907262760e1d5d9872349f37b6440f522c5439e512b5e",
+          "analyze_gain_study.py": "fe1dc1e97b71de44f3a10430567e5c8b1d22ea2ffba0e86749680c3c284a9709",
+          "app.py": "b668c0a3da6bb056488bc6c3e99f3e10905e9e2169f101851ac8929a67bd852a",
+          "assets/marker.png": "ab2472414444ee33daf910b6d1e3048c2cd1409cc5b9c6838ea203a7e9744a40",
+          "assets/natural-board.png": "851e7345adfb70a0fcb4e95dde970d6d9007d1cdb209e64188635acc33c9b067",
+          "assets/natural-target-source.json": "4d680aa45427481d7328ae8d43c22c0a198443c16888d97c02bdd22eda3bc077",
+          "assets/natural-target-source.png": "f3d7a2eaf08f24345610851cb23574982ca55fdb75a4cf99b2a1c2668cce89c8",
+          "assets/natural-target.png": "6dc880cf2c20520b9b0dba3aa30f3accce6379d2d61e5edaa9ea4f44a030f8ab",
+          "baselines.py": "50f381af192e33a195b2cc481f88bd0818cac85072cab81ea679f33b83dd653d",
+          "benchmark.py": "1be0fc0dff13a7474b9dbef6acec64ead0137c773f57cde4462620ea9bd96de7",
+          "benchmark_config.json": "4e873ce4baed5efb76c9550bffbd261dc2677b13626c09b0de138ed6b7d07700",
+          "benchmark_learned.py": "e945838fbfce52944752319aeddb28fa0d90fdb262ccdea735c9f7ac57626f92",
+          "calibration.py": "c97eecc65705b7b0d9c77f80378d634bd9f3f93213c74d31b1a1e97763551dbe",
+          "camera_robustness.py": "f7d84677008b00e9d8a2517a8620668fcab82effedc1d2f31d05ff9d88c71b07",
+          "camera_timing.py": "8af033010df94fc96fad141b41c94ea3ca1d5162aed09865c6af43f05c467778",
+          "camera_timing_config.json": "20e73da5ca3615d727e35bf854af20b7e34700936526a8e87c19bc572a7a8db2",
+          "collision.py": "eef38870829cdf96a9cb6c8a8d6a0af56c9b7289ae0dcf64e9cdf132e005f662",
+          "collision_config.json": "9fdaf7af4437dae7ea78467a37c9680ab8bed4c7d754d5684ef78963337fd6fb",
+          "compare_controllers.py": "572f8daab2e0b00ed9c39f32129b3a02331d45cc5db0f21a220282fd08716620",
+          "comparison_config.json": "4e1b8e7ab84c08b0ede5de60ce961abf9c72ace5d727a96e8d13d0e2dadb610f",
+          "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+          "control.py": "1f59a1942ec7bce375f7ec7b648cc59f8fc4b0103e85fd515f2e89e4d8e89fe7",
+          "deadline_diagnostics.py": "2477d4908e03926bb6e1e2118950b7765b1a03419bbc3726b71a953bb6fc2653",
+          "download_learned_models.py": "13692f9c1db7d7337943363be008ab49b842fe112dff231c665a21df0df0a404",
+          "gain_config.json": "6186b780e19487b4e1920a3a5538dbc73a0b08488120a70e1253f62e99f65f6a",
+          "joint_limit_config.json": "f8855a46a7aca71867fa730d4ea092686b72267c0351883421f31c574134f841",
+          "joint_limits.py": "3d5e0c8d18c88c7d7d3bafedbd1c4ac8701947240c249ce528f95f32808291d3",
+          "latency_stress.py": "497d416fc92cbbd1f3e13ac9256280e29f2cf2aaa9a4f071e362042082be0406",
+          "learned_feature_config.json": "0145983cbf3bafef87e80ca079628744f69edf175764137e36d373786353a708",
+          "learned_perception.py": "e05531e17c54cc789b437df888daec2b37de835b33d5615e3db1e110ce8f676a",
+          "models/manifest.json": "4ce943f21304b7934d724250c0bb1dac2839ab43975d202a008404c8e190692e",
+          "motion_path.py": "27f8657b1af0154532a790a7e91f3a0fec11a355ac99cef397c315def74817f7",
+          "natural_feature_config.json": "284d6107ba8a739fb3c5731ad4545de16d44be48adc6e3ad43f34e08efe4a2fb",
+          "perception.py": "34e74c605b5e349a714d7cdf67a5c1e4322f2252a919450944abb182972bfb94",
+          "precision.py": "c249a34cc121835f6fcbcacdfce6ad6034ea5cbca2706aec9bae4e0640752561",
+          "precision_config.json": "bb7749276bf39d39e3c980d7d14e549f2e8f26f9b9480736f6f99891ef5027b7",
+          "prepare_natural_reference.py": "1dab76acce145061258c965f84b63c42723c466b19723056630367c7fb705df9",
+          "realtime.py": "4bf7873258a6d8f20fd86794e2b8e26392335edb772ca657fc67453f5f3bd1f6",
+          "realtime_app.py": "008b6cc5ac59d2162120e701c9f167c5c43c46240fb3170859d317c696496b7c",
+          "record_joint_limit_demo.py": "d4ca6b29e1c257c3633d44f0edda3eb6b1841a97caad934f14b18178124b808e",
+          "record_learned_demo.py": "10dba7fe0733e456fb0c66aae55e0f15a4255efbb0ee44d346361d572171ad13",
+          "record_natural_image_demo.py": "4bfa0237874a299b45e1a7766a22ed9472d3a8eb11b55358b2e77f023e80302d",
+          "record_recovery_demo.py": "652d43ec930db88d118d708cf1afab2ab53d1b6fe4c168173745440d9fcb6dee",
+          "record_search_coverage_demo.py": "f50572e34d2ec245b7b692ee4187db337366d9bb4a907dfe75a6469c4f7576fc",
+          "record_startup_demo.py": "f015ae73cb59c05ad8503d3ee276f1c7199ed6e74ba618e6ecdb8e4623b8b7d2",
+          "recovery.py": "7562013287a778fcc2f546707f1a7d3f2aed122b13c44439ff1690cad7c815c4",
+          "recovery_config.json": "32b436f0cc0e4272680f163e76861cf358a50d1dacc9a8ce96d878fd02d6b7c5",
+          "reference/goal.npz": "3d6e7376c549ae47f74fd12ec9a0afc134ae8482301ec2a3ced0d16113dc989d",
+          "reference/natural_goal.npz": "2912b8b45be09dac9351f27cff974c7e2808f372dd2dd0d006be6f0299f5f900",
+          "reference/natural_goal.png": "06c39b9e7a003b8653f852bc8cad643bb2aed3b718ddcc3aa475c93d85ded0c4",
+          "reference_image.py": "3a883d1015831290b07f2b312a086da2d70478fe1cee5b6b4ef6887c7f167f3a",
+          "robustness_config.json": "63f6b7a3a010c8de08e074b0e2c2f12b1faa9334b34127789f836862e58ad6fc",
+          "run_accuracy_study.py": "d59ff73a87282acfd80e0b4d88496d60910e4ea2eac68d3714793c8d1a3e68ca",
+          "run_alignment.py": "8c2db501849396eeab0ed2e3870862741f62612bb0e794d5122aeeffafd879b1",
+          "run_camera_delay_study.py": "76e7884b521792ec22bdbe2ca5802448abd1d94228e28e576f1e052ef12054c6",
+          "run_camera_robustness.py": "54df8320e59790b144f6d5db583a72670cabf559950daf5503721acd0c568ff5",
+          "run_collision_study.py": "5272275f5086f5d060a8f3332507a85841d03ec5e4e31cb5ec8450261b01a46e",
+          "run_gain_study.py": "013d266ae42575f3f343687083bb78ac3f2d4e1631a7965c719679df7ff0e760",
+          "run_joint_limit_study.py": "5cb174d40d4b67166b9ed4bec97ea910584377e41eb918604181655efe53a3c8",
+          "run_latency_stress.py": "7e6f8776b4abbd7f10835091e8e28316220ebdb56008e51c85e9d040806884e5",
+          "run_latency_study.py": "fe41cf48723c7ee6f31c19cff6946b5de7dfb94332d75c3553ba35295c4b4fe6",
+          "run_learned_study.py": "8e45a62729df0d4906524a533bae7e1a11f72ae2e3d83625de271e02308a57d3",
+          "run_natural_image_study.py": "ef9a56e1a55fcff194bf640ad5a584efbaf763203a31a008fe9c90b6d77e4815",
+          "run_recovery.py": "32b6a95b97331b629fc8aafcf86f3ec566010d3ce4f06aac99aee10aef8354d7",
+          "run_search_coverage.py": "b530c1d9a5048f9fc92d5b510e8c00cf3bac3d2d65454f6ab410e7370571dda7",
+          "run_startup_search.py": "48a6f8d4f58c3f6d4438a889a9e1cacd4f3be30e0510afbd0bde1e0a143050cb",
+          "scene.xml": "c390e02323a4d93c4ee6165ed602de1711a7d23c79e5d739fc7d536f70f24e04",
+          "setup_learned.py": "1f32b684efd666668385d3acd726dc2f564b76ee9fd4cb758e3bf1ea3b46b214",
+          "simulation.py": "fdaab73e8d7305cc10c94e42e7865ee05b4d86bea46c6930287c00c91346f160",
+          "startup_search.py": "9e3b1ca1389bd4bb0b57a4f9827ebfdccb3152ea28321b8ade86773c5677bd28",
+          "startup_search_config.json": "72e915e3699b029821ec8a9b85b104330a7bab2a96338a3b0538faf0350d75f9",
+          "verify.py": "de16dd2b666fdd89f286f60ae3f6255b8559703f7c8cbfde4a47d95f6ceb4647",
+          "verify_learned_repair.py": "14b7b1211f98ae6ad930a00bbe91f9ec83ea43117b4c3e4f6f2c508d6b68c0f4"
+        },
+        "runtime": {
+          "python": "3.12.14",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "numpy": "2.5.2",
+          "opencv-python": "5.0.0.93",
+          "mujoco": "3.12.0",
+          "matplotlib": "3.11.1",
+          "pillow": "12.3.0",
+          "torch": "2.13.0+cu126",
+          "torchvision": "0.28.0+cu126",
+          "lightglue": "0.0"
+        }
+      },
+      "tool_sha256": null,
+      "environment": {
+        "KMP_BLOCKTIME": null,
+        "OMP_WAIT_POLICY": null,
+        "OMP_NUM_THREADS": "16",
+        "CUDA_LAUNCH_BLOCKING": null
+      },
+      "options": {
+        "alternate_stream": false,
+        "device_cast": true,
+        "benchmark": null,
+        "channels_last": null,
+        "blas_lt": null,
+        "graphs": null,
+        "prerender": null,
+        "ablation": null
+      },
+      "before": {
+        "model": "1eb75680d5b19595e3219bc537d95d34ed2a91ed8e1a7bb4bdaf6d7ddad7f9a4",
+        "template": "9b8c33d3cf1b7d1860c877bdfa14cec90b1447bda28928cb9f5fce27c1a934c4",
+        "stream": 0,
+        "threads": 8,
+        "training": [
+          false,
+          false
+        ],
+        "memory": {
+          "allocated_bytes.all.current": 61406208,
+          "reserved_bytes.all.current": 186646528,
+          "active_bytes.all.current": 61406208,
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        }
+      },
+      "after": {
+        "model": "1eb75680d5b19595e3219bc537d95d34ed2a91ed8e1a7bb4bdaf6d7ddad7f9a4",
+        "template": "9b8c33d3cf1b7d1860c877bdfa14cec90b1447bda28928cb9f5fce27c1a934c4",
+        "stream": 0,
+        "threads": 8,
+        "training": [
+          false,
+          false
+        ],
+        "memory": {
+          "allocated_bytes.all.current": 61406208,
+          "reserved_bytes.all.current": 186646528,
+          "active_bytes.all.current": 61406208,
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        }
+      },
+      "cohorts": {
+        "first_30s": {
+          "count": 205,
+          "mean": 112.96968194599286,
+          "p50": 110.99939997075126,
+          "p95": 154.16725997347382,
+          "p99": 179.74974801531067,
+          "p99_9": 233.84399923659046,
+          "max": 245.3425000421703
+        },
+        "later": {
+          "count": 668,
+          "mean": 98.78508053917973,
+          "p50": 99.8908500187099,
+          "p95": 132.54150999418925,
+          "p99": 170.89766299235643,
+          "p99_9": 258.6041990919646,
+          "max": 278.41590001480654
+        }
+      },
+      "memory_over_unprofiled_frames": {
+        "allocated_bytes.all.current": {
+          "min": 61406208,
+          "max": 61406208
+        },
+        "reserved_bytes.all.current": {
+          "min": 186646528,
+          "max": 186646528
+        },
+        "num_alloc_retries": {
+          "min": 0,
+          "max": 0
+        },
+        "num_ooms": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "phases": {
+        "0": {
+          "phase": "baseline",
+          "blocktime_ms": [],
+          "processing_ms": {
+            "count": 873,
+            "mean": 102.11594341248636,
+            "p50": 101.9596999976784,
+            "p95": 143.423519982025,
+            "p99": 175.96636402187855,
+            "p99_9": 252.5151455849422,
+            "max": 278.41590001480654
+          },
+          "process_cpu_ms": {
+            "count": 873,
+            "mean": 109.8045532646048,
+            "p50": 109.375,
+            "p95": 187.5,
+            "p99": 234.375,
+            "p99_9": 281.25,
+            "max": 281.25
+          },
+          "thread_cpu_ms": {
+            "count": 873,
+            "mean": 95.66509163802978,
+            "p50": 93.75,
+            "p95": 140.625,
+            "p99": 171.875,
+            "p99_9": 224.750000000002,
+            "max": 265.625
+          },
+          "gap_ms": {
+            "count": 873,
+            "mean": 30.9505348222758,
+            "p50": 0.4610000178217888,
+            "p95": 0.9735199972055834,
+            "p99": 1100.9978359937668,
+            "p99_9": 1102.023302402813,
+            "max": 1102.8197000268847
+          }
+        }
+      },
+      "profiles": {
+        "profile-0.json": {
+          "sha256": "a9f11cadbfcd22ee68ce503d9a608b03aab55020469099874332f58fd4ec61cd",
+          "runtime": {
+            "cudaDeviceGetAttribute": {
+              "count": 10,
+              "total_ms": 0.0173
+            },
+            "cudaDeviceSynchronize": {
+              "count": 1,
+              "total_ms": 0.022699999999999998
+            },
+            "cudaEventElapsedTime": {
+              "count": 3,
+              "total_ms": 0.0040999999999999995
+            },
+            "cudaEventQuery": {
+              "count": 10,
+              "total_ms": 0.0083
+            },
+            "cudaEventRecordWithFlags": {
+              "count": 4,
+              "total_ms": 0.2182
+            },
+            "cudaFuncGetAttributes": {
+              "count": 2,
+              "total_ms": 0.016
+            },
+            "cudaFuncSetAttribute": {
+              "count": 4,
+              "total_ms": 0.0165
+            },
+            "cudaLaunchKernel": {
+              "count": 931,
+              "total_ms": 19.810299999999998
+            },
+            "cudaLaunchKernelExC": {
+              "count": 3,
+              "total_ms": 0.0574
+            },
+            "cudaMemcpyAsync": {
+              "count": 26,
+              "total_ms": 1.5364
+            },
+            "cudaMemsetAsync": {
+              "count": 129,
+              "total_ms": 3.5256
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessor": {
+              "count": 73,
+              "total_ms": 0.1439
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags": {
+              "count": 3,
+              "total_ms": 0.0086
+            },
+            "cudaPeekAtLastError": {
+              "count": 58,
+              "total_ms": 0.0119
+            },
+            "cudaStreamIsCapturing": {
+              "count": 39,
+              "total_ms": 0.5684
+            },
+            "cudaStreamSynchronize": {
+              "count": 20,
+              "total_ms": 40.6112
+            }
+          },
+          "kernel_count": 936,
+          "kernel_duration_sum_ms": 70.286387,
+          "kernel_span_ms": 141.6606435546875,
+          "interpretation": "Separate instrumented frames; durations may include GPU preemption. The kernel sum, stream span and host API waits are not additive."
+        },
+        "profile-1.json": {
+          "sha256": "19cba4580bc080d2f9103c629a99614de9a863c756343c3c01e23c59e5c327e3",
+          "runtime": {
+            "cudaDeviceGetAttribute": {
+              "count": 10,
+              "total_ms": 0.0137
+            },
+            "cudaDeviceSynchronize": {
+              "count": 1,
+              "total_ms": 0.019399999999999997
+            },
+            "cudaEventElapsedTime": {
+              "count": 3,
+              "total_ms": 0.0028
+            },
+            "cudaEventQuery": {
+              "count": 10,
+              "total_ms": 0.0058
+            },
+            "cudaEventRecordWithFlags": {
+              "count": 4,
+              "total_ms": 0.1923
+            },
+            "cudaFuncGetAttributes": {
+              "count": 2,
+              "total_ms": 0.0136
+            },
+            "cudaFuncSetAttribute": {
+              "count": 4,
+              "total_ms": 0.014
+            },
+            "cudaLaunchKernel": {
+              "count": 931,
+              "total_ms": 21.568
+            },
+            "cudaLaunchKernelExC": {
+              "count": 3,
+              "total_ms": 0.041100000000000005
+            },
+            "cudaMemcpyAsync": {
+              "count": 26,
+              "total_ms": 1.165
+            },
+            "cudaMemsetAsync": {
+              "count": 129,
+              "total_ms": 3.0481
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessor": {
+              "count": 73,
+              "total_ms": 0.2334
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags": {
+              "count": 3,
+              "total_ms": 0.0058
+            },
+            "cudaPeekAtLastError": {
+              "count": 58,
+              "total_ms": 0.012700000000000001
+            },
+            "cudaStreamIsCapturing": {
+              "count": 39,
+              "total_ms": 0.0788
+            },
+            "cudaStreamSynchronize": {
+              "count": 20,
+              "total_ms": 16.8132
+            }
+          },
+          "kernel_count": 933,
+          "kernel_duration_sum_ms": 42.067142,
+          "kernel_span_ms": 97.94924609375,
+          "interpretation": "Separate instrumented frames; durations may include GPU preemption. The kernel sum, stream span and host API waits are not additive."
+        }
+      }
+    },
+    "20260923-replay-graphs": {
+      "raw_sha256": "10380173c04e90e87cfc23606a8d00cd3ee86fcc4dc9e6c0c5a75e101baa4a59",
+      "excluded_from_campaign": true,
+      "fingerprint": {
+        "sha256": {
+          "accuracy.py": "f2864e7270fa4c4c803978cb22123455b5c48f15f20954a8e0229e496eae06a2",
+          "accuracy_config.json": "5bd6bff53bb728bede80fe73b244c545fbd282dbe83d97d14f04d21f6bb8a1d0",
+          "adaptive_gain.py": "0b529c74c553c79675e378874baa81872176aa9422631f147aee75add662a4a7",
+          "analyze_benchmark.py": "51e9d4c4070267e608949804aaf1cf6a98b8568d7b56277404d571d9d8e19344",
+          "analyze_comparison.py": "f45f2b6764eece1c0fd907262760e1d5d9872349f37b6440f522c5439e512b5e",
+          "analyze_gain_study.py": "fe1dc1e97b71de44f3a10430567e5c8b1d22ea2ffba0e86749680c3c284a9709",
+          "app.py": "b668c0a3da6bb056488bc6c3e99f3e10905e9e2169f101851ac8929a67bd852a",
+          "assets/marker.png": "ab2472414444ee33daf910b6d1e3048c2cd1409cc5b9c6838ea203a7e9744a40",
+          "assets/natural-board.png": "851e7345adfb70a0fcb4e95dde970d6d9007d1cdb209e64188635acc33c9b067",
+          "assets/natural-target-source.json": "4d680aa45427481d7328ae8d43c22c0a198443c16888d97c02bdd22eda3bc077",
+          "assets/natural-target-source.png": "f3d7a2eaf08f24345610851cb23574982ca55fdb75a4cf99b2a1c2668cce89c8",
+          "assets/natural-target.png": "6dc880cf2c20520b9b0dba3aa30f3accce6379d2d61e5edaa9ea4f44a030f8ab",
+          "baselines.py": "50f381af192e33a195b2cc481f88bd0818cac85072cab81ea679f33b83dd653d",
+          "benchmark.py": "1be0fc0dff13a7474b9dbef6acec64ead0137c773f57cde4462620ea9bd96de7",
+          "benchmark_config.json": "4e873ce4baed5efb76c9550bffbd261dc2677b13626c09b0de138ed6b7d07700",
+          "benchmark_learned.py": "e945838fbfce52944752319aeddb28fa0d90fdb262ccdea735c9f7ac57626f92",
+          "calibration.py": "c97eecc65705b7b0d9c77f80378d634bd9f3f93213c74d31b1a1e97763551dbe",
+          "camera_robustness.py": "f7d84677008b00e9d8a2517a8620668fcab82effedc1d2f31d05ff9d88c71b07",
+          "camera_timing.py": "8af033010df94fc96fad141b41c94ea3ca1d5162aed09865c6af43f05c467778",
+          "camera_timing_config.json": "20e73da5ca3615d727e35bf854af20b7e34700936526a8e87c19bc572a7a8db2",
+          "collision.py": "eef38870829cdf96a9cb6c8a8d6a0af56c9b7289ae0dcf64e9cdf132e005f662",
+          "collision_config.json": "9fdaf7af4437dae7ea78467a37c9680ab8bed4c7d754d5684ef78963337fd6fb",
+          "compare_controllers.py": "572f8daab2e0b00ed9c39f32129b3a02331d45cc5db0f21a220282fd08716620",
+          "comparison_config.json": "4e1b8e7ab84c08b0ede5de60ce961abf9c72ace5d727a96e8d13d0e2dadb610f",
+          "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+          "control.py": "1f59a1942ec7bce375f7ec7b648cc59f8fc4b0103e85fd515f2e89e4d8e89fe7",
+          "deadline_diagnostics.py": "2477d4908e03926bb6e1e2118950b7765b1a03419bbc3726b71a953bb6fc2653",
+          "download_learned_models.py": "13692f9c1db7d7337943363be008ab49b842fe112dff231c665a21df0df0a404",
+          "gain_config.json": "6186b780e19487b4e1920a3a5538dbc73a0b08488120a70e1253f62e99f65f6a",
+          "joint_limit_config.json": "f8855a46a7aca71867fa730d4ea092686b72267c0351883421f31c574134f841",
+          "joint_limits.py": "3d5e0c8d18c88c7d7d3bafedbd1c4ac8701947240c249ce528f95f32808291d3",
+          "latency_stress.py": "497d416fc92cbbd1f3e13ac9256280e29f2cf2aaa9a4f071e362042082be0406",
+          "learned_feature_config.json": "0145983cbf3bafef87e80ca079628744f69edf175764137e36d373786353a708",
+          "learned_perception.py": "e05531e17c54cc789b437df888daec2b37de835b33d5615e3db1e110ce8f676a",
+          "models/manifest.json": "4ce943f21304b7934d724250c0bb1dac2839ab43975d202a008404c8e190692e",
+          "motion_path.py": "27f8657b1af0154532a790a7e91f3a0fec11a355ac99cef397c315def74817f7",
+          "natural_feature_config.json": "284d6107ba8a739fb3c5731ad4545de16d44be48adc6e3ad43f34e08efe4a2fb",
+          "perception.py": "34e74c605b5e349a714d7cdf67a5c1e4322f2252a919450944abb182972bfb94",
+          "precision.py": "c249a34cc121835f6fcbcacdfce6ad6034ea5cbca2706aec9bae4e0640752561",
+          "precision_config.json": "bb7749276bf39d39e3c980d7d14e549f2e8f26f9b9480736f6f99891ef5027b7",
+          "prepare_natural_reference.py": "1dab76acce145061258c965f84b63c42723c466b19723056630367c7fb705df9",
+          "realtime.py": "4bf7873258a6d8f20fd86794e2b8e26392335edb772ca657fc67453f5f3bd1f6",
+          "realtime_app.py": "008b6cc5ac59d2162120e701c9f167c5c43c46240fb3170859d317c696496b7c",
+          "record_joint_limit_demo.py": "d4ca6b29e1c257c3633d44f0edda3eb6b1841a97caad934f14b18178124b808e",
+          "record_learned_demo.py": "10dba7fe0733e456fb0c66aae55e0f15a4255efbb0ee44d346361d572171ad13",
+          "record_natural_image_demo.py": "4bfa0237874a299b45e1a7766a22ed9472d3a8eb11b55358b2e77f023e80302d",
+          "record_recovery_demo.py": "652d43ec930db88d118d708cf1afab2ab53d1b6fe4c168173745440d9fcb6dee",
+          "record_search_coverage_demo.py": "f50572e34d2ec245b7b692ee4187db337366d9bb4a907dfe75a6469c4f7576fc",
+          "record_startup_demo.py": "f015ae73cb59c05ad8503d3ee276f1c7199ed6e74ba618e6ecdb8e4623b8b7d2",
+          "recovery.py": "7562013287a778fcc2f546707f1a7d3f2aed122b13c44439ff1690cad7c815c4",
+          "recovery_config.json": "32b436f0cc0e4272680f163e76861cf358a50d1dacc9a8ce96d878fd02d6b7c5",
+          "reference/goal.npz": "3d6e7376c549ae47f74fd12ec9a0afc134ae8482301ec2a3ced0d16113dc989d",
+          "reference/natural_goal.npz": "2912b8b45be09dac9351f27cff974c7e2808f372dd2dd0d006be6f0299f5f900",
+          "reference/natural_goal.png": "06c39b9e7a003b8653f852bc8cad643bb2aed3b718ddcc3aa475c93d85ded0c4",
+          "reference_image.py": "3a883d1015831290b07f2b312a086da2d70478fe1cee5b6b4ef6887c7f167f3a",
+          "robustness_config.json": "63f6b7a3a010c8de08e074b0e2c2f12b1faa9334b34127789f836862e58ad6fc",
+          "run_accuracy_study.py": "d59ff73a87282acfd80e0b4d88496d60910e4ea2eac68d3714793c8d1a3e68ca",
+          "run_alignment.py": "8c2db501849396eeab0ed2e3870862741f62612bb0e794d5122aeeffafd879b1",
+          "run_camera_delay_study.py": "76e7884b521792ec22bdbe2ca5802448abd1d94228e28e576f1e052ef12054c6",
+          "run_camera_robustness.py": "54df8320e59790b144f6d5db583a72670cabf559950daf5503721acd0c568ff5",
+          "run_collision_study.py": "5272275f5086f5d060a8f3332507a85841d03ec5e4e31cb5ec8450261b01a46e",
+          "run_gain_study.py": "013d266ae42575f3f343687083bb78ac3f2d4e1631a7965c719679df7ff0e760",
+          "run_joint_limit_study.py": "5cb174d40d4b67166b9ed4bec97ea910584377e41eb918604181655efe53a3c8",
+          "run_latency_stress.py": "7e6f8776b4abbd7f10835091e8e28316220ebdb56008e51c85e9d040806884e5",
+          "run_latency_study.py": "fe41cf48723c7ee6f31c19cff6946b5de7dfb94332d75c3553ba35295c4b4fe6",
+          "run_learned_study.py": "8e45a62729df0d4906524a533bae7e1a11f72ae2e3d83625de271e02308a57d3",
+          "run_natural_image_study.py": "ef9a56e1a55fcff194bf640ad5a584efbaf763203a31a008fe9c90b6d77e4815",
+          "run_recovery.py": "32b6a95b97331b629fc8aafcf86f3ec566010d3ce4f06aac99aee10aef8354d7",
+          "run_search_coverage.py": "b530c1d9a5048f9fc92d5b510e8c00cf3bac3d2d65454f6ab410e7370571dda7",
+          "run_startup_search.py": "48a6f8d4f58c3f6d4438a889a9e1cacd4f3be30e0510afbd0bde1e0a143050cb",
+          "scene.xml": "c390e02323a4d93c4ee6165ed602de1711a7d23c79e5d739fc7d536f70f24e04",
+          "setup_learned.py": "1f32b684efd666668385d3acd726dc2f564b76ee9fd4cb758e3bf1ea3b46b214",
+          "simulation.py": "fdaab73e8d7305cc10c94e42e7865ee05b4d86bea46c6930287c00c91346f160",
+          "startup_search.py": "9e3b1ca1389bd4bb0b57a4f9827ebfdccb3152ea28321b8ade86773c5677bd28",
+          "startup_search_config.json": "72e915e3699b029821ec8a9b85b104330a7bab2a96338a3b0538faf0350d75f9",
+          "verify.py": "de16dd2b666fdd89f286f60ae3f6255b8559703f7c8cbfde4a47d95f6ceb4647",
+          "verify_learned_repair.py": "14b7b1211f98ae6ad930a00bbe91f9ec83ea43117b4c3e4f6f2c508d6b68c0f4"
+        },
+        "runtime": {
+          "python": "3.12.14",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "numpy": "2.5.2",
+          "opencv-python": "5.0.0.93",
+          "mujoco": "3.12.0",
+          "matplotlib": "3.11.1",
+          "pillow": "12.3.0",
+          "torch": "2.13.0+cu126",
+          "torchvision": "0.28.0+cu126",
+          "lightglue": "0.0"
+        }
+      },
+      "tool_sha256": null,
+      "environment": {
+        "KMP_BLOCKTIME": null,
+        "OMP_WAIT_POLICY": null,
+        "OMP_NUM_THREADS": "16",
+        "CUDA_LAUNCH_BLOCKING": null
+      },
+      "options": {
+        "alternate_stream": false,
+        "device_cast": true,
+        "benchmark": false,
+        "channels_last": false,
+        "blas_lt": false,
+        "graphs": [
+          {
+            "replays": 830,
+            "fallbacks": 0
+          },
+          {
+            "replays": 830,
+            "fallbacks": 0
+          },
+          {
+            "replays": 830,
+            "fallbacks": 0
+          },
+          {
+            "replays": 830,
+            "fallbacks": 0
+          },
+          {
+            "replays": 830,
+            "fallbacks": 0
+          },
+          {
+            "replays": 830,
+            "fallbacks": 0
+          },
+          {
+            "replays": 830,
+            "fallbacks": 0
+          },
+          {
+            "replays": 0,
+            "fallbacks": 0
+          },
+          {
+            "replays": 0,
+            "fallbacks": 0
+          }
+        ],
+        "prerender": false,
+        "ablation": false
+      },
+      "before": {
+        "model": "1eb75680d5b19595e3219bc537d95d34ed2a91ed8e1a7bb4bdaf6d7ddad7f9a4",
+        "template": "9b8c33d3cf1b7d1860c877bdfa14cec90b1447bda28928cb9f5fce27c1a934c4",
+        "stream": 0,
+        "threads": 8,
+        "training": [
+          false,
+          false
+        ],
+        "memory": {
+          "allocated_bytes.all.current": 81731584,
+          "reserved_bytes.all.current": 251658240,
+          "active_bytes.all.current": 81731584,
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        },
+        "blocktime_ms": 200
+      },
+      "after": {
+        "model": "1eb75680d5b19595e3219bc537d95d34ed2a91ed8e1a7bb4bdaf6d7ddad7f9a4",
+        "template": "9b8c33d3cf1b7d1860c877bdfa14cec90b1447bda28928cb9f5fce27c1a934c4",
+        "stream": 0,
+        "threads": 8,
+        "training": [
+          false,
+          false
+        ],
+        "memory": {
+          "allocated_bytes.all.current": 81731584,
+          "reserved_bytes.all.current": 251658240,
+          "active_bytes.all.current": 81731584,
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        },
+        "blocktime_ms": 200
+      },
+      "cohorts": {
+        "first_30s": {
+          "count": 276,
+          "mean": 77.58122210351218,
+          "p50": 66.62585001322441,
+          "p95": 182.4296500417404,
+          "p99": 239.6947750094114,
+          "p99_9": 313.63446748582777,
+          "max": 329.5982999843545
+        },
+        "later": {
+          "count": 550,
+          "mean": 127.39838018113832,
+          "p50": 108.40124997776002,
+          "p95": 249.1651099931913,
+          "p99": 305.23375398246554,
+          "p99_9": 340.57819379080354,
+          "max": 348.9141000318341
+        }
+      },
+      "memory_over_unprofiled_frames": {
+        "allocated_bytes.all.current": {
+          "min": 81731584,
+          "max": 81731584
+        },
+        "reserved_bytes.all.current": {
+          "min": 251658240,
+          "max": 251658240
+        },
+        "num_alloc_retries": {
+          "min": 0,
+          "max": 0
+        },
+        "num_ooms": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "phases": {
+        "0": {
+          "phase": "device_cast",
+          "blocktime_ms": [
+            200
+          ],
+          "processing_ms": {
+            "count": 826,
+            "mean": 110.75245326900173,
+            "p50": 91.07015002518892,
+            "p95": 229.57980001228862,
+            "p99": 295.60567502630875,
+            "p99_9": 336.38746497017667,
+            "max": 348.9141000318341
+          },
+          "process_cpu_ms": {
+            "count": 826,
+            "mean": 121.51937046004842,
+            "p50": 93.75,
+            "p95": 261.71875,
+            "p99": 328.125,
+            "p99_9": 421.875,
+            "max": 421.875
+          },
+          "thread_cpu_ms": {
+            "count": 826,
+            "mean": 104.79721549636804,
+            "p50": 78.125,
+            "p95": 218.75,
+            "p99": 292.96875,
+            "p99_9": 330.8593750000011,
+            "max": 343.75
+          },
+          "gap_ms": {
+            "count": 826,
+            "mean": 30.16181997640552,
+            "p50": 0.6098000158090144,
+            "p95": 1.6726500180084258,
+            "p99": 1101.2268999911612,
+            "p99_9": 1102.9855800239604,
+            "max": 1105.5641999701038
+          }
+        }
+      },
+      "profiles": {
+        "profile-0.json": {
+          "sha256": "93432655caac2896865b0c0ad21d84a13356879270a8b973c7bffcfe2afc53f7",
+          "runtime": {
+            "cudaDeviceGetAttribute": {
+              "count": 10,
+              "total_ms": 0.009
+            },
+            "cudaDeviceSynchronize": {
+              "count": 1,
+              "total_ms": 0.032299999999999995
+            },
+            "cudaEventElapsedTime": {
+              "count": 3,
+              "total_ms": 0.003
+            },
+            "cudaEventQuery": {
+              "count": 10,
+              "total_ms": 0.006
+            },
+            "cudaEventRecordWithFlags": {
+              "count": 4,
+              "total_ms": 0.1291
+            },
+            "cudaFuncGetAttributes": {
+              "count": 2,
+              "total_ms": 0.012199999999999999
+            },
+            "cudaFuncSetAttribute": {
+              "count": 4,
+              "total_ms": 0.0107
+            },
+            "cudaGraphLaunch": {
+              "count": 7,
+              "total_ms": 5.075
+            },
+            "cudaLaunchKernel": {
+              "count": 301,
+              "total_ms": 6.3333
+            },
+            "cudaLaunchKernelExC": {
+              "count": 3,
+              "total_ms": 0.045899999999999996
+            },
+            "cudaMemcpyAsync": {
+              "count": 54,
+              "total_ms": 1.5087000000000002
+            },
+            "cudaMemsetAsync": {
+              "count": 3,
+              "total_ms": 0.0596
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessor": {
+              "count": 3,
+              "total_ms": 0.0106
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags": {
+              "count": 3,
+              "total_ms": 0.0063999999999999994
+            },
+            "cudaPeekAtLastError": {
+              "count": 58,
+              "total_ms": 0.0096
+            },
+            "cudaStreamIsCapturing": {
+              "count": 11,
+              "total_ms": 0.027399999999999997
+            },
+            "cudaStreamSynchronize": {
+              "count": 20,
+              "total_ms": 7.0075
+            }
+          },
+          "kernel_count": 936,
+          "kernel_duration_sum_ms": 19.891213,
+          "kernel_span_ms": 35.383423828125,
+          "interpretation": "Separate instrumented frames; durations may include GPU preemption. The kernel sum, stream span and host API waits are not additive."
+        },
+        "profile-1.json": {
+          "sha256": "70e7bfb7e0fc44fce008eb7e68b40ee6b00b9a8f3ec564f7e56430e78d2adb53",
+          "runtime": {
+            "cudaDeviceGetAttribute": {
+              "count": 10,
+              "total_ms": 0.0099
+            },
+            "cudaDeviceSynchronize": {
+              "count": 1,
+              "total_ms": 0.0424
+            },
+            "cudaEventElapsedTime": {
+              "count": 3,
+              "total_ms": 0.0033
+            },
+            "cudaEventQuery": {
+              "count": 10,
+              "total_ms": 0.0058
+            },
+            "cudaEventRecordWithFlags": {
+              "count": 4,
+              "total_ms": 0.2011
+            },
+            "cudaFuncGetAttributes": {
+              "count": 2,
+              "total_ms": 0.012199999999999999
+            },
+            "cudaFuncSetAttribute": {
+              "count": 4,
+              "total_ms": 0.0108
+            },
+            "cudaGraphLaunch": {
+              "count": 7,
+              "total_ms": 2.9043
+            },
+            "cudaLaunchKernel": {
+              "count": 301,
+              "total_ms": 4.8274
+            },
+            "cudaLaunchKernelExC": {
+              "count": 3,
+              "total_ms": 0.0364
+            },
+            "cudaMemcpyAsync": {
+              "count": 54,
+              "total_ms": 1.6445
+            },
+            "cudaMemsetAsync": {
+              "count": 3,
+              "total_ms": 0.0487
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessor": {
+              "count": 3,
+              "total_ms": 0.0096
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags": {
+              "count": 3,
+              "total_ms": 0.0057
+            },
+            "cudaPeekAtLastError": {
+              "count": 58,
+              "total_ms": 0.0103
+            },
+            "cudaStreamIsCapturing": {
+              "count": 11,
+              "total_ms": 0.0244
+            },
+            "cudaStreamSynchronize": {
+              "count": 20,
+              "total_ms": 50.072900000000004
+            }
+          },
+          "kernel_count": 933,
+          "kernel_duration_sum_ms": 62.074881999999995,
+          "kernel_span_ms": 73.2035947265625,
+          "interpretation": "Separate instrumented frames; durations may include GPU preemption. The kernel sum, stream span and host API waits are not additive."
+        }
+      }
+    },
+    "20260923-replay-layout-blas": {
+      "raw_sha256": "2e32a48eee889821abdf735329974c04fd2127b2576722e2511b1f2d70707552",
+      "excluded_from_campaign": true,
+      "fingerprint": {
+        "sha256": {
+          "accuracy.py": "f2864e7270fa4c4c803978cb22123455b5c48f15f20954a8e0229e496eae06a2",
+          "accuracy_config.json": "5bd6bff53bb728bede80fe73b244c545fbd282dbe83d97d14f04d21f6bb8a1d0",
+          "adaptive_gain.py": "0b529c74c553c79675e378874baa81872176aa9422631f147aee75add662a4a7",
+          "analyze_benchmark.py": "51e9d4c4070267e608949804aaf1cf6a98b8568d7b56277404d571d9d8e19344",
+          "analyze_comparison.py": "f45f2b6764eece1c0fd907262760e1d5d9872349f37b6440f522c5439e512b5e",
+          "analyze_gain_study.py": "fe1dc1e97b71de44f3a10430567e5c8b1d22ea2ffba0e86749680c3c284a9709",
+          "app.py": "b668c0a3da6bb056488bc6c3e99f3e10905e9e2169f101851ac8929a67bd852a",
+          "assets/marker.png": "ab2472414444ee33daf910b6d1e3048c2cd1409cc5b9c6838ea203a7e9744a40",
+          "assets/natural-board.png": "851e7345adfb70a0fcb4e95dde970d6d9007d1cdb209e64188635acc33c9b067",
+          "assets/natural-target-source.json": "4d680aa45427481d7328ae8d43c22c0a198443c16888d97c02bdd22eda3bc077",
+          "assets/natural-target-source.png": "f3d7a2eaf08f24345610851cb23574982ca55fdb75a4cf99b2a1c2668cce89c8",
+          "assets/natural-target.png": "6dc880cf2c20520b9b0dba3aa30f3accce6379d2d61e5edaa9ea4f44a030f8ab",
+          "baselines.py": "50f381af192e33a195b2cc481f88bd0818cac85072cab81ea679f33b83dd653d",
+          "benchmark.py": "1be0fc0dff13a7474b9dbef6acec64ead0137c773f57cde4462620ea9bd96de7",
+          "benchmark_config.json": "4e873ce4baed5efb76c9550bffbd261dc2677b13626c09b0de138ed6b7d07700",
+          "benchmark_learned.py": "e945838fbfce52944752319aeddb28fa0d90fdb262ccdea735c9f7ac57626f92",
+          "calibration.py": "c97eecc65705b7b0d9c77f80378d634bd9f3f93213c74d31b1a1e97763551dbe",
+          "camera_robustness.py": "f7d84677008b00e9d8a2517a8620668fcab82effedc1d2f31d05ff9d88c71b07",
+          "camera_timing.py": "8af033010df94fc96fad141b41c94ea3ca1d5162aed09865c6af43f05c467778",
+          "camera_timing_config.json": "20e73da5ca3615d727e35bf854af20b7e34700936526a8e87c19bc572a7a8db2",
+          "collision.py": "eef38870829cdf96a9cb6c8a8d6a0af56c9b7289ae0dcf64e9cdf132e005f662",
+          "collision_config.json": "9fdaf7af4437dae7ea78467a37c9680ab8bed4c7d754d5684ef78963337fd6fb",
+          "compare_controllers.py": "572f8daab2e0b00ed9c39f32129b3a02331d45cc5db0f21a220282fd08716620",
+          "comparison_config.json": "4e1b8e7ab84c08b0ede5de60ce961abf9c72ace5d727a96e8d13d0e2dadb610f",
+          "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+          "control.py": "1f59a1942ec7bce375f7ec7b648cc59f8fc4b0103e85fd515f2e89e4d8e89fe7",
+          "deadline_diagnostics.py": "2477d4908e03926bb6e1e2118950b7765b1a03419bbc3726b71a953bb6fc2653",
+          "download_learned_models.py": "13692f9c1db7d7337943363be008ab49b842fe112dff231c665a21df0df0a404",
+          "gain_config.json": "6186b780e19487b4e1920a3a5538dbc73a0b08488120a70e1253f62e99f65f6a",
+          "joint_limit_config.json": "f8855a46a7aca71867fa730d4ea092686b72267c0351883421f31c574134f841",
+          "joint_limits.py": "3d5e0c8d18c88c7d7d3bafedbd1c4ac8701947240c249ce528f95f32808291d3",
+          "latency_stress.py": "497d416fc92cbbd1f3e13ac9256280e29f2cf2aaa9a4f071e362042082be0406",
+          "learned_feature_config.json": "0145983cbf3bafef87e80ca079628744f69edf175764137e36d373786353a708",
+          "learned_perception.py": "e05531e17c54cc789b437df888daec2b37de835b33d5615e3db1e110ce8f676a",
+          "models/manifest.json": "4ce943f21304b7934d724250c0bb1dac2839ab43975d202a008404c8e190692e",
+          "motion_path.py": "27f8657b1af0154532a790a7e91f3a0fec11a355ac99cef397c315def74817f7",
+          "natural_feature_config.json": "284d6107ba8a739fb3c5731ad4545de16d44be48adc6e3ad43f34e08efe4a2fb",
+          "perception.py": "34e74c605b5e349a714d7cdf67a5c1e4322f2252a919450944abb182972bfb94",
+          "precision.py": "c249a34cc121835f6fcbcacdfce6ad6034ea5cbca2706aec9bae4e0640752561",
+          "precision_config.json": "bb7749276bf39d39e3c980d7d14e549f2e8f26f9b9480736f6f99891ef5027b7",
+          "prepare_natural_reference.py": "1dab76acce145061258c965f84b63c42723c466b19723056630367c7fb705df9",
+          "realtime.py": "4bf7873258a6d8f20fd86794e2b8e26392335edb772ca657fc67453f5f3bd1f6",
+          "realtime_app.py": "008b6cc5ac59d2162120e701c9f167c5c43c46240fb3170859d317c696496b7c",
+          "record_joint_limit_demo.py": "d4ca6b29e1c257c3633d44f0edda3eb6b1841a97caad934f14b18178124b808e",
+          "record_learned_demo.py": "10dba7fe0733e456fb0c66aae55e0f15a4255efbb0ee44d346361d572171ad13",
+          "record_natural_image_demo.py": "4bfa0237874a299b45e1a7766a22ed9472d3a8eb11b55358b2e77f023e80302d",
+          "record_recovery_demo.py": "652d43ec930db88d118d708cf1afab2ab53d1b6fe4c168173745440d9fcb6dee",
+          "record_search_coverage_demo.py": "f50572e34d2ec245b7b692ee4187db337366d9bb4a907dfe75a6469c4f7576fc",
+          "record_startup_demo.py": "f015ae73cb59c05ad8503d3ee276f1c7199ed6e74ba618e6ecdb8e4623b8b7d2",
+          "recovery.py": "7562013287a778fcc2f546707f1a7d3f2aed122b13c44439ff1690cad7c815c4",
+          "recovery_config.json": "32b436f0cc0e4272680f163e76861cf358a50d1dacc9a8ce96d878fd02d6b7c5",
+          "reference/goal.npz": "3d6e7376c549ae47f74fd12ec9a0afc134ae8482301ec2a3ced0d16113dc989d",
+          "reference/natural_goal.npz": "2912b8b45be09dac9351f27cff974c7e2808f372dd2dd0d006be6f0299f5f900",
+          "reference/natural_goal.png": "06c39b9e7a003b8653f852bc8cad643bb2aed3b718ddcc3aa475c93d85ded0c4",
+          "reference_image.py": "3a883d1015831290b07f2b312a086da2d70478fe1cee5b6b4ef6887c7f167f3a",
+          "robustness_config.json": "63f6b7a3a010c8de08e074b0e2c2f12b1faa9334b34127789f836862e58ad6fc",
+          "run_accuracy_study.py": "d59ff73a87282acfd80e0b4d88496d60910e4ea2eac68d3714793c8d1a3e68ca",
+          "run_alignment.py": "8c2db501849396eeab0ed2e3870862741f62612bb0e794d5122aeeffafd879b1",
+          "run_camera_delay_study.py": "76e7884b521792ec22bdbe2ca5802448abd1d94228e28e576f1e052ef12054c6",
+          "run_camera_robustness.py": "54df8320e59790b144f6d5db583a72670cabf559950daf5503721acd0c568ff5",
+          "run_collision_study.py": "5272275f5086f5d060a8f3332507a85841d03ec5e4e31cb5ec8450261b01a46e",
+          "run_gain_study.py": "013d266ae42575f3f343687083bb78ac3f2d4e1631a7965c719679df7ff0e760",
+          "run_joint_limit_study.py": "5cb174d40d4b67166b9ed4bec97ea910584377e41eb918604181655efe53a3c8",
+          "run_latency_stress.py": "7e6f8776b4abbd7f10835091e8e28316220ebdb56008e51c85e9d040806884e5",
+          "run_latency_study.py": "fe41cf48723c7ee6f31c19cff6946b5de7dfb94332d75c3553ba35295c4b4fe6",
+          "run_learned_study.py": "8e45a62729df0d4906524a533bae7e1a11f72ae2e3d83625de271e02308a57d3",
+          "run_natural_image_study.py": "ef9a56e1a55fcff194bf640ad5a584efbaf763203a31a008fe9c90b6d77e4815",
+          "run_recovery.py": "32b6a95b97331b629fc8aafcf86f3ec566010d3ce4f06aac99aee10aef8354d7",
+          "run_search_coverage.py": "b530c1d9a5048f9fc92d5b510e8c00cf3bac3d2d65454f6ab410e7370571dda7",
+          "run_startup_search.py": "48a6f8d4f58c3f6d4438a889a9e1cacd4f3be30e0510afbd0bde1e0a143050cb",
+          "scene.xml": "c390e02323a4d93c4ee6165ed602de1711a7d23c79e5d739fc7d536f70f24e04",
+          "setup_learned.py": "1f32b684efd666668385d3acd726dc2f564b76ee9fd4cb758e3bf1ea3b46b214",
+          "simulation.py": "fdaab73e8d7305cc10c94e42e7865ee05b4d86bea46c6930287c00c91346f160",
+          "startup_search.py": "9e3b1ca1389bd4bb0b57a4f9827ebfdccb3152ea28321b8ade86773c5677bd28",
+          "startup_search_config.json": "72e915e3699b029821ec8a9b85b104330a7bab2a96338a3b0538faf0350d75f9",
+          "verify.py": "de16dd2b666fdd89f286f60ae3f6255b8559703f7c8cbfde4a47d95f6ceb4647",
+          "verify_learned_repair.py": "14b7b1211f98ae6ad930a00bbe91f9ec83ea43117b4c3e4f6f2c508d6b68c0f4"
+        },
+        "runtime": {
+          "python": "3.12.14",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "numpy": "2.5.2",
+          "opencv-python": "5.0.0.93",
+          "mujoco": "3.12.0",
+          "matplotlib": "3.11.1",
+          "pillow": "12.3.0",
+          "torch": "2.13.0+cu126",
+          "torchvision": "0.28.0+cu126",
+          "lightglue": "0.0"
+        }
+      },
+      "tool_sha256": null,
+      "environment": {
+        "KMP_BLOCKTIME": null,
+        "OMP_WAIT_POLICY": null,
+        "OMP_NUM_THREADS": "16",
+        "CUDA_LAUNCH_BLOCKING": null
+      },
+      "options": {
+        "alternate_stream": false,
+        "device_cast": true,
+        "benchmark": false,
+        "channels_last": true,
+        "blas_lt": true,
+        "graphs": null,
+        "prerender": false,
+        "ablation": false
+      },
+      "before": {
+        "model": "1eb75680d5b19595e3219bc537d95d34ed2a91ed8e1a7bb4bdaf6d7ddad7f9a4",
+        "template": "9b8c33d3cf1b7d1860c877bdfa14cec90b1447bda28928cb9f5fce27c1a934c4",
+        "stream": 0,
+        "threads": 8,
+        "training": [
+          false,
+          false
+        ],
+        "memory": {
+          "allocated_bytes.all.current": 61406208,
+          "reserved_bytes.all.current": 186646528,
+          "active_bytes.all.current": 61406208,
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        },
+        "blocktime_ms": 200
+      },
+      "after": {
+        "model": "1eb75680d5b19595e3219bc537d95d34ed2a91ed8e1a7bb4bdaf6d7ddad7f9a4",
+        "template": "9b8c33d3cf1b7d1860c877bdfa14cec90b1447bda28928cb9f5fce27c1a934c4",
+        "stream": 0,
+        "threads": 8,
+        "training": [
+          false,
+          false
+        ],
+        "memory": {
+          "allocated_bytes.all.current": 61406208,
+          "reserved_bytes.all.current": 186646528,
+          "active_bytes.all.current": 61406208,
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        },
+        "blocktime_ms": 200
+      },
+      "cohorts": {
+        "first_30s": {
+          "count": 177,
+          "mean": 139.29124294035663,
+          "p50": 118.32629999844357,
+          "p95": 282.45728003093967,
+          "p99": 325.96231598174205,
+          "p99_9": 340.10433762148034,
+          "max": 341.99500002432615
+        },
+        "later": {
+          "count": 487,
+          "mean": 149.00354209470274,
+          "p50": 131.19430001825094,
+          "p95": 275.000919989543,
+          "p99": 302.8503980347886,
+          "p99_9": 341.4305345723417,
+          "max": 349.6676999493502
+        }
+      },
+      "memory_over_unprofiled_frames": {
+        "allocated_bytes.all.current": {
+          "min": 61406208,
+          "max": 61406208
+        },
+        "reserved_bytes.all.current": {
+          "min": 186646528,
+          "max": 186646528
+        },
+        "num_alloc_retries": {
+          "min": 0,
+          "max": 0
+        },
+        "num_ooms": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "phases": {
+        "0": {
+          "phase": "device_cast",
+          "blocktime_ms": [
+            200
+          ],
+          "processing_ms": {
+            "count": 664,
+            "mean": 146.41457078398096,
+            "p50": 126.82125001447275,
+            "p95": 276.4969999931054,
+            "p99": 316.87453996855766,
+            "p99_9": 344.58069989906005,
+            "max": 349.6676999493502
+          },
+          "process_cpu_ms": {
+            "count": 664,
+            "mean": 150.95538403614458,
+            "p50": 140.625,
+            "p95": 281.25,
+            "p99": 343.75,
+            "p99_9": 437.5,
+            "max": 437.5
+          },
+          "thread_cpu_ms": {
+            "count": 664,
+            "mean": 136.27164909638554,
+            "p50": 125.0,
+            "p95": 250.0,
+            "p99": 296.875,
+            "p99_9": 333.3906250000016,
+            "max": 343.75
+          },
+          "gap_ms": {
+            "count": 664,
+            "mean": 30.58014954657698,
+            "p50": 0.4171000327914953,
+            "p95": 0.8551200007786975,
+            "p99": 1101.0104099591263,
+            "p99_9": 1102.5261608858711,
+            "max": 1103.8691999856383
+          }
+        }
+      },
+      "profiles": {
+        "profile-0.json": {
+          "sha256": "5c8acadd6188e7e9ba36c534992b062a81e38ae7a94a3ecdecdea5243e195d7e",
+          "runtime": {
+            "cudaDeviceGetAttribute": {
+              "count": 10,
+              "total_ms": 0.0106
+            },
+            "cudaDeviceSynchronize": {
+              "count": 1,
+              "total_ms": 0.016300000000000002
+            },
+            "cudaEventElapsedTime": {
+              "count": 3,
+              "total_ms": 0.0046
+            },
+            "cudaEventQuery": {
+              "count": 10,
+              "total_ms": 0.0068
+            },
+            "cudaEventRecordWithFlags": {
+              "count": 4,
+              "total_ms": 0.1774
+            },
+            "cudaFuncSetAttribute": {
+              "count": 9,
+              "total_ms": 0.019899999999999998
+            },
+            "cudaLaunchKernel": {
+              "count": 932,
+              "total_ms": 24.1075
+            },
+            "cudaLaunchKernelExC": {
+              "count": 1,
+              "total_ms": 0.0251
+            },
+            "cudaMemcpyAsync": {
+              "count": 26,
+              "total_ms": 1.4709
+            },
+            "cudaMemsetAsync": {
+              "count": 129,
+              "total_ms": 2.8876
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessor": {
+              "count": 73,
+              "total_ms": 0.16040000000000001
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags": {
+              "count": 3,
+              "total_ms": 0.0057
+            },
+            "cudaPeekAtLastError": {
+              "count": 58,
+              "total_ms": 0.0103
+            },
+            "cudaStreamIsCapturing": {
+              "count": 39,
+              "total_ms": 0.0933
+            },
+            "cudaStreamSynchronize": {
+              "count": 20,
+              "total_ms": 24.3705
+            }
+          },
+          "kernel_count": 935,
+          "kernel_duration_sum_ms": 64.46536,
+          "kernel_span_ms": 109.6690107421875,
+          "interpretation": "Separate instrumented frames; durations may include GPU preemption. The kernel sum, stream span and host API waits are not additive."
+        },
+        "profile-1.json": {
+          "sha256": "e587bcbc71362cd1ce93db8ee0b0215b1de49576ff17f5d9c6f25c9bc1428881",
+          "runtime": {
+            "cudaDeviceGetAttribute": {
+              "count": 10,
+              "total_ms": 0.013099999999999999
+            },
+            "cudaDeviceSynchronize": {
+              "count": 1,
+              "total_ms": 0.0169
+            },
+            "cudaEventElapsedTime": {
+              "count": 3,
+              "total_ms": 0.0044
+            },
+            "cudaEventQuery": {
+              "count": 10,
+              "total_ms": 0.008400000000000001
+            },
+            "cudaEventRecordWithFlags": {
+              "count": 4,
+              "total_ms": 0.1623
+            },
+            "cudaFuncSetAttribute": {
+              "count": 9,
+              "total_ms": 0.022
+            },
+            "cudaLaunchKernel": {
+              "count": 932,
+              "total_ms": 26.0959
+            },
+            "cudaLaunchKernelExC": {
+              "count": 1,
+              "total_ms": 0.022699999999999998
+            },
+            "cudaMemcpyAsync": {
+              "count": 26,
+              "total_ms": 1.3602
+            },
+            "cudaMemsetAsync": {
+              "count": 129,
+              "total_ms": 3.6641999999999997
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessor": {
+              "count": 73,
+              "total_ms": 0.18830000000000002
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags": {
+              "count": 3,
+              "total_ms": 0.0075
+            },
+            "cudaPeekAtLastError": {
+              "count": 58,
+              "total_ms": 0.0101
+            },
+            "cudaStreamIsCapturing": {
+              "count": 39,
+              "total_ms": 0.0963
+            },
+            "cudaStreamSynchronize": {
+              "count": 20,
+              "total_ms": 24.9485
+            }
+          },
+          "kernel_count": 935,
+          "kernel_duration_sum_ms": 64.441421,
+          "kernel_span_ms": 123.7069345703125,
+          "interpretation": "Separate instrumented frames; durations may include GPU preemption. The kernel sum, stream span and host API waits are not additive."
+        }
+      }
+    },
+    "20260923-replay-no-gl": {
+      "raw_sha256": "5374db44d9c4a1864dd17165ad0d22c1f7e1b77e5e1f9575117aa745edb02908",
+      "excluded_from_campaign": true,
+      "fingerprint": {
+        "sha256": {
+          "accuracy.py": "f2864e7270fa4c4c803978cb22123455b5c48f15f20954a8e0229e496eae06a2",
+          "accuracy_config.json": "5bd6bff53bb728bede80fe73b244c545fbd282dbe83d97d14f04d21f6bb8a1d0",
+          "adaptive_gain.py": "0b529c74c553c79675e378874baa81872176aa9422631f147aee75add662a4a7",
+          "analyze_benchmark.py": "51e9d4c4070267e608949804aaf1cf6a98b8568d7b56277404d571d9d8e19344",
+          "analyze_comparison.py": "f45f2b6764eece1c0fd907262760e1d5d9872349f37b6440f522c5439e512b5e",
+          "analyze_gain_study.py": "fe1dc1e97b71de44f3a10430567e5c8b1d22ea2ffba0e86749680c3c284a9709",
+          "app.py": "b668c0a3da6bb056488bc6c3e99f3e10905e9e2169f101851ac8929a67bd852a",
+          "assets/marker.png": "ab2472414444ee33daf910b6d1e3048c2cd1409cc5b9c6838ea203a7e9744a40",
+          "assets/natural-board.png": "851e7345adfb70a0fcb4e95dde970d6d9007d1cdb209e64188635acc33c9b067",
+          "assets/natural-target-source.json": "4d680aa45427481d7328ae8d43c22c0a198443c16888d97c02bdd22eda3bc077",
+          "assets/natural-target-source.png": "f3d7a2eaf08f24345610851cb23574982ca55fdb75a4cf99b2a1c2668cce89c8",
+          "assets/natural-target.png": "6dc880cf2c20520b9b0dba3aa30f3accce6379d2d61e5edaa9ea4f44a030f8ab",
+          "baselines.py": "50f381af192e33a195b2cc481f88bd0818cac85072cab81ea679f33b83dd653d",
+          "benchmark.py": "1be0fc0dff13a7474b9dbef6acec64ead0137c773f57cde4462620ea9bd96de7",
+          "benchmark_config.json": "4e873ce4baed5efb76c9550bffbd261dc2677b13626c09b0de138ed6b7d07700",
+          "benchmark_learned.py": "e945838fbfce52944752319aeddb28fa0d90fdb262ccdea735c9f7ac57626f92",
+          "calibration.py": "c97eecc65705b7b0d9c77f80378d634bd9f3f93213c74d31b1a1e97763551dbe",
+          "camera_robustness.py": "f7d84677008b00e9d8a2517a8620668fcab82effedc1d2f31d05ff9d88c71b07",
+          "camera_timing.py": "8af033010df94fc96fad141b41c94ea3ca1d5162aed09865c6af43f05c467778",
+          "camera_timing_config.json": "20e73da5ca3615d727e35bf854af20b7e34700936526a8e87c19bc572a7a8db2",
+          "collision.py": "eef38870829cdf96a9cb6c8a8d6a0af56c9b7289ae0dcf64e9cdf132e005f662",
+          "collision_config.json": "9fdaf7af4437dae7ea78467a37c9680ab8bed4c7d754d5684ef78963337fd6fb",
+          "compare_controllers.py": "572f8daab2e0b00ed9c39f32129b3a02331d45cc5db0f21a220282fd08716620",
+          "comparison_config.json": "4e1b8e7ab84c08b0ede5de60ce961abf9c72ace5d727a96e8d13d0e2dadb610f",
+          "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+          "control.py": "1f59a1942ec7bce375f7ec7b648cc59f8fc4b0103e85fd515f2e89e4d8e89fe7",
+          "deadline_diagnostics.py": "2477d4908e03926bb6e1e2118950b7765b1a03419bbc3726b71a953bb6fc2653",
+          "download_learned_models.py": "13692f9c1db7d7337943363be008ab49b842fe112dff231c665a21df0df0a404",
+          "gain_config.json": "6186b780e19487b4e1920a3a5538dbc73a0b08488120a70e1253f62e99f65f6a",
+          "joint_limit_config.json": "f8855a46a7aca71867fa730d4ea092686b72267c0351883421f31c574134f841",
+          "joint_limits.py": "3d5e0c8d18c88c7d7d3bafedbd1c4ac8701947240c249ce528f95f32808291d3",
+          "latency_stress.py": "497d416fc92cbbd1f3e13ac9256280e29f2cf2aaa9a4f071e362042082be0406",
+          "learned_feature_config.json": "0145983cbf3bafef87e80ca079628744f69edf175764137e36d373786353a708",
+          "learned_perception.py": "e05531e17c54cc789b437df888daec2b37de835b33d5615e3db1e110ce8f676a",
+          "models/manifest.json": "4ce943f21304b7934d724250c0bb1dac2839ab43975d202a008404c8e190692e",
+          "motion_path.py": "27f8657b1af0154532a790a7e91f3a0fec11a355ac99cef397c315def74817f7",
+          "natural_feature_config.json": "284d6107ba8a739fb3c5731ad4545de16d44be48adc6e3ad43f34e08efe4a2fb",
+          "perception.py": "34e74c605b5e349a714d7cdf67a5c1e4322f2252a919450944abb182972bfb94",
+          "precision.py": "c249a34cc121835f6fcbcacdfce6ad6034ea5cbca2706aec9bae4e0640752561",
+          "precision_config.json": "bb7749276bf39d39e3c980d7d14e549f2e8f26f9b9480736f6f99891ef5027b7",
+          "prepare_natural_reference.py": "1dab76acce145061258c965f84b63c42723c466b19723056630367c7fb705df9",
+          "realtime.py": "4bf7873258a6d8f20fd86794e2b8e26392335edb772ca657fc67453f5f3bd1f6",
+          "realtime_app.py": "008b6cc5ac59d2162120e701c9f167c5c43c46240fb3170859d317c696496b7c",
+          "record_joint_limit_demo.py": "d4ca6b29e1c257c3633d44f0edda3eb6b1841a97caad934f14b18178124b808e",
+          "record_learned_demo.py": "10dba7fe0733e456fb0c66aae55e0f15a4255efbb0ee44d346361d572171ad13",
+          "record_natural_image_demo.py": "4bfa0237874a299b45e1a7766a22ed9472d3a8eb11b55358b2e77f023e80302d",
+          "record_recovery_demo.py": "652d43ec930db88d118d708cf1afab2ab53d1b6fe4c168173745440d9fcb6dee",
+          "record_search_coverage_demo.py": "f50572e34d2ec245b7b692ee4187db337366d9bb4a907dfe75a6469c4f7576fc",
+          "record_startup_demo.py": "f015ae73cb59c05ad8503d3ee276f1c7199ed6e74ba618e6ecdb8e4623b8b7d2",
+          "recovery.py": "7562013287a778fcc2f546707f1a7d3f2aed122b13c44439ff1690cad7c815c4",
+          "recovery_config.json": "32b436f0cc0e4272680f163e76861cf358a50d1dacc9a8ce96d878fd02d6b7c5",
+          "reference/goal.npz": "3d6e7376c549ae47f74fd12ec9a0afc134ae8482301ec2a3ced0d16113dc989d",
+          "reference/natural_goal.npz": "2912b8b45be09dac9351f27cff974c7e2808f372dd2dd0d006be6f0299f5f900",
+          "reference/natural_goal.png": "06c39b9e7a003b8653f852bc8cad643bb2aed3b718ddcc3aa475c93d85ded0c4",
+          "reference_image.py": "3a883d1015831290b07f2b312a086da2d70478fe1cee5b6b4ef6887c7f167f3a",
+          "robustness_config.json": "63f6b7a3a010c8de08e074b0e2c2f12b1faa9334b34127789f836862e58ad6fc",
+          "run_accuracy_study.py": "d59ff73a87282acfd80e0b4d88496d60910e4ea2eac68d3714793c8d1a3e68ca",
+          "run_alignment.py": "8c2db501849396eeab0ed2e3870862741f62612bb0e794d5122aeeffafd879b1",
+          "run_camera_delay_study.py": "76e7884b521792ec22bdbe2ca5802448abd1d94228e28e576f1e052ef12054c6",
+          "run_camera_robustness.py": "54df8320e59790b144f6d5db583a72670cabf559950daf5503721acd0c568ff5",
+          "run_collision_study.py": "5272275f5086f5d060a8f3332507a85841d03ec5e4e31cb5ec8450261b01a46e",
+          "run_gain_study.py": "013d266ae42575f3f343687083bb78ac3f2d4e1631a7965c719679df7ff0e760",
+          "run_joint_limit_study.py": "5cb174d40d4b67166b9ed4bec97ea910584377e41eb918604181655efe53a3c8",
+          "run_latency_stress.py": "7e6f8776b4abbd7f10835091e8e28316220ebdb56008e51c85e9d040806884e5",
+          "run_latency_study.py": "fe41cf48723c7ee6f31c19cff6946b5de7dfb94332d75c3553ba35295c4b4fe6",
+          "run_learned_study.py": "8e45a62729df0d4906524a533bae7e1a11f72ae2e3d83625de271e02308a57d3",
+          "run_natural_image_study.py": "ef9a56e1a55fcff194bf640ad5a584efbaf763203a31a008fe9c90b6d77e4815",
+          "run_recovery.py": "32b6a95b97331b629fc8aafcf86f3ec566010d3ce4f06aac99aee10aef8354d7",
+          "run_search_coverage.py": "b530c1d9a5048f9fc92d5b510e8c00cf3bac3d2d65454f6ab410e7370571dda7",
+          "run_startup_search.py": "48a6f8d4f58c3f6d4438a889a9e1cacd4f3be30e0510afbd0bde1e0a143050cb",
+          "scene.xml": "c390e02323a4d93c4ee6165ed602de1711a7d23c79e5d739fc7d536f70f24e04",
+          "setup_learned.py": "1f32b684efd666668385d3acd726dc2f564b76ee9fd4cb758e3bf1ea3b46b214",
+          "simulation.py": "fdaab73e8d7305cc10c94e42e7865ee05b4d86bea46c6930287c00c91346f160",
+          "startup_search.py": "9e3b1ca1389bd4bb0b57a4f9827ebfdccb3152ea28321b8ade86773c5677bd28",
+          "startup_search_config.json": "72e915e3699b029821ec8a9b85b104330a7bab2a96338a3b0538faf0350d75f9",
+          "verify.py": "de16dd2b666fdd89f286f60ae3f6255b8559703f7c8cbfde4a47d95f6ceb4647",
+          "verify_learned_repair.py": "14b7b1211f98ae6ad930a00bbe91f9ec83ea43117b4c3e4f6f2c508d6b68c0f4"
+        },
+        "runtime": {
+          "python": "3.12.14",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "numpy": "2.5.2",
+          "opencv-python": "5.0.0.93",
+          "mujoco": "3.12.0",
+          "matplotlib": "3.11.1",
+          "pillow": "12.3.0",
+          "torch": "2.13.0+cu126",
+          "torchvision": "0.28.0+cu126",
+          "lightglue": "0.0"
+        }
+      },
+      "tool_sha256": null,
+      "environment": {
+        "KMP_BLOCKTIME": null,
+        "OMP_WAIT_POLICY": null,
+        "OMP_NUM_THREADS": "16",
+        "CUDA_LAUNCH_BLOCKING": null
+      },
+      "options": {
+        "alternate_stream": false,
+        "device_cast": false,
+        "benchmark": false,
+        "channels_last": null,
+        "blas_lt": null,
+        "graphs": null,
+        "prerender": true,
+        "ablation": false
+      },
+      "before": {
+        "model": "1eb75680d5b19595e3219bc537d95d34ed2a91ed8e1a7bb4bdaf6d7ddad7f9a4",
+        "template": "9b8c33d3cf1b7d1860c877bdfa14cec90b1447bda28928cb9f5fce27c1a934c4",
+        "stream": 0,
+        "threads": 8,
+        "training": [
+          false,
+          false
+        ],
+        "memory": {
+          "allocated_bytes.all.current": 61406208,
+          "reserved_bytes.all.current": 186646528,
+          "active_bytes.all.current": 61406208,
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        },
+        "blocktime_ms": 200
+      },
+      "after": {
+        "model": "1eb75680d5b19595e3219bc537d95d34ed2a91ed8e1a7bb4bdaf6d7ddad7f9a4",
+        "template": "9b8c33d3cf1b7d1860c877bdfa14cec90b1447bda28928cb9f5fce27c1a934c4",
+        "stream": 0,
+        "threads": 8,
+        "training": [
+          false,
+          false
+        ],
+        "memory": {
+          "allocated_bytes.all.current": 61406208,
+          "reserved_bytes.all.current": 186646528,
+          "active_bytes.all.current": 61406208,
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        },
+        "blocktime_ms": 200
+      },
+      "cohorts": {
+        "first_30s": {
+          "count": 164,
+          "mean": 154.1601567037216,
+          "p50": 134.38920001499355,
+          "p95": 310.02927502267994,
+          "p99": 327.1782999666175,
+          "p99_9": 346.975195001753,
+          "max": 350.6158000091091
+        },
+        "later": {
+          "count": 507,
+          "mean": 146.1810891504337,
+          "p50": 130.15230000019073,
+          "p95": 264.80183000676334,
+          "p99": 315.81637601251714,
+          "p99_9": 334.67727939656487,
+          "max": 338.09029997792095
+        }
+      },
+      "memory_over_unprofiled_frames": {
+        "allocated_bytes.all.current": {
+          "min": 61406208,
+          "max": 61406208
+        },
+        "reserved_bytes.all.current": {
+          "min": 186646528,
+          "max": 186646528
+        },
+        "num_alloc_retries": {
+          "min": 0,
+          "max": 0
+        },
+        "num_ooms": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "phases": {
+        "0": {
+          "phase": "baseline",
+          "blocktime_ms": [
+            200
+          ],
+          "processing_ms": {
+            "count": 671,
+            "mean": 148.13126363439676,
+            "p50": 132.1305999881588,
+            "p95": 278.4371000016108,
+            "p99": 318.5190100164618,
+            "p99_9": 342.22371498821354,
+            "max": 350.6158000091091
+          },
+          "process_cpu_ms": {
+            "count": 671,
+            "mean": 1004.0285022354694,
+            "p50": 953.125,
+            "p95": 1578.125,
+            "p99": 1671.875,
+            "p99_9": 1749.8437500000018,
+            "max": 1781.25
+          },
+          "thread_cpu_ms": {
+            "count": 671,
+            "mean": 141.16058122205663,
+            "p50": 125.0,
+            "p95": 265.625,
+            "p99": 296.875,
+            "p99_9": 322.81250000000125,
+            "max": 343.75
+          },
+          "gap_ms": {
+            "count": 671,
+            "mean": 28.631700150427115,
+            "p50": 0.4548000288195908,
+            "p95": 0.8980999991763383,
+            "p99": 1100.9887200256344,
+            "p99_9": 1103.3742619957775,
+            "max": 1103.763799997978
+          }
+        }
+      },
+      "profiles": {
+        "profile-0.json": {
+          "sha256": "9b5f2b59f5a4735da2d7cab1513df45f7c80c9bbd49ba7a73825e1b7c7ceb3e9",
+          "runtime": {
+            "cudaDeviceGetAttribute": {
+              "count": 10,
+              "total_ms": 0.0123
+            },
+            "cudaDeviceSynchronize": {
+              "count": 1,
+              "total_ms": 0.0179
+            },
+            "cudaEventElapsedTime": {
+              "count": 3,
+              "total_ms": 0.0043
+            },
+            "cudaEventQuery": {
+              "count": 10,
+              "total_ms": 0.0083
+            },
+            "cudaEventRecordWithFlags": {
+              "count": 4,
+              "total_ms": 0.2039
+            },
+            "cudaFuncGetAttributes": {
+              "count": 2,
+              "total_ms": 0.0139
+            },
+            "cudaFuncSetAttribute": {
+              "count": 4,
+              "total_ms": 0.0128
+            },
+            "cudaLaunchKernel": {
+              "count": 930,
+              "total_ms": 25.183799999999998
+            },
+            "cudaLaunchKernelExC": {
+              "count": 3,
+              "total_ms": 0.0569
+            },
+            "cudaMemcpyAsync": {
+              "count": 26,
+              "total_ms": 1.2815999999999999
+            },
+            "cudaMemsetAsync": {
+              "count": 129,
+              "total_ms": 3.9032999999999998
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessor": {
+              "count": 73,
+              "total_ms": 0.15680000000000002
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags": {
+              "count": 3,
+              "total_ms": 0.0081
+            },
+            "cudaPeekAtLastError": {
+              "count": 58,
+              "total_ms": 0.0126
+            },
+            "cudaStreamIsCapturing": {
+              "count": 39,
+              "total_ms": 0.09029999999999999
+            },
+            "cudaStreamSynchronize": {
+              "count": 20,
+              "total_ms": 21.0755
+            }
+          },
+          "kernel_count": 935,
+          "kernel_duration_sum_ms": 62.819869,
+          "kernel_span_ms": 114.5640703125,
+          "interpretation": "Separate instrumented frames; durations may include GPU preemption. The kernel sum, stream span and host API waits are not additive."
+        },
+        "profile-1.json": {
+          "sha256": "44188fe9b2ecfbf53f0343c8a2be590fdf8bf19670b08c9236d37846b49172db",
+          "runtime": {
+            "cudaDeviceGetAttribute": {
+              "count": 10,
+              "total_ms": 0.0111
+            },
+            "cudaDeviceSynchronize": {
+              "count": 1,
+              "total_ms": 0.0136
+            },
+            "cudaEventElapsedTime": {
+              "count": 3,
+              "total_ms": 0.004900000000000001
+            },
+            "cudaEventQuery": {
+              "count": 10,
+              "total_ms": 0.0098
+            },
+            "cudaEventRecordWithFlags": {
+              "count": 4,
+              "total_ms": 0.1984
+            },
+            "cudaFuncGetAttributes": {
+              "count": 2,
+              "total_ms": 0.011699999999999999
+            },
+            "cudaFuncSetAttribute": {
+              "count": 4,
+              "total_ms": 0.011699999999999999
+            },
+            "cudaLaunchKernel": {
+              "count": 930,
+              "total_ms": 18.7062
+            },
+            "cudaLaunchKernelExC": {
+              "count": 3,
+              "total_ms": 0.037700000000000004
+            },
+            "cudaMemcpyAsync": {
+              "count": 26,
+              "total_ms": 1.0685
+            },
+            "cudaMemsetAsync": {
+              "count": 129,
+              "total_ms": 2.6169000000000002
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessor": {
+              "count": 73,
+              "total_ms": 0.142
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags": {
+              "count": 3,
+              "total_ms": 0.0063
+            },
+            "cudaPeekAtLastError": {
+              "count": 58,
+              "total_ms": 0.013200000000000002
+            },
+            "cudaStreamIsCapturing": {
+              "count": 39,
+              "total_ms": 0.0665
+            },
+            "cudaStreamSynchronize": {
+              "count": 20,
+              "total_ms": 24.720299999999998
+            }
+          },
+          "kernel_count": 932,
+          "kernel_duration_sum_ms": 62.693841,
+          "kernel_span_ms": 97.6591640625,
+          "interpretation": "Separate instrumented frames; durations may include GPU preemption. The kernel sum, stream span and host API waits are not additive."
+        }
+      }
+    },
+    "20260923-replay-passive": {
+      "raw_sha256": "5b6b8860df75116feee9a4c2d7b8b6b584ba2679155337363557da930398e753",
+      "excluded_from_campaign": true,
+      "fingerprint": {
+        "sha256": {
+          "accuracy.py": "f2864e7270fa4c4c803978cb22123455b5c48f15f20954a8e0229e496eae06a2",
+          "accuracy_config.json": "5bd6bff53bb728bede80fe73b244c545fbd282dbe83d97d14f04d21f6bb8a1d0",
+          "adaptive_gain.py": "0b529c74c553c79675e378874baa81872176aa9422631f147aee75add662a4a7",
+          "analyze_benchmark.py": "51e9d4c4070267e608949804aaf1cf6a98b8568d7b56277404d571d9d8e19344",
+          "analyze_comparison.py": "f45f2b6764eece1c0fd907262760e1d5d9872349f37b6440f522c5439e512b5e",
+          "analyze_gain_study.py": "fe1dc1e97b71de44f3a10430567e5c8b1d22ea2ffba0e86749680c3c284a9709",
+          "app.py": "b668c0a3da6bb056488bc6c3e99f3e10905e9e2169f101851ac8929a67bd852a",
+          "assets/marker.png": "ab2472414444ee33daf910b6d1e3048c2cd1409cc5b9c6838ea203a7e9744a40",
+          "assets/natural-board.png": "851e7345adfb70a0fcb4e95dde970d6d9007d1cdb209e64188635acc33c9b067",
+          "assets/natural-target-source.json": "4d680aa45427481d7328ae8d43c22c0a198443c16888d97c02bdd22eda3bc077",
+          "assets/natural-target-source.png": "f3d7a2eaf08f24345610851cb23574982ca55fdb75a4cf99b2a1c2668cce89c8",
+          "assets/natural-target.png": "6dc880cf2c20520b9b0dba3aa30f3accce6379d2d61e5edaa9ea4f44a030f8ab",
+          "baselines.py": "50f381af192e33a195b2cc481f88bd0818cac85072cab81ea679f33b83dd653d",
+          "benchmark.py": "1be0fc0dff13a7474b9dbef6acec64ead0137c773f57cde4462620ea9bd96de7",
+          "benchmark_config.json": "4e873ce4baed5efb76c9550bffbd261dc2677b13626c09b0de138ed6b7d07700",
+          "benchmark_learned.py": "e945838fbfce52944752319aeddb28fa0d90fdb262ccdea735c9f7ac57626f92",
+          "calibration.py": "c97eecc65705b7b0d9c77f80378d634bd9f3f93213c74d31b1a1e97763551dbe",
+          "camera_robustness.py": "f7d84677008b00e9d8a2517a8620668fcab82effedc1d2f31d05ff9d88c71b07",
+          "camera_timing.py": "8af033010df94fc96fad141b41c94ea3ca1d5162aed09865c6af43f05c467778",
+          "camera_timing_config.json": "20e73da5ca3615d727e35bf854af20b7e34700936526a8e87c19bc572a7a8db2",
+          "collision.py": "eef38870829cdf96a9cb6c8a8d6a0af56c9b7289ae0dcf64e9cdf132e005f662",
+          "collision_config.json": "9fdaf7af4437dae7ea78467a37c9680ab8bed4c7d754d5684ef78963337fd6fb",
+          "compare_controllers.py": "572f8daab2e0b00ed9c39f32129b3a02331d45cc5db0f21a220282fd08716620",
+          "comparison_config.json": "4e1b8e7ab84c08b0ede5de60ce961abf9c72ace5d727a96e8d13d0e2dadb610f",
+          "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+          "control.py": "1f59a1942ec7bce375f7ec7b648cc59f8fc4b0103e85fd515f2e89e4d8e89fe7",
+          "deadline_diagnostics.py": "2477d4908e03926bb6e1e2118950b7765b1a03419bbc3726b71a953bb6fc2653",
+          "download_learned_models.py": "13692f9c1db7d7337943363be008ab49b842fe112dff231c665a21df0df0a404",
+          "gain_config.json": "6186b780e19487b4e1920a3a5538dbc73a0b08488120a70e1253f62e99f65f6a",
+          "joint_limit_config.json": "f8855a46a7aca71867fa730d4ea092686b72267c0351883421f31c574134f841",
+          "joint_limits.py": "3d5e0c8d18c88c7d7d3bafedbd1c4ac8701947240c249ce528f95f32808291d3",
+          "latency_stress.py": "497d416fc92cbbd1f3e13ac9256280e29f2cf2aaa9a4f071e362042082be0406",
+          "learned_feature_config.json": "0145983cbf3bafef87e80ca079628744f69edf175764137e36d373786353a708",
+          "learned_perception.py": "e05531e17c54cc789b437df888daec2b37de835b33d5615e3db1e110ce8f676a",
+          "models/manifest.json": "4ce943f21304b7934d724250c0bb1dac2839ab43975d202a008404c8e190692e",
+          "motion_path.py": "27f8657b1af0154532a790a7e91f3a0fec11a355ac99cef397c315def74817f7",
+          "natural_feature_config.json": "284d6107ba8a739fb3c5731ad4545de16d44be48adc6e3ad43f34e08efe4a2fb",
+          "perception.py": "34e74c605b5e349a714d7cdf67a5c1e4322f2252a919450944abb182972bfb94",
+          "precision.py": "c249a34cc121835f6fcbcacdfce6ad6034ea5cbca2706aec9bae4e0640752561",
+          "precision_config.json": "bb7749276bf39d39e3c980d7d14e549f2e8f26f9b9480736f6f99891ef5027b7",
+          "prepare_natural_reference.py": "1dab76acce145061258c965f84b63c42723c466b19723056630367c7fb705df9",
+          "realtime.py": "4bf7873258a6d8f20fd86794e2b8e26392335edb772ca657fc67453f5f3bd1f6",
+          "realtime_app.py": "008b6cc5ac59d2162120e701c9f167c5c43c46240fb3170859d317c696496b7c",
+          "record_joint_limit_demo.py": "d4ca6b29e1c257c3633d44f0edda3eb6b1841a97caad934f14b18178124b808e",
+          "record_learned_demo.py": "10dba7fe0733e456fb0c66aae55e0f15a4255efbb0ee44d346361d572171ad13",
+          "record_natural_image_demo.py": "4bfa0237874a299b45e1a7766a22ed9472d3a8eb11b55358b2e77f023e80302d",
+          "record_recovery_demo.py": "652d43ec930db88d118d708cf1afab2ab53d1b6fe4c168173745440d9fcb6dee",
+          "record_search_coverage_demo.py": "f50572e34d2ec245b7b692ee4187db337366d9bb4a907dfe75a6469c4f7576fc",
+          "record_startup_demo.py": "f015ae73cb59c05ad8503d3ee276f1c7199ed6e74ba618e6ecdb8e4623b8b7d2",
+          "recovery.py": "7562013287a778fcc2f546707f1a7d3f2aed122b13c44439ff1690cad7c815c4",
+          "recovery_config.json": "32b436f0cc0e4272680f163e76861cf358a50d1dacc9a8ce96d878fd02d6b7c5",
+          "reference/goal.npz": "3d6e7376c549ae47f74fd12ec9a0afc134ae8482301ec2a3ced0d16113dc989d",
+          "reference/natural_goal.npz": "2912b8b45be09dac9351f27cff974c7e2808f372dd2dd0d006be6f0299f5f900",
+          "reference/natural_goal.png": "06c39b9e7a003b8653f852bc8cad643bb2aed3b718ddcc3aa475c93d85ded0c4",
+          "reference_image.py": "3a883d1015831290b07f2b312a086da2d70478fe1cee5b6b4ef6887c7f167f3a",
+          "robustness_config.json": "63f6b7a3a010c8de08e074b0e2c2f12b1faa9334b34127789f836862e58ad6fc",
+          "run_accuracy_study.py": "d59ff73a87282acfd80e0b4d88496d60910e4ea2eac68d3714793c8d1a3e68ca",
+          "run_alignment.py": "8c2db501849396eeab0ed2e3870862741f62612bb0e794d5122aeeffafd879b1",
+          "run_camera_delay_study.py": "76e7884b521792ec22bdbe2ca5802448abd1d94228e28e576f1e052ef12054c6",
+          "run_camera_robustness.py": "54df8320e59790b144f6d5db583a72670cabf559950daf5503721acd0c568ff5",
+          "run_collision_study.py": "5272275f5086f5d060a8f3332507a85841d03ec5e4e31cb5ec8450261b01a46e",
+          "run_gain_study.py": "013d266ae42575f3f343687083bb78ac3f2d4e1631a7965c719679df7ff0e760",
+          "run_joint_limit_study.py": "5cb174d40d4b67166b9ed4bec97ea910584377e41eb918604181655efe53a3c8",
+          "run_latency_stress.py": "7e6f8776b4abbd7f10835091e8e28316220ebdb56008e51c85e9d040806884e5",
+          "run_latency_study.py": "fe41cf48723c7ee6f31c19cff6946b5de7dfb94332d75c3553ba35295c4b4fe6",
+          "run_learned_study.py": "8e45a62729df0d4906524a533bae7e1a11f72ae2e3d83625de271e02308a57d3",
+          "run_natural_image_study.py": "ef9a56e1a55fcff194bf640ad5a584efbaf763203a31a008fe9c90b6d77e4815",
+          "run_recovery.py": "32b6a95b97331b629fc8aafcf86f3ec566010d3ce4f06aac99aee10aef8354d7",
+          "run_search_coverage.py": "b530c1d9a5048f9fc92d5b510e8c00cf3bac3d2d65454f6ab410e7370571dda7",
+          "run_startup_search.py": "48a6f8d4f58c3f6d4438a889a9e1cacd4f3be30e0510afbd0bde1e0a143050cb",
+          "scene.xml": "c390e02323a4d93c4ee6165ed602de1711a7d23c79e5d739fc7d536f70f24e04",
+          "setup_learned.py": "1f32b684efd666668385d3acd726dc2f564b76ee9fd4cb758e3bf1ea3b46b214",
+          "simulation.py": "fdaab73e8d7305cc10c94e42e7865ee05b4d86bea46c6930287c00c91346f160",
+          "startup_search.py": "9e3b1ca1389bd4bb0b57a4f9827ebfdccb3152ea28321b8ade86773c5677bd28",
+          "startup_search_config.json": "72e915e3699b029821ec8a9b85b104330a7bab2a96338a3b0538faf0350d75f9",
+          "verify.py": "de16dd2b666fdd89f286f60ae3f6255b8559703f7c8cbfde4a47d95f6ceb4647",
+          "verify_learned_repair.py": "14b7b1211f98ae6ad930a00bbe91f9ec83ea43117b4c3e4f6f2c508d6b68c0f4"
+        },
+        "runtime": {
+          "python": "3.12.14",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "numpy": "2.5.2",
+          "opencv-python": "5.0.0.93",
+          "mujoco": "3.12.0",
+          "matplotlib": "3.11.1",
+          "pillow": "12.3.0",
+          "torch": "2.13.0+cu126",
+          "torchvision": "0.28.0+cu126",
+          "lightglue": "0.0"
+        }
+      },
+      "tool_sha256": null,
+      "environment": {
+        "KMP_BLOCKTIME": "0",
+        "OMP_WAIT_POLICY": "PASSIVE",
+        "OMP_NUM_THREADS": "16",
+        "CUDA_LAUNCH_BLOCKING": null
+      },
+      "options": {
+        "alternate_stream": false,
+        "device_cast": false,
+        "benchmark": null,
+        "channels_last": null,
+        "blas_lt": null,
+        "graphs": null,
+        "prerender": null,
+        "ablation": null
+      },
+      "before": {
+        "model": "1eb75680d5b19595e3219bc537d95d34ed2a91ed8e1a7bb4bdaf6d7ddad7f9a4",
+        "template": "9b8c33d3cf1b7d1860c877bdfa14cec90b1447bda28928cb9f5fce27c1a934c4",
+        "stream": 0,
+        "threads": 8,
+        "training": [
+          false,
+          false
+        ],
+        "memory": {
+          "allocated_bytes.all.current": 61406208,
+          "reserved_bytes.all.current": 186646528,
+          "active_bytes.all.current": 61406208,
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        }
+      },
+      "after": {
+        "model": "1eb75680d5b19595e3219bc537d95d34ed2a91ed8e1a7bb4bdaf6d7ddad7f9a4",
+        "template": "9b8c33d3cf1b7d1860c877bdfa14cec90b1447bda28928cb9f5fce27c1a934c4",
+        "stream": 0,
+        "threads": 8,
+        "training": [
+          false,
+          false
+        ],
+        "memory": {
+          "allocated_bytes.all.current": 61406208,
+          "reserved_bytes.all.current": 186646528,
+          "active_bytes.all.current": 61406208,
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        }
+      },
+      "cohorts": {
+        "first_30s": {
+          "count": 226,
+          "mean": 98.48637964738228,
+          "p50": 103.1004499818664,
+          "p95": 127.60895003157202,
+          "p99": 141.03482503560372,
+          "p99_9": 142.9943899856881,
+          "max": 143.35159998154268
+        },
+        "later": {
+          "count": 493,
+          "mean": 146.4570697795356,
+          "p50": 125.29449997236952,
+          "p95": 277.9247400001623,
+          "p99": 305.39144000271324,
+          "p99_9": 318.4507767909674,
+          "max": 320.85399999050424
+        }
+      },
+      "memory_over_unprofiled_frames": {
+        "allocated_bytes.all.current": {
+          "min": 61406208,
+          "max": 61406208
+        },
+        "reserved_bytes.all.current": {
+          "min": 186646528,
+          "max": 186646528
+        },
+        "num_alloc_retries": {
+          "min": 0,
+          "max": 0
+        },
+        "num_ooms": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "phases": {
+        "0": {
+          "phase": "baseline",
+          "blocktime_ms": [],
+          "processing_ms": {
+            "count": 719,
+            "mean": 131.37866092019394,
+            "p50": 113.62580000422895,
+            "p95": 261.9902600417845,
+            "p99": 297.08336402545694,
+            "p99_9": 317.34685719118005,
+            "max": 320.85399999050424
+          },
+          "process_cpu_ms": {
+            "count": 719,
+            "mean": 137.7347009735744,
+            "p50": 125.0,
+            "p95": 265.625,
+            "p99": 312.5,
+            "p99_9": 356.9687500000018,
+            "max": 390.625
+          },
+          "thread_cpu_ms": {
+            "count": 719,
+            "mean": 122.71818497913769,
+            "p50": 109.375,
+            "p95": 250.0,
+            "p99": 296.875,
+            "p99_9": 296.875,
+            "max": 296.875
+          },
+          "gap_ms": {
+            "count": 719,
+            "mean": 31.38228817734419,
+            "p50": 0.4667000030167401,
+            "p95": 1.0369499621447182,
+            "p99": 1100.9320299932733,
+            "p99_9": 1102.7142983826345,
+            "max": 1105.7164000230841
+          }
+        }
+      },
+      "profiles": {
+        "profile-0.json": {
+          "sha256": "2a8ba90ce3565d3acd35e3ce2d5a45cbd1e7698b7dc30f13a38d21da88e3890a",
+          "runtime": {
+            "cudaDeviceGetAttribute": {
+              "count": 10,
+              "total_ms": 0.013300000000000001
+            },
+            "cudaDeviceSynchronize": {
+              "count": 1,
+              "total_ms": 0.0224
+            },
+            "cudaEventElapsedTime": {
+              "count": 3,
+              "total_ms": 0.0052
+            },
+            "cudaEventQuery": {
+              "count": 10,
+              "total_ms": 0.0099
+            },
+            "cudaEventRecordWithFlags": {
+              "count": 4,
+              "total_ms": 0.24969999999999998
+            },
+            "cudaFuncGetAttributes": {
+              "count": 2,
+              "total_ms": 0.0127
+            },
+            "cudaFuncSetAttribute": {
+              "count": 4,
+              "total_ms": 0.0128
+            },
+            "cudaLaunchKernel": {
+              "count": 930,
+              "total_ms": 27.588
+            },
+            "cudaLaunchKernelExC": {
+              "count": 3,
+              "total_ms": 0.045200000000000004
+            },
+            "cudaMemcpyAsync": {
+              "count": 26,
+              "total_ms": 1.4525
+            },
+            "cudaMemsetAsync": {
+              "count": 129,
+              "total_ms": 4.0459000000000005
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessor": {
+              "count": 73,
+              "total_ms": 0.169
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags": {
+              "count": 3,
+              "total_ms": 0.0078
+            },
+            "cudaPeekAtLastError": {
+              "count": 58,
+              "total_ms": 0.0119
+            },
+            "cudaStreamIsCapturing": {
+              "count": 39,
+              "total_ms": 0.1124
+            },
+            "cudaStreamSynchronize": {
+              "count": 20,
+              "total_ms": 4.1399
+            }
+          },
+          "kernel_count": 935,
+          "kernel_duration_sum_ms": 20.023512,
+          "kernel_span_ms": 106.449759765625,
+          "interpretation": "Separate instrumented frames; durations may include GPU preemption. The kernel sum, stream span and host API waits are not additive."
+        },
+        "profile-1.json": {
+          "sha256": "982ffe5d09110553336b9f798e2f09adf5840cdeba9c6c71e38b723b55bd366e",
+          "runtime": {
+            "cudaDeviceGetAttribute": {
+              "count": 10,
+              "total_ms": 0.0159
+            },
+            "cudaDeviceSynchronize": {
+              "count": 1,
+              "total_ms": 0.0361
+            },
+            "cudaEventElapsedTime": {
+              "count": 3,
+              "total_ms": 0.004200000000000001
+            },
+            "cudaEventQuery": {
+              "count": 10,
+              "total_ms": 0.0089
+            },
+            "cudaEventRecordWithFlags": {
+              "count": 4,
+              "total_ms": 0.1525
+            },
+            "cudaFuncGetAttributes": {
+              "count": 2,
+              "total_ms": 0.0157
+            },
+            "cudaFuncSetAttribute": {
+              "count": 4,
+              "total_ms": 0.015099999999999999
+            },
+            "cudaLaunchKernel": {
+              "count": 930,
+              "total_ms": 23.31
+            },
+            "cudaLaunchKernelExC": {
+              "count": 3,
+              "total_ms": 0.0508
+            },
+            "cudaMemcpyAsync": {
+              "count": 26,
+              "total_ms": 1.6202
+            },
+            "cudaMemsetAsync": {
+              "count": 129,
+              "total_ms": 2.8312
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessor": {
+              "count": 73,
+              "total_ms": 0.1556
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags": {
+              "count": 3,
+              "total_ms": 0.008400000000000001
+            },
+            "cudaPeekAtLastError": {
+              "count": 58,
+              "total_ms": 0.015
+            },
+            "cudaStreamIsCapturing": {
+              "count": 39,
+              "total_ms": 0.0888
+            },
+            "cudaStreamSynchronize": {
+              "count": 20,
+              "total_ms": 155.7275
+            }
+          },
+          "kernel_count": 935,
+          "kernel_duration_sum_ms": 207.39688999999998,
+          "kernel_span_ms": 240.5381611328125,
+          "interpretation": "Separate instrumented frames; durations may include GPU preemption. The kernel sum, stream span and host API waits are not additive."
+        }
+      }
+    },
+    "20260923-replay-stream": {
+      "raw_sha256": "a4b1b3d3809c1fd90babaf1906ec89e5c5cdc5ab4168cc2280001fa5b8cd2857",
+      "excluded_from_campaign": true,
+      "fingerprint": {
+        "sha256": {
+          "accuracy.py": "f2864e7270fa4c4c803978cb22123455b5c48f15f20954a8e0229e496eae06a2",
+          "accuracy_config.json": "5bd6bff53bb728bede80fe73b244c545fbd282dbe83d97d14f04d21f6bb8a1d0",
+          "adaptive_gain.py": "0b529c74c553c79675e378874baa81872176aa9422631f147aee75add662a4a7",
+          "analyze_benchmark.py": "51e9d4c4070267e608949804aaf1cf6a98b8568d7b56277404d571d9d8e19344",
+          "analyze_comparison.py": "f45f2b6764eece1c0fd907262760e1d5d9872349f37b6440f522c5439e512b5e",
+          "analyze_gain_study.py": "fe1dc1e97b71de44f3a10430567e5c8b1d22ea2ffba0e86749680c3c284a9709",
+          "app.py": "b668c0a3da6bb056488bc6c3e99f3e10905e9e2169f101851ac8929a67bd852a",
+          "assets/marker.png": "ab2472414444ee33daf910b6d1e3048c2cd1409cc5b9c6838ea203a7e9744a40",
+          "assets/natural-board.png": "851e7345adfb70a0fcb4e95dde970d6d9007d1cdb209e64188635acc33c9b067",
+          "assets/natural-target-source.json": "4d680aa45427481d7328ae8d43c22c0a198443c16888d97c02bdd22eda3bc077",
+          "assets/natural-target-source.png": "f3d7a2eaf08f24345610851cb23574982ca55fdb75a4cf99b2a1c2668cce89c8",
+          "assets/natural-target.png": "6dc880cf2c20520b9b0dba3aa30f3accce6379d2d61e5edaa9ea4f44a030f8ab",
+          "baselines.py": "50f381af192e33a195b2cc481f88bd0818cac85072cab81ea679f33b83dd653d",
+          "benchmark.py": "1be0fc0dff13a7474b9dbef6acec64ead0137c773f57cde4462620ea9bd96de7",
+          "benchmark_config.json": "4e873ce4baed5efb76c9550bffbd261dc2677b13626c09b0de138ed6b7d07700",
+          "benchmark_learned.py": "e945838fbfce52944752319aeddb28fa0d90fdb262ccdea735c9f7ac57626f92",
+          "calibration.py": "c97eecc65705b7b0d9c77f80378d634bd9f3f93213c74d31b1a1e97763551dbe",
+          "camera_robustness.py": "f7d84677008b00e9d8a2517a8620668fcab82effedc1d2f31d05ff9d88c71b07",
+          "camera_timing.py": "8af033010df94fc96fad141b41c94ea3ca1d5162aed09865c6af43f05c467778",
+          "camera_timing_config.json": "20e73da5ca3615d727e35bf854af20b7e34700936526a8e87c19bc572a7a8db2",
+          "collision.py": "eef38870829cdf96a9cb6c8a8d6a0af56c9b7289ae0dcf64e9cdf132e005f662",
+          "collision_config.json": "9fdaf7af4437dae7ea78467a37c9680ab8bed4c7d754d5684ef78963337fd6fb",
+          "compare_controllers.py": "572f8daab2e0b00ed9c39f32129b3a02331d45cc5db0f21a220282fd08716620",
+          "comparison_config.json": "4e1b8e7ab84c08b0ede5de60ce961abf9c72ace5d727a96e8d13d0e2dadb610f",
+          "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+          "control.py": "1f59a1942ec7bce375f7ec7b648cc59f8fc4b0103e85fd515f2e89e4d8e89fe7",
+          "deadline_diagnostics.py": "2477d4908e03926bb6e1e2118950b7765b1a03419bbc3726b71a953bb6fc2653",
+          "download_learned_models.py": "13692f9c1db7d7337943363be008ab49b842fe112dff231c665a21df0df0a404",
+          "gain_config.json": "6186b780e19487b4e1920a3a5538dbc73a0b08488120a70e1253f62e99f65f6a",
+          "joint_limit_config.json": "f8855a46a7aca71867fa730d4ea092686b72267c0351883421f31c574134f841",
+          "joint_limits.py": "3d5e0c8d18c88c7d7d3bafedbd1c4ac8701947240c249ce528f95f32808291d3",
+          "latency_stress.py": "497d416fc92cbbd1f3e13ac9256280e29f2cf2aaa9a4f071e362042082be0406",
+          "learned_feature_config.json": "0145983cbf3bafef87e80ca079628744f69edf175764137e36d373786353a708",
+          "learned_perception.py": "e05531e17c54cc789b437df888daec2b37de835b33d5615e3db1e110ce8f676a",
+          "models/manifest.json": "4ce943f21304b7934d724250c0bb1dac2839ab43975d202a008404c8e190692e",
+          "motion_path.py": "27f8657b1af0154532a790a7e91f3a0fec11a355ac99cef397c315def74817f7",
+          "natural_feature_config.json": "284d6107ba8a739fb3c5731ad4545de16d44be48adc6e3ad43f34e08efe4a2fb",
+          "perception.py": "34e74c605b5e349a714d7cdf67a5c1e4322f2252a919450944abb182972bfb94",
+          "precision.py": "c249a34cc121835f6fcbcacdfce6ad6034ea5cbca2706aec9bae4e0640752561",
+          "precision_config.json": "bb7749276bf39d39e3c980d7d14e549f2e8f26f9b9480736f6f99891ef5027b7",
+          "prepare_natural_reference.py": "1dab76acce145061258c965f84b63c42723c466b19723056630367c7fb705df9",
+          "realtime.py": "4bf7873258a6d8f20fd86794e2b8e26392335edb772ca657fc67453f5f3bd1f6",
+          "realtime_app.py": "008b6cc5ac59d2162120e701c9f167c5c43c46240fb3170859d317c696496b7c",
+          "record_joint_limit_demo.py": "d4ca6b29e1c257c3633d44f0edda3eb6b1841a97caad934f14b18178124b808e",
+          "record_learned_demo.py": "10dba7fe0733e456fb0c66aae55e0f15a4255efbb0ee44d346361d572171ad13",
+          "record_natural_image_demo.py": "4bfa0237874a299b45e1a7766a22ed9472d3a8eb11b55358b2e77f023e80302d",
+          "record_recovery_demo.py": "652d43ec930db88d118d708cf1afab2ab53d1b6fe4c168173745440d9fcb6dee",
+          "record_search_coverage_demo.py": "f50572e34d2ec245b7b692ee4187db337366d9bb4a907dfe75a6469c4f7576fc",
+          "record_startup_demo.py": "f015ae73cb59c05ad8503d3ee276f1c7199ed6e74ba618e6ecdb8e4623b8b7d2",
+          "recovery.py": "7562013287a778fcc2f546707f1a7d3f2aed122b13c44439ff1690cad7c815c4",
+          "recovery_config.json": "32b436f0cc0e4272680f163e76861cf358a50d1dacc9a8ce96d878fd02d6b7c5",
+          "reference/goal.npz": "3d6e7376c549ae47f74fd12ec9a0afc134ae8482301ec2a3ced0d16113dc989d",
+          "reference/natural_goal.npz": "2912b8b45be09dac9351f27cff974c7e2808f372dd2dd0d006be6f0299f5f900",
+          "reference/natural_goal.png": "06c39b9e7a003b8653f852bc8cad643bb2aed3b718ddcc3aa475c93d85ded0c4",
+          "reference_image.py": "3a883d1015831290b07f2b312a086da2d70478fe1cee5b6b4ef6887c7f167f3a",
+          "robustness_config.json": "63f6b7a3a010c8de08e074b0e2c2f12b1faa9334b34127789f836862e58ad6fc",
+          "run_accuracy_study.py": "d59ff73a87282acfd80e0b4d88496d60910e4ea2eac68d3714793c8d1a3e68ca",
+          "run_alignment.py": "8c2db501849396eeab0ed2e3870862741f62612bb0e794d5122aeeffafd879b1",
+          "run_camera_delay_study.py": "76e7884b521792ec22bdbe2ca5802448abd1d94228e28e576f1e052ef12054c6",
+          "run_camera_robustness.py": "54df8320e59790b144f6d5db583a72670cabf559950daf5503721acd0c568ff5",
+          "run_collision_study.py": "5272275f5086f5d060a8f3332507a85841d03ec5e4e31cb5ec8450261b01a46e",
+          "run_gain_study.py": "013d266ae42575f3f343687083bb78ac3f2d4e1631a7965c719679df7ff0e760",
+          "run_joint_limit_study.py": "5cb174d40d4b67166b9ed4bec97ea910584377e41eb918604181655efe53a3c8",
+          "run_latency_stress.py": "7e6f8776b4abbd7f10835091e8e28316220ebdb56008e51c85e9d040806884e5",
+          "run_latency_study.py": "fe41cf48723c7ee6f31c19cff6946b5de7dfb94332d75c3553ba35295c4b4fe6",
+          "run_learned_study.py": "8e45a62729df0d4906524a533bae7e1a11f72ae2e3d83625de271e02308a57d3",
+          "run_natural_image_study.py": "ef9a56e1a55fcff194bf640ad5a584efbaf763203a31a008fe9c90b6d77e4815",
+          "run_recovery.py": "32b6a95b97331b629fc8aafcf86f3ec566010d3ce4f06aac99aee10aef8354d7",
+          "run_search_coverage.py": "b530c1d9a5048f9fc92d5b510e8c00cf3bac3d2d65454f6ab410e7370571dda7",
+          "run_startup_search.py": "48a6f8d4f58c3f6d4438a889a9e1cacd4f3be30e0510afbd0bde1e0a143050cb",
+          "scene.xml": "c390e02323a4d93c4ee6165ed602de1711a7d23c79e5d739fc7d536f70f24e04",
+          "setup_learned.py": "1f32b684efd666668385d3acd726dc2f564b76ee9fd4cb758e3bf1ea3b46b214",
+          "simulation.py": "fdaab73e8d7305cc10c94e42e7865ee05b4d86bea46c6930287c00c91346f160",
+          "startup_search.py": "9e3b1ca1389bd4bb0b57a4f9827ebfdccb3152ea28321b8ade86773c5677bd28",
+          "startup_search_config.json": "72e915e3699b029821ec8a9b85b104330a7bab2a96338a3b0538faf0350d75f9",
+          "verify.py": "de16dd2b666fdd89f286f60ae3f6255b8559703f7c8cbfde4a47d95f6ceb4647",
+          "verify_learned_repair.py": "14b7b1211f98ae6ad930a00bbe91f9ec83ea43117b4c3e4f6f2c508d6b68c0f4"
+        },
+        "runtime": {
+          "python": "3.12.14",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "numpy": "2.5.2",
+          "opencv-python": "5.0.0.93",
+          "mujoco": "3.12.0",
+          "matplotlib": "3.11.1",
+          "pillow": "12.3.0",
+          "torch": "2.13.0+cu126",
+          "torchvision": "0.28.0+cu126",
+          "lightglue": "0.0"
+        }
+      },
+      "tool_sha256": null,
+      "environment": {
+        "KMP_BLOCKTIME": null,
+        "OMP_WAIT_POLICY": null,
+        "OMP_NUM_THREADS": "16",
+        "CUDA_LAUNCH_BLOCKING": null
+      },
+      "options": {
+        "alternate_stream": true,
+        "device_cast": false,
+        "benchmark": false,
+        "channels_last": false,
+        "blas_lt": null,
+        "graphs": null,
+        "prerender": false,
+        "ablation": false
+      },
+      "before": {
+        "model": "1eb75680d5b19595e3219bc537d95d34ed2a91ed8e1a7bb4bdaf6d7ddad7f9a4",
+        "template": "9b8c33d3cf1b7d1860c877bdfa14cec90b1447bda28928cb9f5fce27c1a934c4",
+        "stream": 0,
+        "threads": 8,
+        "training": [
+          false,
+          false
+        ],
+        "memory": {
+          "allocated_bytes.all.current": 61406208,
+          "reserved_bytes.all.current": 186646528,
+          "active_bytes.all.current": 61406208,
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        },
+        "blocktime_ms": 200
+      },
+      "after": {
+        "model": "1eb75680d5b19595e3219bc537d95d34ed2a91ed8e1a7bb4bdaf6d7ddad7f9a4",
+        "template": "9b8c33d3cf1b7d1860c877bdfa14cec90b1447bda28928cb9f5fce27c1a934c4",
+        "stream": 0,
+        "threads": 8,
+        "training": [
+          false,
+          false
+        ],
+        "memory": {
+          "allocated_bytes.all.current": 69925888,
+          "reserved_bytes.all.current": 301989888,
+          "active_bytes.all.current": 69925888,
+          "num_alloc_retries": 0,
+          "num_ooms": 0
+        },
+        "blocktime_ms": 200
+      },
+      "cohorts": {
+        "first_30s": {
+          "count": 179,
+          "mean": 132.42459162066862,
+          "p50": 116.22219998389482,
+          "p95": 244.73284002742727,
+          "p99": 300.2414179989137,
+          "p99_9": 360.5563447647748,
+          "max": 371.78429996129125
+        },
+        "later": {
+          "count": 500,
+          "mean": 147.18333660042845,
+          "p50": 126.24049998703413,
+          "p95": 282.7714049897621,
+          "p99": 325.66718497313536,
+          "p99_9": 356.98651079816045,
+          "max": 357.2913000243716
+        }
+      },
+      "memory_over_unprofiled_frames": {
+        "allocated_bytes.all.current": {
+          "min": 69925888,
+          "max": 69925888
+        },
+        "reserved_bytes.all.current": {
+          "min": 301989888,
+          "max": 301989888
+        },
+        "num_alloc_retries": {
+          "min": 0,
+          "max": 0
+        },
+        "num_ooms": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "phases": {
+        "0": {
+          "phase": "baseline",
+          "blocktime_ms": [
+            200
+          ],
+          "processing_ms": {
+            "count": 679,
+            "mean": 143.29259234214123,
+            "p50": 123.07390000205487,
+            "p95": 279.845920013031,
+            "p99": 320.6918199767826,
+            "p99_9": 361.95804600406143,
+            "max": 371.78429996129125
+          },
+          "process_cpu_ms": {
+            "count": 679,
+            "mean": 989.1154270986746,
+            "p50": 906.25,
+            "p95": 1625.0,
+            "p99": 1706.5625000000005,
+            "p99_9": 1812.5,
+            "max": 1812.5
+          },
+          "thread_cpu_ms": {
+            "count": 679,
+            "mean": 137.97864506627394,
+            "p50": 125.0,
+            "p95": 265.625,
+            "p99": 300.31250000000045,
+            "p99_9": 359.375,
+            "max": 359.375
+          },
+          "gap_ms": {
+            "count": 679,
+            "mean": 29.88207098682972,
+            "p50": 0.4459000192582607,
+            "p95": 0.7516000012401496,
+            "p99": 1100.9697919688188,
+            "p99_9": 1101.4446878046729,
+            "max": 1101.5192000195384
+          }
+        }
+      },
+      "profiles": {
+        "profile-0.json": {
+          "sha256": "4ea6733ff2f676357794d62c402130c0ba9a1a4866bbb7308f69914eb216586e",
+          "runtime": {
+            "cudaDeviceGetAttribute": {
+              "count": 10,
+              "total_ms": 0.0112
+            },
+            "cudaDeviceGetStreamPriorityRange": {
+              "count": 13,
+              "total_ms": 0.0166
+            },
+            "cudaDeviceSynchronize": {
+              "count": 1,
+              "total_ms": 0.033600000000000005
+            },
+            "cudaEventElapsedTime": {
+              "count": 3,
+              "total_ms": 0.0037
+            },
+            "cudaEventQuery": {
+              "count": 10,
+              "total_ms": 0.0073999999999999995
+            },
+            "cudaEventRecord": {
+              "count": 1,
+              "total_ms": 0.6741
+            },
+            "cudaEventRecordWithFlags": {
+              "count": 4,
+              "total_ms": 0.2132
+            },
+            "cudaFuncGetAttributes": {
+              "count": 2,
+              "total_ms": 0.016399999999999998
+            },
+            "cudaFuncSetAttribute": {
+              "count": 4,
+              "total_ms": 0.014600000000000002
+            },
+            "cudaLaunchKernel": {
+              "count": 930,
+              "total_ms": 23.8933
+            },
+            "cudaLaunchKernelExC": {
+              "count": 3,
+              "total_ms": 0.06620000000000001
+            },
+            "cudaMalloc": {
+              "count": 7,
+              "total_ms": 2.286
+            },
+            "cudaMemcpyAsync": {
+              "count": 26,
+              "total_ms": 0.9411
+            },
+            "cudaMemsetAsync": {
+              "count": 129,
+              "total_ms": 2.3463000000000003
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessor": {
+              "count": 73,
+              "total_ms": 0.13419999999999999
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags": {
+              "count": 3,
+              "total_ms": 0.0076
+            },
+            "cudaPeekAtLastError": {
+              "count": 58,
+              "total_ms": 0.011800000000000001
+            },
+            "cudaStreamGetPriority": {
+              "count": 13,
+              "total_ms": 0.5842
+            },
+            "cudaStreamIsCapturing": {
+              "count": 46,
+              "total_ms": 0.0855
+            },
+            "cudaStreamSynchronize": {
+              "count": 20,
+              "total_ms": 21.5802
+            }
+          },
+          "kernel_count": 935,
+          "kernel_duration_sum_ms": 62.864608999999994,
+          "kernel_span_ms": 102.595439453125,
+          "interpretation": "Separate instrumented frames; durations may include GPU preemption. The kernel sum, stream span and host API waits are not additive."
+        },
+        "profile-1.json": {
+          "sha256": "306429e50f81acfe196cff0810f97379d1872fbaa9e061ac46b0ecba7ac05a08",
+          "runtime": {
+            "cudaDeviceGetAttribute": {
+              "count": 10,
+              "total_ms": 0.0115
+            },
+            "cudaDeviceGetStreamPriorityRange": {
+              "count": 13,
+              "total_ms": 0.0158
+            },
+            "cudaDeviceSynchronize": {
+              "count": 1,
+              "total_ms": 0.0352
+            },
+            "cudaEventElapsedTime": {
+              "count": 3,
+              "total_ms": 0.0054
+            },
+            "cudaEventQuery": {
+              "count": 10,
+              "total_ms": 0.0088
+            },
+            "cudaEventRecordWithFlags": {
+              "count": 4,
+              "total_ms": 0.12
+            },
+            "cudaFuncGetAttributes": {
+              "count": 2,
+              "total_ms": 0.0165
+            },
+            "cudaFuncSetAttribute": {
+              "count": 4,
+              "total_ms": 0.0145
+            },
+            "cudaLaunchKernel": {
+              "count": 930,
+              "total_ms": 18.230900000000002
+            },
+            "cudaLaunchKernelExC": {
+              "count": 3,
+              "total_ms": 0.05
+            },
+            "cudaMemcpyAsync": {
+              "count": 26,
+              "total_ms": 1.1442
+            },
+            "cudaMemsetAsync": {
+              "count": 129,
+              "total_ms": 2.5673000000000004
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessor": {
+              "count": 73,
+              "total_ms": 0.2396
+            },
+            "cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags": {
+              "count": 3,
+              "total_ms": 0.0083
+            },
+            "cudaPeekAtLastError": {
+              "count": 58,
+              "total_ms": 0.0145
+            },
+            "cudaStreamGetPriority": {
+              "count": 13,
+              "total_ms": 0.0419
+            },
+            "cudaStreamIsCapturing": {
+              "count": 39,
+              "total_ms": 0.0685
+            },
+            "cudaStreamSynchronize": {
+              "count": 20,
+              "total_ms": 186.73569999999998
+            }
+          },
+          "kernel_count": 935,
+          "kernel_duration_sum_ms": 246.47037,
+          "kernel_span_ms": 267.86047265625,
+          "interpretation": "Separate instrumented frames; durations may include GPU preemption. The kernel sum, stream span and host API waits are not additive."
+        }
+      }
+    }
+  },
+  "interpretation": "Separate diagnostics, excluded from sustained before/after statistics. Variants ran sequentially under changing host/GPU conditions; comparisons are observational, not randomized treatment effects."
+}

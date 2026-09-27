@@ -1,0 +1,376 @@
+{
+  "id": "natural-session-019",
+  "mode": "natural",
+  "attempts": 25,
+  "alignments": 21,
+  "outcomes": {
+    "converged": 21,
+    "stale_camera": 4
+  },
+  "elapsed_s": 123.69082980003441,
+  "initialization_error": null,
+  "processing_ms": {
+    "count": 904,
+    "mean": 72.33937278749737,
+    "p50": 80.3398999851197,
+    "p95": 124.02731001202483,
+    "p99": 143.35516402206852,
+    "p99_9": 195.73270689894107,
+    "max": 208.18299998063594
+  },
+  "uncached_processing_ms": {
+    "count": 719,
+    "mean": 90.87135479809788,
+    "p50": 93.37359998608008,
+    "p95": 125.79522000160068,
+    "p99": 151.24540402554007,
+    "p99_9": 198.28343139519038,
+    "max": 208.18299998063594
+  },
+  "capture_to_command_ms": {
+    "count": 875,
+    "mean": 132.41613702801988,
+    "p50": 141.55199995730072,
+    "p95": 182.75570000405423,
+    "p99": 203.4054079966154,
+    "p99_9": 243.4181463730064,
+    "max": 251.45580002572387
+  },
+  "stage_ms": {
+    "prepare_ms": {
+      "count": 719,
+      "mean": 0.2853452018008766,
+      "p50": 0.2272000419907272,
+      "p95": 0.3960999893024564,
+      "p99": 0.7681899948511343,
+      "p99_9": 9.278417165973426,
+      "max": 12.986599991563708
+    },
+    "features_ms": {
+      "count": 719,
+      "mean": 59.52097524232095,
+      "p50": 57.58580000838265,
+      "p95": 74.58910997374915,
+      "p99": 95.77681199414664,
+      "p99_9": 130.74254039325797,
+      "max": 139.1159999766387
+    },
+    "points_ms": {
+      "count": 719,
+      "mean": 0.5917443669762499,
+      "p50": 0.5591000081039965,
+      "p95": 0.8881800109520555,
+      "p99": 1.4704599871765893,
+      "p99_9": 4.584825607831631,
+      "max": 5.339300027117133
+    },
+    "matching_ms": {
+      "count": 719,
+      "mean": 4.67954617505634,
+      "p50": 4.476799978874624,
+      "p95": 6.544280011439698,
+      "p99": 9.813269978621976,
+      "p99_9": 14.78971779439609,
+      "max": 16.73039997695014
+    },
+    "filter_ms": {
+      "count": 719,
+      "mean": 1.3625097369725954,
+      "p50": 1.3294999953359365,
+      "p95": 1.8892500025685877,
+      "p99": 2.657905996311463,
+      "p99_9": 6.980847382219514,
+      "max": 7.071100000757724
+    },
+    "geometry_ms": {
+      "count": 719,
+      "mean": 1.4607948526320396,
+      "p50": 1.347400015220046,
+      "p95": 2.063319960143418,
+      "p99": 3.7536960013676475,
+      "p99_9": 8.554630811791968,
+      "max": 10.421000013593584
+    },
+    "coarse_ms": {
+      "count": 719,
+      "mean": 68.42043950044005,
+      "p50": 66.2855000118725,
+      "p95": 85.13523002620789,
+      "p99": 111.08804199378946,
+      "p99_9": 145.630860413309,
+      "max": 159.0734000201337
+    },
+    "refinement_ms": {
+      "count": 719,
+      "mean": 22.211354380500698,
+      "p50": 27.483100013341755,
+      "p95": 51.29546999814921,
+      "p99": 69.50170201133021,
+      "p99_9": 89.02221983659679,
+      "max": 113.22880000807345
+    },
+    "coarse_thread_cpu_ms": {
+      "count": 719,
+      "mean": 43.11543810848401,
+      "p50": 46.875,
+      "p95": 62.5,
+      "p99": 78.125,
+      "p99_9": 82.53125000000061,
+      "max": 93.75
+    },
+    "coarse_process_cpu_ms": {
+      "count": 719,
+      "mean": 168.05024339360222,
+      "p50": 156.25,
+      "p95": 234.375,
+      "p99": 281.25,
+      "p99_9": 312.5,
+      "max": 312.5
+    },
+    "refinement_thread_cpu_ms": {
+      "count": 719,
+      "mean": 20.88404033379694,
+      "p50": 31.25,
+      "p95": 46.875,
+      "p99": 62.5,
+      "p99_9": 71.31250000000122,
+      "max": 93.75
+    },
+    "refinement_process_cpu_ms": {
+      "count": 719,
+      "mean": 32.7712100139082,
+      "p50": 31.25,
+      "p95": 93.75,
+      "p99": 140.625,
+      "p99_9": 207.53125000000063,
+      "max": 218.75
+    },
+    "render_thread_cpu_ms": {
+      "count": 904,
+      "mean": 1.7629977876106195,
+      "p50": 0.0,
+      "p95": 15.625,
+      "p99": 15.625,
+      "p99_9": 15.625,
+      "max": 15.625
+    },
+    "render_process_cpu_ms": {
+      "count": 904,
+      "mean": 3.1975940265486726,
+      "p50": 0.0,
+      "p95": 31.25,
+      "p99": 46.875,
+      "p99_9": 46.875,
+      "max": 46.875
+    },
+    "inference_thread_cpu_ms": {
+      "count": 904,
+      "mean": 50.95409292035398,
+      "p50": 62.5,
+      "p95": 93.75,
+      "p99": 109.375,
+      "p99_9": 125.0,
+      "max": 125.0
+    },
+    "inference_process_cpu_ms": {
+      "count": 904,
+      "mean": 159.77599557522123,
+      "p50": 171.875,
+      "p95": 296.875,
+      "p99": 343.28125000000045,
+      "p99_9": 381.06250000000585,
+      "max": 437.5
+    }
+  },
+  "maximum_feedback_age_ms": 402.23309997236356,
+  "freshness_watchdog_trips": 4,
+  "late_after_freshness_stop": 4,
+  "late_after_control_stop": 0,
+  "late_results": [
+    {
+      "sequence": 524,
+      "generation": 8,
+      "stopped_s": 358326.551601,
+      "stop_reason": "stale_camera",
+      "captured_s": 358326.5397686,
+      "render_started_s": 358326.540327,
+      "rendered_s": 358326.5459677,
+      "finished_s": 358326.6534743,
+      "received_s": 358326.6549796,
+      "stage_ms": {
+        "prepare_ms": 0.42719999328255653,
+        "features_ms": 49.83639996498823,
+        "points_ms": 0.4083000239916146,
+        "matching_ms": 3.9393000188283622,
+        "filter_ms": 0.9434999665245414,
+        "geometry_ms": 0.8835000335238874,
+        "coarse_ms": 56.840999983251095,
+        "refinement_ms": 50.34890002571046,
+        "coarse_thread_cpu_ms": 46.875,
+        "coarse_process_cpu_ms": 140.625,
+        "refinement_thread_cpu_ms": 46.875,
+        "refinement_process_cpu_ms": 140.625
+      },
+      "cpu_ms": {
+        "render_thread": 0.0,
+        "render_process": 0.0,
+        "inference_thread": 93.75,
+        "inference_process": 281.25
+      }
+    },
+    {
+      "sequence": 1434,
+      "generation": 21,
+      "stopped_s": 358391.7887158,
+      "stop_reason": "stale_camera",
+      "captured_s": 358391.7436801,
+      "render_started_s": 358391.7441137,
+      "rendered_s": 358391.7502888,
+      "finished_s": 358391.8638163,
+      "received_s": 358391.8670864,
+      "stage_ms": {
+        "prepare_ms": 0.41480001527816057,
+        "features_ms": 70.0006999541074,
+        "points_ms": 0.8432000176981091,
+        "matching_ms": 4.952099989168346,
+        "filter_ms": 1.6098000342026353,
+        "geometry_ms": 1.9377999706193805,
+        "coarse_ms": 80.35390003351495,
+        "refinement_ms": 32.70049998536706,
+        "coarse_thread_cpu_ms": 62.5,
+        "coarse_process_cpu_ms": 187.5,
+        "refinement_thread_cpu_ms": 31.25,
+        "refinement_process_cpu_ms": 31.25
+      },
+      "cpu_ms": {
+        "render_thread": 0.0,
+        "render_process": 0.0,
+        "inference_thread": 109.375,
+        "inference_process": 234.375
+      }
+    },
+    {
+      "sequence": 1492,
+      "generation": 22,
+      "stopped_s": 358395.7282804,
+      "stop_reason": "stale_camera",
+      "captured_s": 358395.710814,
+      "render_started_s": 358395.7114291,
+      "rendered_s": 358395.7160207,
+      "finished_s": 358395.8424218,
+      "received_s": 358395.8451106,
+      "stage_ms": {
+        "prepare_ms": 0.34410000080242753,
+        "features_ms": 71.35789998574182,
+        "points_ms": 0.5509000038728118,
+        "matching_ms": 4.6252000029198825,
+        "filter_ms": 1.5728000435046852,
+        "geometry_ms": 1.789799949619919,
+        "coarse_ms": 81.02430001599714,
+        "refinement_ms": 45.118700014427304,
+        "coarse_thread_cpu_ms": 62.5,
+        "coarse_process_cpu_ms": 218.75,
+        "refinement_thread_cpu_ms": 46.875,
+        "refinement_process_cpu_ms": 93.75
+      },
+      "cpu_ms": {
+        "render_thread": 0.0,
+        "render_process": 0.0,
+        "inference_thread": 109.375,
+        "inference_process": 312.5
+      }
+    },
+    {
+      "sequence": 1617,
+      "generation": 24,
+      "stopped_s": 358405.1713494,
+      "stop_reason": "stale_camera",
+      "captured_s": 358405.1311324,
+      "render_started_s": 358405.1318439,
+      "rendered_s": 358405.145513,
+      "finished_s": 358405.2507944,
+      "received_s": 358405.253736,
+      "stage_ms": {
+        "prepare_ms": 0.2361999941058457,
+        "features_ms": 63.417800003662705,
+        "points_ms": 0.3787999739870429,
+        "matching_ms": 5.241000035312027,
+        "filter_ms": 1.4683000044897199,
+        "geometry_ms": 1.5352999907918274,
+        "coarse_ms": 72.75570003548637,
+        "refinement_ms": 32.267700007651,
+        "coarse_thread_cpu_ms": 15.625,
+        "coarse_process_cpu_ms": 109.375,
+        "refinement_thread_cpu_ms": 46.875,
+        "refinement_process_cpu_ms": 46.875
+      },
+      "cpu_ms": {
+        "render_thread": 0.0,
+        "render_process": 0.0,
+        "inference_thread": 62.5,
+        "inference_process": 156.25
+      }
+    }
+  ],
+  "counters": {
+    "captures": 1712,
+    "capture_slots": 3511,
+    "busy_capture_skips": 1799,
+    "input_dropped": 0,
+    "transport_dropped": 0,
+    "pending_cancelled": 60,
+    "sensor_received": 1712,
+    "sensor_rows_evicted": 0,
+    "command_rows_evicted": 0,
+    "loop_rows_evicted": 0,
+    "stale_results": 0,
+    "obsolete_results": 19,
+    "pre_inference_dropped": 0,
+    "accepted": 875,
+    "control_ticks": 45878,
+    "moving_ticks": 27328,
+    "unsafe_motion_ticks": 0,
+    "contacts": 0,
+    "post_stop_motion_ticks": 0,
+    "control_deadline_misses": 0,
+    "fault_results": 0,
+    "discarded_physics_s": 0.0,
+    "result_mailbox_dropped": 0,
+    "worker_requests_expired": 0,
+    "completed_but_unreceived": 0,
+    "requests_not_started": 0
+  },
+  "worker_alive": false,
+  "error": null,
+  "telemetry_complete": true,
+  "diagnostic_spikes_evicted": 0,
+  "gc_events_evicted": 0,
+  "gpu_before": {
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 50, 0 %, 8.56 W, 52 MHz",
+    "stderr": "",
+    "power": {
+      "ACLineStatus": 1,
+      "BatteryFlag": 1,
+      "BatteryLifePercent": 100,
+      "SystemStatusFlag": 0,
+      "BatteryLifeTime": 4294967295,
+      "BatteryFullLifeTime": 4294967295
+    }
+  },
+  "gpu_after": {
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 46, 0 %, 5.72 W, 210 MHz",
+    "stderr": "",
+    "power": {
+      "ACLineStatus": 1,
+      "BatteryFlag": 1,
+      "BatteryLifePercent": 100,
+      "SystemStatusFlag": 0,
+      "BatteryLifeTime": 4294967295,
+      "BatteryFullLifeTime": 4294967295
+    }
+  },
+  "trace": "traces/natural-session-019.json.gz",
+  "trace_sha256": "486f494a6f4dfe751b9d509e65077652fcd39dc505464314a5332bb9a7c9a24e"
+}

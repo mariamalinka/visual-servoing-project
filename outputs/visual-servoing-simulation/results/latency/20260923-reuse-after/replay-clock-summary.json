@@ -1,0 +1,557 @@
+{
+  "interpretation": "Whole separate diagnostic replay, including intentional idle intervals. Relative time begins at the first NVIDIA sample. No exact frame-to-clock pairing is inferred; not part of the sustained campaign.",
+  "probes": {
+    "20260923-replay-ablation": {
+      "phases": {
+        "first_30s": {
+          "samples": 118,
+          "sm_mhz": {
+            "count": 118,
+            "mean": 584.7457627118644,
+            "p50": 660.0,
+            "p95": 990.0,
+            "p99": 990.0,
+            "p99_9": 990.0,
+            "max": 990.0
+          },
+          "minimum_sm_mhz": 52.0,
+          "below_300_mhz": 36,
+          "temperatures_c": {
+            "count": 118,
+            "mean": 48.00847457627118,
+            "p50": 48.0,
+            "p95": 49.0,
+            "p99": 49.0,
+            "p99_9": 49.0,
+            "max": 49.0
+          },
+          "states": {
+            "P0": 45,
+            "P3": 67,
+            "P5": 6
+          },
+          "active_reasons": {
+            "clocks_event_reasons.gpu_idle": 99,
+            "clocks_event_reasons.sw_power_cap": 0,
+            "clocks_event_reasons.sw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_power_brake_slowdown": 0
+          }
+        },
+        "later": {
+          "samples": 821,
+          "sm_mhz": {
+            "count": 821,
+            "mean": 166.10840438489646,
+            "p50": 247.0,
+            "p95": 247.0,
+            "p99": 247.0,
+            "p99_9": 247.0,
+            "max": 247.0
+          },
+          "minimum_sm_mhz": 52.0,
+          "below_300_mhz": 821,
+          "temperatures_c": {
+            "count": 821,
+            "mean": 50.76979293544458,
+            "p50": 51.0,
+            "p95": 52.0,
+            "p99": 52.0,
+            "p99_9": 52.0,
+            "max": 52.0
+          },
+          "states": {
+            "P3": 297,
+            "P0": 426,
+            "P5": 98
+          },
+          "active_reasons": {
+            "clocks_event_reasons.gpu_idle": 802,
+            "clocks_event_reasons.sw_power_cap": 19,
+            "clocks_event_reasons.sw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_power_brake_slowdown": 0
+          }
+        }
+      },
+      "invalid_samples": [],
+      "power_before": {
+        "ACLineStatus": 1,
+        "BatteryFlag": 10,
+        "BatteryLifePercent": 30,
+        "SystemStatusFlag": 0,
+        "BatteryLifeTime": 4294967295,
+        "BatteryFullLifeTime": 4294967295
+      },
+      "power_after": {
+        "ACLineStatus": 1,
+        "BatteryFlag": 8,
+        "BatteryLifePercent": 39,
+        "SystemStatusFlag": 0,
+        "BatteryLifeTime": 4294967295,
+        "BatteryFullLifeTime": 4294967295
+      },
+      "csv_sha256": "d16d52d39aec0b3e3d1945186d83a930c445140ecffa0a7c111281c80e2ab888"
+    },
+    "20260923-replay-cudnn": {
+      "phases": {
+        "first_30s": {
+          "samples": 117,
+          "sm_mhz": {
+            "count": 117,
+            "mean": 178.5042735042735,
+            "p50": 247.0,
+            "p95": 247.0,
+            "p99": 247.0,
+            "p99_9": 247.0,
+            "max": 247.0
+          },
+          "minimum_sm_mhz": 52.0,
+          "below_300_mhz": 117,
+          "temperatures_c": {
+            "count": 117,
+            "mean": 49.58119658119658,
+            "p50": 50.0,
+            "p95": 50.0,
+            "p99": 50.84,
+            "p99_9": 51.0,
+            "max": 51.0
+          },
+          "states": {
+            "P0": 68,
+            "P3": 45,
+            "P5": 4
+          },
+          "active_reasons": {
+            "clocks_event_reasons.gpu_idle": 103,
+            "clocks_event_reasons.sw_power_cap": 0,
+            "clocks_event_reasons.sw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_power_brake_slowdown": 0
+          }
+        },
+        "later": {
+          "samples": 351,
+          "sm_mhz": {
+            "count": 351,
+            "mean": 170.71794871794873,
+            "p50": 247.0,
+            "p95": 247.0,
+            "p99": 247.0,
+            "p99_9": 247.0,
+            "max": 247.0
+          },
+          "minimum_sm_mhz": 52.0,
+          "below_300_mhz": 351,
+          "temperatures_c": {
+            "count": 351,
+            "mean": 51.12820512820513,
+            "p50": 51.0,
+            "p95": 52.0,
+            "p99": 52.0,
+            "p99_9": 52.0,
+            "max": 52.0
+          },
+          "states": {
+            "P3": 143,
+            "P0": 185,
+            "P5": 23
+          },
+          "active_reasons": {
+            "clocks_event_reasons.gpu_idle": 351,
+            "clocks_event_reasons.sw_power_cap": 0,
+            "clocks_event_reasons.sw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_power_brake_slowdown": 0
+          }
+        }
+      },
+      "invalid_samples": [],
+      "power_before": {
+        "ACLineStatus": 1,
+        "BatteryFlag": 8,
+        "BatteryLifePercent": 42,
+        "SystemStatusFlag": 0,
+        "BatteryLifeTime": 4294967295,
+        "BatteryFullLifeTime": 4294967295
+      },
+      "power_after": {
+        "ACLineStatus": 1,
+        "BatteryFlag": 8,
+        "BatteryLifePercent": 46,
+        "SystemStatusFlag": 0,
+        "BatteryLifeTime": 4294967295,
+        "BatteryFullLifeTime": 4294967295
+      },
+      "csv_sha256": "81f166bc0456a3ad4b284de6310539a2382469175dc398051ca9a891e294a0b0"
+    },
+    "20260923-replay-graphs": {
+      "phases": {
+        "first_30s": {
+          "samples": 117,
+          "sm_mhz": {
+            "count": 117,
+            "mean": 803.6666666666666,
+            "p50": 750.0,
+            "p95": 1702.0,
+            "p99": 1702.0,
+            "p99_9": 1702.0,
+            "max": 1702.0
+          },
+          "minimum_sm_mhz": 52.0,
+          "below_300_mhz": 54,
+          "temperatures_c": {
+            "count": 117,
+            "mean": 49.34188034188034,
+            "p50": 50.0,
+            "p95": 50.0,
+            "p99": 50.0,
+            "p99_9": 50.0,
+            "max": 50.0
+          },
+          "states": {
+            "P0": 84,
+            "P3": 29,
+            "P5": 4
+          },
+          "active_reasons": {
+            "clocks_event_reasons.gpu_idle": 85,
+            "clocks_event_reasons.sw_power_cap": 2,
+            "clocks_event_reasons.sw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_power_brake_slowdown": 0
+          }
+        },
+        "later": {
+          "samples": 349,
+          "sm_mhz": {
+            "count": 349,
+            "mean": 177.69340974212034,
+            "p50": 247.0,
+            "p95": 247.0,
+            "p99": 247.0,
+            "p99_9": 247.0,
+            "max": 247.0
+          },
+          "minimum_sm_mhz": 52.0,
+          "below_300_mhz": 349,
+          "temperatures_c": {
+            "count": 349,
+            "mean": 51.289398280802295,
+            "p50": 51.0,
+            "p95": 52.0,
+            "p99": 52.0,
+            "p99_9": 53.0,
+            "max": 53.0
+          },
+          "states": {
+            "P0": 205,
+            "P3": 133,
+            "P5": 11
+          },
+          "active_reasons": {
+            "clocks_event_reasons.gpu_idle": 349,
+            "clocks_event_reasons.sw_power_cap": 0,
+            "clocks_event_reasons.sw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_power_brake_slowdown": 0
+          }
+        }
+      },
+      "invalid_samples": [],
+      "power_before": {
+        "ACLineStatus": 1,
+        "BatteryFlag": 9,
+        "BatteryLifePercent": 68,
+        "SystemStatusFlag": 0,
+        "BatteryLifeTime": 4294967295,
+        "BatteryFullLifeTime": 4294967295
+      },
+      "power_after": {
+        "ACLineStatus": 1,
+        "BatteryFlag": 9,
+        "BatteryLifePercent": 71,
+        "SystemStatusFlag": 0,
+        "BatteryLifeTime": 4294967295,
+        "BatteryFullLifeTime": 4294967295
+      },
+      "csv_sha256": "4e9f93221d8f7572a39a999c357c5262cbd071671a6dd13eb5ccfa1a83bfbbb9"
+    },
+    "20260923-replay-layout-blas": {
+      "phases": {
+        "first_30s": {
+          "samples": 117,
+          "sm_mhz": {
+            "count": 117,
+            "mean": 172.95726495726495,
+            "p50": 247.0,
+            "p95": 247.0,
+            "p99": 247.0,
+            "p99_9": 247.0,
+            "max": 247.0
+          },
+          "minimum_sm_mhz": 52.0,
+          "below_300_mhz": 117,
+          "temperatures_c": {
+            "count": 117,
+            "mean": 51.85470085470085,
+            "p50": 52.0,
+            "p95": 52.0,
+            "p99": 52.0,
+            "p99_9": 52.0,
+            "max": 52.0
+          },
+          "states": {
+            "P0": 64,
+            "P3": 45,
+            "P5": 8
+          },
+          "active_reasons": {
+            "clocks_event_reasons.gpu_idle": 97,
+            "clocks_event_reasons.sw_power_cap": 2,
+            "clocks_event_reasons.sw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_power_brake_slowdown": 0
+          }
+        },
+        "later": {
+          "samples": 348,
+          "sm_mhz": {
+            "count": 348,
+            "mean": 172.46264367816093,
+            "p50": 247.0,
+            "p95": 247.0,
+            "p99": 247.0,
+            "p99_9": 247.0,
+            "max": 247.0
+          },
+          "minimum_sm_mhz": 52.0,
+          "below_300_mhz": 348,
+          "temperatures_c": {
+            "count": 348,
+            "mean": 52.91379310344828,
+            "p50": 53.0,
+            "p95": 54.0,
+            "p99": 54.0,
+            "p99_9": 54.0,
+            "max": 54.0
+          },
+          "states": {
+            "P3": 107,
+            "P0": 191,
+            "P5": 50
+          },
+          "active_reasons": {
+            "clocks_event_reasons.gpu_idle": 346,
+            "clocks_event_reasons.sw_power_cap": 2,
+            "clocks_event_reasons.sw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_power_brake_slowdown": 0
+          }
+        }
+      },
+      "invalid_samples": [],
+      "power_before": {
+        "ACLineStatus": 1,
+        "BatteryFlag": 8,
+        "BatteryLifePercent": 59,
+        "SystemStatusFlag": 0,
+        "BatteryLifeTime": 4294967295,
+        "BatteryFullLifeTime": 4294967295
+      },
+      "power_after": {
+        "ACLineStatus": 1,
+        "BatteryFlag": 8,
+        "BatteryLifePercent": 63,
+        "SystemStatusFlag": 0,
+        "BatteryLifeTime": 4294967295,
+        "BatteryFullLifeTime": 4294967295
+      },
+      "csv_sha256": "44fe0b5cbf8e03fdd8a1a2c5be5a3dc99941aca041018c4415db951a3aa77af1"
+    },
+    "20260923-replay-no-gl": {
+      "phases": {
+        "first_30s": {
+          "samples": 117,
+          "sm_mhz": {
+            "count": 117,
+            "mean": 173.82905982905982,
+            "p50": 247.0,
+            "p95": 247.0,
+            "p99": 247.0,
+            "p99_9": 247.0,
+            "max": 247.0
+          },
+          "minimum_sm_mhz": 52.0,
+          "below_300_mhz": 117,
+          "temperatures_c": {
+            "count": 117,
+            "mean": 50.623931623931625,
+            "p50": 51.0,
+            "p95": 51.0,
+            "p99": 52.0,
+            "p99_9": 52.0,
+            "max": 52.0
+          },
+          "states": {
+            "P0": 68,
+            "P3": 39,
+            "P5": 10
+          },
+          "active_reasons": {
+            "clocks_event_reasons.gpu_idle": 94,
+            "clocks_event_reasons.sw_power_cap": 4,
+            "clocks_event_reasons.sw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_power_brake_slowdown": 0
+          }
+        },
+        "later": {
+          "samples": 348,
+          "sm_mhz": {
+            "count": 348,
+            "mean": 173.35344827586206,
+            "p50": 247.0,
+            "p95": 247.0,
+            "p99": 247.0,
+            "p99_9": 247.0,
+            "max": 247.0
+          },
+          "minimum_sm_mhz": 52.0,
+          "below_300_mhz": 348,
+          "temperatures_c": {
+            "count": 348,
+            "mean": 53.14080459770115,
+            "p50": 53.0,
+            "p95": 54.0,
+            "p99": 54.0,
+            "p99_9": 54.0,
+            "max": 54.0
+          },
+          "states": {
+            "P3": 122,
+            "P0": 198,
+            "P5": 28
+          },
+          "active_reasons": {
+            "clocks_event_reasons.gpu_idle": 348,
+            "clocks_event_reasons.sw_power_cap": 0,
+            "clocks_event_reasons.sw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_power_brake_slowdown": 0
+          }
+        }
+      },
+      "invalid_samples": [],
+      "power_before": {
+        "ACLineStatus": 1,
+        "BatteryFlag": 8,
+        "BatteryLifePercent": 48,
+        "SystemStatusFlag": 0,
+        "BatteryLifeTime": 4294967295,
+        "BatteryFullLifeTime": 4294967295
+      },
+      "power_after": {
+        "ACLineStatus": 1,
+        "BatteryFlag": 8,
+        "BatteryLifePercent": 52,
+        "SystemStatusFlag": 0,
+        "BatteryLifeTime": 4294967295,
+        "BatteryFullLifeTime": 4294967295
+      },
+      "csv_sha256": "bdea4783b01c51b0fd432fcbd74c6445da0814619c4833a094f1ed091217427d"
+    },
+    "20260923-replay-stream": {
+      "phases": {
+        "first_30s": {
+          "samples": 117,
+          "sm_mhz": {
+            "count": 117,
+            "mean": 184.4188034188034,
+            "p50": 247.0,
+            "p95": 247.0,
+            "p99": 247.0,
+            "p99_9": 247.0,
+            "max": 247.0
+          },
+          "minimum_sm_mhz": 52.0,
+          "below_300_mhz": 117,
+          "temperatures_c": {
+            "count": 117,
+            "mean": 51.743589743589745,
+            "p50": 52.0,
+            "p95": 53.0,
+            "p99": 53.0,
+            "p99_9": 53.0,
+            "max": 53.0
+          },
+          "states": {
+            "P0": 74,
+            "P5": 11,
+            "P3": 32
+          },
+          "active_reasons": {
+            "clocks_event_reasons.gpu_idle": 90,
+            "clocks_event_reasons.sw_power_cap": 6,
+            "clocks_event_reasons.sw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_power_brake_slowdown": 0
+          }
+        },
+        "later": {
+          "samples": 350,
+          "sm_mhz": {
+            "count": 350,
+            "mean": 176.17714285714285,
+            "p50": 247.0,
+            "p95": 247.0,
+            "p99": 247.0,
+            "p99_9": 247.0,
+            "max": 247.0
+          },
+          "minimum_sm_mhz": 52.0,
+          "below_300_mhz": 350,
+          "temperatures_c": {
+            "count": 350,
+            "mean": 53.81428571428572,
+            "p50": 54.0,
+            "p95": 55.0,
+            "p99": 55.0,
+            "p99_9": 55.0,
+            "max": 55.0
+          },
+          "states": {
+            "P5": 20,
+            "P0": 202,
+            "P3": 128
+          },
+          "active_reasons": {
+            "clocks_event_reasons.gpu_idle": 346,
+            "clocks_event_reasons.sw_power_cap": 4,
+            "clocks_event_reasons.sw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_thermal_slowdown": 0,
+            "clocks_event_reasons.hw_power_brake_slowdown": 0
+          }
+        }
+      },
+      "invalid_samples": [],
+      "power_before": {
+        "ACLineStatus": 1,
+        "BatteryFlag": 8,
+        "BatteryLifePercent": 54,
+        "SystemStatusFlag": 0,
+        "BatteryLifeTime": 4294967295,
+        "BatteryFullLifeTime": 4294967295
+      },
+      "power_after": {
+        "ACLineStatus": 1,
+        "BatteryFlag": 8,
+        "BatteryLifePercent": 58,
+        "SystemStatusFlag": 0,
+        "BatteryLifeTime": 4294967295,
+        "BatteryFullLifeTime": 4294967295
+      },
+      "csv_sha256": "519ef9aa1f9cf9a842e7b042ce7ecbe3710b1aef7111a47c902aa813959d485b"
+    }
+  }
+}

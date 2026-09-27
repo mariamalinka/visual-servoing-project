@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import numpy as np
+from motion_path import MotionPath
 
 CONFIG_PATH = Path(__file__).resolve().parent / "joint_limit_config.json"
 
@@ -119,7 +120,7 @@ def limited_command(sample, J, qpos, limits, config, ibvs_config, dt, alternate=
 
 class JointLimitSupervisor:
     """Supervise visual alignment; retry once from a genuinely observed view."""
-    def __init__(self, limits, config=None):
+    def __init__(self, limits, config=None, path_planner=None):
         from collections import deque
         self.config=dict(load_joint_limit_config() if config is None else config)
         c=self.config
@@ -138,10 +139,12 @@ class JointLimitSupervisor:
         self.limits=np.asarray(limits,dtype=float).copy()
         velocity_bounds(np.mean(self.limits,axis=1),self.limits,.25,c["joint_limit_margin_rad"],.3,1/30)
         self.history=deque()
+        self.path=MotionPath(path_planner)
         self.reset()
 
     def reset(self):
         self.history.clear()
+        self.path.reset()
         self.time_s=0.
         self.anchor=None
         self.retries=0
@@ -178,12 +181,13 @@ class JointLimitSupervisor:
         self.reposition_lower=np.maximum(self.limits[:,0]+margin,qpos-excursion)
         self.reposition_upper=np.minimum(self.limits[:,1]-margin,qpos+excursion)
         self.reposition_goal=np.clip(self.anchor,self.reposition_lower,self.reposition_upper)
+        self.path.reset()
         self._event("retry_started",sample.error_px,qpos,reason=reason,
                     goal_qpos_rad=self.reposition_goal.tolist())
         # This first zero command brakes before the joint-feedback return begins.
         return replace(sample,status="repositioning",velocity=zero,camera_twist=zero.copy())
 
-    def filter(self,sample,J,qpos,dt,ibvs_config,clock_s=None):
+    def filter(self,sample,J,qpos,dt,ibvs_config,clock_s=None,observation_qpos=None):
         from dataclasses import replace
         if not self.config["enabled"]:
             return sample
@@ -194,7 +198,7 @@ class JointLimitSupervisor:
             self.clear_progress()
             return sample
         if self.anchor is None:
-            self.anchor=np.asarray(qpos,dtype=float).copy()
+            self.anchor=np.asarray(qpos if observation_qpos is None else observation_qpos,dtype=float).copy()
         if not np.any(sample.velocity):
             self.clear_progress()
             return sample
@@ -242,7 +246,13 @@ class JointLimitSupervisor:
         delta=self.reposition_goal-qpos
         if np.max(np.abs(delta))>self.config["reposition_arrival_tolerance_rad"]:
             self.confirmed_frames=0
-            velocity=self.config["reposition_position_gain_per_s"]*delta
+            target=self.path.target(qpos,self.reposition_goal,self.reposition_lower,self.reposition_upper,
+                                    self.config["reposition_arrival_tolerance_rad"])
+            if target is None:
+                self.reposition_active=False
+                self._event("collision_blocked",None,qpos)
+                return sample("collision_blocked")
+            velocity=self.config["reposition_position_gain_per_s"]*(target-qpos)
             velocity*=min(1.,self.config["reposition_velocity_rad_s"]/max(float(np.max(np.abs(velocity))),1e-12))
             velocity=np.clip(velocity,np.minimum(0.,(self.reposition_lower-qpos)/dt),
                              np.maximum(0.,(self.reposition_upper-qpos)/dt))

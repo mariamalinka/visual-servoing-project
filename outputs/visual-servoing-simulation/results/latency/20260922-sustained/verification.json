@@ -1,0 +1,22 @@
+{
+  "regression_tests": 290,
+  "regression_exit_code": 0,
+  "regression_duration_s": 373.914,
+  "sessions": 40,
+  "raw_trace_checksums_verified": 40,
+  "all_capture_accounting_reconciled": true,
+  "source_and_runtime_unchanged_after_tests": true,
+  "all_stops_stayed_latched": true,
+  "unsafe_motion_ticks": 0,
+  "post_stop_motion_ticks": 0,
+  "contacts": 0,
+  "timing_requirement_passed": false,
+  "learned_uncached_sample_target_met": false,
+  "full_kernel_scheduling_attribution_available": false,
+  "wpr_error": "0xc5585011",
+  "analysis_sha256": {
+    "tools/analyze_latency_stress.py": "004e31161c762c1bcb0e315d0528a3d77af1495439f46d6764906c65d4f463a0",
+    "tools/analyze_gpu_latency.py": "0ec1196bd6bc16909f32c3d9d0394d93483b73eca28dbdfcc0bcda02170b2988",
+    "tools/trace_latency_diagnostic.py": "9760e734258241c3c8112cf0717af9b4f078f120f2aef3afc2899aa4864e5c4b"
+  }
+}

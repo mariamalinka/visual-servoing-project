@@ -1,0 +1,59 @@
+{
+  "checked_utc": "2026-09-19T22:38:26.652092+00:00",
+  "full_suite": {
+    "tests": 187,
+    "seconds": 298.726,
+    "outcome": "PASS",
+    "log": "full-verification.txt",
+    "command": ".\\run.cmd --verify",
+    "scene_application": "PASS",
+    "scope": "Before final clock-reset queue flush; followed by focused tests on final camera code."
+  },
+  "final_camera_suite": {
+    "tests": 25,
+    "seconds": 8.549,
+    "outcome": "PASS",
+    "log": "final-camera-tests.txt",
+    "command": "python -B -m unittest discover -s tests -p 'test_camera*.py' -v"
+  },
+  "study": {
+    "trials": 39,
+    "ordinary_outcomes": {
+      "converged": 33,
+      "timeout": 3
+    },
+    "expected_outage_stops": 3
+  },
+  "measured_source_snapshot_hashes_verified": true,
+  "references_unchanged": true,
+  "final_source_sha256": {
+    "adaptive_gain.py": "0b529c74c553c79675e378874baa81872176aa9422631f147aee75add662a4a7",
+    "app.py": "81d2ed38d06a68b9053062f11cb11c4ec0ec51f47e338e2cc3c96c568783ad9c",
+    "camera_timing.py": "2026e559de6305cd473b0b434f3039365084805f6c234f568dde58cedce294b9",
+    "camera_timing_config.json": "20e73da5ca3615d727e35bf854af20b7e34700936526a8e87c19bc572a7a8db2",
+    "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+    "control.py": "6578d9ce47832945d6c99737b2b88004190fc11fbc4bb07f236226758da1fc4a",
+    "gain_config.json": "6186b780e19487b4e1920a3a5538dbc73a0b08488120a70e1253f62e99f65f6a",
+    "joint_limits.py": "4e1f6ac1c609df4aed560b9a4000cd535e607948da9c5b8eef9f9590f1e92648",
+    "joint_limit_config.json": "f8855a46a7aca71867fa730d4ea092686b72267c0351883421f31c574134f841",
+    "learned_feature_config.json": "0145983cbf3bafef87e80ca079628744f69edf175764137e36d373786353a708",
+    "learned_perception.py": "336d6ff1fd7fc3d3832c330bb24b7028da3e68d921d72b371976a126136eff47",
+    "natural_feature_config.json": "284d6107ba8a739fb3c5731ad4545de16d44be48adc6e3ad43f34e08efe4a2fb",
+    "perception.py": "4ba1a47241708674384790097609dc622adf786e31fa38f8a764ec70dcc770ff",
+    "recovery.py": "892268ba82b5e814816b97b14d1e9bfa17d9817768b232e18507094538ac0d32",
+    "recovery_config.json": "32b436f0cc0e4272680f163e76861cf358a50d1dacc9a8ce96d878fd02d6b7c5",
+    "reference_image.py": "3a883d1015831290b07f2b312a086da2d70478fe1cee5b6b4ef6887c7f167f3a",
+    "run_camera_delay_study.py": "76e7884b521792ec22bdbe2ca5802448abd1d94228e28e576f1e052ef12054c6",
+    "scene.xml": "7bf39021e9dc620cfe1d75dbd9a45a4258adb7ef626ecb523a9f2543ffa95a8d",
+    "simulation.py": "624558ffd180c3da5a1bc56481ec15b159715e5e47d1298aa507d209b31e3683",
+    "startup_search.py": "f99b2dcb9351f5a4bb1e83d18dae0775665f26be74c15fd4939e2732968f94fd",
+    "startup_search_config.json": "72e915e3699b029821ec8a9b85b104330a7bab2a96338a3b0538faf0350d75f9",
+    "tests/test_camera_timing.py": "9f58b506bedc7b1898f32566a93a99bb5fdcd0aaca4370b9f7fd169e69c80cb8",
+    "tests/test_camera_delay_integration.py": "2be473518450c2dd7aacb702692b2ff92971dafcfbd7758aa4273b29241cbaf4"
+  },
+  "repository_check": {
+    "outcome": "PASS",
+    "output": "Repository check passed: 658 files, 54.0 MiB.\nPython syntax and relative Markdown file/directory links checked.\nThis checks the current file set; it does not remove old Git history."
+  },
+  "git_diff_check": "PASS"
+}

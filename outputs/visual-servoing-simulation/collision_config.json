@@ -1,0 +1,35 @@
+{
+  "enabled": true,
+  "clearance_m": 0.012,
+  "self_clearance_m": 0.006,
+  "influence_m": 0.08,
+  "lookahead_s": 0.25,
+  "braking_time_s": 0.12,
+  "max_segment_checks": 1024,
+  "max_segment_depth": 14,
+  "detour_degrees": [
+    12,
+    24
+  ],
+  "detour_axes": [
+    1,
+    2,
+    0,
+    4,
+    3,
+    5
+  ],
+  "search_detour_degrees": 24,
+  "ignored_geom_pairs": [
+    [
+      "base_shell",
+      "pedestal"
+    ]
+  ],
+  "obstacle_position_m": [
+    0.48,
+    0.16,
+    0.2
+  ],
+  "max_plan_checks": 2048
+}

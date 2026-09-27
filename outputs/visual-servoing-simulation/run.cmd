@@ -1,5 +1,6 @@
 @echo off
 setlocal
+set "VSERVO_CALLER_DIR=%CD%"
 cd /d "%~dp0"
 set "VSERVO_PYTHON=%~dp0.venv\Scripts\python.exe"
 if exist "%VSERVO_PYTHON%" goto ready
@@ -9,6 +10,11 @@ call "%~dp0setup.cmd"
 if errorlevel 1 exit /b 1
 set "VSERVO_PYTHON=%~dp0.venv\Scripts\python.exe"
 :ready
+if /i "%~1"=="--latency-study" goto latency_study
+if /i "%~1"=="--accuracy-study" goto accuracy_study
+if /i "%~1"=="--collision-study" goto collision_study
+if /i "%~1"=="--robustness" goto robustness
+if /i "%~1"=="--delay-study" goto delay_study
 if /i "%~1"=="--verify" goto verify
 if /i "%~1"=="--trial" goto trial
 if /i "%~1"=="--benchmark" goto benchmark
@@ -24,6 +30,34 @@ if /i "%~1"=="--learned-study" goto learned_study
 if /i "%~1"=="--gain-study" goto gain_study
 if /i "%~1"=="--gain-report" goto gain_report
 "%VSERVO_PYTHON%" "%~dp0app.py" %*
+if errorlevel 1 goto failure
+exit /b 0
+:latency_study
+pushd "%VSERVO_CALLER_DIR%"
+"%VSERVO_PYTHON%" "%~dp0run_latency_study.py" %*
+set "VSERVO_EXPERIMENT_EXIT=%errorlevel%"
+popd
+exit /b %VSERVO_EXPERIMENT_EXIT%
+:accuracy_study
+pushd "%VSERVO_CALLER_DIR%"
+"%VSERVO_PYTHON%" "%~dp0run_accuracy_study.py" %*
+set "VSERVO_EXPERIMENT_EXIT=%errorlevel%"
+popd
+exit /b %VSERVO_EXPERIMENT_EXIT%
+:collision_study
+pushd "%VSERVO_CALLER_DIR%"
+"%VSERVO_PYTHON%" "%~dp0run_collision_study.py" %*
+set "VSERVO_EXPERIMENT_EXIT=%errorlevel%"
+popd
+exit /b %VSERVO_EXPERIMENT_EXIT%
+:robustness
+pushd "%VSERVO_CALLER_DIR%"
+"%VSERVO_PYTHON%" "%~dp0run_camera_robustness.py" %*
+set "VSERVO_EXPERIMENT_EXIT=%errorlevel%"
+popd
+exit /b %VSERVO_EXPERIMENT_EXIT%
+:delay_study
+"%VSERVO_PYTHON%" "%~dp0run_camera_delay_study.py" %*
 if errorlevel 1 goto failure
 exit /b 0
 :verify

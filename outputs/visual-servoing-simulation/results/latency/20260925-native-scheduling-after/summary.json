@@ -1,0 +1,3707 @@
+{
+  "completion": {
+    "completed_utc": "2026-09-24T23:58:58.196854+00:00",
+    "sessions": 40,
+    "sample_targets_met": true,
+    "telemetry_complete": true,
+    "all_alignments_succeeded": false,
+    "control_deadline_misses": 2,
+    "freshness_watchdog_trips": 753,
+    "source_unchanged": true
+  },
+  "methods": {
+    "natural": {
+      "sessions": 20,
+      "attempts": 497,
+      "alignments": 444,
+      "outcomes": {
+        "converged": 444,
+        "stale_camera": 53
+      },
+      "sessions_without_failure": 7,
+      "first_attempt": {
+        "attempts": 20,
+        "aligned": 17
+      },
+      "reused_worker_attempts": {
+        "attempts": 477,
+        "aligned": 427
+      },
+      "backends": [
+        "Picture / SIFT"
+      ],
+      "active_s": 1884.659698400239,
+      "ready_s": 2463.6839226001175,
+      "elapsed_s": 2491.540391900111,
+      "sensor_frames": 35566,
+      "cached_active_frames": 3741,
+      "processing_ms": {
+        "count": 19272,
+        "mean": 69.58367838850477,
+        "p50": 76.36354997521266,
+        "p95": 122.26137001707684,
+        "p99": 151.2880999926711,
+        "p99_9": 203.23742501449314,
+        "max": 284.3960999744013
+      },
+      "uncached_processing_ms": {
+        "count": 15531,
+        "mean": 86.27531744910354,
+        "p50": 85.93299996573478,
+        "p95": 125.69605000317097,
+        "p99": 156.30545002059083,
+        "p99_9": 214.55324299400877,
+        "max": 284.3960999744013
+      },
+      "capture_to_command_ms": {
+        "count": 18731,
+        "mean": 129.05949876694507,
+        "p50": 135.60619996860623,
+        "p95": 181.1600500077475,
+        "p99": 208.6872900137678,
+        "p99_9": 247.24883302347772,
+        "max": 288.6946000508033
+      },
+      "all_active_capture_to_delivery_ms": {
+        "count": 19272,
+        "mean": 124.58077261207463,
+        "p50": 131.23354999697767,
+        "p95": 178.04728497285396,
+        "p99": 209.65287399187233,
+        "p99_9": 267.78001119033536,
+        "max": 338.67329999338835
+      },
+      "cluster_bootstrap_95pct": {
+        "processing_ms": {
+          "mean": [
+            67.67736801525818,
+            71.52219030537451
+          ],
+          "p95": [
+            118.66252999854623,
+            125.6964415160473
+          ],
+          "p99": [
+            144.51990002999082,
+            158.3370605195525
+          ],
+          "p99_9": [
+            184.57570818984615,
+            228.28709004772745
+          ]
+        },
+        "uncached_processing_ms": {
+          "mean": [
+            83.74813377549341,
+            88.85512317230051
+          ],
+          "p95": [
+            121.92886501725297,
+            129.9371764846728
+          ],
+          "p99": [
+            148.2991209119064,
+            163.40113182179584
+          ],
+          "p99_9": [
+            190.2423572977034,
+            229.48690003249794
+          ]
+        },
+        "capture_to_command_ms": {
+          "mean": [
+            126.97700357641091,
+            131.1444148806368
+          ],
+          "p95": [
+            177.68861373391704,
+            184.44508897824562
+          ],
+          "p99": [
+            203.82146932434995,
+            213.7549000326544
+          ],
+          "p99_9": [
+            235.59039999963716,
+            256.6851111049363
+          ]
+        }
+      },
+      "bootstrap_replicates": 2000,
+      "bootstrap_seed": 20260922,
+      "first_second_half": {
+        "processing_ms": {
+          "first": {
+            "count": 9523,
+            "mean": 70.03023529391987,
+            "p50": 76.6359000117518,
+            "p95": 123.32577999914065,
+            "p99": 153.20379203651123,
+            "p99_9": 217.63133697654558,
+            "max": 284.3960999744013
+          },
+          "second": {
+            "count": 9749,
+            "mean": 69.14747350489947,
+            "p50": 76.02300000144169,
+            "p95": 121.10586001072079,
+            "p99": 148.48082801559946,
+            "p99_9": 192.72833276446997,
+            "max": 251.66240002727136
+          }
+        },
+        "uncached_processing_ms": {
+          "first": {
+            "count": 7662,
+            "mean": 86.96892945729876,
+            "p50": 86.49529999820516,
+            "p95": 127.71341502375434,
+            "p99": 157.34496801567735,
+            "p99_9": 220.24430130707373,
+            "max": 284.3960999744013
+          },
+          "second": {
+            "count": 7869,
+            "mean": 85.59995142968661,
+            "p50": 85.44629998505116,
+            "p95": 124.15703998412933,
+            "p99": 152.94521602336306,
+            "p99_9": 202.36621801834605,
+            "max": 251.66240002727136
+          }
+        },
+        "capture_to_command_ms": {
+          "first": {
+            "count": 9245,
+            "mean": 129.49517523044324,
+            "p50": 135.93990000663325,
+            "p95": 182.4953399831429,
+            "p99": 210.72788396617383,
+            "p99_9": 251.49781479128265,
+            "max": 288.6946000508033
+          },
+          "second": {
+            "count": 9486,
+            "mean": 128.6348910392368,
+            "p50": 135.1713999756612,
+            "p95": 179.94082496443298,
+            "p99": 205.07647997292213,
+            "p99_9": 238.1544564900118,
+            "max": 274.4410999584943
+          }
+        }
+      },
+      "cohort_uncached_processing_ms": {
+        "first_attempt": {
+          "count": 626,
+          "mean": 85.93867380006876,
+          "p50": 83.7189000158105,
+          "p95": 129.89937496604398,
+          "p99": 160.14542496122885,
+          "p99_9": 237.01316249935894,
+          "max": 275.82260000053793
+        },
+        "reused_worker": {
+          "count": 14905,
+          "mean": 86.28945625650346,
+          "p50": 86.03669999865815,
+          "p95": 125.5055599962361,
+          "p99": 156.06733598280672,
+          "p99_9": 212.47100638552092,
+          "max": 284.3960999744013
+        }
+      },
+      "maximum_feedback_age_ms": 408.68769999360666,
+      "counters": {
+        "captures": 35566,
+        "capture_slots": 71352,
+        "busy_capture_skips": 35786,
+        "input_dropped": 0,
+        "transport_dropped": 1,
+        "pending_cancelled": 1247,
+        "sensor_received": 35566,
+        "sensor_rows_evicted": 0,
+        "command_rows_evicted": 0,
+        "loop_rows_evicted": 0,
+        "stale_results": 0,
+        "obsolete_results": 385,
+        "pre_inference_dropped": 0,
+        "accepted": 18731,
+        "control_ticks": 1059371,
+        "moving_ticks": 654849,
+        "unsafe_motion_ticks": 0,
+        "contacts": 0,
+        "post_stop_motion_ticks": 0,
+        "control_deadline_misses": 0,
+        "fault_results": 0,
+        "discarded_physics_s": 0.0,
+        "result_mailbox_dropped": 0,
+        "worker_requests_expired": 0,
+        "completed_but_unreceived": 0,
+        "requests_not_started": 0
+      },
+      "freshness_watchdog_trips": 53,
+      "late_after_freshness_stop": 44,
+      "late_after_control_stop": 0,
+      "all_stops_stayed_latched": true,
+      "unsafe_stops": [],
+      "telemetry_complete": true,
+      "diagnostics_enabled": true,
+      "diagnostics_complete": true,
+      "cycle_spikes_evicted": 0,
+      "gc_events_evicted": 0,
+      "errors": [],
+      "stages_ms": {
+        "prepare_ms": {
+          "count": 15531,
+          "mean": 0.2332546776149804,
+          "p50": 0.20640000002458692,
+          "p95": 0.37495000287890434,
+          "p99": 0.6942100066225986,
+          "p99_9": 2.805916007491938,
+          "max": 11.348499974701554
+        },
+        "features_ms": {
+          "count": 15531,
+          "mean": 57.19456295803779,
+          "p50": 54.92290004622191,
+          "p95": 76.61414999165572,
+          "p99": 99.7975400008727,
+          "p99_9": 149.4112830294762,
+          "max": 216.39760001562536
+        },
+        "points_ms": {
+          "count": 15531,
+          "mean": 0.5511569375026901,
+          "p50": 0.4800999886356294,
+          "p95": 0.8828499994706362,
+          "p99": 1.4290100138168857,
+          "p99_9": 3.1768869759980616,
+          "max": 6.5252999775111675
+        },
+        "matching_ms": {
+          "count": 15531,
+          "mean": 4.258650409043614,
+          "p50": 3.8562999689020216,
+          "p95": 7.159250002587214,
+          "p99": 10.673349990975122,
+          "p99_9": 18.439421022777182,
+          "max": 39.829300018027425
+        },
+        "filter_ms": {
+          "count": 15531,
+          "mean": 1.2558589530232942,
+          "p50": 1.132100005634129,
+          "p95": 1.9574000034481287,
+          "p99": 2.7056599967181687,
+          "p99_9": 5.419037993997342,
+          "max": 10.21410000976175
+        },
+        "geometry_ms": {
+          "count": 15531,
+          "mean": 1.3470865561010468,
+          "p50": 1.2461000005714595,
+          "p95": 2.0295499998610467,
+          "p99": 2.8297399694565692,
+          "p99_9": 5.841358008328827,
+          "max": 20.596899965312332
+        },
+        "coarse_ms": {
+          "count": 15531,
+          "mean": 65.36863141445113,
+          "p50": 63.05390002671629,
+          "p95": 86.46774999215268,
+          "p99": 111.19443999486977,
+          "p99_9": 160.94498602033207,
+          "max": 226.44749999744818
+        },
+        "refinement_ms": {
+          "count": 15531,
+          "mean": 20.672861998534234,
+          "p50": 25.388100009877235,
+          "p95": 50.121250009397045,
+          "p99": 65.61889000586238,
+          "p99_9": 89.50993699254663,
+          "max": 116.16130004404113
+        },
+        "coarse_thread_cpu_ms": {
+          "count": 15531,
+          "mean": 41.652581932908376,
+          "p50": 46.875,
+          "p95": 62.5,
+          "p99": 78.125,
+          "p99_9": 93.75,
+          "max": 109.375
+        },
+        "coarse_process_cpu_ms": {
+          "count": 15531,
+          "mean": 154.78015742708132,
+          "p50": 156.25,
+          "p95": 234.375,
+          "p99": 265.625,
+          "p99_9": 312.5,
+          "max": 375.0
+        },
+        "refinement_thread_cpu_ms": {
+          "count": 15531,
+          "mean": 19.031493464683535,
+          "p50": 15.625,
+          "p95": 46.875,
+          "p99": 62.5,
+          "p99_9": 78.125,
+          "max": 109.375
+        },
+        "refinement_process_cpu_ms": {
+          "count": 15531,
+          "mean": 29.368681990856995,
+          "p50": 15.625,
+          "p95": 93.75,
+          "p99": 125.0,
+          "p99_9": 171.875,
+          "max": 218.75
+        },
+        "render_thread_cpu_ms": {
+          "count": 19272,
+          "mean": 1.8039448422581985,
+          "p50": 0.0,
+          "p95": 15.625,
+          "p99": 15.625,
+          "p99_9": 15.625,
+          "max": 15.625
+        },
+        "render_process_cpu_ms": {
+          "count": 19272,
+          "mean": 3.2527760481527603,
+          "p50": 0.0,
+          "p95": 31.25,
+          "p99": 46.875,
+          "p99_9": 46.875,
+          "max": 62.5
+        },
+        "inference_thread_cpu_ms": {
+          "count": 19272,
+          "mean": 48.986223536737235,
+          "p50": 46.875,
+          "p95": 93.75,
+          "p99": 109.375,
+          "p99_9": 140.625,
+          "max": 171.875
+        },
+        "inference_process_cpu_ms": {
+          "count": 19272,
+          "mean": 148.48371341843088,
+          "p50": 156.25,
+          "p95": 265.625,
+          "p99": 328.125,
+          "p99_9": 386.39062500004684,
+          "max": 453.125
+        },
+        "all_active_request_queue_ms": {
+          "count": 19272,
+          "mean": 0.678758276264633,
+          "p50": 0.48230000538751483,
+          "p95": 1.681734999874607,
+          "p99": 4.497522986494021,
+          "p99_9": 8.933329281804951,
+          "max": 26.46889997413382
+        },
+        "all_active_render_ms": {
+          "count": 19272,
+          "mean": 4.318335958946762,
+          "p50": 3.8343500054907054,
+          "p95": 8.225214999401942,
+          "p99": 12.536991017404977,
+          "p99_9": 35.99909031746517,
+          "max": 86.49549999972805
+        },
+        "all_active_ipc_ms": {
+          "count": 19272,
+          "mean": 2.936908037466564,
+          "p50": 2.772499981801957,
+          "p95": 5.14302498777397,
+          "p99": 7.150545989861727,
+          "p99_9": 10.681623880402542,
+          "max": 22.553400020115077
+        },
+        "accepted_queue_ms": {
+          "count": 18731,
+          "mean": 0.6764764828177056,
+          "p50": 0.4807999939657748,
+          "p95": 1.6809499938972294,
+          "p99": 4.456989979371439,
+          "p99_9": 8.90247099043344,
+          "max": 26.46889997413382
+        },
+        "accepted_render_ms": {
+          "count": 18731,
+          "mean": 4.3018476269739905,
+          "p50": 3.8344000349752605,
+          "p95": 8.173050009645522,
+          "p99": 12.422260019229729,
+          "p99_9": 33.42459799489116,
+          "max": 86.49549999972805
+        },
+        "accepted_inference_ms": {
+          "count": 18731,
+          "mean": 70.8000162513369,
+          "p50": 77.4789999704808,
+          "p95": 121.67789999512024,
+          "p99": 146.64245999883863,
+          "p99_9": 179.9493359652117,
+          "max": 231.68979998445138
+        },
+        "accepted_ipc_ms": {
+          "count": 18731,
+          "mean": 2.9423997062437417,
+          "p50": 2.7807000442408025,
+          "p95": 5.1406499987933785,
+          "p99": 7.121829979587347,
+          "p99_9": 10.73012697161178,
+          "max": 22.553400020115077
+        },
+        "accepted_delivery_wait_ms": {
+          "count": 18731,
+          "mean": 48.40255427382675,
+          "p50": 48.274600005242974,
+          "p95": 50.65135000040755,
+          "p99": 52.27751000202261,
+          "p99_9": 54.92004000116146,
+          "max": 61.385300010442734
+        },
+        "accepted_control_ms": {
+          "count": 18731,
+          "mean": 1.4005730124363975,
+          "p50": 1.3357999850995839,
+          "p95": 2.1599500032607466,
+          "p99": 2.940009976737202,
+          "p99_9": 5.059965028776817,
+          "max": 11.894700000993907
+        },
+        "accepted_apply_ms": {
+          "count": 18731,
+          "mean": 0.5356314133095819,
+          "p50": 0.4979000077582896,
+          "p95": 0.8923500136006624,
+          "p99": 1.2002800009213406,
+          "p99_9": 2.0828460069606254,
+          "max": 5.418999993707985
+        },
+        "accepted_control_thread_cpu_ms": {
+          "count": 18731,
+          "mean": 0.6147896535155625,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 15.625,
+          "p99_9": 15.625,
+          "max": 15.625
+        },
+        "accepted_apply_thread_cpu_ms": {
+          "count": 18731,
+          "mean": 0.9584712508675458,
+          "p50": 0.0,
+          "p95": 15.625,
+          "p99": 15.625,
+          "p99_9": 15.625,
+          "max": 15.625
+        }
+      },
+      "zero_event_session_probability_upper_95pct": null,
+      "session_rows": [
+        {
+          "id": "natural-session-000",
+          "round": 0,
+          "started_utc": "2026-09-24T22:32:05.010933+00:00",
+          "attempts": 25,
+          "alignments": 23,
+          "first_attempt_outcome": "converged",
+          "active_s": 94.53922679985408,
+          "ready_s": 123.78708530002041,
+          "processing_ms": {
+            "count": 929,
+            "mean": 71.85446275619938,
+            "p50": 80.32140001887456,
+            "p95": 122.78746002120894,
+            "p99": 141.34261603467166,
+            "p99_9": 172.65065680910183,
+            "max": 195.14249998610467
+          },
+          "uncached_processing_ms": {
+            "count": 743,
+            "mean": 89.77093284089159,
+            "p50": 91.89490001881495,
+            "p95": 126.08897003228776,
+            "p99": 143.6551460041666,
+            "p99_9": 177.15872020449117,
+            "max": 195.14249998610467
+          },
+          "capture_to_command_ms": {
+            "count": 902,
+            "mean": 131.94664434650903,
+            "p50": 140.86254997528158,
+            "p95": 182.34615499677597,
+            "p99": 202.2248369763838,
+            "p99_9": 226.73241853941224,
+            "max": 270.4593000235036
+          },
+          "maximum_feedback_age_ms": 402.6070000254549,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 2,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 45, 0 %, 5.65 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 46, 0 %, 5.69 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-001",
+          "round": 1,
+          "started_utc": "2026-09-24T22:36:27.800654+00:00",
+          "attempts": 24,
+          "alignments": 24,
+          "first_attempt_outcome": "converged",
+          "active_s": 92.99796439992497,
+          "ready_s": 120.9783022000338,
+          "processing_ms": {
+            "count": 876,
+            "mean": 74.25551290046286,
+            "p50": 82.90414998191409,
+            "p95": 128.53040001937188,
+            "p99": 149.09857502789237,
+            "p99_9": 167.64591249375593,
+            "max": 184.764500008896
+          },
+          "uncached_processing_ms": {
+            "count": 701,
+            "mean": 92.70785192597974,
+            "p50": 94.7553999722004,
+            "p95": 132.35649996204302,
+            "p99": 151.5534999780357,
+            "p99_9": 171.0696299967835,
+            "max": 184.764500008896
+          },
+          "capture_to_command_ms": {
+            "count": 852,
+            "mean": 135.26973485947474,
+            "p50": 144.8969000193756,
+            "p95": 187.9116200172575,
+            "p99": 213.43881598557346,
+            "p99_9": 237.25360399519633,
+            "max": 242.7816999843344
+          },
+          "maximum_feedback_age_ms": 397.77219999814406,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 0,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 52, 0 %, 9.70 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 48, 0 %, 5.84 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-002",
+          "round": 2,
+          "started_utc": "2026-09-24T22:40:47.708123+00:00",
+          "attempts": 27,
+          "alignments": 17,
+          "first_attempt_outcome": "stale_camera",
+          "active_s": 91.38321480015293,
+          "ready_s": 122.79527249996318,
+          "processing_ms": {
+            "count": 859,
+            "mean": 76.79711140860826,
+            "p50": 82.71879999665543,
+            "p95": 141.81433000485404,
+            "p99": 184.5760620106002,
+            "p99_9": 277.040036996827,
+            "max": 284.3960999744013
+          },
+          "uncached_processing_ms": {
+            "count": 692,
+            "mean": 95.2589150292414,
+            "p50": 91.43555001355708,
+            "p95": 146.6190550039755,
+            "p99": 202.44375696114764,
+            "p99_9": 278.4718114924624,
+            "max": 284.3960999744013
+          },
+          "capture_to_command_ms": {
+            "count": 828,
+            "mean": 135.86407608684695,
+            "p50": 141.0722000291571,
+            "p95": 201.12957001256285,
+            "p99": 226.10521999187768,
+            "p99_9": 262.61962077493445,
+            "max": 288.6946000508033
+          },
+          "maximum_feedback_age_ms": 403.22390000801533,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 10,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 54, 0 %, 7.72 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 50, 0 %, 5.88 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-003",
+          "round": 3,
+          "started_utc": "2026-09-24T22:45:05.682778+00:00",
+          "attempts": 24,
+          "alignments": 23,
+          "first_attempt_outcome": "converged",
+          "active_s": 96.2680273000733,
+          "ready_s": 124.22606539999833,
+          "processing_ms": {
+            "count": 1117,
+            "mean": 61.115597582398436,
+            "p50": 66.15959998453036,
+            "p95": 101.33377996971831,
+            "p99": 128.51963201770548,
+            "p99_9": 167.80731841549286,
+            "max": 180.45620003249496
+          },
+          "uncached_processing_ms": {
+            "count": 907,
+            "mean": 75.21086019762127,
+            "p50": 77.5050999945961,
+            "p95": 103.58407000312582,
+            "p99": 129.73581199301404,
+            "p99_9": 169.69862781826,
+            "max": 180.45620003249496
+          },
+          "capture_to_command_ms": {
+            "count": 1092,
+            "mean": 119.97272509287518,
+            "p50": 126.68450002092868,
+            "p95": 159.60856500896625,
+            "p99": 189.94026898755672,
+            "p99_9": 232.2377807073651,
+            "max": 260.70120005169883
+          },
+          "maximum_feedback_age_ms": 401.78780001588166,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 1,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 52, 0 %, 10.61 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 47, 0 %, 5.84 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-004",
+          "round": 4,
+          "started_utc": "2026-09-24T22:49:25.934997+00:00",
+          "attempts": 25,
+          "alignments": 23,
+          "first_attempt_outcome": "converged",
+          "active_s": 95.67016329994658,
+          "ready_s": 124.70564379997086,
+          "processing_ms": {
+            "count": 981,
+            "mean": 69.40451090589116,
+            "p50": 76.474400004372,
+            "p95": 118.30839997855946,
+            "p99": 144.098459975794,
+            "p99_9": 215.7423719891825,
+            "max": 228.38300000876188
+          },
+          "uncached_processing_ms": {
+            "count": 796,
+            "mean": 85.46702022424105,
+            "p50": 86.29674999974668,
+            "p95": 121.3831500208471,
+            "p99": 144.77724999014748,
+            "p99_9": 218.12861299287815,
+            "max": 228.38300000876188
+          },
+          "capture_to_command_ms": {
+            "count": 954,
+            "mean": 128.80985691929402,
+            "p50": 135.51304998691194,
+            "p95": 178.3609850215725,
+            "p99": 202.2029170219321,
+            "p99_9": 219.3251256506814,
+            "max": 246.96670001139864
+          },
+          "maximum_feedback_age_ms": 405.33089998643845,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 2,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 50, 0 %, 9.70 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 47, 0 %, 5.88 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-005",
+          "round": 5,
+          "started_utc": "2026-09-24T22:53:47.223361+00:00",
+          "attempts": 24,
+          "alignments": 24,
+          "first_attempt_outcome": "converged",
+          "active_s": 94.54222720005782,
+          "ready_s": 122.55588860000717,
+          "processing_ms": {
+            "count": 972,
+            "mean": 68.25324794284256,
+            "p50": 75.14175001415424,
+            "p95": 114.4428750150837,
+            "p99": 137.11632803897373,
+            "p99_9": 156.87243997142667,
+            "max": 158.38719997555017
+          },
+          "uncached_processing_ms": {
+            "count": 777,
+            "mean": 85.30890501953513,
+            "p50": 87.93879998847842,
+            "p95": 116.94414003286508,
+            "p99": 137.6252239663154,
+            "p99_9": 157.17663997225472,
+            "max": 158.38719997555017
+          },
+          "capture_to_command_ms": {
+            "count": 948,
+            "mean": 128.14247974782558,
+            "p50": 135.7166999951005,
+            "p95": 173.67800497158896,
+            "p99": 195.45865401043554,
+            "p99_9": 226.04398752493108,
+            "max": 247.8605000069365
+          },
+          "maximum_feedback_age_ms": 374.0072000073269,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 0,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 51, 0 %, 10.69 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 48, 0 %, 5.87 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-006",
+          "round": 6,
+          "started_utc": "2026-09-24T22:58:04.960320+00:00",
+          "attempts": 27,
+          "alignments": 17,
+          "first_attempt_outcome": "converged",
+          "active_s": 92.18585839989828,
+          "ready_s": 123.63568239996675,
+          "processing_ms": {
+            "count": 867,
+            "mean": 76.26982560572499,
+            "p50": 83.57219997560605,
+            "p95": 139.76344998227432,
+            "p99": 172.46918599703352,
+            "p99_9": 200.55847020529035,
+            "max": 220.08270001970232
+          },
+          "uncached_processing_ms": {
+            "count": 703,
+            "mean": 93.9923384068547,
+            "p50": 93.00729999085888,
+            "p95": 142.113619990414,
+            "p99": 174.8384740238544,
+            "p99_9": 204.2558994080199,
+            "max": 220.08270001970232
+          },
+          "capture_to_command_ms": {
+            "count": 833,
+            "mean": 135.5097600253157,
+            "p50": 143.8476000330411,
+            "p95": 195.73587997583672,
+            "p99": 223.314939981792,
+            "p99_9": 255.51050720131232,
+            "max": 269.85660003265366
+          },
+          "maximum_feedback_age_ms": 406.07979998458177,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 10,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 52, 0 %, 9.32 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 49, 0 %, 5.81 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-007",
+          "round": 7,
+          "started_utc": "2026-09-24T23:02:30.544864+00:00",
+          "attempts": 26,
+          "alignments": 20,
+          "first_attempt_outcome": "converged",
+          "active_s": 92.49020530015696,
+          "ready_s": 122.77721580001526,
+          "processing_ms": {
+            "count": 943,
+            "mean": 69.95368133809404,
+            "p50": 75.85439999820665,
+            "p95": 127.37090997979975,
+            "p99": 165.96805003704526,
+            "p99_9": 199.65617917163803,
+            "max": 203.21919996058568
+          },
+          "uncached_processing_ms": {
+            "count": 762,
+            "mean": 86.50094212758235,
+            "p50": 85.18359996378422,
+            "p95": 130.78016504296096,
+            "p99": 170.3980650112498,
+            "p99_9": 200.34079356951418,
+            "max": 203.21919996058568
+          },
+          "capture_to_command_ms": {
+            "count": 911,
+            "mean": 128.60499736602478,
+            "p50": 134.23880003392696,
+            "p95": 182.95130002661608,
+            "p99": 213.08375001535748,
+            "p99_9": 258.3118950005157,
+            "max": 259.3360999599099
+          },
+          "maximum_feedback_age_ms": 404.82980001252145,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 6,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 52, 0 %, 10.74 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 49, 0 %, 5.87 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-008",
+          "round": 8,
+          "started_utc": "2026-09-24T23:06:51.756003+00:00",
+          "attempts": 25,
+          "alignments": 21,
+          "first_attempt_outcome": "stale_camera",
+          "active_s": 95.66822850011522,
+          "ready_s": 124.85342210001545,
+          "processing_ms": {
+            "count": 1018,
+            "mean": 67.38632505021766,
+            "p50": 72.08389998413622,
+            "p95": 118.18978999217505,
+            "p99": 165.53584299050323,
+            "p99_9": 219.57860486296846,
+            "max": 257.1193999610841
+          },
+          "uncached_processing_ms": {
+            "count": 824,
+            "mean": 83.18628592304185,
+            "p50": 83.18090002285317,
+            "p95": 121.85068497201425,
+            "p99": 168.45016096660402,
+            "p99_9": 226.5502994628091,
+            "max": 257.1193999610841
+          },
+          "capture_to_command_ms": {
+            "count": 990,
+            "mean": 126.25224929311162,
+            "p50": 130.80834998982027,
+            "p95": 176.24986501468805,
+            "p99": 213.00459501275327,
+            "p99_9": 248.12185498024397,
+            "max": 255.44540002010763
+          },
+          "maximum_feedback_age_ms": 402.39880001172423,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 4,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 52, 0 %, 10.69 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 48, 0 %, 5.66 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-009",
+          "round": 9,
+          "started_utc": "2026-09-24T23:11:13.302717+00:00",
+          "attempts": 24,
+          "alignments": 24,
+          "first_attempt_outcome": "converged",
+          "active_s": 94.16239920008229,
+          "ready_s": 122.17128490004689,
+          "processing_ms": {
+            "count": 961,
+            "mean": 68.41097076058351,
+            "p50": 74.19529999606311,
+            "p95": 117.88999999407679,
+            "p99": 135.5649199802428,
+            "p99_9": 154.20716000255223,
+            "max": 157.27820002939552
+          },
+          "uncached_processing_ms": {
+            "count": 757,
+            "mean": 86.76342417563212,
+            "p50": 88.80070003215224,
+            "p95": 120.60454000020398,
+            "p99": 138.08172398712472,
+            "p99_9": 154.8597560082563,
+            "max": 157.27820002939552
+          },
+          "capture_to_command_ms": {
+            "count": 935,
+            "mean": 128.3629444915861,
+            "p50": 134.97069996083155,
+            "p95": 176.69412004761398,
+            "p99": 194.6020660141948,
+            "p99_9": 213.5465614092537,
+            "max": 214.10500002093613
+          },
+          "maximum_feedback_age_ms": 354.2058999883011,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 0,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 52, 0 %, 9.13 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 48, 0 %, 5.76 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-010",
+          "round": 10,
+          "started_utc": "2026-09-24T23:15:31.573056+00:00",
+          "attempts": 24,
+          "alignments": 24,
+          "first_attempt_outcome": "converged",
+          "active_s": 93.60710330010625,
+          "ready_s": 121.47917910001706,
+          "processing_ms": {
+            "count": 925,
+            "mean": 71.20851427197104,
+            "p50": 77.80820003245026,
+            "p95": 120.09975998662412,
+            "p99": 144.60832800948992,
+            "p99_9": 168.55675323191446,
+            "max": 192.18869996257126
+          },
+          "uncached_processing_ms": {
+            "count": 748,
+            "mean": 87.98554786308208,
+            "p50": 89.88225000211969,
+            "p95": 126.69161500525661,
+            "p99": 148.19366400130087,
+            "p99_9": 173.08365211862946,
+            "max": 192.18869996257126
+          },
+          "capture_to_command_ms": {
+            "count": 901,
+            "mean": 131.53532019861044,
+            "p50": 137.92920002015308,
+            "p95": 180.3012999589555,
+            "p99": 204.94950003921986,
+            "p99_9": 228.4857700113239,
+            "max": 249.42670000018552
+          },
+          "maximum_feedback_age_ms": 386.4125999971293,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 0,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 52, 0 %, 10.85 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 49, 0 %, 5.74 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-011",
+          "round": 11,
+          "started_utc": "2026-09-24T23:19:48.831073+00:00",
+          "attempts": 24,
+          "alignments": 23,
+          "first_attempt_outcome": "converged",
+          "active_s": 92.69461020000745,
+          "ready_s": 120.66942809999455,
+          "processing_ms": {
+            "count": 929,
+            "mean": 71.17076415407689,
+            "p50": 78.51420005317777,
+            "p95": 119.10374003928146,
+            "p99": 140.04688799381262,
+            "p99_9": 168.12575679692202,
+            "max": 223.36440003709868
+          },
+          "uncached_processing_ms": {
+            "count": 752,
+            "mean": 87.85729268547198,
+            "p50": 91.05250003631227,
+            "p95": 120.91216502885791,
+            "p99": 141.2074489891529,
+            "p99_9": 178.6615756045876,
+            "max": 223.36440003709868
+          },
+          "capture_to_command_ms": {
+            "count": 904,
+            "mean": 131.05726814206815,
+            "p50": 138.22175000677817,
+            "p95": 178.07604004919995,
+            "p99": 199.48069801495876,
+            "p99_9": 218.7002093043414,
+            "max": 221.43350000260398
+          },
+          "maximum_feedback_age_ms": 402.46959996875376,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 1,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 52, 0 %, 9.46 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 49, 0 %, 5.76 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-012",
+          "round": 12,
+          "started_utc": "2026-09-24T23:24:04.374188+00:00",
+          "attempts": 25,
+          "alignments": 24,
+          "first_attempt_outcome": "converged",
+          "active_s": 96.0656721998239,
+          "ready_s": 125.16248189995531,
+          "processing_ms": {
+            "count": 969,
+            "mean": 69.83493983440901,
+            "p50": 76.71520003350452,
+            "p95": 121.84539998415858,
+            "p99": 136.78813203005117,
+            "p99_9": 178.88663036003732,
+            "max": 180.26090000057593
+          },
+          "uncached_processing_ms": {
+            "count": 772,
+            "mean": 87.57822448116308,
+            "p50": 89.60695003042929,
+            "p95": 124.13964000006669,
+            "p99": 139.13906197238236,
+            "p99_9": 179.1663112682873,
+            "max": 180.26090000057593
+          },
+          "capture_to_command_ms": {
+            "count": 943,
+            "mean": 129.93682492091068,
+            "p50": 137.16700003715232,
+            "p95": 181.48982000420798,
+            "p99": 199.57932000281292,
+            "p99_9": 235.68208957102638,
+            "max": 237.60489997221157
+          },
+          "maximum_feedback_age_ms": 400.6348999682814,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 1,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 52, 0 %, 10.55 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 49, 0 %, 5.80 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-013",
+          "round": 13,
+          "started_utc": "2026-09-24T23:28:26.349323+00:00",
+          "attempts": 24,
+          "alignments": 24,
+          "first_attempt_outcome": "converged",
+          "active_s": 93.98189029982314,
+          "ready_s": 121.7279009000049,
+          "processing_ms": {
+            "count": 949,
+            "mean": 70.10955521537558,
+            "p50": 76.852299971506,
+            "p95": 119.36281998641788,
+            "p99": 143.72408400988203,
+            "p99_9": 177.79507440910876,
+            "max": 192.04559997888282
+          },
+          "uncached_processing_ms": {
+            "count": 765,
+            "mean": 86.89889581607703,
+            "p50": 89.68450000975281,
+            "p95": 120.8728199708275,
+            "p99": 145.65254799090332,
+            "p99_9": 180.56099920324206,
+            "max": 192.04559997888282
+          },
+          "capture_to_command_ms": {
+            "count": 925,
+            "mean": 130.18343859421392,
+            "p50": 138.00430000992492,
+            "p95": 179.3756400118582,
+            "p99": 206.38456799555567,
+            "p99_9": 259.0272024283188,
+            "max": 260.5494000017643
+          },
+          "maximum_feedback_age_ms": 395.4200000152923,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 0,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 52, 0 %, 9.72 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 49, 0 %, 5.82 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-014",
+          "round": 14,
+          "started_utc": "2026-09-24T23:32:44.857819+00:00",
+          "attempts": 24,
+          "alignments": 23,
+          "first_attempt_outcome": "converged",
+          "active_s": 92.88319520000368,
+          "ready_s": 120.90752840001369,
+          "processing_ms": {
+            "count": 915,
+            "mean": 71.92168229589076,
+            "p50": 79.95510002365336,
+            "p95": 123.83560000453143,
+            "p99": 149.29396197781898,
+            "p99_9": 167.462795965025,
+            "max": 172.70550003740937
+          },
+          "uncached_processing_ms": {
+            "count": 737,
+            "mean": 89.22474586159709,
+            "p50": 89.9517000070773,
+            "p95": 127.8360400116071,
+            "p99": 153.13749199267474,
+            "p99_9": 168.48380397912186,
+            "max": 172.70550003740937
+          },
+          "capture_to_command_ms": {
+            "count": 890,
+            "mean": 132.12789348346243,
+            "p50": 139.97344998642802,
+            "p95": 185.32129498489664,
+            "p99": 211.12310798664112,
+            "p99_9": 229.84211033408067,
+            "max": 230.11530004441738
+          },
+          "maximum_feedback_age_ms": 402.39080000901595,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 1,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 52, 0 %, 9.21 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 49, 0 %, 5.81 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-015",
+          "round": 15,
+          "started_utc": "2026-09-24T23:37:03.589235+00:00",
+          "attempts": 27,
+          "alignments": 18,
+          "first_attempt_outcome": "stale_camera",
+          "active_s": 93.21288970008027,
+          "ready_s": 124.74669130000984,
+          "processing_ms": {
+            "count": 938,
+            "mean": 71.64645309213485,
+            "p50": 77.74129998870194,
+            "p95": 126.3450200203806,
+            "p99": 169.05224697780795,
+            "p99_9": 218.79806201416426,
+            "max": 251.66240002727136
+          },
+          "uncached_processing_ms": {
+            "count": 758,
+            "mean": 88.5998478899114,
+            "p50": 86.89384997705929,
+            "p95": 134.03107502090276,
+            "p99": 172.62067703821214,
+            "p99_9": 225.1113820166811,
+            "max": 251.66240002727136
+          },
+          "capture_to_command_ms": {
+            "count": 904,
+            "mean": 129.3355629420623,
+            "p50": 135.64490000135265,
+            "p95": 182.13340497459282,
+            "p99": 206.53440802590927,
+            "p99_9": 229.58680451382014,
+            "max": 235.59039999963716
+          },
+          "maximum_feedback_age_ms": 408.68769999360666,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 9,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 53, 0 %, 9.34 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 50, 0 %, 5.88 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-016",
+          "round": 16,
+          "started_utc": "2026-09-24T23:41:29.792810+00:00",
+          "attempts": 25,
+          "alignments": 22,
+          "first_attempt_outcome": "converged",
+          "active_s": 93.12485699984245,
+          "ready_s": 122.23414260003483,
+          "processing_ms": {
+            "count": 939,
+            "mean": 71.45682151206938,
+            "p50": 77.78569997753948,
+            "p95": 126.80043000727885,
+            "p99": 164.2848459770903,
+            "p99_9": 218.67148018768188,
+            "max": 228.4990000189282
+          },
+          "uncached_processing_ms": {
+            "count": 757,
+            "mean": 88.56414029109594,
+            "p50": 87.37860003020614,
+            "p95": 131.8239799933508,
+            "p99": 175.0572239980099,
+            "p99_9": 220.57831239374383,
+            "max": 228.4990000189282
+          },
+          "capture_to_command_ms": {
+            "count": 911,
+            "mean": 130.5598973657713,
+            "p50": 136.97039999533445,
+            "p95": 186.8069500196725,
+            "p99": 220.31809997861265,
+            "p99_9": 254.49271697667746,
+            "max": 274.4410999584943
+          },
+          "maximum_feedback_age_ms": 406.49139997549355,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 3,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 54, 0 %, 10.65 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 50, 0 %, 5.78 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-017",
+          "round": 17,
+          "started_utc": "2026-09-24T23:45:49.566616+00:00",
+          "attempts": 25,
+          "alignments": 22,
+          "first_attempt_outcome": "converged",
+          "active_s": 95.31779850006569,
+          "ready_s": 124.4167516999878,
+          "processing_ms": {
+            "count": 949,
+            "mean": 71.6808387783093,
+            "p50": 79.48750001378357,
+            "p95": 128.3461999846622,
+            "p99": 153.5313720186241,
+            "p99_9": 174.17880439153353,
+            "max": 203.2442000345327
+          },
+          "uncached_processing_ms": {
+            "count": 757,
+            "mean": 89.7893916782148,
+            "p50": 89.09760002279654,
+            "p95": 130.07089998573062,
+            "p99": 160.52296799840386,
+            "p99_9": 180.0654668002398,
+            "max": 203.2442000345327
+          },
+          "capture_to_command_ms": {
+            "count": 921,
+            "mean": 131.49610922879657,
+            "p50": 139.09559999592602,
+            "p95": 185.99100003484637,
+            "p99": 214.3876799847929,
+            "p99_9": 235.63425201457127,
+            "max": 243.58479998772964
+          },
+          "maximum_feedback_age_ms": 401.3105999911204,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 3,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 54, 0 %, 9.83 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 50, 0 %, 5.81 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-018",
+          "round": 18,
+          "started_utc": "2026-09-24T23:50:14.855306+00:00",
+          "attempts": 24,
+          "alignments": 24,
+          "first_attempt_outcome": "converged",
+          "active_s": 96.89389670011587,
+          "ready_s": 124.89647010003682,
+          "processing_ms": {
+            "count": 1115,
+            "mean": 62.62096798093363,
+            "p50": 69.67769999755546,
+            "p95": 104.74766999250276,
+            "p99": 131.5799379814416,
+            "p99_9": 162.33149135741584,
+            "max": 170.25300004752353
+          },
+          "uncached_processing_ms": {
+            "count": 914,
+            "mean": 76.33538785491432,
+            "p50": 79.48024998768233,
+            "p95": 107.33194001659281,
+            "p99": 136.2007249775343,
+            "p99_9": 163.98132906173194,
+            "max": 170.25300004752353
+          },
+          "capture_to_command_ms": {
+            "count": 1090,
+            "mean": 121.71065210948971,
+            "p50": 129.30150001193397,
+            "p95": 162.9846699652262,
+            "p99": 191.74160101392715,
+            "p99_9": 225.7443795805454,
+            "max": 226.76200000569224
+          },
+          "maximum_feedback_age_ms": 363.83240000577644,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 0,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 54, 0 %, 10.31 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 47, 0 %, 5.73 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "natural-session-019",
+          "round": 19,
+          "started_utc": "2026-09-24T23:54:35.947241+00:00",
+          "attempts": 24,
+          "alignments": 24,
+          "first_attempt_outcome": "converged",
+          "active_s": 96.97027010010788,
+          "ready_s": 124.95748550002463,
+          "processing_ms": {
+            "count": 1121,
+            "mean": 62.41839072191639,
+            "p50": 68.49789997795597,
+            "p95": 106.24949994962662,
+            "p99": 127.90149998618286,
+            "p99_9": 168.88902402715803,
+            "max": 171.71029996825382
+          },
+          "uncached_processing_ms": {
+            "count": 909,
+            "mean": 76.91376094573933,
+            "p50": 78.61409999895841,
+            "p95": 109.09141997108229,
+            "p99": 131.2022759998217,
+            "p99_9": 169.59311641985573,
+            "max": 171.71029996825382
+          },
+          "capture_to_command_ms": {
+            "count": 1097,
+            "mean": 121.29955141254979,
+            "p50": 129.33050002902746,
+            "p95": 163.86938000796363,
+            "p99": 186.52066003065548,
+            "p99_9": 229.07781041786188,
+            "max": 234.96109998086467
+          },
+          "maximum_feedback_age_ms": 372.84729996463284,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 0,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 51, 0 %, 10.08 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 46, 0 %, 5.72 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        }
+      ],
+      "parent_gc_ms": {
+        "count": 737,
+        "mean": 0.45243365125568885,
+        "p50": 0.12250000145286322,
+        "p95": 1.2308400357142084,
+        "p99": 2.726919993292537,
+        "p99_9": 31.709543998819058,
+        "max": 32.97620004741475
+      }
+    },
+    "learned": {
+      "sessions": 20,
+      "attempts": 812,
+      "alignments": 110,
+      "outcomes": {
+        "converged": 110,
+        "stale_camera": 700,
+        "control_overrun": 2
+      },
+      "sessions_without_failure": 3,
+      "first_attempt": {
+        "attempts": 20,
+        "aligned": 18
+      },
+      "reused_worker_attempts": {
+        "attempts": 792,
+        "aligned": 92
+      },
+      "backends": [
+        "Picture / SuperPoint + LightGlue (CUDA)"
+      ],
+      "active_s": 1495.195938000048,
+      "ready_s": 2457.1628621998243,
+      "elapsed_s": 2674.825893099827,
+      "sensor_frames": 33643,
+      "cached_active_frames": 3627,
+      "processing_ms": {
+        "count": 13954,
+        "mean": 75.76890129007862,
+        "p50": 75.06890001241118,
+        "p95": 213.6082500219345,
+        "p99": 292.56838499975845,
+        "p99_9": 334.5304864823714,
+        "max": 355.2371000405401
+      },
+      "uncached_processing_ms": {
+        "count": 10327,
+        "mean": 102.28212065481485,
+        "p50": 80.79050004016608,
+        "p95": 237.85664998576968,
+        "p99": 301.0463059972971,
+        "p99_9": 336.8920458339856,
+        "max": 355.2371000405401
+      },
+      "capture_to_command_ms": {
+        "count": 12914,
+        "mean": 125.21895068888634,
+        "p50": 130.39110001409426,
+        "p95": 235.44245497614608,
+        "p99": 268.4997889754593,
+        "p99_9": 363.4182408751222,
+        "max": 378.13859997550026
+      },
+      "all_active_capture_to_delivery_ms": {
+        "count": 13954,
+        "mean": 131.0324467921306,
+        "p50": 129.70170000335202,
+        "p95": 268.69583500083536,
+        "p99": 348.3156760188285,
+        "p99_9": 389.32909777673416,
+        "max": 410.707300005015
+      },
+      "cluster_bootstrap_95pct": {
+        "processing_ms": {
+          "mean": [
+            68.49031292337757,
+            83.97910377373164
+          ],
+          "p95": [
+            191.19817272883665,
+            237.48882375984974
+          ],
+          "p99": [
+            283.2916252584981,
+            301.15801114065107
+          ],
+          "p99_9": [
+            321.71055838353675,
+            337.9203000222333
+          ]
+        },
+        "uncached_processing_ms": {
+          "mean": [
+            89.51792310550607,
+            117.80728697754186
+          ],
+          "p95": [
+            205.54142663415394,
+            258.4694665051211
+          ],
+          "p99": [
+            289.816365084873,
+            310.462900029961
+          ],
+          "p99_9": [
+            327.6167000294663,
+            341.2222000188194
+          ]
+        },
+        "capture_to_command_ms": {
+          "mean": [
+            120.54390660569433,
+            130.73243168043814
+          ],
+          "p95": [
+            223.55767373046535,
+            244.27539723852527
+          ],
+          "p99": [
+            261.46839592843025,
+            276.02579997619614
+          ],
+          "p99_9": [
+            355.2458999911323,
+            368.54318625303046
+          ]
+        }
+      },
+      "bootstrap_replicates": 2000,
+      "bootstrap_seed": 20260922,
+      "first_second_half": {
+        "processing_ms": {
+          "first": {
+            "count": 6817,
+            "mean": 76.55852232669046,
+            "p50": 75.52479999139905,
+            "p95": 219.74355997517702,
+            "p99": 293.36223999271175,
+            "p99_9": 334.5712039796642,
+            "max": 340.89120000135154
+          },
+          "second": {
+            "count": 7137,
+            "mean": 75.01468430723106,
+            "p50": 74.36140003846958,
+            "p95": 207.43680003797635,
+            "p99": 291.6963759972715,
+            "p99_9": 334.08287118468587,
+            "max": 355.2371000405401
+          }
+        },
+        "uncached_processing_ms": {
+          "first": {
+            "count": 5008,
+            "mean": 104.11391617437036,
+            "p50": 81.44219999667257,
+            "p95": 241.48414999945078,
+            "p99": 302.8189809899778,
+            "p99_9": 335.79017716669506,
+            "max": 340.89120000135154
+          },
+          "second": {
+            "count": 5319,
+            "mean": 100.55742955462043,
+            "p50": 80.2413999917917,
+            "p95": 232.56876997184003,
+            "p99": 297.2671259765047,
+            "p99_9": 337.61095519678247,
+            "max": 355.2371000405401
+          }
+        },
+        "capture_to_command_ms": {
+          "first": {
+            "count": 6286,
+            "mean": 125.49289708846217,
+            "p50": 131.354149983963,
+            "p95": 236.35535001812968,
+            "p99": 271.18043499358436,
+            "p99_9": 361.9648220008828,
+            "max": 377.9940999811515
+          },
+          "second": {
+            "count": 6628,
+            "mean": 124.95913972513654,
+            "p50": 129.5380500087049,
+            "p95": 234.22171999700367,
+            "p99": 265.17184799129603,
+            "p99_9": 364.1850195719172,
+            "max": 378.13859997550026
+          }
+        }
+      },
+      "cohort_uncached_processing_ms": {
+        "first_attempt": {
+          "count": 718,
+          "mean": 76.24837646219027,
+          "p50": 76.40369998989627,
+          "p95": 125.59786499477921,
+          "p99": 147.7792659978151,
+          "p99_9": 205.54257252027256,
+          "max": 242.93950002174824
+        },
+        "reused_worker": {
+          "count": 9609,
+          "mean": 104.22740406935375,
+          "p50": 81.15990000078455,
+          "p95": 242.15910001657906,
+          "p99": 302.23154003499076,
+          "p99_9": 337.0589216169904,
+          "max": 355.2371000405401
+        }
+      },
+      "maximum_feedback_age_ms": 409.64480000548065,
+      "counters": {
+        "captures": 33643,
+        "capture_slots": 70802,
+        "busy_capture_skips": 37159,
+        "input_dropped": 0,
+        "transport_dropped": 3,
+        "pending_cancelled": 1787,
+        "sensor_received": 33643,
+        "sensor_rows_evicted": 0,
+        "command_rows_evicted": 0,
+        "loop_rows_evicted": 0,
+        "stale_results": 7,
+        "obsolete_results": 645,
+        "pre_inference_dropped": 0,
+        "accepted": 12914,
+        "control_ticks": 1077725,
+        "moving_ticks": 513164,
+        "unsafe_motion_ticks": 0,
+        "contacts": 0,
+        "post_stop_motion_ticks": 0,
+        "control_deadline_misses": 2,
+        "fault_results": 0,
+        "discarded_physics_s": 0.10176799995824694,
+        "result_mailbox_dropped": 0,
+        "worker_requests_expired": 0,
+        "completed_but_unreceived": 0,
+        "requests_not_started": 0
+      },
+      "freshness_watchdog_trips": 700,
+      "late_after_freshness_stop": 565,
+      "late_after_control_stop": 0,
+      "all_stops_stayed_latched": true,
+      "unsafe_stops": [],
+      "telemetry_complete": true,
+      "diagnostics_enabled": true,
+      "diagnostics_complete": true,
+      "cycle_spikes_evicted": 0,
+      "gc_events_evicted": 0,
+      "errors": [],
+      "stages_ms": {
+        "prepare_ms": {
+          "count": 10327,
+          "mean": 1.680792602039237,
+          "p50": 1.5546000213362277,
+          "p95": 2.5525099947117242,
+          "p99": 3.6889000178780407,
+          "p99_9": 9.508244635072439,
+          "max": 17.294299963396043
+        },
+        "input_upload_host_ms": {
+          "count": 10327,
+          "mean": 0.6934514279062726,
+          "p50": 0.6338999955914915,
+          "p95": 1.0943200089968734,
+          "p99": 1.8645380099769673,
+          "p99_9": 3.192124592023953,
+          "max": 10.540599992964417
+        },
+        "extract_host_ms": {
+          "count": 10327,
+          "mean": 36.92438628829947,
+          "p50": 31.17879998171702,
+          "p95": 95.87593998294322,
+          "p99": 135.63539400347508,
+          "p99_9": 145.42168980021975,
+          "max": 150.7588000386022
+        },
+        "match_host_ms": {
+          "count": 10327,
+          "mean": 47.157284583917544,
+          "p50": 40.310800017323345,
+          "p95": 124.23596001462982,
+          "p99": 163.2048639759887,
+          "p99_9": 172.8136376213522,
+          "max": 189.92610002169386
+        },
+        "transfer_wait_ms": {
+          "count": 10327,
+          "mean": 0.45709542936123376,
+          "p50": 0.3766999579966068,
+          "p95": 0.8377799938898529,
+          "p99": 1.5591039694845645,
+          "p99_9": 6.108312800992633,
+          "max": 9.773900033906102
+        },
+        "extract_cuda_stream_ms": {
+          "count": 10327,
+          "mean": 36.99139557769456,
+          "p50": 31.242687225341797,
+          "p95": 95.9552780151367,
+          "p99": 135.8811929321289,
+          "p99_9": 145.46264596557623,
+          "max": 150.81219482421875
+        },
+        "match_cuda_stream_ms": {
+          "count": 10327,
+          "mean": 47.160000100352356,
+          "p50": 40.32819366455078,
+          "p95": 124.2999794006347,
+          "p99": 163.20184448242188,
+          "p99_9": 172.78206265258862,
+          "max": 190.1168670654297
+        },
+        "gather_cuda_stream_ms": {
+          "count": 10327,
+          "mean": 0.24247686267065047,
+          "p50": 0.18636800348758698,
+          "p95": 0.43827199935913086,
+          "p99": 0.9164800047874451,
+          "p99_9": 4.0502272582058225,
+          "max": 9.623552322387695
+        },
+        "filter_ms": {
+          "count": 10327,
+          "mean": 0.6887675609460444,
+          "p50": 0.6120000034570694,
+          "p95": 1.1828200251329684,
+          "p99": 2.1276500192470844,
+          "p99_9": 6.236187780276061,
+          "max": 13.813500001560897
+        },
+        "geometry_ms": {
+          "count": 10327,
+          "mean": 2.2073569670428226,
+          "p50": 1.9734000088647008,
+          "p95": 3.5545399994589375,
+          "p99": 6.826142013305796,
+          "p99_9": 13.305742575670605,
+          "max": 25.78159997938201
+        },
+        "coarse_ms": {
+          "count": 10327,
+          "mean": 89.50819223340679,
+          "p50": 77.80210004420951,
+          "p95": 219.36583999777207,
+          "p99": 285.1457240001764,
+          "p99_9": 318.43754898978017,
+          "max": 327.1499999682419
+        },
+        "refinement_ms": {
+          "count": 10327,
+          "mean": 12.538869981580714,
+          "p50": 0.12330000754445791,
+          "p95": 41.69136997079475,
+          "p99": 57.35001799184828,
+          "p99_9": 77.5040001983296,
+          "max": 110.01069995108992
+        },
+        "coarse_thread_cpu_ms": {
+          "count": 10327,
+          "mean": 82.15267018495207,
+          "p50": 78.125,
+          "p95": 203.125,
+          "p99": 265.625,
+          "p99_9": 312.5,
+          "max": 328.125
+        },
+        "coarse_process_cpu_ms": {
+          "count": 10327,
+          "mean": 83.53860027113392,
+          "p50": 78.125,
+          "p95": 203.125,
+          "p99": 265.625,
+          "p99_9": 312.5,
+          "max": 328.125
+        },
+        "refinement_thread_cpu_ms": {
+          "count": 10327,
+          "mean": 11.444514379781156,
+          "p50": 0.0,
+          "p95": 46.875,
+          "p99": 46.875,
+          "p99_9": 62.5,
+          "max": 93.75
+        },
+        "refinement_process_cpu_ms": {
+          "count": 10327,
+          "mean": 18.504284884283916,
+          "p50": 0.0,
+          "p95": 78.125,
+          "p99": 125.0,
+          "p99_9": 140.625,
+          "max": 187.5
+        },
+        "render_thread_cpu_ms": {
+          "count": 13954,
+          "mean": 1.8296724953418375,
+          "p50": 0.0,
+          "p95": 15.625,
+          "p99": 15.625,
+          "p99_9": 15.625,
+          "max": 15.625
+        },
+        "render_process_cpu_ms": {
+          "count": 13954,
+          "mean": 3.279749534183747,
+          "p50": 0.0,
+          "p95": 31.25,
+          "p99": 46.875,
+          "p99_9": 46.875,
+          "max": 62.5
+        },
+        "inference_thread_cpu_ms": {
+          "count": 13954,
+          "mean": 69.35063422674502,
+          "p50": 62.5,
+          "p95": 187.5,
+          "p99": 265.625,
+          "p99_9": 312.5,
+          "max": 343.75
+        },
+        "inference_process_cpu_ms": {
+          "count": 13954,
+          "mean": 75.60220187759782,
+          "p50": 78.125,
+          "p95": 203.125,
+          "p99": 281.25,
+          "p99_9": 343.75,
+          "max": 390.625
+        },
+        "all_active_request_queue_ms": {
+          "count": 13954,
+          "mean": 0.7165358175870439,
+          "p50": 0.527600001078099,
+          "p95": 1.721639992319978,
+          "p99": 4.540622009662877,
+          "p99_9": 8.994153061823539,
+          "max": 19.53489996958524
+        },
+        "all_active_render_ms": {
+          "count": 13954,
+          "mean": 4.543167013002946,
+          "p50": 4.006000002846122,
+          "p95": 8.536949986591933,
+          "p99": 13.73562499065883,
+          "p99_9": 32.51091621426605,
+          "max": 78.48140003625304
+        },
+        "all_active_ipc_ms": {
+          "count": 13954,
+          "mean": 2.5910248098835487,
+          "p50": 2.374849980697036,
+          "p95": 4.931479986407793,
+          "p99": 6.93901498802006,
+          "p99_9": 10.84677996626294,
+          "max": 103.62080001505092
+        },
+        "accepted_queue_ms": {
+          "count": 12914,
+          "mean": 0.7125209075005993,
+          "p50": 0.5256000149529427,
+          "p95": 1.7144049779744814,
+          "p99": 4.506436001975056,
+          "p99_9": 8.854628329107276,
+          "max": 14.266600017435849
+        },
+        "accepted_render_ms": {
+          "count": 12914,
+          "mean": 4.513824562462559,
+          "p50": 4.0006000199355185,
+          "p95": 8.449185016797848,
+          "p99": 13.332911988836674,
+          "p99_9": 29.749287304177965,
+          "max": 78.48140003625304
+        },
+        "accepted_inference_ms": {
+          "count": 12914,
+          "mean": 66.69857730378442,
+          "p50": 72.32575002126396,
+          "p95": 176.15347503160584,
+          "p99": 208.29473497113142,
+          "p99_9": 303.8334257648114,
+          "max": 319.29189997026697
+        },
+        "accepted_ipc_ms": {
+          "count": 12914,
+          "mean": 2.574558238917976,
+          "p50": 2.3643500171601772,
+          "p95": 4.93356500228401,
+          "p99": 6.92707201757001,
+          "p99_9": 10.876379968133826,
+          "max": 23.14269996713847
+        },
+        "accepted_delivery_wait_ms": {
+          "count": 12914,
+          "mean": 48.70004353425073,
+          "p50": 48.81475001457147,
+          "p95": 50.75594000227284,
+          "p99": 52.623014011187465,
+          "p99_9": 56.16181017179047,
+          "max": 67.77020002482459
+        },
+        "accepted_control_ms": {
+          "count": 12914,
+          "mean": 1.5149115300621574,
+          "p50": 1.4117499813437462,
+          "p95": 2.7055999962612987,
+          "p99": 4.044261967646877,
+          "p99_9": 7.999970162170959,
+          "max": 11.808899987954646
+        },
+        "accepted_apply_ms": {
+          "count": 12914,
+          "mean": 0.5045146119078922,
+          "p50": 0.45009999303147197,
+          "p95": 0.8741050201933827,
+          "p99": 1.3889480329817157,
+          "p99_9": 2.7900048885494644,
+          "max": 5.183800007216632
+        },
+        "accepted_control_thread_cpu_ms": {
+          "count": 12914,
+          "mean": 0.7053875638841567,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 15.625,
+          "p99_9": 15.625,
+          "max": 15.625
+        },
+        "accepted_apply_thread_cpu_ms": {
+          "count": 12914,
+          "mean": 0.8917163543441227,
+          "p50": 0.0,
+          "p95": 15.625,
+          "p99": 15.625,
+          "p99_9": 15.625,
+          "max": 15.625
+        }
+      },
+      "zero_event_session_probability_upper_95pct": null,
+      "session_rows": [
+        {
+          "id": "learned-session-000",
+          "round": 0,
+          "started_utc": "2026-09-24T22:34:11.496982+00:00",
+          "attempts": 39,
+          "alignments": 7,
+          "first_attempt_outcome": "converged",
+          "active_s": 75.57187739998335,
+          "ready_s": 121.90808560000733,
+          "processing_ms": {
+            "count": 714,
+            "mean": 73.60092997215088,
+            "p50": 76.06960000703111,
+            "p95": 202.34839500335514,
+            "p99": 293.02912699698936,
+            "p99_9": 317.2753509239993,
+            "max": 319.66439995449036
+          },
+          "uncached_processing_ms": {
+            "count": 529,
+            "mean": 99.23490245838866,
+            "p50": 81.7063000285998,
+            "p95": 235.03028000704944,
+            "p99": 301.04186799610034,
+            "p99_9": 317.8952304059643,
+            "max": 319.66439995449036
+          },
+          "capture_to_command_ms": {
+            "count": 670,
+            "mean": 124.94968850645166,
+            "p50": 133.22379998862743,
+            "p95": 229.3030750151956,
+            "p99": 267.82769000972587,
+            "p99_9": 365.48854986828553,
+            "max": 377.9940999811515
+          },
+          "maximum_feedback_age_ms": 405.6548000080511,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 32,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 46, 0 %, 5.71 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 52, 0 %, 8.80 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-001",
+          "round": 1,
+          "started_utc": "2026-09-24T22:38:31.581218+00:00",
+          "attempts": 46,
+          "alignments": 3,
+          "first_attempt_outcome": "converged",
+          "active_s": 67.15333000023384,
+          "ready_s": 121.62797259999206,
+          "processing_ms": {
+            "count": 603,
+            "mean": 79.56342703238467,
+            "p50": 78.73860001564026,
+            "p95": 239.50657998211682,
+            "p99": 312.278254008852,
+            "p99_9": 336.1509935860522,
+            "max": 336.68870001565665
+          },
+          "uncached_processing_ms": {
+            "count": 416,
+            "mean": 115.20846778918124,
+            "p50": 86.49985000374727,
+            "p95": 266.7148750042543,
+            "p99": 315.1345949940151,
+            "p99_9": 336.31802199524833,
+            "max": 336.68870001565665
+          },
+          "capture_to_command_ms": {
+            "count": 543,
+            "mean": 125.36790055292701,
+            "p50": 134.54009999986738,
+            "p95": 244.07233000383712,
+            "p99": 284.5608800044289,
+            "p99_9": 365.6545786225474,
+            "max": 368.2570999953896
+          },
+          "maximum_feedback_age_ms": 406.96809999644756,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 43,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 48, 0 %, 5.81 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 54, 0 %, 10.23 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-002",
+          "round": 2,
+          "started_utc": "2026-09-24T22:42:53.278507+00:00",
+          "attempts": 42,
+          "alignments": 1,
+          "first_attempt_outcome": "converged",
+          "active_s": 72.0675333001418,
+          "ready_s": 121.73170040000696,
+          "processing_ms": {
+            "count": 593,
+            "mean": 91.21322951173177,
+            "p50": 79.53769998857751,
+            "p95": 234.50606002006666,
+            "p99": 284.0835680020973,
+            "p99_9": 329.33008401514985,
+            "max": 337.9203000222333
+          },
+          "uncached_processing_ms": {
+            "count": 431,
+            "mean": 125.40345290028047,
+            "p50": 101.83249996043742,
+            "p95": 249.83005001558922,
+            "p99": 284.63933001621626,
+            "p99_9": 331.6807850170888,
+            "max": 337.9203000222333
+          },
+          "capture_to_command_ms": {
+            "count": 536,
+            "mean": 137.44755764882802,
+            "p50": 136.75410000723787,
+            "p95": 246.27132501336746,
+            "p99": 273.7475399742833,
+            "p99_9": 325.6045994671894,
+            "max": 355.2458999911323
+          },
+          "maximum_feedback_age_ms": 404.37780000502244,
+          "control_deadline_misses": 1,
+          "freshness_watchdog_trips": 40,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 50, 0 %, 5.90 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 53, 0 %, 11.66 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-003",
+          "round": 3,
+          "started_utc": "2026-09-24T22:47:12.373996+00:00",
+          "attempts": 23,
+          "alignments": 23,
+          "first_attempt_outcome": "converged",
+          "active_s": 96.47028559993487,
+          "ready_s": 124.31496460002381,
+          "processing_ms": {
+            "count": 1207,
+            "mean": 50.16344225411431,
+            "p50": 58.819000027142465,
+            "p95": 92.57905001868495,
+            "p99": 107.63826398993845,
+            "p99_9": 117.28922901465559,
+            "max": 118.62869997275993
+          },
+          "uncached_processing_ms": {
+            "count": 996,
+            "mean": 60.73652630605002,
+            "p50": 62.17135000042617,
+            "p95": 95.22649997961707,
+            "p99": 108.81844500254373,
+            "p99_9": 117.33251350669903,
+            "max": 118.62869997275993
+          },
+          "capture_to_command_ms": {
+            "count": 1184,
+            "mean": 108.95543285477214,
+            "p50": 116.5630999894347,
+            "p95": 151.18371497374028,
+            "p99": 167.10133699991286,
+            "p99_9": 177.12388616672274,
+            "max": 189.39529999624938
+          },
+          "maximum_feedback_age_ms": 313.1108999950811,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 0,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 47, 0 %, 5.69 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 50, 0 %, 10.86 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-004",
+          "round": 4,
+          "started_utc": "2026-09-24T22:51:33.026607+00:00",
+          "attempts": 43,
+          "alignments": 4,
+          "first_attempt_outcome": "converged",
+          "active_s": 72.26021059975028,
+          "ready_s": 122.98474280000664,
+          "processing_ms": {
+            "count": 662,
+            "mean": 79.07251812471218,
+            "p50": 76.8083999864757,
+            "p95": 238.08695997868185,
+            "p99": 303.62113701296033,
+            "p99_9": 336.0838303911152,
+            "max": 338.1286999792792
+          },
+          "uncached_processing_ms": {
+            "count": 485,
+            "mean": 107.8180903075599,
+            "p50": 81.20959997177124,
+            "p95": 254.68199999304488,
+            "p99": 309.4127759733237,
+            "p99_9": 336.6313975879459,
+            "max": 338.1286999792792
+          },
+          "capture_to_command_ms": {
+            "count": 607,
+            "mean": 125.99936424934073,
+            "p50": 133.1299000303261,
+            "p95": 239.2405100050381,
+            "p99": 285.1063040061853,
+            "p99_9": 355.0885296108902,
+            "max": 356.111700006295
+          },
+          "maximum_feedback_age_ms": 402.95949997380376,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 39,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 47, 0 %, 5.76 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 51, 0 %, 11.77 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-005",
+          "round": 5,
+          "started_utc": "2026-09-24T22:55:52.339830+00:00",
+          "attempts": 41,
+          "alignments": 3,
+          "first_attempt_outcome": "converged",
+          "active_s": 73.0989733999013,
+          "ready_s": 121.77673549996689,
+          "processing_ms": {
+            "count": 645,
+            "mean": 79.31477193596102,
+            "p50": 78.96299997810274,
+            "p95": 213.74972000485275,
+            "p99": 284.32705997256556,
+            "p99_9": 315.1084996084683,
+            "max": 315.34620001912117
+          },
+          "uncached_processing_ms": {
+            "count": 471,
+            "mean": 108.50584861721582,
+            "p50": 84.33799998601899,
+            "p95": 232.24225000012666,
+            "p99": 287.77131998795085,
+            "p99_9": 315.17272301134653,
+            "max": 315.34620001912117
+          },
+          "capture_to_command_ms": {
+            "count": 586,
+            "mean": 129.39342372061816,
+            "p50": 136.19929997366853,
+            "p95": 247.2030250064563,
+            "p99": 270.76615001424204,
+            "p99_9": 347.724344518794,
+            "max": 360.23649998242036
+          },
+          "maximum_feedback_age_ms": 405.30590002890676,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 38,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 48, 0 %, 5.79 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 52, 1 %, 10.43 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-006",
+          "round": 6,
+          "started_utc": "2026-09-24T23:00:11.369870+00:00",
+          "attempts": 46,
+          "alignments": 0,
+          "first_attempt_outcome": "stale_camera",
+          "active_s": 68.53858030028641,
+          "ready_s": 122.6771141999634,
+          "processing_ms": {
+            "count": 570,
+            "mean": 88.34761666754882,
+            "p50": 79.72435001283884,
+            "p95": 245.6181099929379,
+            "p99": 303.1000259815482,
+            "p99_9": 323.7674719308855,
+            "max": 327.6167000294663
+          },
+          "uncached_processing_ms": {
+            "count": 396,
+            "mean": 127.06098686994848,
+            "p50": 101.00185000919737,
+            "p95": 270.9137000347255,
+            "p99": 310.98050004802644,
+            "p99_9": 324.94456453045143,
+            "max": 327.6167000294663
+          },
+          "capture_to_command_ms": {
+            "count": 508,
+            "mean": 134.10937421284635,
+            "p50": 136.2643499742262,
+            "p95": 249.52435001032424,
+            "p99": 278.274654999841,
+            "p99_9": 365.0055681045636,
+            "max": 368.6112000141293
+          },
+          "maximum_feedback_age_ms": 409.64399999938905,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 46,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 49, 0 %, 5.83 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 53, 0 %, 11.81 W, 247 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-007",
+          "round": 7,
+          "started_utc": "2026-09-24T23:04:35.841365+00:00",
+          "attempts": 45,
+          "alignments": 1,
+          "first_attempt_outcome": "converged",
+          "active_s": 69.10223660006886,
+          "ready_s": 122.17318710003747,
+          "processing_ms": {
+            "count": 562,
+            "mean": 90.91408309653929,
+            "p50": 81.47119998466223,
+            "p95": 256.6300999984375,
+            "p99": 313.11983400722966,
+            "p99_9": 337.2869993869686,
+            "max": 340.89120000135154
+          },
+          "uncached_processing_ms": {
+            "count": 386,
+            "mean": 132.24445647693364,
+            "p50": 101.7402500147,
+            "p95": 272.70657497865614,
+            "p99": 317.9688950302079,
+            "p99_9": 338.41772899148094,
+            "max": 340.89120000135154
+          },
+          "capture_to_command_ms": {
+            "count": 503,
+            "mean": 133.21894632291816,
+            "p50": 138.02980002947152,
+            "p95": 244.09213998587802,
+            "p99": 277.53575197071785,
+            "p99_9": 347.7072579972463,
+            "max": 365.51370000233874
+          },
+          "maximum_feedback_age_ms": 403.7338000489399,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 44,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 49, 0 %, 5.80 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 52, 1 %, 11.38 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-008",
+          "round": 8,
+          "started_utc": "2026-09-24T23:08:59.207386+00:00",
+          "attempts": 43,
+          "alignments": 3,
+          "first_attempt_outcome": "converged",
+          "active_s": 72.0310633998597,
+          "ready_s": 122.83233349997317,
+          "processing_ms": {
+            "count": 629,
+            "mean": 81.80503720148883,
+            "p50": 78.70670000556856,
+            "p95": 239.11435999907556,
+            "p99": 293.7872239924037,
+            "p99_9": 319.0424588010661,
+            "max": 332.10040000267327
+          },
+          "uncached_processing_ms": {
+            "count": 447,
+            "mean": 114.99541364683118,
+            "p50": 87.20639999955893,
+            "p95": 257.5128199823666,
+            "p99": 300.7773100200576,
+            "p99_9": 322.82676660153146,
+            "max": 332.10040000267327
+          },
+          "capture_to_command_ms": {
+            "count": 578,
+            "mean": 129.332880448239,
+            "p50": 135.90755002223887,
+            "p95": 242.7574900037143,
+            "p99": 276.83134700404486,
+            "p99_9": 363.26638550701347,
+            "max": 364.7888000123203
+          },
+          "maximum_feedback_age_ms": 404.8076000181027,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 40,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 48, 0 %, 5.70 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 52, 0 %, 10.94 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-009",
+          "round": 9,
+          "started_utc": "2026-09-24T23:13:17.984141+00:00",
+          "attempts": 44,
+          "alignments": 2,
+          "first_attempt_outcome": "converged",
+          "active_s": 70.64138509979239,
+          "ready_s": 122.6823044999619,
+          "processing_ms": {
+            "count": 632,
+            "mean": 79.62603924285379,
+            "p50": 78.36235000286251,
+            "p95": 224.4379749870857,
+            "p99": 295.8960859919896,
+            "p99_9": 326.7904742840333,
+            "max": 336.9904000428505
+          },
+          "uncached_processing_ms": {
+            "count": 451,
+            "mean": 111.47349978050634,
+            "p50": 84.12369998404756,
+            "p95": 242.74240000522695,
+            "p99": 299.0472499805037,
+            "p99_9": 329.71628500090554,
+            "max": 336.9904000428505
+          },
+          "capture_to_command_ms": {
+            "count": 571,
+            "mean": 126.41840455240134,
+            "p50": 134.91979998070747,
+            "p95": 236.1609999788925,
+            "p99": 264.76185001665704,
+            "p99_9": 316.18026400276364,
+            "max": 349.1745999781415
+          },
+          "maximum_feedback_age_ms": 404.1756999795325,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 42,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 48, 0 %, 5.82 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 53, 0 %, 11.98 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-010",
+          "round": 10,
+          "started_utc": "2026-09-24T23:17:35.496542+00:00",
+          "attempts": 45,
+          "alignments": 1,
+          "first_attempt_outcome": "converged",
+          "active_s": 69.06688790005865,
+          "ready_s": 122.23104300000705,
+          "processing_ms": {
+            "count": 572,
+            "mean": 90.47446608202698,
+            "p50": 80.21270000608638,
+            "p95": 255.89097997872136,
+            "p99": 308.43776702473394,
+            "p99_9": 320.68087328382563,
+            "max": 322.5296000018716
+          },
+          "uncached_processing_ms": {
+            "count": 401,
+            "mean": 128.9334144623848,
+            "p50": 106.23569996096194,
+            "p95": 267.68109999829903,
+            "p99": 310.4917000164278,
+            "p99_9": 321.2345199892298,
+            "max": 322.5296000018716
+          },
+          "capture_to_command_ms": {
+            "count": 513,
+            "mean": 135.17934171590485,
+            "p50": 137.72249995963648,
+            "p95": 249.305639998056,
+            "p99": 275.29409997863695,
+            "p99_9": 369.04911120235994,
+            "max": 375.90730004012585
+          },
+          "maximum_feedback_age_ms": 403.472599980887,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 44,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 48, 0 %, 5.81 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 52, 0 %, 10.62 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-011",
+          "round": 11,
+          "started_utc": "2026-09-24T23:21:52.064509+00:00",
+          "attempts": 44,
+          "alignments": 1,
+          "first_attempt_outcome": "converged",
+          "active_s": 69.50180890015326,
+          "ready_s": 121.60420689999592,
+          "processing_ms": {
+            "count": 569,
+            "mean": 89.70664446403785,
+            "p50": 80.92580002266914,
+            "p95": 236.63200000301006,
+            "p99": 301.1643199925317,
+            "p99_9": 342.9294208181091,
+            "max": 345.1741000171751
+          },
+          "uncached_processing_ms": {
+            "count": 396,
+            "mean": 128.74976060596634,
+            "p50": 106.06655001174659,
+            "p95": 258.3974750014022,
+            "p99": 312.9309600190027,
+            "p99_9": 343.61309951782465,
+            "max": 345.1741000171751
+          },
+          "capture_to_command_ms": {
+            "count": 510,
+            "mean": 134.03568176344933,
+            "p50": 138.49300000583753,
+            "p95": 249.68131498608273,
+            "p99": 263.0814230232499,
+            "p99_9": 326.47650809382554,
+            "max": 354.5983000076376
+          },
+          "maximum_feedback_age_ms": 405.7008000090718,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 43,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 49, 0 %, 5.85 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 53, 1 %, 11.44 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-012",
+          "round": 12,
+          "started_utc": "2026-09-24T23:26:12.216663+00:00",
+          "attempts": 46,
+          "alignments": 1,
+          "first_attempt_outcome": "converged",
+          "active_s": 68.66213469998911,
+          "ready_s": 123.12522469996475,
+          "processing_ms": {
+            "count": 565,
+            "mean": 87.4910718584186,
+            "p50": 80.30069997766986,
+            "p95": 235.34221996087578,
+            "p99": 295.41908399201935,
+            "p99_9": 316.3675747916571,
+            "max": 320.98070002393797
+          },
+          "uncached_processing_ms": {
+            "count": 389,
+            "mean": 126.94462647785464,
+            "p50": 96.97419998701662,
+            "p95": 267.23040001234034,
+            "p99": 302.18084801454097,
+            "p99_9": 317.80713160173053,
+            "max": 320.98070002393797
+          },
+          "capture_to_command_ms": {
+            "count": 499,
+            "mean": 133.63128577107992,
+            "p50": 137.4504000414163,
+            "p95": 251.23127002152614,
+            "p99": 279.79205999872636,
+            "p99_9": 373.82816096744557,
+            "max": 378.13859997550026
+          },
+          "maximum_feedback_age_ms": 405.8802999788895,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 45,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 49, 0 %, 5.81 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 52, 1 %, 10.93 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-013",
+          "round": 13,
+          "started_utc": "2026-09-24T23:30:30.920887+00:00",
+          "attempts": 44,
+          "alignments": 1,
+          "first_attempt_outcome": "converged",
+          "active_s": 71.05922409996856,
+          "ready_s": 123.16688749997411,
+          "processing_ms": {
+            "count": 587,
+            "mean": 90.2469076659075,
+            "p50": 81.42760000191629,
+            "p95": 247.148239990929,
+            "p99": 287.52058601588936,
+            "p99_9": 307.83082459203496,
+            "max": 311.3285999861546
+          },
+          "uncached_processing_ms": {
+            "count": 414,
+            "mean": 127.8371524157403,
+            "p50": 107.86869999719784,
+            "p95": 258.8878050039056,
+            "p99": 290.7888939627446,
+            "p99_9": 308.8634442902988,
+            "max": 311.3285999861546
+          },
+          "capture_to_command_ms": {
+            "count": 532,
+            "mean": 135.83910281864465,
+            "p50": 138.94355003139935,
+            "p95": 248.19948498916347,
+            "p99": 271.6921919834566,
+            "p99_9": 357.33441012050105,
+            "max": 365.75230001471937
+          },
+          "maximum_feedback_age_ms": 404.5386000070721,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 43,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 49, 0 %, 5.83 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 52, 0 %, 10.85 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-014",
+          "round": 14,
+          "started_utc": "2026-09-24T23:34:48.381930+00:00",
+          "attempts": 40,
+          "alignments": 8,
+          "first_attempt_outcome": "converged",
+          "active_s": 76.45579089986859,
+          "ready_s": 123.68098929995904,
+          "processing_ms": {
+            "count": 710,
+            "mean": 76.65760957834337,
+            "p50": 78.40820000274107,
+            "p95": 201.8293349887244,
+            "p99": 291.96009302861046,
+            "p99_9": 328.31749252200956,
+            "max": 345.8422000403516
+          },
+          "uncached_processing_ms": {
+            "count": 527,
+            "mean": 103.17715256235455,
+            "p50": 83.93470000009984,
+            "p95": 218.8707900175358,
+            "p99": 293.3788660215214,
+            "p99_9": 332.840795026744,
+            "max": 345.8422000403516
+          },
+          "capture_to_command_ms": {
+            "count": 661,
+            "mean": 129.38828971349662,
+            "p50": 136.40309998299927,
+            "p95": 237.48140002135187,
+            "p99": 271.9218999729491,
+            "p99_9": 370.7187279849313,
+            "max": 371.12409999826923
+          },
+          "maximum_feedback_age_ms": 409.64480000548065,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 32,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 49, 0 %, 5.86 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 53, 1 %, 9.25 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-015",
+          "round": 15,
+          "started_utc": "2026-09-24T23:39:10.899273+00:00",
+          "attempts": 44,
+          "alignments": 0,
+          "first_attempt_outcome": "stale_camera",
+          "active_s": 69.65131180017488,
+          "ready_s": 121.62779330002377,
+          "processing_ms": {
+            "count": 571,
+            "mean": 90.2548488617904,
+            "p50": 80.77340002637357,
+            "p95": 243.06565002189018,
+            "p99": 302.00450998963777,
+            "p99_9": 351.5304470178675,
+            "max": 355.2371000405401
+          },
+          "uncached_processing_ms": {
+            "count": 402,
+            "mean": 128.08477786046438,
+            "p50": 103.12605000217445,
+            "p95": 262.74815002980176,
+            "p99": 307.35471196589066,
+            "p99_9": 352.62943712458974,
+            "max": 355.2371000405401
+          },
+          "capture_to_command_ms": {
+            "count": 515,
+            "mean": 134.1747493216388,
+            "p50": 138.283499982208,
+            "p95": 245.72792001999912,
+            "p99": 270.21629997645505,
+            "p99_9": 347.72301464201973,
+            "max": 352.21080004703254
+          },
+          "maximum_feedback_age_ms": 405.8866999694146,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 44,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 50, 0 %, 6.17 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 54, 1 %, 11.29 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-016",
+          "round": 16,
+          "started_utc": "2026-09-24T23:43:34.552325+00:00",
+          "attempts": 45,
+          "alignments": 1,
+          "first_attempt_outcome": "converged",
+          "active_s": 69.43547699984629,
+          "ready_s": 122.71331789996475,
+          "processing_ms": {
+            "count": 571,
+            "mean": 89.48772626934286,
+            "p50": 80.1231000223197,
+            "p95": 257.37710000248626,
+            "p99": 305.21669001900545,
+            "p99_9": 325.20202700980076,
+            "max": 331.3973000040278
+          },
+          "uncached_processing_ms": {
+            "count": 398,
+            "mean": 128.26984296447537,
+            "p50": 99.62230001110584,
+            "p95": 269.9400150246219,
+            "p99": 315.95720402139705,
+            "p99_9": 327.0823467080489,
+            "max": 331.3973000040278
+          },
+          "capture_to_command_ms": {
+            "count": 513,
+            "mean": 132.6744038982455,
+            "p50": 136.71990000875667,
+            "p95": 241.91433999221772,
+            "p99": 280.1834439742378,
+            "p99_9": 348.5198416267531,
+            "max": 356.83380003320053
+          },
+          "maximum_feedback_age_ms": 405.1945999963209,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 44,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 49, 0 %, 5.91 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 54, 0 %, 9.93 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-017",
+          "round": 17,
+          "started_utc": "2026-09-24T23:47:56.502521+00:00",
+          "attempts": 46,
+          "alignments": 4,
+          "first_attempt_outcome": "converged",
+          "active_s": 71.52107489999617,
+          "ready_s": 125.83687729999656,
+          "processing_ms": {
+            "count": 640,
+            "mean": 80.26411062519401,
+            "p50": 78.07044999208301,
+            "p95": 238.75549498479793,
+            "p99": 306.9809439679375,
+            "p99_9": 335.46571557992166,
+            "max": 337.1651999768801
+          },
+          "uncached_processing_ms": {
+            "count": 449,
+            "mean": 114.29792115820534,
+            "p50": 87.18420000514016,
+            "p95": 259.6884199883788,
+            "p99": 317.0553279924206,
+            "p99_9": 335.9736991790124,
+            "max": 337.1651999768801
+          },
+          "capture_to_command_ms": {
+            "count": 579,
+            "mean": 126.98553644278728,
+            "p50": 134.58989997161552,
+            "p95": 240.21644000313245,
+            "p99": 274.4169519923162,
+            "p99_9": 364.1800358049805,
+            "max": 365.4798999777995
+          },
+          "maximum_feedback_age_ms": 406.61780000664294,
+          "control_deadline_misses": 1,
+          "freshness_watchdog_trips": 41,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 50, 0 %, 5.91 W, 52 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 54, 0 %, 11.67 W, 255 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-018",
+          "round": 18,
+          "started_utc": "2026-09-24T23:52:22.215381+00:00",
+          "attempts": 23,
+          "alignments": 23,
+          "first_attempt_outcome": "converged",
+          "active_s": 95.55702380009461,
+          "ready_s": 123.3181625000434,
+          "processing_ms": {
+            "count": 1160,
+            "mean": 51.841400690569444,
+            "p50": 61.00689998129383,
+            "p95": 95.02342500491068,
+            "p99": 107.06945602025371,
+            "p99_9": 116.94221608940306,
+            "max": 123.0706000351347
+          },
+          "uncached_processing_ms": {
+            "count": 956,
+            "mean": 62.84442113076286,
+            "p50": 64.730949990917,
+            "p95": 96.00322501501068,
+            "p99": 108.00268499297091,
+            "p99_9": 117.55996348802043,
+            "max": 123.0706000351347
+          },
+          "capture_to_command_ms": {
+            "count": 1137,
+            "mean": 111.05681442276378,
+            "p50": 119.32550003984943,
+            "p95": 153.77493997802958,
+            "p99": 167.89752003271133,
+            "p99_9": 204.59124961029792,
+            "max": 228.07219997048378
+          },
+          "maximum_feedback_age_ms": 338.17880001151934,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 0,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 47, 0 %, 5.73 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 51, 0 %, 10.73 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        },
+        {
+          "id": "learned-session-019",
+          "round": 19,
+          "started_utc": "2026-09-24T23:56:43.331620+00:00",
+          "attempts": 23,
+          "alignments": 23,
+          "first_attempt_outcome": "converged",
+          "active_s": 97.34972829994513,
+          "ready_s": 125.14921899995534,
+          "processing_ms": {
+            "count": 1192,
+            "mean": 51.688731040412186,
+            "p50": 60.18175004282966,
+            "p95": 92.39865001,
+            "p99": 106.16775901115032,
+            "p99_9": 142.42058379302782,
+            "max": 154.59190000547096
+          },
+          "uncached_processing_ms": {
+            "count": 987,
+            "mean": 62.36763100351868,
+            "p50": 63.8969000428915,
+            "p95": 94.25824997597374,
+            "p99": 106.5196300158277,
+            "p99_9": 149.75833078904603,
+            "max": 154.59190000547096
+          },
+          "capture_to_command_ms": {
+            "count": 1169,
+            "mean": 110.42918357500206,
+            "p50": 118.2375000207685,
+            "p95": 150.81380000337955,
+            "p99": 165.37383600138128,
+            "p99_9": 217.7855920093177,
+            "max": 238.88100002659485
+          },
+          "maximum_feedback_age_ms": 347.72740001790226,
+          "control_deadline_misses": 0,
+          "freshness_watchdog_trips": 0,
+          "gpu_before": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 46, 0 %, 5.72 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          },
+          "gpu_after": {
+            "returncode": 0,
+            "stdout": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 577.02, 50, 0 %, 11.09 W, 210 MHz",
+            "stderr": "",
+            "power": {
+              "ACLineStatus": 1,
+              "BatteryFlag": 1,
+              "BatteryLifePercent": 100,
+              "SystemStatusFlag": 0,
+              "BatteryLifeTime": 4294967295,
+              "BatteryFullLifeTime": 4294967295
+            }
+          }
+        }
+      ],
+      "parent_gc_ms": {
+        "count": 689,
+        "mean": 0.6872825840716514,
+        "p50": 0.1308999489992857,
+        "p95": 1.409919967409225,
+        "p99": 3.3656000136397792,
+        "p99_9": 81.33902801340992,
+        "max": 111.28010001266375
+      }
+    }
+  }
+}

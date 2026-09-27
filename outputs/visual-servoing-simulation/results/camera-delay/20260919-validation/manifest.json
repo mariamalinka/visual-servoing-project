@@ -1,0 +1,60 @@
+{
+  "status": "complete",
+  "python": "3.12.14",
+  "modes": [
+    "aruco",
+    "natural",
+    "learned"
+  ],
+  "delays_ms": [
+    0,
+    50,
+    100,
+    200
+  ],
+  "starts": [
+    [
+      3,
+      -3,
+      4,
+      3,
+      -2,
+      2
+    ],
+    [
+      -3,
+      2,
+      -3,
+      -2,
+      2,
+      -2
+    ],
+    [
+      5,
+      -4,
+      4,
+      -3,
+      2,
+      3
+    ]
+  ],
+  "camera_timing": {
+    "delay_s": 0.1,
+    "max_observation_age_s": 0.25,
+    "max_pending_frames": 32,
+    "max_run_s": 240.0
+  },
+  "source_sha256": {
+    "app.py": "6a912b983a6b916a4d8956e43edf314a86ff8485b6835afad62e80a616e07d1d",
+    "camera_timing.py": "2914d0da1b5a1f0a7f5bc41659aaff4854b5651240b3033b6617b5072728a67f",
+    "camera_timing_config.json": "20e73da5ca3615d727e35bf854af20b7e34700936526a8e87c19bc572a7a8db2",
+    "control.py": "6578d9ce47832945d6c99737b2b88004190fc11fbc4bb07f236226758da1fc4a",
+    "recovery.py": "892268ba82b5e814816b97b14d1e9bfa17d9817768b232e18507094538ac0d32",
+    "joint_limits.py": "4e1f6ac1c609df4aed560b9a4000cd535e607948da9c5b8eef9f9590f1e92648",
+    "simulation.py": "624558ffd180c3da5a1bc56481ec15b159715e5e47d1298aa507d209b31e3683",
+    "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+    "scene.xml": "7bf39021e9dc620cfe1d75dbd9a45a4258adb7ef626ecb523a9f2543ffa95a8d",
+    "run_camera_delay_study.py": "4a8cf88b987b10b2b0623d65eb3b65cc9eb0e4f3e9ef87a163d5623f91d67835"
+  },
+  "completed_trials": 39
+}

@@ -1,0 +1,23 @@
+test_blocked_route_respects_allowed_workspace (test_collision.CollisionGeometryTests.test_blocked_route_respects_allowed_workspace) ... ok
+test_contacts_enabled_and_unsafe_reset_is_atomic (test_collision.CollisionGeometryTests.test_contacts_enabled_and_unsafe_reset_is_atomic) ... ok
+test_detour_has_dense_clearance_and_does_not_change_live_state (test_collision.CollisionGeometryTests.test_detour_has_dense_clearance_and_does_not_change_live_state) ... ok
+test_nonadjacent_self_geometry_is_checked (test_collision.CollisionGeometryTests.test_nonadjacent_self_geometry_is_checked) ... ok
+test_obstacle_update_rejects_overlap_and_reset_preserves_environment (test_collision.CollisionGeometryTests.test_obstacle_update_rejects_overlap_and_reset_preserves_environment) ... ok
+test_planning_budget_fails_closed_and_releases_scratch_budget (test_collision.CollisionGeometryTests.test_planning_budget_fails_closed_and_releases_scratch_budget) ... ok
+test_swept_path_rejects_safe_endpoints_with_blocked_middle (test_collision.CollisionGeometryTests.test_swept_path_rejects_safe_endpoints_with_blocked_middle) ... ok
+test_blocked_manual_motion_is_reported_by_app (test_collision.CollisionMotionTests.test_blocked_manual_motion_is_reported_by_app) ... ok
+test_damping_keeps_manual_axis_and_zero_never_creates_motion (test_collision.CollisionMotionTests.test_damping_keeps_manual_axis_and_zero_never_creates_motion) ... ok
+test_held_command_is_guarded_after_obstacle_appears (test_collision.CollisionMotionTests.test_held_command_is_guarded_after_obstacle_appears) ... ok
+test_lost_view_preserves_a_delivered_view_with_camera_delay (test_collision.CollisionMotionTests.test_lost_view_preserves_a_delivered_view_with_camera_delay) ... ok
+test_maximum_speed_approach_brakes_before_floor_and_stays_stopped (test_collision.CollisionMotionTests.test_maximum_speed_approach_brakes_before_floor_and_stays_stopped) ... ok
+test_obstacle_button_cancels_motion_and_keeps_pose (test_collision.CollisionMotionTests.test_obstacle_button_cancels_motion_and_keeps_pose) ... ok
+test_rejected_lost_view_preset_preserves_the_original_pose (test_collision.CollisionMotionTests.test_rejected_lost_view_preset_preserves_the_original_pose) ... ok
+test_all_blocked_waypoints_finish_with_bounded_zero_motion (test_collision.CollisionPathContractTests.test_all_blocked_waypoints_finish_with_bounded_zero_motion) ... ok
+test_path_follower_visits_detour_and_caches_the_current_goal (test_collision.CollisionPathContractTests.test_path_follower_visits_detour_and_caches_the_current_goal) ... ok
+test_uniform_scaling_satisfies_all_closing_constraints_and_allows_retreat (test_collision.CollisionPathContractTests.test_uniform_scaling_satisfies_all_closing_constraints_and_allows_retreat) ... ok
+test_visible_target_interrupts_search_before_planning (test_collision.CollisionPathContractTests.test_visible_target_interrupts_search_before_planning) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 4.039s
+
+OK

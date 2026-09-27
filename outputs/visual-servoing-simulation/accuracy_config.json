@@ -1,0 +1,135 @@
+{
+  "seed": 20260921,
+  "starts": 3,
+  "offset_limit_degrees": [
+    8,
+    6,
+    8,
+    6,
+    6,
+    6
+  ],
+  "camera_delay_s": 0.1,
+  "max_trial_s": 60,
+  "post_stop_frames": 30,
+  "position_tolerance_mm": 2,
+  "orientation_tolerance_deg": 1,
+  "profiles": [
+    {
+      "name": "nominal",
+      "calibration": {}
+    },
+    {
+      "name": "focal-minus-5",
+      "calibration": {
+        "focal_scale": [
+          0.95,
+          0.95
+        ]
+      }
+    },
+    {
+      "name": "focal-plus-5",
+      "calibration": {
+        "focal_scale": [
+          1.05,
+          1.05
+        ]
+      }
+    },
+    {
+      "name": "principal-minus-5",
+      "calibration": {
+        "principal_offset_px": [
+          -5,
+          0
+        ]
+      }
+    },
+    {
+      "name": "principal-plus-5",
+      "calibration": {
+        "principal_offset_px": [
+          5,
+          0
+        ]
+      }
+    },
+    {
+      "name": "mount-x-minus-10",
+      "calibration": {
+        "mount_translation_mm": [
+          -10,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "mount-x-plus-10",
+      "calibration": {
+        "mount_translation_mm": [
+          10,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "mount-yaw-minus-5",
+      "calibration": {
+        "mount_rotation_vector_deg": [
+          0,
+          -5,
+          0
+        ]
+      }
+    },
+    {
+      "name": "mount-yaw-plus-5",
+      "calibration": {
+        "mount_rotation_vector_deg": [
+          0,
+          5,
+          0
+        ]
+      }
+    },
+    {
+      "name": "size-minus-10",
+      "calibration": {
+        "target_size_scale": 0.9
+      }
+    },
+    {
+      "name": "size-plus-10",
+      "calibration": {
+        "target_size_scale": 1.1
+      }
+    },
+    {
+      "name": "combined",
+      "calibration": {
+        "focal_scale": [
+          1.05,
+          1.05
+        ],
+        "principal_offset_px": [
+          5,
+          0
+        ],
+        "mount_translation_mm": [
+          10,
+          0,
+          0
+        ],
+        "mount_rotation_vector_deg": [
+          0,
+          5,
+          0
+        ],
+        "target_size_scale": 1.1
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+Accuracy experiment: C:\Users\marys\Documents\Codex\2026-09-06\visual-servoing-project\outputs\visual-servoing-simulation\results\accuracy\20260921-legacy-smoke
+1 planned; 0 saved.
+[1/1] aruco-nominal-0000: converged; physical tolerance met
+Accuracy experiment: C:\Users\marys\Documents\Codex\2026-09-06\visual-servoing-project\outputs\visual-servoing-simulation\results\accuracy\20260921-legacy-smoke
+1 planned; 1 saved.
+PASS: legacy CLI run, immutable completed resume, and report-only.

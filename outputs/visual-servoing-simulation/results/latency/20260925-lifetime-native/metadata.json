@@ -1,0 +1,153 @@
+{
+  "before": {
+    "perf_counter_s": 589147.3824985,
+    "time_ns": 1790425893104156800,
+    "utc": "2026-09-26T12:31:33.104156+00:00",
+    "power": {
+      "ACLineStatus": 1,
+      "BatteryFlag": 1,
+      "BatteryLifePercent": 100,
+      "SystemStatusFlag": 0,
+      "BatteryLifeTime": 4294967295,
+      "BatteryFullLifeTime": 4294967295
+    }
+  },
+  "gpu_query_fields": [
+    "timestamp",
+    "name",
+    "pstate",
+    "temperature.gpu",
+    "utilization.gpu",
+    "utilization.memory",
+    "clocks.sm",
+    "clocks.mem",
+    "power.draw",
+    "power.limit",
+    "enforced.power.limit",
+    "clocks_event_reasons.active",
+    "clocks_event_reasons.gpu_idle",
+    "clocks_event_reasons.sw_power_cap",
+    "clocks_event_reasons.sw_thermal_slowdown",
+    "clocks_event_reasons.hw_thermal_slowdown",
+    "clocks_event_reasons.hw_power_brake_slowdown",
+    "memory.used",
+    "memory.free",
+    "memory.total"
+  ],
+  "excluded_from_statistical_campaign": true,
+  "wpr_status_before": {
+    "returncode": 0,
+    "stdout": "\nMicrosoft Windows Performance Recorder Version 10.0.26100 (CoreSystem)\nCopyright (c) 2024 Microsoft Corporation. All rights reserved.\n\nWPR is not recording\n",
+    "stderr": "",
+    "args": [
+      "wpr",
+      "-status"
+    ]
+  },
+  "trigger": "80_second_fallback",
+  "wpr_start_before": {
+    "perf_counter_s": 589227.5200241,
+    "time_ns": 1790425973243941400,
+    "utc": "2026-09-26T12:32:53.243941+00:00",
+    "power": {
+      "ACLineStatus": 1,
+      "BatteryFlag": 1,
+      "BatteryLifePercent": 100,
+      "SystemStatusFlag": 0,
+      "BatteryLifeTime": 4294967295,
+      "BatteryFullLifeTime": 4294967295
+    }
+  },
+  "profile_sha256": "75178637ba1f788c363a6d52225f20fcae516b9160a41ec7f46016df412f1a25",
+  "wpr_start": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "args": [
+      "wpr",
+      "-start",
+      "C:\\Users\\marys\\Documents\\Codex\\2026-09-06\\visual-servoing-project\\tools\\worker_lifetime_native.wprp!ReuseNative"
+    ]
+  },
+  "wpr_start_after": {
+    "perf_counter_s": 589229.6903158,
+    "time_ns": 1790425975414196100,
+    "utc": "2026-09-26T12:32:55.414196+00:00",
+    "power": {
+      "ACLineStatus": 1,
+      "BatteryFlag": 1,
+      "BatteryLifePercent": 100,
+      "SystemStatusFlag": 0,
+      "BatteryLifeTime": 4294967295,
+      "BatteryFullLifeTime": 4294967295
+    }
+  },
+  "degraded_trigger_frame": {
+    "sequence": 972,
+    "generation": 14,
+    "at_s": 589239.6870327
+  },
+  "wpr_end_before": {
+    "perf_counter_s": 589249.6952699,
+    "time_ns": 1790425995418488800,
+    "utc": "2026-09-26T12:33:15.418488+00:00",
+    "power": {
+      "ACLineStatus": 1,
+      "BatteryFlag": 1,
+      "BatteryLifePercent": 100,
+      "SystemStatusFlag": 0,
+      "BatteryLifeTime": 4294967295,
+      "BatteryFullLifeTime": 4294967295
+    }
+  },
+  "wpr_status_end": {
+    "returncode": 0,
+    "stdout": "\nMicrosoft Windows Performance Recorder Version 10.0.26100 (CoreSystem)\nCopyright (c) 2024 Microsoft Corporation. All rights reserved.\n\nWPR recording is in progress...\n\nTime since start\t: 00:00:20\nDropped event\t\t: 0\nLogging mode\t\t: Memory\n\nActively recording collectors: \n\nCollector Name\t\t: WPR_initiated_WprApp_WPR System Collector\nBuffer Size (KB)\t: 1024\nEvents Lost\t\t: 0\nNumber of Buffers\t: 768\nProviders\nSystem Keywords\n\tCpuConfig\n\tCSwitch\n\tDPC\n\tHardFaults\n\tInterrupt\n\tLoader\n\tProcessThread\n\tReadyThread\n\tSampledProfile\n\tThreadPriority\nSystem Stacks\n\tCSwitch\n\tReadyThread\n\tSampledProfile\n\nCollector Name\t\t: WPR_initiated_WprApp_Servo GPU and power\nBuffer Size (KB)\t: 1024\nEvents Lost\t\t: 0\nNumber of Buffers\t: 512\nProviders\n\tMicrosoft-Windows-DxgKrnl: 0x4000275: 0x05     \n\tMicrosoft-Windows-Kernel-Power: 0x100: 0xff     \n\tMicrosoft-Windows-Kernel-Processor-Power: 0x2ff: 0xff     \nCaptureState Providers on Save\n\tMicrosoft-Windows-DxgKrnl: 0x490bfff: 0x05\n\tMicrosoft-Windows-Kernel-Power: 0xffffffff: 0xff\n\tMicrosoft-Windows-Kernel-Processor-Power: 0xffffffff: 0xff\nCaptureState Providers on Start\n\tMicrosoft-Windows-DxgKrnl: 0x2490bfff: 0x05\n",
+    "stderr": "",
+    "args": [
+      "wpr",
+      "-status",
+      "collectors",
+      "-details"
+    ]
+  },
+  "wpr_stop": {
+    "returncode": 0,
+    "stdout": "Press Ctrl+C to cancel the stop operation.\nThe trace was successfully saved.\n",
+    "stderr": "",
+    "args": [
+      "wpr",
+      "-stop",
+      "C:\\Users\\marys\\Documents\\Codex\\2026-09-06\\visual-servoing-project\\outputs\\visual-servoing-simulation\\results\\latency\\20260925-lifetime-native\\traces\\native.etl",
+      "Worker lifetime degraded CPU samples, context switches and GPU scheduling",
+      "-skipPdbGen"
+    ]
+  },
+  "wpr_end_after": {
+    "perf_counter_s": 589306.8772901,
+    "time_ns": 1790426052599318400,
+    "utc": "2026-09-26T12:34:12.599318+00:00",
+    "power": {
+      "ACLineStatus": 1,
+      "BatteryFlag": 1,
+      "BatteryLifePercent": 100,
+      "SystemStatusFlag": 0,
+      "BatteryLifeTime": 4294967295,
+      "BatteryFullLifeTime": 4294967295
+    }
+  },
+  "after": {
+    "perf_counter_s": 589306.8869977,
+    "time_ns": 1790426052609845600,
+    "utc": "2026-09-26T12:34:12.609845+00:00",
+    "power": {
+      "ACLineStatus": 1,
+      "BatteryFlag": 1,
+      "BatteryLifePercent": 100,
+      "SystemStatusFlag": 0,
+      "BatteryLifeTime": 4294967295,
+      "BatteryFullLifeTime": 4294967295
+    }
+  },
+  "source_unchanged": true
+}

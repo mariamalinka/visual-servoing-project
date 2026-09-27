@@ -12,6 +12,7 @@ import numpy as np
 from control import ControlSample, IBVSController
 from startup_search import StartupSearch
 from joint_limits import JointLimitSupervisor
+from motion_path import MotionPath
 
 ACTIVE_STATES = frozenset(("running", "waiting", "returning", "scanning", "confirming",
                            "joint_limited", "repositioning", "retry_confirming", "realigning"))
@@ -24,10 +25,15 @@ def load_recovery_config() -> dict:
 
 class ReacquiringIBVS:
     def __init__(self, desired, K, simulation_config, joint_limits,
-                 taught_qpos=None, recovery_config=None, startup_config=None, motion_config=None):
+                 taught_qpos=None, recovery_config=None, startup_config=None, motion_config=None,
+                 path_planner=None, collision_detour_degrees=0):
         self.ibvs = IBVSController(desired, K, simulation_config)
         self.config = dict(recovery_config or load_recovery_config())
         self.startup_config = startup_config
+        self.path_planner = path_planner
+        self.collision_detour_degrees = collision_detour_degrees
+        self.return_path = MotionPath(path_planner)
+        self.scan_path = MotionPath(path_planner)
         self.limits = np.asarray(joint_limits, dtype=float).copy()
         if self.limits.shape != (6, 2) or not np.isfinite(self.limits).all():
             raise ValueError("Expected six finite joint limits")
@@ -47,7 +53,7 @@ class ReacquiringIBVS:
         if offsets.ndim != 2 or offsets.shape[1] != 2 or not len(offsets) or not np.isfinite(offsets).all():
             raise ValueError("Scan needs finite yaw/pitch offset pairs")
         self.last_visible_qpos = None if taught_qpos is None else self._q(taught_qpos).copy()
-        self.motion = JointLimitSupervisor(self.limits, motion_config)
+        self.motion = JointLimitSupervisor(self.limits, motion_config, path_planner=path_planner)
         self.cancel()
 
     @staticmethod
@@ -79,6 +85,9 @@ class ReacquiringIBVS:
         self.waypoints = []
         self.ibvs.reset()
         self.motion.reset()
+        self.return_path.reset()
+        self.scan_path.reset()
+        self.blocked_waypoints = 0
 
     def start(self, cold=False):
         """Start; cold=True explicitly discards any remembered viewpoint."""
@@ -114,29 +123,37 @@ class ReacquiringIBVS:
             if not self.waypoints or np.linalg.norm(goal-self.waypoints[-1]) > 1e-8:
                 self.waypoints.append(goal)
         self.waypoint_index = 0
+        self.return_path.reset()
+        self.scan_path.reset()
 
     def _toward(self, qpos, goal, dt):
         difference = goal - qpos
         limit = self.config["max_joint_velocity_rad_s"]
-        command = np.clip(self.config["position_gain_per_s"] * difference, -limit, limit)
+        command = self.config["position_gain_per_s"] * difference
+        if self.path_planner is None:
+            command = np.clip(command,-limit,limit)
+        else:
+            command *= min(1.,limit/max(float(np.max(np.abs(command))),1e-12))
         # Bound the requested step, including at a mechanical or search-box edge.
         return np.clip(command, np.minimum(0, (self.lower-qpos)/dt),
                        np.maximum(0, (self.upper-qpos)/dt))
 
-    def _align_visible(self, corners, camera_jacobian, qpos, dt):
+    def _align_visible(self, corners, camera_jacobian, qpos, dt, observation_qpos=None):
         sample = self.ibvs.update(corners, camera_jacobian, dt)
-        sample = self.motion.filter(sample, camera_jacobian, qpos, dt, self.ibvs.config, self.elapsed_s - dt)
+        sample = self.motion.filter(sample, camera_jacobian, qpos, dt, self.ibvs.config, self.elapsed_s - dt, observation_qpos=observation_qpos)
         if sample.status == "repositioning":
             self.mode = "repositioning"
         if sample.status in ("running", "joint_limited", "realigning", "converged"):
-            self.remember_view(corners, qpos)
+            self.remember_view(corners, qpos if observation_qpos is None else observation_qpos)
         self.status = sample.status
         return sample
 
-    def update(self, corners, camera_jacobian, qpos, dt):
+    def update(self, corners, camera_jacobian, qpos, dt, observation_qpos=None):
         if not np.isfinite(dt) or dt <= 0:
             raise ValueError("Frame duration must be positive and finite")
         qpos = self._q(qpos)
+        if observation_qpos is not None:
+            observation_qpos = self._q(observation_qpos)
         if self.status not in ACTIVE_STATES:
             return self._sample(self.status)
         if self.elapsed_s - self.startup_elapsed_s + 1e-9 >= self.config["max_total_time_s"]:
@@ -148,12 +165,12 @@ class ReacquiringIBVS:
             if sample.status == "retry_ready":
                 self.mode = None
                 self.ibvs.reset()
-                return self._align_visible(corners, camera_jacobian, qpos, dt)
+                return self._align_visible(corners, camera_jacobian, qpos, dt, observation_qpos)
             self.status = sample.status
             return sample
 
         if self.last_visible_qpos is None and self.mode is None:
-            self.startup = StartupSearch(qpos, self.limits, self.startup_config)
+            self.startup = StartupSearch(qpos, self.limits, self.startup_config, self.path_planner, self.collision_detour_degrees)
             self.mode = "startup"
         if self.mode == "startup":
             sample = self.startup.update(corners, qpos, dt)
@@ -161,12 +178,12 @@ class ReacquiringIBVS:
             if sample.status != "acquired":
                 self.status = sample.status
                 return sample
-            self.remember_view(corners, qpos)
+            self.remember_view(corners, qpos if observation_qpos is None else observation_qpos)
             self.mode = None
             self.ibvs.reset()
 
         if self.mode is None and corners is not None:
-            return self._align_visible(corners, camera_jacobian, qpos, dt)
+            return self._align_visible(corners, camera_jacobian, qpos, dt, observation_qpos)
 
         if self.mode is None:
             self._begin_recovery(qpos)
@@ -185,7 +202,7 @@ class ReacquiringIBVS:
             self.mode = None
             self.reacquisitions += 1
             self.ibvs.reset()
-            return self._align_visible(corners, camera_jacobian, qpos, dt)
+            return self._align_visible(corners, camera_jacobian, qpos, dt, observation_qpos)
         self.confirmed_frames = 0
 
         if self.mode == "waiting":
@@ -197,13 +214,39 @@ class ReacquiringIBVS:
         tolerance = self.config["arrival_tolerance_rad"]
         if self.mode == "returning":
             if np.max(np.abs(qpos-self.return_goal)) > tolerance:
-                return self._sample("returning", self._toward(qpos, self.return_goal, dt))
+                target = self.return_path.target(qpos,self.return_goal,self.lower,self.upper,tolerance)
+                if target is not None:
+                    return self._sample("returning", self._toward(qpos,target,dt))
+                self.blocked_waypoints += 1
             self.mode = "scanning"
 
+        blocked_this_update = 0
         while self.waypoint_index < len(self.waypoints):
             goal = self.waypoints[self.waypoint_index]
             if np.max(np.abs(qpos-goal)) > tolerance:
-                return self._sample("scanning", self._toward(qpos, goal, dt))
+                target = self.scan_path.target(qpos,goal,self.lower,self.upper,tolerance)
+                if target is not None:
+                    return self._sample("scanning", self._toward(qpos,target,dt))
+                self.blocked_waypoints += 1
+                self.scan_path.reset()
+                blocked_this_update += 1
             self.waypoint_index += 1
-        return self._sample("search_exhausted")
+            if blocked_this_update >= 4 and self.waypoint_index < len(self.waypoints):
+                return self._sample("scanning")
+        return self._sample("collision_blocked" if self.blocked_waypoints else "search_exhausted")
+
+    def skip_blocked_motion(self):
+        if self.mode == "startup" and self.startup is not None:
+            self.startup.skip_blocked_motion()
+            return True
+        elif self.mode in ("waiting","returning"):
+            self.mode = "scanning"
+            self.return_path.reset()
+        elif self.mode == "scanning":
+            self.waypoint_index += 1
+            self.scan_path.reset()
+        else:
+            return False
+        self.blocked_waypoints += 1
+        return True
 

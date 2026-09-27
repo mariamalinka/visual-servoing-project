@@ -1,0 +1,88 @@
+{
+  "verified_utc": "2026-09-21T18:48:21.565540+00:00",
+  "full_suite": {
+    "tests": 263,
+    "seconds": 448.828,
+    "passed": true,
+    "log_sha256": "d497725b01b219e2025e7588bdffbbc18f2ef3c4f828539320e0e3df570eeb45"
+  },
+  "app_scene_verify_passed": true,
+  "new_tests": {
+    "math_image": 18,
+    "rendered_integration": 5
+  },
+  "report_format_tests": {
+    "tests": 16,
+    "passed": true,
+    "log_sha256": "a01e6a45c121913aaa691434ad0c29dfbcd968ad6372fe37429774fef813b81a"
+  },
+  "runs": [
+    {
+      "directory": "20260921-precision-final",
+      "planned": 72,
+      "completed": 72,
+      "physical_passes": 72,
+      "stop_precision_checks": 2160,
+      "manifest_sha256": "e7f763b2868c480d0ee38d3bb343057a9a43c70895bbf74468604a0f989a6cff",
+      "trials_sha256": "7f5fbe31f65e7771c77e54c5e9d08768a317866e29e8e20f1542ef0eb93dc0c7",
+      "minimum_collision_slack_mm": 2.999999999999867,
+      "safety_violations": 0,
+      "forbidden_contacts": 0
+    },
+    {
+      "directory": "20260921-precision-fresh-starts",
+      "planned": 12,
+      "completed": 12,
+      "physical_passes": 12,
+      "stop_precision_checks": 360,
+      "manifest_sha256": "64a45b88615f1b79e13889bc4035e15fdfc0312dd338a4221b1a2ce93d8a48b0",
+      "trials_sha256": "82fdbd712a74c7d64784e05e2389ea5583420198ffaf6022fac380fc5aabe7d1",
+      "minimum_collision_slack_mm": 2.9999999999998743,
+      "safety_violations": 0,
+      "forbidden_contacts": 0
+    }
+  ],
+  "source_fingerprint_matches_except_verified_report_strings": true,
+  "runtime_assets_teaching_references_match": true,
+  "report_format_correction": {
+    "kind": "UTF-8 display-string correction only",
+    "changed_lines": [
+      204,
+      217,
+      196,
+      201,
+      201,
+      202,
+      165
+    ],
+    "before_sha256": "fa9fbc2c54941ad53badbab0b169525ef19d783de09e7366a02440f4860db2c7",
+    "after_sha256": "f2864e7270fa4c4c803978cb22123455b5c48f15f20954a8e0229e496eae06a2",
+    "ast_identical_except_verified_non_ascii_report_strings": true
+  },
+  "legacy_cli_resume_report_smoke_passed": true,
+  "pose_sensitivity": {
+    "probes": 45,
+    "legacy_false_candidates": 4,
+    "precision_false_candidates": 0
+  },
+  "tests_sha256": {
+    "test_precision.py": "a9a31ad995393ad4ae5b7723d96dce36913bdb823dcc4f4b2f42c39e47a34455",
+    "test_precision_integration.py": "3799fa7fd6cc33ee8533be6b9775206c97f9955db9868c721df03151068b3c02"
+  },
+  "repository_check_passed": true,
+  "git_diff_check_passed": true,
+  "timing_check": {
+    "frames_per_matcher": 8,
+    "all_refinements_accepted": true,
+    "median_ms": {
+      "natural": {
+        "matcher_only": 44.89024999202229,
+        "matcher_and_refinement": 77.97445000323933
+      },
+      "learned": {
+        "matcher_only": 64.77714999346063,
+        "matcher_and_refinement": 102.3237499903189
+      }
+    }
+  }
+}

@@ -76,8 +76,12 @@ def estimate_depths(corners: np.ndarray, K: np.ndarray, side_m: float,
         raise ValueError("Expected four finite marker corners")
     object_points = marker_object_points(side_m)
     ok, rvec, tvec = cv2.solvePnP(object_points, pixels, K, None, flags=cv2.SOLVEPNP_IPPE_SQUARE)
-    if not ok:
-        raise ValueError("Marker depth estimation failed")
+    if not ok or not np.isfinite(rvec).all() or not np.isfinite(tvec).all():
+        # Exact frontal square poses can make IPPE's analytic initializer NaN.
+        # Recover from the same four measured pixels; keep all validation below.
+        ok, rvec, tvec = cv2.solvePnP(object_points,pixels,K,None,flags=cv2.SOLVEPNP_ITERATIVE)
+        if not ok or not np.isfinite(rvec).all() or not np.isfinite(tvec).all():
+            raise ValueError("Marker depth estimation failed")
     projected, _ = cv2.projectPoints(object_points, rvec, tvec, K, None)
     residual = np.sqrt(np.mean(np.sum((projected.reshape(4, 2) - pixels)**2, axis=1)))
     if np.isfinite(residual) and residual > max_reprojection_error:
@@ -88,6 +92,15 @@ def estimate_depths(corners: np.ndarray, K: np.ndarray, side_m: float,
         rvec, tvec = cv2.solvePnPRefineLM(object_points, pixels, K, None, rvec, tvec)
         projected, _ = cv2.projectPoints(object_points, rvec, tvec, K, None)
         residual = np.sqrt(np.mean(np.sum((projected.reshape(4, 2) - pixels)**2, axis=1)))
+    if not np.isfinite(residual) or residual > max_reprojection_error:
+        # At an exactly frontal square, IPPE can choose the opposite orientation
+        # and LM cannot leave that stationary point. Try an independent planar
+        # initializer, still subject to the same depth/reprojection checks.
+        ok, rvec, tvec = cv2.solvePnP(object_points,pixels,K,None,flags=cv2.SOLVEPNP_ITERATIVE)
+        if not ok:
+            raise ValueError("Marker depth estimation failed")
+        projected, _ = cv2.projectPoints(object_points,rvec,tvec,K,None)
+        residual = np.sqrt(np.mean(np.sum((projected.reshape(4,2)-pixels)**2,axis=1)))
     rotation, _ = cv2.Rodrigues(rvec)
     z = (object_points @ rotation.T + tvec.reshape(3))[:, 2]
     if not np.isfinite(z).all() or np.any(z < 0.03) or not np.isfinite(residual) or residual > max_reprojection_error:
@@ -103,6 +116,8 @@ class ControlSample:
     camera_twist: np.ndarray
     depths: np.ndarray | None = None
     joint_condition: float | None = None
+    stop_candidate: bool = False
+    stop_metrics: dict | None = None
 
 
 class IBVSController:
@@ -115,6 +130,10 @@ class IBVSController:
         self.K = np.asarray(K, dtype=float).copy()
         self.desired_normalized = normalized_points(self.desired, self.K)
         self.config = config["ibvs"].copy()
+        self.precision_stop = config.get("precision_stop")
+        if self.precision_stop is not None:
+            from precision import validate_stop
+            validate_stop(self.precision_stop)
         self.side_m = config["marker_side_m"]
         self.reset()
 
@@ -123,6 +142,7 @@ class IBVSController:
         self.held_seconds = 0.0
         self.below_since: float | None = None
         self.elapsed_seconds = 0.0
+        self.stop_metrics = None
 
     def update(self, corners: np.ndarray | None, camera_jacobian: np.ndarray,
                dt: float) -> ControlSample:
@@ -147,19 +167,40 @@ class IBVSController:
         if self.elapsed_seconds >= self.config["timeout_s"]:
             self.status = "timeout"
             return ControlSample(self.status, error_px, zero, zero.copy())
-        if error_px < self.config["success_error_px"]:
+        z = None
+        metrics = None
+        candidate = error_px < self.config["success_error_px"]
+        if self.precision_stop is not None:
+            try:
+                z = estimate_depths(corners,self.K,self.side_m,self.config["max_pnp_reprojection_error_px"])
+                from precision import stopping_metrics
+                metrics = stopping_metrics(corners,self.desired,self.K,z,self.precision_stop)
+            except (ValueError,cv2.error,np.linalg.LinAlgError):
+                self.status = "invalid_depth"
+                self.below_since = None
+                self.held_seconds = 0.
+                return ControlSample(self.status,error_px,zero,zero.copy())
+            self.stop_metrics = metrics
+            candidate = metrics["candidate"]
+            if error_px < self.config["success_error_px"] and not metrics["observable"]:
+                self.status = "poor_sensitivity"
+                self.below_since = None
+                self.held_seconds = 0.
+                return ControlSample(self.status,error_px,zero,zero.copy(),stop_metrics=metrics)
+        if candidate:
             if self.below_since is None:
                 self.below_since = self.elapsed_seconds
             self.held_seconds = self.elapsed_seconds - self.below_since
             if self.held_seconds + 1e-9 >= self.config["success_hold_s"]:
                 self.status = "converged"
             self.elapsed_seconds += dt
-            return ControlSample(self.status, error_px, zero, zero.copy())
+            return ControlSample(self.status, error_px, zero, zero.copy(),stop_candidate=True,stop_metrics=metrics)
         self.held_seconds = 0.0
         self.below_since = None
         try:
-            z = estimate_depths(corners, self.K, self.side_m,
-                                self.config["max_pnp_reprojection_error_px"])
+            if z is None:
+                z = estimate_depths(corners, self.K, self.side_m,
+                                    self.config["max_pnp_reprojection_error_px"])
         except (ValueError, cv2.error):
             self.status = "invalid_depth"
             return ControlSample(self.status, error_px, zero, zero.copy())
@@ -177,4 +218,4 @@ class IBVSController:
         self.elapsed_seconds += dt
         singular = np.linalg.svd(J, compute_uv=False)
         condition = float(singular[0] / max(singular[-1], 1e-15))
-        return ControlSample(self.status, error_px, velocity, twist, z, condition)
+        return ControlSample(self.status, error_px, velocity, twist, z, condition,stop_metrics=metrics)
