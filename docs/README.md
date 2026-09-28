@@ -47,3 +47,11 @@ and enforce their recorded runtime/source versions.
 [Reused Learned GPU workers: complete before/after stress campaign and remaining limits](../outputs/visual-servoing-simulation/results/latency/20260923-reuse-after/COMPARISON.md).
 
 [Native scheduling validation: reduced control misses, unresolved reused Learned degradation](../outputs/visual-servoing-simulation/results/latency/20260925-native-scheduling-after/COMPARISON.md).
+
+- [Automated acceptance campaign](ACCEPTANCE_CAMPAIGN.md): repeatable multi-pose, long-running SIFT/Learned GPU validation with predeclared pass/fail criteria.
+
+- [Test procedure for timing measurements](TEST_PROCEDURE.md): conditions every reported acceptance, long or margin run must follow.
+
+- [Latency-margin test](MARGIN_TEST.md): one command (`margin-test.cmd`, about 15–20 minutes) that measures how much extra per-frame perception latency SIFT and Learned GPU tolerate before alignment fails.
+
+- [Acceptance test](ACCEPTANCE_TEST.md): one command (`acceptance-test.cmd`, about 30 minutes) for SIFT and Learned GPU: five starting poses with fresh workers, then a 12-minute reused-worker run per method, with a PASS/FAIL report.

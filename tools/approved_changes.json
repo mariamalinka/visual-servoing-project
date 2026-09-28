@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "description": "Reviewed, intentional changes to protected production files. A protected file that differs from the validated baseline is accepted only when BOTH its baseline hash and its current hash match an entry here; any other edit still makes a test INVALID. Add an entry only after the change's tests pass.",
+  "changes": [
+    {
+      "file": "realtime.py",
+      "title": "freshness watchdog hold-and-resume (RuntimeConfig.stale_resume_s, default 0 = original stop)",
+      "date": "2026-09-28",
+      "baseline_sha256": "e91c22f2945f67af322543f75cfe1637287089ce33a71213e2050e5e996296cf",
+      "sha256": "8ef8223c15531e4cf47f856a9395013a47249c87dd8c48c7d91c465ee30b7086",
+      "summary": "Adds an opt-in watchdog response. With stale_resume_s = 0 (default and every existing caller) the runtime stops exactly as before. With stale_resume_s > 0, the 400 ms freshness trip commands zero velocity at the same moment but keeps the alignment; the next fresh frame resumes it, and the run ends as stale_camera only if no fresh frame arrives within stale_resume_s. Adds counters watchdog_pauses, watchdog_resumes, paused_s and paused_motion_ticks, and pause/resume events.",
+      "tests": [
+        "outputs/visual-servoing-simulation/tests/test_realtime.py"
+      ]
+    }
+  ]
+}

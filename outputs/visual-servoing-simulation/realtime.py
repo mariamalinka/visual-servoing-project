@@ -47,6 +47,11 @@ class RuntimeConfig:
     fault_after_s: float = 2.0
     inference_stall_s: float = 0.0
     render_stall_s: float = 0.0
+    # Freshness watchdog response. 0 = stop the alignment (original behavior).
+    # > 0 = the watchdog still commands zero velocity at the same moment, but the
+    # alignment is paused rather than ended: it resumes on the next fresh frame and
+    # ends as 'stale_camera' only if no fresh frame arrives within this many seconds.
+    stale_resume_s: float = 0.0
 
     def __post_init__(self):
         for key, value in asdict(self).items():
@@ -73,18 +78,26 @@ class CommandLease:
         self.active = False
         self.started_s = 0.0
         self.captured_s = None
+        self.paused_s = None
         self.status = 'idle'
 
     def start(self, now):
         self.generation += 1
         self.started_s = now
         self.captured_s = None
+        self.paused_s = None
         self.active = True
         self.status = 'checking'
 
     def stop(self, reason):
         self.active = False
+        self.paused_s = None
         self.status = reason
+
+    def pause(self, now):
+        """Zero-velocity hold after a freshness trip; the alignment stays alive."""
+        self.paused_s = now
+        self.status = 'paused'
 
     def failure(self, now):
         if not self.active:
@@ -94,7 +107,12 @@ class CommandLease:
         if now - self.started_s >= self.config.max_run_s:
             return 'run_timeout'
         origin = self.started_s if self.captured_s is None else self.captured_s
-        return 'stale_camera' if now - origin >= self.config.max_age_s else None
+        if now - origin < self.config.max_age_s:
+            return None
+        # Already holding at zero velocity: only the resume window can end the run.
+        if self.paused_s is not None and now - self.paused_s < self.config.stale_resume_s:
+            return None
+        return 'stale_camera'
 
     def eligible(self, frame, now):
         captured = frame['captured_s']
@@ -255,7 +273,8 @@ class RealtimeSession:
             sensor_rows_evicted=0, command_rows_evicted=0, loop_rows_evicted=0,
             stale_results=0, obsolete_results=0, pre_inference_dropped=0, accepted=0, control_ticks=0,
             moving_ticks=0, unsafe_motion_ticks=0, contacts=0, post_stop_motion_ticks=0,
-            control_deadline_misses=0, fault_results=0, discarded_physics_s=0.0)
+            control_deadline_misses=0, fault_results=0, discarded_physics_s=0.0,
+            watchdog_pauses=0, watchdog_resumes=0, paused_s=0.0, paused_motion_ticks=0)
 
     def start(self):
         if self.thread is not None:
@@ -363,6 +382,9 @@ class RealtimeSession:
                 nonlocal below_since, stopped_at
                 was_active = lease.active
                 origin = lease.started_s if lease.captured_s is None else lease.captured_s
+                paused_for = None if lease.paused_s is None else now - lease.paused_s
+                if paused_for is not None:
+                    self.counts['paused_s'] += paused_for
                 lease.stop(reason)
                 controller.cancel()
                 sim.command_velocity(np.zeros(6))
@@ -374,8 +396,33 @@ class RealtimeSession:
                     self.events.append(dict(kind='stop', reason=reason, at_s=now, generation=lease.generation,
                         counters=dict(self.counts),
                         last_capture_s=lease.captured_s,
-                        deadline_s=origin + self.config.max_age_s if reason == 'stale_camera' else None,
+                        deadline_s=None if reason != 'stale_camera' else origin + self.config.max_age_s
+                                   if paused_for is None else now - paused_for + self.config.stale_resume_s,
+                        paused_for_s=paused_for,
                         stopped_s=time.perf_counter()))
+
+            def pause(now):
+                """Freshness trip with stale_resume_s > 0: identical zero command, run kept."""
+                nonlocal below_since
+                origin = lease.started_s if lease.captured_s is None else lease.captured_s
+                lease.pause(now)
+                sim.command_velocity(np.zeros(6))
+                below_since = None  # The success hold restarts on fresh images.
+                self.counts['watchdog_pauses'] += 1
+                self.events.append(dict(kind='pause', reason='stale_camera', at_s=now, generation=lease.generation,
+                    counters=dict(self.counts), last_capture_s=lease.captured_s,
+                    deadline_s=origin + self.config.max_age_s,
+                    resume_deadline_s=now + self.config.stale_resume_s,
+                    stopped_s=time.perf_counter()))
+
+            def watchdog(reason, now):
+                """Route a lease failure: a freshness trip pauses when enabled, else stops."""
+                if reason == 'stale_camera' and self.config.stale_resume_s > 0 and lease.active and (
+                        lease.paused_s is None or now - lease.paused_s < self.config.stale_resume_s):
+                    if lease.paused_s is None:
+                        pause(now)
+                    return
+                stop(reason, now)
 
             def align(now):
                 nonlocal below_since, next_capture, stopped_at
@@ -406,7 +453,7 @@ class RealtimeSession:
                     stop('control_overrun', now)
                 failure = lease.failure(now)
                 if failure:
-                    stop(failure, now)
+                    watchdog(failure, now)
                 if not self.worker.is_alive():
                     stop('worker_failed', now)
                     try:
@@ -500,7 +547,7 @@ class RealtimeSession:
                 # Check the old lease BEFORE allowing a new frame to refresh it.
                 failure = lease.failure(now)
                 if failure:
-                    stop(failure, now)
+                    watchdog(failure, now)
                 if probe: probe.mark('transport_dispatch')
                 if frame is not None:
                     last_frame = frame
@@ -510,6 +557,10 @@ class RealtimeSession:
                     elif lease.eligible(frame, now):
                         dt = (1/self.config.camera_hz if lease.captured_s is None
                               else frame['captured_s']-lease.captured_s)
+                        if lease.paused_s is not None:
+                            # A normal run never exceeds max_age_s between accepted
+                            # frames; the controller does not integrate over the hold.
+                            dt = min(dt, self.config.max_age_s)
                         compute_started = time.perf_counter()
                         compute_cpu = time.thread_time() if self.diagnostics else 0.
                         sample = controller.update(observation.corners,
@@ -525,7 +576,9 @@ class RealtimeSession:
                             self.counts['control_deadline_misses'] += 1
                             stop('control_overrun', computed)
                         elif failure or not lease.eligible(frame, computed):
-                            stop(failure or 'stale_camera', computed)
+                            if lease.paused_s is not None and not failure:
+                                self.counts['stale_results'] += 1  # Went stale during compute; hold stays.
+                            watchdog(failure or 'stale_camera', computed)
                         else:
                             if sample.stop_candidate:
                                 if below_since is None:
@@ -537,6 +590,12 @@ class RealtimeSession:
                             else:
                                 below_since = None
                             # Lease refresh and command application are one owner operation.
+                            if lease.paused_s is not None:
+                                self.counts['watchdog_resumes'] += 1
+                                self.counts['paused_s'] += computed - lease.paused_s
+                                self.events.append(dict(kind='resume', at_s=computed, generation=lease.generation,
+                                    paused_for_s=computed - lease.paused_s, captured_s=frame['captured_s']))
+                                lease.paused_s = None
                             lease.captured_s = frame['captured_s']
                             sim.command_velocity(sample.velocity)
                             applied = time.perf_counter()
@@ -567,12 +626,13 @@ class RealtimeSession:
                 now = time.perf_counter()
                 failure = lease.failure(now)
                 if failure:
-                    stop(failure, now)
+                    watchdog(failure, now)
                 moving = bool(np.any(sim.velocity_command))
                 fresh = lease.captured_s is not None and now-lease.captured_s < self.config.max_age_s
                 self.counts['moving_ticks'] += int(moving)
                 self.counts['unsafe_motion_ticks'] += int(moving and (not lease.active or not fresh))
                 self.counts['post_stop_motion_ticks'] += int(moving and stopped_at is not None)
+                self.counts['paused_motion_ticks'] += int(moving and lease.paused_s is not None)
                 # Integrate measured elapsed time. Never replay a long backlog of
                 # previously issued velocity commands after a scheduler stall.
                 self.counts['discarded_physics_s'] += max(0, gap-self.config.max_control_gap_s)

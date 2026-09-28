@@ -24,6 +24,8 @@ jobs:
           cache-dependency-path: outputs/visual-servoing-simulation/requirements.txt
       - name: Check repository contents and documentation
         run: python -B tools/check_repository.py
+      - name: Verify acceptance failure gates
+        run: python -B -m unittest discover -s tools -p test_acceptance_campaign.py -v
       - name: Install base simulation dependencies
         run: python -m pip install -r outputs/visual-servoing-simulation/requirements.txt
       - name: Check dependency consistency

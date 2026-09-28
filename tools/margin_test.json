@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "profile": "margin",
+  "description": "Latency-margin test: adds a fixed delay to every active perception frame (existing inference_stall_s fault injection) and finds how much extra per-frame latency SIFT and Learned GPU tolerate. Characterisation, not pass/fail.",
+  "methods": [
+    "natural",
+    "learned"
+  ],
+  "method_labels": {
+    "natural": "SIFT",
+    "learned": "Learned GPU"
+  },
+  "runtime": {
+    "max_age_s": 0.4,
+    "transport_s": 0.05,
+    "max_control_gap_s": 0.05
+  },
+  "fault_after_s": 0.0,
+  "post_stop_seconds": 1.1,
+  "poses_degrees": [
+    [
+      3,
+      -3,
+      4,
+      3,
+      -2,
+      2
+    ],
+    [
+      1.5,
+      -1.5,
+      2,
+      1.5,
+      -1,
+      1
+    ],
+    [
+      -3,
+      3,
+      -4,
+      -3,
+      2,
+      -2
+    ],
+    [
+      -2,
+      -3,
+      3,
+      -2,
+      2,
+      3
+    ],
+    [
+      2,
+      3,
+      -3,
+      2,
+      -2,
+      -3
+    ]
+  ],
+  "added_delay_ms": [
+    0,
+    25,
+    50,
+    75,
+    100,
+    125,
+    150,
+    200
+  ],
+  "alignments_per_level": 10,
+  "tolerated_success_rate": 1.0,
+  "stop_method_after_zero_success": true,
+  "sustained": {
+    "drift_window_seconds": 120
+  },
+  "gpu_sample_interval_ms": 1000
+}

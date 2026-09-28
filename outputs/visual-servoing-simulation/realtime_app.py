@@ -23,7 +23,8 @@ def draw_state(state, mode, config):
     counts = state.get('counters', {})
     label(canvas, f"Accepted: {counts.get('accepted',0)}   Busy captures skipped: {counts.get('busy_capture_skips',0)}   Replaced: "
           f"{counts.get('input_dropped',0)}   Transport: {config.transport_s*1000:.0f} ms"
-          f"   Camera: {'on' if state.get('stream',True) else 'off'}", 16, 574)
+          f"   Camera: {'on' if state.get('stream',True) else 'off'}"
+          + (f"   Watchdog holds: {counts.get('watchdog_pauses',0)}" if config.stale_resume_s else ''), 16, 574)
     label(canvas, 'G: Align   Space: Stop   O: Offset   R: Reset   X: Camera on/off   Esc: Exit',
           16, 604, .55)
     label(canvas, '1: ArUco   2: SIFT   3: Learned (switching stops motion; press G after loading)',
@@ -44,7 +45,8 @@ def run_interactive(args):
     offset = (load_startup_config()['demo_offset_degrees'] if args.cold_start else
               random_start_offset(args.seed) if args.random_start else None)
     config = RuntimeConfig(transport_s=(args.camera_delay_ms or 0)/1000,
-                           max_age_s=args.max_camera_age_ms/1000)
+                           max_age_s=args.max_camera_age_ms/1000,
+                           stale_resume_s=getattr(args, 'stale_resume_ms', 0)/1000)
     def create(selected, start, auto):
         return RealtimeSession(selected, config, precision=not args.legacy_stop,
             calibration=calibration_profiles()[args.calibration_profile],

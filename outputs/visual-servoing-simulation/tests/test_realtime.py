@@ -45,6 +45,36 @@ class LeaseTests(unittest.TestCase):
         lease.captured_s = 10.99
         self.assertEqual(lease.failure(11.), 'run_timeout')
 
+    def test_pause_holds_only_within_resume_window(self):
+        lease = CommandLease(RuntimeConfig(max_age_s=.4, stale_resume_s=2.))
+        lease.start(10.)
+        lease.captured_s = 10.1
+        self.assertEqual(lease.failure(10.5), 'stale_camera')  # The trip itself is unchanged.
+        lease.pause(10.5)
+        self.assertEqual(lease.status, 'paused')
+        self.assertIsNone(lease.failure(12.49))
+        self.assertEqual(lease.failure(12.5), 'stale_camera')
+        # Only a frame captured after the stale one, and fresh now, can resume.
+        self.assertFalse(lease.eligible(self.frame(10.1), 11.))
+        self.assertFalse(lease.eligible(self.frame(10.55), 11.))
+        self.assertTrue(lease.eligible(self.frame(10.8), 11.))
+
+    def test_pause_never_outlives_run_timeout_or_a_stop(self):
+        lease = CommandLease(RuntimeConfig(max_age_s=.4, max_run_s=1., stale_resume_s=5.))
+        lease.start(10.)
+        lease.pause(10.4)
+        self.assertEqual(lease.failure(11.), 'run_timeout')
+        lease.stop('stopped')
+        self.assertIsNone(lease.paused_s)
+        lease.start(12.)
+        self.assertIsNone(lease.paused_s)
+
+    def test_disabled_pause_is_the_original_watchdog(self):
+        lease = CommandLease(RuntimeConfig(max_age_s=.4))
+        lease.start(10.)
+        lease.pause(10.4)  # Not used by the runtime when disabled; still cannot hold.
+        self.assertEqual(lease.failure(10.4), 'stale_camera')
+
     def test_queue_overload_keeps_memory_bounded_and_latest_request(self):
         queue = Queue(maxsize=1)
         drops = sum(put_latest(queue, i) for i in range(100))
@@ -121,6 +151,51 @@ class RealtimeProcessTests(unittest.TestCase):
         event = next(e for e in report['events'] if e.get('reason')=='stale_camera')
         self.assertLess(event['stopped_s']-event['deadline_s'], .05)
         self.assertTrue(all(f['applied_s'] < event['stopped_s'] for f in report['frames']))
+
+    def test_watchdog_pause_zeroes_motion_on_time_and_resumes_on_fresh_images(self):
+        # About 0.35 s of added latency per frame: the held image ages past 400 ms
+        # between results, but every arriving result is itself still fresh.
+        session = RealtimeSession(config=RuntimeConfig(max_age_s=.4, transport_s=.05,
+            inference_stall_s=.3, fault_after_s=.3, stale_resume_s=2.), offset=[3,-3,4,3,-2,2]).start()
+        try:
+            self.assertTrue(session.ready.wait(30))
+            state = self.wait_state(session, lambda s:s.get('counters',{}).get('watchdog_resumes',0)>=3)
+            self.assertTrue(state['active'])
+        finally:
+            session.close()
+        report = session.report()
+        counts = report['counts']
+        self.assertGreaterEqual(counts['watchdog_pauses'], 3)
+        for key in ('paused_motion_ticks', 'unsafe_motion_ticks', 'post_stop_motion_ticks'):
+            self.assertEqual(counts[key], 0, key)
+        pauses = [e for e in report['events'] if e['kind']=='pause']
+        resumes = [e for e in report['events'] if e['kind']=='resume']
+        self.assertTrue(all(e['stopped_s']-e['deadline_s'] < .05 for e in pauses))
+        self.assertFalse(any(e['kind']=='stop' and e['reason']=='stale_camera' for e in report['events']))
+        # Every command after a hold comes from an image captured after the hold began.
+        for pause, resume in zip(pauses, resumes):
+            self.assertGreater(resume['captured_s'], pause['last_capture_s'])
+            self.assertLess(pause['at_s']-resume['captured_s'], .4)
+        self.assertTrue(all(f['capture_to_command_ms'] < 400 for f in report['frames']))
+
+    def test_watchdog_pause_ends_the_run_when_images_do_not_return(self):
+        session = RealtimeSession(config=RuntimeConfig(max_age_s=.4, inference_stall_s=.8,
+            fault_after_s=.6, stale_resume_s=1.), offset=[3,-3,4,3,-2,2]).start()
+        try:
+            self.assertTrue(session.ready.wait(30))
+            state = self.wait_state(session, lambda s:s['status']=='stale_camera')
+            self.assertFalse(state['command'].any())
+        finally:
+            session.close()
+        report = session.report()
+        self.assertEqual(report['counts']['watchdog_pauses'], 1)
+        self.assertEqual(report['counts']['paused_motion_ticks'], 0)
+        self.assertEqual(report['counts']['unsafe_motion_ticks'], 0)
+        pause = next(e for e in report['events'] if e['kind']=='pause')
+        stop = next(e for e in report['events'] if e.get('reason')=='stale_camera' and e['kind']=='stop')
+        self.assertLess(pause['stopped_s']-pause['deadline_s'], .05)
+        self.assertAlmostEqual(stop['paused_for_s'], 1., delta=.05)
+        self.assertTrue(all(f['applied_s'] < pause['stopped_s'] for f in report['frames']))
 
     def test_manual_stop_and_rearm_have_distinct_frame_generations(self):
         session = RealtimeSession(offset=[3,-3,4,3,-2,2]).start()

@@ -124,3 +124,7 @@ Run **run.cmd --realtime --learned --max-camera-age-ms 400** for wall-clock cont
 [Perception tail latency and the 50 ms transport comparison](outputs/visual-servoing-simulation/PERCEPTION_LATENCY.md).
 
 [Sustained latency testing and spike diagnostics](outputs/visual-servoing-simulation/LATENCY_STRESS.md).
+
+## Acceptance test
+
+Run **acceptance-test.cmd** (about 30 minutes, on AC power) for the automated SIFT and Learned GPU acceptance test: five starting poses, repeated alignments and a 12-minute reused-worker run per method, ending in a PASS/FAIL report. [Plan, criteria and recorded evidence](docs/ACCEPTANCE_TEST.md).

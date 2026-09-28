@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "description": "SIFT and Learned GPU acceptance test. Fresh-worker multi-pose repeatability, then one reused worker per method for a sustained run. Criteria are fixed before execution.",
+  "methods": ["natural", "learned"],
+  "method_labels": {"natural": "SIFT", "learned": "Learned GPU"},
+  "runtime": {"max_age_s": 0.4, "transport_s": 0.05, "max_control_gap_s": 0.05},
+  "post_stop_seconds": 1.1,
+  "poses_degrees": [
+    [3, -3, 4, 3, -2, 2],
+    [1.5, -1.5, 2, 1.5, -1, 1],
+    [-3, 3, -4, -3, 2, -2],
+    [-2, -3, 3, -2, 2, 3],
+    [2, 3, -3, 2, -2, -3]
+  ],
+  "repeatability": {
+    "alignments_per_pose": 3,
+    "worker": "fresh sensor worker for each pose"
+  },
+  "sustained": {
+    "seconds": 720,
+    "minimum_attempts_per_pose": 10,
+    "drift_window_seconds": 120,
+    "worker": "one reused sensor worker and CUDA context for the whole run; poses cycle in order"
+  },
+  "schedule": ["repeatability:natural", "repeatability:learned", "sustained:natural", "sustained:learned"],
+  "gpu_sample_interval_ms": 1000,
+  "criteria": {
+    "success_rate": 1.0,
+    "processing_p95_ms": 150.0,
+    "processing_p99_ms": 175.0,
+    "processing_max_ms": 250.0,
+    "capture_p99_ms": 250.0,
+    "capture_max_ms": 400.0,
+    "freshness_trips": 0,
+    "control_misses": 0,
+    "unsafe_motion": 0,
+    "post_stop_motion": 0,
+    "contacts": 0,
+    "unlatched_stops": 0,
+    "position_mm": 2.0,
+    "orientation_deg": 1.0,
+    "later_to_first_p99_ratio": 1.5
+  }
+}

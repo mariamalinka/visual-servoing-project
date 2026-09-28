@@ -106,6 +106,34 @@ thread itself can only be detected after it returns. The process separation
 protects the watchdog from camera inference/rendering stalls; a physical robot
 would additionally need an actuator-side command timeout.
 
+## Watchdog response: stop or hold and resume
+
+`RuntimeConfig.stale_resume_s` chooses what happens when the freshness watchdog
+trips. The trip itself is unchanged in both cases: it fires at the same checks and
+at the same image age (400 ms in the tested configuration), and the robot is
+commanded to zero velocity at that moment.
+
+- **0 (default): stop.** The alignment ends as `stale_camera`, as before. Every
+  existing caller keeps this behaviour.
+- **Greater than 0: hold and resume.** The alignment is kept alive at zero
+  velocity. The next result whose image was captured after the stale one and is
+  itself fresh resumes control. If no such image arrives within `stale_resume_s`
+  seconds, the alignment ends as `stale_camera`. The run time limit, a manual Stop,
+  a new Align and every other stop reason still end it immediately.
+
+During a hold, frames are accepted only under the same eligibility rules as always,
+the success hold restarts, and the first controller step after a hold is given at
+most `max_age_s` of elapsed time (the largest step a normal run can see), so
+controller timers do not count the hold as motion. Counters `watchdog_pauses`,
+`watchdog_resumes`, `paused_s` and `paused_motion_ticks` (motion while held; must
+be 0) and `pause`/`resume` events are recorded. The interactive runtime takes
+`--stale-resume-ms`, for example `.\run.cmd --realtime --natural
+--max-camera-age-ms 400 --camera-delay-ms 50 --stale-resume-ms 2000`.
+
+Hold and resume helps with occasional slow frames. It does not make perception
+that is too slow on every frame work: then the robot moves in short bursts and the
+controller's own stall or timeout ends the alignment safely.
+
 ## Automated evidence
 
 ```powershell
