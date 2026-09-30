@@ -7,7 +7,9 @@
   "runtime": {"max_age_s": 0.4, "transport_s": 0.05, "max_control_gap_s": 0.05},
   "post_stop_seconds": 1.1,
   "criteria": {
-    "success_rate": 1.0,
+    "required_success_rate": 0.95,
+    "confidence": 0.95,
+    "max_failed_alignments": 0,
     "position_mm": 2.0,
     "orientation_deg": 1.0,
     "capture_p99_ms": 250.0,

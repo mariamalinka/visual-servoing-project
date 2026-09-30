@@ -46,11 +46,12 @@ def run_interactive(args):
               random_start_offset(args.seed) if args.random_start else None)
     config = RuntimeConfig(transport_s=(args.camera_delay_ms or 0)/1000,
                            max_age_s=args.max_camera_age_ms/1000,
-                           stale_resume_s=getattr(args, 'stale_resume_ms', 0)/1000)
+                           stale_resume_s=getattr(args, 'stale_resume_ms', 2000)/1000)
     def create(selected, start, auto):
         return RealtimeSession(selected, config, precision=not args.legacy_stop,
             calibration=calibration_profiles()[args.calibration_profile],
-            obstacle=args.obstacle, offset=start, auto_start=auto).start()
+            obstacle=args.obstacle, offset=start, auto_start=auto,
+            actuator=getattr(args, 'actuator', None)).start()
     session = create(mode, offset, not args.manual)
     window = 'Visual servoing | Wall-clock control'
     try:

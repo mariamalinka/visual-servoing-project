@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 APP = ROOT / 'outputs/visual-servoing-simulation'
 sys.path.insert(0, str(APP))
 from latency_stress import active_frames, distribution, feedback_age_bound, late_results
+from binomial_ci import format_interval, interpretation
 
 NAMES = {'natural': 'SIFT', 'learned': 'Learned GPU'}
 METRICS = ('mean', 'p95', 'p99', 'p99_9')
@@ -258,14 +259,17 @@ def report(result, directory):
         f"or {plan['maximum_sessions_per_method']} sessions maximum. Each session runs for at least "
         f"{plan['minimum_session_s']:g} s after ready and ends at an attempt boundary. "
         'Modes alternate in each complete round; all failures remain included.','',
+        'Success counts show the 95% Clopper-Pearson (exact) confidence interval for the true success rate.','',
         '| Method | Sessions | Aligned / attempts | First attempt in each process | Subsequent attempts | Active / ready minutes | Uncached active frames |',
         '|---|---:|---:|---:|---:|---:|---:|']
     for mode,r in methods.items():
         f=r['first_attempt'];s=r['reused_worker_attempts']
-        lines.append(f"| {NAMES[mode]} | {r['sessions']} | {r['alignments']}/{r['attempts']} | "
-            f"{f['aligned']}/{f['attempts']} | {s['aligned']}/{s['attempts']} | "
+        lines.append(f"| {NAMES[mode]} | {r['sessions']} | {r['alignments']}/{r['attempts']} {format_interval(r['alignments'], r['attempts'])} | "
+            f"{f['aligned']}/{f['attempts']} {format_interval(f['aligned'], f['attempts'])} | "
+            f"{s['aligned']}/{s['attempts']} {format_interval(s['aligned'], s['attempts'])} | "
             f"{r['active_s']/60:.1f} / {r['ready_s']/60:.1f} | {r['uncached_processing_ms']['count']:,} |")
     failures=sum(r['attempts']-r['alignments'] for r in methods.values())
+    lines += [''] + [f"- {NAMES[mode]}: {interpretation(r['alignments'], r['attempts'])}" for mode, r in methods.items()]
     missed=sum(r['counters']['control_deadline_misses'] for r in methods.values())
     fresh=sum(r['freshness_watchdog_trips'] for r in methods.values())
     lines += ['',f'Observed {failures} unsuccessful alignment attempts, {missed} control deadline misses and '

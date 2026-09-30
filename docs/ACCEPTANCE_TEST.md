@@ -18,11 +18,12 @@ Options: `--smoke` runs a 4-minute harness check (status `SMOKE_ONLY`, never a p
 at best). `--no-system-monitor` turns off the CPU/thermal sampler. `--report-only <folder>` recomputes the report from saved evidence after
 verifying the raw-trace checksums. `--output <new folder>` chooses the folder.
 
-`--stale-resume-ms 2000` runs with the watchdog set to **hold and resume** instead of
-stop (see `outputs/visual-servoing-simulation/REALTIME_CONTROL.md`). The criteria do not
-change: every hold still counts as a freshness watchdog trip, so a PASS still requires
-0. The report shows how many trips ended an alignment and how many were held and
-resumed, and any motion during a hold fails the run as a safety violation.
+The freshness watchdog uses the default response, **hold and resume**: a trip
+stops the robot at 400 ms, as before, but the alignment continues on the next fresh
+image. See [the decision and its evidence](WATCHDOG_DECISION.md). The report shows
+how many trips ended an alignment, how many were held and resumed, and the time
+spent held. `--watchdog-stop` runs with the original stop response instead (the
+folder name ends in `-stop`); `--stale-resume-ms N` sets another hold window.
 
 ## Long run (under 1 hour)
 
@@ -76,7 +77,9 @@ forbidden contact, an unlatched stop or a runtime error cancels the remaining se
 The harness imports the production `RealtimeSession` as it is. The controller,
 calibration, scene, reference images, perception settings, worker warm-up, 50 ms
 transport delay, **400 ms freshness watchdog** and **50 ms control deadline** are
-unchanged. The runtime values are asserted before the run and cannot be overridden.
+unchanged. The age limit, transport delay and control deadline are asserted before
+the run and cannot be overridden. Only the watchdog response can be changed, with
+`--watchdog-stop` or `--stale-resume-ms`, and it is recorded in the manifest.
 
 The harness changes three things, and only in its own process:
 
@@ -86,16 +89,16 @@ The harness changes three things, and only in its own process:
 - It writes that telemetry to disk while the robot is stopped.
 
 No file I/O runs in the active control loop, and no queue is made unbounded.
-By default the runtime settings are exactly production; `--stale-resume-ms` adds only
-`stale_resume_s`.
+The runtime settings are exactly production, including the watchdog response
+(`stale_resume_s`), which is recorded in `manifest.json`.
 
 The controller, calibration, scene, safety and transport files and their
 configuration are compared with the validated fingerprint in
 `results/latency/20260926-base-executable-settings/manifest.json`. If any of them
 differs, the run is **INVALID** and does not start. The only exception is a reviewed
 change listed in `tools/approved_changes.json`, pinned to both the baseline hash and
-the new hash (currently the opt-in watchdog hold-and-resume in `realtime.py`, which
-is off by default). The report names every approved change it relied on. Perception and model code may
+the new hash (currently the watchdog hold-and-resume in `realtime.py`; see
+[the decision](WATCHDOG_DECISION.md)). The report names every approved change it relied on. Perception and model code may
 differ; every file hash is recorded. Source, runner and configuration are rechecked
 before every session. A change mid-run makes the result INVALID. Use `--baseline` to
 certify against a newer validated manifest.
@@ -107,18 +110,37 @@ and the whole plan to complete.
 
 | Criterion | Limit |
 |---|---:|
-| Alignment success (fresh and sustained) | 100% |
+| Alignment success, fresh and sustained: 95% lower confidence bound | ≥ 95% |
+| Failed alignments | 0 |
 | Processing p95 / p99 / max | ≤ 150 / 175 / 250 ms |
 | Capture-to-command p99 / max | ≤ 250 / 400 ms |
-| Freshness watchdog trips / control deadline misses | 0 / 0 |
+| Alignments ended by the freshness watchdog / control deadline misses | 0 / 0 |
+| Time held by the watchdog, as a share of alignment time | ≤ 5% |
 | Unsafe motion / post-stop motion / forbidden contacts / unlatched stops | 0 / 0 / 0 / 0 |
-| Motion during a watchdog hold (hold-and-resume runs only) | 0 |
+| Motion during a watchdog hold | 0 |
 | Camera and tool position / orientation error, every attempt | ≤ 2 mm / 1° |
 | Later-alignment processing p99 ÷ first-alignment processing p99 | ≤ 1.5× |
 | Sustained run: duration, one worker PID, attempts per pose | ≥ 720 s, 1, ≥ 10 |
 | Telemetry loss, missing endpoints, runtime errors | 0 |
 
-These limits are the ones already predeclared in `tools/acceptance_campaign.json`.
+These limits are the ones already predeclared in `tools/acceptance_campaign.json`,
+except the watchdog rows, the success-rate rows and the sustained-run row (the
+campaign runs 30-minute sessions with at least 20 attempts per pose).
+
+**Success rate.** The success rule is decided on the lower bound of the exact 95%
+Clopper–Pearson confidence interval, not on the observed rate. 100% observed is not
+proof of 100% reliability. With about 150 alignments per method, a clean run shows a
+true rate of at least 97.5%. Demonstrating 95% needs at least 72 alignments with no
+failure, so a run cut short can fail this rule even with no failures. Separately,
+any failed alignment still fails the test (`max_failed_alignments: 0`). The report
+shows each method's interval, the fresh-worker and sustained-phase intervals, and
+whether the requirement was demonstrated. See [Success rates and confidence
+intervals](STATISTICS.md). Earlier results used "100% observed". `--report-only`
+keeps that rule for them and adds the intervals.
+
+**Watchdog.** Before hold and resume, the rule was "0 freshness watchdog
+trips". Results made under that rule keep it when re-reported with `--report-only`,
+and `--watchdog-stop` with that rule is the original test.
 
 **Processing** runs from render completion to the perception result. It covers every
 uncached active frame, including failed and late ones. **Capture-to-command** covers
@@ -136,6 +158,10 @@ The report also includes these figures, which are not gated:
 - Processing p99 in 2-minute windows through the sustained run (drift).
 - Stop reasons.
 - Physical error.
+- The actuator profile and the physical response to stops and holds: the longest
+  physical stopping time and camera travel after the zero command
+  ([actuator model](ACTUATOR_MODEL.md)). Runs from before the model show "not
+  measured".
 
 ## Recorded with every run
 

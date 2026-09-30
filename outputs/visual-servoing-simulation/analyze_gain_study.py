@@ -12,7 +12,8 @@ import tempfile
 import numpy as np
 
 from adaptive_gain import GainPolicy, LABELS, METHODS
-from analyze_benchmark import wilson_interval
+from analyze_benchmark import success_interval
+from binomial_ci import format_rate
 from analyze_comparison import median, number
 from benchmark import OUTCOMES, read_json, write_json
 from simulation import ROOT
@@ -95,8 +96,9 @@ def summarize(rows, confidence):
     growth = [r["peak_error_increase_pct"] for r in detected if r["peak_error_increase_pct"] is not None]
     return {
         "trials": len(rows), "initially_detected": len(detected), "successes": len(success),
-        "success_ci95_all": wilson_interval(len(success), len(rows), confidence),
-        "success_ci95_detected": wilson_interval(len(success), len(detected), confidence),
+        "success_ci95_all": success_interval(len(success), len(rows), confidence),
+        "success_ci95_detected": success_interval(len(success), len(detected), confidence),
+        "interval_method": "Clopper-Pearson (exact), two-sided",
         "median_settling_s_successes": median(success, "settling_time_s"),
         "median_completion_s_successes": median(success, "terminal_time_s"),
         "median_final_error_px_successes": median(success, "final_error_px"),
@@ -209,14 +211,13 @@ def analyze(directory):
         "# Adaptive-gain IBVS study", "",
         f"**{len(rows)} trials: {summary['poses']} identical starting poses per gain policy**, seed {manifest['seed']}. Search/recovery disabled.", "",
         "![Gain comparison](gain_comparison.png)", "",
-        "| Policy | Success/all starts | Success/detected starts (95% Wilson CI) | Median settling (s)* | Median completion (s)* | Median final error (px)* |",
+        "| Policy | Success/all starts (95% CI) | Success/detected starts (95% CI) | Median settling (s)* | Median completion (s)* | Median final error (px)* |",
         "|---|---:|---|---:|---:|---:|",
     ]
     for m,g in summary["methods"].items():
         k,d,n = g["successes"],g["initially_detected"],g["trials"]
-        lo,hi = g["success_ci95_detected"]
-        rate = f"{k}/{d} ({100*k/d:.1f}%; {100*lo:.1f}-{100*hi:.1f}%)" if d else "No detected starts"
-        lines.append(f"| {LABELS[m]} | {k}/{n} | {rate} | {number(g['median_settling_s_successes'])} | "
+        rate = format_rate(k, d) if d else "No detected starts"
+        lines.append(f"| {LABELS[m]} | {format_rate(k, n)} | {rate} | {number(g['median_settling_s_successes'])} | "
                      f"{number(g['median_completion_s_successes'])} | {number(g['median_final_error_px_successes'],3)} |")
     lines += ["", "*Successful trials only. Settling is the start of the final sustained below-threshold streak. Completion includes the hold window; stopped observation adds another second.", "",
               "## Paired timing changes", "",

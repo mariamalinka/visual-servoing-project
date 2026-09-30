@@ -16,6 +16,7 @@ import mujoco
 import numpy as np
 from PIL import Image
 from benchmark import read_json,write_json
+from binomial_ci import format_rate
 from perception import ArucoPerception,NaturalImagePerception,NATURAL_REFERENCE,load_natural_config
 from reference_image import DEFAULT_REFERENCE,load_reference
 from run_startup_search import SOURCES,trial,make_plan
@@ -163,10 +164,12 @@ Every sampled case is retained. Two negative controls (absent target and wrong t
 use an explicitly shortened **3-second search deadline**, followed by the same
 one-second stopped observation. This is an initial functional comparison, not a
 200-trial success-rate study or a test across many different natural pictures.
+Brackets are 95% Clopper-Pearson (exact) intervals: 12/12 only shows a true rate of at
+least 73.5%.
 
 | Measurement | ArUco | Picture / SIFT |
 |---|---:|---:|
-| Aligned and stable for 1 s after stopping | {a['converged']}/12 | {b['converged']}/12 |
+| Aligned and stable for 1 s after stopping | {format_rate(a['converged'],a['cases'])} | {format_rate(b['converged'],b['cases'])} |
 | Initially undetected | {a['initially_undetected']} | {b['initially_undetected']} |
 | Median total simulated time, successful cases | {a['median_total_s_successes']} | {b['median_total_s_successes']} |
 | Median of per-trial detector-call medians (ms) | {a['median_per_trial_detector_ms']} | {b['median_per_trial_detector_ms']} |

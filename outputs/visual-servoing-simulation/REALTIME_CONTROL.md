@@ -35,8 +35,9 @@ rendering, IPC and transport consume additional time.
 
 The command above and the default latency experiment explicitly use **400 ms**
 to evaluate nominal alignment. This is a tested simulation setting, not a robot
-safety specification. A sufficiently slow frame or loaded host still causes a
-latched stop. Increasing the age limit trades more tolerant operation for longer
+safety specification. A sufficiently slow frame or loaded host still stops the
+robot. With the default hold-and-resume response (below), motion continues on the
+next fresh image; with the stop setting, the stop is latched. Increasing the age limit trades more tolerant operation for longer
 exposure to outdated feedback. The measured experiment records the budget used
 in every row and does not silently relax it after a failure.
 
@@ -79,10 +80,13 @@ Long-run percentiles therefore describe the retained windows.
 ## Stopping and overload
 
 The control loop requests a **2 ms** period. It checks the last accepted capture
-age on every iteration, even when no frame arrives. A new result cannot revive
-an expired lease. An Align action changes the generation number, rejecting any
-frame captured by the previous run. Repeated or future timestamps are rejected.
-Zero commands are retained until another explicit Align action.
+age on every iteration, even when no frame arrives. A result that is itself too
+old can never refresh the lease. An Align action changes the generation number,
+rejecting any frame captured by the previous run. Repeated or future timestamps are
+rejected. After a stop, zero commands are retained until another explicit Align
+action. With the default hold-and-resume response (below), a trip first holds the
+alignment at zero velocity. A newer, fresh image of the same alignment resumes it,
+and the alignment stops as `stale_camera` after 2 s without one.
 
 The loop checks deadlines before control computation and again before advancing
 physics. A control-loop gap or computation exceeding **50 ms** stops alignment
@@ -100,6 +104,20 @@ larger than 50 ms is capped rather than replaying an arbitrarily long command;
 physics steps. A zero velocity command is a stop request to the simulated motor,
 not a claim that physical joint velocity instantly becomes zero.
 
+Between the command and MuJoCo's velocity servos sits the simulated actuator model
+(`actuator.py`, profile from `actuator_config.json`). It limits acceleration,
+deceleration and jerk, so after every stop or hold the arm brakes over a measurable
+time and distance, and after a resume it ramps up smoothly. The runtime's safety
+counters (`unsafe_motion_ticks`, `post_stop_motion_ticks`, `paused_motion_ticks`)
+still count *commanded* motion, which a stop still zeroes at once. The *physical*
+response is measured separately: each stop and hold event records a command serial,
+the simulation records the braking that follows (`motion` in the report), and
+`stop_response.py` joins them into three numbers that must not be confused:
+command stop latency (limit to zero command), physical stopping time (zero command
+to standstill) and physical stopping distance. `RealtimeSession(actuator='ideal')`
+or `run.cmd --realtime --actuator ideal` switches the model off. Details, assumptions
+and measured values: [actuator model](../../docs/ACTUATOR_MODEL.md).
+
 Python, Windows scheduling and this simulated actuator interface do not provide
 hard real-time guarantees. In particular, a blocking operation in the control
 thread itself can only be detected after it returns. The process separation
@@ -113,22 +131,27 @@ trips. The trip itself is unchanged in both cases: it fires at the same checks a
 at the same image age (400 ms in the tested configuration), and the robot is
 commanded to zero velocity at that moment.
 
-- **0 (default): stop.** The alignment ends as `stale_camera`, as before. Every
-  existing caller keeps this behaviour.
-- **Greater than 0: hold and resume.** The alignment is kept alive at zero
+- **2 s (default): hold and resume.** The alignment is kept alive at zero
   velocity. The next result whose image was captured after the stale one and is
   itself fresh resumes control. If no such image arrives within `stale_resume_s`
   seconds, the alignment ends as `stale_camera`. The run time limit, a manual Stop,
   a new Align and every other stop reason still end it immediately.
+- **0: stop.** The alignment ends as `stale_camera`, the original behaviour. The
+  latency study and stress runner use this setting, because they validate the stop
+  response and reproduce its recorded evidence.
+
+Why hold and resume is the default, the evidence and the trade-offs:
+[watchdog decision](../../docs/WATCHDOG_DECISION.md).
 
 During a hold, frames are accepted only under the same eligibility rules as always,
 the success hold restarts, and the first controller step after a hold is given at
 most `max_age_s` of elapsed time (the largest step a normal run can see), so
 controller timers do not count the hold as motion. Counters `watchdog_pauses`,
 `watchdog_resumes`, `paused_s` and `paused_motion_ticks` (motion while held; must
-be 0) and `pause`/`resume` events are recorded. The interactive runtime takes
-`--stale-resume-ms`, for example `.\run.cmd --realtime --natural
---max-camera-age-ms 400 --camera-delay-ms 50 --stale-resume-ms 2000`.
+be 0) and `pause`/`resume` events are recorded. The interactive runtime uses hold
+and resume by default. `--watchdog-stop` selects stop, and `--stale-resume-ms N` sets
+the window, for example `.\run.cmd --realtime --natural --max-camera-age-ms 400
+--camera-delay-ms 50 --watchdog-stop`.
 
 Hold and resume helps with occasional slow frames. It does not make perception
 that is too slow on every frame work: then the robot moves in short bursts and the

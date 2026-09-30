@@ -154,12 +154,13 @@ class ConfigurationContract(unittest.TestCase):
         check = t.baseline_check(fingerprint(), t.DEFAULT_BASELINE)
         self.assertEqual(check['protected_changed'], [])
 
-    def test_stale_resume_is_opt_in_and_keeps_production_limits(self):
-        self.assertIs(t.with_stale_resume(CONFIG, 0), CONFIG)
-        runtime = t.with_stale_resume(CONFIG, 2000)['runtime']
+    def test_watchdog_response_is_explicit_and_keeps_production_limits(self):
+        self.assertEqual(t.DEFAULT_STALE_RESUME_MS, 2000.0)
+        self.assertEqual(t.with_stale_resume(CONFIG, 0)['runtime']['stale_resume_s'], 0.0)
+        runtime = t.with_stale_resume(CONFIG, t.DEFAULT_STALE_RESUME_MS)['runtime']
         self.assertEqual({k: runtime[k] for k in t.PRODUCTION_RUNTIME}, t.PRODUCTION_RUNTIME)
         self.assertEqual(runtime['stale_resume_s'], 2.0)
-        self.assertNotIn('stale_resume_s', CONFIG['runtime'])
+        self.assertNotIn('stale_resume_s', CONFIG['runtime'])  # Not mutated.
         self.assertIn('**stop**', t.watchdog_line({}))
         self.assertIn('hold and resume', t.watchdog_line(dict(runtime_config=dict(stale_resume_s=2.0))))
 
@@ -235,7 +236,87 @@ class Verdicts(unittest.TestCase):
         Evidence(self.directory, learned_outcome='stale_camera').finalize()
         learned = {m['mode']: m for m in self.verdict()['methods']}['learned']
         self.assertTrue(any(f.startswith('alignment success') for f in learned['failures']))
-        self.assertTrue(any(f.startswith('freshness_trips') for f in learned['failures']))
+        self.assertTrue(any(f.startswith('watchdog_stops') for f in learned['failures']))
+
+    def test_success_gate_uses_the_lower_confidence_bound(self):
+        evidence = Evidence(self.directory)
+        n = sum(s['attempts'] for s in evidence.sessions if s['mode'] == 'learned')
+        self.assertGreaterEqual(n, 72)  # Enough all-success trials to demonstrate 95%.
+        self.assertEqual(evidence.finalize(), 'PASS')
+        method = {m['mode']: m for m in self.verdict()['methods']}['learned']
+        self.assertTrue(method['success_ci']['meets_required'])
+        self.assertAlmostEqual(method['success_ci']['ci_low'], 0.025 ** (1 / n), places=9)
+
+    def test_ten_of_ten_is_not_enough_to_claim_95_percent(self):
+        evidence = Evidence(self.directory)
+        sessions = copy.deepcopy(evidence.sessions)
+        for s in sessions:  # Same data, but only 10 successful alignments per method.
+            s['attempts'] = s['aligned'] = 2 if s['phase'] == 'repeatability' else 0
+        methods = [t.method_summary(mode, sessions, self.directory, CONFIG, evidence.plan) for mode in ('natural', 'learned')]
+        for m in methods:
+            self.assertEqual((m['aligned'], m['attempts'], m['success_rate']), (10, 10, 1.0))
+            self.assertTrue(any('lower bound 69.2% < required 95.0%' in f for f in m['failures']), m['failures'])
+
+    def test_failed_alignment_rule_is_separate_from_the_confidence_rule(self):
+        evidence = Evidence(self.directory)
+        sessions = copy.deepcopy(evidence.sessions)
+        sustained = next(s for s in sessions if s['mode'] == 'learned' and s['phase'] == 'sustained')
+        # One failure in 175 alignments: the confidence rule passes (lower bound about 96.9%),
+        # but the separate zero-failure rule does not.
+        sustained['attempts'] += 100; sustained['aligned'] += 99
+        m = t.method_summary('learned', sessions, self.directory, CONFIG, evidence.plan)
+        self.assertTrue(m['success_ci']['meets_required'])
+        self.assertTrue(any(f.startswith('failed alignments 1') for f in m['failures']))
+        relaxed = copy.deepcopy(CONFIG); relaxed['criteria']['max_failed_alignments'] = None
+        m = t.method_summary('learned', sessions, self.directory, relaxed, evidence.plan)
+        self.assertFalse(any('alignment' in f for f in m['failures']), m['failures'])
+
+    def test_configs_from_before_confidence_intervals_use_the_observed_rate(self):
+        evidence = Evidence(self.directory)
+        legacy = copy.deepcopy(CONFIG)
+        for key in ('required_success_rate', 'confidence', 'max_failed_alignments'):
+            legacy['criteria'].pop(key)
+        legacy['criteria']['success_rate'] = 1.0
+        sessions = copy.deepcopy(evidence.sessions)
+        for s in sessions:
+            s['attempts'] = s['aligned'] = 2 if s['phase'] == 'repeatability' else 0
+        m = t.method_summary('learned', sessions, self.directory, legacy, evidence.plan)
+        self.assertFalse(any('alignment success' in f for f in m['failures']))
+        self.assertIsNotNone(m['success_ci']['ci_low'])  # Still reported.
+
+    def test_report_states_the_interval_and_its_meaning(self):
+        Evidence(self.directory).finalize()
+        report = (self.directory / 'REPORT.md').read_text(encoding='utf-8')
+        for text in ('95% confidence interval, exact Clopper-Pearson', 'success rate demonstrated',
+                     'does not prove 100% reliability', 'needs at least 72 alignments',
+                     '95% lower confidence bound on alignment success >= 95.0%'):
+            self.assertIn(text, report)
+
+    def test_config_cannot_require_100_percent_as_a_confidence_claim(self):
+        bad = copy.deepcopy(CONFIG); bad['criteria']['required_success_rate'] = 1.0
+        self.assertTrue(t.validate_config(bad))
+
+    def test_pause_budget(self):
+        evidence = Evidence(self.directory)
+        for paused_s, expected in ((0.0, 'PASS'), (4.0, 'PASS'), (40.0, 'FAIL')):
+            with self.subTest(paused_s=paused_s):
+                sessions = copy.deepcopy(evidence.sessions)
+                for s in sessions:  # About 3 s per alignment; 4 s held of ~490 s total is < 5%.
+                    s['watchdog_pauses'] = 2 if paused_s else 0
+                    s['freshness_trips'] = s['watchdog_pauses']
+                    s['paused_s'] = paused_s / len(sessions)
+                status = t.finalize(self.directory, sessions, CONFIG, evidence.plan, dict(plan=evidence.plan), True)
+                self.assertEqual(status, expected)
+        self.assertTrue(any(f.startswith('paused ') for m in self.verdict()['methods'] for f in m['failures']))
+
+    def test_configs_from_before_hold_and_resume_fail_every_trip(self):
+        evidence = Evidence(self.directory)
+        legacy = copy.deepcopy(CONFIG)
+        legacy['criteria'].pop('watchdog_stops'); legacy['criteria'].pop('paused_fraction')
+        legacy['criteria']['freshness_trips'] = 0
+        sessions = copy.deepcopy(evidence.sessions)
+        sessions[-1].update(freshness_trips=1, watchdog_pauses=1, stale_stops=0, paused_s=0.1)
+        self.assertEqual(t.finalize(self.directory, sessions, legacy, evidence.plan, dict(plan=evidence.plan), True), 'FAIL')
 
     def test_short_sustained_run_fails(self):
         self.assertEqual(Evidence(self.directory, sustained_s=500).finalize(), 'FAIL')
@@ -244,7 +325,7 @@ class Verdicts(unittest.TestCase):
     def test_each_safety_counter_fails(self):
         evidence = Evidence(self.directory)
         for key in ('control_misses', 'unsafe_motion', 'post_stop_motion', 'contacts', 'unlatched_stops',
-                    'telemetry_lost', 'runtime_errors', 'missing_endpoints', 'paused_motion', 'freshness_trips'):
+                    'telemetry_lost', 'runtime_errors', 'missing_endpoints', 'paused_motion', 'stale_stops'):
             with self.subTest(key=key):
                 sessions = copy.deepcopy(evidence.sessions)
                 sessions[-1][key] = 1
@@ -286,6 +367,32 @@ class Procedure(unittest.TestCase):
 
     def test_older_runs_say_not_recorded(self):
         self.assertIn('Fresh restart: not recorded', '\n'.join(t.procedure_lines({})))
+
+
+
+class PhysicalStops(unittest.TestCase):
+    """Actuator-model stop measurements are reported, never gated, and absent for older runs."""
+
+    def test_physical_stop_rows(self):
+        motion = [dict(kind='stop', reason='watchdog_pause', outcome='stopped', started_s=1.0, duration_s=0.14,
+                       stop_time_s=0.12, setpoint_stop_time_s=0.08, speed_at_command_rad_s=0.2,
+                       max_joint_travel_rad=0.01, camera_travel_mm=6.5, tool_travel_mm=6.0, camera_rotation_deg=0.8,
+                       peak_measured_accel_rad_s2=5.0, peak_setpoint_accel_rad_s2=5.0, peak_setpoint_jerk_rad_s3=150.0,
+                       peak_measured_jerk_rad_s3=160.0, command_serials=[4])]
+        events = [dict(kind='pause', reason='stale_camera', at_s=5.0, deadline_s=5.0, stopped_s=5.001, command_serial=4)]
+        summary = t.physical_stops(events, dict(actuator=dict(profile='default'), motion=motion))
+        method = dict(physical_stops=summary)
+        self.assertEqual(t.physical_stop_text(method, 'pause'), '120 ms / 6.5 mm (1 while moving)')
+        self.assertEqual(t.physical_stop_text(method, 'stop'), 'none while moving')
+
+    def test_runs_before_the_actuator_model_are_not_measured(self):
+        self.assertIsNone(t.physical_stops([dict(kind='stop', reason='converged', at_s=1.0)], dict(counts={})))
+        self.assertEqual(t.physical_stop_text(dict(physical_stops=None), 'stop'), 'not measured')
+
+    def test_actuator_files_are_protected(self):
+        for name in ('actuator.py', 'actuator_config.json', 'simulation.py', 'realtime.py'):
+            self.assertTrue(t.is_protected(name), name)
+        self.assertFalse(t.is_protected('stop_response.py'))  # Analysis only.
 
 
 if __name__ == '__main__':

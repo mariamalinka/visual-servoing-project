@@ -24,7 +24,8 @@ Every session must meet every criterion:
 
 | Criterion | Limit |
 |---|---:|
-| Alignment success | 100% |
+| Alignment success: 95% lower confidence bound (exact Clopper–Pearson) | ≥ 95% |
+| Failed alignments | 0 |
 | Reused-worker duration | At least 1,800 seconds |
 | Coverage | At least 20 attempts per declared pose |
 | Camera and tool position error, every attempt | ≤2 mm |
@@ -35,6 +36,13 @@ Every session must meet every criterion:
 | Freshness trips / control deadline misses | 0 / 0 |
 | Unsafe motion / post-stop motion / forbidden contacts | 0 / 0 / 0 |
 | Unlatched stops / worker restarts / runtime errors / telemetry loss | 0 |
+
+The success criterion uses the lower bound of the 95% confidence interval, not the
+observed rate; see [Success rates and confidence intervals](STATISTICS.md). A 30-minute
+session gives a few hundred alignments, well above the 72 all-success alignments
+needed to show 95%. Campaigns declared before this change used "100% observed". Their
+saved configuration keeps that rule, and continuing such a campaign
+(`--continue-from`) requires the same configuration.
 
 The runtime freshness watchdog remains **400 ms**, the control deadline **50 ms**, and added transport delay **50 ms**. Acceptance latency gates are reporting gates; they do not change control behavior or replace those safety limits. Physical thresholds reuse the existing accuracy study's 2 mm / 1° contract. Latency targets add explicit engineering headroom below the freshness ceiling; they are not claimed hard-real-time guarantees.
 

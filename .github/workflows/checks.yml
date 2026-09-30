@@ -45,4 +45,6 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -B -m unittest discover -s tests -p test_precision.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          python -B -m unittest discover -s tests -p test_realtime.py -k LeaseTests -v
+          python -B -m unittest discover -s tests -p test_realtime.py -k LeaseTests -
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -B -m unittest discover -s tests -p test_binomial_ci.py -v

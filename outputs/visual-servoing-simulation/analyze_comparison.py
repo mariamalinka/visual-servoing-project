@@ -11,7 +11,8 @@ from pathlib import Path
 
 import numpy as np
 
-from analyze_benchmark import wilson_interval
+from analyze_benchmark import success_interval
+from binomial_ci import format_rate
 from baselines import LABELS, METHODS
 from benchmark import read_json, write_json
 from simulation import ROOT
@@ -27,8 +28,9 @@ def summarize(rows, confidence=.95):
     detected = [r for r in rows if r["initial_detected"]]
     return {
         "trials": len(rows), "initially_detected": len(detected), "successes": len(successful),
-        "success_ci95_all": wilson_interval(len(successful), len(rows), confidence),
-        "success_ci95_detected": wilson_interval(len(successful), len(detected), confidence),
+        "success_ci95_all": success_interval(len(successful), len(rows), confidence),
+        "success_ci95_detected": success_interval(len(successful), len(detected), confidence),
+        "interval_method": "Clopper-Pearson (exact), two-sided",
         "median_convergence_s_successes": median(successful, "terminal_time_s"),
         "median_settling_s_successes": median(successful, "settling_time_s"),
         "median_final_error_px_successes": median(successful, "final_error_px"),
@@ -120,7 +122,7 @@ def generate_figures(directory, rows, summary, manifest):
         names = ["Image-based\nIBVS", "Pose-based\nPBVS", "Look once\n+ joint feedback"]
         axes[0].set(xticks=range(3), xticklabels=names, ylim=(0, 116),
                     ylabel="Success among initially detected starts (%)",
-                    title="95% Wilson intervals; invisible starts reported separately")
+                    title="95% Clopper-Pearson intervals; invisible starts reported separately")
         axes[1].axhline(manifest["simulation_config"]["ibvs"]["success_error_px"],
                         color="#555555", linestyle="--", label="Success threshold")
         axes[1].set(xticks=range(3), xticklabels=names, yscale="log",
@@ -186,14 +188,13 @@ def analyze(directory):
         f"**{len(static)} static trials: {len(static)//3} identical starting poses per controller**, seed {manifest['seed']}. "
         "Three additional target-step runs are a separate demonstration.", "",
         "![Controller comparison](comparison.png)", "",
-        "| Controller | Success, all starts | Success, detected starts (95% Wilson CI) | Median convergence (s)* | Median final error (px)* | Median final error, all measured detected starts (px) |",
+        "| Controller | Success, all starts (95% CI) | Success, detected starts (95% CI) | Median convergence (s)* | Median final error (px)* | Median final error, all measured detected starts (px) |",
         "|---|---:|---|---:|---:|---:|",
     ]
     for method, group in summary["static"].items():
         k, n, d = group["successes"], group["trials"], group["initially_detected"]
-        lo, hi = group["success_ci95_detected"]
-        conditional = f"{k}/{d} ({100*k/d:.1f}%; {100*lo:.1f}-{100*hi:.1f}%)" if d else "No detected starts"
-        lines.append(f"| {LABELS[method]} | {k}/{n} | {conditional} | "
+        conditional = format_rate(k, d) if d else "No detected starts"
+        lines.append(f"| {LABELS[method]} | {format_rate(k, n)} | {conditional} | "
                      f"{number(group['median_convergence_s_successes'])} | "
                      f"{number(group['median_final_error_px_successes'], 3)} | "
                      f"{number(group['median_final_error_px_detected'], 3)} |")

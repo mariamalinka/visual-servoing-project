@@ -4,13 +4,75 @@
   "changes": [
     {
       "file": "realtime.py",
-      "title": "freshness watchdog hold-and-resume (RuntimeConfig.stale_resume_s, default 0 = original stop)",
-      "date": "2026-09-28",
+      "title": "hold-and-resume default (stale_resume_s = 2 s) plus actuator-model stop reasons and physical-stop reporting",
+      "date": "2026-09-30",
       "baseline_sha256": "e91c22f2945f67af322543f75cfe1637287089ce33a71213e2050e5e996296cf",
-      "sha256": "8ef8223c15531e4cf47f856a9395013a47249c87dd8c48c7d91c465ee30b7086",
-      "summary": "Adds an opt-in watchdog response. With stale_resume_s = 0 (default and every existing caller) the runtime stops exactly as before. With stale_resume_s > 0, the 400 ms freshness trip commands zero velocity at the same moment but keeps the alignment; the next fresh frame resumes it, and the run ends as stale_camera only if no fresh frame arrives within stale_resume_s. Adds counters watchdog_pauses, watchdog_resumes, paused_s and paused_motion_ticks, and pause/resume events.",
+      "sha256": "fe159a37597bb32f678857d1955dd3bab9c340e63d1336975578b03252a7587c",
+      "summary": "Adds hold-and-resume as the default freshness-watchdog response. The trip is unchanged: zero velocity at the same moment and image age. With stale_resume_s > 0 (default 2 s) the alignment is paused, resumes on the next fresh frame, and ends as stale_camera only if none arrives within stale_resume_s. stale_resume_s = 0 restores the original stop exactly. Adds counters watchdog_pauses, watchdog_resumes, paused_s, paused_motion_ticks and pause/resume events. Rationale and evidence: docs/WATCHDOG_DECISION.md. 2026-09-30: stop/pause/shutdown pass their reason to Simulation.command_velocity; stop, pause and resume events record a command_serial; RealtimeSession(actuator=...) selects the actuator profile; report() adds 'actuator', 'motion' and 'motion_evicted'. Watchdog logic and timing are unchanged.",
       "tests": [
         "outputs/visual-servoing-simulation/tests/test_realtime.py"
+      ],
+      "supersedes": [
+        {
+          "sha256": "db20918beb2e290664fe6ca67b3db71b9d50d8d1735872852446054782799b50",
+          "date": "2026-09-29",
+          "title": "freshness watchdog hold-and-resume, default on (stale_resume_s = 2 s; 0 = original stop)"
+        },
+        {
+          "sha256": "8ef8223c15531e4cf47f856a9395013a47249c87dd8c48c7d91c465ee30b7086",
+          "date": "2026-09-28",
+          "title": "same mechanism, off by default"
+        }
+      ],
+      "evidence": [
+        "outputs/visual-servoing-simulation/results/margin-test/20260928-233454",
+        "outputs/visual-servoing-simulation/results/margin-test/20260928-234612-resume2000ms",
+        "outputs/visual-servoing-simulation/results/acceptance-test/20260929-011129",
+        "outputs/visual-servoing-simulation/results/stop-response/20260930-004121"
+      ]
+    },
+    {
+      "file": "simulation.py",
+      "title": "actuator dynamics between command and servo; physical stop measurement",
+      "date": "2026-09-30",
+      "baseline_sha256": "fdaab73e8d7305cc10c94e42e7865ee05b4d86bea46c6930287c00c91346f160",
+      "sha256": "881440811f76f342f345ef67fb5c3d4d2778a1e4f9a3b2a818a8e0503d437cf4",
+      "summary": "Adds the simulated actuator dynamics model (actuator.py, actuator_config.json; docs/ACTUATOR_MODEL.md) between the guarded velocity command and MuJoCo's velocity servos: acceleration, deceleration and jerk limits; profile 'ideal' passes the command through unchanged. Every stop, hold, collision block and shutdown still zeroes the command at the same moment; the physical braking that follows is measured (Simulation.motion_log). The joint-limit backstop now triggers earlier by the remaining stopping distance (zero with 'ideal'). command_velocity() takes an optional stop reason. velocity_command keeps its meaning.",
+      "tests": [
+        "outputs/visual-servoing-simulation/tests/test_actuator.py",
+        "outputs/visual-servoing-simulation/tests/test_realtime.py",
+        "outputs/visual-servoing-simulation/tests/test_collision.py"
+      ],
+      "evidence": [
+        "outputs/visual-servoing-simulation/results/stop-response/20260930-004121"
+      ]
+    },
+    {
+      "file": "actuator.py",
+      "title": "new: actuator dynamics model",
+      "date": "2026-09-30",
+      "baseline_sha256": null,
+      "sha256": "26c9d3209a5d7aa4790a91098fb27d85efd8cd524cd50217aa6f7209b79df1fc",
+      "summary": "Adds the simulated actuator dynamics model (actuator.py, actuator_config.json; docs/ACTUATOR_MODEL.md) between the guarded velocity command and MuJoCo's velocity servos: acceleration, deceleration and jerk limits; profile 'ideal' passes the command through unchanged. Every stop, hold, collision block and shutdown still zeroes the command at the same moment; the physical braking that follows is measured (Simulation.motion_log). Rejects a profile that brakes slower than the collision guard's braking_time_s assumes.",
+      "tests": [
+        "outputs/visual-servoing-simulation/tests/test_actuator.py"
+      ],
+      "evidence": [
+        "outputs/visual-servoing-simulation/results/stop-response/20260930-004121"
+      ]
+    },
+    {
+      "file": "actuator_config.json",
+      "title": "new: actuator profiles (ideal, default, gentle)",
+      "date": "2026-09-30",
+      "baseline_sha256": null,
+      "sha256": "c00ef32bc9ed673bc369e14761b718e9dc1ef323e161552265dd09fa72157c2f",
+      "summary": "Assumed limits, not drive data: default 2 rad/s^2 acceleration, 5 rad/s^2 deceleration, 150 rad/s^3 jerk; standstill below 0.001 rad/s for 20 ms; servo lag allowance 15 ms.",
+      "tests": [
+        "outputs/visual-servoing-simulation/tests/test_actuator.py"
+      ],
+      "evidence": [
+        "outputs/visual-servoing-simulation/results/stop-response/20260930-004121"
       ]
     }
   ]

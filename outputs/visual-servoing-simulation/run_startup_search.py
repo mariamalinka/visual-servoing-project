@@ -16,6 +16,7 @@ import numpy as np
 from PIL import Image
 
 from benchmark import BENCH_CONFIG, read_json, sample_plan, write_json
+from binomial_ci import clopper_pearson, format_rate
 from control import IBVSController
 from recovery import ACTIVE_STATES, ReacquiringIBVS, load_recovery_config
 from reference_image import DEFAULT_REFERENCE, load_reference
@@ -205,6 +206,7 @@ def summarize(rows):
         acquired=[r for r in unseen if r["acquisition_s"] is not None]
         negatives=[r for r in rows if r["method"]==method and r["case"]!="random_target"]
         result[method]=dict(trials=len(group),converged=len(successes),
+            converged_ci95=clopper_pearson(len(successes),len(group)),interval_method="Clopper-Pearson (exact), two-sided",
             initially_undetected=len(unseen),acquired_initially_undetected=len(acquired),
             aligned_initially_undetected=sum(r["outcome"]=="converged" for r in unseen),
             median_acquisition_s_initially_undetected=median([r["acquisition_s"] for r in acquired]),
@@ -260,10 +262,12 @@ are reported separately from the randomized target-present group.
 
 | Measurement | Direct IBVS | Startup search + IBVS |
 |---|---:|---:|
-| Aligned and stable for 1 s after stopping | {a['converged']}/{a['trials']} | {b['converged']}/{b['trials']} |
+| Aligned and stable for 1 s after stopping | {format_rate(a['converged'],a['trials'])} | {format_rate(b['converged'],b['trials'])} |
 | Initially undetected | {a['initially_undetected']} | {b['initially_undetected']} |
-| Initially undetected, then acquired | {a['acquired_initially_undetected']} | {b['acquired_initially_undetected']} |
-| Initially undetected, then aligned | {a['aligned_initially_undetected']} | {b['aligned_initially_undetected']} |
+| Initially undetected, then acquired | {format_rate(a['acquired_initially_undetected'],a['initially_undetected'])} | {format_rate(b['acquired_initially_undetected'],b['initially_undetected'])} |
+| Initially undetected, then aligned | {format_rate(a['aligned_initially_undetected'],a['initially_undetected'])} | {format_rate(b['aligned_initially_undetected'],b['initially_undetected'])} |
+
+Counts show the 95% Clopper-Pearson (exact) confidence interval for the true rate; see docs/STATISTICS.md.
 
 ![Paired results](overview.png)
 

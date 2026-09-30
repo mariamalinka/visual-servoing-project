@@ -39,8 +39,14 @@ captured while the robot is idle are not delayed.
 
 For each method, the report gives:
 
-- **Tolerated added delay:** the largest level where it, and every lower level,
-  aligned 10/10 and no alignment was ended by the freshness watchdog.
+- **Tolerated added delay:** the largest level where it, and every lower level not
+  excluded for a laptop low-power state, aligned 10/10 and no alignment was ended by the freshness watchdog. 10/10 shows a
+  true success rate of at least 69.2% at that level (95% confidence), not 100%.
+  Each level's "Aligned" cell shows its exact 95% interval, and `margin.csv` has
+  `success_ci_low` and `success_ci_high` columns. The margin is a characterisation.
+  Demonstrating 95% per level would need 72 alignments; adding
+  `required_success_rate` to `tools/margin_test.json` switches to that rule. See
+  [Success rates and confidence intervals](STATISTICS.md).
 - **Equivalent slowdown:** (normal processing p50 + tolerated delay) ÷ normal p50.
   For example, "2.0× slower perception" means hardware with half this laptop's
   perception speed is at the edge.
@@ -50,25 +56,36 @@ For each method, the report gives:
   - Processing and capture-to-command latency, and time to converge.
   - Whether the laptop's own low-power state was detected during that level.
 
-## Hold and resume
+## Watchdog response
+
+The test uses the default response, **hold and resume**: a trip stops the robot at
+400 ms, and the alignment continues on the next fresh image. A level fails only if an
+alignment did not converge or was ended by the watchdog. Holds and the time held are
+reported in their own column.
 
 ```powershell
-.\margin-test.cmd --stale-resume-ms 2000
+.\margin-test.cmd --watchdog-stop
 ```
 
-runs the same levels with the watchdog set to **hold and resume** instead of stop
-(see `REALTIME_CONTROL.md`). The folder name ends in `-resume2000ms`. The 400 ms
-trip, 50 ms deadline and all other limits are the same; only what happens after a
-trip changes. The report then has a "Held and resumed" column, and a level fails
-only if an alignment did not converge or was ended by the watchdog. Compare the
-tolerated delay with a normal run made under the same conditions.
+runs the same levels with the original stop response (the folder name ends in
+`-stop`), for comparison with earlier results. On this laptop, back to back, the
+tolerated delay was:
 
-In the cloud check on a slower CPU, SIFT without injected delay took about 82 ms
-per frame. With the default stop, +100 ms aligned 0/5. With hold and resume it
-aligned 5/5 (139 holds, 15 s held, median 7.8 s to converge instead of 3.8 s).
-At +150 ms and above it still failed: holds happened on almost every frame, and
-the controller ended each alignment as stalled or timed out. There was no unsafe
-motion at any level.
+| | Stop | Hold and resume |
+|---|---:|---:|
+| SIFT | +75 ms | +150 ms |
+| Learned GPU | +25 ms | +150 ms |
+
+Why this is the default, and what it costs: [watchdog decision](WATCHDOG_DECISION.md).
+
+Since 2026-09-30 the simulated arm has actuator dynamics, so a hold also takes time
+and distance to stop physically. The report's safety section and `margin.csv` show
+the longest physical stopping time and camera travel after a hold, per level. These
+figures are informational, not pass criteria ([actuator model](ACTUATOR_MODEL.md)).
+The results in the table above were recorded before the model. With the model on
+(`results/margin-test/20260930-225125`), both methods still tolerate +150 ms. Under
+heavy delay they spend more time held: Learned GPU at +150 ms was held 53 s instead
+of 43.5 s ([actuator model](ACTUATOR_MODEL.md)).
 
 ## Limits
 

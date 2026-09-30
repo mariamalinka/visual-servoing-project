@@ -73,9 +73,38 @@ class Margin(unittest.TestCase):
         self.assertEqual(r['first_failing_delay_ms'], 0)
 
 
+class ConfidenceIntervals(unittest.TestCase):
+    def margin(self, sessions, config=CONFIG):
+        with patch.object(m, 'trip_phases', return_value=dict(at_start=0, mid_alignment=0)):
+            return m.method_margin('learned', sessions, config, None)
+
+    def test_every_level_reports_its_interval(self):
+        r = self.margin([session(0, 10), session(25, 7, trips=3)])
+        first, second = r['levels']
+        self.assertAlmostEqual(first['success_ci']['ci_low'], 0.6915, places=4)
+        self.assertEqual(first['success_ci']['ci_high'], 1.0)
+        self.assertLess(second['success_ci']['ci_low'], 0.7)
+        self.assertEqual(m.ci_csv(first), (0.6915, 1.0))
+
+    def test_default_margin_rule_is_observed_and_says_so(self):
+        rule, text = m.tolerated_rule_text(CONFIG, 10)
+        self.assertEqual(rule, 'aligned 100% (observed)')
+        self.assertIn('69.2%', text)
+        self.assertIn('not 100%', text)
+        self.assertIn('72 alignments per level', text)
+
+    def test_a_declared_required_rate_uses_the_lower_bound(self):
+        config = dict(copy.deepcopy(CONFIG), required_success_rate=0.95)
+        r = self.margin([session(0, 10), session(25, 10)], config)
+        self.assertIsNone(r['tolerated_delay_ms'])  # 10/10 cannot show 95%.
+        r = self.margin([session(0, 80, attempts=80), session(25, 80, attempts=80)], config)
+        self.assertEqual(r['tolerated_delay_ms'], 25)
+
+
 class HoldAndResume(unittest.TestCase):
     def test_session_config_adds_only_the_resume_window(self):
-        self.assertNotIn('stale_resume_s', m.session_config(CONFIG, 75)['runtime'])
+        self.assertEqual(m.session_config(CONFIG, 75)['runtime']['stale_resume_s'], 2.0)  # Default: hold and resume.
+        self.assertEqual(m.session_config(CONFIG, 75, 0)['runtime']['stale_resume_s'], 0)  # Stop setting.
         runtime = m.session_config(CONFIG, 75, 2.0)['runtime']
         self.assertEqual(runtime['stale_resume_s'], 2.0)
         self.assertEqual({k: runtime[k] for k in m.rat.PRODUCTION_RUNTIME}, m.rat.PRODUCTION_RUNTIME)
@@ -92,6 +121,20 @@ class HoldAndResume(unittest.TestCase):
         with patch.object(m, 'trip_phases', return_value=dict(at_start=0, mid_alignment=0)):
             r = m.method_margin('learned', [dict(session(0, 10), paused_motion=2)], CONFIG, None)
         self.assertEqual(r['unsafe_events'], 2)
+
+
+
+class PhysicalResponse(unittest.TestCase):
+    def test_hold_physical_stop_is_reported_not_gated(self):
+        block = dict(physical_stop_ms=dict(count=3, max=131.0), camera_travel_mm=dict(count=3, max=4.25))
+        level = dict(physical_stops=dict(pause=block), actuator=dict(profile='default'))
+        self.assertEqual(m.physical_csv(level), (131.0, 4.25))
+        self.assertEqual(m.physical_csv(dict(physical_stops=None)), ('', ''))
+        line, = m.physical_lines([dict(label='SIFT', levels=[level])])
+        self.assertIn('131 ms', line)
+        self.assertIn('`default`', line)
+        self.assertIn('not real-robot data', line)
+        self.assertEqual(m.physical_lines([dict(label='SIFT', levels=[dict(physical_stops=None)])]), [])
 
 
 if __name__ == '__main__':

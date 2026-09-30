@@ -17,6 +17,7 @@ import numpy as np
 from PIL import Image
 
 from benchmark import read_json, write_json
+from binomial_ci import format_rate
 from reference_image import DEFAULT_REFERENCE, load_reference
 from run_startup_search import SOURCES, make_plan, trial
 from simulation import ROOT, Simulation
@@ -209,7 +210,8 @@ def analyze(directory):
         for key,label in (("converged","Aligned and stable"),("acquired_initially_undetected","Initially invisible, then acquired"),
                           ("aligned_initially_undetected","Initially invisible, then aligned")):
             denominator=g["coarse"]["trials"] if key=="converged" else g["coarse"]["initially_undetected"]
-            table.append(f"| {cohort}: {label} | {g['coarse'][key]}/{denominator} | {g['refined'][key]}/{denominator} |")
+            table.append(f"| {cohort}: {label} | {format_rate(g['coarse'][key], denominator)} | "
+                         f"{format_rate(g['refined'][key], denominator)} |")
     details=[]
     for row in rows:
         if row["policy"]=="refined" and row["case"]=="random_target" and row.get("search_refinement_started_s") is not None:
@@ -235,6 +237,10 @@ are discarded. The two known misses were used during development; the original
 | Measurement | Original scan | With finer pass |
 |---|---:|---:|
 {chr(10).join(table)}
+
+Brackets are 95% Clopper-Pearson (exact) confidence intervals for each rate. The two
+policies ran on the same scenes, so compare them by the paired improved/regressed
+trials below, not by whether their intervals overlap.
 
 {outcomes}
 

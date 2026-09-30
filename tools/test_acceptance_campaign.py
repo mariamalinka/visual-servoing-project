@@ -11,7 +11,7 @@ class AcceptanceGates(unittest.TestCase):
     def setUp(self):
         self.config = read(Path(__file__).with_name('acceptance_campaign.json'))
         d = dict(count=100, mean=80, p95=90, p99=100, max=120)
-        self.result = dict(attempts=60, success_rate=1., freshness_trips=0, control_misses=0,
+        self.result = dict(attempts=80, alignments=80, success_rate=1., freshness_trips=0, control_misses=0,
             unsafe_motion=0, post_stop_motion=0, contacts=0, unlatched_stops=0,
             telemetry_lost=0, runtime_errors=0, worker_restarts=0, duration_s=1800,
             pose_attempts={'0':20,'1':20,'2':20}, capture_ms=d, processing_ms=d,
@@ -47,8 +47,21 @@ class AcceptanceGates(unittest.TestCase):
         self.assertIn('processing_max_ms',evaluate(r,self.config))
 
     def test_failed_alignment_fails(self):
-        r=copy.deepcopy(self.result);r['success_rate']=.99
+        r=copy.deepcopy(self.result);r['alignments']=79;r['success_rate']=79/80
+        self.assertIn('failed alignments',evaluate(r,self.config))
+
+    def test_too_few_alignments_cannot_claim_95_percent(self):
+        r=copy.deepcopy(self.result);r['attempts']=r['alignments']=60  # 60/60: lower bound 94.0%.
         self.assertIn('alignment success rate',evaluate(r,self.config))
+
+    def test_campaigns_declared_before_confidence_intervals_keep_their_rule(self):
+        legacy=copy.deepcopy(self.config)
+        for key in ('required_success_rate','confidence','max_failed_alignments'): legacy['criteria'].pop(key)
+        legacy['criteria']['success_rate']=1.0
+        r=copy.deepcopy(self.result);r['attempts']=r['alignments']=60
+        self.assertEqual(evaluate(r,legacy),[])
+        r['success_rate']=.99
+        self.assertIn('alignment success rate',evaluate(r,legacy))
 
     def test_missing_endpoint_and_system_pause_fail(self):
         r=copy.deepcopy(self.result);r['missing_endpoints']=1;r['continuity_gaps']=1

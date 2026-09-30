@@ -859,9 +859,20 @@ def main() -> None:
     parser.add_argument("--manual", action="store_true", help="Start with Auto OFF and wait for Align")
     parser.add_argument("--camera-delay-ms", type=float, help="Enable timestamped camera delivery with this simulated delay")
     parser.add_argument("--max-camera-age-ms", type=float, default=250, help="Stop if observation age reaches this bound (default: 250 ms)")
-    parser.add_argument("--stale-resume-ms", type=float, default=0, help="--realtime only: after a freshness stop, hold at zero velocity and resume on fresh images for up to this long (default: 0 = end the alignment)")
+    parser.add_argument("--stale-resume-ms", type=float, default=2000, help="--realtime only: after a freshness trip, hold at zero velocity and resume on fresh images for up to this long (default: 2000 ms; 0 = stop, same as --watchdog-stop)")
+    parser.add_argument("--watchdog-stop", action="store_true", help="--realtime only: a freshness trip ends the alignment (original behaviour) instead of hold and resume")
     parser.add_argument("--realtime", action="store_true", help="Run wall-clock control with isolated rendering/perception and an independent freshness watchdog")
+    parser.add_argument("--actuator", help="Simulated actuator dynamics profile from actuator_config.json "
+                        "(default: its active_profile; 'ideal' = no dynamics, the previous behaviour)")
     args = parser.parse_args()
+    if args.actuator is not None:
+        from actuator import load_actuator_config
+        try:
+            load_actuator_config(args.actuator)
+        except ValueError as exc:
+            parser.error(str(exc))
+    if args.watchdog_stop:
+        args.stale_resume_ms = 0
     timing = None
     if args.camera_delay_ms is not None:
         timing = dict(load_camera_timing(args.camera_delay_ms/1000), max_observation_age_s=args.max_camera_age_ms/1000)
@@ -884,7 +895,7 @@ def main() -> None:
             parser.error(str(exc))
         run_interactive(args)
         return
-    with Simulation() as sim:
+    with Simulation(actuator_config=args.actuator) as sim:
         try:
             if args.obstacle:
                 sim.set_obstacle(True)

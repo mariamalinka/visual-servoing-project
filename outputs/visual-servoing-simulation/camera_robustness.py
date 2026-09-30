@@ -8,6 +8,7 @@ from pathlib import Path
 import re
 
 import numpy as np
+from binomial_ci import format_rate
 from camera_timing import TimedCamera, load_camera_timing
 
 ROOT = Path(__file__).resolve().parent
@@ -164,9 +165,12 @@ def report(directory):
     lines += ["", "![Expected outcomes](robustness.png)", "",
         "| Matcher | Profile | Completed / planned | Aligned | Expected outcome met | Safety violations | Median / p95 successful time, simulated s | p95 final image error, px |",
         "|---|---|---:|---:|---:|---:|---:|---:|"]
+    lines[-2:-2] = ["Aligned and expected-outcome counts show 95% Clopper-Pearson (exact) confidence intervals "
+                    "over completed trials; see docs/STATISTICS.md.", ""]
     for g in groups:
         lines.append(f"| {NAMES[g['mode']]} | {g['profile']} | {g['completed']}/{g['planned']} | "
-                     f"{g['converged']} | {g['expected_outcomes']} | {g['safety_violations']} | "
+                     f"{format_rate(g['converged'], g['completed'])} | {format_rate(g['expected_outcomes'], g['completed'])} | "
+                     f"{g['safety_violations']} | "
                      f"{fmt(g['median_success_s'])} / {fmt(g['p95_success_s'])} | {fmt(g['p95_final_error_px'])} |")
     lines += ["", "## Outcome definitions", "",
         "Aligned means the controller stopped as converged, then all configured fresh "

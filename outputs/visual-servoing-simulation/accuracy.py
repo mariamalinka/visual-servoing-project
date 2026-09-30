@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import re
 import numpy as np
+from binomial_ci import clopper_pearson, format_rate
 from calibration import ControlCalibration, CONFIG_PATH
 from camera_robustness import NAMES, write_json
 
@@ -119,6 +120,7 @@ def summarize(plan, rows):
                 return float(np.percentile(values,q)) if values else None
             item = dict(mode=mode,profile=profile["name"],planned=plan["starts"],completed=len(group),
                         pixel_successes=len(converged),physical_successes=sum(r.get("physical_success",False) for r in group),
+                        physical_success_ci95=clopper_pearson(sum(r.get("physical_success",False) for r in group),len(group)),
                         pixel_only=sum(r.get("pixel_success",False) and not r.get("physical_success",False) for r in group),
                         outcomes=dict(Counter(r["outcome"] for r in group)),
                         safety_failures=sum(bool(r.get("safety_violations")) for r in group),
@@ -210,11 +212,13 @@ def report(directory):
               "This run uses the original 1 px image-only stopping rule without reference-image refinement.")
     lines[2:2] = [policy, ""]
     for g in groups:
-        lines.append(f"| {NAMES[g['mode']]} | {g['profile']} | {g['pixel_successes']}/{g['completed']} | "
-                     f"{g['physical_successes']}/{g['completed']} | {fmt(g['camera']['median_position_mm'])} | "
+        lines.append(f"| {NAMES[g['mode']]} | {g['profile']} | {format_rate(g['pixel_successes'], g['completed'])} | "
+                     f"{format_rate(g['physical_successes'], g['completed'])} | {fmt(g['camera']['median_position_mm'])} | "
                      f"{fmt(g['tool']['median_position_mm'])} | {fmt(g['camera']['median_angle_deg'])} | "
                      f"{fmt(g['median_success_s'])} | {fmt(g['tool']['paired_median_position_delta_mm'])} |")
-    lines += ["","Physical columns and time are medians over pixel-converged trials; all failures remain in the denominators "
+    lines += ["","Success counts show 95% Clopper-Pearson (exact) confidence intervals for the true rate "
+              "(docs/STATISTICS.md); an observed 100% is not proof of 100% reliability.",
+              "","Physical columns and time are medians over pixel-converged trials; all failures remain in the denominators "
               "and outcome counts below. Paired deltas use the same starting pose and matcher, where both nominal and "
               "perturbed cases passed pixel convergence. Negative Δ means a smaller error than nominal, not a statistical finding.",
               "", "![Calibration comparison](sensitivity.png)","",

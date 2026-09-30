@@ -179,7 +179,12 @@ App acceptance checks call the same click handlers used by Offset and Align, adv
 | NATURAL_IMAGE.md | Picture controls, algorithm, limitations and measured comparison |
 | run_natural_image_study.py | Paired ArUco/picture trials, evidence and report |
 | config.json | Camera, manual jog and IBVS parameters |
-| simulation.py | Physics, rendering, image detection and camera Jacobian |
+| simulation.py | Physics, rendering, image detection and camera Jacobian; measures every physical stop (`motion_log`) |
+| actuator.py | Simulated actuator dynamics between the velocity command and the servos: acceleration, deceleration and jerk limits ([actuator model](../../docs/ACTUATOR_MODEL.md)) |
+| actuator_config.json | Actuator profiles (`ideal` = no dynamics, `default`, `gentle`) and the standstill threshold; the limits are assumptions, not drive data |
+| stop_response.py | Joins runtime stop/hold events with the measured physical stops: command stop latency, physical stopping time and distance |
+| run_stop_response.py | Stop and resume study: speeds, joints, profiles, pause/resume cycles, realtime watchdog stops, paired accuracy check |
+| tests/test_actuator.py | Acceleration, jerk and no-reversal limits, braking check, measured stops and pause/resume cycles in MuJoCo |
 | control.py | Interaction matrix, damped inverse, depth estimation and pure IBVS |
 | recovery.py | Remembered-view return, local scan, confirmation and IBVS handoff |
 | recovery_config.json | Recovery bounds, deadlines and demo pose |
@@ -195,6 +200,8 @@ App acceptance checks call the same click handlers used by Offset and Align, adv
 | benchmark.py | Seeded trial generation, per-frame logging and exact-pose replay |
 | benchmark_config.json | Sampling bounds, number of trials and evaluation thresholds |
 | analyze_benchmark.py | Log validation, rates, confidence intervals, CSV and plots |
+| binomial_ci.py | Exact (Clopper-Pearson) 95% intervals for every success rate, the lower-bound PASS rule and trials-needed helper ([statistics](../../docs/STATISTICS.md)) |
+| tests/test_binomial_ci.py | Interval reference values, coverage, PASS rule and trials-needed tests |
 | tests/test_benchmark.py | Sampling, statistics, failure classification and trial integration tests |
 | BENCHMARK.md | Results and links to the completed 200-trial dataset |
 | verify.py | Scene and app integration checks |

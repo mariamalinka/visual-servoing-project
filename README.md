@@ -13,7 +13,7 @@ with optional SuperPoint + LightGlue matching on CPU or NVIDIA GPU.
 - Finds an initially unseen target and recovers after losing sight of it.
 - Applies joint-limit supervision, bounded recovery and optional adaptive gain.
 - Checks mapped collision clearance and routes search/recovery around a test obstacle.
-- Models camera transport delay, timestamps observations and stops on stale feedback.
+- Models camera transport delay, timestamps observations and never moves on stale feedback: the robot is commanded to zero velocity when the image-age limit is reached. The desktop lab ends the alignment; the wall-clock runtime holds and resumes on fresh images by default ([watchdog decision](docs/WATCHDOG_DECISION.md)).
 - Evaluates controllers on repeatable starting poses and records success and failure evidence.
 - Measures camera/tool-frame positioning accuracy and sensitivity to controller calibration errors.
 
@@ -125,6 +125,10 @@ Run **run.cmd --realtime --learned --max-camera-age-ms 400** for wall-clock cont
 
 [Sustained latency testing and spike diagnostics](outputs/visual-servoing-simulation/LATENCY_STRESS.md).
 
+The simulated arm has actuator dynamics: a stop zeroes the command at once, and the arm then brakes within assumed acceleration and jerk limits. Run **run.cmd --stop-response** to measure stopping time, stopping distance and pause/resume behaviour; `--actuator ideal` switches the model off. [Actuator model, assumptions and results](docs/ACTUATOR_MODEL.md) (simulation only, not real-robot data).
+
 ## Acceptance test
 
 Run **acceptance-test.cmd** (about 30 minutes, on AC power) for the automated SIFT and Learned GPU acceptance test: five starting poses, repeated alignments and a 12-minute reused-worker run per method, ending in a PASS/FAIL report. [Plan, criteria and recorded evidence](docs/ACCEPTANCE_TEST.md).
+
+[Requirements Verification and Safety Traceability](docs/SAFETY_TRACEABILITY.md): each safety and acceptance requirement with its hazard, enforcement, tests, evidence and verification status, including the requirements that are not yet verified.

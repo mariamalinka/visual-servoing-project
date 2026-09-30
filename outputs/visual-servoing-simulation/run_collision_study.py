@@ -10,6 +10,7 @@ import traceback
 
 import numpy as np
 
+from binomial_ci import format_rate, interpretation
 from camera_robustness import ROOT, digest, write_json
 from camera_timing import load_camera_timing
 from run_camera_robustness import error_px, fingerprint
@@ -183,7 +184,8 @@ def report(directory, manifest, rows, trajectories):
     plt.close(fig)
     passed = sum(r["passed"] for r in rows)
     lines = ["# Collision-aware motion validation", "",
-             f"{passed}/{len(rows)} cases converged and stayed below 1 px in 30 new current images after stopping.",
+             f"{format_rate(passed, len(rows))} cases converged and stayed below 1 px in 30 new current images after stopping. "
+             f"{interpretation(passed, len(rows))} (95% Clopper-Pearson interval; the cases are declared, not randomly sampled.)",
              "", "All cases use the same production guard, bounded planner, controller and 100 ms simulated camera delay. "
              "Clearance and forbidden contacts are checked at every 2 ms physics step, including the stopped interval. "
              "Slack is the smallest signed distance minus its applicable 12 mm environment or 6 mm self margin.",

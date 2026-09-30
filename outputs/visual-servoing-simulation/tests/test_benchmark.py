@@ -48,6 +48,10 @@ class BenchmarkTests(unittest.TestCase):
         self.assertEqual(result["success_rate_all"], .25)
         self.assertEqual(result["success_rate_initially_detected"], .5)
         self.assertEqual(sum(result["outcomes"].values()), 4)
+        # Reports use the project's exact Clopper-Pearson interval, not Wilson.
+        from binomial_ci import clopper_pearson
+        self.assertEqual(tuple(result["success_ci95_all"]), clopper_pearson(1, 4))
+        self.assertEqual(tuple(result["success_ci95_initially_detected"]), clopper_pearson(1, 2))
 
     def test_empty_group_is_undefined_not_zero_percent(self):
         result = summarize([], .95)

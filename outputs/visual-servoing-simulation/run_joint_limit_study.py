@@ -17,6 +17,7 @@ import mujoco
 from PIL import Image
 
 from benchmark import read_json,write_json
+from binomial_ci import format_rate
 from joint_limits import load_joint_limit_config,velocity_bounds
 from reference_image import DEFAULT_REFERENCE,load_reference
 from run_startup_search import SOURCES,trial
@@ -184,10 +185,12 @@ within each pair.
 
 | Result | Recorded baseline | Joint limits + bounded retry |
 |---|---:|---:|
-| Aligned and stable for 1 s after stopping | {a['converged']}/{a['trials']} | {b['converged']}/{b['trials']} |
-| Initially undetected, then aligned | {a['aligned_initially_undetected']}/{a['initially_undetected']} | {b['aligned_initially_undetected']}/{b['initially_undetected']} |
+| Aligned and stable for 1 s after stopping | {format_rate(a['converged'],a['trials'])} | {format_rate(b['converged'],b['trials'])} |
+| Initially undetected, then aligned | {format_rate(a['aligned_initially_undetected'],a['initially_undetected'])} | {format_rate(b['aligned_initially_undetected'],b['initially_undetected'])} |
 | Scenes with an alignment retry | 0 | {b['retried']} |
 | Converged after retry | 0 | {b['converged_after_retry']} |
+
+Counts show the 95% Clopper-Pearson (exact) confidence interval for the true rate; see docs/STATISTICS.md.
 
 Improved trial IDs: {summary['improved_trial_ids']}.
 Regressed trial IDs: {summary['regressed_trial_ids']}.

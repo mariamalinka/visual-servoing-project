@@ -1,0 +1,27 @@
+{
+  "description": "Simulated actuator dynamics between the joint velocity command and the MuJoCo velocity servos (actuator.py, docs/ACTUATOR_MODEL.md). These values are simulation assumptions, not measurements of a real drive. Each limit may be one number (all joints) or six numbers (one per joint).",
+  "active_profile": "default",
+  "stopped_velocity_rad_s": 0.001,
+  "stopped_hold_s": 0.02,
+  "servo_lag_allowance_s": 0.015,
+  "profiles": {
+    "ideal": {
+      "enabled": false,
+      "note": "No actuator dynamics: the servo receives the command unchanged (the behaviour before this model)."
+    },
+    "default": {
+      "enabled": true,
+      "max_acceleration_rad_s2": 2.0,
+      "max_deceleration_rad_s2": 5.0,
+      "max_jerk_rad_s3": 150.0,
+      "note": "Assumed limits: 0 to 0.35 rad/s in about 0.19 s, 0.35 rad/s to 0 in about 0.10 s."
+    },
+    "gentle": {
+      "enabled": true,
+      "max_acceleration_rad_s2": 1.0,
+      "max_deceleration_rad_s2": 5.0,
+      "max_jerk_rad_s3": 100.0,
+      "note": "Slower starts and resumes; the same braking deceleration as default."
+    }
+  }
+}

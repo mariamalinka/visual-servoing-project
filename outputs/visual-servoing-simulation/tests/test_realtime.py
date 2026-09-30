@@ -69,8 +69,12 @@ class LeaseTests(unittest.TestCase):
         lease.start(12.)
         self.assertIsNone(lease.paused_s)
 
+    def test_hold_and_resume_is_the_default_and_stop_is_a_setting(self):
+        self.assertEqual(RuntimeConfig().stale_resume_s, 2.0)
+        self.assertEqual(RuntimeConfig(stale_resume_s=0).stale_resume_s, 0.0)
+
     def test_disabled_pause_is_the_original_watchdog(self):
-        lease = CommandLease(RuntimeConfig(max_age_s=.4))
+        lease = CommandLease(RuntimeConfig(max_age_s=.4, stale_resume_s=0))
         lease.start(10.)
         lease.pause(10.4)  # Not used by the runtime when disabled; still cannot hold.
         self.assertEqual(lease.failure(10.4), 'stale_camera')
@@ -129,7 +133,8 @@ class RealtimeProcessTests(unittest.TestCase):
         self.fail(str(session.snapshot()))
 
     def test_blocking_inference_cannot_pause_watchdog_or_rearm_motion(self):
-        session = RealtimeSession(config=RuntimeConfig(inference_stall_s=.8, fault_after_s=.6),
+        # The stop setting: the trip ends the alignment and nothing revives it.
+        session = RealtimeSession(config=RuntimeConfig(inference_stall_s=.8, fault_after_s=.6, stale_resume_s=0),
                                   offset=[3,-3,4,3,-2,2]).start()
         try:
             self.assertTrue(session.ready.wait(30))
@@ -151,6 +156,25 @@ class RealtimeProcessTests(unittest.TestCase):
         event = next(e for e in report['events'] if e.get('reason')=='stale_camera')
         self.assertLess(event['stopped_s']-event['deadline_s'], .05)
         self.assertTrue(all(f['applied_s'] < event['stopped_s'] for f in report['frames']))
+        # The zero command is immediate; the robot then brakes physically (actuator.py).
+        self.check_physical_stop(report, 'stale_camera')
+
+    def check_physical_stop(self, report, reason):
+        from actuator import braking_time
+        from stop_response import link
+        actuator = report['actuator']
+        self.assertEqual(actuator['profile'], 'default')
+        rows = [r for r in link(report) if r['reason'] == reason and r['kind'] == 'stop']
+        self.assertEqual(len(rows), 1)
+        row = rows[0]
+        self.assertTrue(row['moving'])  # The watchdog tripped mid-motion.
+        self.assertEqual(row['outcome'], 'stopped')
+        bound_ms = 1000 * float(braking_time(row['speed_at_command_rad_s'], actuator['max_deceleration_rad_s2'],
+                                             actuator['max_jerk_rad_s3'])) + 80
+        self.assertGreater(row['physical_stop_ms'], 0)
+        self.assertLess(row['physical_stop_ms'], bound_ms)
+        self.assertLess(row['deadline_to_standstill_ms'], 50 + bound_ms)
+        self.assertLessEqual(row['peak_setpoint_jerk_rad_s3'], actuator['max_jerk_rad_s3'] * (1 + 1e-9))
 
     def test_watchdog_pause_zeroes_motion_on_time_and_resumes_on_fresh_images(self):
         # About 0.35 s of added latency per frame: the held image ages past 400 ms
@@ -177,6 +201,22 @@ class RealtimeProcessTests(unittest.TestCase):
             self.assertGreater(resume['captured_s'], pause['last_capture_s'])
             self.assertLess(pause['at_s']-resume['captured_s'], .4)
         self.assertTrue(all(f['capture_to_command_ms'] < 400 for f in report['frames']))
+        # Each hold zeroes the command at once; the robot brakes, and a resume ramps up
+        # smoothly within the modelled limits.
+        from stop_response import link
+        rows = link(report)
+        holds = [r for r in rows if r['kind'] == 'pause' and r['moving']]
+        self.assertTrue(holds)
+        # The last hold may still be braking when the session closes ('closed').
+        self.assertTrue(all(r['outcome'] in ('stopped', 'resumed') for r in holds[:-1]))
+        self.assertIn(holds[-1]['outcome'], ('stopped', 'resumed', 'closed', 'not_measured'))
+        jerk = report['actuator']['max_jerk_rad_s3'] * (1 + 1e-9)
+        self.assertTrue(all(r['peak_setpoint_jerk_rad_s3'] <= jerk for r in holds))
+        starts = [r for r in rows if r['kind'] == 'resume' and r['peak_setpoint_jerk_rad_s3'] is not None]
+        self.assertTrue(starts)
+        self.assertTrue(all(r['peak_setpoint_jerk_rad_s3'] <= jerk for r in starts))
+        self.assertTrue(all(r['peak_setpoint_accel_rad_s2'] <= report['actuator']['max_deceleration_rad_s2'] + 1e-9
+                            for r in starts))
 
     def test_watchdog_pause_ends_the_run_when_images_do_not_return(self):
         session = RealtimeSession(config=RuntimeConfig(max_age_s=.4, inference_stall_s=.8,

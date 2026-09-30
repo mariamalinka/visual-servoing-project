@@ -18,6 +18,7 @@ import traceback
 ROOT = Path(__file__).resolve().parents[1]
 APP = ROOT / 'outputs/visual-servoing-simulation'
 sys.path.insert(0, str(APP))
+import binomial_ci  # noqa: E402
 
 
 def write(path, value):
@@ -61,7 +62,15 @@ def evaluate(result, config):
     c = config['criteria']; failures = []
     def require(ok, message):
         if not ok: failures.append(message)
-    require(result['attempts'] > 0 and result['success_rate'] >= c['success_rate'], 'alignment success rate')
+    if 'required_success_rate' in c:
+        # The lower confidence bound, not the observed rate, must reach the requirement.
+        aligned = result.get('alignments', round(result['success_rate'] * result['attempts']))
+        require(binomial_ci.meets_required(aligned, result['attempts'], c['required_success_rate'],
+                                           c.get('confidence', binomial_ci.DEFAULT_CONFIDENCE)), 'alignment success rate')
+        if c.get('max_failed_alignments') is not None:
+            require(result['attempts'] - aligned <= c['max_failed_alignments'], 'failed alignments')
+    else:  # Campaigns declared before confidence intervals: observed rate.
+        require(result['attempts'] > 0 and result['success_rate'] >= c['success_rate'], 'alignment success rate')
     for key in ('freshness_trips', 'control_misses', 'unsafe_motion', 'post_stop_motion'):
         require(result[key] <= c[key], key)
     for key in ('contacts', 'unlatched_stops', 'telemetry_lost', 'runtime_errors', 'worker_restarts', 'missing_endpoints', 'continuity_gaps'):
@@ -124,6 +133,9 @@ def summarize(raw, ending, attempts, duration, config, score=True):
     assert len(commands) == counts['accepted'], 'Lost accepted-command telemetry'
     result = dict(attempts=len(started_generations), alignments=sum(a['outcome'] == 'converged' for a in attempts),
         success_rate=sum(a['outcome'] == 'converged' for a in attempts)/max(1, len(started_generations)),
+        success_ci=binomial_ci.summary(sum(a['outcome'] == 'converged' for a in attempts), len(started_generations),
+                                       config['criteria'].get('confidence', binomial_ci.DEFAULT_CONFIDENCE),
+                                       config['criteria'].get('required_success_rate')),
         missing_endpoints=len(missing), continuity_gaps=continuity_gaps, maximum_control_tick_gap_ms=max_gap,
         duration_s=duration, pose_attempts=dict(Counter(str(a['pose_index']) for a in attempts)),
         processing_ms=dist([1000*(f['finished_s']-f['rendered_s']) for f in active]),
@@ -187,7 +199,8 @@ def run_case(mode, seconds, config, directory, identifier):
                 self.chunk = self.take_chunk(); self.flush_requested.clear(); self.flush_ready.set()
 
     simulation.Simulation = CampaignSimulation
-    session = CampaignSession(mode, RuntimeConfig(**config['runtime']), offset=config['poses_degrees'][0],
+    # The campaign's criteria predate hold-and-resume: it measures the stop response.
+    session = CampaignSession(mode, RuntimeConfig(**config['runtime'], stale_resume_s=0), offset=config['poses_degrees'][0],
                               diagnostics=True, telemetry_capacity=8192)
     attempts = []; ready_at = None; error = None; worker_pid = None
     raw = directory / 'traces' / (identifier + '.jsonl.gz')
@@ -257,15 +270,20 @@ def report(directory, results, complete, smoke=False, interrupted=None):
     def triple(d): return 'missing' if d is None else ' / '.join(f'{d[k]:.1f}' for k in ('p95','p99','max'))
     lines = ['# Acceptance campaign: '+status, '',
              'Latencies are p95 / p99 / max in ms. Physical maxima include all attempts, both camera and tool frames.', '',
+             'Aligned shows the 95% Clopper-Pearson (exact) confidence interval for the true success rate: all '
+             'alignments succeeding is not proof of 100% reliability.', '',
              '| Session | Aligned | Position / angle max (mm / deg) | Capture latency | Processing latency | Freshness / control misses | Unsafe / post-stop | Verdict |',
              '|---|---:|---:|---|---|---:|---:|---|']
     for r in results:
         pos = r['position_mm']; ang = r['orientation_deg']
         physical = 'missing' if not pos or not ang else f"{pos['max']:.3f} / {ang['max']:.3f}"
-        lines.append(f"| {r['id']} | {r['alignments']}/{r['attempts']} | {physical} | {triple(r['capture_ms'])} | {triple(r['processing_ms'])} | {r['freshness_trips']} / {r['control_misses']} | {r['unsafe_motion']} / {r['post_stop_motion']} | {'FAIL' if r['failures'] else 'PASS'} |")
+        lines.append(f"| {r['id']} | {r['alignments']}/{r['attempts']} {binomial_ci.format_interval(r['alignments'], r['attempts'])} | {physical} | {triple(r['capture_ms'])} | {triple(r['processing_ms'])} | {r['freshness_trips']} / {r['control_misses']} | {r['unsafe_motion']} / {r['post_stop_motion']} | {'FAIL' if r['failures'] else 'PASS'} |")
     lines += ['', '| Session | First processing | Later processing | Failed criteria |', '|---|---|---|---|']
     for r in results:
         lines.append(f"| {r['id']} | {triple(r['first_processing_ms'])} | {triple(r['later_processing_ms'])} | {', '.join(r['failures']) or 'none'} |")
+    total, aligned = sum(r['attempts'] for r in results), sum(r['alignments'] for r in results)
+    if total:
+        lines += ['', f"All sessions together: {binomial_ci.format_rate(aligned, total)}. {binomial_ci.interpretation(aligned, total)}"]
     lines += ['', 'All criteria are fixed in manifest.json before execution. No thresholds are relaxed after failures. Per-pose first/later comparisons, versions, source hashes and counters are in the JSON artifacts; raw timing and endpoint evidence is local under traces. Interrupted/incomplete campaigns cannot pass.']
     if interrupted:
         lines += ['', 'Interrupted attempts remain failures; replacement full sessions do not erase them.']
@@ -305,7 +323,7 @@ def main():
     ctypes.windll.kernel32.GetModuleFileNameW(None, executable, len(executable))
     args.output.mkdir(parents=True, exist_ok=False); (args.output/'traces').mkdir()
     manifest = dict(created_utc=datetime.now(timezone.utc).isoformat(), config=config,
-        runtime_config=asdict(RuntimeConfig(**config['runtime'])), fingerprint=current,
+        runtime_config=asdict(RuntimeConfig(**config['runtime'], stale_resume_s=0)), fingerprint=current,
         runner_sha256=digest(Path(__file__)), config_sha256=digest(args.config), baseline_sha256=digest(baseline),
         executable=sys.executable, windows_executable=executable.value, base_executable=sys._base_executable,
         virtual_environment=sys.prefix, gpu=gpu_status(), smoke_only=args.smoke,

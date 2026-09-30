@@ -16,6 +16,7 @@ import numpy as np
 from PIL import Image
 
 from app import Lab
+from binomial_ci import format_rate
 from camera_timing import load_camera_timing
 from simulation import ROOT, Simulation
 
@@ -120,7 +121,9 @@ def report(directory, rows, modes, delays):
         "The same three declared starting offsets were evaluated through the desktop",
         "application's timed-camera path at each delay. All failure outcomes are retained.",
         "These are simulated transport delays; host inference duration is recorded separately.",
-        "The loop is not a wall-clock real-time scheduler.", "",
+        "The loop is not a wall-clock real-time scheduler.",
+        "Brackets are 95% Clopper-Pearson (exact) intervals. With three declared offsets per cell,",
+        "they mainly show how little three trials can establish; they are not estimates over random starts.", "",
         "| Matcher | Delay, ms | Stable successes | Median completion, simulated s | Maximum final current-image error, px |",
         "|---|---:|---:|---:|---:|"]
     fig, axes = plt.subplots(1, 2, figsize=(10, 3.7))
@@ -134,7 +137,7 @@ def report(directory, rows, modes, delays):
             worst = max(finite) if finite else None
             completion_text = "—" if median is None else f"{median:.3f}"
             error_text = "—" if worst is None else f"{worst:.3f}"
-            lines.append(f"| {NAMES[mode]} | {delay:g} | {len(successful)}/{len(group)} | {completion_text} | {error_text} |")
+            lines.append(f"| {NAMES[mode]} | {delay:g} | {format_rate(len(successful), len(group))} | {completion_text} | {error_text} |")
             medians.append(np.nan if median is None else median)
         axes[0].plot(delays, medians, marker="o", label=NAMES[mode])
         representative = next(r for r in rows if r["mode"] == mode and r["delay_ms"] == 100 and r["case"] == 0 and not r["interrupted"]) if 100 in delays else None

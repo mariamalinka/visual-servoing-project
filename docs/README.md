@@ -54,4 +54,12 @@ and enforce their recorded runtime/source versions.
 
 - [Latency-margin test](MARGIN_TEST.md): one command (`margin-test.cmd`, about 15–20 minutes) that measures how much extra per-frame perception latency SIFT and Learned GPU tolerate before alignment fails.
 
+- [Requirements Verification and Safety Traceability](SAFETY_TRACEABILITY.md): every safety and acceptance requirement linked to its hazard, enforcing code, tests, latest evidence and status (verified, partially verified or not verified), with the known gaps.
+
+- [Success rates and confidence intervals](STATISTICS.md): what the 95% intervals next to every success count mean, why 100% observed is not 100% reliability, how PASS/FAIL uses the lower bound, and how many trials a claim needs.
+
+- [Actuator dynamics model](ACTUATOR_MODEL.md): simulated acceleration, deceleration and jerk limits between the velocity command and the servos; the difference between command stop latency, physical stopping time and stopping distance; measured stops, resumes and pause/resume cycles; the 400 ms watchdog requirement re-evaluated against physical motion; assumptions (not real-robot data).
+
+- [Watchdog decision](WATCHDOG_DECISION.md): why a freshness-watchdog trip now holds and resumes the alignment instead of ending it, with the evidence and trade-offs. Stop remains a setting.
+
 - [Acceptance test](ACCEPTANCE_TEST.md): one command (`acceptance-test.cmd`, about 30 minutes) for SIFT and Learned GPU: five starting poses with fresh workers, then a 12-minute reused-worker run per method, with a PASS/FAIL report.

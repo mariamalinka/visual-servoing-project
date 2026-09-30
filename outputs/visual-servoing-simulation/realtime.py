@@ -47,11 +47,12 @@ class RuntimeConfig:
     fault_after_s: float = 2.0
     inference_stall_s: float = 0.0
     render_stall_s: float = 0.0
-    # Freshness watchdog response. 0 = stop the alignment (original behavior).
-    # > 0 = the watchdog still commands zero velocity at the same moment, but the
-    # alignment is paused rather than ended: it resumes on the next fresh frame and
-    # ends as 'stale_camera' only if no fresh frame arrives within this many seconds.
-    stale_resume_s: float = 0.0
+    # Freshness watchdog response (see docs/WATCHDOG_DECISION.md). The trip itself
+    # is identical either way: zero velocity at the same moment and image age.
+    # > 0 (default): hold and resume. The alignment is paused, resumes on the next
+    #   fresh frame, and ends as 'stale_camera' only if none arrives in this many s.
+    # 0: stop. The trip ends the alignment (the original behaviour).
+    stale_resume_s: float = 2.0
 
     def __post_init__(self):
         for key, value in asdict(self).items():
@@ -240,7 +241,8 @@ class RealtimeSession:
     in the armed control loop. This is a measured software loop, not hard real time.
     """
     def __init__(self, mode='aruco', config=None, *, precision=True, calibration=None,
-                 obstacle=False, offset=None, auto_start=True, diagnostics=False, telemetry_capacity=4096):
+                 obstacle=False, offset=None, auto_start=True, diagnostics=False, telemetry_capacity=4096,
+                 actuator=None):
         if mode not in ('aruco', 'natural', 'learned'):
             raise ValueError('Unknown matcher')
         if type(diagnostics) is not bool or type(telemetry_capacity) is not int or not 256<=telemetry_capacity<=20000:
@@ -256,6 +258,13 @@ class RealtimeSession:
         self.obstacle = obstacle
         self.offset = offset
         self.auto_start = auto_start
+        # Actuator dynamics (actuator.py): None = actuator_config.json's active profile,
+        # or a profile name / dict. Stops still zero the command at once; the robot
+        # then brakes physically, and each stop is measured in the report.
+        self.actuator = actuator
+        self.actuator_description = None
+        self.motion_log = ()
+        self.motion_evicted = None
         self.commands = Queue(maxsize=8)
         self.stop_requested = threading.Event()
         self.closed = threading.Event()
@@ -343,7 +352,10 @@ class RealtimeSession:
             self.worker.start()
             shutdown_reader.close()  # The worker owns the duplicated receive endpoint.
             # Constructed on this thread; headless physics has no OpenGL context.
-            sim = Simulation(render=False)
+            sim = Simulation(render=False, actuator_config=self.actuator)
+            self.actuator_description = sim.actuator.describe()
+            self.motion_log = sim.motion_log
+            self.motion_evicted = lambda: sim.motion_evicted
             sim.set_target_mode('aruco' if self.mode == 'aruco' else 'natural')
             if self.obstacle:
                 sim.set_obstacle(True)
@@ -387,7 +399,7 @@ class RealtimeSession:
                     self.counts['paused_s'] += paused_for
                 lease.stop(reason)
                 controller.cancel()
-                sim.command_velocity(np.zeros(6))
+                sim.command_velocity(np.zeros(6), reason=reason)
                 self.counts['pending_cancelled'] += len(pending)
                 pending.clear()
                 below_since = None
@@ -399,21 +411,23 @@ class RealtimeSession:
                         deadline_s=None if reason != 'stale_camera' else origin + self.config.max_age_s
                                    if paused_for is None else now - paused_for + self.config.stale_resume_s,
                         paused_for_s=paused_for,
-                        stopped_s=time.perf_counter()))
+                        stopped_s=time.perf_counter(), command_serial=sim.command_serial,
+                        moving_at_command=sim.is_moving()))
 
             def pause(now):
                 """Freshness trip with stale_resume_s > 0: identical zero command, run kept."""
                 nonlocal below_since
                 origin = lease.started_s if lease.captured_s is None else lease.captured_s
                 lease.pause(now)
-                sim.command_velocity(np.zeros(6))
+                sim.command_velocity(np.zeros(6), reason='watchdog_pause')
                 below_since = None  # The success hold restarts on fresh images.
                 self.counts['watchdog_pauses'] += 1
                 self.events.append(dict(kind='pause', reason='stale_camera', at_s=now, generation=lease.generation,
                     counters=dict(self.counts), last_capture_s=lease.captured_s,
                     deadline_s=origin + self.config.max_age_s,
                     resume_deadline_s=now + self.config.stale_resume_s,
-                    stopped_s=time.perf_counter()))
+                    stopped_s=time.perf_counter(), command_serial=sim.command_serial,
+                    moving_at_command=sim.is_moving()))
 
             def watchdog(reason, now):
                 """Route a lease failure: a freshness trip pauses when enabled, else stops."""
@@ -594,7 +608,8 @@ class RealtimeSession:
                                 self.counts['watchdog_resumes'] += 1
                                 self.counts['paused_s'] += computed - lease.paused_s
                                 self.events.append(dict(kind='resume', at_s=computed, generation=lease.generation,
-                                    paused_for_s=computed - lease.paused_s, captured_s=frame['captured_s']))
+                                    paused_for_s=computed - lease.paused_s, captured_s=frame['captured_s'],
+                                    command_serial=sim.command_serial + 1))  # The command applied next.
                                 lease.paused_s = None
                             lease.captured_s = frame['captured_s']
                             sim.command_velocity(sample.velocity)
@@ -641,7 +656,7 @@ class RealtimeSession:
                 self.counts['contacts'] += len(sim.forbidden_contacts())
                 if sim.collision_event is not None:
                     if lease.active and controller.skip_blocked_motion():
-                        sim.command_velocity(np.zeros(6))
+                        sim.command_velocity(np.zeros(6), reason='collision_blocked')
                         sim.collision_event = None
                     else:
                         stop('collision_blocked', time.perf_counter())
@@ -676,7 +691,7 @@ class RealtimeSession:
             if probe: probe.finish()
             if self.gc_probe: self.gc_probe.close()
             if sim is not None:
-                sim.command_velocity(np.zeros(6))
+                sim.command_velocity(np.zeros(6), reason='shutdown')
                 self._publish(command=sim.velocity_command.copy(), active=False,
                               qpos=sim.data.qpos.copy(), counters=dict(self.counts))
                 sim.close()
@@ -720,4 +735,6 @@ class RealtimeSession:
             gc_events_evicted=0 if self.gc_probe is None else self.gc_probe.dropped,
             worker_counts=None if self.worker_counts is None else dict(zip(
                 ('requests_started','frames_completed','result_dropped','requests_expired'),self.worker_counts[:])),
-            error=self.snapshot().get('error'), worker_alive=self.worker.is_alive() if self.worker else False)
+            error=self.snapshot().get('error'), worker_alive=self.worker.is_alive() if self.worker else False,
+            actuator=self.actuator_description, motion=list(self.motion_log),
+            motion_evicted=0 if self.motion_evicted is None else self.motion_evicted())

@@ -16,7 +16,8 @@ import mujoco
 import numpy as np
 from PIL import Image
 
-from analyze_benchmark import wilson_interval
+from analyze_benchmark import success_interval
+from binomial_ci import format_rate, interpretation
 from benchmark import BENCH_CONFIG, read_json, sample_plan, write_json
 from recovery import ACTIVE_STATES, ReacquiringIBVS, load_recovery_config
 from simulation import ROOT, Simulation
@@ -122,9 +123,10 @@ def analyze(directory):
     counts = dict(Counter(r["outcome"] for r in rows))
     summary = {
         "trials":len(rows), "successes":len(success), "success_rate":len(success)/len(rows),
-        "success_ci95":wilson_interval(len(success),len(rows)),
+        "success_ci95":success_interval(len(success),len(rows)),
+        "interval_method":"Clopper-Pearson (exact), two-sided",
         "initially_undetected":len(unseen), "undetected_starts_converged":len(recovered),
-        "undetected_success_ci95":wilson_interval(len(recovered),len(unseen)),
+        "undetected_success_ci95":success_interval(len(recovered),len(unseen)),
         "median_convergence_s_successes":float(np.median([r["terminal_time_s"] for r in success])) if success else None,
         "median_final_error_px_successes":float(np.median([r["final_error_px"] for r in success])) if success else None,
         "median_first_confirmed_reacquisition_s":float(np.median([r["first_confirmed_reacquisition_s"] for r in recovered])) if recovered else None,
@@ -172,8 +174,8 @@ def analyze(directory):
 Completed {len(rows)} trials with seed {manifest['seed']}. Every sampled start is counted.
 
 - Converged and stayed below 1 px after stopping: **{len(success)}/{len(rows)} ({100*rate:.1f}%)**.
-- 95% Wilson interval for the declared distribution: {100*lo:.1f}-{100*hi:.1f}%.
-- Starts without a detected marker: **{len(unseen)}**; of those, **{len(recovered)}** converged.
+- 95% Clopper-Pearson (exact) interval for the declared distribution: {100*lo:.1f}-{100*hi:.1f}%. {interpretation(len(success),len(rows))}
+- Starts without a detected marker: **{len(unseen)}**; converged among those: {format_rate(len(recovered),len(unseen))}.
 - Median convergence time, successful trials only: {summary['median_convergence_s_successes']} simulated seconds.
 - Median final error, successful trials only: {summary['median_final_error_px_successes']} px.
 

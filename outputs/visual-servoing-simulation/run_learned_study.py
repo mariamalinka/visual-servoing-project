@@ -13,6 +13,7 @@ import cv2
 import numpy as np
 from PIL import Image
 from benchmark import read_json,write_json
+from binomial_ci import format_rate
 from simulation import ROOT,Simulation
 from perception import NaturalImagePerception,NATURAL_REFERENCE,load_natural_config
 from learned_perception import LearnedImagePerception,load_learned_config,check_model_files
@@ -140,11 +141,13 @@ Four target-present cases are declared explicitly: the fixed offset, its opposit
 a shifted picture, and a complete unseen start at +35 degrees of base yaw.
 The missing/wrong-target controls each use a declared 3-second search deadline.
 This is a small functional comparison, with no random-sampling success-rate claim.
-All 12 runs and all 24 image-probe measurements are retained.
+All 12 runs and all 24 image-probe measurements are retained. The brackets are 95%
+Clopper-Pearson (exact) intervals; with this few cases they are wide, which is why no
+success-rate claim is made.
 
 | Measurement | SIFT | SuperPoint + LightGlue |
 |---|---:|---:|
-| Aligned and stable after stopping | {s['converged']}/{s['cases']} | {l['converged']}/{l['cases']} |
+| Aligned and stable after stopping | {format_rate(s['converged'],s['cases'])} | {format_rate(l['converged'],l['cases'])} |
 | Initially undetected positive cases | {s['initially_undetected']} | {l['initially_undetected']} |
 | Median successful total simulated time (s) | {fmt(s['median_total_s_successes'])} | {fmt(l['median_total_s_successes'])} |
 | Median of per-trial detector-call medians (ms) | {fmt(s['median_per_trial_detector_ms'])} | {fmt(l['median_per_trial_detector_ms'])} |

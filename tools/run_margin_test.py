@@ -62,15 +62,14 @@ def build_plan(config, smoke=False, only=None):
     return dict(delays_ms=delays, alignments_per_level=per_level, smoke=smoke, only_method=only, sessions=sessions)
 
 
-def session_config(config, delay_ms, stale_resume_s=0.0):
+def session_config(config, delay_ms, stale_resume_s=rat.DEFAULT_STALE_RESUME_MS / 1000):
     """Production runtime plus the existing fault-injection delay; nothing else changes.
 
-    stale_resume_s > 0 selects the opt-in watchdog hold-and-resume response.
+    stale_resume_s is the watchdog response: > 0 hold and resume (default), 0 stop.
     """
     c = json.loads(json.dumps(config))
-    c['runtime'] = dict(config['runtime'], inference_stall_s=delay_ms / 1000, fault_after_s=config['fault_after_s'])
-    if stale_resume_s:
-        c['runtime']['stale_resume_s'] = stale_resume_s
+    c['runtime'] = dict(config['runtime'], inference_stall_s=delay_ms / 1000, fault_after_s=config['fault_after_s'],
+                        stale_resume_s=stale_resume_s)  # Always explicit: 0 = stop.
     return c
 
 
@@ -95,6 +94,35 @@ def trip_phases(directory, session_id):
     return dict(at_start=at_start, mid_alignment=len(trips) - at_start)
 
 
+def level_confidence(config):
+    return float(config.get('confidence', rat.binomial_ci.DEFAULT_CONFIDENCE))
+
+
+def level_succeeded(aligned, attempts, config):
+    """A level counts as tolerated by its observed rate (characterisation) or, if the
+    configuration declares required_success_rate, by the lower confidence bound."""
+    if 'required_success_rate' in config:
+        return rat.binomial_ci.meets_required(aligned, attempts, config['required_success_rate'], level_confidence(config))
+    return attempts > 0 and aligned / attempts >= config['tolerated_success_rate']
+
+
+def tolerated_rule_text(config, per_level):
+    """(rule, caveat): what 'tolerated' means, and what a level's count can and cannot show."""
+    b, confidence = rat.binomial_ci, level_confidence(config)
+    if 'required_success_rate' in config:
+        return (f"reached a {confidence * 100:g}% lower confidence bound of "
+                f"{b.percent(config['required_success_rate'])} on alignment success"), ''
+    rate = config['tolerated_success_rate']
+    caveat = ''
+    if per_level:
+        low, _ = b.clopper_pearson(per_level, per_level, confidence)
+        caveat = (f"With {per_level} alignments per level, {per_level}/{per_level} means the true success rate at that "
+                  f"level is at least {b.percent(low)} with {confidence * 100:g}% confidence, not 100%. Showing at least "
+                  f"95% would need {b.trials_needed(0.95, confidence)} alignments per level, so the margin is a "
+                  'characterisation, not a reliability guarantee.')
+    return f"aligned {100 * rate:.0f}% (observed)", caveat
+
+
 def confounded(session):
     e = session.get('environment') or {}
     return bool(e.get('low_state_episodes'))
@@ -116,7 +144,8 @@ def method_margin(mode, sessions, config, directory):
     levels, tolerated, first_failure, ok_so_far = [], None, None, True
     for s in rows:
         rate = s['aligned'] / s['attempts'] if s['attempts'] else 0.0
-        clean = rate >= config['tolerated_success_rate'] and stale_stops(s) == 0 and not s['runtime_errors']
+        ci = rat.binomial_ci.summary(s['aligned'], s['attempts'], level_confidence(config))
+        clean = level_succeeded(s['aligned'], s['attempts'], config) and stale_stops(s) == 0 and not s['runtime_errors']
         excluded = confounded(s)
         if not excluded:
             if clean and ok_so_far:
@@ -126,7 +155,7 @@ def method_margin(mode, sessions, config, directory):
             ok_so_far = ok_so_far and clean
         p50 = s['processing_ms']['p50'] if s['processing_ms'] else None
         levels.append(dict(delay_ms=s['delay_ms'], id=s['id'], attempts=s['attempts'], aligned=s['aligned'],
-                           success_rate=rate, freshness_trips=stale_stops(s), control_misses=s['control_misses'],
+                           success_rate=rate, success_ci=ci, freshness_trips=stale_stops(s), control_misses=s['control_misses'],
                            holds=s.get('watchdog_pauses', 0), held_s=s.get('paused_s', 0.0),
                            processing_ms=s['processing_ms'], capture_ms=s['capture_ms'],
                            measured_added_ms=None if p50 is None or ref_p50 is None else p50 - ref_p50,
@@ -135,7 +164,7 @@ def method_margin(mode, sessions, config, directory):
                            unsafe=(s['unsafe_motion'] + s['post_stop_motion'] + s['contacts'] + s['unlatched_stops']
                                    + s.get('paused_motion', 0)),
                            trips=trip_phases(directory, s['id']), delayed_frames=s['counts'].get('fault_results', 0),
-                           confounded=excluded))
+                           confounded=excluded, actuator=s.get('actuator'), physical_stops=s.get('physical_stops')))
     factor = None if tolerated is None or not ref_p50 else (ref_p50 + tolerated) / ref_p50
     return dict(mode=mode, label=config['method_labels'][mode],
                 baseline_processing_ms=None if ref is None else dict(p50=ref_p50, p99=ref_p99, from_level_ms=ref['delay_ms']),
@@ -145,11 +174,42 @@ def method_margin(mode, sessions, config, directory):
                 unsafe_events=sum(l['unsafe'] for l in levels), control_misses=sum(l['control_misses'] for l in levels))
 
 
+def ci_csv(level):
+    ci = level.get('success_ci') or rat.binomial_ci.summary(level['aligned'], level['attempts'])
+    return tuple('' if ci[k] is None else round(ci[k], 4) for k in ('ci_low', 'ci_high'))
+
+
+def physical_csv(level):
+    block = ((level.get('physical_stops') or {}).get('pause') or {})
+    time_ms, travel = block.get('physical_stop_ms'), block.get('camera_travel_mm')
+    return ('' if not time_ms else round(time_ms['max'], 1), '' if not travel else round(travel['max'], 2))
+
+
+def physical_lines(margins):
+    """Simulated physical response to holds and stops (informational, not gated)."""
+    lines = []
+    for m in margins:
+        levels = [l for l in m['levels'] if l.get('physical_stops') is not None]
+        if not levels:
+            continue
+        actuator = next((l['actuator'] for l in levels if l.get('actuator')), {}) or {}
+        parts = []
+        for kind, name in (('pause', 'hold'), ('stop', 'stop')):
+            blocks = [l['physical_stops'].get(kind) for l in levels if (l['physical_stops'].get(kind) or {}).get('physical_stop_ms')]
+            if blocks:
+                parts.append(f"after a {name} up to {max(b['physical_stop_ms']['max'] for b in blocks):.0f} ms to standstill "
+                             f"and {max(b['camera_travel_mm']['max'] for b in blocks):.1f} mm of camera travel")
+        lines.append(f"- {m['label']}, physical response with the simulated actuator model "
+                     f"`{actuator.get('profile', '?')}`: " + ('; '.join(parts) or 'no stop or hold while moving') + '. '
+                     'The zero command itself is immediate; these are simulated values, not real-robot data.')
+    return lines
+
+
 def write_report(directory, status, reason, margins, manifest, config):
     write(directory / 'margin.json', dict(status=status, reason=reason, methods=margins))
     lines = ['delay_ms,method,attempts,aligned,success_rate,freshness_trips,processing_p50_ms,processing_p99_ms,'
              'p50_minus_normal_ms,capture_p99_ms,converge_median_s,trips_at_start,trips_mid_alignment,delayed_frames,low_power_state,'
-             'watchdog_holds,held_s']
+             'watchdog_holds,held_s,success_ci_low,success_ci_high,hold_physical_stop_max_ms,hold_camera_travel_max_mm']
     for m in margins:
         for l in m['levels']:
             p, c, v = l['processing_ms'] or {}, l['capture_ms'] or {}, l['converge_s'] or {}
@@ -159,7 +219,7 @@ def write_report(directory, status, reason, margins, manifest, config):
                 '' if l['measured_added_ms'] is None else round(l['measured_added_ms'], 1),
                 round(c.get('p99', float('nan')), 1), round(v.get('p50', float('nan')), 2), l['trips']['at_start'],
                 l['trips']['mid_alignment'], l['delayed_frames'], int(l['confounded']), l.get('holds', 0),
-                round(l.get('held_s', 0.0), 2))))
+                round(l.get('held_s', 0.0), 2), *ci_csv(l), *physical_csv(l))))
     (directory / 'margin.csv').write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
     resume = rat.stale_resume_s(dict(runtime_config=manifest.get('watchdog') or {}))
@@ -184,9 +244,14 @@ def write_report(directory, status, reason, margins, manifest, config):
         ref = '' if not base or not base['from_level_ms'] else f" (from the +{base['from_level_ms']} ms level)"
         tol = tol if not m['excluded_levels_ms'] else tol + ' (excluding ' + ', '.join(f'+{d}' for d in m['excluded_levels_ms']) + ' ms)'
         L.append(f"| {m['label']} | {fmt(base, ('p50', 'p99'))} ms{ref} | {tol} | {factor} | {first} |")
-    L += ['', '"Tolerated" is the largest level where it and every lower unaffected level aligned '
-          f"{100 * config['tolerated_success_rate']:.0f}% with no alignment ended by the freshness watchdog. Equivalent slowdown = "
+    rule, caveat = tolerated_rule_text(config, (manifest.get('plan') or {}).get('alignments_per_level'))
+    L += ['', f'"Tolerated" is the largest level where it and every lower unaffected level {rule}, '
+          'with no alignment ended by the freshness watchdog. Equivalent slowdown = '
           '(normal p50 + tolerated delay) / normal p50.', '']
+    L += [caveat, ''] if caveat else []
+    L += [
+          f"\"Aligned\" shows the {level_confidence(config) * 100:g}% exact Clopper-Pearson confidence interval "
+          'for the true success rate at each level.', '']
     for m in margins:
         L += [f"## {m['label']}", '',
               '| Added delay | Aligned | Stopped by freshness watchdog (at start / mid-alignment) | '
@@ -196,7 +261,7 @@ def write_report(directory, status, reason, margins, manifest, config):
         for l in m['levels']:
             conv = 'n/a' if not l['converge_s'] else f"{l['converge_s']['p50']:.2f} s"
             added = 'n/a' if l['measured_added_ms'] is None else f"{l['measured_added_ms']:+.0f}"
-            L.append(f"| +{l['delay_ms']} ms | {l['aligned']}/{l['attempts']} | {l['freshness_trips']} "
+            L.append(f"| +{l['delay_ms']} ms | {l['aligned']}/{l['attempts']} {rat.ci_text(l.get('success_ci'))} | {l['freshness_trips']} "
                      f"({l['trips']['at_start']} / {l['trips']['mid_alignment']}) | "
                      + (f"{l.get('holds', 0)} ({l.get('held_s', 0.0):.1f} s) | " if resume else '')
                      + f"{fmt(l['processing_ms'], ('p50', 'p99'))} | {added} | {fmt(l['capture_ms'], ('p99',))} | {conv} | "
@@ -218,7 +283,9 @@ def write_report(directory, status, reason, margins, manifest, config):
           '- The injected delay is constant. Real slower hardware also has longer tails, so the tolerated delay is '
           'an upper bound for hardware with the same median slowdown.',
           f"- Each level has {manifest['plan']['alignments_per_level']} alignments over "
-          f"{len(config['poses_degrees'])} poses on a fresh worker; a 100% level is limited evidence, not a guarantee.",
+          f"{len(config['poses_degrees'])} poses on a fresh worker, so a level where all of them succeeded is limited "
+          'evidence, not a guarantee (see the confidence intervals).',
+          *physical_lines(margins),
           rat.power_mode_line(manifest), rat.baseline_line(manifest.get('baseline_check') or {}),
           f"- Python `{(manifest.get('python') or {}).get('windows_executable')}`, CUDA GPU "
           f"{(manifest.get('selected_cuda_gpu') or {}).get('name', 'n/a')}.", '',
@@ -279,7 +346,8 @@ def run(args):
         return 2
     uptime = rat.procedure_preflight()
     stamp = (datetime.now().strftime('%Y%m%d-%H%M%S') + ('-smoke' if args.smoke else '') + (f'-{args.method}' if args.method else '')
-             + (f'-resume{args.stale_resume_ms:g}ms' if args.stale_resume_ms else ''))
+             + ('-stop' if not args.stale_resume_ms else '' if args.stale_resume_ms == rat.DEFAULT_STALE_RESUME_MS
+                else f'-resume{args.stale_resume_ms:g}ms'))
     resume_s = args.stale_resume_ms / 1000
     directory = args.output or DEFAULT_RESULTS / stamp
     directory.mkdir(parents=True, exist_ok=False); (directory / 'traces').mkdir()
@@ -401,10 +469,13 @@ def main(argv=None):
     parser.add_argument('--method', choices=('sift', 'learned'), help='Measure one method only')
     parser.add_argument('--no-system-monitor', action='store_true')
     parser.add_argument('--report-only', type=Path, metavar='DIRECTORY')
-    parser.add_argument('--stale-resume-ms', type=float, default=0.0, metavar='MS',
-                        help='Watchdog response: 0 = stop the alignment (default); >0 = hold at zero velocity and '
-                             'resume on fresh images for up to MS milliseconds')
+    parser.add_argument('--stale-resume-ms', type=float, default=rat.DEFAULT_STALE_RESUME_MS, metavar='MS',
+                        help='Watchdog hold-and-resume window (default: 2000 ms). 0 = stop, same as --watchdog-stop')
+    parser.add_argument('--watchdog-stop', action='store_true',
+                        help='A freshness trip ends the alignment (original behaviour) instead of hold and resume')
     args = parser.parse_args(argv)
+    if args.watchdog_stop:
+        args.stale_resume_ms = 0.0
     if not (0 <= args.stale_resume_ms <= 10000):
         parser.error('--stale-resume-ms must be between 0 and 10000')
     if args.report_only:

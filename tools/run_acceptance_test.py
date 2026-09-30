@@ -32,6 +32,7 @@ import acceptance_environment as env_monitor
 ROOT = Path(__file__).resolve().parents[1]
 APP = ROOT / 'outputs' / 'visual-servoing-simulation'
 sys.path.insert(0, str(APP))
+import binomial_ci  # noqa: E402  (lives in the application directory)
 ENVIRONMENT_MODULE = Path(env_monitor.__file__).resolve()
 
 DEFAULT_CONFIG = ROOT / 'tools' / 'acceptance_test.json'
@@ -50,7 +51,7 @@ PROTECTED = ('control.py', 'recovery.py', 'startup_search.py', 'adaptive_gain.py
              'calibration.py', 'realtime.py', 'simulation.py', 'collision.py', 'joint_limits.py',
              'motion_path.py', 'scene.xml', 'config.json', 'precision_config.json', 'recovery_config.json',
              'collision_config.json', 'joint_limit_config.json', 'startup_search_config.json',
-             'camera_timing_config.json', 'assets/', 'reference/')
+             'camera_timing_config.json', 'actuator.py', 'actuator_config.json', 'assets/', 'reference/')
 SMOKE = dict(poses=2, alignments_per_pose=1, sustained_seconds=40, minimum_attempts_per_pose=1)
 
 
@@ -347,6 +348,8 @@ def run_session(mode, pose_ids, config, directory, identifier, *, max_attempts=N
     ending = session.report()
     for key in ('frames', 'sensor_frames', 'events', 'cycle_spikes', 'gc_events'):
         ending.pop(key, None)  # Already streamed to the raw trace; keep the ending file small.
+    for record in ending.get('motion') or []:
+        record.pop('profile', None)  # Physical stop records stay; their speed traces are not needed here.
     ending.update(harness_error=error, worker_executable=worker_exe, started_utc=started_utc, clock_anchor=anchor,
                   duration_s=0.0 if ready_at is None else time.perf_counter() - ready_at,
                   elapsed_s=time.perf_counter() - started, execution_settings=execution or ending.get('execution_settings'))
@@ -444,6 +447,7 @@ def summarize(raw, attempts, ending, meta, config, score=True):
                         + counts.get('watchdog_pauses', 0),
         stale_stops=sum(e['kind'] == 'stop' and e['reason'] == 'stale_camera' for e in events),
         watchdog_pauses=counts.get('watchdog_pauses', 0), paused_s=counts.get('paused_s', 0.0),
+        alignment_time_s=sum(a['alignment_s'] for a in attempts if a.get('alignment_s') is not None),
         paused_motion=counts.get('paused_motion_ticks', 0),
         control_misses=counts['control_deadline_misses'], unsafe_motion=counts['unsafe_motion_ticks'],
         post_stop_motion=counts['post_stop_motion_ticks'], contacts=counts['contacts'],
@@ -452,8 +456,33 @@ def summarize(raw, attempts, ending, meta, config, score=True):
         continuity_gaps=sum(g > 1000 for g in gaps), maximum_control_gap_ms=max(gaps, default=0.0),
         runtime_errors=int(bool(ending.get('error') or ending.get('harness_error') or ending.get('worker_alive'))),
         harness_error=ending.get('harness_error'), counts=counts, worker_counts=ending.get('worker_counts'),
-        raw_sha256=digest(raw), samples=dict(sensor=len(sensors), uncached_active=len(active), commands=len(commands)))
+        raw_sha256=digest(raw), samples=dict(sensor=len(sensors), uncached_active=len(active), commands=len(commands)),
+        actuator=ending.get('actuator'), physical_stops=physical_stops(events, ending))
     return result, attempts
+
+
+def physical_stops(events, ending):
+    """Measured physical response to each stop and hold (informational, not gated).
+
+    Runs from before the actuator model have no measurements: None.
+    """
+    if 'actuator' not in ending:
+        return None
+    import stop_response
+    return stop_response.summarize(stop_response.link(dict(events=events, motion=ending.get('motion'),
+                                                           motion_evicted=ending.get('motion_evicted'))))
+
+
+def physical_stop_text(m, kind):
+    stops = m.get('physical_stops')
+    if stops is None:
+        return 'not measured'
+    block = stops.get(kind)
+    if not block or not block.get('physical_stop_ms'):
+        return 'none while moving'
+    distance = block.get('camera_travel_mm') or {}
+    return (f"{block['physical_stop_ms']['max']:.0f} ms / {distance.get('max', 0.0):.1f} mm "
+            f"({block['moving']} while moving)")
 
 
 def pooled(values_by_session):
@@ -486,6 +515,7 @@ def raw_values(directory, session, first_only=None):
 
 def method_summary(mode, sessions, directory, config, plan):
     """Pool one method's sessions and apply the predeclared criteria."""
+    import stop_response
     c = config['criteria']
     rep = [s for s in sessions if s['mode'] == mode and s['phase'] == 'repeatability']
     sus = [s for s in sessions if s['mode'] == mode and s['phase'] == 'sustained']
@@ -509,15 +539,27 @@ def method_summary(mode, sessions, directory, config, plan):
                                 if s['first_alignment_converged'] and s['first_alignment_s'] is not None]),
         later_alignment_s=None if not sus else sus[0]['later_alignment_s'],
         stop_reasons=dict(sum((Counter(s['stop_reasons']) for s in mine), Counter())),
+        actuator=next((s['actuator'] for s in mine if s.get('actuator')), None),
+        physical_stops=None if all(s.get('physical_stops') is None for s in mine) else
+            stop_response.merge([s.get('physical_stops') for s in mine]),
         position_mm_max=max((s['position_mm']['max'] for s in mine if s['position_mm']), default=None),
         orientation_deg_max=max((s['orientation_deg']['max'] for s in mine if s['orientation_deg']), default=None))
     for key in ('freshness_trips', 'control_misses', 'unsafe_motion', 'post_stop_motion', 'contacts', 'unlatched_stops',
                 'missing_endpoints', 'telemetry_lost', 'continuity_gaps', 'runtime_errors'):
         summary[key] = total(key)
     summary['stale_stops'] = sum(s.get('stale_stops', s['freshness_trips']) for s in mine)  # Older runs: all stops.
-    for key in ('watchdog_pauses', 'paused_s', 'paused_motion'):
+    for key in ('watchdog_pauses', 'paused_s', 'paused_motion', 'alignment_time_s'):
         summary[key] = sum(s.get(key, 0) for s in mine)
+    summary['paused_fraction'] = (summary['paused_s'] / summary['alignment_time_s']
+                                  if summary['alignment_time_s'] > 0 else 0.0)
     summary['success_rate'] = summary['aligned'] / summary['attempts'] if summary['attempts'] else 0.0
+    confidence = success_confidence(c)
+    summary['success_ci'] = binomial_ci.summary(summary['aligned'], summary['attempts'], confidence,
+                                                c.get('required_success_rate'))
+    for phase in ('repeatability', 'sustained'):
+        if summary[phase]:
+            summary[phase]['success_ci'] = binomial_ci.summary(summary[phase]['aligned'], summary[phase]['attempts'],
+                                                               confidence)
     summary['later_to_first_p99'] = ratio(summary['later_processing_ms'], summary['first_processing_ms'])
     drift = summary['sustained']['drift'] if sus else []
     usable = [w for w in drift if w['processing_ms'] and w['processing_ms']['count'] >= 50]
@@ -535,15 +577,35 @@ def evaluate_method(s, sessions, mode, config, plan):
     def require(ok, message):
         if not ok:
             failures.append(message)
-    require(s['attempts'] > 0 and s['success_rate'] >= c['success_rate'],
-            f"alignment success {s['aligned']}/{s['attempts']}")
+    if 'required_success_rate' in c:
+        # Reliability claim: the lower confidence bound, not the observed rate, must reach the requirement.
+        low, _ = binomial_ci.clopper_pearson(s['aligned'], s['attempts'], success_confidence(c))
+        require(binomial_ci.meets_required(s['aligned'], s['attempts'], c['required_success_rate'], success_confidence(c)),
+                f"alignment success {s['aligned']}/{s['attempts']}: {success_confidence(c) * 100:g}% lower bound "
+                f"{binomial_ci.percent(low)} < required {binomial_ci.percent(c['required_success_rate'])}")
+        if c.get('max_failed_alignments') is not None:
+            failed = s['attempts'] - s['aligned']
+            require(failed <= c['max_failed_alignments'],
+                    f"failed alignments {failed} > {c['max_failed_alignments']}")
+    else:  # Configurations from before confidence intervals: observed rate only.
+        require(s['attempts'] > 0 and s['success_rate'] >= c['success_rate'],
+                f"alignment success {s['aligned']}/{s['attempts']}")
     for name, quantile, limit in (('processing_ms', 'p95', 'processing_p95_ms'), ('processing_ms', 'p99', 'processing_p99_ms'),
                                   ('processing_ms', 'max', 'processing_max_ms'), ('capture_ms', 'p99', 'capture_p99_ms'),
                                   ('capture_ms', 'max', 'capture_max_ms')):
         value = s[name]
         require(value is not None and value[quantile] <= c[limit],
                 f"{name.split('_')[0]} {quantile} {'missing' if value is None else f'{value[quantile]:.1f}'} ms > {c[limit]:g}")
-    for key, limit in (('freshness_trips', 'freshness_trips'), ('control_misses', 'control_misses'),
+    if 'watchdog_stops' in c:
+        # Hold-and-resume criteria: no alignment may be ended by the watchdog, and
+        # holds may cost only a small, declared share of alignment time.
+        require(s.get('stale_stops', s['freshness_trips']) <= c['watchdog_stops'],
+                f"watchdog_stops {s.get('stale_stops', s['freshness_trips'])}")
+        require(s.get('paused_fraction', 0.0) <= c['paused_fraction'],
+                f"paused {100 * s.get('paused_fraction', 0.0):.1f}% of alignment time > {100 * c['paused_fraction']:g}%")
+    else:  # Configurations from before hold-and-resume: every trip fails.
+        require(s['freshness_trips'] <= c['freshness_trips'], f"freshness_trips {s['freshness_trips']}")
+    for key, limit in (('control_misses', 'control_misses'),
                        ('unsafe_motion', 'unsafe_motion'), ('post_stop_motion', 'post_stop_motion'),
                        ('contacts', 'contacts'), ('unlatched_stops', 'unlatched_stops')):
         require(s[key] <= c[limit], f'{key} {s[key]}')
@@ -633,8 +695,61 @@ def procedure_lines(manifest):
     return L
 
 
+def success_confidence(criteria):
+    return float(criteria.get('confidence', binomial_ci.DEFAULT_CONFIDENCE))
+
+
+def ci_text(record):
+    """'[97.6%, 100.0%]' from a stored binomial summary (older verdicts may lack it)."""
+    if not record or record.get('ci_low') is None:
+        return 'n/a'
+    return f"[{binomial_ci.percent(record['ci_low'])}, {binomial_ci.percent(record['ci_high'])}]"
+
+
+def with_ci(block):
+    if not block:
+        return 'n/a'
+    record = block.get('success_ci') or binomial_ci.summary(block['aligned'], block['attempts'])
+    return f"{block['aligned']}/{block['attempts']} {ci_text(record)}"
+
+
+def reliability_text(m, criteria):
+    required = criteria.get('required_success_rate')
+    record = m.get('success_ci') or binomial_ci.summary(m['aligned'], m['attempts'], success_confidence(criteria))
+    if required is None:
+        return f"not gated (lower bound {binomial_ci.percent(record['ci_low'])})"
+    ok = binomial_ci.meets_required(m['aligned'], m['attempts'], required, success_confidence(criteria))
+    return (f"{'yes' if ok else 'NO'}: lower bound {binomial_ci.percent(record['ci_low'])} "
+            f"{'>=' if ok else '<'} {binomial_ci.percent(required)}")
+
+
+def success_rate_lines(methods, criteria):
+    """Plain-language reading of each method's success rate, placed right under the table."""
+    confidence = success_confidence(criteria)
+    lines = [f"**Success rates are estimates.** The interval is the two-sided {confidence * 100:g}% exact "
+             "Clopper-Pearson confidence interval for the true success rate (docs/STATISTICS.md)."]
+    for m in methods:
+        lines.append(f"- {m['label']}: {binomial_ci.interpretation(m['aligned'], m['attempts'], confidence)}")
+    required = criteria.get('required_success_rate')
+    if required is not None:
+        lines.append(f"- A success-rate claim of at least {binomial_ci.percent(required)} passes only if the lower bound "
+                     f"reaches it; that needs at least {binomial_ci.trials_needed(required, confidence)} alignments "
+                     'with no failure.')
+    return lines
+
+
 def stale_resume_s(manifest):
     return float((manifest.get('runtime_config') or {}).get('stale_resume_s', 0.0))
+
+
+def success_gate_text(c):
+    if 'required_success_rate' not in c:
+        return f"{100 * c['success_rate']:g}% alignment (observed)"
+    text = (f"{success_confidence(c) * 100:g}% lower confidence bound on alignment success >= "
+            f"{binomial_ci.percent(c['required_success_rate'])}")
+    if c.get('max_failed_alignments') is not None:
+        text += f" and at most {c['max_failed_alignments']} failed alignment(s)"
+    return text
 
 
 def production_files_sentence(manifest):
@@ -649,11 +764,13 @@ def production_files_sentence(manifest):
 def watchdog_line(manifest, holds_gated=True):
     resume = stale_resume_s(manifest)
     if not resume:
-        return ('Freshness watchdog response: **stop** (production default). The 400 ms limit ends the alignment.')
+        return ('Freshness watchdog response: **stop** (`stale_resume_s` = 0; the original behaviour, now the '
+                '`--watchdog-stop` setting). The 400 ms limit ends the alignment.')
     return (f'Freshness watchdog response: **hold and resume** (`stale_resume_s` = {resume:g} s). At the same 400 ms '
             'limit the robot is commanded to zero velocity; the alignment continues when a fresh image arrives and '
             f'ends as `stale_camera` only if none arrives within {resume:g} s. '
-            + ('Every hold still counts as a freshness trip.' if holds_gated else
+            + ('Holds are allowed only within the pause budget in the criteria; an alignment the watchdog ends fails.'
+               if holds_gated else
                'Holds are reported separately; the margin counts alignments the watchdog ended.'))
 
 
@@ -728,14 +845,20 @@ def write_report(directory, status, reason, methods, sessions, manifest, config,
     rows = [
         ('Verdict', lambda m: f"**{m['verdict']}**"),
         ('Alignment success', lambda m: f"{m['aligned']}/{m['attempts']} ({100 * m['success_rate']:.1f}%)"),
-        ('  fresh-worker poses', lambda m: f"{m['repeatability']['aligned']}/{m['repeatability']['attempts']}"),
+        (f"  {success_confidence(config['criteria']) * 100:g}% confidence interval, exact Clopper-Pearson",
+            lambda m: ci_text(m.get('success_ci') or binomial_ci.summary(m['aligned'], m['attempts'],
+                                                                         success_confidence(config['criteria'])))),
+        ('  success rate demonstrated', lambda m: reliability_text(m, config['criteria'])),
+        ('  fresh-worker poses', lambda m: with_ci(m['repeatability'])),
         ('  sustained reused worker', lambda m: 'n/a' if not m['sustained'] else
-            f"{m['sustained']['aligned']}/{m['sustained']['attempts']} in {m['sustained']['duration_s'] / 60:.1f} min"),
+            f"{with_ci(m['sustained'])} in {m['sustained']['duration_s'] / 60:.1f} min"),
         ('Processing p95 / p99 / max (ms)', lambda m: fmt(m['processing_ms'])),
         ('Capture-to-command p99 / max (ms)', lambda m: fmt(m['capture_ms'], ('p99', 'max'))),
         ('Freshness watchdog trips', lambda m: str(m['freshness_trips']) + (
             '' if not m.get('watchdog_pauses') else f" ({m['stale_stops']} ended the alignment, "
             f"{m['watchdog_pauses']} held and resumed, {m['paused_s']:.1f} s held)")),
+        ('Paused time (share of alignment time)', lambda m: f"{m.get('paused_s', 0.0):.1f} s "
+            f"({100 * m.get('paused_fraction', 0.0):.1f}%)"),
         ('Control deadline misses', lambda m: str(m['control_misses'])),
         ('First-alignment processing p95 / p99 / max', lambda m: fmt(m['first_processing_ms'])),
         ('Later-alignment processing p95 / p99 / max', lambda m: fmt(m['later_processing_ms'])),
@@ -746,6 +869,10 @@ def write_report(directory, status, reason, methods, sessions, manifest, config,
         ('Sustained worst window p99 (window start)', lambda m: worst_window(m)),
         ('Unsafe / post-stop motion ticks', lambda m: f"{m['unsafe_motion']} / {m['post_stop_motion']}"),
         ('Motion ticks during a watchdog hold', lambda m: str(m.get('paused_motion', 0))),
+        ('Actuator model (simulated)', lambda m: 'not modelled' if not m.get('actuator') else
+            m['actuator'].get('profile', '?') + ('' if m['actuator'].get('enabled', True) else ' (off)')),
+        ('Physical stop after a stop: max time / camera travel', lambda m: physical_stop_text(m, 'stop')),
+        ('Physical stop after a hold: max time / camera travel', lambda m: physical_stop_text(m, 'pause')),
         ('Forbidden contacts / unlatched stops', lambda m: f"{m['contacts']} / {m['unlatched_stops']}"),
         ('Physical error max (mm / deg)', lambda m: 'n/a' if m['position_mm_max'] is None else
             f"{m['position_mm_max']:.3f} / {m['orientation_deg_max']:.3f}"),
@@ -753,6 +880,7 @@ def write_report(directory, status, reason, methods, sessions, manifest, config,
     ]
     for name, f in rows:
         L.append(f'| {name} | ' + ' | '.join(f(m) for m in methods) + ' |')
+    L += [''] + success_rate_lines(methods, config['criteria'])
     L += ['', 'Hardware telemetry (diagnostic, not gated). A sample counts as clock-limited when nvidia-smi reports a '
           'software power cap, software/hardware thermal slowdown, hardware slowdown or power brake.', '',
           '| Hardware | ' + ' | '.join(m['label'] for m in methods) + ' |', '|---|' + '---:|' * len(methods)]
@@ -780,8 +908,11 @@ def write_report(directory, status, reason, methods, sessions, manifest, config,
           f"Freshness watchdog {1000 * config['runtime']['max_age_s']:.0f} ms, control deadline "
           f"{1000 * config['runtime']['max_control_gap_s']:.0f} ms, transport delay {1000 * config['runtime']['transport_s']:.0f} ms "
           '(production values, asserted before the run). ' + production_files_sentence(manifest),
-          f"Gates: 100% alignment; processing p95/p99/max <= {c['processing_p95_ms']:g}/{c['processing_p99_ms']:g}/{c['processing_max_ms']:g} ms; "
-          f"capture-to-command p99/max <= {c['capture_p99_ms']:g}/{c['capture_max_ms']:g} ms; 0 freshness trips, 0 deadline misses, "
+          f"Gates: {success_gate_text(c)}; processing p95/p99/max <= {c['processing_p95_ms']:g}/{c['processing_p99_ms']:g}/{c['processing_max_ms']:g} ms; "
+          f"capture-to-command p99/max <= {c['capture_p99_ms']:g}/{c['capture_max_ms']:g} ms; "
+          + (f"0 alignments ended by the watchdog, paused <= {100 * c['paused_fraction']:g}% of alignment time, "
+             if 'watchdog_stops' in c else '0 freshness trips, ')
+          + f"0 deadline misses, "
           f"0 unsafe/post-stop motion; <= {c['position_mm']:g} mm / {c['orientation_deg']:g} deg; later/first p99 <= {c['later_to_first_p99_ratio']:g}x.",
           '',
           f"- Python: `{manifest.get('python', {}).get('windows_executable') or manifest.get('python', {}).get('executable')}` "
@@ -829,10 +960,11 @@ def build_plan(config, smoke, only=None):
     return plan
 
 
+DEFAULT_STALE_RESUME_MS = 2000.0  # Matches RuntimeConfig's default (hold and resume).
+
+
 def with_stale_resume(config, stale_resume_ms):
-    """Opt-in watchdog response; every certified production limit stays as declared."""
-    if not stale_resume_ms:
-        return config
+    """Record the watchdog response explicitly; every certified production limit stays as declared."""
     return dict(config, runtime=dict(config['runtime'], stale_resume_s=stale_resume_ms / 1000))
 
 
@@ -851,6 +983,14 @@ def validate_config(config):
         problems.append(f"sustained run for the {config.get('profile', 'standard')} profile must be {profile[2]}")
     if config['post_stop_seconds'] != 1.1:
         problems.append('post-stop observation must stay 1.1 s')
+    c = config.get('criteria', {})
+    if 'required_success_rate' in c:
+        if not 0 < c['required_success_rate'] < 1:
+            problems.append('required_success_rate must be in (0, 1): 100% can never be demonstrated from finite trials')
+        if not 0 < c.get('confidence', binomial_ci.DEFAULT_CONFIDENCE) < 1:
+            problems.append('confidence must be in (0, 1)')
+    elif 'success_rate' not in c:
+        problems.append('a success-rate criterion is required')
     return problems
 
 
@@ -984,7 +1124,8 @@ def run(args):
     uptime = procedure_preflight()
     stamp = (datetime.now().strftime('%Y%m%d-%H%M%S') + (f"-{config['profile']}" if config.get('profile', 'standard') != 'standard' else '')
              + ('-smoke' if args.smoke else '') + (f'-{args.method}' if args.method else '')
-             + (f'-resume{args.stale_resume_ms:g}ms' if args.stale_resume_ms else ''))
+             + ('-stop' if not args.stale_resume_ms else '' if args.stale_resume_ms == DEFAULT_STALE_RESUME_MS
+                else f'-resume{args.stale_resume_ms:g}ms'))
     session_config = with_stale_resume(config, args.stale_resume_ms)
     directory = args.output or DEFAULT_RESULTS / stamp
     directory.mkdir(parents=True, exist_ok=False); (directory / 'traces').mkdir()
@@ -1130,10 +1271,13 @@ def main(argv=None):
                         help='Do not log CPU frequency/thermal zones (removes the PowerShell sampler)')
     parser.add_argument('--method', choices=('sift', 'learned'), help='Diagnostic: run one method only (never PASS)')
     parser.add_argument('--report-only', type=Path, metavar='DIRECTORY', help='Recompute the report from saved evidence')
-    parser.add_argument('--stale-resume-ms', type=float, default=0.0, metavar='MS',
-                        help='Watchdog response: 0 = stop the alignment (default); >0 = hold at zero velocity and '
-                             'resume on fresh images for up to MS milliseconds')
+    parser.add_argument('--stale-resume-ms', type=float, default=DEFAULT_STALE_RESUME_MS, metavar='MS',
+                        help='Watchdog hold-and-resume window (default: 2000 ms). 0 = stop, same as --watchdog-stop')
+    parser.add_argument('--watchdog-stop', action='store_true',
+                        help='A freshness trip ends the alignment (original behaviour) instead of hold and resume')
     args = parser.parse_args(argv)
+    if args.watchdog_stop:
+        args.stale_resume_ms = 0.0
     if not (0 <= args.stale_resume_ms <= 10000):
         parser.error('--stale-resume-ms must be between 0 and 10000')
     if args.long and args.config:

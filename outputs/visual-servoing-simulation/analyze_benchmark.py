@@ -12,6 +12,7 @@ from statistics import NormalDist
 import numpy as np
 
 from benchmark import OUTCOMES, ROOT, read_json, write_json
+import binomial_ci
 
 LABELS = {
     "converged": "Converged", "initial_out_of_view": "Out of view at start",
@@ -39,6 +40,14 @@ def wilson_interval(successes: int, total: int, confidence: float = .95):
     return float(max(0, center-half)), float(min(1, center+half))
 
 
+def success_interval(successes: int, total: int, confidence: float = .95):
+    """The project's interval for every success rate: exact Clopper-Pearson (binomial_ci.py).
+
+    wilson_interval above is kept for code that imports it; reports use this one.
+    """
+    return binomial_ci.clopper_pearson(successes, total, confidence)
+
+
 def summarize(rows: list[dict], confidence: float) -> dict:
     n = len(rows)
     successes = [r for r in rows if r["outcome"] == "converged"]
@@ -49,9 +58,9 @@ def summarize(rows: list[dict], confidence: float) -> dict:
     return {
         "trials": n, "initially_detected": len(detected), "successes": k,
         "success_rate_all": k/n if n else None,
-        "success_ci95_all": wilson_interval(k, n, confidence),
+        "success_ci95_all": success_interval(k, n, confidence),
         "success_rate_initially_detected": k/len(detected) if detected else None,
-        "success_ci95_initially_detected": wilson_interval(k, len(detected), confidence),
+        "success_ci95_initially_detected": success_interval(k, len(detected), confidence),
         "median_convergence_time_s_successes": float(np.median([r["terminal_time_s"] for r in successes])) if k else None,
         "median_settling_time_s_successes": float(np.median([r["settling_time_s"] for r in successes])) if k else None,
         "median_final_error_px_successes": float(np.median([r["final_error_px"] for r in successes])) if k else None,
@@ -118,7 +127,7 @@ def generate_figures(directory: Path, rows: list[dict], manifest: dict, summary:
                               ha="center", fontsize=9)
         axes[0].set(xticks=range(len(profiles)), xticklabels=profiles, ylim=(0, 116),
                      ylabel="Successful alignment (%)", xlabel="Joint-offset sampling profile",
-                     title="Success rates with 95% Wilson intervals")
+                     title="Success rates with 95% Clopper-Pearson intervals")
         axes[0].set_yticks([0, 25, 50, 75, 100])
         axes[0].legend(loc="lower left", fontsize=9)
         axes[0].grid(axis="y", alpha=.15)
@@ -181,7 +190,8 @@ def analyze(directory: Path) -> dict:
     validate_run(directory, manifest, rows)
     confidence = manifest["benchmark_config"]["confidence_level"]
     summary = {"status": "complete", "confidence_level": confidence,
-               "interval_method": "Wilson score, two-sided",
+               "interval_method": "Clopper-Pearson (exact), two-sided",
+               "interval_note": "Summaries written before this change used the Wilson score interval.",
                "overall": summarize(rows, confidence),
                "profiles": {name: summarize([r for r in rows if r["profile"] == name], confidence)
                             for name in manifest["benchmark_config"]["profiles_degrees"]},
@@ -206,7 +216,8 @@ def analyze(directory: Path) -> dict:
         f"Completed **{len(rows)} trials**, RNG seed **{manifest['seed']}**. Controller: unchanged step-2 fixed-gain marker IBVS.", "",
         f"- All starts: **{overall['successes']}/{overall['trials']}** converged; {format_rate(overall)}.",
         f"- Starts with the marker initially detected: **{overall['successes']}/{overall['initially_detected']}**; {format_rate(overall, True)}.",
-        "- Brackets show 95% Wilson confidence intervals for the declared starting-pose distribution.", "",
+        "- Brackets show 95% Clopper-Pearson (exact) confidence intervals for the declared starting-pose distribution. "
+        "A 100% observed rate is not proof of 100% reliability; the lower bound is what the data supports.", "",
         "![Benchmark overview](benchmark_overview.png)", "",
         "| Profile | Sampled starts | Marker detected at start | Converged | Success, all starts (95% CI) | Success, detected starts (95% CI) |",
         "|---|---:|---:|---:|---|---|",
@@ -243,7 +254,7 @@ def analyze(directory: Path) -> dict:
               "Replay one exact starting pose (current source hashes must match the saved run):", "",
               "    python benchmark.py --replay-run \"PATH_TO_THIS_RUN\" --trial-id 12", "",
               "This step benchmarks one controller under fixed lighting and idealized dynamics. Baseline comparisons, learned features, noise/latency sweeps and physical validation are not included.", "",
-              "[Wilson interval method: NIST](https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm).", ""]
+              "Interval method: exact Clopper-Pearson (`binomial_ci.py`; see docs/STATISTICS.md).", ""]
     (directory / "REPORT.md").write_text("\n".join(lines), encoding="utf-8")
     print(json.dumps({"overall": overall, "profiles": summary["profiles"]}, indent=2))
     return summary

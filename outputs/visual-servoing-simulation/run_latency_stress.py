@@ -55,7 +55,7 @@ def wait_for(session,predicate,timeout):
 
 def run_session(mode,seconds,offset,diagnostics=True):
     # Match the old experiment exactly: warm-up in the worker, then auto-arm.
-    session=RealtimeSession(mode,RuntimeConfig(max_age_s=.4,transport_s=.05),offset=offset,
+    session=RealtimeSession(mode,RuntimeConfig(max_age_s=.4,transport_s=.05,stale_resume_s=0),offset=offset,
         diagnostics=diagnostics,telemetry_capacity=8192).start()
     attempts=[]
     initial_error=None
@@ -139,7 +139,7 @@ def main():
     baseline_digest=hashlib.sha256(args.baseline.read_bytes()).hexdigest()
     current=fingerprint()
     validate_fixed_inputs(baseline,current)
-    cfg=asdict(RuntimeConfig(max_age_s=.4,transport_s=.05))
+    cfg=asdict(RuntimeConfig(max_age_s=.4,transport_s=.05,stale_resume_s=0))  # Historical stop response.
     if 'plan' in baseline:
         if baseline['plan']['config']!=cfg:raise ValueError('Runtime conditions differ from the baseline')
         offset=baseline['plan']['offset_degrees']
