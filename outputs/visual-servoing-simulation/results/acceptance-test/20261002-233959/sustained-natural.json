@@ -1,0 +1,484 @@
+{
+  "id": "sustained-natural",
+  "phase": "sustained",
+  "mode": "natural",
+  "pose_ids": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "attempts": 134,
+  "aligned": 134,
+  "outcomes": {
+    "converged": 134
+  },
+  "stop_reasons": {
+    "converged": 134
+  },
+  "pose_attempts": {
+    "0": 27,
+    "1": 27,
+    "2": 27,
+    "3": 27,
+    "4": 26
+  },
+  "per_pose": {
+    "0": {
+      "attempts": 27,
+      "aligned": 27,
+      "processing_ms": {
+        "count": 1525,
+        "mean": 46.29646550829629,
+        "p50": 47.99459996866062,
+        "p95": 58.39199998881668,
+        "p99": 64.52350796665996,
+        "max": 76.69319998240098
+      }
+    },
+    "1": {
+      "attempts": 27,
+      "aligned": 27,
+      "processing_ms": {
+        "count": 1356,
+        "mean": 48.02663989685672,
+        "p50": 49.702500022249296,
+        "p95": 59.40084997564554,
+        "p99": 64.39358999778055,
+        "max": 76.03230001404881
+      }
+    },
+    "2": {
+      "attempts": 27,
+      "aligned": 27,
+      "processing_ms": {
+        "count": 1547,
+        "mean": 46.772813769387,
+        "p50": 48.59710001619533,
+        "p95": 59.72959999344312,
+        "p99": 65.94068002770652,
+        "max": 93.56309997383505
+      }
+    },
+    "3": {
+      "attempts": 27,
+      "aligned": 27,
+      "processing_ms": {
+        "count": 1433,
+        "mean": 48.672656731992646,
+        "p50": 49.9580999603495,
+        "p95": 62.13730002054944,
+        "p99": 76.34621598292144,
+        "max": 113.92760003218427
+      }
+    },
+    "4": {
+      "attempts": 26,
+      "aligned": 26,
+      "processing_ms": {
+        "count": 1400,
+        "mean": 48.8998406425318,
+        "p50": 50.897649984108284,
+        "p95": 61.66686499200296,
+        "p99": 69.50477201200556,
+        "max": 111.22710001654923
+      }
+    }
+  },
+  "duration_s": 724.6666519999853,
+  "worker_pids": [
+    46688
+  ],
+  "worker_executable": "C:\\Users\\marys\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "execution_settings": {
+    "scheduling": {
+      "role": "sensor",
+      "scope": "process",
+      "platform": "nt",
+      "thread_id": 16752,
+      "qos_applied": true,
+      "priority_applied": false,
+      "errors": [],
+      "qos_previous": [
+        0,
+        0
+      ],
+      "qos_requested": [
+        1,
+        0
+      ],
+      "qos_observed": [
+        1,
+        0
+      ]
+    }
+  },
+  "processing_ms": {
+    "count": 7261,
+    "mean": 47.691980512053604,
+    "p50": 49.40540000097826,
+    "p95": 60.51189999561757,
+    "p99": 68.35064000915735,
+    "max": 113.92760003218427
+  },
+  "capture_ms": {
+    "count": 8684,
+    "mean": 96.55729478380565,
+    "p50": 103.96654999931343,
+    "p95": 116.91314500640146,
+    "p99": 124.69240000471473,
+    "max": 173.40040003182366
+  },
+  "first_processing_ms": {
+    "count": 59,
+    "mean": 42.45316101261809,
+    "p50": 44.75190001539886,
+    "p95": 53.882580011850216,
+    "p99": 57.442113975994296,
+    "max": 58.67559998296201
+  },
+  "later_processing_ms": {
+    "count": 7202,
+    "mean": 47.734897805925684,
+    "p50": 49.43970000022091,
+    "p95": 60.54663998074829,
+    "p99": 68.36633402563166,
+    "max": 113.92760003218427
+  },
+  "first_capture_ms": {
+    "count": 68,
+    "mean": 92.34914558542454,
+    "p50": 98.57319999719039,
+    "p95": 109.44866500503849,
+    "p99": 113.72587999561802,
+    "max": 114.38650003401563
+  },
+  "later_capture_ms": {
+    "count": 8616,
+    "mean": 96.59050673198229,
+    "p50": 104.34315001475625,
+    "p95": 116.92305000906345,
+    "p99": 124.71280000172557,
+    "max": 173.40040003182366
+  },
+  "first_alignment_s": 4.3670576000004075,
+  "first_alignment_converged": true,
+  "later_alignment_s": {
+    "count": 133,
+    "mean": 4.220250506763683,
+    "p50": 4.213272099965252,
+    "p95": 4.491215400025249,
+    "p99": 4.524788487993646,
+    "max": 4.5718615999794565
+  },
+  "drift": [
+    {
+      "start_s": 0,
+      "processing_ms": {
+        "count": 1199,
+        "mean": 47.04467205911738,
+        "p50": 49.047900014556944,
+        "p95": 61.68906999519095,
+        "p99": 66.78848399664275,
+        "max": 76.00629999069497
+      }
+    },
+    {
+      "start_s": 120,
+      "processing_ms": {
+        "count": 1209,
+        "mean": 48.198282051605396,
+        "p50": 50.31360004795715,
+        "p95": 60.21989998407662,
+        "p99": 65.89536803774536,
+        "max": 76.24339999165386
+      }
+    },
+    {
+      "start_s": 240,
+      "processing_ms": {
+        "count": 1213,
+        "mean": 47.72800717153299,
+        "p50": 49.85709994798526,
+        "p95": 59.63994000339879,
+        "p99": 66.35302005335677,
+        "max": 76.03230001404881
+      }
+    },
+    {
+      "start_s": 360,
+      "processing_ms": {
+        "count": 1194,
+        "mean": 48.451646816847735,
+        "p50": 50.10680001578294,
+        "p95": 60.78411500202491,
+        "p99": 68.15788699605037,
+        "max": 78.86349997716025
+      }
+    },
+    {
+      "start_s": 480,
+      "processing_ms": {
+        "count": 1176,
+        "mean": 48.0190472798418,
+        "p50": 48.7060500017833,
+        "p95": 64.14614999084733,
+        "p99": 81.54667503549717,
+        "max": 113.92760003218427
+      }
+    },
+    {
+      "start_s": 600,
+      "processing_ms": {
+        "count": 1227,
+        "mean": 46.65245191483874,
+        "p50": 48.45629999181256,
+        "p95": 57.679929985897616,
+        "p99": 62.72420998197049,
+        "max": 93.56309997383505
+      }
+    },
+    {
+      "start_s": 720,
+      "processing_ms": {
+        "count": 43,
+        "mean": 50.1136883665526,
+        "p50": 49.914399976842105,
+        "p95": 57.531609979923815,
+        "p99": 61.06788999983109,
+        "max": 63.079899991862476
+      }
+    }
+  ],
+  "image_error_px": {
+    "count": 134,
+    "mean": 0.20212214017189173,
+    "p50": 0.2024215935045484,
+    "p95": 0.21533609507543963,
+    "p99": 0.21711415161983025,
+    "max": 0.21726661861562233
+  },
+  "position_mm": {
+    "count": 268,
+    "mean": 0.36597033857511607,
+    "p50": 0.36488466169788936,
+    "p95": 0.4510130717600052,
+    "p99": 0.45521759881237145,
+    "max": 0.45766252254259826
+  },
+  "orientation_deg": {
+    "count": 268,
+    "mean": 0.08490891586417441,
+    "p50": 0.08195993157616051,
+    "p95": 0.09543362320956145,
+    "p99": 0.09601809997705298,
+    "max": 0.09659480987839301
+  },
+  "freshness_trips": 0,
+  "stale_stops": 0,
+  "watchdog_pauses": 0,
+  "paused_s": 0.0,
+  "alignment_time_s": 565.6603749995702,
+  "paused_motion": 0,
+  "control_misses": 0,
+  "unsafe_motion": 0,
+  "post_stop_motion": 0,
+  "contacts": 0,
+  "unlatched_stops": 0,
+  "missing_endpoints": 0,
+  "telemetry_lost": 0,
+  "continuity_gaps": 0,
+  "maximum_control_gap_ms": 12.207099993247539,
+  "runtime_errors": 0,
+  "harness_error": null,
+  "counts": {
+    "captures": 13422,
+    "capture_slots": 21315,
+    "busy_capture_skips": 7893,
+    "input_dropped": 0,
+    "transport_dropped": 0,
+    "pending_cancelled": 360,
+    "sensor_received": 13422,
+    "sensor_rows_evicted": 0,
+    "command_rows_evicted": 0,
+    "loop_rows_evicted": 0,
+    "stale_results": 0,
+    "obsolete_results": 132,
+    "pre_inference_dropped": 0,
+    "accepted": 8684,
+    "control_ticks": 354921,
+    "moving_ticks": 234572,
+    "unsafe_motion_ticks": 0,
+    "contacts": 0,
+    "post_stop_motion_ticks": 0,
+    "control_deadline_misses": 0,
+    "fault_results": 0,
+    "discarded_physics_s": 0.0,
+    "watchdog_pauses": 0,
+    "watchdog_resumes": 0,
+    "paused_s": 0.0,
+    "paused_motion_ticks": 0,
+    "receiver_dropped": 0
+  },
+  "worker_counts": {
+    "requests_started": 13422,
+    "frames_completed": 13422,
+    "result_dropped": 0,
+    "requests_expired": 0
+  },
+  "raw_sha256": "a01b7388857cc4c6224f738e28efa553d2ca75b6653dbc1a0f292ebc48d07bd1",
+  "samples": {
+    "sensor": 13422,
+    "uncached_active": 7261,
+    "commands": 8684
+  },
+  "actuator": {
+    "stopped_velocity_rad_s": 0.001,
+    "stopped_hold_s": 0.02,
+    "servo_lag_allowance_s": 0.015,
+    "enabled": true,
+    "max_acceleration_rad_s2": 2.0,
+    "max_deceleration_rad_s2": 5.0,
+    "max_jerk_rad_s3": 150.0,
+    "profile": "default",
+    "braking_check": {
+      "ok": true,
+      "equivalent_time_s": 0.10836296296296295,
+      "braking_time_s": 0.12,
+      "max_velocity_rad_s": 0.6,
+      "worst_stop_distance_rad": 0.05601777777777777,
+      "worst_stop_time_s": 0.16933333333333334
+    }
+  },
+  "physical_stops": {
+    "stop": {
+      "count": 134,
+      "moving": 0,
+      "not_recorded": 0,
+      "completed": 0,
+      "interrupted": 0,
+      "other": 0,
+      "stop_clamps": 0,
+      "reasons": [
+        "converged"
+      ],
+      "command_latency_ms": null,
+      "physical_stop_ms": null,
+      "deadline_to_standstill_ms": null,
+      "speed_at_command_rad_s": null,
+      "max_joint_travel_rad": null,
+      "camera_travel_mm": null,
+      "camera_rotation_deg": null,
+      "peak_measured_accel_rad_s2": null,
+      "peak_setpoint_jerk_rad_s3": null
+    }
+  },
+  "safety": {
+    "steps": 362145,
+    "min_environment_slack_m": 0.0029999999999998674,
+    "min_environment_pair": [
+      "pedestal",
+      "upper_arm"
+    ],
+    "min_self_slack_m": 0.008999999999999739,
+    "min_self_pair": [
+      "wrist_roll_link",
+      "tool_link"
+    ],
+    "min_joint_margin_rad": 0.9948376736344997,
+    "min_joint_margin_joint": 1,
+    "peak_command_rad_s": 0.08727783960721197,
+    "peak_speed_rad_s": 0.0849265739075219,
+    "peak_speed_joint": 2,
+    "limits": {
+      "clearance_m": 0.012,
+      "self_clearance_m": 0.006,
+      "collision_guard_enabled": true,
+      "joint_range_rad": [
+        [
+          -2.9670597283903604,
+          2.9670597283903604
+        ],
+        [
+          -1.7453292519943295,
+          1.3962634015954636
+        ],
+        [
+          -0.17453292519943295,
+          2.530727415391778
+        ],
+        [
+          -2.9670597283903604,
+          2.9670597283903604
+        ],
+        [
+          -1.7453292519943295,
+          1.7453292519943295
+        ],
+        [
+          -2.9670597283903604,
+          2.9670597283903604
+        ]
+      ],
+      "max_joint_velocity_rad_s": 0.6
+    }
+  },
+  "safety_metrics": [
+    {
+      "key": "environment_clearance",
+      "requirement": "REQ-11",
+      "description": "Minimum clearance to the environment above its 12 mm margin",
+      "unit": "mm",
+      "value": 2.999999999999867,
+      "limit": 0.0,
+      "comparison": ">=",
+      "passed": true,
+      "detail": "pedestal / upper_arm"
+    },
+    {
+      "key": "self_clearance",
+      "requirement": "REQ-11",
+      "description": "Minimum clearance between robot parts above its 6 mm margin",
+      "unit": "mm",
+      "value": 8.999999999999739,
+      "limit": 0.0,
+      "comparison": ">=",
+      "passed": true,
+      "detail": "wrist_roll_link / tool_link"
+    },
+    {
+      "key": "joint_margin",
+      "requirement": "REQ-12",
+      "description": "Minimum distance to a joint limit",
+      "unit": "rad",
+      "value": 0.9948376736344997,
+      "limit": 0.0,
+      "comparison": ">=",
+      "passed": true,
+      "detail": "joint 1"
+    },
+    {
+      "key": "command_speed",
+      "requirement": "REQ-13",
+      "description": "Peak commanded joint speed",
+      "unit": "rad/s",
+      "value": 0.08727783960721197,
+      "limit": 0.6,
+      "comparison": "<=",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "key": "measured_speed",
+      "requirement": "REQ-13",
+      "description": "Peak measured joint speed",
+      "unit": "rad/s",
+      "value": 0.0849265739075219,
+      "limit": 0.6,
+      "comparison": "<=",
+      "passed": true,
+      "detail": "joint 2"
+    }
+  ]
+}

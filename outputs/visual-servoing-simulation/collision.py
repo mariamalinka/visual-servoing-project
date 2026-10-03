@@ -90,13 +90,18 @@ class CollisionGuard:
         self.detours = 0
         self.rejected_paths = 0
         self.last = CollisionDecision(np.zeros(6), "clear" if self.enabled else "disabled", None, None)
+        # Smallest distance above its required margin in the latest check (m) and its
+        # pair, for the environment and for robot-robot pairs separately. Recorded for
+        # safety evidence only; no decision uses them.
+        self.last_slack = dict(environment=None, self=None)
+        self.last_slack_pair = dict(environment=None, self=None)
 
     def refresh_pairs(self):
         model = self.model
         ignored = {frozenset(pair) for pair in self.config["ignored_geom_pairs"]}
         if any(not pair <= set(self.geom_names) for pair in ignored):
             raise ValueError("Ignored collision pair names must exist in the model")
-        pairs, margins = [], []
+        pairs, margins, robot_pairs = [], [], []
         if self.enabled:
             for i in range(model.ngeom):
                 for j in range(i+1, model.ngeom):
@@ -117,8 +122,10 @@ class CollisionGuard:
                         continue
                     pairs.append((i,j))
                     margins.append(self.config["self_clearance_m"] if robot_i and robot_j else self.config["clearance_m"])
+                    robot_pairs.append(bool(robot_i and robot_j))
         self.pairs = np.asarray(pairs, dtype=int).reshape(-1,2)
         self.margins = np.asarray(margins)
+        self.self_pairs = np.asarray(robot_pairs, dtype=bool)  # Robot-robot pairs (self_clearance_m).
         self.pair_keys = {tuple(pair) for pair in pairs}
         self.left,self.right = self.pairs.T
         self.radius_sums = model.geom_rbound[self.left]+model.geom_rbound[self.right]
@@ -269,6 +276,14 @@ class CollisionGuard:
             self.last = CollisionDecision(request.copy(), "disabled", None, None)
             return self.last
         distances, segments = self.distances(qpos, witnesses=True)
+        slack = distances-self.margins
+        for kind, mask in (("environment", ~self.self_pairs), ("self", self.self_pairs)):
+            if np.any(mask):
+                tightest = int(np.flatnonzero(mask)[np.argmin(slack[mask])])
+                self.last_slack[kind] = float(slack[tightest])
+                self.last_slack_pair[kind] = tuple(self.geom_names[i] for i in self.pairs[tightest])
+            else:
+                self.last_slack[kind] = self.last_slack_pair[kind] = None
         if not len(distances):
             self.last = CollisionDecision(request.copy(), "clear", None, None)
             return self.last

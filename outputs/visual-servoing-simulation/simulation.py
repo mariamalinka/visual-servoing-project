@@ -71,6 +71,7 @@ class Simulation:
         self._command_was_zero = True
         self._backstop = np.zeros(self.model.nu)  # Latched joint-limit cut per joint (+1 upper, -1 lower).
         self._kinematics = mujoco.MjData(self.model)
+        self.reset_safety_record()
         if not self.collision.enabled:
             self.model.geom_contype[:] = 0
             self.model.geom_conaffinity[:] = 0
@@ -236,9 +237,54 @@ class Simulation:
             qvel = self.data.qvel.copy()
             mujoco.mj_step(self.model, self.data)
             self._monitor_step(cmd, qvel, dt)
+            self._record_safety(cmd)
         # mj_step leaves position-dependent fields at the integration-stage pose.
         # Forward refresh makes camera pose and RGB correspond to current qpos.
         mujoco.mj_forward(self.model, self.data)
+
+    # ------------------------------------------------------------------ safety envelope
+
+    def reset_safety_record(self):
+        """Start a new record of the safety extremes seen on every physics step."""
+        self._safety = dict(steps=0, min_environment_slack_m=None, min_environment_pair=None,
+                            min_self_slack_m=None, min_self_pair=None,
+                            min_joint_margin_rad=None, min_joint_margin_joint=None,
+                            peak_command_rad_s=0.0, peak_speed_rad_s=0.0, peak_speed_joint=None)
+
+    def _record_safety(self, cmd):
+        """Update the extremes after one physics step (no decision depends on this).
+
+        Clearance: the collision guard's own distance check of this step (the pose
+        before the step), minus the required margin, separately for the environment
+        (12 mm) and between robot parts (6 mm). Joint margin: distance of the new position to the scene.xml
+        range. Speeds: the command after the guard and backstop, and the measured
+        joint velocity.
+        """
+        record = self._safety
+        record["steps"] += 1
+        for kind in ("environment", "self"):
+            slack = self.collision.last_slack[kind]
+            key = f"min_{kind}_slack_m"
+            if slack is not None and (record[key] is None or slack < record[key]):
+                record[key], record[f"min_{kind}_pair"] = slack, self.collision.last_slack_pair[kind]
+        lower, upper = self.model.jnt_range.T
+        margins = np.minimum(self.data.qpos - lower, upper - self.data.qpos)
+        joint = int(np.argmin(margins))
+        if record["min_joint_margin_rad"] is None or margins[joint] < record["min_joint_margin_rad"]:
+            record["min_joint_margin_rad"], record["min_joint_margin_joint"] = float(margins[joint]), joint
+        record["peak_command_rad_s"] = max(record["peak_command_rad_s"], float(np.max(np.abs(cmd))))
+        speed = np.abs(self.data.qvel)
+        joint = int(np.argmax(speed))
+        if speed[joint] > record["peak_speed_rad_s"]:
+            record["peak_speed_rad_s"], record["peak_speed_joint"] = float(speed[joint]), joint
+
+    def safety_record(self) -> dict:
+        """Extremes since reset_safety_record(), with the limits they are judged against."""
+        return dict(self._safety, limits=dict(
+            clearance_m=self.collision.config["clearance_m"], self_clearance_m=self.collision.config["self_clearance_m"],
+            collision_guard_enabled=self.collision.enabled,
+            joint_range_rad=self.model.jnt_range.tolist(),
+            max_joint_velocity_rad_s=self.config["max_joint_velocity_rad_s"]))
 
     # ------------------------------------------------------------------ physical stop measurement
 

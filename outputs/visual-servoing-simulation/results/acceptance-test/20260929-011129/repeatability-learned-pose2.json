@@ -1,0 +1,222 @@
+{
+  "id": "repeatability-learned-pose2",
+  "phase": "repeatability",
+  "mode": "learned",
+  "pose_ids": [
+    2
+  ],
+  "attempts": 3,
+  "aligned": 3,
+  "outcomes": {
+    "converged": 3
+  },
+  "stop_reasons": {
+    "converged": 3
+  },
+  "pose_attempts": {
+    "2": 3
+  },
+  "per_pose": {
+    "2": {
+      "attempts": 3,
+      "aligned": 3,
+      "processing_ms": {
+        "count": 205,
+        "mean": 39.04248048780662,
+        "p50": 40.60449999997218,
+        "p95": 52.63400000112596,
+        "p99": 54.84513599971252,
+        "max": 56.84990000008838
+      }
+    }
+  },
+  "duration_s": 18.55770279999888,
+  "worker_pids": [
+    19548
+  ],
+  "worker_executable": "C:\\Users\\marys\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "execution_settings": {
+    "device": "cuda",
+    "cpu_threads": 8,
+    "cuda_graph_blocks": 9,
+    "graph_initialization_ms": 40.587899999081856,
+    "image_conversion": "upload_uint8_then_float32",
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "cudnn_allow_tf32": true,
+    "matmul_allow_tf32": false,
+    "scheduling": {
+      "role": "sensor",
+      "scope": "process",
+      "platform": "nt",
+      "thread_id": 6452,
+      "qos_applied": true,
+      "priority_applied": false,
+      "errors": [],
+      "qos_previous": [
+        0,
+        0
+      ],
+      "qos_requested": [
+        1,
+        0
+      ],
+      "qos_observed": [
+        1,
+        0
+      ]
+    }
+  },
+  "processing_ms": {
+    "count": 205,
+    "mean": 39.04248048780662,
+    "p50": 40.60449999997218,
+    "p95": 52.63400000112596,
+    "p99": 54.84513599971252,
+    "max": 56.84990000008838
+  },
+  "capture_ms": {
+    "count": 238,
+    "mean": 88.05531008400969,
+    "p50": 92.41144999941753,
+    "p95": 106.18654499903641,
+    "p99": 109.61958200034132,
+    "max": 111.14850000012666
+  },
+  "first_processing_ms": {
+    "count": 82,
+    "mean": 32.04651463422523,
+    "p50": 31.926849999763363,
+    "p95": 45.50289999979214,
+    "p99": 48.82354499963185,
+    "max": 49.75949999970908
+  },
+  "later_processing_ms": {
+    "count": 123,
+    "mean": 43.70645772352754,
+    "p50": 44.97609999998531,
+    "p95": 53.56747999903746,
+    "p99": 55.53256599945598,
+    "max": 56.84990000008838
+  },
+  "first_capture_ms": {
+    "count": 91,
+    "mean": 83.29101868132837,
+    "p50": 83.24410000022908,
+    "p95": 99.1929000001619,
+    "p99": 103.53598999990936,
+    "max": 103.70419999890146
+  },
+  "later_capture_ms": {
+    "count": 147,
+    "mean": 91.0046333332886,
+    "p50": 97.86030000032042,
+    "p95": 107.22015000028478,
+    "p99": 110.24228600050265,
+    "max": 111.14850000012666
+  },
+  "first_alignment_s": 4.63504439999997,
+  "first_alignment_converged": true,
+  "later_alignment_s": {
+    "count": 2,
+    "mean": 4.68180564999966,
+    "p50": 4.68180564999966,
+    "p95": 4.7354693650006086,
+    "p99": 4.740239473000693,
+    "max": 4.741432000000714
+  },
+  "drift": [
+    {
+      "start_s": 0,
+      "processing_ms": {
+        "count": 205,
+        "mean": 39.04248048780662,
+        "p50": 40.60449999997218,
+        "p95": 52.63400000112596,
+        "p99": 54.84513599971252,
+        "max": 56.84990000008838
+      }
+    }
+  ],
+  "image_error_px": {
+    "count": 3,
+    "mean": 0.21560891077142583,
+    "p50": 0.21730645268261778,
+    "p95": 0.2233301802257071,
+    "p99": 0.22386562267398172,
+    "max": 0.22399948328605038
+  },
+  "position_mm": {
+    "count": 6,
+    "mean": 0.27645802693697025,
+    "p50": 0.2784662142925421,
+    "p95": 0.36757367991162226,
+    "p99": 0.37310795486246584,
+    "max": 0.37449152360017673
+  },
+  "orientation_deg": {
+    "count": 6,
+    "mean": 0.10318960451622983,
+    "p50": 0.10196709208705437,
+    "p95": 0.10679690120053735,
+    "p99": 0.1067969012005381,
+    "max": 0.1067969012005383
+  },
+  "freshness_trips": 0,
+  "stale_stops": 0,
+  "watchdog_pauses": 0,
+  "paused_s": 0.0,
+  "alignment_time_s": 13.99865569999929,
+  "paused_motion": 0,
+  "control_misses": 0,
+  "unsafe_motion": 0,
+  "post_stop_motion": 0,
+  "contacts": 0,
+  "unlatched_stops": 0,
+  "missing_endpoints": 0,
+  "telemetry_lost": 0,
+  "continuity_gaps": 0,
+  "maximum_control_gap_ms": 7.0209999994403915,
+  "runtime_errors": 0,
+  "harness_error": null,
+  "counts": {
+    "captures": 345,
+    "capture_slots": 515,
+    "busy_capture_skips": 170,
+    "input_dropped": 0,
+    "transport_dropped": 0,
+    "pending_cancelled": 7,
+    "sensor_received": 345,
+    "sensor_rows_evicted": 0,
+    "command_rows_evicted": 0,
+    "loop_rows_evicted": 0,
+    "stale_results": 0,
+    "obsolete_results": 2,
+    "pre_inference_dropped": 0,
+    "accepted": 238,
+    "control_ticks": 8555,
+    "moving_ticks": 5875,
+    "unsafe_motion_ticks": 0,
+    "contacts": 0,
+    "post_stop_motion_ticks": 0,
+    "control_deadline_misses": 0,
+    "fault_results": 0,
+    "discarded_physics_s": 0.0,
+    "watchdog_pauses": 0,
+    "watchdog_resumes": 0,
+    "paused_s": 0.0,
+    "paused_motion_ticks": 0
+  },
+  "worker_counts": {
+    "requests_started": 345,
+    "frames_completed": 345,
+    "result_dropped": 0,
+    "requests_expired": 0
+  },
+  "raw_sha256": "7cc5e45715e0be40981b2763563a85c0108b12179f69d0524cc36e5233a1bca9",
+  "samples": {
+    "sensor": 345,
+    "uncached_active": 205,
+    "commands": 238
+  }
+}

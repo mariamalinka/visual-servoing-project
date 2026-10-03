@@ -60,6 +60,8 @@ and enforce their recorded runtime/source versions.
 
 - [Actuator dynamics model](ACTUATOR_MODEL.md): simulated acceleration, deceleration and jerk limits between the velocity command and the servos; the difference between command stop latency, physical stopping time and stopping distance; measured stops, resumes and pause/resume cycles; the 400 ms watchdog requirement re-evaluated against physical motion; assumptions (not real-robot data).
 
+- [Fault injection and the safety envelope](FAULT_INJECTION.md): clearance, joint-limit margin and joint speed recorded in every acceptance, margin, campaign and stress run with PASS/FAIL against REQ-11 to REQ-13, and a fault-injection campaign that triggers each safety stop on purpose and records the reaction.
+
 - [Watchdog decision](WATCHDOG_DECISION.md): why a freshness-watchdog trip now holds and resumes the alignment instead of ending it, with the evidence and trade-offs. Stop remains a setting.
 
 - [Acceptance test](ACCEPTANCE_TEST.md): one command (`acceptance-test.cmd`, about 30 minutes) for SIFT and Learned GPU: five starting poses with fresh workers, then a 12-minute reused-worker run per method, with a PASS/FAIL report.

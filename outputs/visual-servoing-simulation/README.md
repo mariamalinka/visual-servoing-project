@@ -184,6 +184,11 @@ App acceptance checks call the same click handlers used by Offset and Align, adv
 | actuator_config.json | Actuator profiles (`ideal` = no dynamics, `default`, `gentle`) and the standstill threshold; the limits are assumptions, not drive data |
 | stop_response.py | Joins runtime stop/hold events with the measured physical stops: command stop latency, physical stopping time and distance |
 | run_stop_response.py | Stop and resume study: speeds, joints, profiles, pause/resume cycles, realtime watchdog stops, paired accuracy check |
+| safety_metrics.py | Judges the per-step safety record (clearance, joint-limit margin, joint speed) against REQ-11 to REQ-13 for the acceptance, margin, campaign and stress reports |
+| fault_injection.py | Fault-injection scenarios for the runtime's safety paths: control-loop and controller stalls, clock step, failed inference, collision block, run limit, speed clip, sensor-worker crash, and a half-sent or never-returning result read |
+| run_fault_campaign.py | Runs every scenario repeatedly and writes the fault-injection report ([fault injection](../../docs/FAULT_INJECTION.md)) |
+| tests/test_safety_metrics.py | Safety record and its evaluation (headless) |
+| tests/test_fault_injection.py | One test per injected fault |
 | tests/test_actuator.py | Acceleration, jerk and no-reversal limits, braking check, measured stops and pause/resume cycles in MuJoCo |
 | control.py | Interaction matrix, damped inverse, depth estimation and pure IBVS |
 | recovery.py | Remembered-view return, local scan, confirmation and IBVS handoff |

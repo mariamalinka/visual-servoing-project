@@ -1,0 +1,222 @@
+{
+ "full": {
+  "Control-loop gap p50 (ms)": {
+   "before": "2.01 (2.00\u20132.01)",
+   "after": "2.00 (2.00\u20132.00)"
+  },
+  "Control-loop gap p99 (ms)": {
+   "before": "8.27 (8.00\u20139.04)",
+   "after": "7.95 (7.79\u20138.00)"
+  },
+  "Control-loop gap p99.9 (ms)": {
+   "before": "11.53 (10.71\u201313.55)",
+   "after": "11.25 (10.72\u201311.64)"
+  },
+  "Control-loop gap max (ms)": {
+   "before": "43.30 (37.17\u201352.93)",
+   "after": "42.72 (34.72\u201351.53)"
+  },
+  "Control deadline misses (> 50 ms)": {
+   "before": "1 total (per session 1, 0, 0, 0)",
+   "after": "0 total (per session 0, 0, 0, 0)"
+  },
+  "Freshness-watchdog stops": {
+   "before": "4 total (per session 3, 0, 1, 0)",
+   "after": "2 total (per session 0, 0, 1, 1)"
+  },
+  "Frames received per second": {
+   "before": "9.13 (8.92\u20139.24)",
+   "after": "9.21 (9.17\u20139.28)"
+  },
+  "Alignments converged / attempts": {
+   "before": "48 / 53",
+   "after": "50 / 52"
+  },
+  "IPC: worker finished \u2192 control loop has it, p50 (ms)": {
+   "before": "2.55 (2.49\u20132.63)",
+   "after": "2.32 (2.30\u20132.36)"
+  },
+  "IPC p99 (ms)": {
+   "before": "4.56 (4.06\u20135.22)",
+   "after": "4.99 (4.69\u20135.40)"
+  },
+  "IPC max (ms)": {
+   "before": "6.12 (4.60\u20137.44)",
+   "after": "22.35 (7.89\u201335.56)"
+  },
+  "Capture to command p50 (ms)": {
+   "before": "175.75 (172.44\u2013178.16)",
+   "after": "174.73 (174.18\u2013175.36)"
+  },
+  "Capture to command p99 (ms)": {
+   "before": "220.76 (214.05\u2013237.96)",
+   "after": "211.75 (207.77\u2013216.50)"
+  },
+  "Capture to command max (ms)": {
+   "before": "234.09 (220.36\u2013262.15)",
+   "after": "222.52 (218.60\u2013226.98)"
+  },
+  "Maximum feedback age (ms)": {
+   "before": "402.32 (399.70\u2013408.58)",
+   "after": "399.79 (393.72\u2013404.91)"
+  },
+  "CPU: control thread (% of one core)": {
+   "before": "30.80 (30.31\u201331.09)",
+   "after": "29.01 (28.66\u201329.17)"
+  },
+  "CPU: receiver thread (% of one core)": {
+   "before": "n/a",
+   "after": "0.79 (0.78\u20130.80)"
+  },
+  "CPU: whole control process (% of one core)": {
+   "before": "31.22 (30.72\u201331.52)",
+   "after": "30.23 (29.89\u201330.39)"
+  },
+  "CPU: sensor worker process (% of one core)": {
+   "before": "120.75 (116.45\u2013122.66)",
+   "after": "121.79 (120.68\u2013122.79)"
+  },
+  "Per tick: receive step wall p50 (ms)": {
+   "before": "0.024 (0.024\u20130.024)",
+   "after": "0.003 (0.003\u20130.003)"
+  },
+  "Per tick: receive step wall p99.9 (ms)": {
+   "before": "1.573 (1.326\u20132.114)",
+   "after": "0.036 (0.031\u20130.042)"
+  },
+  "Per tick: receive step wall max (ms)": {
+   "before": "7.652 (4.842\u201315.406)",
+   "after": "10.142 (3.372\u201328.738)"
+  },
+  "Per tick: receive step CPU max (ms)": {
+   "before": "5.003 (1.543\u201315.298)",
+   "after": "7.127 (0.445\u201326.726)"
+  },
+  "Per tick: busy time p50 (ms)": {
+   "before": "0.61 (0.61\u20130.61)",
+   "after": "0.57 (0.56\u20130.58)"
+  },
+  "Per tick: busy time p99 (ms)": {
+   "before": "5.35 (5.14\u20135.88)",
+   "after": "5.04 (4.91\u20135.15)"
+  },
+  "Per tick: busy time p99.9 (ms)": {
+   "before": "8.57 (7.98\u20139.95)",
+   "after": "8.07 (7.60\u20138.35)"
+  },
+  "Per tick: busy time max (ms)": {
+   "before": "32.47 (16.21\u201343.23)",
+   "after": "23.46 (11.58\u201332.61)"
+  },
+  "Per tick: wake-up lateness p99 (ms)": {
+   "before": "4.32 (4.13\u20134.73)",
+   "after": "4.16 (4.03\u20134.26)"
+  },
+  "Per tick: wake-up lateness max (ms)": {
+   "before": "16.53 (7.60\u201324.64)",
+   "after": "20.26 (7.91\u201349.64)"
+  },
+  "After only: pipe read + unpickle in receiver, p50 / max (ms)": {
+   "before": "\u2014",
+   "after": "1.78 (1.74\u20131.79) / 13.83 (4.50\u201330.89)"
+  },
+  "After only: wait in local queue until the control loop takes it, p50 / max (ms)": {
+   "before": "\u2014",
+   "after": "0.48 (0.46\u20130.51) / 10.70 (2.79\u201333.96)"
+  },
+  "After only: receiver mailbox drops / stuck at close": {
+   "before": "\u2014",
+   "after": "0 / 0 of 4"
+  }
+ },
+ "spike": {
+  "Control-loop gap p50 (ms)": {
+   "before": "2.00 (2.00\u20132.01)",
+   "after": "2.00 (2.00\u20132.00)"
+  },
+  "Control-loop gap p99 (ms)": {
+   "before": "8.03 (7.79\u20138.29)",
+   "after": "7.91 (7.81\u20138.01)"
+  },
+  "Control-loop gap p99.9 (ms)": {
+   "before": "10.95 (10.36\u201311.25)",
+   "after": "10.76 (10.32\u201311.28)"
+  },
+  "Control-loop gap max (ms)": {
+   "before": "23.18 (14.06\u201336.36)",
+   "after": "24.45 (19.56\u201331.63)"
+  },
+  "Control deadline misses (> 50 ms)": {
+   "before": "0 total (per session 0, 0, 0)",
+   "after": "0 total (per session 0, 0, 0)"
+  },
+  "Freshness-watchdog stops": {
+   "before": "4 total (per session 1, 2, 1)",
+   "after": "3 total (per session 0, 2, 1)"
+  },
+  "Frames received per second": {
+   "before": "9.23 (9.10\u20139.33)",
+   "after": "9.27 (9.23\u20139.29)"
+  },
+  "Alignments converged / attempts": {
+   "before": "35 / 39",
+   "after": "36 / 39"
+  },
+  "IPC: worker finished \u2192 control loop has it, p50 (ms)": {
+   "before": "2.53 (2.52\u20132.55)",
+   "after": "2.34 (2.33\u20132.36)"
+  },
+  "IPC p99 (ms)": {
+   "before": "4.23 (3.78\u20134.56)",
+   "after": "5.30 (4.51\u20135.97)"
+  },
+  "IPC max (ms)": {
+   "before": "6.97 (6.10\u20137.43)",
+   "after": "7.75 (7.03\u20138.66)"
+  },
+  "Capture to command p50 (ms)": {
+   "before": "175.15 (174.11\u2013176.99)",
+   "after": "173.91 (172.41\u2013174.97)"
+  },
+  "Capture to command p99 (ms)": {
+   "before": "214.97 (210.62\u2013219.73)",
+   "after": "211.25 (207.68\u2013216.28)"
+  },
+  "Capture to command max (ms)": {
+   "before": "232.88 (220.34\u2013254.55)",
+   "after": "231.89 (213.39\u2013253.15)"
+  },
+  "Maximum feedback age (ms)": {
+   "before": "403.74 (401.76\u2013406.65)",
+   "after": "397.45 (387.67\u2013402.61)"
+  },
+  "CPU: control thread (% of one core)": {
+   "before": "30.16 (29.62\u201330.74)",
+   "after": "28.36 (28.20\u201328.52)"
+  },
+  "CPU: receiver thread (% of one core)": {
+   "before": "n/a",
+   "after": "0.80 (0.78\u20130.81)"
+  },
+  "CPU: whole control process (% of one core)": {
+   "before": "30.56 (29.99\u201331.14)",
+   "after": "29.60 (29.43\u201329.77)"
+  },
+  "CPU: sensor worker process (% of one core)": {
+   "before": "122.43 (121.90\u2013122.92)",
+   "after": "121.57 (120.45\u2013122.56)"
+  },
+  "After only: pipe read + unpickle in receiver, p50 / max (ms)": {
+   "before": "\u2014",
+   "after": "1.80 (1.78\u20131.82) / 4.98 (4.48\u20135.41)"
+  },
+  "After only: wait in local queue until the control loop takes it, p50 / max (ms)": {
+   "before": "\u2014",
+   "after": "0.50 (0.50\u20130.50) / 4.37 (3.51\u20135.12)"
+  },
+  "After only: receiver mailbox drops / stuck at close": {
+   "before": "\u2014",
+   "after": "0 / 0 of 3"
+  }
+ }
+}

@@ -4,15 +4,27 @@
   "changes": [
     {
       "file": "realtime.py",
-      "title": "hold-and-resume default (stale_resume_s = 2 s) plus actuator-model stop reasons and physical-stop reporting",
-      "date": "2026-09-30",
+      "title": "hold-and-resume default (stale_resume_s = 2 s), actuator-model stop reporting, and sensor results received on a separate thread",
+      "date": "2026-10-02",
       "baseline_sha256": "e91c22f2945f67af322543f75cfe1637287089ce33a71213e2050e5e996296cf",
-      "sha256": "fe159a37597bb32f678857d1955dd3bab9c340e63d1336975578b03252a7587c",
-      "summary": "Adds hold-and-resume as the default freshness-watchdog response. The trip is unchanged: zero velocity at the same moment and image age. With stale_resume_s > 0 (default 2 s) the alignment is paused, resumes on the next fresh frame, and ends as stale_camera only if none arrives within stale_resume_s. stale_resume_s = 0 restores the original stop exactly. Adds counters watchdog_pauses, watchdog_resumes, paused_s, paused_motion_ticks and pause/resume events. Rationale and evidence: docs/WATCHDOG_DECISION.md. 2026-09-30: stop/pause/shutdown pass their reason to Simulation.command_velocity; stop, pause and resume events record a command_serial; RealtimeSession(actuator=...) selects the actuator profile; report() adds 'actuator', 'motion' and 'motion_evicted'. Watchdog logic and timing are unchanged.",
+      "sha256": "3c94761023656a9ee17028cefabe09f44fe2362a51e18f892d1693adb2b9085f",
+      "summary": "Adds hold-and-resume as the default freshness-watchdog response. The trip is unchanged: zero velocity at the same moment and image age. With stale_resume_s > 0 (default 2 s) the alignment is paused, resumes on the next fresh frame, and ends as stale_camera only if none arrives within stale_resume_s. stale_resume_s = 0 restores the original stop exactly. Adds counters watchdog_pauses, watchdog_resumes, paused_s, paused_motion_ticks and pause/resume events. Rationale and evidence: docs/WATCHDOG_DECISION.md. 2026-09-30: stop/pause/shutdown pass their reason to Simulation.command_velocity; stop, pause and resume events record a command_serial; RealtimeSession(actuator=...) selects the actuator profile; report() adds 'actuator', 'motion' and 'motion_evicted'. Watchdog logic and timing are unchanged. 2026-10-01: the report adds 'safety' (Simulation.safety_record); RuntimeConfig.inference_failure injects failed perception results for fault injection (default 0, inert); a negative control gap (clock stepped back) is integrated as zero instead of crashing after the clock_error stop, a defect found by the fault-injection campaign. 2026-10-02: sensor results are received on a separate thread (ResultReceiver): it is the only reader of the results pipe and forwards whole messages to a one-item, latest-wins mailbox that the control loop reads without blocking. This fixes the defect found by the fault-injection campaign: a worker killed in the middle of sending a frame left a partial message that blocked the control thread (and with it the watchdog and the deadline checks). The control loop still detects a dead worker with is_alive() and stops with worker_failed; the parent closes its copy of the pipe's send end so a half-read message ends with EOF; shutdown joins the receiver for at most 0.5 s and records it in report()[\"receiver\"]. Sensor rows add receiver_s; received_s keeps its meaning; counts add receiver_dropped. A failing receiver delivers its error even over an unread message; the worker's final error message uses a 1 s bounded put instead of put_latest so its traceback is not dropped while the receiver holds the read lock. Messages, the worker and the watchdog logic are unchanged. Timing before and after: results/receiver-thread/20261002-timing.",
       "tests": [
-        "outputs/visual-servoing-simulation/tests/test_realtime.py"
+        "outputs/visual-servoing-simulation/tests/test_fault_injection.py",
+        "outputs/visual-servoing-simulation/tests/test_realtime.py",
+        "outputs/visual-servoing-simulation/tests/test_safety_metrics.py"
       ],
       "supersedes": [
+        {
+          "date": "2026-10-01",
+          "sha256": "521a6998689a80a3d0c84cf828a5a549fded2fa6444a0a17f1736455fd37cd69",
+          "title": "hold-and-resume default (stale_resume_s = 2 s) plus actuator-model stop reasons and physical-stop reporting"
+        },
+        {
+          "sha256": "fe159a37597bb32f678857d1955dd3bab9c340e63d1336975578b03252a7587c",
+          "date": "2026-09-30",
+          "title": "hold-and-resume default (stale_resume_s = 2 s) plus actuator-model stop reasons and physical-stop reporting"
+        },
         {
           "sha256": "db20918beb2e290664fe6ca67b3db71b9d50d8d1735872852446054782799b50",
           "date": "2026-09-29",
@@ -28,23 +40,39 @@
         "outputs/visual-servoing-simulation/results/margin-test/20260928-233454",
         "outputs/visual-servoing-simulation/results/margin-test/20260928-234612-resume2000ms",
         "outputs/visual-servoing-simulation/results/acceptance-test/20260929-011129",
-        "outputs/visual-servoing-simulation/results/stop-response/20260930-004121"
+        "outputs/visual-servoing-simulation/results/stop-response/20260930-004121",
+        "outputs/visual-servoing-simulation/results/fault-injection/20261001-001047",
+        "outputs/visual-servoing-simulation/results/fault-injection/20261002-141659-worker-crash",
+        "outputs/visual-servoing-simulation/results/fault-injection/20261002-141659-all",
+        "outputs/visual-servoing-simulation/results/receiver-thread/20261002-timing",
+        "outputs/visual-servoing-simulation/results/receiver-thread/20261002-old-code-worker-kills",
+        "outputs/visual-servoing-simulation/results/acceptance-test/20261002-233959",
+        "outputs/visual-servoing-simulation/results/fault-injection/20261003-010746",
+        "outputs/visual-servoing-simulation/results/fault-injection/20261003-132018",
+        "outputs/visual-servoing-simulation/results/fault-injection/20261003-134000",
+        "outputs/visual-servoing-simulation/results/acceptance-test/20261003-134526",
+        "outputs/visual-servoing-simulation/results/acceptance-test/20261003-150343",
+        "outputs/visual-servoing-simulation/results/acceptance-test/20261003-154640",
+        "outputs/visual-servoing-simulation/results/acceptance-test/20261003-161751"
       ]
     },
     {
       "file": "simulation.py",
       "title": "actuator dynamics between command and servo; physical stop measurement",
-      "date": "2026-09-30",
+      "date": "2026-10-01",
       "baseline_sha256": "fdaab73e8d7305cc10c94e42e7865ee05b4d86bea46c6930287c00c91346f160",
-      "sha256": "881440811f76f342f345ef67fb5c3d4d2778a1e4f9a3b2a818a8e0503d437cf4",
-      "summary": "Adds the simulated actuator dynamics model (actuator.py, actuator_config.json; docs/ACTUATOR_MODEL.md) between the guarded velocity command and MuJoCo's velocity servos: acceleration, deceleration and jerk limits; profile 'ideal' passes the command through unchanged. Every stop, hold, collision block and shutdown still zeroes the command at the same moment; the physical braking that follows is measured (Simulation.motion_log). The joint-limit backstop now triggers earlier by the remaining stopping distance (zero with 'ideal'). command_velocity() takes an optional stop reason. velocity_command keeps its meaning.",
+      "sha256": "ac799ddd1b09634eaf270f6cec988b181178033d8670006e216542b18175b655",
+      "summary": "Adds the simulated actuator dynamics model (actuator.py, actuator_config.json; docs/ACTUATOR_MODEL.md) between the guarded velocity command and MuJoCo's velocity servos: acceleration, deceleration and jerk limits; profile 'ideal' passes the command through unchanged. Every stop, hold, collision block and shutdown still zeroes the command at the same moment; the physical braking that follows is measured (Simulation.motion_log). The joint-limit backstop now triggers earlier by the remaining stopping distance (zero with 'ideal'). command_velocity() takes an optional stop reason. velocity_command keeps its meaning. 2026-10-01: records the safety envelope on every physics step (minimum clearance slack from the guard, minimum joint margin, peak commanded and measured speed); no decision depends on it.",
       "tests": [
         "outputs/visual-servoing-simulation/tests/test_actuator.py",
+        "outputs/visual-servoing-simulation/tests/test_collision.py",
+        "outputs/visual-servoing-simulation/tests/test_fault_injection.py",
         "outputs/visual-servoing-simulation/tests/test_realtime.py",
-        "outputs/visual-servoing-simulation/tests/test_collision.py"
+        "outputs/visual-servoing-simulation/tests/test_safety_metrics.py"
       ],
       "evidence": [
-        "outputs/visual-servoing-simulation/results/stop-response/20260930-004121"
+        "outputs/visual-servoing-simulation/results/stop-response/20260930-004121",
+        "outputs/visual-servoing-simulation/results/fault-injection/20261001-001047"
       ]
     },
     {
@@ -73,6 +101,21 @@
       ],
       "evidence": [
         "outputs/visual-servoing-simulation/results/stop-response/20260930-004121"
+      ]
+    },
+    {
+      "file": "collision.py",
+      "title": "keep the smallest clearance slack of each check for the safety record",
+      "date": "2026-10-01",
+      "baseline_sha256": "eef38870829cdf96a9cb6c8a8d6a0af56c9b7289ae0dcf64e9cdf132e005f662",
+      "sha256": "20c4bf8dd3cf17e8e19c3c08c5adf4bca519258b81c5e1ed10f6cfcad00fb3b5",
+      "summary": "filter_velocity() stores the smallest distance above its margin (last_slack, last_slack_pair) from the distances it already computes. Used only for the recorded safety envelope (REQ-11); no guard decision changes.",
+      "tests": [
+        "outputs/visual-servoing-simulation/tests/test_safety_metrics.py",
+        "outputs/visual-servoing-simulation/tests/test_collision.py"
+      ],
+      "evidence": [
+        "outputs/visual-servoing-simulation/results/fault-injection/20261001-001047"
       ]
     }
   ]

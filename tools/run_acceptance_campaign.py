@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 APP = ROOT / 'outputs/visual-servoing-simulation'
 sys.path.insert(0, str(APP))
 import binomial_ci  # noqa: E402
+import safety_metrics  # noqa: E402
 
 
 def write(path, value):
@@ -78,6 +79,9 @@ def evaluate(result, config):
     require(result['duration_s'] >= config['session_seconds'], 'session duration')
     for i in range(len(config['poses_degrees'])):
         require(result['pose_attempts'].get(str(i), 0) >= c['minimum_attempts_per_pose_per_session'], f'pose {i} coverage')
+    # Safety envelope (REQ-11 to REQ-13) when the session recorded it; older sessions keep their verdicts.
+    for message in safety_metrics.failures(result.get('safety_metrics') or []):
+        require(False, message)
     for name, quantile, limit in (
         ('capture_ms', 'p99', 'capture_p99_ms'), ('capture_ms', 'max', 'capture_max_ms'),
         ('processing_ms', 'p95', 'processing_p95_ms'), ('processing_ms', 'p99', 'processing_p99_ms'),
@@ -154,7 +158,9 @@ def summarize(raw, ending, attempts, duration, config, score=True):
         runtime_errors=int(bool(ending.get('error') or ending.get('harness_error') or ending['worker_alive'])),
         worker_restarts=int(len({a['worker_pid'] for a in attempts}) > 1),
         counts=counts, worker_counts=ending['worker_counts'], execution_settings=ending['execution_settings'],
-        raw_sha256=digest(raw), samples=dict(sensor=len(sensors), uncached_active=len(active), commands=len(commands)))
+        raw_sha256=digest(raw), samples=dict(sensor=len(sensors), uncached_active=len(active), commands=len(commands)),
+        safety=ending.get('safety'),
+        safety_metrics=None if not ending.get('safety') else safety_metrics.evaluate(ending['safety']))
     result['failures'] = evaluate(result, config)
     return result
 
@@ -281,6 +287,9 @@ def report(directory, results, complete, smoke=False, interrupted=None):
     lines += ['', '| Session | First processing | Later processing | Failed criteria |', '|---|---|---|---|']
     for r in results:
         lines.append(f"| {r['id']} | {triple(r['first_processing_ms'])} | {triple(r['later_processing_ms'])} | {', '.join(r['failures']) or 'none'} |")
+    lines += ['', 'Safety envelope per session (extremes over every 2 ms physics step; a FAIL fails the session; '
+              'simulation values):', '']
+    lines += safety_metrics.table_lines([(r['id'], r.get('safety_metrics')) for r in results])
     total, aligned = sum(r['attempts'] for r in results), sum(r['alignments'] for r in results)
     if total:
         lines += ['', f"All sessions together: {binomial_ci.format_rate(aligned, total)}. {binomial_ci.interpretation(aligned, total)}"]

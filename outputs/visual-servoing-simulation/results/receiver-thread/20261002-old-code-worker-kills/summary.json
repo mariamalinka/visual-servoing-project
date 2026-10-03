@@ -1,0 +1,4022 @@
+{
+ "created_utc": "2026-10-02T12:06:36.897501+00:00",
+ "host": "Linux x86_64, Python 3.12.3",
+ "actuator": "default",
+ "repeats": 30,
+ "fingerprint": {
+  "sha256": {
+   "accuracy.py": "f7c8940e4649052c98d2fababe277d49fc84d375813ad592b092a6833f69c34a",
+   "accuracy_config.json": "5bd6bff53bb728bede80fe73b244c545fbd282dbe83d97d14f04d21f6bb8a1d0",
+   "actuator.py": "26c9d3209a5d7aa4790a91098fb27d85efd8cd524cd50217aa6f7209b79df1fc",
+   "actuator_config.json": "c00ef32bc9ed673bc369e14761b718e9dc1ef323e161552265dd09fa72157c2f",
+   "adaptive_gain.py": "0b529c74c553c79675e378874baa81872176aa9422631f147aee75add662a4a7",
+   "analyze_benchmark.py": "f06133c81d25ac15b197739a402ff10e6c90b6a99487978dd8f88f43551cab7d",
+   "analyze_comparison.py": "affdcea3d03cdb10576e65815d11f99bf57b1504182d81ffed1947a84cbe3bf0",
+   "analyze_gain_study.py": "a45b3dc5de1a77bd3581eccbc3a1aa76f13d7d841ba2da07893364702fe8e694",
+   "app.py": "d5ff55f920df45b26308ca5ae66ae029c6924027bae528399cef8dbe07d51e09",
+   "assets/marker.png": "ab2472414444ee33daf910b6d1e3048c2cd1409cc5b9c6838ea203a7e9744a40",
+   "assets/natural-board.png": "851e7345adfb70a0fcb4e95dde970d6d9007d1cdb209e64188635acc33c9b067",
+   "assets/natural-target-source.json": "4d680aa45427481d7328ae8d43c22c0a198443c16888d97c02bdd22eda3bc077",
+   "assets/natural-target-source.png": "f3d7a2eaf08f24345610851cb23574982ca55fdb75a4cf99b2a1c2668cce89c8",
+   "assets/natural-target.png": "6dc880cf2c20520b9b0dba3aa30f3accce6379d2d61e5edaa9ea4f44a030f8ab",
+   "baselines.py": "50f381af192e33a195b2cc481f88bd0818cac85072cab81ea679f33b83dd653d",
+   "benchmark.py": "1be0fc0dff13a7474b9dbef6acec64ead0137c773f57cde4462620ea9bd96de7",
+   "benchmark_config.json": "4e873ce4baed5efb76c9550bffbd261dc2677b13626c09b0de138ed6b7d07700",
+   "benchmark_learned.py": "e945838fbfce52944752319aeddb28fa0d90fdb262ccdea735c9f7ac57626f92",
+   "binomial_ci.py": "bff4e678100808ecf73609b9e1472d509e8241e5ad0cde3bfcdd87e77d6f3ad0",
+   "calibration.py": "c97eecc65705b7b0d9c77f80378d634bd9f3f93213c74d31b1a1e97763551dbe",
+   "camera_robustness.py": "139676d401913e841e6ac5dcb7a489bac4ace1e9295bb5c5b01df6646cef52df",
+   "camera_timing.py": "8af033010df94fc96fad141b41c94ea3ca1d5162aed09865c6af43f05c467778",
+   "camera_timing_config.json": "20e73da5ca3615d727e35bf854af20b7e34700936526a8e87c19bc572a7a8db2",
+   "collision.py": "20c4bf8dd3cf17e8e19c3c08c5adf4bca519258b81c5e1ed10f6cfcad00fb3b5",
+   "collision_config.json": "9fdaf7af4437dae7ea78467a37c9680ab8bed4c7d754d5684ef78963337fd6fb",
+   "compare_controllers.py": "572f8daab2e0b00ed9c39f32129b3a02331d45cc5db0f21a220282fd08716620",
+   "comparison_config.json": "4e1b8e7ab84c08b0ede5de60ce961abf9c72ace5d727a96e8d13d0e2dadb610f",
+   "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+   "control.py": "1f59a1942ec7bce375f7ec7b648cc59f8fc4b0103e85fd515f2e89e4d8e89fe7",
+   "deadline_diagnostics.py": "2477d4908e03926bb6e1e2118950b7765b1a03419bbc3726b71a953bb6fc2653",
+   "download_learned_models.py": "13692f9c1db7d7337943363be008ab49b842fe112dff231c665a21df0df0a404",
+   "fault_injection.py": "1c5fbd348a81ee74fa1091130a162bd4c84eef9edac2d160660321842dfbe735",
+   "gain_config.json": "6186b780e19487b4e1920a3a5538dbc73a0b08488120a70e1253f62e99f65f6a",
+   "joint_limit_config.json": "f8855a46a7aca71867fa730d4ea092686b72267c0351883421f31c574134f841",
+   "joint_limits.py": "3d5e0c8d18c88c7d7d3bafedbd1c4ac8701947240c249ce528f95f32808291d3",
+   "latency_stress.py": "5918a4b9f0b715e21a984112b5192be1d9eeb95cd0fceb384ffc4ff49c435ce3",
+   "learned_cuda_graphs.py": "506d97aa83f6009e9e44f004a765de6e95061df1fd866cb7e5f392b7bd0810d4",
+   "learned_feature_config.json": "0145983cbf3bafef87e80ca079628744f69edf175764137e36d373786353a708",
+   "learned_perception.py": "77515424a30d7556c3174f48da6a9bd30e17190d2864f64d29e2cf22ae51b78a",
+   "models/manifest.json": "4ce943f21304b7934d724250c0bb1dac2839ab43975d202a008404c8e190692e",
+   "motion_path.py": "27f8657b1af0154532a790a7e91f3a0fec11a355ac99cef397c315def74817f7",
+   "native_scheduling.py": "d0cdfe779641ec76e59b445f9b0a42d890c3c90a76f2a81b3285749f878831de",
+   "natural_feature_config.json": "284d6107ba8a739fb3c5731ad4545de16d44be48adc6e3ad43f34e08efe4a2fb",
+   "perception.py": "34e74c605b5e349a714d7cdf67a5c1e4322f2252a919450944abb182972bfb94",
+   "precision.py": "c249a34cc121835f6fcbcacdfce6ad6034ea5cbca2706aec9bae4e0640752561",
+   "precision_config.json": "bb7749276bf39d39e3c980d7d14e549f2e8f26f9b9480736f6f99891ef5027b7",
+   "prepare_natural_reference.py": "1dab76acce145061258c965f84b63c42723c466b19723056630367c7fb705df9",
+   "realtime.py": "521a6998689a80a3d0c84cf828a5a549fded2fa6444a0a17f1736455fd37cd69",
+   "realtime_app.py": "4e9aff50664e4d6b164840c3225cd0b807c3560bb1c111e5a25433ea6eaaf8d8",
+   "record_joint_limit_demo.py": "d4ca6b29e1c257c3633d44f0edda3eb6b1841a97caad934f14b18178124b808e",
+   "record_learned_demo.py": "10dba7fe0733e456fb0c66aae55e0f15a4255efbb0ee44d346361d572171ad13",
+   "record_natural_image_demo.py": "4bfa0237874a299b45e1a7766a22ed9472d3a8eb11b55358b2e77f023e80302d",
+   "record_recovery_demo.py": "652d43ec930db88d118d708cf1afab2ab53d1b6fe4c168173745440d9fcb6dee",
+   "record_search_coverage_demo.py": "f50572e34d2ec245b7b692ee4187db337366d9bb4a907dfe75a6469c4f7576fc",
+   "record_startup_demo.py": "f015ae73cb59c05ad8503d3ee276f1c7199ed6e74ba618e6ecdb8e4623b8b7d2",
+   "recovery.py": "7562013287a778fcc2f546707f1a7d3f2aed122b13c44439ff1690cad7c815c4",
+   "recovery_config.json": "32b436f0cc0e4272680f163e76861cf358a50d1dacc9a8ce96d878fd02d6b7c5",
+   "reference/goal.npz": "3d6e7376c549ae47f74fd12ec9a0afc134ae8482301ec2a3ced0d16113dc989d",
+   "reference/natural_goal.npz": "2912b8b45be09dac9351f27cff974c7e2808f372dd2dd0d006be6f0299f5f900",
+   "reference/natural_goal.png": "06c39b9e7a003b8653f852bc8cad643bb2aed3b718ddcc3aa475c93d85ded0c4",
+   "reference_image.py": "3a883d1015831290b07f2b312a086da2d70478fe1cee5b6b4ef6887c7f167f3a",
+   "robustness_config.json": "63f6b7a3a010c8de08e074b0e2c2f12b1faa9334b34127789f836862e58ad6fc",
+   "run_accuracy_study.py": "d59ff73a87282acfd80e0b4d88496d60910e4ea2eac68d3714793c8d1a3e68ca",
+   "run_alignment.py": "8c2db501849396eeab0ed2e3870862741f62612bb0e794d5122aeeffafd879b1",
+   "run_camera_delay_study.py": "8ba1d197488dbc8b09d9144c9eba3d9d85e7ee239884feedb5016e88837f3beb",
+   "run_camera_robustness.py": "54df8320e59790b144f6d5db583a72670cabf559950daf5503721acd0c568ff5",
+   "run_collision_study.py": "8847e6ce98152b48c6a6d6a9c994abaa5849105cb34da039ce53bf5dcc174575",
+   "run_fault_campaign.py": "434e12ce8294a9b4f5b25b4b4742088a36bc441cfeb0bd68673865a048139437",
+   "run_gain_study.py": "013d266ae42575f3f343687083bb78ac3f2d4e1631a7965c719679df7ff0e760",
+   "run_joint_limit_study.py": "8c0b77629352076634f408550987e7f0550c54fa68c27e977c8587772f919813",
+   "run_latency_stress.py": "7e5ed4ee0a46b5b2047673f99a081fdae18b81b5bb48466e8b3dc1a8644921c5",
+   "run_latency_study.py": "34c3cb08adc44c4fd5056ec4331b3ae1daa7c8a39565633029a5bf266f4c437a",
+   "run_learned_study.py": "074a2aae4530295cbc6e7a0697776ad9debecbb0f822cdc35acedf9d499e9aff",
+   "run_natural_image_study.py": "aaa1fee94aa4aef0ea4572e0bee1a49d18df64c8784990f10f39460c78fff8f1",
+   "run_recovery.py": "ed893aea1b405ff6466347a0144dd0c13fd7cc6ba7795c83179d1cf271a2ed3e",
+   "run_search_coverage.py": "c6a565f6f5f3ed4683bb0f24d4a7be5f224dc6c5b2b0f28c11117c804166da2c",
+   "run_startup_search.py": "3b63c2c44cfaaa5b96449345a5cfaab307c8a05e14eb13c5e8dc4f5e29a34d0e",
+   "run_stop_response.py": "f5c9b7b01cfdaf8628d23ca08d9ab976dfff30ba9242ad6d8db1dd5a32dd94ab",
+   "safety_metrics.py": "d36a69693ca5d201e095cfcce1f5d267d27d377904d2026247b6ccdfda356110",
+   "scene.xml": "c390e02323a4d93c4ee6165ed602de1711a7d23c79e5d739fc7d536f70f24e04",
+   "setup_learned.py": "1f32b684efd666668385d3acd726dc2f564b76ee9fd4cb758e3bf1ea3b46b214",
+   "simulation.py": "ac799ddd1b09634eaf270f6cec988b181178033d8670006e216542b18175b655",
+   "startup_search.py": "9e3b1ca1389bd4bb0b57a4f9827ebfdccb3152ea28321b8ade86773c5677bd28",
+   "startup_search_config.json": "72e915e3699b029821ec8a9b85b104330a7bab2a96338a3b0538faf0350d75f9",
+   "stop_response.py": "b30bfcf091a2f3fae5b08e83947d43eefdab66b68a204535f6624e91a93c1bd6",
+   "verify.py": "de16dd2b666fdd89f286f60ae3f6255b8559703f7c8cbfde4a47d95f6ceb4647",
+   "verify_learned_repair.py": "14b7b1211f98ae6ad930a00bbe91f9ec83ea43117b4c3e4f6f2c508d6b68c0f4"
+  },
+  "runtime": {
+   "python": "3.12.3",
+   "platform": "Linux-6.18.44-fc-v51-x86_64-with-glibc2.39",
+   "numpy": "2.5.2",
+   "opencv-python": null,
+   "mujoco": "3.12.0",
+   "matplotlib": "3.11.2",
+   "pillow": "12.3.0",
+   "torch": null,
+   "torchvision": null,
+   "lightglue": null
+  }
+ },
+ "scenarios": [
+  {
+   "scenario": "sensor_worker_crash",
+   "id": "sensor-worker-crash",
+   "requirements": [
+    "REQ-06"
+   ],
+   "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+   "fault": "the sensor worker process is killed while the arm moves",
+   "expected": "zero command within one tick; the runtime then ends with its error report",
+   "coverage": "partial",
+   "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+   "test": "tests/test_fault_injection.py::test_sensor_worker_crash_stops_the_arm",
+   "repeats": 30,
+   "passed": 29,
+   "status": "NOT VERIFIED",
+   "deterministic": false,
+   "failed_checks": [
+    "scenario ran"
+   ],
+   "reaction_ms_max": 21.659313000782277,
+   "reaction_label": "after the worker died",
+   "physical_stop_ms_max": null,
+   "camera_travel_mm_max": null,
+   "speed_at_fault_rad_s_max": null,
+   "peak_measured_speed_rad_s": 0.08170231455381895,
+   "min_environment_clearance_mm": 2.9999999999999227,
+   "min_self_clearance_mm": 8.999999999999753,
+   "min_joint_margin_rad": 0.9948376736344997,
+   "discarded_physics_s_max": 0.0,
+   "largest_loop_gap_ms": null
+  }
+ ],
+ "runs": {
+  "sensor_worker_crash": [
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 219,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999822,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.082808379001952,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 21.659313000782277
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "21.66 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.873517209000056
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 176,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999863,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08278466947474532,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 13.252055000521068
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "13.25 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.5262132190000557
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 215,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.99999999999993,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999877,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08327966449710084,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 16.54690000032133
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "16.55 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.525439205999646
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 201,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999767,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08316346103678948,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 10.552000000643602
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "10.55 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.503418825999688
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 210,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.99999999999993,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999837,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08319773097941807,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 13.907142000789463
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "13.91 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.4936002630001894
+   },
+   {
+    "id": "sensor_worker_crash",
+    "requirements": [],
+    "mechanism": "",
+    "fault": "",
+    "expected": "",
+    "measured": {},
+    "checks": [
+     {
+      "check": "scenario ran",
+      "passed": false,
+      "detail": "RuntimeError: Control loop did not shut down within five seconds"
+     }
+    ],
+    "passed": false,
+    "coverage": "full",
+    "coverage_note": "",
+    "wall_s": 36.76038198700007
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 205,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999782,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08344389310602203,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08170231455381895,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 11.26536500032671
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "11.27 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.5354720300001645
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 209,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.99999999999985,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08323199626531387,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 15.384824999273405
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "15.38 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.5066265630002817
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 222,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.99999999999993,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999837,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08296063408236247,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 14.106123000601656
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "14.11 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.5045807619999323
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 202,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.99999999999993,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999822,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08290996073152583,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 10.711543999605055
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "10.71 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.4871685839998463
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 217,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999837,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08319772734122263,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 10.109081999871705
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "10.11 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.526407869999275
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 215,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999822,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08275548974455954,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 9.599863999937952
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "9.60 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.4780853129996103
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 204,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.99999999999985,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08294373819195912,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 12.521224999545666
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "12.52 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.4912529869998252
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 207,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999837,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.0827378358183843,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 10.50445300006686
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "10.50 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.491821524000443
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 211,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999863,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08304513920700866,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 9.122919999754231
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "9.12 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.5206781770002635
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 201,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.99999999999985,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08319773097941807,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 11.681971000143676
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "11.68 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.5365684389998933
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 205,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999753,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08344181036092466,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 12.42914800059225
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "12.43 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.508412023999881
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 210,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.99999999999993,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999822,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08290996073152583,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 12.30864199987991
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "12.31 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.4925020829996356
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 210,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999767,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08316346103678948,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 11.928190000617178
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "11.93 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.5312624629996208
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 209,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999837,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08277313037296756,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 14.355063000039081
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "14.36 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.5114233719996264
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 220,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.99999999999993,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999808,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08318059788535692,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 7.701921999796468
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "7.70 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.5338003060005576
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 207,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999837,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08342653730921272,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 14.735902999746031
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "14.74 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.525002948999827
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 212,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.99999999999993,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999837,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08332473207085916,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 8.194300000468502
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "8.19 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.5191334299997834
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 205,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999822,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08321486517450818,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 11.82181500007573
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "11.82 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.5155900749996363
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 206,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999808,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08311208824426453,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 12.011295999400318
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "12.01 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.4968470539997725
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 226,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999837,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08290995861651301,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 12.886006999906385
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "12.89 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.5197627260004083
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 226,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999767,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08287618028083817,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 9.411291000105848
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "9.41 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.4959993159991427
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 224,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999822,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08277313037296756,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 12.383393999698455
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "12.38 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.504726397000013
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 206,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.99999999999985,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08329692779230276,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 11.621505000221077
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "11.62 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.4889816289996816
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one tick; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 212,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.99999999999993,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999863,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.0834591756743723,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08166935010728832,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "stop_after_kill_ms": 12.127842000154487
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop within one control deadline after the worker died",
+      "passed": true,
+      "detail": "12.13 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "partial",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer can leave a partial message that blocks the control thread's mailbox read (a known defect, docs/FAULT_INJECTION.md); this scenario does not target that moment. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.500981383999715
+   }
+  ]
+ }
+}

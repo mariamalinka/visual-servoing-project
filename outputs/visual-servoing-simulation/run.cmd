@@ -12,6 +12,7 @@ set "VSERVO_PYTHON=%~dp0.venv\Scripts\python.exe"
 :ready
 if /i "%~1"=="--latency-study" goto latency_study
 if /i "%~1"=="--stop-response" goto stop_response
+if /i "%~1"=="--fault-campaign" goto fault_campaign
 if /i "%~1"=="--accuracy-study" goto accuracy_study
 if /i "%~1"=="--collision-study" goto collision_study
 if /i "%~1"=="--robustness" goto robustness
@@ -36,6 +37,12 @@ exit /b 0
 :latency_study
 pushd "%VSERVO_CALLER_DIR%"
 "%VSERVO_PYTHON%" "%~dp0run_latency_study.py" %*
+set "VSERVO_EXPERIMENT_EXIT=%errorlevel%"
+popd
+exit /b %VSERVO_EXPERIMENT_EXIT%
+:fault_campaign
+pushd "%VSERVO_CALLER_DIR%"
+"%VSERVO_PYTHON%" "%~dp0run_fault_campaign.py" %*
 set "VSERVO_EXPERIMENT_EXIT=%errorlevel%"
 popd
 exit /b %VSERVO_EXPERIMENT_EXIT%

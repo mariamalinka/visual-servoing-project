@@ -47,7 +47,8 @@ in every row and does not silently relax it after a failure.
 flowchart LR
     UI[Display and keyboard] -->|commands| C[Control thread and live physics]
     C -->|timestamped state copy, one pending request| P[Camera process: render and match]
-    P -->|one pending result| T[Bounded transport queue]
+    P -->|one pending result, pipe| R[Receiver thread: pipe read and unpickling]
+    R -->|one-item mailbox, never blocks| T[Bounded transport queue]
     T -->|fresh observation once| C
     C --> W[Age watchdog, joint and collision guards]
     W --> V[Velocity command and physics steps]
@@ -61,8 +62,20 @@ It renders the copied state and supplies only measured image features to control
 Its camera pose is not used as an alignment goal. Capture-time joints accompany
 each observation; control uses the current robot Jacobian and joint feedback.
 
+The control thread never reads the inter-process results pipe. A receiver thread
+(`ResultReceiver`) does, because a pipe read can block for good: a worker killed
+halfway through sending a frame leaves a length header and part of the message, and
+the reader waits for the rest. The receiver forwards each whole message to a
+one-item, latest-wins mailbox, which the control loop reads without blocking. The
+control loop detects a dead worker itself (`worker.is_alive()`), so a blocked
+receiver cannot delay the `worker_failed` stop. The parent closes its copy of the
+pipe's send end after starting the worker, so once the worker dies a half-read
+message ends with end-of-file instead of blocking. The receiver runs at normal
+priority, does no physics and shares only the mailbox with the control loop.
+
 All timestamps use `time.perf_counter()`: state snapshot, render start, render
-completion, inference completion, parent receipt and command application.
+completion, inference completion, receiver receipt (`receiver_s`), control-loop
+receipt (`received_s`) and command application.
 Capture time is recorded **before** queueing/rendering, so all subsequent work
 counts toward age. Artificial transport begins after inference completes.
 [Python documents the shared monotonic counter and Windows timer behavior](https://docs.python.org/3/library/time.html).
@@ -93,7 +106,10 @@ physics. A control-loop gap or computation exceeding **50 ms** stops alignment
 with `control_overrun`; a dead worker or worker exception stops with an error.
 Full worker exception traces reach the console and the runtime log.
 On shutdown, the control owner commands zero before joining the worker. A stuck
-worker is terminated after a bounded join. Its private queues are then discarded.
+worker is terminated after a bounded join. The receiver thread is then stopped
+with a 0.5 s bounded join; if its read still cannot finish, it is left behind as a
+daemon thread and the report records `receiver.stuck_at_close`. The private queues
+are then discarded.
 Shutdown closes a dedicated pipe whose read endpoint belongs to the worker; EOF
 wakes its wait without a shared condition lock. Readiness also uses result
 acknowledgement, so killing a worker cannot strand a shared readiness event.
@@ -117,6 +133,25 @@ command stop latency (limit to zero command), physical stopping time (zero comma
 to standstill) and physical stopping distance. `RealtimeSession(actuator='ideal')`
 or `run.cmd --realtime --actuator ideal` switches the model off. Details, assumptions
 and measured values: [actuator model](../../docs/ACTUATOR_MODEL.md).
+
+Every session also records a safety envelope over every physics step: the smallest
+clearance above the collision margin (from the guard's own check), the smallest
+distance to a joint limit, and the peak commanded and measured joint speed
+(`safety` in the report). `RuntimeConfig.inference_failure` injects failed perception
+results, in the same way as `inference_stall_s`. The fault-injection campaign
+(`run.cmd --fault-campaign`, [fault injection](../../docs/FAULT_INJECTION.md))
+triggers each safety stop on purpose.
+
+The campaign found two defects:
+- **Fixed:** after a backward clock step, the runtime issued the `clock_error` stop
+  correctly, but then crashed on a negative physics step. A negative control gap is
+  now integrated as zero.
+- **Fixed (2026-10-02):** if the sensor worker died in the middle of sending a
+  result, the partial message could block the control thread's mailbox read, and the
+  watchdog runs in that same thread. Results are now received on the receiver thread
+  (above). Regression scenarios leave a real half message in the pipe, or make the
+  read never return, and check that the loop keeps running, the watchdog acts, the
+  dead worker stops the arm within one control deadline and shutdown completes.
 
 Python, Windows scheduling and this simulated actuator interface do not provide
 hard real-time guarantees. In particular, a blocking operation in the control

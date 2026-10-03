@@ -142,6 +142,20 @@ keeps that rule for them and adds the intervals.
 trips". Results made under that rule keep it when re-reported with `--report-only`,
 and `--watchdog-stop` with that rule is the original test.
 
+**Safety envelope (REQ-11 to REQ-13).** Since 2026-10-01 every realtime session
+records, over every 2 ms physics step:
+- the smallest clearance above the collision margin (12 mm to the environment,
+  6 mm between robot parts), taken from the collision guard's own distance check;
+- the smallest distance of any joint to its `scene.xml` range;
+- the peak commanded and the peak measured joint speed, against 0.6 rad/s.
+
+The report shows each value with its limit, PASS/FAIL and requirement ID in a
+"Safety envelope" table, and `safety.csv` lists them per session for comparing runs.
+A FAIL fails the test. Runs from before the record show "not recorded"; that is
+never counted as a pass or a failure, so `--report-only` keeps their verdicts
+([safety_metrics.py](../outputs/visual-servoing-simulation/safety_metrics.py),
+[traceability](SAFETY_TRACEABILITY.md)).
+
 **Processing** runs from render completion to the perception result. It covers every
 uncached active frame, including failed and late ones. **Capture-to-command** covers
 accepted commands.

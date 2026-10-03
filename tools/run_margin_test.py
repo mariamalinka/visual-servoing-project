@@ -26,6 +26,7 @@ import traceback
 
 import run_acceptance_test as rat
 from run_acceptance_test import env_monitor, read, write, digest, fmt
+import safety_metrics  # noqa: E402  (the app directory is on sys.path via run_acceptance_test)
 
 DEFAULT_CONFIG = rat.ROOT / 'tools' / 'margin_test.json'
 DEFAULT_RESULTS = rat.APP / 'results' / 'margin-test'
@@ -145,7 +146,9 @@ def method_margin(mode, sessions, config, directory):
     for s in rows:
         rate = s['aligned'] / s['attempts'] if s['attempts'] else 0.0
         ci = rat.binomial_ci.summary(s['aligned'], s['attempts'], level_confidence(config))
-        clean = level_succeeded(s['aligned'], s['attempts'], config) and stale_stops(s) == 0 and not s['runtime_errors']
+        safety = s.get('safety_metrics')
+        clean = (level_succeeded(s['aligned'], s['attempts'], config) and stale_stops(s) == 0 and not s['runtime_errors']
+                 and not safety_metrics.failures(safety or []))
         excluded = confounded(s)
         if not excluded:
             if clean and ok_so_far:
@@ -164,7 +167,8 @@ def method_margin(mode, sessions, config, directory):
                            unsafe=(s['unsafe_motion'] + s['post_stop_motion'] + s['contacts'] + s['unlatched_stops']
                                    + s.get('paused_motion', 0)),
                            trips=trip_phases(directory, s['id']), delayed_frames=s['counts'].get('fault_results', 0),
-                           confounded=excluded, actuator=s.get('actuator'), physical_stops=s.get('physical_stops')))
+                           confounded=excluded, actuator=s.get('actuator'), physical_stops=s.get('physical_stops'),
+                           safety=s.get('safety'), safety_metrics=safety))
     factor = None if tolerated is None or not ref_p50 else (ref_p50 + tolerated) / ref_p50
     return dict(mode=mode, label=config['method_labels'][mode],
                 baseline_processing_ms=None if ref is None else dict(p50=ref_p50, p99=ref_p99, from_level_ms=ref['delay_ms']),
@@ -177,6 +181,28 @@ def method_margin(mode, sessions, config, directory):
 def ci_csv(level):
     ci = level.get('success_ci') or rat.binomial_ci.summary(level['aligned'], level['attempts'])
     return tuple('' if ci[k] is None else round(ci[k], 4) for k in ('ci_low', 'ci_high'))
+
+
+SAFETY_COLUMNS = ('environment_clearance_mm', 'environment_clearance_pass', 'self_clearance_mm', 'self_clearance_pass',
+                  'joint_margin_rad', 'joint_margin_pass',
+                  'command_speed_rad_per_s', 'command_speed_pass', 'measured_speed_rad_per_s', 'measured_speed_pass')
+
+
+def safety_csv(level):
+    row = safety_metrics.flat(level.get('safety_metrics'))
+    return tuple(row.get(key, '') for key in SAFETY_COLUMNS)
+
+
+def safety_lines(margins):
+    """Safety envelope per level (REQ-11 to REQ-13); a FAIL makes the level not tolerated."""
+    lines = []
+    for m in margins:
+        if not any(l.get('safety_metrics') for l in m['levels']):
+            continue
+        lines += [f"**{m['label']}: safety envelope per level** (extremes over every physics step; simulation values)", '']
+        lines += safety_metrics.table_lines([(f"+{l['delay_ms']} ms", l.get('safety_metrics')) for l in m['levels']])
+        lines.append('')
+    return lines
 
 
 def physical_csv(level):
@@ -209,7 +235,8 @@ def write_report(directory, status, reason, margins, manifest, config):
     write(directory / 'margin.json', dict(status=status, reason=reason, methods=margins))
     lines = ['delay_ms,method,attempts,aligned,success_rate,freshness_trips,processing_p50_ms,processing_p99_ms,'
              'p50_minus_normal_ms,capture_p99_ms,converge_median_s,trips_at_start,trips_mid_alignment,delayed_frames,low_power_state,'
-             'watchdog_holds,held_s,success_ci_low,success_ci_high,hold_physical_stop_max_ms,hold_camera_travel_max_mm']
+             'watchdog_holds,held_s,success_ci_low,success_ci_high,hold_physical_stop_max_ms,hold_camera_travel_max_mm,'
+             + ','.join(SAFETY_COLUMNS)]
     for m in margins:
         for l in m['levels']:
             p, c, v = l['processing_ms'] or {}, l['capture_ms'] or {}, l['converge_s'] or {}
@@ -219,7 +246,7 @@ def write_report(directory, status, reason, margins, manifest, config):
                 '' if l['measured_added_ms'] is None else round(l['measured_added_ms'], 1),
                 round(c.get('p99', float('nan')), 1), round(v.get('p50', float('nan')), 2), l['trips']['at_start'],
                 l['trips']['mid_alignment'], l['delayed_frames'], int(l['confounded']), l.get('holds', 0),
-                round(l.get('held_s', 0.0), 2), *ci_csv(l), *physical_csv(l))))
+                round(l.get('held_s', 0.0), 2), *ci_csv(l), *physical_csv(l), *safety_csv(l))))
     (directory / 'margin.csv').write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
     resume = rat.stale_resume_s(dict(runtime_config=manifest.get('watchdog') or {}))
@@ -267,6 +294,11 @@ def write_report(directory, status, reason, margins, manifest, config):
                      + f"{fmt(l['processing_ms'], ('p50', 'p99'))} | {added} | {fmt(l['capture_ms'], ('p99',))} | {conv} | "
                      f"{'YES - excluded from the margin' if l['confounded'] else 'no'} |")
         L.append('')
+    safety = safety_lines(margins)
+    if safety:
+        L += ['## Safety envelope', '', 'Clearance above the collision margin, distance to the joint limits and peak '
+              'joint speed, over every 2 ms physics step of each level. A level with a FAIL is not tolerated.', '']
+        L += safety
     L += ['## Test procedure', ''] + rat.procedure_lines(manifest) + ['']
     unsafe = sum(m['unsafe_events'] for m in margins)
     misses = sum(m['control_misses'] for m in margins)

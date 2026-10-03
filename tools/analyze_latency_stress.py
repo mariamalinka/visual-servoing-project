@@ -99,6 +99,13 @@ def diagnose_stop(row, stop):
                 nearby_commands=commands)
 
 
+def stress_safety(sessions):
+    """Worst safety envelope over a method's sessions; None if the runs predate the record."""
+    import safety_metrics
+    merged = safety_metrics.merge([s.get('safety') for s in sessions])
+    return None if merged is None else safety_metrics.evaluate(merged)
+
+
 def aggregate(directory, repeats=2000, seed=20260922):
     manifest = json.loads((directory / 'manifest.json').read_text(encoding='utf-8'))
     completion = json.loads((directory / 'completion.json').read_text(encoding='utf-8'))
@@ -239,7 +246,8 @@ def aggregate(directory, repeats=2000, seed=20260922):
             longest_processing_frames=sorted(bucket['outliers'],key=lambda f:f['processing_ms'],reverse=True)[:10],
             oldest_accepted_commands=sorted(bucket['command_outliers'],key=lambda f:f['capture_to_command_ms'],reverse=True)[:10],
             deadline_diagnoses=bucket['diagnoses'], late_results=bucket['late'], longest_control_cycles=top_spikes,
-            parent_gc_ms=distribution(1000*(g['finished_s']-g['started_s']) for g in bucket['gc']))
+            parent_gc_ms=distribution(1000*(g['finished_s']-g['started_s']) for g in bucket['gc']),
+            safety_metrics=stress_safety(sessions))
     return dict(manifest=manifest, completion=completion, methods=results)
 
 
@@ -311,6 +319,9 @@ def report(result, directory):
                       ('Frame/command/loop telemetry complete','telemetry_complete'),('Extended diagnostics enabled','diagnostics_enabled'),
                       ('Control-cycle/parent-GC buffers complete','diagnostics_complete')]:
         lines.append('| '+title+' | '+' | '.join(str(methods[m][key]) for m in NAMES if m in methods)+' |')
+    import safety_metrics
+    lines += ['', 'Safety envelope (worst session; extremes over every 2 ms physics step; simulation values):', '']
+    lines += safety_metrics.table_lines([(NAMES[m], methods[m].get('safety_metrics')) for m in NAMES if m in methods])
     lines += ['', 'Counters cover entire sessions, including post-stop observation and draining. Skipped slots do not acquire an image. '
         'Pending cancellation at a stop and obsolete generations after an explicit reset are intentional cleanup, not evidence of growing queues. '
         'Worker expiry acknowledgments and worker expiry totals are two views of the same events and must not be summed. '

@@ -45,6 +45,21 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -B -m unittest discover -s tests -p test_precision.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          python -B -m unittest discover -s tests -p test_realtime.py -k LeaseTests -
+          python -B -m unittest discover -s tests -p test_realtime.py -k LeaseTests -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -B -m unittest discover -s tests -p test_binomial_ci.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -B -m unittest discover -s tests -p test_safety_metrics.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -B -m unittest discover -s tests -p test_fault_injection.py -k SimulationFaults -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -B -m unittest discover -s tests -p test_actuator.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -B -m unittest discover -s tests -p test_stop_response.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -B -m unittest discover -s tests -p test_realtime.py -k ResultReceiverTests -v
+
+      - name: Check safety traceability against the saved evidence
+        run: python -B tools/traceability.py --check
+      - name: Test the traceability checker
+        run: python -B -m unittest discover -s tools -p test_traceability.py -v

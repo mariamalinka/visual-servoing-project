@@ -1,0 +1,3440 @@
+{
+ "created_utc": "2026-10-03T11:20:18.430824+00:00",
+ "host": "Windows AMD64, Python 3.12.14",
+ "actuator": "default",
+ "repeats": 10,
+ "fingerprint": {
+  "sha256": {
+   "accuracy.py": "f7c8940e4649052c98d2fababe277d49fc84d375813ad592b092a6833f69c34a",
+   "accuracy_config.json": "5bd6bff53bb728bede80fe73b244c545fbd282dbe83d97d14f04d21f6bb8a1d0",
+   "actuator.py": "26c9d3209a5d7aa4790a91098fb27d85efd8cd524cd50217aa6f7209b79df1fc",
+   "actuator_config.json": "c00ef32bc9ed673bc369e14761b718e9dc1ef323e161552265dd09fa72157c2f",
+   "adaptive_gain.py": "0b529c74c553c79675e378874baa81872176aa9422631f147aee75add662a4a7",
+   "analyze_benchmark.py": "f06133c81d25ac15b197739a402ff10e6c90b6a99487978dd8f88f43551cab7d",
+   "analyze_comparison.py": "affdcea3d03cdb10576e65815d11f99bf57b1504182d81ffed1947a84cbe3bf0",
+   "analyze_gain_study.py": "a45b3dc5de1a77bd3581eccbc3a1aa76f13d7d841ba2da07893364702fe8e694",
+   "app.py": "d5ff55f920df45b26308ca5ae66ae029c6924027bae528399cef8dbe07d51e09",
+   "assets/marker.png": "ab2472414444ee33daf910b6d1e3048c2cd1409cc5b9c6838ea203a7e9744a40",
+   "assets/natural-board.png": "851e7345adfb70a0fcb4e95dde970d6d9007d1cdb209e64188635acc33c9b067",
+   "assets/natural-target-source.json": "4d680aa45427481d7328ae8d43c22c0a198443c16888d97c02bdd22eda3bc077",
+   "assets/natural-target-source.png": "f3d7a2eaf08f24345610851cb23574982ca55fdb75a4cf99b2a1c2668cce89c8",
+   "assets/natural-target.png": "6dc880cf2c20520b9b0dba3aa30f3accce6379d2d61e5edaa9ea4f44a030f8ab",
+   "baselines.py": "50f381af192e33a195b2cc481f88bd0818cac85072cab81ea679f33b83dd653d",
+   "benchmark.py": "1be0fc0dff13a7474b9dbef6acec64ead0137c773f57cde4462620ea9bd96de7",
+   "benchmark_config.json": "4e873ce4baed5efb76c9550bffbd261dc2677b13626c09b0de138ed6b7d07700",
+   "benchmark_learned.py": "e945838fbfce52944752319aeddb28fa0d90fdb262ccdea735c9f7ac57626f92",
+   "binomial_ci.py": "bff4e678100808ecf73609b9e1472d509e8241e5ad0cde3bfcdd87e77d6f3ad0",
+   "calibration.py": "c97eecc65705b7b0d9c77f80378d634bd9f3f93213c74d31b1a1e97763551dbe",
+   "camera_robustness.py": "139676d401913e841e6ac5dcb7a489bac4ace1e9295bb5c5b01df6646cef52df",
+   "camera_timing.py": "8af033010df94fc96fad141b41c94ea3ca1d5162aed09865c6af43f05c467778",
+   "camera_timing_config.json": "20e73da5ca3615d727e35bf854af20b7e34700936526a8e87c19bc572a7a8db2",
+   "collision.py": "20c4bf8dd3cf17e8e19c3c08c5adf4bca519258b81c5e1ed10f6cfcad00fb3b5",
+   "collision_config.json": "9fdaf7af4437dae7ea78467a37c9680ab8bed4c7d754d5684ef78963337fd6fb",
+   "compare_controllers.py": "572f8daab2e0b00ed9c39f32129b3a02331d45cc5db0f21a220282fd08716620",
+   "comparison_config.json": "4e1b8e7ab84c08b0ede5de60ce961abf9c72ace5d727a96e8d13d0e2dadb610f",
+   "config.json": "9b25a2941fe07ae4da2ed3c315a44af2fc3c5c9db2ea54e2ecd2f925e3103bf0",
+   "control.py": "1f59a1942ec7bce375f7ec7b648cc59f8fc4b0103e85fd515f2e89e4d8e89fe7",
+   "deadline_diagnostics.py": "2477d4908e03926bb6e1e2118950b7765b1a03419bbc3726b71a953bb6fc2653",
+   "download_learned_models.py": "13692f9c1db7d7337943363be008ab49b842fe112dff231c665a21df0df0a404",
+   "fault_injection.py": "83570808869ea588d0c8600595151bc9caa3e5e25d1055c7e07beb063fac2f0d",
+   "gain_config.json": "6186b780e19487b4e1920a3a5538dbc73a0b08488120a70e1253f62e99f65f6a",
+   "joint_limit_config.json": "f8855a46a7aca71867fa730d4ea092686b72267c0351883421f31c574134f841",
+   "joint_limits.py": "3d5e0c8d18c88c7d7d3bafedbd1c4ac8701947240c249ce528f95f32808291d3",
+   "latency_stress.py": "50d783c6c3bf0279038159d162261ede7a140d78281b25039823c2019642ee38",
+   "learned_cuda_graphs.py": "506d97aa83f6009e9e44f004a765de6e95061df1fd866cb7e5f392b7bd0810d4",
+   "learned_feature_config.json": "0145983cbf3bafef87e80ca079628744f69edf175764137e36d373786353a708",
+   "learned_perception.py": "77515424a30d7556c3174f48da6a9bd30e17190d2864f64d29e2cf22ae51b78a",
+   "models/manifest.json": "4ce943f21304b7934d724250c0bb1dac2839ab43975d202a008404c8e190692e",
+   "motion_path.py": "27f8657b1af0154532a790a7e91f3a0fec11a355ac99cef397c315def74817f7",
+   "native_scheduling.py": "d0cdfe779641ec76e59b445f9b0a42d890c3c90a76f2a81b3285749f878831de",
+   "natural_feature_config.json": "284d6107ba8a739fb3c5731ad4545de16d44be48adc6e3ad43f34e08efe4a2fb",
+   "perception.py": "34e74c605b5e349a714d7cdf67a5c1e4322f2252a919450944abb182972bfb94",
+   "precision.py": "c249a34cc121835f6fcbcacdfce6ad6034ea5cbca2706aec9bae4e0640752561",
+   "precision_config.json": "bb7749276bf39d39e3c980d7d14e549f2e8f26f9b9480736f6f99891ef5027b7",
+   "prepare_natural_reference.py": "1dab76acce145061258c965f84b63c42723c466b19723056630367c7fb705df9",
+   "realtime.py": "3c94761023656a9ee17028cefabe09f44fe2362a51e18f892d1693adb2b9085f",
+   "realtime_app.py": "4e9aff50664e4d6b164840c3225cd0b807c3560bb1c111e5a25433ea6eaaf8d8",
+   "record_joint_limit_demo.py": "d4ca6b29e1c257c3633d44f0edda3eb6b1841a97caad934f14b18178124b808e",
+   "record_learned_demo.py": "10dba7fe0733e456fb0c66aae55e0f15a4255efbb0ee44d346361d572171ad13",
+   "record_natural_image_demo.py": "4bfa0237874a299b45e1a7766a22ed9472d3a8eb11b55358b2e77f023e80302d",
+   "record_recovery_demo.py": "652d43ec930db88d118d708cf1afab2ab53d1b6fe4c168173745440d9fcb6dee",
+   "record_search_coverage_demo.py": "f50572e34d2ec245b7b692ee4187db337366d9bb4a907dfe75a6469c4f7576fc",
+   "record_startup_demo.py": "f015ae73cb59c05ad8503d3ee276f1c7199ed6e74ba618e6ecdb8e4623b8b7d2",
+   "recovery.py": "7562013287a778fcc2f546707f1a7d3f2aed122b13c44439ff1690cad7c815c4",
+   "recovery_config.json": "32b436f0cc0e4272680f163e76861cf358a50d1dacc9a8ce96d878fd02d6b7c5",
+   "reference/goal.npz": "3d6e7376c549ae47f74fd12ec9a0afc134ae8482301ec2a3ced0d16113dc989d",
+   "reference/natural_goal.npz": "2912b8b45be09dac9351f27cff974c7e2808f372dd2dd0d006be6f0299f5f900",
+   "reference/natural_goal.png": "06c39b9e7a003b8653f852bc8cad643bb2aed3b718ddcc3aa475c93d85ded0c4",
+   "reference_image.py": "3a883d1015831290b07f2b312a086da2d70478fe1cee5b6b4ef6887c7f167f3a",
+   "robustness_config.json": "63f6b7a3a010c8de08e074b0e2c2f12b1faa9334b34127789f836862e58ad6fc",
+   "run_accuracy_study.py": "d59ff73a87282acfd80e0b4d88496d60910e4ea2eac68d3714793c8d1a3e68ca",
+   "run_alignment.py": "8c2db501849396eeab0ed2e3870862741f62612bb0e794d5122aeeffafd879b1",
+   "run_camera_delay_study.py": "8ba1d197488dbc8b09d9144c9eba3d9d85e7ee239884feedb5016e88837f3beb",
+   "run_camera_robustness.py": "54df8320e59790b144f6d5db583a72670cabf559950daf5503721acd0c568ff5",
+   "run_collision_study.py": "8847e6ce98152b48c6a6d6a9c994abaa5849105cb34da039ce53bf5dcc174575",
+   "run_fault_campaign.py": "7dbb0cd2f7474c46a8ab19d303d7d3c4e1397fb49fa3a43d64a417fc74f8418f",
+   "run_gain_study.py": "013d266ae42575f3f343687083bb78ac3f2d4e1631a7965c719679df7ff0e760",
+   "run_joint_limit_study.py": "8c0b77629352076634f408550987e7f0550c54fa68c27e977c8587772f919813",
+   "run_latency_stress.py": "7e5ed4ee0a46b5b2047673f99a081fdae18b81b5bb48466e8b3dc1a8644921c5",
+   "run_latency_study.py": "34c3cb08adc44c4fd5056ec4331b3ae1daa7c8a39565633029a5bf266f4c437a",
+   "run_learned_study.py": "074a2aae4530295cbc6e7a0697776ad9debecbb0f822cdc35acedf9d499e9aff",
+   "run_natural_image_study.py": "aaa1fee94aa4aef0ea4572e0bee1a49d18df64c8784990f10f39460c78fff8f1",
+   "run_recovery.py": "ed893aea1b405ff6466347a0144dd0c13fd7cc6ba7795c83179d1cf271a2ed3e",
+   "run_search_coverage.py": "c6a565f6f5f3ed4683bb0f24d4a7be5f224dc6c5b2b0f28c11117c804166da2c",
+   "run_startup_search.py": "3b63c2c44cfaaa5b96449345a5cfaab307c8a05e14eb13c5e8dc4f5e29a34d0e",
+   "run_stop_response.py": "f5c9b7b01cfdaf8628d23ca08d9ab976dfff30ba9242ad6d8db1dd5a32dd94ab",
+   "safety_metrics.py": "d36a69693ca5d201e095cfcce1f5d267d27d377904d2026247b6ccdfda356110",
+   "scene.xml": "c390e02323a4d93c4ee6165ed602de1711a7d23c79e5d739fc7d536f70f24e04",
+   "setup_learned.py": "1f32b684efd666668385d3acd726dc2f564b76ee9fd4cb758e3bf1ea3b46b214",
+   "simulation.py": "ac799ddd1b09634eaf270f6cec988b181178033d8670006e216542b18175b655",
+   "startup_search.py": "9e3b1ca1389bd4bb0b57a4f9827ebfdccb3152ea28321b8ade86773c5677bd28",
+   "startup_search_config.json": "72e915e3699b029821ec8a9b85b104330a7bab2a96338a3b0538faf0350d75f9",
+   "stop_response.py": "b30bfcf091a2f3fae5b08e83947d43eefdab66b68a204535f6624e91a93c1bd6",
+   "verify.py": "de16dd2b666fdd89f286f60ae3f6255b8559703f7c8cbfde4a47d95f6ceb4647",
+   "verify_learned_repair.py": "14b7b1211f98ae6ad930a00bbe91f9ec83ea43117b4c3e4f6f2c508d6b68c0f4"
+  },
+  "runtime": {
+   "python": "3.12.14",
+   "platform": "Windows-11-10.0.26200-SP0",
+   "numpy": "2.5.2",
+   "opencv-python": "5.0.0.93",
+   "mujoco": "3.12.0",
+   "matplotlib": "3.11.1",
+   "pillow": "12.3.0",
+   "torch": "2.13.0+cu126",
+   "torchvision": "0.28.0+cu126",
+   "lightglue": "0.0"
+  }
+ },
+ "scenarios": [
+  {
+   "scenario": "sensor_worker_crash",
+   "id": "sensor-worker-crash",
+   "requirements": [
+    "REQ-06"
+   ],
+   "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+   "fault": "the sensor worker process is killed while the arm moves",
+   "expected": "zero command within one control deadline of the OS-reported exit, and within the 400 ms image-age limit of the kill request; the runtime then ends with its error report",
+   "coverage": "full",
+   "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer (the defect found by the first campaign, now fixed by the receiver thread) is targeted by sensor-worker-partial-message and sensor-result-read-blocked. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+   "test": "tests/test_fault_injection.py::test_sensor_worker_crash_stops_the_arm",
+   "repeats": 10,
+   "passed": 10,
+   "status": "VERIFIED",
+   "deterministic": false,
+   "failed_checks": [],
+   "reaction_ms_max": -7.161699992138892,
+   "reaction_label": "after the OS reported the worker exited",
+   "physical_stop_ms_max": null,
+   "camera_travel_mm_max": null,
+   "speed_at_fault_rad_s_max": null,
+   "peak_measured_speed_rad_s": 0.0815707004911031,
+   "min_environment_clearance_mm": 2.9999999999998743,
+   "min_self_clearance_mm": 8.999999999999808,
+   "min_joint_margin_rad": 0.9948376736344997,
+   "discarded_physics_s_max": 0.0,
+   "exit_after_kill_ms_max": 77.45969999814406,
+   "stop_after_kill_ms_max": 62.70609999774024,
+   "largest_loop_gap_ms": null
+  },
+  {
+   "scenario": "sensor_result_read_blocked",
+   "id": "sensor-result-read-blocked",
+   "requirements": [
+    "REQ-06",
+    "REQ-01"
+   ],
+   "mechanism": "realtime.py: the result pipe is read only by the receiver thread; the control loop reads its local queue, detects the dead worker (is_alive) and stops with 'worker_failed'",
+   "fault": "the parent's read of the next frame from the results queue never returns (any platform); the worker stays alive for one freshness window, then is killed",
+   "expected": "the control loop keeps ticking; the watchdog pauses at the 400 ms image age; zero command within one control deadline of the OS-reported exit (and 400 ms of the kill request); the runtime ends with its error report; shutdown completes",
+   "coverage": "full",
+   "coverage_note": "Simulates a read that never completes inside the parent process rather than producing one in the pipe; sensor-worker-partial-message produces the real pipe state on POSIX.",
+   "test": "tests/test_fault_injection.py::test_blocked_result_read_cannot_block_the_control_loop",
+   "repeats": 10,
+   "passed": 10,
+   "status": "VERIFIED",
+   "deterministic": false,
+   "failed_checks": [],
+   "reaction_ms_max": 2.287300012540072,
+   "reaction_label": "after the OS reported the worker exited",
+   "physical_stop_ms_max": 0.0,
+   "camera_travel_mm_max": 0.857223806975382,
+   "speed_at_fault_rad_s_max": 0.06025515850953701,
+   "peak_measured_speed_rad_s": 0.08160174263209374,
+   "min_environment_clearance_mm": 2.9999999999999227,
+   "min_self_clearance_mm": 8.999999999999739,
+   "min_joint_margin_rad": 0.9948376736344997,
+   "discarded_physics_s_max": 0.0,
+   "exit_after_kill_ms_max": 61.480000033043325,
+   "stop_after_kill_ms_max": 62.563000014051795,
+   "largest_loop_gap_ms": null
+  }
+ ],
+ "runs": {
+  "sensor_worker_crash": [
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one control deadline of the OS-reported exit, and within the 400 ms image-age limit of the kill request; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 150,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999837,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08245406474161907,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.0815606961184454,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "result_pipe_closed",
+     "error_tail": "run\n    raise RuntimeError(receiver.worker_error(self.worker) + ' (result pipe closed)')\nRuntimeError: Sensor process exited with code -15 (result pipe closed)\n",
+     "stop_after_kill_ms": 47.9605000000447,
+     "exit_after_kill_ms": 56.35630001779646,
+     "stop_after_exit_ms": -8.395800017751753
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 56.36 ms after the kill request; stop -8.40 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "47.96 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer (the defect found by the first campaign, now fixed by the receiver thread) is targeted by sensor-worker-partial-message and sensor-result-read-blocked. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.5764200999983586
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one control deadline of the OS-reported exit, and within the 400 ms image-age limit of the kill request; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 150,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999837,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.0824540677357177,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.0815707004911031,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "result_pipe_closed",
+     "error_tail": "run\n    raise RuntimeError(receiver.worker_error(self.worker) + ' (result pipe closed)')\nRuntimeError: Sensor process exited with code -15 (result pipe closed)\n",
+     "stop_after_kill_ms": 47.013500006869435,
+     "exit_after_kill_ms": 54.17519999900833,
+     "stop_after_exit_ms": -7.161699992138892
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 54.18 ms after the kill request; stop -7.16 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "47.01 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer (the defect found by the first campaign, now fixed by the receiver thread) is targeted by sensor-worker-partial-message and sensor-result-read-blocked. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.3936140000005253
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one control deadline of the OS-reported exit, and within the 400 ms image-age limit of the kill request; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 148,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999808,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.0824540677357177,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.0815707004911031,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "result_pipe_closed",
+     "error_tail": "run\n    raise RuntimeError(receiver.worker_error(self.worker) + ' (result pipe closed)')\nRuntimeError: Sensor process exited with code -15 (result pipe closed)\n",
+     "stop_after_kill_ms": 41.62659996654838,
+     "exit_after_kill_ms": 54.29929995443672,
+     "stop_after_exit_ms": -12.672699987888336
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 54.30 ms after the kill request; stop -12.67 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "41.63 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer (the defect found by the first campaign, now fixed by the receiver thread) is targeted by sensor-worker-partial-message and sensor-result-read-blocked. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.350582299986854
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one control deadline of the OS-reported exit, and within the 400 ms image-age limit of the kill request; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 146,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999837,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08247132832554416,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.0815606961184454,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "result_pipe_closed",
+     "error_tail": "run\n    raise RuntimeError(receiver.worker_error(self.worker) + ' (result pipe closed)')\nRuntimeError: Sensor process exited with code -15 (result pipe closed)\n",
+     "stop_after_kill_ms": 38.77980000106618,
+     "exit_after_kill_ms": 50.419899984262884,
+     "stop_after_exit_ms": -11.640099983196706
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 50.42 ms after the kill request; stop -11.64 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "38.78 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer (the defect found by the first campaign, now fixed by the receiver thread) is targeted by sensor-worker-partial-message and sensor-result-read-blocked. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.3654694000142626
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one control deadline of the OS-reported exit, and within the 400 ms image-age limit of the kill request; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 159,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999808,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.0824540677357177,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.0815707004911031,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "result_pipe_closed",
+     "error_tail": "run\n    raise RuntimeError(receiver.worker_error(self.worker) + ' (result pipe closed)')\nRuntimeError: Sensor process exited with code -15 (result pipe closed)\n",
+     "stop_after_kill_ms": 62.70609999774024,
+     "exit_after_kill_ms": 77.45969999814406,
+     "stop_after_exit_ms": -14.753600000403821
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 77.46 ms after the kill request; stop -14.75 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "62.71 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer (the defect found by the first campaign, now fixed by the receiver thread) is targeted by sensor-worker-partial-message and sensor-result-read-blocked. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.3823274000314996
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one control deadline of the OS-reported exit, and within the 400 ms image-age limit of the kill request; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 139,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999837,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08245406474161907,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.0815606961184454,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "result_pipe_closed",
+     "error_tail": "run\n    raise RuntimeError(receiver.worker_error(self.worker) + ' (result pipe closed)')\nRuntimeError: Sensor process exited with code -15 (result pipe closed)\n",
+     "stop_after_kill_ms": 37.559600023087114,
+     "exit_after_kill_ms": 52.185699983965605,
+     "stop_after_exit_ms": -14.626099960878491
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 52.19 ms after the kill request; stop -14.63 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "37.56 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer (the defect found by the first campaign, now fixed by the receiver thread) is targeted by sensor-worker-partial-message and sensor-result-read-blocked. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.3704234000178985
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one control deadline of the OS-reported exit, and within the 400 ms image-age limit of the kill request; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 148,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999837,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08243678961163724,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.0815707004911031,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "result_pipe_closed",
+     "error_tail": "run\n    raise RuntimeError(receiver.worker_error(self.worker) + ' (result pipe closed)')\nRuntimeError: Sensor process exited with code -15 (result pipe closed)\n",
+     "stop_after_kill_ms": 36.35549999307841,
+     "exit_after_kill_ms": 47.04779997700825,
+     "stop_after_exit_ms": -10.692299983929843
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 47.05 ms after the kill request; stop -10.69 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "36.36 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer (the defect found by the first campaign, now fixed by the receiver thread) is targeted by sensor-worker-partial-message and sensor-result-read-blocked. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.3602899000397883
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one control deadline of the OS-reported exit, and within the 400 ms image-age limit of the kill request; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 148,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.99999999999985,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08249112107778814,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.0815606961184454,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "result_pipe_closed",
+     "error_tail": "run\n    raise RuntimeError(receiver.worker_error(self.worker) + ' (result pipe closed)')\nRuntimeError: Sensor process exited with code -15 (result pipe closed)\n",
+     "stop_after_kill_ms": 39.53400003956631,
+     "exit_after_kill_ms": 50.245700054802,
+     "stop_after_exit_ms": -10.711700015235692
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 50.25 ms after the kill request; stop -10.71 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "39.53 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer (the defect found by the first campaign, now fixed by the receiver thread) is targeted by sensor-worker-partial-message and sensor-result-read-blocked. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.3719731000019237
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one control deadline of the OS-reported exit, and within the 400 ms image-age limit of the kill request; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 144,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999837,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.0824540677357177,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.0815707004911031,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "result_pipe_closed",
+     "error_tail": "run\n    raise RuntimeError(receiver.worker_error(self.worker) + ' (result pipe closed)')\nRuntimeError: Sensor process exited with code -15 (result pipe closed)\n",
+     "stop_after_kill_ms": 34.45050003938377,
+     "exit_after_kill_ms": 45.20930000580847,
+     "stop_after_exit_ms": -10.758799966424704
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 45.21 ms after the kill request; stop -10.76 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "34.45 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer (the defect found by the first campaign, now fixed by the receiver thread) is targeted by sensor-worker-partial-message and sensor-result-read-blocked. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.3976070000207983
+   },
+   {
+    "id": "sensor-worker-crash",
+    "requirements": [
+     "REQ-06"
+    ],
+    "mechanism": "realtime.py: worker not alive -> stop('worker_failed'), then the runtime ends with an error report",
+    "fault": "the sensor worker process is killed while the arm moves",
+    "expected": "zero command within one control deadline of the OS-reported exit, and within the 400 ms image-age limit of the kill request; the runtime then ends with its error report",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 145,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "not_measured",
+      "speed_at_command_rad_s": null,
+      "physical_stop_ms": null,
+      "camera_travel_mm": null,
+      "max_joint_travel_rad": null
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999998743,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999863,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08250843068351096,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.0815515199606587,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "result_pipe_closed",
+     "error_tail": "run\n    raise RuntimeError(receiver.worker_error(self.worker) + ' (result pipe closed)')\nRuntimeError: Sensor process exited with code -15 (result pipe closed)\n",
+     "stop_after_kill_ms": 50.757699995301664,
+     "exit_after_kill_ms": 65.33820001641288,
+     "stop_after_exit_ms": -14.58050002111122
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 65.34 ms after the kill request; stop -14.58 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "50.76 ms"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "The kill lands at a random moment. A kill in the middle of a result transfer (the defect found by the first campaign, now fixed by the receiver thread) is targeted by sensor-worker-partial-message and sensor-result-read-blocked. The runtime ends right after the stop, so the simulated arm's braking is not measured.",
+    "deterministic": false,
+    "wall_s": 2.3952224000240676
+   }
+  ],
+  "sensor_result_read_blocked": [
+   {
+    "id": "sensor-result-read-blocked",
+    "requirements": [
+     "REQ-06",
+     "REQ-01"
+    ],
+    "mechanism": "realtime.py: the result pipe is read only by the receiver thread; the control loop reads its local queue, detects the dead worker (is_alive) and stops with 'worker_failed'",
+    "fault": "the parent's read of the next frame from the results queue never returns (any platform); the worker stays alive for one freshness window, then is killed",
+    "expected": "the control loop keeps ticking; the watchdog pauses at the 400 ms image age; zero command within one control deadline of the OS-reported exit (and 400 ms of the kill request); the runtime ends with its error report; shutdown completes",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 323,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "closed",
+      "speed_at_command_rad_s": 0.060250453176475004,
+      "physical_stop_ms": null,
+      "camera_travel_mm": 0.8179654138939427,
+      "max_joint_travel_rad": 0.001184293847778791
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999782,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08238832568721538,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08158147410672005,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "is_alive",
+     "fault_injected": true,
+     "control_ticks_after_fault": 204,
+     "close_s": 4.950002767145634e-05,
+     "receiver": {
+      "forwarded": 28,
+      "dropped": 0,
+      "ended": null,
+      "stuck_at_close": true,
+      "join_ms": 513.0878000054508
+     },
+     "error_tail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n",
+     "pause_after_deadline_ms": 1.9381999736651778,
+     "stop_after_kill_ms": 51.475999993272126,
+     "exit_after_kill_ms": 50.579900038428605,
+     "stop_after_exit_ms": 0.8960999548435211
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the fault was in place while the arm moved",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the control loop kept running after the read blocked",
+      "passed": true,
+      "detail": "204 control ticks before the kill"
+     },
+     {
+      "check": "the freshness watchdog paused the arm on time while the worker was alive",
+      "passed": true,
+      "detail": "1.94 ms after the 400 ms limit"
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 50.58 ms after the kill request; stop 0.90 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "51.48 ms"
+     },
+     {
+      "check": "the error report names the exited sensor process",
+      "passed": true,
+      "detail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n"
+     },
+     {
+      "check": "shutdown completed",
+      "passed": true,
+      "detail": "close() took 0.000 s"
+     },
+     {
+      "check": "shutdown completed although the receiver thread stayed blocked",
+      "passed": true,
+      "detail": "{'forwarded': 28, 'dropped': 0, 'ended': None, 'stuck_at_close': True, 'join_ms': 513.0878000054508}"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "Simulates a read that never completes inside the parent process rather than producing one in the pipe; sensor-worker-partial-message produces the real pipe state on POSIX.",
+    "deterministic": false,
+    "wall_s": 2.7971442000125535
+   },
+   {
+    "id": "sensor-result-read-blocked",
+    "requirements": [
+     "REQ-06",
+     "REQ-01"
+    ],
+    "mechanism": "realtime.py: the result pipe is read only by the receiver thread; the control loop reads its local queue, detects the dead worker (is_alive) and stops with 'worker_failed'",
+    "fault": "the parent's read of the next frame from the results queue never returns (any platform); the worker stays alive for one freshness window, then is killed",
+    "expected": "the control loop keeps ticking; the watchdog pauses at the 400 ms image age; zero command within one control deadline of the OS-reported exit (and 400 ms of the kill request); the runtime ends with its error report; shutdown completes",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 315,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "closed",
+      "speed_at_command_rad_s": 0.060159667358209136,
+      "physical_stop_ms": null,
+      "camera_travel_mm": 0.827418846176331,
+      "max_joint_travel_rad": 0.0011903923444020643
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999794,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08240559751930177,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08160174263209374,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "is_alive",
+     "fault_injected": true,
+     "control_ticks_after_fault": 202,
+     "close_s": 3.5999983083456755e-05,
+     "receiver": {
+      "forwarded": 28,
+      "dropped": 0,
+      "ended": null,
+      "stuck_at_close": true,
+      "join_ms": 511.37970003765076
+     },
+     "error_tail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n",
+     "pause_after_deadline_ms": 0.00790000194683671,
+     "stop_after_kill_ms": 56.90600001253188,
+     "exit_after_kill_ms": 54.75439998554066,
+     "stop_after_exit_ms": 2.1516000269912183
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the fault was in place while the arm moved",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the control loop kept running after the read blocked",
+      "passed": true,
+      "detail": "202 control ticks before the kill"
+     },
+     {
+      "check": "the freshness watchdog paused the arm on time while the worker was alive",
+      "passed": true,
+      "detail": "0.01 ms after the 400 ms limit"
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 54.75 ms after the kill request; stop 2.15 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "56.91 ms"
+     },
+     {
+      "check": "the error report names the exited sensor process",
+      "passed": true,
+      "detail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n"
+     },
+     {
+      "check": "shutdown completed",
+      "passed": true,
+      "detail": "close() took 0.000 s"
+     },
+     {
+      "check": "shutdown completed although the receiver thread stayed blocked",
+      "passed": true,
+      "detail": "{'forwarded': 28, 'dropped': 0, 'ended': None, 'stuck_at_close': True, 'join_ms': 511.37970003765076}"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "Simulates a read that never completes inside the parent process rather than producing one in the pipe; sensor-worker-partial-message produces the real pipe state on POSIX.",
+    "deterministic": false,
+    "wall_s": 2.846666300029028
+   },
+   {
+    "id": "sensor-result-read-blocked",
+    "requirements": [
+     "REQ-06",
+     "REQ-01"
+    ],
+    "mechanism": "realtime.py: the result pipe is read only by the receiver thread; the control loop reads its local queue, detects the dead worker (is_alive) and stops with 'worker_failed'",
+    "fault": "the parent's read of the next frame from the results queue never returns (any platform); the worker stays alive for one freshness window, then is killed",
+    "expected": "the control loop keeps ticking; the watchdog pauses at the 400 ms image age; zero command within one control deadline of the OS-reported exit (and 400 ms of the kill request); the runtime ends with its error report; shutdown completes",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 316,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "closed",
+      "speed_at_command_rad_s": 0.0601419709936159,
+      "physical_stop_ms": null,
+      "camera_travel_mm": 0.819183408307445,
+      "max_joint_travel_rad": 0.0011882215982586715
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999782,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08245407200835848,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.08158147410672005,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "is_alive",
+     "fault_injected": true,
+     "control_ticks_after_fault": 202,
+     "close_s": 5.0399976316839457e-05,
+     "receiver": {
+      "forwarded": 28,
+      "dropped": 0,
+      "ended": null,
+      "stuck_at_close": true,
+      "join_ms": 514.2917000339366
+     },
+     "error_tail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n",
+     "pause_after_deadline_ms": 1.532499969471246,
+     "stop_after_kill_ms": 53.17480000667274,
+     "exit_after_kill_ms": 51.38160003116354,
+     "stop_after_exit_ms": 1.7931999755091965
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the fault was in place while the arm moved",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the control loop kept running after the read blocked",
+      "passed": true,
+      "detail": "202 control ticks before the kill"
+     },
+     {
+      "check": "the freshness watchdog paused the arm on time while the worker was alive",
+      "passed": true,
+      "detail": "1.53 ms after the 400 ms limit"
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 51.38 ms after the kill request; stop 1.79 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "53.17 ms"
+     },
+     {
+      "check": "the error report names the exited sensor process",
+      "passed": true,
+      "detail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n"
+     },
+     {
+      "check": "shutdown completed",
+      "passed": true,
+      "detail": "close() took 0.000 s"
+     },
+     {
+      "check": "shutdown completed although the receiver thread stayed blocked",
+      "passed": true,
+      "detail": "{'forwarded': 28, 'dropped': 0, 'ended': None, 'stuck_at_close': True, 'join_ms': 514.2917000339366}"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "Simulates a read that never completes inside the parent process rather than producing one in the pipe; sensor-worker-partial-message produces the real pipe state on POSIX.",
+    "deterministic": false,
+    "wall_s": 2.7721969000413083
+   },
+   {
+    "id": "sensor-result-read-blocked",
+    "requirements": [
+     "REQ-06",
+     "REQ-01"
+    ],
+    "mechanism": "realtime.py: the result pipe is read only by the receiver thread; the control loop reads its local queue, detects the dead worker (is_alive) and stops with 'worker_failed'",
+    "fault": "the parent's read of the next frame from the results queue never returns (any platform); the worker stays alive for one freshness window, then is killed",
+    "expected": "the control loop keeps ticking; the watchdog pauses at the 400 ms image age; zero command within one control deadline of the OS-reported exit (and 400 ms of the kill request); the runtime ends with its error report; shutdown completes",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 321,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "closed",
+      "speed_at_command_rad_s": 0.05993223500791246,
+      "physical_stop_ms": null,
+      "camera_travel_mm": 0.857223806975382,
+      "max_joint_travel_rad": 0.0012527609290016208
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999782,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.0824540677357177,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.0815707004911031,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "is_alive",
+     "fault_injected": true,
+     "control_ticks_after_fault": 204,
+     "close_s": 2.929999027401209e-05,
+     "receiver": {
+      "forwarded": 28,
+      "dropped": 0,
+      "ended": null,
+      "stuck_at_close": true,
+      "join_ms": 514.1737999510951
+     },
+     "error_tail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n",
+     "pause_after_deadline_ms": 1.400000008288771,
+     "stop_after_kill_ms": 47.69239999586716,
+     "exit_after_kill_ms": 46.407500049099326,
+     "stop_after_exit_ms": 1.2848999467678368
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the fault was in place while the arm moved",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the control loop kept running after the read blocked",
+      "passed": true,
+      "detail": "204 control ticks before the kill"
+     },
+     {
+      "check": "the freshness watchdog paused the arm on time while the worker was alive",
+      "passed": true,
+      "detail": "1.40 ms after the 400 ms limit"
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 46.41 ms after the kill request; stop 1.28 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "47.69 ms"
+     },
+     {
+      "check": "the error report names the exited sensor process",
+      "passed": true,
+      "detail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n"
+     },
+     {
+      "check": "shutdown completed",
+      "passed": true,
+      "detail": "close() took 0.000 s"
+     },
+     {
+      "check": "shutdown completed although the receiver thread stayed blocked",
+      "passed": true,
+      "detail": "{'forwarded': 28, 'dropped': 0, 'ended': None, 'stuck_at_close': True, 'join_ms': 514.1737999510951}"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "Simulates a read that never completes inside the parent process rather than producing one in the pipe; sensor-worker-partial-message produces the real pipe state on POSIX.",
+    "deterministic": false,
+    "wall_s": 2.808228700014297
+   },
+   {
+    "id": "sensor-result-read-blocked",
+    "requirements": [
+     "REQ-06",
+     "REQ-01"
+    ],
+    "mechanism": "realtime.py: the result pipe is read only by the receiver thread; the control loop reads its local queue, detects the dead worker (is_alive) and stops with 'worker_failed'",
+    "fault": "the parent's read of the next frame from the results queue never returns (any platform); the worker stays alive for one freshness window, then is killed",
+    "expected": "the control loop keeps ticking; the watchdog pauses at the 400 ms image age; zero command within one control deadline of the OS-reported exit (and 400 ms of the kill request); the runtime ends with its error report; shutdown completes",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 322,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": false,
+      "outcome": "at_rest",
+      "speed_at_command_rad_s": 0.0,
+      "physical_stop_ms": 0.0,
+      "camera_travel_mm": 0.0,
+      "max_joint_travel_rad": 0.0
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999822,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.0824540677357177,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.0815707004911031,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "is_alive",
+     "fault_injected": true,
+     "control_ticks_after_fault": 202,
+     "close_s": 4.5900000259280205e-05,
+     "receiver": {
+      "forwarded": 28,
+      "dropped": 0,
+      "ended": null,
+      "stuck_at_close": true,
+      "join_ms": 510.5274000088684
+     },
+     "error_tail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n",
+     "pause_after_deadline_ms": 1.1712999548763037,
+     "stop_after_kill_ms": 62.563000014051795,
+     "exit_after_kill_ms": 61.480000033043325,
+     "stop_after_exit_ms": 1.08299998100847
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the fault was in place while the arm moved",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the control loop kept running after the read blocked",
+      "passed": true,
+      "detail": "202 control ticks before the kill"
+     },
+     {
+      "check": "the freshness watchdog paused the arm on time while the worker was alive",
+      "passed": true,
+      "detail": "1.17 ms after the 400 ms limit"
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 61.48 ms after the kill request; stop 1.08 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "62.56 ms"
+     },
+     {
+      "check": "the error report names the exited sensor process",
+      "passed": true,
+      "detail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n"
+     },
+     {
+      "check": "shutdown completed",
+      "passed": true,
+      "detail": "close() took 0.000 s"
+     },
+     {
+      "check": "shutdown completed although the receiver thread stayed blocked",
+      "passed": true,
+      "detail": "{'forwarded': 28, 'dropped': 0, 'ended': None, 'stuck_at_close': True, 'join_ms': 510.5274000088684}"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "Simulates a read that never completes inside the parent process rather than producing one in the pipe; sensor-worker-partial-message produces the real pipe state on POSIX.",
+    "deterministic": false,
+    "wall_s": 2.8017644000356086
+   },
+   {
+    "id": "sensor-result-read-blocked",
+    "requirements": [
+     "REQ-06",
+     "REQ-01"
+    ],
+    "mechanism": "realtime.py: the result pipe is read only by the receiver thread; the control loop reads its local queue, detects the dead worker (is_alive) and stops with 'worker_failed'",
+    "fault": "the parent's read of the next frame from the results queue never returns (any platform); the worker stays alive for one freshness window, then is killed",
+    "expected": "the control loop keeps ticking; the watchdog pauses at the 400 ms image age; zero command within one control deadline of the OS-reported exit (and 400 ms of the kill request); the runtime ends with its error report; shutdown completes",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 311,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": false,
+      "outcome": "at_rest",
+      "speed_at_command_rad_s": 0.0,
+      "physical_stop_ms": 0.0,
+      "camera_travel_mm": 0.0,
+      "max_joint_travel_rad": 0.0
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999767,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08243678725318192,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.0815606961184454,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "is_alive",
+     "fault_injected": true,
+     "control_ticks_after_fault": 199,
+     "close_s": 5.3499999921768904e-05,
+     "receiver": {
+      "forwarded": 28,
+      "dropped": 0,
+      "ended": null,
+      "stuck_at_close": true,
+      "join_ms": 511.6600999608636
+     },
+     "error_tail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n",
+     "pause_after_deadline_ms": 0.7880999473854899,
+     "stop_after_kill_ms": 51.14640004467219,
+     "exit_after_kill_ms": 48.85910003213212,
+     "stop_after_exit_ms": 2.287300012540072
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the fault was in place while the arm moved",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the control loop kept running after the read blocked",
+      "passed": true,
+      "detail": "199 control ticks before the kill"
+     },
+     {
+      "check": "the freshness watchdog paused the arm on time while the worker was alive",
+      "passed": true,
+      "detail": "0.79 ms after the 400 ms limit"
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 48.86 ms after the kill request; stop 2.29 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "51.15 ms"
+     },
+     {
+      "check": "the error report names the exited sensor process",
+      "passed": true,
+      "detail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n"
+     },
+     {
+      "check": "shutdown completed",
+      "passed": true,
+      "detail": "close() took 0.000 s"
+     },
+     {
+      "check": "shutdown completed although the receiver thread stayed blocked",
+      "passed": true,
+      "detail": "{'forwarded': 28, 'dropped': 0, 'ended': None, 'stuck_at_close': True, 'join_ms': 511.6600999608636}"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "Simulates a read that never completes inside the parent process rather than producing one in the pipe; sensor-worker-partial-message produces the real pipe state on POSIX.",
+    "deterministic": false,
+    "wall_s": 2.830756500014104
+   },
+   {
+    "id": "sensor-result-read-blocked",
+    "requirements": [
+     "REQ-06",
+     "REQ-01"
+    ],
+    "mechanism": "realtime.py: the result pipe is read only by the receiver thread; the control loop reads its local queue, detects the dead worker (is_alive) and stops with 'worker_failed'",
+    "fault": "the parent's read of the next frame from the results queue never returns (any platform); the worker stays alive for one freshness window, then is killed",
+    "expected": "the control loop keeps ticking; the watchdog pauses at the 400 ms image age; zero command within one control deadline of the OS-reported exit (and 400 ms of the kill request); the runtime ends with its error report; shutdown completes",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 317,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "closed",
+      "speed_at_command_rad_s": 0.0600116359415574,
+      "physical_stop_ms": null,
+      "camera_travel_mm": 0.8269319762659386,
+      "max_joint_travel_rad": 0.0012047857304793679
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999739,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08245406474161907,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.0815606961184454,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "is_alive",
+     "fault_injected": true,
+     "control_ticks_after_fault": 202,
+     "close_s": 3.5400036722421646e-05,
+     "receiver": {
+      "forwarded": 28,
+      "dropped": 0,
+      "ended": null,
+      "stuck_at_close": true,
+      "join_ms": 513.6330000241287
+     },
+     "error_tail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n",
+     "pause_after_deadline_ms": 0.8761999779380858,
+     "stop_after_kill_ms": 53.60480002127588,
+     "exit_after_kill_ms": 51.94899998605251,
+     "stop_after_exit_ms": 1.6558000352233648
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the fault was in place while the arm moved",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the control loop kept running after the read blocked",
+      "passed": true,
+      "detail": "202 control ticks before the kill"
+     },
+     {
+      "check": "the freshness watchdog paused the arm on time while the worker was alive",
+      "passed": true,
+      "detail": "0.88 ms after the 400 ms limit"
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 51.95 ms after the kill request; stop 1.66 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "53.60 ms"
+     },
+     {
+      "check": "the error report names the exited sensor process",
+      "passed": true,
+      "detail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n"
+     },
+     {
+      "check": "shutdown completed",
+      "passed": true,
+      "detail": "close() took 0.000 s"
+     },
+     {
+      "check": "shutdown completed although the receiver thread stayed blocked",
+      "passed": true,
+      "detail": "{'forwarded': 28, 'dropped': 0, 'ended': None, 'stuck_at_close': True, 'join_ms': 513.6330000241287}"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "Simulates a read that never completes inside the parent process rather than producing one in the pipe; sensor-worker-partial-message produces the real pipe state on POSIX.",
+    "deterministic": false,
+    "wall_s": 2.7975191000150517
+   },
+   {
+    "id": "sensor-result-read-blocked",
+    "requirements": [
+     "REQ-06",
+     "REQ-01"
+    ],
+    "mechanism": "realtime.py: the result pipe is read only by the receiver thread; the control loop reads its local queue, detects the dead worker (is_alive) and stops with 'worker_failed'",
+    "fault": "the parent's read of the next frame from the results queue never returns (any platform); the worker stays alive for one freshness window, then is killed",
+    "expected": "the control loop keeps ticking; the watchdog pauses at the 400 ms image age; zero command within one control deadline of the OS-reported exit (and 400 ms of the kill request); the runtime ends with its error report; shutdown completes",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 318,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "closed",
+      "speed_at_command_rad_s": 0.06025515850953701,
+      "physical_stop_ms": null,
+      "camera_travel_mm": 0.8155064805891097,
+      "max_joint_travel_rad": 0.0011805248099999999
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999808,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08243678961163724,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.0815707004911031,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "is_alive",
+     "fault_injected": true,
+     "control_ticks_after_fault": 202,
+     "close_s": 5.0399976316839457e-05,
+     "receiver": {
+      "forwarded": 28,
+      "dropped": 0,
+      "ended": null,
+      "stuck_at_close": true,
+      "join_ms": 508.421000035014
+     },
+     "error_tail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n",
+     "pause_after_deadline_ms": 1.2244999525137246,
+     "stop_after_kill_ms": 51.692300010472536,
+     "exit_after_kill_ms": 49.720300012268126,
+     "stop_after_exit_ms": 1.97199999820441
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the fault was in place while the arm moved",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the control loop kept running after the read blocked",
+      "passed": true,
+      "detail": "202 control ticks before the kill"
+     },
+     {
+      "check": "the freshness watchdog paused the arm on time while the worker was alive",
+      "passed": true,
+      "detail": "1.22 ms after the 400 ms limit"
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 49.72 ms after the kill request; stop 1.97 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "51.69 ms"
+     },
+     {
+      "check": "the error report names the exited sensor process",
+      "passed": true,
+      "detail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n"
+     },
+     {
+      "check": "shutdown completed",
+      "passed": true,
+      "detail": "close() took 0.000 s"
+     },
+     {
+      "check": "shutdown completed although the receiver thread stayed blocked",
+      "passed": true,
+      "detail": "{'forwarded': 28, 'dropped': 0, 'ended': None, 'stuck_at_close': True, 'join_ms': 508.421000035014}"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "Simulates a read that never completes inside the parent process rather than producing one in the pipe; sensor-worker-partial-message produces the real pipe state on POSIX.",
+    "deterministic": false,
+    "wall_s": 2.833764200040605
+   },
+   {
+    "id": "sensor-result-read-blocked",
+    "requirements": [
+     "REQ-06",
+     "REQ-01"
+    ],
+    "mechanism": "realtime.py: the result pipe is read only by the receiver thread; the control loop reads its local queue, detects the dead worker (is_alive) and stops with 'worker_failed'",
+    "fault": "the parent's read of the next frame from the results queue never returns (any platform); the worker stays alive for one freshness window, then is killed",
+    "expected": "the control loop keeps ticking; the watchdog pauses at the 400 ms image age; zero command within one control deadline of the OS-reported exit (and 400 ms of the kill request); the runtime ends with its error report; shutdown completes",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 313,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "closed",
+      "speed_at_command_rad_s": 0.059995141371433205,
+      "physical_stop_ms": null,
+      "camera_travel_mm": 0.8541170329445884,
+      "max_joint_travel_rad": 0.0012482001572538537
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999753,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.08249112107778814,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.0815606961184454,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "is_alive",
+     "fault_injected": true,
+     "control_ticks_after_fault": 202,
+     "close_s": 4.999997327104211e-05,
+     "receiver": {
+      "forwarded": 28,
+      "dropped": 0,
+      "ended": null,
+      "stuck_at_close": true,
+      "join_ms": 510.59679995523766
+     },
+     "error_tail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n",
+     "pause_after_deadline_ms": 1.2610999983735383,
+     "stop_after_kill_ms": 52.821499994024634,
+     "exit_after_kill_ms": 51.24289996456355,
+     "stop_after_exit_ms": 1.5786000294610858
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the fault was in place while the arm moved",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the control loop kept running after the read blocked",
+      "passed": true,
+      "detail": "202 control ticks before the kill"
+     },
+     {
+      "check": "the freshness watchdog paused the arm on time while the worker was alive",
+      "passed": true,
+      "detail": "1.26 ms after the 400 ms limit"
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 51.24 ms after the kill request; stop 1.58 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "52.82 ms"
+     },
+     {
+      "check": "the error report names the exited sensor process",
+      "passed": true,
+      "detail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n"
+     },
+     {
+      "check": "shutdown completed",
+      "passed": true,
+      "detail": "close() took 0.000 s"
+     },
+     {
+      "check": "shutdown completed although the receiver thread stayed blocked",
+      "passed": true,
+      "detail": "{'forwarded': 28, 'dropped': 0, 'ended': None, 'stuck_at_close': True, 'join_ms': 510.59679995523766}"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "Simulates a read that never completes inside the parent process rather than producing one in the pipe; sensor-worker-partial-message produces the real pipe state on POSIX.",
+    "deterministic": false,
+    "wall_s": 2.8132278000121005
+   },
+   {
+    "id": "sensor-result-read-blocked",
+    "requirements": [
+     "REQ-06",
+     "REQ-01"
+    ],
+    "mechanism": "realtime.py: the result pipe is read only by the receiver thread; the control loop reads its local queue, detects the dead worker (is_alive) and stops with 'worker_failed'",
+    "fault": "the parent's read of the next frame from the results queue never returns (any platform); the worker stays alive for one freshness window, then is killed",
+    "expected": "the control loop keeps ticking; the watchdog pauses at the 400 ms image age; zero command within one control deadline of the OS-reported exit (and 400 ms of the kill request); the runtime ends with its error report; shutdown completes",
+    "measured": {
+     "stop_reason_observed": "runtime_error",
+     "stop_event_found": true,
+     "final_command_zero": true,
+     "moving_ticks": 322,
+     "unsafe_motion_ticks": 0,
+     "post_stop_motion_ticks": 0,
+     "contacts": 0,
+     "control_deadline_misses": 0,
+     "discarded_physics_s": 0.0,
+     "physical_stop": {
+      "moving": true,
+      "outcome": "closed",
+      "speed_at_command_rad_s": 0.05993728292064983,
+      "physical_stop_ms": null,
+      "camera_travel_mm": 0.85663543811042,
+      "max_joint_travel_rad": 0.0012510637364497625
+     },
+     "safety_metrics": [
+      {
+       "key": "environment_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance to the environment above its 12 mm margin",
+       "unit": "mm",
+       "value": 2.9999999999999227,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "pedestal / upper_arm"
+      },
+      {
+       "key": "self_clearance",
+       "requirement": "REQ-11",
+       "description": "Minimum clearance between robot parts above its 6 mm margin",
+       "unit": "mm",
+       "value": 8.999999999999767,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "wrist_roll_link / tool_link"
+      },
+      {
+       "key": "joint_margin",
+       "requirement": "REQ-12",
+       "description": "Minimum distance to a joint limit",
+       "unit": "rad",
+       "value": 0.9948376736344997,
+       "limit": 0.0,
+       "comparison": ">=",
+       "passed": true,
+       "detail": "joint 1"
+      },
+      {
+       "key": "command_speed",
+       "requirement": "REQ-13",
+       "description": "Peak commanded joint speed",
+       "unit": "rad/s",
+       "value": 0.0824540677357177,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": null
+      },
+      {
+       "key": "measured_speed",
+       "requirement": "REQ-13",
+       "description": "Peak measured joint speed",
+       "unit": "rad/s",
+       "value": 0.0815707004911031,
+       "limit": 0.6,
+       "comparison": "<=",
+       "passed": true,
+       "detail": "joint 2"
+      }
+     ],
+     "detected_by": "is_alive",
+     "fault_injected": true,
+     "control_ticks_after_fault": 203,
+     "close_s": 3.0399998649954796e-05,
+     "receiver": {
+      "forwarded": 28,
+      "dropped": 0,
+      "ended": null,
+      "stuck_at_close": true,
+      "join_ms": 500.6532999686897
+     },
+     "error_tail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n",
+     "pause_after_deadline_ms": 0.6217000191099942,
+     "stop_after_kill_ms": 49.89890003344044,
+     "exit_after_kill_ms": 49.079000018537045,
+     "stop_after_exit_ms": 0.8199000149033964
+    },
+    "checks": [
+     {
+      "check": "the runtime ended with its error report after the stop",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "stop event recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the robot was moving before the fault",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "command zero after the stop, and it stayed zero",
+      "passed": true,
+      "detail": "post-stop motion ticks 0"
+     },
+     {
+      "check": "no unsafe motion or forbidden contact",
+      "passed": true,
+      "detail": "unsafe 0, contacts 0"
+     },
+     {
+      "check": "clearance, joint margin and speed within REQ-11 to REQ-13",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the fault was in place while the arm moved",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "the control loop kept running after the read blocked",
+      "passed": true,
+      "detail": "203 control ticks before the kill"
+     },
+     {
+      "check": "the freshness watchdog paused the arm on time while the worker was alive",
+      "passed": true,
+      "detail": "0.62 ms after the 400 ms limit"
+     },
+     {
+      "check": "stop reason worker_failed recorded",
+      "passed": true,
+      "detail": ""
+     },
+     {
+      "check": "runtime reaction: stop within one control deadline after the OS reported the worker exited",
+      "passed": true,
+      "detail": "OS reported the exit 49.08 ms after the kill request; stop 0.82 ms after the exit"
+     },
+     {
+      "check": "end to end: stop within the 400 ms image-age limit after the kill request",
+      "passed": true,
+      "detail": "49.90 ms"
+     },
+     {
+      "check": "the error report names the exited sensor process",
+      "passed": true,
+      "detail": "ervoing-simulation\\realtime.py\", line 608, in _run\n    raise RuntimeError(receiver.worker_error(self.worker))\nRuntimeError: Sensor process exited with code -15\n"
+     },
+     {
+      "check": "shutdown completed",
+      "passed": true,
+      "detail": "close() took 0.000 s"
+     },
+     {
+      "check": "shutdown completed although the receiver thread stayed blocked",
+      "passed": true,
+      "detail": "{'forwarded': 28, 'dropped': 0, 'ended': None, 'stuck_at_close': True, 'join_ms': 500.6532999686897}"
+     }
+    ],
+    "passed": true,
+    "coverage": "full",
+    "coverage_note": "Simulates a read that never completes inside the parent process rather than producing one in the pipe; sensor-worker-partial-message produces the real pipe state on POSIX.",
+    "deterministic": false,
+    "wall_s": 2.8029212999972515
+   }
+  ]
+ }
+}

@@ -87,6 +87,14 @@ The results in the table above were recorded before the model. With the model on
 heavy delay they spend more time held: Learned GPU at +150 ms was held 53 s instead
 of 43.5 s ([actuator model](ACTUATOR_MODEL.md)).
 
+## Safety envelope
+
+Each level records the smallest clearance above the collision margin, the smallest
+distance to a joint limit and the peak commanded and measured joint speed, over every
+2 ms physics step (REQ-11 to REQ-13). The report shows them per level with PASS/FAIL,
+and `margin.csv` has one column per value and verdict. A level with a FAIL is not
+tolerated. Runs from before 2026-10-01 show "not recorded".
+
 ## Limits
 
 - The injected delay is constant. Slower real hardware also has longer tails, so the

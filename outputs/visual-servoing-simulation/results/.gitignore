@@ -29,6 +29,7 @@
 !/search-coverage/demo/**
 !/startup/20260911-184428-897577-n200-seed20260911/**
 !/stop-response/20260930-004121/**
+!/fault-injection/20261001-001047/**
 !/startup/demo/**
 !/gain/app-adaptive.png
 !/learned/full-test-suite.txt
@@ -107,4 +108,30 @@
 # Underlying Python executable GPU preference rerun; raw traces remain local.
 !/latency/20260926-base-executable-settings/*.md
 !/latency/20260926-base-executable-settings/*.json
+**/traces/
+# Receiver-thread fix (2026-10-02): campaigns on the fixed runtime, timing before/after, old-code kills.
+!/fault-injection/20261002-141659-worker-crash/**
+!/fault-injection/20261002-141659-all/**
+!/receiver-thread/20261002-timing/**
+!/receiver-thread/20261002-old-code-worker-kills/**
+# Laptop runs on the receiver-thread runtime (2026-10-02/03); traces stay local.
+!/acceptance-test/20261002-233959/**
+!/acceptance-test/20261003-134526/**
+!/acceptance-test/20261003-150343/**
+!/acceptance-test/20261003-154640/**
+!/acceptance-test/20261003-161751/**
+!/fault-injection/20261003-001323/**
+!/fault-injection/20261003-002419/**
+!/fault-injection/20261003-003238/**
+!/fault-injection/20261003-010746/**
+!/fault-injection/20261003-131231/**
+!/fault-injection/20261003-132018/**
+!/fault-injection/20261003-134000/**
+**/traces/
+# Evidence cited in docs/SAFETY_TRACEABILITY.md and checked by tools/traceability.py; traces stay local.
+!/acceptance-test/20260929-011129/**
+!/acceptance-test/20260928-173556-long/**
+!/margin-test/20260928-234612-resume2000ms/**
+!/margin-test/20260929-110852/**
+!/margin-test/20260930-225125/**
 **/traces/

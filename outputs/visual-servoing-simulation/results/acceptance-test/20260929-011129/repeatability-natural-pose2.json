@@ -1,0 +1,213 @@
+{
+  "id": "repeatability-natural-pose2",
+  "phase": "repeatability",
+  "mode": "natural",
+  "pose_ids": [
+    2
+  ],
+  "attempts": 3,
+  "aligned": 3,
+  "outcomes": {
+    "converged": 3
+  },
+  "stop_reasons": {
+    "converged": 3
+  },
+  "pose_attempts": {
+    "2": 3
+  },
+  "per_pose": {
+    "2": {
+      "attempts": 3,
+      "aligned": 3,
+      "processing_ms": {
+        "count": 179,
+        "mean": 42.557667039083405,
+        "p50": 44.8833000009472,
+        "p95": 53.04309000111971,
+        "p99": 57.70499799942627,
+        "max": 59.6624999998312
+      }
+    }
+  },
+  "duration_s": 17.272016700000677,
+  "worker_pids": [
+    10760
+  ],
+  "worker_executable": "C:\\Users\\marys\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "execution_settings": {
+    "scheduling": {
+      "role": "sensor",
+      "scope": "process",
+      "platform": "nt",
+      "thread_id": 12044,
+      "qos_applied": true,
+      "priority_applied": false,
+      "errors": [],
+      "qos_previous": [
+        0,
+        0
+      ],
+      "qos_requested": [
+        1,
+        0
+      ],
+      "qos_observed": [
+        1,
+        0
+      ]
+    }
+  },
+  "processing_ms": {
+    "count": 179,
+    "mean": 42.557667039083405,
+    "p50": 44.8833000009472,
+    "p95": 53.04309000111971,
+    "p99": 57.70499799942627,
+    "max": 59.6624999998312
+  },
+  "capture_ms": {
+    "count": 212,
+    "mean": 92.18966509437244,
+    "p50": 99.58840000035707,
+    "p95": 109.27102500099863,
+    "p99": 114.07965600050373,
+    "max": 115.75679999987187
+  },
+  "first_processing_ms": {
+    "count": 61,
+    "mean": 42.52944754095,
+    "p50": 44.97169999922335,
+    "p95": 52.81809999905818,
+    "p99": 55.772879999494755,
+    "max": 59.6624999998312
+  },
+  "later_processing_ms": {
+    "count": 118,
+    "mean": 42.572255084728646,
+    "p50": 44.813600000452425,
+    "p95": 53.504189999421214,
+    "p99": 57.29734699942128,
+    "max": 58.38430000039807
+  },
+  "first_capture_ms": {
+    "count": 70,
+    "mean": 92.32618714286218,
+    "p50": 98.97564999937458,
+    "p95": 108.77452999993693,
+    "p99": 111.27897600088546,
+    "max": 115.75679999987187
+  },
+  "later_capture_ms": {
+    "count": 142,
+    "mean": 92.12236549300427,
+    "p50": 100.15659999953641,
+    "p95": 109.52529000005597,
+    "p99": 113.7825360005445,
+    "max": 115.66360000142595
+  },
+  "first_alignment_s": 4.483878499999264,
+  "first_alignment_converged": true,
+  "later_alignment_s": {
+    "count": 2,
+    "mean": 4.504262350000317,
+    "p50": 4.504262350000317,
+    "p95": 4.518362785000226,
+    "p99": 4.519616157000218,
+    "max": 4.519929500000217
+  },
+  "drift": [
+    {
+      "start_s": 0,
+      "processing_ms": {
+        "count": 179,
+        "mean": 42.557667039083405,
+        "p50": 44.8833000009472,
+        "p95": 53.04309000111971,
+        "p99": 57.70499799942627,
+        "max": 59.6624999998312
+      }
+    }
+  ],
+  "image_error_px": {
+    "count": 3,
+    "mean": 0.19520885407130414,
+    "p50": 0.19518816138023667,
+    "p95": 0.19691654754743412,
+    "p99": 0.19707018187340722,
+    "max": 0.1971085904549005
+  },
+  "position_mm": {
+    "count": 6,
+    "mean": 0.40098215618078653,
+    "p50": 0.400838139726465,
+    "p95": 0.45941190697967027,
+    "p99": 0.46005527793842965,
+    "max": 0.4602161206781195
+  },
+  "orientation_deg": {
+    "count": 6,
+    "mean": 0.09427683989232573,
+    "p50": 0.09419873711486065,
+    "p95": 0.09443330368005007,
+    "p99": 0.09443330368005087,
+    "max": 0.09443330368005108
+  },
+  "freshness_trips": 0,
+  "stale_stops": 0,
+  "watchdog_pauses": 0,
+  "paused_s": 0.0,
+  "alignment_time_s": 13.492403199999899,
+  "paused_motion": 0,
+  "control_misses": 0,
+  "unsafe_motion": 0,
+  "post_stop_motion": 0,
+  "contacts": 0,
+  "unlatched_stops": 0,
+  "missing_endpoints": 0,
+  "telemetry_lost": 0,
+  "continuity_gaps": 0,
+  "maximum_control_gap_ms": 6.511200001114048,
+  "runtime_errors": 0,
+  "harness_error": null,
+  "counts": {
+    "captures": 319,
+    "capture_slots": 501,
+    "busy_capture_skips": 182,
+    "input_dropped": 0,
+    "transport_dropped": 0,
+    "pending_cancelled": 7,
+    "sensor_received": 319,
+    "sensor_rows_evicted": 0,
+    "command_rows_evicted": 0,
+    "loop_rows_evicted": 0,
+    "stale_results": 0,
+    "obsolete_results": 2,
+    "pre_inference_dropped": 0,
+    "accepted": 212,
+    "control_ticks": 8382,
+    "moving_ticks": 5702,
+    "unsafe_motion_ticks": 0,
+    "contacts": 0,
+    "post_stop_motion_ticks": 0,
+    "control_deadline_misses": 0,
+    "fault_results": 0,
+    "discarded_physics_s": 0.0,
+    "watchdog_pauses": 0,
+    "watchdog_resumes": 0,
+    "paused_s": 0.0,
+    "paused_motion_ticks": 0
+  },
+  "worker_counts": {
+    "requests_started": 319,
+    "frames_completed": 319,
+    "result_dropped": 0,
+    "requests_expired": 0
+  },
+  "raw_sha256": "f7d4d0561930bdca677453e4580610920357b9184ed9e45b3d7efc0cd261eb4c",
+  "samples": {
+    "sensor": 319,
+    "uncached_active": 179,
+    "commands": 212
+  }
+}

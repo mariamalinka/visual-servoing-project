@@ -269,6 +269,14 @@ def run_session(mode, pose_ids, config, directory, identifier, *, max_attempts=N
                                  ('events', 'events'), ('loop_gaps', 'loop_gaps_ms')):
                 rows = getattr(self, source); chunk[name] = list(rows); rows.clear()
             chunk['events_full'] = len(chunk['events']) >= (self.events.maxlen or 10**9)
+            # Per-cycle stage breakdown of loop spikes (>= 10 ms) and GC pauses, as the
+            # acceptance campaign saves them. Without these a deadline miss cannot be traced
+            # to a stage (added 2026-10-03, after a miss in run 20261003-134526).
+            for source, name in (('cycle_probe', 'cycle_spikes'), ('gc_probe', 'gc_events')):
+                probe = getattr(self, source)
+                chunk[name] = []
+                if probe is not None:
+                    while probe.rows: chunk[name].append(probe.rows.popleft())
             return chunk
 
         def _publish(self, **state):
@@ -457,8 +465,20 @@ def summarize(raw, attempts, ending, meta, config, score=True):
         runtime_errors=int(bool(ending.get('error') or ending.get('harness_error') or ending.get('worker_alive'))),
         harness_error=ending.get('harness_error'), counts=counts, worker_counts=ending.get('worker_counts'),
         raw_sha256=digest(raw), samples=dict(sensor=len(sensors), uncached_active=len(active), commands=len(commands)),
-        actuator=ending.get('actuator'), physical_stops=physical_stops(events, ending))
+        actuator=ending.get('actuator'), physical_stops=physical_stops(events, ending),
+        safety=ending.get('safety'), safety_metrics=safety_metrics_of(ending.get('safety')))
     return result, attempts
+
+
+def safety_metrics_of(record):
+    """Clearance, joint-limit margin and speed extremes judged against REQ-11 to REQ-13.
+
+    None for runs made before the runtime recorded them (reported as not recorded).
+    """
+    if not record:
+        return None
+    import safety_metrics
+    return safety_metrics.evaluate(record)
 
 
 def physical_stops(events, ending):
@@ -515,6 +535,7 @@ def raw_values(directory, session, first_only=None):
 
 def method_summary(mode, sessions, directory, config, plan):
     """Pool one method's sessions and apply the predeclared criteria."""
+    import safety_metrics
     import stop_response
     c = config['criteria']
     rep = [s for s in sessions if s['mode'] == mode and s['phase'] == 'repeatability']
@@ -540,6 +561,7 @@ def method_summary(mode, sessions, directory, config, plan):
         later_alignment_s=None if not sus else sus[0]['later_alignment_s'],
         stop_reasons=dict(sum((Counter(s['stop_reasons']) for s in mine), Counter())),
         actuator=next((s['actuator'] for s in mine if s.get('actuator')), None),
+        safety=safety_metrics.merge([s.get('safety') for s in mine]),
         physical_stops=None if all(s.get('physical_stops') is None for s in mine) else
             stop_response.merge([s.get('physical_stops') for s in mine]),
         position_mm_max=max((s['position_mm']['max'] for s in mine if s['position_mm']), default=None),
@@ -566,6 +588,7 @@ def method_summary(mode, sessions, directory, config, plan):
     summary['drift_last_to_first_p99'] = (ratio(usable[-1]['processing_ms'], usable[0]['processing_ms'])
                                           if len(usable) >= 2 else None)
     summary['environment'] = environment_summary(mine)
+    summary['safety_metrics'] = safety_metrics_of(summary['safety'])
     summary['failures'] = evaluate_method(summary, sessions, mode, config, plan)
     summary['verdict'] = 'FAIL' if summary['failures'] else 'PASS'
     return summary
@@ -611,6 +634,10 @@ def evaluate_method(s, sessions, mode, config, plan):
         require(s[key] <= c[limit], f'{key} {s[key]}')
     for key in ('missing_endpoints', 'telemetry_lost', 'continuity_gaps', 'runtime_errors', 'paused_motion'):
         require(s.get(key, 0) == 0, f'{key} {s.get(key, 0)}')
+    # Safety envelope (REQ-11 to REQ-13), when the run recorded it; older runs keep their verdicts.
+    import safety_metrics
+    for message in safety_metrics.failures(s.get('safety_metrics') or []):
+        require(False, message)
     require(s['position_mm_max'] is not None and s['position_mm_max'] <= c['position_mm'],
             'position error max ' + ('missing' if s['position_mm_max'] is None else f"{s['position_mm_max']:.3f}") + ' mm')
     require(s['orientation_deg_max'] is not None and s['orientation_deg_max'] <= c['orientation_deg'],
@@ -826,6 +853,33 @@ def environment_rows():
     ]
 
 
+def safety_section(directory, methods, sessions):
+    """Report lines and safety.csv: the safety envelope per method and per session."""
+    import csv
+    import safety_metrics
+    rows = []
+    for s in sessions:
+        rows.append(dict(session=s['id'], mode=s['mode'], phase=s.get('phase'),
+                         steps=(s.get('safety') or {}).get('steps', ''), **safety_metrics.flat(s.get('safety_metrics'))))
+    if any(len(r) > 4 for r in rows):
+        keys = list(dict.fromkeys(k for r in rows for k in r))
+        with (directory / 'safety.csv').open('w', newline='', encoding='utf-8') as stream:
+            writer = csv.DictWriter(stream, fieldnames=keys)
+            writer.writeheader()
+            writer.writerows(rows)
+    recorded = sum(bool(s.get('safety')) for s in sessions)
+    lines = ['## Safety envelope', '',
+             'Extremes over every 2 ms physics step of every session (worst session per method). Clearance is '
+             "the collision guard's own distance check minus the required margin (12 mm to the environment, 6 mm "
+             'between robot parts); joint margin is the distance to the `scene.xml` range. A FAIL fails the test. '
+             'Per-session values: `safety.csv`. Simulation values, not real-robot measurements.', '',
+             f'Recorded in {recorded} of {len(sessions)} sessions.'
+             + ('' if recorded in (0, len(sessions)) else ' Sessions without a record are not part of the worst case.'),
+             '']
+    lines += safety_metrics.table_lines([(m['label'], m.get('safety_metrics')) for m in methods])
+    return lines
+
+
 def write_report(directory, status, reason, methods, sessions, manifest, config, complete, telemetry=None):
     verdict = dict(status=status, reason=reason, complete=complete, telemetry=telemetry, methods=methods,
                    sessions=[{k: v for k, v in s.items() if k not in ('per_pose',)} for s in sessions])
@@ -881,6 +935,7 @@ def write_report(directory, status, reason, methods, sessions, manifest, config,
     for name, f in rows:
         L.append(f'| {name} | ' + ' | '.join(f(m) for m in methods) + ' |')
     L += [''] + success_rate_lines(methods, config['criteria'])
+    L += [''] + safety_section(directory, methods, sessions)
     L += ['', 'Hardware telemetry (diagnostic, not gated). A sample counts as clock-limited when nvidia-smi reports a '
           'software power cap, software/hardware thermal slowdown, hardware slowdown or power brake.', '',
           '| Hardware | ' + ' | '.join(m['label'] for m in methods) + ' |', '|---|' + '---:|' * len(methods)]
@@ -913,7 +968,8 @@ def write_report(directory, status, reason, methods, sessions, manifest, config,
           + (f"0 alignments ended by the watchdog, paused <= {100 * c['paused_fraction']:g}% of alignment time, "
              if 'watchdog_stops' in c else '0 freshness trips, ')
           + f"0 deadline misses, "
-          f"0 unsafe/post-stop motion; <= {c['position_mm']:g} mm / {c['orientation_deg']:g} deg; later/first p99 <= {c['later_to_first_p99_ratio']:g}x.",
+          f"0 unsafe/post-stop motion; clearance, joint-limit margin and joint speed within REQ-11 to REQ-13 "
+          f"(when recorded); <= {c['position_mm']:g} mm / {c['orientation_deg']:g} deg; later/first p99 <= {c['later_to_first_p99_ratio']:g}x.",
           '',
           f"- Python: `{manifest.get('python', {}).get('windows_executable') or manifest.get('python', {}).get('executable')}` "
           f"(venv `{manifest.get('python', {}).get('prefix')}`)",

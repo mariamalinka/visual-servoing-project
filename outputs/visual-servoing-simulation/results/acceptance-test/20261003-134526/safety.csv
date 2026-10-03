@@ -1,0 +1,13 @@
+session,mode,phase,steps,environment_clearance_mm,environment_clearance_pass,self_clearance_mm,self_clearance_pass,joint_margin_rad,joint_margin_pass,command_speed_rad_per_s,command_speed_pass,measured_speed_rad_per_s,measured_speed_pass
+repeatability-natural-pose0,natural,repeatability,6121,3.0,1,9.0,1,0.994838,1,0.081953,1,0.080296,1
+repeatability-natural-pose1,natural,repeatability,7639,3.0,1,9.0,1,1.021018,1,0.04167,1,0.040987,1
+repeatability-natural-pose2,natural,repeatability,8396,3.0,1,9.0,1,1.047875,1,0.087278,1,0.084927,1
+repeatability-natural-pose3,natural,repeatability,7974,3.0,1,9.0,1,0.994838,1,0.068183,1,0.063328,1
+repeatability-natural-pose4,natural,repeatability,8128,3.0,1,9.0,1,1.012291,1,0.064269,1,0.06507,1
+repeatability-learned-pose0,learned,repeatability,8466,3.0,1,9.0,1,0.994838,1,0.242948,1,0.214777,1
+repeatability-learned-pose1,learned,repeatability,7663,3.0,1,9.0,1,1.021018,1,0.151678,1,0.144119,1
+repeatability-learned-pose2,learned,repeatability,8656,3.0,1,9.0,1,1.038061,1,0.155723,1,0.14785,1
+repeatability-learned-pose3,learned,repeatability,8253,3.0,1,9.0,1,0.994838,1,0.154693,1,0.114127,1
+repeatability-learned-pose4,learned,repeatability,7946,3.0,1,9.0,1,1.012291,1,0.169055,1,0.160511,1
+sustained-natural,natural,sustained,361209,3.0,1,9.0,1,0.994838,1,0.087278,1,0.084923,1
+sustained-learned,learned,sustained,361419,3.0,1,9.0,1,0.994838,1,0.35,1,0.2122,1

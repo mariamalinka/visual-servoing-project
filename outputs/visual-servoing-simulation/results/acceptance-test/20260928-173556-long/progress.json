@@ -1,0 +1,33 @@
+{
+  "session": "sustained-learned",
+  "mode": "learned",
+  "elapsed_s": 1560.9,
+  "attempts": 496,
+  "aligned": 66,
+  "last_outcome": "stale_camera",
+  "worker_pid": 26320,
+  "counters": {
+    "captures": 22050,
+    "capture_slots": 45806,
+    "busy_capture_skips": 23756,
+    "input_dropped": 0,
+    "transport_dropped": 0,
+    "pending_cancelled": 1143,
+    "sensor_received": 22050,
+    "sensor_rows_evicted": 0,
+    "command_rows_evicted": 0,
+    "loop_rows_evicted": 0,
+    "stale_results": 16,
+    "obsolete_results": 427,
+    "pre_inference_dropped": 0,
+    "accepted": 9081,
+    "control_ticks": 739764,
+    "moving_ticks": 378582,
+    "unsafe_motion_ticks": 0,
+    "contacts": 0,
+    "post_stop_motion_ticks": 0,
+    "control_deadline_misses": 0,
+    "fault_results": 0,
+    "discarded_physics_s": 0.0
+  }
+}

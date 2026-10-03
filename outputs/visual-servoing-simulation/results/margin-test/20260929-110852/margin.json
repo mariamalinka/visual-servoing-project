@@ -1,0 +1,726 @@
+{
+  "status": "MEASURED",
+  "reason": null,
+  "methods": [
+    {
+      "mode": "natural",
+      "label": "SIFT",
+      "baseline_processing_ms": {
+        "p50": 45.231699999987995,
+        "p99": 56.899434999990035,
+        "from_level_ms": 0
+      },
+      "tolerated_delay_ms": 150,
+      "first_failing_delay_ms": 200,
+      "equivalent_slowdown": 4.316258287883051,
+      "excluded_levels_ms": [
+        125
+      ],
+      "levels": [
+        {
+          "delay_ms": 0,
+          "id": "margin-natural-000ms",
+          "attempts": 10,
+          "aligned": 10,
+          "success_rate": 1.0,
+          "freshness_trips": 0,
+          "control_misses": 0,
+          "holds": 0,
+          "held_s": 0.0,
+          "processing_ms": {
+            "count": 564,
+            "mean": 42.94611400709303,
+            "p50": 45.231699999987995,
+            "p95": 53.96049999997957,
+            "p99": 56.899434999990035,
+            "max": 66.32830000000922
+          },
+          "capture_ms": {
+            "count": 670,
+            "mean": 92.45496955223803,
+            "p50": 99.40159999997888,
+            "p95": 109.96799000000408,
+            "p99": 113.5073799999725,
+            "max": 123.88709999999037
+          },
+          "measured_added_ms": 0.0,
+          "converge_s": {
+            "count": 9,
+            "mean": 4.227472955555543,
+            "p50": 4.210889000000009,
+            "p95": 4.518113399999981,
+            "p99": 4.532632919999976,
+            "max": 4.5362627999999745
+          },
+          "unsafe": 0,
+          "trips": {
+            "at_start": 0,
+            "mid_alignment": 0
+          },
+          "delayed_frames": 0,
+          "confounded": false
+        },
+        {
+          "delay_ms": 25,
+          "id": "margin-natural-025ms",
+          "attempts": 10,
+          "aligned": 10,
+          "success_rate": 1.0,
+          "freshness_trips": 0,
+          "control_misses": 0,
+          "holds": 0,
+          "held_s": 0.0,
+          "processing_ms": {
+            "count": 365,
+            "mean": 76.10905205479501,
+            "p50": 77.3377999999525,
+            "p95": 89.24168000002055,
+            "p99": 94.18848799999753,
+            "max": 100.29989999998179
+          },
+          "capture_ms": {
+            "count": 433,
+            "mean": 125.26386605080822,
+            "p50": 130.90509999994993,
+            "p95": 145.3147200000103,
+            "p99": 149.95679999998174,
+            "max": 155.324099999973
+          },
+          "measured_added_ms": 32.1060999999645,
+          "converge_s": {
+            "count": 9,
+            "mean": 4.072074155555551,
+            "p50": 4.104115799999988,
+            "p95": 4.252393080000002,
+            "p99": 4.263866936000013,
+            "max": 4.266735400000016
+          },
+          "unsafe": 0,
+          "trips": {
+            "at_start": 0,
+            "mid_alignment": 0
+          },
+          "delayed_frames": 443,
+          "confounded": false
+        },
+        {
+          "delay_ms": 50,
+          "id": "margin-natural-050ms",
+          "attempts": 10,
+          "aligned": 10,
+          "success_rate": 1.0,
+          "freshness_trips": 0,
+          "control_misses": 0,
+          "holds": 0,
+          "held_s": 0.0,
+          "processing_ms": {
+            "count": 274,
+            "mean": 100.53832262773719,
+            "p50": 101.29089999998087,
+            "p95": 116.16861499999231,
+            "p99": 122.87006600000835,
+            "max": 134.0049000000363
+          },
+          "capture_ms": {
+            "count": 327,
+            "mean": 149.80958379204952,
+            "p50": 154.45370000003322,
+            "p95": 172.85441999997602,
+            "p99": 178.4978499999443,
+            "max": 189.76179999998521
+          },
+          "measured_added_ms": 56.05919999999287,
+          "converge_s": {
+            "count": 9,
+            "mean": 3.925694100000006,
+            "p50": 3.930046700000048,
+            "p95": 4.160409899999979,
+            "p99": 4.16091437999996,
+            "max": 4.161040499999956
+          },
+          "unsafe": 0,
+          "trips": {
+            "at_start": 0,
+            "mid_alignment": 0
+          },
+          "delayed_frames": 337,
+          "confounded": false
+        },
+        {
+          "delay_ms": 75,
+          "id": "margin-natural-075ms",
+          "attempts": 10,
+          "aligned": 10,
+          "success_rate": 1.0,
+          "freshness_trips": 0,
+          "control_misses": 0,
+          "holds": 0,
+          "held_s": 0.0,
+          "processing_ms": {
+            "count": 211,
+            "mean": 125.50495639810289,
+            "p50": 127.24209999998948,
+            "p95": 139.61850000004006,
+            "p99": 141.55096999998023,
+            "max": 153.4854000000223
+          },
+          "capture_ms": {
+            "count": 264,
+            "mean": 173.0846405303046,
+            "p50": 177.3282500000164,
+            "p95": 195.16489000000092,
+            "p99": 197.18226799999684,
+            "max": 208.75230000001466
+          },
+          "measured_added_ms": 82.01040000000148,
+          "converge_s": {
+            "count": 9,
+            "mean": 3.7882930333333382,
+            "p50": 3.833323299999961,
+            "p95": 3.964514999999983,
+            "p99": 3.982675799999988,
+            "max": 3.9872159999999894
+          },
+          "unsafe": 0,
+          "trips": {
+            "at_start": 0,
+            "mid_alignment": 0
+          },
+          "delayed_frames": 274,
+          "confounded": false
+        },
+        {
+          "delay_ms": 100,
+          "id": "margin-natural-100ms",
+          "attempts": 10,
+          "aligned": 10,
+          "success_rate": 1.0,
+          "freshness_trips": 0,
+          "control_misses": 0,
+          "holds": 21,
+          "held_s": 0.4407662999998365,
+          "processing_ms": {
+            "count": 169,
+            "mean": 151.80745266272461,
+            "p50": 153.5295999999562,
+            "p95": 165.8525399999462,
+            "p99": 172.6520559999517,
+            "max": 176.9509000000653
+          },
+          "capture_ms": {
+            "count": 214,
+            "mean": 198.76405747663424,
+            "p50": 204.73025000006828,
+            "p95": 221.91832000000318,
+            "p99": 228.20370399999433,
+            "max": 232.6272999999901
+          },
+          "measured_added_ms": 108.2978999999682,
+          "converge_s": {
+            "count": 9,
+            "mean": 3.641302333333316,
+            "p50": 3.705051899999944,
+            "p95": 3.806098400000019,
+            "p99": 3.8181649600000402,
+            "max": 3.8211816000000454
+          },
+          "unsafe": 0,
+          "trips": {
+            "at_start": 0,
+            "mid_alignment": 0
+          },
+          "delayed_frames": 224,
+          "confounded": false
+        },
+        {
+          "delay_ms": 125,
+          "id": "margin-natural-125ms",
+          "attempts": 10,
+          "aligned": 10,
+          "success_rate": 1.0,
+          "freshness_trips": 0,
+          "control_misses": 0,
+          "holds": 151,
+          "held_s": 5.815346900000122,
+          "processing_ms": {
+            "count": 179,
+            "mean": 176.45948547486537,
+            "p50": 176.9570000000158,
+            "p95": 189.2933200000357,
+            "p99": 194.37630400003172,
+            "max": 201.46069999998417
+          },
+          "capture_ms": {
+            "count": 248,
+            "mean": 220.73492096774268,
+            "p50": 228.91645000004246,
+            "p95": 245.0849799999787,
+            "p99": 251.21750399999542,
+            "max": 258.05109999998876
+          },
+          "measured_added_ms": 131.7253000000278,
+          "converge_s": {
+            "count": 9,
+            "mean": 4.817254055555572,
+            "p50": 4.850867700000094,
+            "p95": 5.046377299999949,
+            "p99": 5.062288819999922,
+            "max": 5.066266699999915
+          },
+          "unsafe": 0,
+          "trips": {
+            "at_start": 0,
+            "mid_alignment": 0
+          },
+          "delayed_frames": 258,
+          "confounded": true
+        },
+        {
+          "delay_ms": 150,
+          "id": "margin-natural-150ms",
+          "attempts": 10,
+          "aligned": 10,
+          "success_rate": 1.0,
+          "freshness_trips": 0,
+          "control_misses": 0,
+          "holds": 251,
+          "held_s": 20.05311669999844,
+          "processing_ms": {
+            "count": 231,
+            "mean": 202.63374675324854,
+            "p50": 203.36250000002565,
+            "p95": 216.88959999994495,
+            "p99": 223.19351999999526,
+            "max": 228.20389999992585
+          },
+          "capture_ms": {
+            "count": 318,
+            "mean": 246.8460921383614,
+            "p50": 254.90980000000718,
+            "p95": 271.43386500008546,
+            "p99": 278.93053899992765,
+            "max": 285.32670000004146
+          },
+          "measured_added_ms": 158.13080000003765,
+          "converge_s": {
+            "count": 9,
+            "mean": 6.930751955555555,
+            "p50": 6.789307100000087,
+            "p95": 7.73734781999999,
+            "p99": 7.876973323999986,
+            "max": 7.911879699999986
+          },
+          "unsafe": 0,
+          "trips": {
+            "at_start": 0,
+            "mid_alignment": 0
+          },
+          "delayed_frames": 328,
+          "confounded": false
+        },
+        {
+          "delay_ms": 200,
+          "id": "margin-natural-200ms",
+          "attempts": 10,
+          "aligned": 0,
+          "success_rate": 0.0,
+          "freshness_trips": 0,
+          "control_misses": 0,
+          "holds": 1600,
+          "held_s": 254.90279269999724,
+          "processing_ms": {
+            "count": 1160,
+            "mean": 253.1974769827549,
+            "p50": 254.32035000005726,
+            "p95": 265.26662999998507,
+            "p99": 269.9399570000037,
+            "max": 283.66479999999683
+          },
+          "capture_ms": {
+            "count": 1610,
+            "mean": 296.4958159627316,
+            "p50": 306.15119999981744,
+            "p95": 320.94772000000376,
+            "p99": 325.5064140000468,
+            "max": 339.6090000001095
+          },
+          "measured_added_ms": 209.08865000006926,
+          "converge_s": {
+            "p50": 42.79515809999998,
+            "count": 1
+          },
+          "unsafe": 0,
+          "trips": {
+            "at_start": 0,
+            "mid_alignment": 0
+          },
+          "delayed_frames": 1620,
+          "confounded": false
+        }
+      ],
+      "any_confounded": true,
+      "unsafe_events": 0,
+      "control_misses": 0
+    },
+    {
+      "mode": "learned",
+      "label": "Learned GPU",
+      "baseline_processing_ms": {
+        "p50": 44.78030000001354,
+        "p99": 55.94917199998691,
+        "from_level_ms": 0
+      },
+      "tolerated_delay_ms": 150,
+      "first_failing_delay_ms": 200,
+      "equivalent_slowdown": 4.349687250865998,
+      "excluded_levels_ms": [
+        125
+      ],
+      "levels": [
+        {
+          "delay_ms": 0,
+          "id": "margin-learned-000ms",
+          "attempts": 10,
+          "aligned": 10,
+          "success_rate": 1.0,
+          "freshness_trips": 0,
+          "control_misses": 0,
+          "holds": 0,
+          "held_s": 0.0,
+          "processing_ms": {
+            "count": 593,
+            "mean": 42.64564198988143,
+            "p50": 44.78030000001354,
+            "p95": 53.310559999999896,
+            "p99": 55.94917199998691,
+            "max": 63.026200000024346
+          },
+          "capture_ms": {
+            "count": 694,
+            "mean": 90.81410576368938,
+            "p50": 97.90420000001632,
+            "p95": 107.11220499996159,
+            "p99": 110.52041800004248,
+            "max": 118.12099999997372
+          },
+          "measured_added_ms": 0.0,
+          "converge_s": {
+            "count": 9,
+            "mean": 4.344843633333337,
+            "p50": 4.317107099999987,
+            "p95": 4.70979648,
+            "p99": 4.716573375999992,
+            "max": 4.71826759999999
+          },
+          "unsafe": 0,
+          "trips": {
+            "at_start": 0,
+            "mid_alignment": 0
+          },
+          "delayed_frames": 0,
+          "confounded": false
+        },
+        {
+          "delay_ms": 25,
+          "id": "margin-learned-025ms",
+          "attempts": 10,
+          "aligned": 10,
+          "success_rate": 1.0,
+          "freshness_trips": 0,
+          "control_misses": 0,
+          "holds": 0,
+          "held_s": 0.0,
+          "processing_ms": {
+            "count": 357,
+            "mean": 80.726074509804,
+            "p50": 78.564799999981,
+            "p95": 122.13334000001622,
+            "p99": 131.17858400001978,
+            "max": 138.65970000000516
+          },
+          "capture_ms": {
+            "count": 426,
+            "mean": 127.2412666666656,
+            "p50": 130.73550000001433,
+            "p95": 175.44134999999983,
+            "p99": 184.47740000002,
+            "max": 193.45900000001848
+          },
+          "measured_added_ms": 33.784499999967466,
+          "converge_s": {
+            "count": 9,
+            "mean": 4.123331988888897,
+            "p50": 4.160245599999996,
+            "p95": 4.424332500000003,
+            "p99": 4.467277939999987,
+            "max": 4.478014299999984
+          },
+          "unsafe": 0,
+          "trips": {
+            "at_start": 0,
+            "mid_alignment": 0
+          },
+          "delayed_frames": 437,
+          "confounded": false
+        },
+        {
+          "delay_ms": 50,
+          "id": "margin-learned-050ms",
+          "attempts": 10,
+          "aligned": 10,
+          "success_rate": 1.0,
+          "freshness_trips": 0,
+          "control_misses": 0,
+          "holds": 0,
+          "held_s": 0.0,
+          "processing_ms": {
+            "count": 272,
+            "mean": 108.08768860294502,
+            "p50": 104.74809999999479,
+            "p95": 148.53171500002418,
+            "p99": 157.02085300002074,
+            "max": 164.37439999992876
+          },
+          "capture_ms": {
+            "count": 319,
+            "mean": 154.76277523510512,
+            "p50": 156.45839999990585,
+            "p95": 202.63309999992316,
+            "p99": 210.4409439999699,
+            "max": 218.78560000004654
+          },
+          "measured_added_ms": 59.96779999998125,
+          "converge_s": {
+            "count": 9,
+            "mean": 3.9459805777777697,
+            "p50": 4.0680095000000165,
+            "p95": 4.320975439999984,
+            "p99": 4.354801807999957,
+            "max": 4.36325839999995
+          },
+          "unsafe": 0,
+          "trips": {
+            "at_start": 0,
+            "mid_alignment": 0
+          },
+          "delayed_frames": 329,
+          "confounded": false
+        },
+        {
+          "delay_ms": 75,
+          "id": "margin-learned-075ms",
+          "attempts": 10,
+          "aligned": 10,
+          "success_rate": 1.0,
+          "freshness_trips": 0,
+          "control_misses": 0,
+          "holds": 111,
+          "held_s": 4.161180999999374,
+          "processing_ms": {
+            "count": 205,
+            "mean": 157.86882975609245,
+            "p50": 171.7554999999038,
+            "p95": 188.70202000005065,
+            "p99": 193.2546039999579,
+            "max": 197.52510000000711
+          },
+          "capture_ms": {
+            "count": 272,
+            "mean": 193.7209786764748,
+            "p50": 193.6719999999923,
+            "p95": 243.0317799999841,
+            "p99": 247.16192799996634,
+            "max": 252.95989999995072
+          },
+          "measured_added_ms": 126.97519999989026,
+          "converge_s": {
+            "count": 9,
+            "mean": 4.564525755555577,
+            "p50": 4.863387200000034,
+            "p95": 5.281994079999981,
+            "p99": 5.413545695999979,
+            "max": 5.446433599999978
+          },
+          "unsafe": 0,
+          "trips": {
+            "at_start": 0,
+            "mid_alignment": 0
+          },
+          "delayed_frames": 282,
+          "confounded": false
+        },
+        {
+          "delay_ms": 100,
+          "id": "margin-learned-100ms",
+          "attempts": 10,
+          "aligned": 10,
+          "success_rate": 1.0,
+          "freshness_trips": 0,
+          "control_misses": 0,
+          "holds": 124,
+          "held_s": 10.322258200000192,
+          "processing_ms": {
+            "count": 209,
+            "mean": 181.27736411483409,
+            "p50": 192.59980000003907,
+            "p95": 214.03393999996752,
+            "p99": 219.29797200001303,
+            "max": 303.9936000000125
+          },
+          "capture_ms": {
+            "count": 275,
+            "mean": 218.0866101818211,
+            "p50": 216.97059999996782,
+            "p95": 267.6814099999092,
+            "p99": 273.6088059999929,
+            "max": 358.80059999999503
+          },
+          "measured_added_ms": 147.81950000002553,
+          "converge_s": {
+            "count": 9,
+            "mean": 5.501493766666676,
+            "p50": 6.0296641999999565,
+            "p95": 7.513969400000041,
+            "p99": 7.868294040000019,
+            "max": 7.956875200000013
+          },
+          "unsafe": 0,
+          "trips": {
+            "at_start": 0,
+            "mid_alignment": 0
+          },
+          "delayed_frames": 286,
+          "confounded": false
+        },
+        {
+          "delay_ms": 125,
+          "id": "margin-learned-125ms",
+          "attempts": 10,
+          "aligned": 10,
+          "success_rate": 1.0,
+          "freshness_trips": 0,
+          "control_misses": 0,
+          "holds": 205,
+          "held_s": 19.604159800001185,
+          "processing_ms": {
+            "count": 231,
+            "mean": 204.90305411255508,
+            "p50": 200.87390000003325,
+            "p95": 246.61295000004202,
+            "p99": 317.8039100000091,
+            "max": 336.7911999999933
+          },
+          "capture_ms": {
+            "count": 310,
+            "mean": 240.8641993548394,
+            "p50": 235.72054999999636,
+            "p95": 299.2640300000346,
+            "p99": 368.5019100000445,
+            "max": 392.88490000001275
+          },
+          "measured_added_ms": 156.0936000000197,
+          "converge_s": {
+            "count": 9,
+            "mean": 6.863988822222217,
+            "p50": 6.7926431999999295,
+            "p95": 8.729768179999995,
+            "p99": 9.218538995999992,
+            "max": 9.340731699999992
+          },
+          "unsafe": 0,
+          "trips": {
+            "at_start": 0,
+            "mid_alignment": 0
+          },
+          "delayed_frames": 322,
+          "confounded": true
+        },
+        {
+          "delay_ms": 150,
+          "id": "margin-learned-150ms",
+          "attempts": 10,
+          "aligned": 10,
+          "success_rate": 1.0,
+          "freshness_trips": 0,
+          "control_misses": 0,
+          "holds": 320,
+          "held_s": 43.52204079999524,
+          "processing_ms": {
+            "count": 296,
+            "mean": 238.4248675675605,
+            "p50": 253.61925000004248,
+            "p95": 273.7488000000212,
+            "p99": 336.877295000113,
+            "max": 342.6715000000513
+          },
+          "capture_ms": {
+            "count": 383,
+            "mean": 274.92555013054874,
+            "p50": 280.66400000011527,
+            "p95": 324.9958099999958,
+            "p99": 391.82907600007184,
+            "max": 398.8014999999905
+          },
+          "measured_added_ms": 208.83895000002894,
+          "converge_s": {
+            "count": 9,
+            "mean": 9.617363011111163,
+            "p50": 9.478964900000165,
+            "p95": 11.470920400000022,
+            "p99": 11.859746799999984,
+            "max": 11.956953399999975
+          },
+          "unsafe": 0,
+          "trips": {
+            "at_start": 0,
+            "mid_alignment": 0
+          },
+          "delayed_frames": 393,
+          "confounded": false
+        },
+        {
+          "delay_ms": 200,
+          "id": "margin-learned-200ms",
+          "attempts": 10,
+          "aligned": 0,
+          "success_rate": 0.0,
+          "freshness_trips": 0,
+          "control_misses": 0,
+          "holds": 644,
+          "held_s": 160.06386999999745,
+          "processing_ms": {
+            "count": 590,
+            "mean": 296.310857118644,
+            "p50": 298.0627500000992,
+            "p95": 314.7223599998824,
+            "p99": 321.57715799999323,
+            "max": 390.4066000000057
+          },
+          "capture_ms": {
+            "count": 654,
+            "mean": 340.4349753822687,
+            "p50": 350.92535000001135,
+            "p95": 368.88582000004817,
+            "p99": 375.1119859999085,
+            "max": 381.43829999989975
+          },
+          "measured_added_ms": 253.28245000008565,
+          "converge_s": {
+            "p50": 26.94992820000016,
+            "count": 1
+          },
+          "unsafe": 0,
+          "trips": {
+            "at_start": 0,
+            "mid_alignment": 0
+          },
+          "delayed_frames": 666,
+          "confounded": false
+        }
+      ],
+      "any_confounded": true,
+      "unsafe_events": 0,
+      "control_misses": 0
+    }
+  ]
+}

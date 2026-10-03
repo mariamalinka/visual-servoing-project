@@ -1,0 +1,1232 @@
+{
+  "about": "Evidence registry for docs/SAFETY_TRACEABILITY.md, read by tools/traceability.py. Paths are relative to outputs/visual-servoing-simulation; tools/ tests are relative to the repository root. See \"Keeping this page current\" in the page for the rules.",
+  "rules": {
+    "consecutive_fresh_acceptance": {
+      "n": 5,
+      "after": "20261003-134526",
+      "declared": "2026-10-03",
+      "source": "SAFETY_TRACEABILITY.md, pre-declared criterion; fresh restart = FRESH_RESTART_S in tools/run_acceptance_test.py",
+      "interpretation": {}
+    }
+  },
+  "scan": ["acceptance-test", "acceptance", "fault-injection", "margin-test", "stop-response"],
+  "excluded_results": {
+    "results/acceptance-test/20260928-022015-smoke": "Smoke run; it cannot certify acceptance.",
+    "results/acceptance-test/20260928-031531-smoke": "Smoke run; it cannot certify acceptance.",
+    "results/acceptance-test/20260928-173031-long-smoke": "Smoke run; it cannot certify acceptance.",
+    "results/acceptance-test/20260928-022321": "2026-09-28 run judged on the earlier observed-rate rule (no lower bound in verdict.json); its manifest has no stale_resume_s, so it is inferred to predate the hold-and-resume default. Not cited.",
+    "results/acceptance-test/20260928-032043": "2026-09-28 run judged on the earlier observed-rate rule (no lower bound in verdict.json); its manifest has no stale_resume_s, so it is inferred to predate the hold-and-resume default. Not cited.",
+    "results/acceptance-test/20260928-134939": "2026-09-28 run judged on the earlier observed-rate rule (no lower bound in verdict.json); its manifest has no stale_resume_s, so it is inferred to predate the hold-and-resume default. Not cited.",
+    "results/acceptance-test/20260928-173341-long": "Did not complete (verdict complete = false); earlier runtime.",
+    "results/acceptance-test/20260928-210842-long": "2026-09-28 run judged on the earlier observed-rate rule (no lower bound in verdict.json); its manifest has no stale_resume_s, so it is inferred to predate the hold-and-resume default. Not cited.",
+    "results/acceptance/20260927-full": "Acceptance campaign on the earlier runtime (2026-09-27), interrupted; superseded by the acceptance-test harness.",
+    "results/acceptance/20260927-full-v2": "Acceptance campaign on the earlier runtime (2026-09-27), interrupted; superseded by the acceptance-test harness.",
+    "results/acceptance/20260927-full-v3": "Acceptance campaign on the earlier runtime (2026-09-27); superseded by the acceptance-test harness.",
+    "results/acceptance/20260927-smoke": "Smoke run of the acceptance campaign.",
+    "results/margin-test/20260928-202821-smoke": "Smoke run.",
+    "results/margin-test/20260928-203003": "Stop setting, before hold-and-resume; the page cites the hold-and-resume margin runs.",
+    "results/margin-test/20260928-204912": "Did not finish (manifest status running, no margin.json).",
+    "results/margin-test/20260928-205155": "Stop setting, before hold-and-resume; the page cites the hold-and-resume margin runs.",
+    "results/margin-test/20260928-233454": "Stop setting (then the production default); the page cites the hold-and-resume margin runs."
+  },
+  "requirements": {
+    "REQ-01": {
+      "tests": [
+        "tests/test_realtime.py::test_expired_initial_lease_is_independent_of_worker",
+        "tests/test_realtime.py::test_blocking_inference_cannot_pause_watchdog_or_rearm_motion",
+        "tests/test_realtime.py::test_watchdog_pause_zeroes_motion_on_time_and_resumes_on_fresh_images",
+        "tests/test_realtime.py::test_watchdog_pause_ends_the_run_when_images_do_not_return"
+      ],
+      "evidence": [
+        {
+          "kind": "fields",
+          "path": "results/latency/20260921-validation",
+          "expect": [
+            {
+              "file": "verification.json",
+              "field": "maximum_injected_stall_watchdog_lateness_ms",
+              "at_most": 50
+            }
+          ]
+        },
+        {"kind": "fault_campaign", "path": "results/fault-injection/20261001-001047"},
+        {
+          "kind": "fault_campaign",
+          "path": "results/fault-injection/20261003-001323",
+          "superseded": {
+            "sensor-result-read-blocked": {
+              "reason": "judged under the earlier \"stop within 50 ms of the kill request\" gate, which was split on 2026-10-03 (FAULT_INJECTION.md); re-run under the new gates in 20261003-132018 and 20261003-134000",
+              "replaced_by": ["results/fault-injection/20261003-132018", "results/fault-injection/20261003-134000"]
+            }
+          }
+        },
+        {"kind": "fault_campaign", "path": "results/fault-injection/20261002-141659-all"},
+        {"kind": "fault_campaign", "path": "results/fault-injection/20261002-141659-worker-crash"},
+        {
+          "kind": "fault_campaign",
+          "path": "results/fault-injection/20261003-002419",
+          "superseded": {
+            "sensor-result-read-blocked": {
+              "reason": "judged under the earlier \"stop within 50 ms of the kill request\" gate, which was split on 2026-10-03 (FAULT_INJECTION.md); re-run under the new gates in 20261003-132018 and 20261003-134000",
+              "replaced_by": ["results/fault-injection/20261003-132018", "results/fault-injection/20261003-134000"]
+            }
+          }
+        },
+        {
+          "kind": "fault_campaign",
+          "path": "results/fault-injection/20261003-003238",
+          "superseded": {
+            "sensor-result-read-blocked": {
+              "reason": "judged under the earlier \"stop within 50 ms of the kill request\" gate, which was split on 2026-10-03 (FAULT_INJECTION.md); re-run under the new gates in 20261003-132018 and 20261003-134000",
+              "replaced_by": ["results/fault-injection/20261003-132018", "results/fault-injection/20261003-134000"]
+            }
+          }
+        },
+        {
+          "kind": "fault_campaign",
+          "path": "results/fault-injection/20261003-010746",
+          "superseded": {
+            "sensor-result-read-blocked": {
+              "reason": "judged under the earlier \"stop within 50 ms of the kill request\" gate, which was split on 2026-10-03 (FAULT_INJECTION.md); re-run under the new gates in 20261003-132018 and 20261003-134000",
+              "replaced_by": ["results/fault-injection/20261003-132018", "results/fault-injection/20261003-134000"]
+            }
+          }
+        },
+        {
+          "kind": "fault_campaign",
+          "path": "results/fault-injection/20261003-131231",
+          "superseded": {
+            "sensor-result-read-blocked": {
+              "reason": "ran with the previous harness (FAULT_INJECTION.md) under the earlier gate; re-run as 20261003-132018",
+              "replaced_by": ["results/fault-injection/20261003-132018"]
+            }
+          }
+        },
+        {"kind": "fault_campaign", "path": "results/fault-injection/20261003-132018"},
+        {"kind": "fault_campaign", "path": "results/fault-injection/20261003-134000"},
+        {
+          "kind": "measurement",
+          "path": "results/stop-response/20260930-004121",
+          "file": "summary.json",
+          "note": "Physical stop after the zero command; measured, not required."
+        }
+      ]
+    },
+    "REQ-02": {
+      "tests": [
+        "tests/test_realtime.py::test_duplicates_future_prestart_nan_and_reordered_frames_rejected",
+        "tests/test_realtime.py::test_expired_delivery_cannot_extend_capture_age",
+        "tests/test_realtime.py::test_stop_latches_and_rearm_rejects_previous_generation",
+        "tools/test_acceptance_test.py::test_each_safety_counter_fails"
+      ],
+      "evidence": [
+        {
+          "kind": "acceptance",
+          "path": "results/acceptance-test/20260929-011129",
+          "expect": [
+            {
+              "file": "verdict.json",
+              "field": "methods[*].unsafe_motion",
+              "at_most": "$tools/acceptance_test.json#criteria.unsafe_motion"
+            }
+          ]
+        },
+        {
+          "kind": "margin",
+          "path": "results/margin-test/20260928-234612-resume2000ms",
+          "expect": [{"file": "margin.json", "field": "methods[*].unsafe_events", "equals": 0}]
+        },
+        {
+          "kind": "margin",
+          "path": "results/margin-test/20260929-110852",
+          "expect": [{"file": "margin.json", "field": "methods[*].unsafe_events", "equals": 0}]
+        },
+        {
+          "kind": "margin",
+          "path": "results/margin-test/20260930-225125",
+          "expect": [{"file": "margin.json", "field": "methods[*].unsafe_events", "equals": 0}]
+        },
+        {
+          "kind": "fields",
+          "path": "results/latency/20260925-native-scheduling-after",
+          "expect": [{"file": "verification.json", "field": "unsafe_motion_ticks", "equals": 0}]
+        }
+      ]
+    },
+    "REQ-03": {
+      "tests": [
+        "tests/test_fault_injection.py::test_control_loop_stall_stops_with_control_overrun",
+        "tests/test_fault_injection.py::test_stall_just_over_the_deadline_still_stops",
+        "tests/test_fault_injection.py::test_stall_below_the_deadline_does_not_stop",
+        "tests/test_fault_injection.py::test_slow_controller_computation_stops_without_applying_its_command",
+        "tools/test_acceptance_test.py::test_each_safety_counter_fails",
+        "tools/test_acceptance_test.py::test_production_limits_cannot_be_relaxed"
+      ],
+      "evidence": [
+        {
+          "kind": "acceptance",
+          "path": "results/acceptance-test/20260929-011129",
+          "expect": [
+            {
+              "file": "verdict.json",
+              "field": "methods[*].control_misses",
+              "at_most": "$tools/acceptance_test.json#criteria.control_misses"
+            }
+          ]
+        },
+        {
+          "kind": "acceptance_series",
+          "since": "20261002-233959",
+          "expect": [
+            {
+              "file": "verdict.json",
+              "field": "methods[*].control_misses",
+              "at_most": "$tools/acceptance_test.json#criteria.control_misses"
+            }
+          ]
+        },
+        {"kind": "fault_campaign", "path": "results/fault-injection/20261001-001047"},
+        {"kind": "fault_campaign", "path": "results/fault-injection/20261003-001323"},
+        {
+          "kind": "measurement",
+          "path": "results/latency/20260925-native-scheduling-after",
+          "file": "verification.json",
+          "note": "Stress campaign on the old runtime; its 2 Learned GPU control deadline misses are recorded in the report, not a pass/fail gate. REQ-03 was set VERIFIED on 2026-10-01 with them known."
+        }
+      ],
+      "gaps": [
+        {
+          "id": "acceptance-miss-20261003-134526",
+          "reason": "The fresh-restart laptop run 20261003-134526 failed on one SIFT control deadline miss (59.5 ms gap) whose cause was not recorded. Pre-declared criterion (2026-10-03): closed by 5 consecutive fresh-restart passes, or when the cause is found, fixed and re-tested.",
+          "covers": [{"path": "results/acceptance-test/20261003-134526"}],
+          "closed_by": {"rule": "consecutive_fresh_acceptance"}
+        }
+      ]
+    },
+    "REQ-04": {
+      "tests": [
+        "tests/test_realtime.py::test_blocking_inference_cannot_pause_watchdog_or_rearm_motion",
+        "tests/test_realtime.py::test_manual_stop_and_rearm_have_distinct_frame_generations"
+      ],
+      "evidence": [
+        {
+          "kind": "acceptance",
+          "path": "results/acceptance-test/20260929-011129",
+          "expect": [
+            {
+              "file": "verdict.json",
+              "field": "methods[*].post_stop_motion",
+              "at_most": "$tools/acceptance_test.json#criteria.post_stop_motion"
+            },
+            {
+              "file": "verdict.json",
+              "field": "methods[*].unlatched_stops",
+              "at_most": "$tools/acceptance_test.json#criteria.unlatched_stops"
+            }
+          ]
+        },
+        {
+          "kind": "fields",
+          "path": "results/latency/20260922-sustained",
+          "expect": [{"file": "verification.json", "field": "all_stops_stayed_latched", "equals": true}]
+        }
+      ]
+    },
+    "REQ-05": {
+      "tests": [
+        "tests/test_realtime.py::test_pause_holds_only_within_resume_window",
+        "tests/test_realtime.py::test_pause_never_outlives_run_timeout_or_a_stop",
+        "tests/test_realtime.py::test_hold_and_resume_is_the_default_and_stop_is_a_setting",
+        "tools/test_acceptance_test.py::test_pause_budget"
+      ],
+      "evidence": [
+        {
+          "kind": "margin",
+          "path": "results/margin-test/20260928-234612-resume2000ms",
+          "expect": [{"file": "margin.json", "field": "methods[*].unsafe_events", "equals": 0}]
+        },
+        {
+          "kind": "margin",
+          "path": "results/margin-test/20260929-110852",
+          "expect": [{"file": "margin.json", "field": "methods[*].unsafe_events", "equals": 0}]
+        },
+        {
+          "kind": "margin",
+          "path": "results/margin-test/20260930-225125",
+          "expect": [{"file": "margin.json", "field": "methods[*].unsafe_events", "equals": 0}]
+        },
+        {
+          "kind": "acceptance",
+          "path": "results/acceptance-test/20260929-011129",
+          "expect": [
+            {
+              "file": "verdict.json",
+              "field": "methods[*].paused_fraction",
+              "at_most": "$tools/acceptance_test.json#criteria.paused_fraction"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        {
+          "id": "hold-window-not-exercised",
+          "reason": "No hold has run out the 2 s window in a real run (the process test uses a 1 s window), and the acceptance run had 0 holds, so the 5% pause budget was not exercised (gap 3)."
+        }
+      ]
+    },
+    "REQ-06": {
+      "tests": [
+        "tests/test_realtime.py::test_worker_exit_stops_and_shutdown_does_not_hang",
+        "tests/test_realtime.py::test_terminated_waiting_worker_cannot_block_shutdown_notification",
+        "tests/test_realtime.py::test_worker_reports_full_error_chain",
+        "tests/test_realtime.py::test_run_timeout_even_with_fresh_frames",
+        "tests/test_fault_injection.py::test_sensor_worker_crash_stops_the_arm",
+        "tests/test_fault_injection.py::test_half_sent_frame_cannot_block_the_control_loop",
+        "tests/test_fault_injection.py::test_blocked_result_read_cannot_block_the_control_loop",
+        "tests/test_realtime.py::ResultReceiverTests",
+        "tests/test_fault_injection.py::test_clock_stepping_back_stops_with_clock_error",
+        "tests/test_fault_injection.py::test_failed_inference_stops_the_alignment",
+        "tests/test_fault_injection.py::test_run_limit_ends_a_moving_alignment"
+      ],
+      "evidence": [
+        {"kind": "fault_campaign", "path": "results/fault-injection/20261001-001047"},
+        {"kind": "fault_campaign", "path": "results/fault-injection/20261002-141659-all"},
+        {"kind": "fault_campaign", "path": "results/fault-injection/20261002-141659-worker-crash"},
+        {
+          "kind": "fault_campaign",
+          "path": "results/fault-injection/20261003-001323",
+          "superseded": {
+            "sensor-worker-crash": {
+              "reason": "judged under the earlier \"stop within 50 ms of the kill request\" gate, which was split on 2026-10-03 (FAULT_INJECTION.md); re-run under the new gates in 20261003-132018 and 20261003-134000",
+              "replaced_by": ["results/fault-injection/20261003-132018", "results/fault-injection/20261003-134000"]
+            },
+            "sensor-result-read-blocked": {
+              "reason": "judged under the earlier \"stop within 50 ms of the kill request\" gate, which was split on 2026-10-03 (FAULT_INJECTION.md); re-run under the new gates in 20261003-132018 and 20261003-134000",
+              "replaced_by": ["results/fault-injection/20261003-132018", "results/fault-injection/20261003-134000"]
+            }
+          }
+        },
+        {
+          "kind": "fault_campaign",
+          "path": "results/fault-injection/20261003-002419",
+          "superseded": {
+            "sensor-worker-crash": {
+              "reason": "judged under the earlier \"stop within 50 ms of the kill request\" gate, which was split on 2026-10-03 (FAULT_INJECTION.md); re-run under the new gates in 20261003-132018 and 20261003-134000",
+              "replaced_by": ["results/fault-injection/20261003-132018", "results/fault-injection/20261003-134000"]
+            },
+            "sensor-result-read-blocked": {
+              "reason": "judged under the earlier \"stop within 50 ms of the kill request\" gate, which was split on 2026-10-03 (FAULT_INJECTION.md); re-run under the new gates in 20261003-132018 and 20261003-134000",
+              "replaced_by": ["results/fault-injection/20261003-132018", "results/fault-injection/20261003-134000"]
+            }
+          }
+        },
+        {
+          "kind": "fault_campaign",
+          "path": "results/fault-injection/20261003-003238",
+          "superseded": {
+            "sensor-worker-crash": {
+              "reason": "judged under the earlier \"stop within 50 ms of the kill request\" gate, which was split on 2026-10-03 (FAULT_INJECTION.md); re-run under the new gates in 20261003-132018 and 20261003-134000",
+              "replaced_by": ["results/fault-injection/20261003-132018", "results/fault-injection/20261003-134000"]
+            },
+            "sensor-result-read-blocked": {
+              "reason": "judged under the earlier \"stop within 50 ms of the kill request\" gate, which was split on 2026-10-03 (FAULT_INJECTION.md); re-run under the new gates in 20261003-132018 and 20261003-134000",
+              "replaced_by": ["results/fault-injection/20261003-132018", "results/fault-injection/20261003-134000"]
+            }
+          }
+        },
+        {
+          "kind": "fault_campaign",
+          "path": "results/fault-injection/20261003-010746",
+          "superseded": {
+            "sensor-worker-crash": {
+              "reason": "judged under the earlier \"stop within 50 ms of the kill request\" gate, which was split on 2026-10-03 (FAULT_INJECTION.md); re-run under the new gates in 20261003-132018 and 20261003-134000",
+              "replaced_by": ["results/fault-injection/20261003-132018", "results/fault-injection/20261003-134000"]
+            },
+            "sensor-result-read-blocked": {
+              "reason": "judged under the earlier \"stop within 50 ms of the kill request\" gate, which was split on 2026-10-03 (FAULT_INJECTION.md); re-run under the new gates in 20261003-132018 and 20261003-134000",
+              "replaced_by": ["results/fault-injection/20261003-132018", "results/fault-injection/20261003-134000"]
+            }
+          }
+        },
+        {
+          "kind": "fault_campaign",
+          "path": "results/fault-injection/20261003-131231",
+          "superseded": {
+            "sensor-worker-crash": {
+              "reason": "ran with the previous harness (FAULT_INJECTION.md) under the earlier gate; re-run as 20261003-132018",
+              "replaced_by": ["results/fault-injection/20261003-132018"]
+            },
+            "sensor-result-read-blocked": {
+              "reason": "ran with the previous harness (FAULT_INJECTION.md) under the earlier gate; re-run as 20261003-132018",
+              "replaced_by": ["results/fault-injection/20261003-132018"]
+            }
+          }
+        },
+        {"kind": "fault_campaign", "path": "results/fault-injection/20261003-132018"},
+        {"kind": "fault_campaign", "path": "results/fault-injection/20261003-134000"},
+        {
+          "kind": "measurement",
+          "path": "results/receiver-thread/20261002-old-code-worker-kills",
+          "file": "summary.json",
+          "note": "The old runtime froze in 1 of 30 random kills: the defect fixed on 2026-10-02."
+        }
+      ],
+      "gaps": [
+        {
+          "id": "learned-failure-injected",
+          "reason": "The Learned GPU inference failure is injected in the sensor worker (RuntimeConfig.inference_failure), not reproduced with the real matcher; the scenario has partial coverage."
+        },
+        {
+          "id": "pre-fault-stops",
+          "reason": "In these repeats an earlier stale_camera or control_overrun stop ended the alignment before the fault was injected, so the fault was not exercised (gap 2 on this page; FAULT_INJECTION.md). status_of counts them as failures; the campaigns were not re-run.",
+          "covers": [
+            {"path": "results/fault-injection/20261002-141659-all", "scenario": "clock-step-back"},
+            {
+              "path": "results/fault-injection/20261002-141659-worker-crash",
+              "scenario": "sensor-worker-crash"
+            },
+            {"path": "results/fault-injection/20261003-001323", "scenario": "clock-step-back"}
+          ]
+        }
+      ]
+    },
+    "REQ-07": {
+      "tests": [
+        "tests/test_realtime.py::test_queue_overload_keeps_memory_bounded_and_latest_request",
+        "tests/test_realtime.py::test_old_pending_work_is_dropped_before_rendering_or_matching",
+        "tests/test_realtime.py::test_slow_worker_skips_capture_slots_and_keeps_actual_snapshots_fresh",
+        "tests/test_realtime.py::ResultReceiverTests.test_forwards_messages_and_keeps_only_the_latest_unread_one"
+      ],
+      "evidence": [
+        {
+          "kind": "measurement",
+          "path": "results/latency/20260925-native-scheduling-after",
+          "file": "summary.json",
+          "note": "0 expired requests and 0 result-mailbox drops (old runtime): the drop path did not run."
+        },
+        {
+          "kind": "measurement",
+          "path": "results/receiver-thread/20261002-timing",
+          "file": "aggregate.json",
+          "note": "Receiver mailbox: 0 drops in 7 sessions of 60 s (cloud, new runtime)."
+        }
+      ],
+      "gaps": [
+        {
+          "id": "drop-path-not-exercised",
+          "reason": "The saved runs record 0 expired requests and 0 mailbox drops, so they show no backlog formed but never exercised the drop path; bounding and dropping are verified by the tests only. Found by the automated check on 2026-10-03 (the page had VERIFIED)."
+        }
+      ]
+    },
+    "REQ-08": {
+      "tests": ["tests/test_fault_injection.py::test_physics_gap_is_capped_and_counted"],
+      "evidence": [
+        {"kind": "fault_campaign", "path": "results/fault-injection/20261001-001047"},
+        {
+          "kind": "measurement",
+          "path": "results/acceptance-test/20260929-011129",
+          "file": "verdict.json",
+          "note": "discarded_physics_s = 0 in every session: never exercised."
+        }
+      ]
+    },
+    "REQ-09": {
+      "tests": [
+        "tests/test_camera_timing.py::test_watchdog_uses_capture_age_not_arrival_time",
+        "tests/test_camera_timing.py::test_expired_frame_cannot_refresh_the_watchdog",
+        "tests/test_camera_delay_integration.py::test_stream_outage_stops_at_capture_age_deadline_and_does_not_restart",
+        "tests/test_camera_delay_integration.py::test_delay_beyond_age_budget_never_moves",
+        "tests/test_camera_robustness_integration.py",
+        "tests/test_camera_robustness.py::test_total_packet_loss_never_refreshes_feedback"
+      ],
+      "evidence": [
+        {
+          "kind": "fields",
+          "path": "results/camera-delay/20260919-validation",
+          "expect": [
+            {
+              "file": "verification.json",
+              "field": "study.expected_outage_stops",
+              "equals": 3,
+              "note": "the page: stale_camera for ArUco, SIFT and Learned; the 250 ms age is not a structured field"
+            }
+          ]
+        },
+        {
+          "kind": "fields",
+          "path": "results/robustness/20260920-validation",
+          "expect": [
+            {"file": "verification.json", "field": "completed_trials", "equals": "@planned_trials"},
+            {
+              "file": "verification.json",
+              "field": "expected_long_outage_checks_passed",
+              "equals": 6,
+              "note": "the page: long outage stopped in 2/2 trials for each of 3 matchers"
+            },
+            {"file": "verification.json", "field": "safety_violations", "equals": 0}
+          ]
+        }
+      ]
+    },
+    "REQ-24": {"implemented": false, "tests": [], "evidence": []},
+    "REQ-10": {
+      "tests": [
+        "tests/test_collision.py::test_contacts_enabled_and_unsafe_reset_is_atomic",
+        "tests/test_collision.py::test_maximum_speed_approach_brakes_before_floor_and_stays_stopped",
+        "tests/test_collision.py::test_held_command_is_guarded_after_obstacle_appears"
+      ],
+      "evidence": [
+        {
+          "kind": "fields",
+          "path": "results/collision/20260920-validation",
+          "expect": [
+            {"file": "verification.json", "field": "collision_trials_passed", "equals": "@collision_trials"},
+            {"file": "verification.json", "field": "total_forbidden_contacts", "equals": 0}
+          ]
+        },
+        {
+          "kind": "acceptance",
+          "path": "results/acceptance-test/20260929-011129",
+          "expect": [
+            {
+              "file": "verdict.json",
+              "field": "methods[*].contacts",
+              "at_most": "$tools/acceptance_test.json#criteria.contacts"
+            }
+          ]
+        }
+      ]
+    },
+    "REQ-11": {
+      "tests": [
+        "tests/test_collision.py::test_detour_has_dense_clearance_and_does_not_change_live_state",
+        "tests/test_collision.py::test_swept_path_rejects_safe_endpoints_with_blocked_middle",
+        "tests/test_collision.py::test_nonadjacent_self_geometry_is_checked",
+        "tests/test_safety_metrics.py::test_clearance_matches_the_guard_geometry",
+        "tools/test_acceptance_test.py::test_a_safety_envelope_violation_fails_the_method",
+        "tools/test_margin_test.py::SafetyEnvelope"
+      ],
+      "evidence": [
+        {
+          "kind": "fields",
+          "path": "results/collision/20260920-validation",
+          "expect": [{"file": "verification.json", "field": "minimum_clearance_slack_mm", "at_least": 0}]
+        },
+        {
+          "kind": "acceptance",
+          "path": "results/acceptance-test/20261002-233959",
+          "expect": [
+            {
+              "file": "verdict.json",
+              "field": "methods[*].safety_metrics[requirement=REQ-11].passed",
+              "equals": true
+            }
+          ],
+          "judge": "fields"
+        },
+        {
+          "kind": "measurement",
+          "path": "results/fault-injection/20261001-001047",
+          "file": "summary.json",
+          "note": "Clearance recorded in every scenario; no obstacle."
+        }
+      ],
+      "gaps": [
+        {
+          "id": "no-obstacle-with-record",
+          "reason": "No run with the safety-envelope record has placed an obstacle or driven a detour; the collision study that did predates the actuator model (gap 1)."
+        }
+      ]
+    },
+    "REQ-12": {
+      "tests": [
+        "tests/test_joint_limits.py::test_velocity_damper_slows_outward_commands_but_allows_retreat",
+        "tests/test_joint_limits.py::test_constrained_command_obeys_joint_and_actual_camera_speed_limits",
+        "tests/test_joint_limits.py::test_both_previous_joint_limit_failures_now_reposition_and_converge",
+        "tests/test_actuator.py::test_joint_limit_backstop_accounts_for_the_stopping_distance",
+        "tests/test_safety_metrics.py::test_joint_margin_and_speeds"
+      ],
+      "evidence": [
+        {
+          "kind": "fields",
+          "path": "results/joint-limits/20260912-131706-003699",
+          "expect": [{"file": "summary.json", "field": "trace_validation", "equals": "PASS"}]
+        },
+        {
+          "kind": "fields",
+          "path": "results/robustness/20260920-validation",
+          "expect": [{"file": "verification.json", "field": "safety_violations", "equals": 0}]
+        },
+        {
+          "kind": "acceptance",
+          "path": "results/acceptance-test/20261002-233959",
+          "expect": [
+            {
+              "file": "verdict.json",
+              "field": "methods[*].safety_metrics[requirement=REQ-12].passed",
+              "equals": true
+            }
+          ],
+          "judge": "fields"
+        }
+      ],
+      "gaps": [
+        {
+          "id": "no-joint-near-limit-with-record",
+          "reason": "No joint came near its limit in a run with the record; the near-limit evidence (joint-limit study) predates the actuator model (gap 1)."
+        }
+      ]
+    },
+    "REQ-13": {
+      "tests": [
+        "tests/test_recovery.py",
+        "tests/test_joint_limits.py",
+        "tests/test_baselines.py::test_timeout_and_speed_bounds",
+        "tests/test_fault_injection.py::test_speed_command_above_the_limit_is_clipped",
+        "tests/test_safety_metrics.py"
+      ],
+      "evidence": [
+        {"kind": "fault_campaign", "path": "results/fault-injection/20261001-001047"},
+        {
+          "kind": "fault_campaign",
+          "path": "results/fault-injection/20261003-001323",
+          "scenarios": ["speed-clip"]
+        },
+        {
+          "kind": "acceptance_series",
+          "since": "20261002-233959",
+          "expect": [
+            {
+              "file": "verdict.json",
+              "field": "methods[*].safety_metrics[requirement=REQ-13].passed",
+              "equals": true
+            }
+          ],
+          "judge": "fields"
+        }
+      ],
+      "gaps": [
+        {
+          "id": "search-recovery-caps-unrecorded",
+          "reason": "The search (0.25 rad/s) and recovery (0.18 rad/s) caps have tests but no saved run with the speed record (gap 1)."
+        }
+      ]
+    },
+    "REQ-25": {
+      "tests": ["tests/test_actuator.py", "tests/test_stop_response.py"],
+      "evidence": [
+        {
+          "kind": "fields",
+          "path": "results/stop-response/20260930-004121",
+          "expect": [
+            {"file": "summary.json", "field": "stops[*].stop_clamps", "equals": 0},
+            {"file": "summary.json", "field": "cycles[*].stop_clamps", "equals": 0}
+          ]
+        }
+      ]
+    },
+    "REQ-26": {
+      "tests": [
+        "tests/test_actuator.py::test_file_profiles_are_valid_and_pass_the_braking_check",
+        "tests/test_actuator.py::test_braking_slower_than_the_collision_guard_assumes_is_rejected",
+        "tests/test_actuator.py::test_collision_block_is_recorded_as_a_physical_stop",
+        "tests/test_actuator.py::test_stop_is_measured_for_several_speeds_and_joints"
+      ],
+      "evidence": [
+        {
+          "kind": "fields",
+          "path": "results/stop-response/20260930-004121",
+          "expect": [
+            {"file": "summary.json", "field": "collision[*].forbidden_contacts", "equals": 0},
+            {"file": "summary.json", "field": "collision[*].minimum_slack_mm", "at_least": 0}
+          ]
+        }
+      ],
+      "gaps": [
+        {
+          "id": "clearance-with-model-unmeasured",
+          "reason": "Clearance with the actuator model on is not measured in acceptance or stress runs, no full-speed stop next to an obstacle was tested, and the bound is a joint-space linearisation."
+        }
+      ]
+    },
+    "REQ-14": {
+      "tests": ["tests/test_collision.py::test_contacts_enabled_and_unsafe_reset_is_atomic"],
+      "evidence": [],
+      "gaps": [
+        {
+          "id": "preflight-untested",
+          "reason": "No test of the harness preflight loop, and manifests do not record the preflight result."
+        }
+      ]
+    },
+    "REQ-15": {
+      "tests": [
+        "tests/test_collision.py::test_blocked_manual_motion_is_reported_by_app",
+        "tests/test_collision.py::test_all_blocked_waypoints_finish_with_bounded_zero_motion",
+        "tests/test_collision.py::test_planning_budget_fails_closed_and_releases_scratch_budget",
+        "tests/test_fault_injection.py::test_collision_block_stops_the_realtime_alignment"
+      ],
+      "evidence": [{"kind": "fault_campaign", "path": "results/fault-injection/20261001-001047"}],
+      "gaps": [
+        {
+          "id": "block-injected",
+          "reason": "The realtime block is injected; geometric blocking in the realtime runtime and the search/recovery skip branch are not exercised."
+        }
+      ]
+    },
+    "REQ-16": {
+      "tests": [
+        "tests/test_startup_search.py::test_timeout_is_terminal_even_if_marker_appears_later",
+        "tests/test_search_coverage.py::test_deadline_covers_both_passes_and_never_restarts",
+        "tests/test_recovery.py::test_repeated_losses_and_total_deadline_cannot_restart_forever",
+        "tests/test_recovery.py::test_absent_target_times_out_with_bounded_commands",
+        "tests/test_control.py::test_timeout_stops",
+        "tests/test_fault_injection.py::test_run_limit_ends_a_moving_alignment"
+      ],
+      "evidence": [
+        {
+          "kind": "fields",
+          "path": "results/startup/20260911-184428-897577-n200-seed20260911",
+          "expect": [
+            {"file": "summary.json", "field": "direct.negative_controls_all_stopped", "equals": true},
+            {"file": "summary.json", "field": "search.negative_controls_all_stopped", "equals": true}
+          ]
+        },
+        {
+          "kind": "fault_campaign",
+          "path": "results/fault-injection/20261001-001047",
+          "scenarios": ["run-timeout"]
+        }
+      ]
+    },
+    "REQ-17": {
+      "tests": [
+        "tests/test_accuracy.py::test_physical_acceptance_requires_both_frames_and_orientation",
+        "tools/test_acceptance_campaign.py::test_accuracy_and_latency_fail"
+      ],
+      "evidence": [
+        {
+          "kind": "acceptance",
+          "path": "results/acceptance-test/20260929-011129",
+          "expect": [
+            {
+              "file": "verdict.json",
+              "field": "methods[*].position_mm_max",
+              "at_most": "$tools/acceptance_test.json#criteria.position_mm"
+            },
+            {
+              "file": "verdict.json",
+              "field": "methods[*].orientation_deg_max",
+              "at_most": "$tools/acceptance_test.json#criteria.orientation_deg"
+            }
+          ],
+          "judge": "fields"
+        },
+        {
+          "kind": "acceptance_series",
+          "since": "20261002-233959",
+          "expect": [
+            {
+              "file": "verdict.json",
+              "field": "methods[*].position_mm_max",
+              "at_most": "$tools/acceptance_test.json#criteria.position_mm"
+            },
+            {
+              "file": "verdict.json",
+              "field": "methods[*].orientation_deg_max",
+              "at_most": "$tools/acceptance_test.json#criteria.orientation_deg"
+            }
+          ],
+          "judge": "fields"
+        },
+        {
+          "kind": "fields",
+          "path": "results/accuracy/20260921-precision-final",
+          "expect": [
+            {
+              "file": "verification.json",
+              "field": "runs[directory=20260921-precision-final].physical_passes",
+              "equals": "@runs[directory=20260921-precision-final].planned"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        {
+          "id": "harness-limit-untested",
+          "reason": "No acceptance-harness test with a pose error above the limit, and no harness test of the 1° limit. The thresholds are illustrative, not a robot specification."
+        },
+        {
+          "id": "overrun-stop-off-goal-134526",
+          "reason": "In 20261003-134526 the alignment ended by control_overrun (REQ-03) stopped 35.4 mm / 4.49° from the goal; converged alignments were within tolerance.",
+          "covers": [{"path": "results/acceptance-test/20261003-134526"}]
+        }
+      ]
+    },
+    "REQ-18": {
+      "tests": [
+        "tests/test_control.py::test_success_requires_full_observed_hold_window",
+        "tests/test_precision.py::test_hold_resets_after_any_gate_fails",
+        "tests/test_precision.py::test_coupled_translation_rotation_under_one_pixel_does_not_stop",
+        "tests/test_precision_integration.py",
+        "tests/test_benchmark.py::test_convergence_and_complete_stopped_observation",
+        "tests/test_camera_delay_integration.py::test_repeated_display_frames_cannot_confirm_convergence"
+      ],
+      "evidence": [
+        {
+          "kind": "fields",
+          "path": "results/accuracy/20260921-precision-final",
+          "expect": [
+            {
+              "file": "verification.json",
+              "field": "runs[directory=20260921-precision-final].physical_passes",
+              "equals": "@runs[directory=20260921-precision-final].planned"
+            },
+            {
+              "file": "verification.json",
+              "field": "runs[directory=20260921-precision-final].completed",
+              "equals": "@runs[directory=20260921-precision-final].planned"
+            }
+          ]
+        }
+      ]
+    },
+    "REQ-19": {
+      "tests": [
+        "tests/test_binomial_ci.py",
+        "tools/test_acceptance_test.py::test_ten_of_ten_is_not_enough_to_claim_95_percent",
+        "tools/test_acceptance_test.py::test_success_gate_uses_the_lower_confidence_bound",
+        "tools/test_acceptance_test.py::test_failed_alignment_rule_is_separate_from_the_confidence_rule",
+        "tools/test_acceptance_campaign.py::test_too_few_alignments_cannot_claim_95_percent"
+      ],
+      "evidence": [{"kind": "acceptance_series", "since": "20261002-233959"}],
+      "gaps": [
+        {
+          "id": "acceptance-miss-20261003-134526",
+          "reason": "The fresh-restart laptop run 20261003-134526 failed on one SIFT control deadline miss (59.5 ms gap) whose cause was not recorded. Pre-declared criterion (2026-10-03): closed by 5 consecutive fresh-restart passes, or when the cause is found, fixed and re-tested.",
+          "covers": [{"path": "results/acceptance-test/20261003-134526"}],
+          "closed_by": {"rule": "consecutive_fresh_acceptance"}
+        }
+      ]
+    },
+    "REQ-20": {
+      "tests": [
+        "tests/test_alignment_regression.py::test_blank_wrong_id_and_occluded_images_are_rejected",
+        "tests/test_natural_perception.py",
+        "tests/test_learned_perception.py::test_blank_wrong_mirrored_and_tiny_evidence_are_rejected",
+        "tests/test_natural_integration.py::test_wrong_and_absent_targets_cannot_supply_natural_measurements"
+      ],
+      "evidence": [
+        {
+          "kind": "fields",
+          "path": "results/natural-image/20260913-112323-280057",
+          "expect": [
+            {"file": "summary.json", "field": "aruco.negative_outcomes.converged", "absent": true},
+            {"file": "summary.json", "field": "natural.negative_outcomes.converged", "absent": true}
+          ]
+        },
+        {
+          "kind": "fields",
+          "path": "results/learned/20260913-162607-253226",
+          "expect": [
+            {"file": "summary.json", "field": "natural.negative_outcomes.converged", "absent": true},
+            {"file": "summary.json", "field": "learned.negative_outcomes.converged", "absent": true}
+          ]
+        },
+        {
+          "kind": "fields",
+          "path": "results/startup/20260911-184428-897577-n200-seed20260911",
+          "expect": [{"file": "summary.json", "field": "search.negative_controls_all_stopped", "equals": true}]
+        }
+      ]
+    },
+    "REQ-21": {
+      "tests": [
+        "tools/test_acceptance_test.py::test_later_alignment_regression_fails_learned_only",
+        "tools/test_acceptance_campaign.py::test_accuracy_and_latency_fail"
+      ],
+      "evidence": [
+        {
+          "kind": "acceptance",
+          "path": "results/acceptance-test/20260929-011129",
+          "expect": [
+            {
+              "file": "verdict.json",
+              "field": "methods[*].processing_ms.p95",
+              "at_most": "$tools/acceptance_test.json#criteria.processing_p95_ms"
+            },
+            {
+              "file": "verdict.json",
+              "field": "methods[*].processing_ms.p99",
+              "at_most": "$tools/acceptance_test.json#criteria.processing_p99_ms"
+            },
+            {
+              "file": "verdict.json",
+              "field": "methods[*].processing_ms.max",
+              "at_most": "$tools/acceptance_test.json#criteria.processing_max_ms"
+            },
+            {
+              "file": "verdict.json",
+              "field": "methods[*].capture_ms.p99",
+              "at_most": "$tools/acceptance_test.json#criteria.capture_p99_ms"
+            },
+            {
+              "file": "verdict.json",
+              "field": "methods[*].capture_ms.max",
+              "at_most": "$tools/acceptance_test.json#criteria.capture_max_ms"
+            },
+            {
+              "file": "verdict.json",
+              "field": "methods[*].later_to_first_p99",
+              "at_most": "$tools/acceptance_test.json#criteria.later_to_first_p99_ratio"
+            }
+          ],
+          "judge": "fields"
+        },
+        {
+          "kind": "acceptance_series",
+          "since": "20261002-233959",
+          "expect": [
+            {
+              "file": "verdict.json",
+              "field": "methods[*].processing_ms.p95",
+              "at_most": "$tools/acceptance_test.json#criteria.processing_p95_ms"
+            },
+            {
+              "file": "verdict.json",
+              "field": "methods[*].processing_ms.p99",
+              "at_most": "$tools/acceptance_test.json#criteria.processing_p99_ms"
+            },
+            {
+              "file": "verdict.json",
+              "field": "methods[*].processing_ms.max",
+              "at_most": "$tools/acceptance_test.json#criteria.processing_max_ms"
+            },
+            {
+              "file": "verdict.json",
+              "field": "methods[*].capture_ms.p99",
+              "at_most": "$tools/acceptance_test.json#criteria.capture_p99_ms"
+            },
+            {
+              "file": "verdict.json",
+              "field": "methods[*].capture_ms.max",
+              "at_most": "$tools/acceptance_test.json#criteria.capture_max_ms"
+            },
+            {
+              "file": "verdict.json",
+              "field": "methods[*].later_to_first_p99",
+              "at_most": "$tools/acceptance_test.json#criteria.later_to_first_p99_ratio"
+            }
+          ],
+          "judge": "fields"
+        },
+        {
+          "kind": "acceptance",
+          "path": "results/acceptance-test/20260928-173556-long",
+          "expect": [
+            {
+              "file": "verdict.json",
+              "field": "methods[*].processing_ms.p95",
+              "at_most": "$tools/acceptance_test.json#criteria.processing_p95_ms"
+            },
+            {
+              "file": "verdict.json",
+              "field": "methods[*].processing_ms.p99",
+              "at_most": "$tools/acceptance_test.json#criteria.processing_p99_ms"
+            },
+            {
+              "file": "verdict.json",
+              "field": "methods[*].processing_ms.max",
+              "at_most": "$tools/acceptance_test.json#criteria.processing_max_ms"
+            },
+            {
+              "file": "verdict.json",
+              "field": "methods[*].capture_ms.p99",
+              "at_most": "$tools/acceptance_test.json#criteria.capture_p99_ms"
+            },
+            {
+              "file": "verdict.json",
+              "field": "methods[*].capture_ms.max",
+              "at_most": "$tools/acceptance_test.json#criteria.capture_max_ms"
+            },
+            {
+              "file": "verdict.json",
+              "field": "methods[*].later_to_first_p99",
+              "at_most": "$tools/acceptance_test.json#criteria.later_to_first_p99_ratio"
+            }
+          ],
+          "judge": "fields"
+        }
+      ],
+      "gaps": [
+        {
+          "id": "harness-limits-untested",
+          "reason": "No acceptance-harness test that exceeds the p95, p99 or capture limits; results depend on the hardware state."
+        },
+        {
+          "id": "long-run-failed-20260928",
+          "reason": "The long run 20260928-173556-long failed (Learned p95 214.4 ms, 2.29×).",
+          "covers": [{"path": "results/acceptance-test/20260928-173556-long"}]
+        }
+      ]
+    },
+    "REQ-22": {
+      "tests": [
+        "tools/test_acceptance_test.py::test_approved_change_must_match_both_hashes",
+        "tools/test_acceptance_test.py::test_checked_in_approval_matches_the_repository",
+        "tools/test_acceptance_test.py::test_protected_inputs"
+      ],
+      "evidence": [
+        {
+          "kind": "acceptance",
+          "path": "results/acceptance-test/20260929-011129",
+          "expect": [
+            {"file": "manifest.json", "field": "baseline_check.protected_changed", "equals": []},
+            {"file": "manifest.json", "field": "baseline_check.runtime_differences", "equals": {}}
+          ],
+          "judge": "fields"
+        },
+        {
+          "kind": "acceptance",
+          "path": "results/acceptance-test/20261002-233959",
+          "expect": [
+            {"file": "manifest.json", "field": "baseline_check.protected_changed", "equals": []},
+            {"file": "manifest.json", "field": "baseline_check.runtime_differences", "equals": {}}
+          ],
+          "judge": "fields"
+        }
+      ]
+    },
+    "REQ-23": {
+      "tests": [
+        "tools/test_acceptance_test.py::test_conditions_met",
+        "tools/test_acceptance_test.py::test_conditions_broken_are_flagged"
+      ],
+      "evidence": [
+        {
+          "kind": "acceptance",
+          "path": "results/acceptance-test/20260929-011129",
+          "expect": [{"file": "manifest.json", "field": "uptime_at_start_s", "at_most": "$FRESH_RESTART_S"}],
+          "judge": "fields"
+        },
+        {
+          "kind": "acceptance_series",
+          "since": "20261002-233959",
+          "expect": [
+            {"file": "manifest.json", "field": "uptime_at_start_s", "at_most": "$FRESH_RESTART_S"},
+            {"file": "manifest.json", "field": "session_boundaries[*].power.ACLineStatus", "equals": 1},
+            {
+              "file": "manifest.json",
+              "field": "session_boundaries[*].power_mode.mode",
+              "equals": "Best performance"
+            }
+          ],
+          "judge": "fields"
+        },
+        {
+          "kind": "margin",
+          "path": "results/margin-test/20260929-110852",
+          "expect": [{"file": "manifest.json", "field": "uptime_at_start_s", "at_most": "$FRESH_RESTART_S"}]
+        }
+      ],
+      "gaps": [
+        {
+          "id": "ac-gate-untested",
+          "reason": "No test of the AC-power INVALID gate; only AC power is enforced, other programs are not checked."
+        },
+        {
+          "id": "runs-without-fresh-restart",
+          "reason": "These timing runs did not follow the fresh-restart step of TEST_PROCEDURE.md.",
+          "covers": [
+            {"path": "results/acceptance-test/20260929-011129"},
+            {"path": "results/acceptance-test/20261002-233959"},
+            {"path": "results/acceptance-test/20261003-150343"}
+          ]
+        }
+      ]
+    }
+  },
+  "claims": [
+    {
+      "id": "summary-uptime-134526",
+      "pattern": "\\(`results/acceptance-test/20261003-134526`, (\\d+) min uptime\\)",
+      "source": "results/acceptance-test/20261003-134526/manifest.json",
+      "field": "uptime_at_start_s",
+      "scale": 0.016666666666666666,
+      "format": "{:.0f}"
+    },
+    {
+      "id": "summary-uptime-150343",
+      "pattern": "\\(`results/acceptance-test/20261003-150343`, (\\d+) min uptime, so not",
+      "source": "results/acceptance-test/20261003-150343/manifest.json",
+      "field": "uptime_at_start_s",
+      "scale": 0.016666666666666666,
+      "format": "{:.0f}"
+    },
+    {
+      "id": "summary-uptime-154640",
+      "pattern": "\\(`results/acceptance-test/20261003-154640`, (\\d+) min uptime\\) also passed",
+      "source": "results/acceptance-test/20261003-154640/manifest.json",
+      "field": "uptime_at_start_s",
+      "scale": 0.016666666666666666,
+      "format": "{:.0f}"
+    },
+    {
+      "id": "summary-uptime-161751",
+      "pattern": "`results/acceptance-test/20261003-161751`,\\n(\\d+) min uptime\\) passed",
+      "source": "results/acceptance-test/20261003-161751/manifest.json",
+      "field": "uptime_at_start_s",
+      "scale": 0.016666666666666666,
+      "format": "{:.0f}"
+    },
+    {
+      "id": "summary-gap-154640",
+      "pattern": "also passed with 0 misses; its largest loop gap was ([\\d.]+) ms",
+      "source": "results/acceptance-test/20261003-154640/verdict.json",
+      "field": "sessions[*].maximum_control_gap_ms",
+      "agg": "max",
+      "format": "{:.1f}"
+    },
+    {
+      "id": "summary-gap-150343",
+      "pattern": "per-cycle stall breakdown; its largest loop gap was ([\\d.]+) ms",
+      "source": "results/acceptance-test/20261003-150343/verdict.json",
+      "field": "sessions[*].maximum_control_gap_ms",
+      "agg": "max",
+      "format": "{:.1f}"
+    },
+    {
+      "id": "req03-gap-150343",
+      "pattern": "0 misses for both methods, largest loop gap ([\\d.]+) ms \\(sustained",
+      "source": "results/acceptance-test/20261003-150343/verdict.json",
+      "field": "sessions[*].maximum_control_gap_ms",
+      "agg": "max",
+      "format": "{:.1f}"
+    },
+    {
+      "id": "req03-gap-154640",
+      "pattern": "\\(3 min uptime\\): 0 misses, largest loop gap ([\\d.]+) ms over 12 sessions",
+      "source": "results/acceptance-test/20261003-154640/verdict.json",
+      "field": "sessions[*].maximum_control_gap_ms",
+      "agg": "max",
+      "format": "{:.1f}"
+    },
+    {
+      "id": "req03-gap-161751",
+      "pattern": "\\(34 min\\): 0 misses, largest loop gap ([\\d.]+) ms, PASS",
+      "source": "results/acceptance-test/20261003-161751/verdict.json",
+      "field": "sessions[*].maximum_control_gap_ms",
+      "agg": "max",
+      "format": "{:.1f}"
+    },
+    {
+      "id": "req03-gap-134526",
+      "pattern": "<br>• The gap was ([\\d.]+) ms, starting",
+      "source": "results/acceptance-test/20261003-134526/verdict.json",
+      "field": "sessions[*].maximum_control_gap_ms",
+      "agg": "max",
+      "format": "{:.1f}"
+    },
+    {
+      "id": "req19-lb-233959-sift",
+      "pattern": "95% lower bounds \\*\\*([\\d.]+)%\\*\\* and",
+      "source": "results/acceptance-test/20261002-233959/verdict.json",
+      "field": "methods[label=SIFT].success_ci.ci_low",
+      "scale": 100,
+      "format": "{:.1f}"
+    },
+    {
+      "id": "req19-lb-134526-sift",
+      "pattern": "SIFT 148/149, lower bound ([\\d.]+)% but",
+      "source": "results/acceptance-test/20261003-134526/verdict.json",
+      "field": "methods[label=SIFT].success_ci.ci_low",
+      "scale": 100,
+      "format": "{:.1f}"
+    },
+    {
+      "id": "req19-lb-161751-sift",
+      "pattern": "\\(34 min\\): 149/149 and 147/147, lower bounds ([\\d.]+)%",
+      "source": "results/acceptance-test/20261003-161751/verdict.json",
+      "field": "methods[label=SIFT].success_ci.ci_low",
+      "scale": 100,
+      "format": "{:.1f}"
+    },
+    {
+      "id": "req19-lb-161751-learned",
+      "pattern": "\\(34 min\\): 149/149 and 147/147, lower bounds [\\d.]+% and ([\\d.]+)%",
+      "source": "results/acceptance-test/20261003-161751/verdict.json",
+      "field": "methods[label=Learned GPU].success_ci.ci_low",
+      "scale": 100,
+      "format": "{:.1f}"
+    },
+    {
+      "id": "req23-uptime-011129",
+      "pattern": "Acceptance run: fresh restart \\*\\*no\\*\\* \\((\\d+) min uptime\\)",
+      "source": "results/acceptance-test/20260929-011129/manifest.json",
+      "field": "uptime_at_start_s",
+      "scale": 0.016666666666666666,
+      "format": "{:.0f}"
+    },
+    {
+      "id": "req23-uptime-233959",
+      "pattern": "fresh restart \\*\\*no\\*\\* \\((\\d+) min uptime\\), AC power",
+      "source": "results/acceptance-test/20261002-233959/manifest.json",
+      "field": "uptime_at_start_s",
+      "scale": 0.016666666666666666,
+      "format": "{:.0f}"
+    },
+    {
+      "id": "req23-uptime-134526",
+      "pattern": "20261003-134526`: fresh restart \\*\\*yes\\*\\* \\((\\d+) min\\)",
+      "source": "results/acceptance-test/20261003-134526/manifest.json",
+      "field": "uptime_at_start_s",
+      "scale": 0.016666666666666666,
+      "format": "{:.0f}"
+    },
+    {
+      "id": "req23-uptime-150343",
+      "pattern": "20261003-150343`: fresh restart \\*\\*no\\*\\* \\((\\d+) min\\)",
+      "source": "results/acceptance-test/20261003-150343/manifest.json",
+      "field": "uptime_at_start_s",
+      "scale": 0.016666666666666666,
+      "format": "{:.0f}"
+    },
+    {
+      "id": "req23-uptime-154640",
+      "pattern": "20261003-154640`: fresh restart \\*\\*yes\\*\\* \\((\\d+) min\\)",
+      "source": "results/acceptance-test/20261003-154640/manifest.json",
+      "field": "uptime_at_start_s",
+      "scale": 0.016666666666666666,
+      "format": "{:.0f}"
+    },
+    {
+      "id": "req23-uptime-161751",
+      "pattern": "20261003-161751`: fresh restart \\*\\*yes\\*\\* \\((\\d+) min\\)",
+      "source": "results/acceptance-test/20261003-161751/manifest.json",
+      "field": "uptime_at_start_s",
+      "scale": 0.016666666666666666,
+      "format": "{:.0f}"
+    },
+    {
+      "id": "req21-p95-161751-sift",
+      "pattern": "20261003-161751`: processing ([\\d.]+) / ",
+      "source": "results/acceptance-test/20261003-161751/verdict.json",
+      "field": "methods[label=SIFT].processing_ms.p95",
+      "format": "{:.1f}"
+    },
+    {
+      "id": "req21-max-154640-sift",
+      "pattern": "20261003-154640`: processing [\\d.]+ / [\\d.]+ / ([\\d.]+) ms",
+      "source": "results/acceptance-test/20261003-154640/verdict.json",
+      "field": "methods[label=SIFT].processing_ms.max",
+      "format": "{:.1f}"
+    },
+    {
+      "id": "req06-repeats-132018",
+      "pattern": "random kill (\\d+)/\\d+ \\(all stopped by the receiver",
+      "source": "results/fault-injection/20261003-132018/summary.json",
+      "field": "scenarios[id=sensor-worker-crash].passed",
+      "format": "{}"
+    }
+  ]
+}

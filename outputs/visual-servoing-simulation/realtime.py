@@ -47,6 +47,10 @@ class RuntimeConfig:
     fault_after_s: float = 2.0
     inference_stall_s: float = 0.0
     render_stall_s: float = 0.0
+    # Fraction (0..1) of faulted frames whose perception result is replaced by an
+    # 'inference_failed' observation, as a failed Learned GPU inference returns.
+    # 1 = every frame after fault_after_s; 0.5 = every second one (deterministic).
+    inference_failure: float = 0.0
     # Freshness watchdog response (see docs/WATCHDOG_DECISION.md). The trip itself
     # is identical either way: zero velocity at the same moment and image age.
     # > 0 (default): hold and resume. The alignment is paused, resumes on the next
@@ -63,6 +67,8 @@ class RuntimeConfig:
                 raise ValueError(f"{key} must be positive")
         if self.control_hz > 1000 or self.camera_hz > self.control_hz:
             raise ValueError("Require camera_hz <= control_hz <= 1000")
+        if self.inference_failure > 1:
+            raise ValueError("inference_failure must be a fraction in [0, 1]")
 
 
 def request_is_expired(request, now, config):
@@ -139,6 +145,111 @@ class ShutdownReceiver:
         return self.reader.poll(timeout)
 
 
+class ResultReceiver:
+    """The only reader of the sensor results pipe; forwards whole messages to `local`.
+
+    A pipe read can block for good: a worker killed halfway through sending a frame
+    leaves a length header and part of the message, and the reader waits for the rest.
+    (Python's timeout only bounds the wait for data to appear, not for a message to
+    finish.) So the control thread never reads the pipe. It takes messages from
+    `local` without blocking and detects a dead worker itself (worker.is_alive).
+
+    The thread runs at normal priority, does no physics and shares nothing with the
+    control loop except `local`. Unpickling a frame happens here, not in the loop.
+    If it stays blocked at shutdown, it is a daemon and is left behind.
+    """
+    POLL_S = .1
+
+    def __init__(self, results):
+        self.results = results
+        # A one-item, latest-wins mailbox, like the pipe it replaces.
+        self.local = Queue(maxsize=1)
+        self.stopping = threading.Event()
+        self.forwarded = 0
+        self.dropped = 0  # Unread messages replaced by a newer one (none expected).
+        self.ended = None
+        self.thread = threading.Thread(target=self._run, name='servo-receiver', daemon=True)
+
+    def start(self):
+        self.thread.start()
+        return self
+
+    def _run(self):
+        try:
+            while not self.stopping.is_set():
+                try:
+                    message = self.results.get(timeout=self.POLL_S)
+                except Empty:
+                    continue
+                message['receiver_s'] = time.perf_counter()
+                self._deliver(message)
+                self.forwarded += 1
+            self.ended = 'stopped'
+        except (EOFError, OSError) as exc:
+            # Every send end is closed: the worker exited, possibly mid-message. This
+            # notice never displaces an unread message (the worker's error traceback);
+            # the control loop then detects the exit through is_alive() instead.
+            self.ended = f'pipe_closed ({type(exc).__name__}: {exc})'
+            self._notify(dict(kind='pipe_closed', detail=self.ended))
+        except BaseException:
+            if self.stopping.is_set():
+                self.ended = 'stopped'  # The queue was closed during shutdown.
+            else:
+                # The thread ends here and no further results arrive, so this must
+                # reach the control loop even if a message is still unread.
+                self.ended = 'error'
+                self._deliver(dict(kind='receiver_error', traceback=traceback.format_exc()))
+
+    def _deliver(self, message):
+        """Latest wins. This thread is the only producer, so the retry always ends, and
+        unlike put_latest() the new message is never the one dropped."""
+        while True:
+            try:
+                self.local.put_nowait(message)
+                return
+            except Full:
+                try:
+                    self.local.get_nowait()
+                    self.dropped += 1
+                except Empty:
+                    pass  # The control loop took it in between.
+
+    def _notify(self, message):
+        try:
+            self.local.put_nowait(message)
+        except Full:
+            pass
+
+    def get_nowait(self):
+        try:
+            return self.local.get_nowait()
+        except Empty:
+            return None
+
+    def worker_error(self, worker, wait_s=.02):
+        """The dead worker's own traceback if it sent one in time, else its exit code."""
+        deadline = time.perf_counter() + wait_s
+        while True:
+            try:
+                message = self.local.get(timeout=max(0., deadline - time.perf_counter()))
+            except Empty:
+                break
+            if message.get('kind') in ('error', 'receiver_error'):
+                return message['traceback']
+        worker.join(timeout=max(0., deadline - time.perf_counter()))
+        return f'Sensor process exited with code {worker.exitcode}'
+
+    def close(self, timeout=.5):
+        """Stop and wait a bounded time; never wait on a read that cannot finish."""
+        self.stopping.set()
+        joined = time.perf_counter()
+        if self.thread.is_alive():
+            self.thread.join(timeout)
+        return dict(forwarded=self.forwarded, dropped=self.dropped,
+                    ended=self.ended, stuck_at_close=self.thread.is_alive(),
+                    join_ms=1000*(time.perf_counter()-joined))
+
+
 def sensor_worker(requests, results, shutdown, mode, precision, obstacle, config, diagnostics=False, worker_counts=None):
     """Spawn entry point; no live simulation objects cross the process boundary."""
     worker_gc=None
@@ -153,7 +264,7 @@ def sensor_worker(requests, results, shutdown, mode, precision, obstacle, config
         import mujoco
         from simulation import Simulation
         from app import make_perception
-        from perception import NATURAL_REFERENCE
+        from perception import NATURAL_REFERENCE, Observation
         from reference_image import DEFAULT_REFERENCE, load_reference
         from precision import GoalRefinedPerception, load_precision_config
         # Bound CPU parallelism while retaining parallel SIFT/ECC kernels.
@@ -174,6 +285,7 @@ def sensor_worker(requests, results, shutdown, mode, precision, obstacle, config
             detector.observe(sensor.image())
             put_latest(results, dict(kind='ready', reference=corners, reference_rgb=rgb, backend=detector.name,
                 execution_settings=dict(getattr(detector,'execution_settings',{}),scheduling=scheduling.metadata)))
+            failure_budget = 0.0  # Deterministic spacing of injected inference failures.
             while not shutdown.is_set():
                 try:
                     request = requests.get(timeout=.1)
@@ -205,7 +317,12 @@ def sensor_worker(requests, results, shutdown, mode, precision, obstacle, config
                 rendered_process = time.process_time() if diagnostics else 0.
                 if fault and shutdown.wait(config.inference_stall_s):
                     break
-                observation = detector.observe(rgb)
+                failed = False
+                if fault and config.inference_failure:
+                    failure_budget += config.inference_failure
+                    failed = failure_budget >= 1 - 1e-9
+                    failure_budget -= failed
+                observation = Observation(reason='inference_failed') if failed else detector.observe(rgb)
                 finished = time.perf_counter()
                 finished_cpu = time.thread_time() if diagnostics else 0.
                 finished_process = time.process_time() if diagnostics else 0.
@@ -223,11 +340,17 @@ def sensor_worker(requests, results, shutdown, mode, precision, obstacle, config
                         inference_process=1000*(finished_process-rendered_process)) if diagnostics else {},
                     render_started_s=started, rendered_s=rendered, finished_s=finished,
                     available_s=finished + config.transport_s, fault_injected=fault and
-                    bool(config.render_stall_s or config.inference_stall_s)))
+                    bool(config.render_stall_s or config.inference_stall_s or failed)))
                 if worker_counts is not None:
                     worker_counts[2] += result_drops
     except BaseException:
-        put_latest(results, dict(kind='error', traceback=traceback.format_exc()))
+        # Bounded wait, not put_latest: the parent's receiver holds the read lock while it
+        # waits for data, so put_latest could not displace an unread frame and would
+        # drop the traceback. The receiver drains the pipe, so the put normally succeeds.
+        try:
+            results.put(dict(kind='error', traceback=traceback.format_exc()), timeout=1)
+        except Full:
+            pass
     finally:
         if worker_gc: worker_gc.close()
         if scheduling: scheduling.close()
@@ -265,6 +388,7 @@ class RealtimeSession:
         self.actuator_description = None
         self.motion_log = ()
         self.motion_evicted = None
+        self.safety_source = None  # Simulation.safety_record: clearance, joint margin, speed extremes.
         self.commands = Queue(maxsize=8)
         self.stop_requested = threading.Event()
         self.closed = threading.Event()
@@ -273,6 +397,7 @@ class RealtimeSession:
         self._state = dict(status='initializing', active=False, error=None, rgb=None)
         self.thread = None
         self.worker = None
+        self.receiver_state = None  # ResultReceiver.close(): forwarded, backlog, whether it was stuck.
         self.frame_rows = deque(maxlen=telemetry_capacity)
         self.sensor_rows = deque(maxlen=telemetry_capacity)
         self.loop_gaps = deque(maxlen=150000 if diagnostics else 100000)
@@ -283,7 +408,8 @@ class RealtimeSession:
             stale_results=0, obsolete_results=0, pre_inference_dropped=0, accepted=0, control_ticks=0,
             moving_ticks=0, unsafe_motion_ticks=0, contacts=0, post_stop_motion_ticks=0,
             control_deadline_misses=0, fault_results=0, discarded_physics_s=0.0,
-            watchdog_pauses=0, watchdog_resumes=0, paused_s=0.0, paused_motion_ticks=0)
+            watchdog_pauses=0, watchdog_resumes=0, paused_s=0.0, paused_motion_ticks=0,
+            receiver_dropped=0)  # Results replaced unread in the receiver's mailbox.
 
     def start(self):
         if self.thread is not None:
@@ -342,6 +468,7 @@ class RealtimeSession:
         last_publish = 0.0
         stopped_at = None
         scheduling=None
+        receiver = None
         try:
             from native_scheduling import SchedulingLease
             scheduling=SchedulingLease('control')
@@ -351,11 +478,17 @@ class RealtimeSession:
                 name='servo-sensor', daemon=True)
             self.worker.start()
             shutdown_reader.close()  # The worker owns the duplicated receive endpoint.
+            # Likewise the worker owns the send end of the results pipe; the parent never
+            # sends on it. Without the parent's copy, a worker that dies mid-message closes
+            # the last send end, so a blocked read ends (EOF) instead of waiting forever.
+            results._writer.close()
+            receiver = ResultReceiver(results).start()
             # Constructed on this thread; headless physics has no OpenGL context.
             sim = Simulation(render=False, actuator_config=self.actuator)
             self.actuator_description = sim.actuator.describe()
             self.motion_log = sim.motion_log
             self.motion_evicted = lambda: sim.motion_evicted
+            self.safety_source = sim.safety_record
             sim.set_target_mode('aruco' if self.mode == 'aruco' else 'natural')
             if self.obstacle:
                 sim.set_obstacle(True)
@@ -364,13 +497,15 @@ class RealtimeSession:
             startup_deadline = time.perf_counter() + 120
             while not self.closed.is_set():
                 try:
-                    initial = results.get(timeout=.05)
+                    initial = receiver.local.get(timeout=.05)
                 except Empty:
+                    initial = dict(kind='pending')
+                if initial['kind'] in ('error', 'receiver_error'):
+                    raise RuntimeError(initial['traceback'])
+                if initial['kind'] in ('pending', 'pipe_closed'):
                     if not self.worker.is_alive() or time.perf_counter() >= startup_deadline:
                         raise RuntimeError('Sensor initialization failed or exceeded 120 seconds')
                     continue
-                if initial['kind'] == 'error':
-                    raise RuntimeError(initial['traceback'])
                 if initial['kind'] == 'ready':
                     break
             else:
@@ -470,12 +605,7 @@ class RealtimeSession:
                     watchdog(failure, now)
                 if not self.worker.is_alive():
                     stop('worker_failed', now)
-                    try:
-                        failed = results.get(timeout=.02)
-                    except Empty:
-                        failed = {}
-                    raise RuntimeError(failed.get('traceback',
-                        f'Sensor process exited with code {self.worker.exitcode}'))
+                    raise RuntimeError(receiver.worker_error(self.worker))
                 if self.stop_requested.is_set():
                     stop('stopped', now)
                     while True:
@@ -517,18 +647,19 @@ class RealtimeSession:
                         self.counts['input_dropped'] += put_latest(requests, request)
                         self.counts['captures'] += 1
                 if probe: probe.mark('acquisition_enqueue')
-                try:
-                    received = results.get_nowait()
-                except Empty:
-                    received = None
+                received = receiver.get_nowait()  # Never the pipe: that read can block.
                 if received is not None:
                     if received['kind'] in ('frame', 'skipped'):
                         sensor_available = True
                     if received['kind'] == 'skipped':
                         self.counts['pre_inference_dropped'] += 1
-                    if received['kind'] == 'error':
+                    if received['kind'] in ('error', 'receiver_error'):
                         stop('worker_failed', time.perf_counter())
                         raise RuntimeError(received['traceback'])
+                    if received['kind'] == 'pipe_closed':
+                        # The worker's send end closed before is_alive() reported its exit.
+                        stop('worker_failed', time.perf_counter())
+                        raise RuntimeError(receiver.worker_error(self.worker) + ' (result pipe closed)')
                     if received['kind'] == 'frame':
                         received['received_s'] = time.perf_counter()
                         self.counts['fault_results'] += int(received['fault_injected'])
@@ -537,7 +668,7 @@ class RealtimeSession:
                             self.counts['sensor_rows_evicted'] += 1
                         self.sensor_rows.append({key: received[key] for key in
                             ('sequence', 'generation', 'captured_s', 'render_started_s',
-                             'rendered_s', 'finished_s', 'received_s', 'fault_injected', 'stage_ms', 'refinement', 'capture_active', 'cpu_ms', 'worker_gc')})
+                             'rendered_s', 'finished_s', 'receiver_s', 'received_s', 'fault_injected', 'stage_ms', 'refinement', 'capture_active', 'cpu_ms', 'worker_gc')})
                         self.sensor_rows[-1]['qpos']=received['qpos'].tolist()
                         if len(pending) == pending.maxlen:
                             self.counts['transport_dropped'] += 1
@@ -652,7 +783,9 @@ class RealtimeSession:
                 # previously issued velocity commands after a scheduler stall.
                 self.counts['discarded_physics_s'] += max(0, gap-self.config.max_control_gap_s)
                 if probe: probe.mark('safety_checks')
-                sim.advance(min(gap, self.config.max_control_gap_s))
+                # A clock that stepped backwards (a clock_error stop) gives a negative
+                # gap; integrate nothing rather than failing the runtime.
+                sim.advance(min(max(gap, 0.0), self.config.max_control_gap_s))
                 self.counts['contacts'] += len(sim.forbidden_contacts())
                 if sim.collision_event is not None:
                     if lease.active and controller.skip_blocked_motion():
@@ -703,6 +836,11 @@ class RealtimeSession:
                 if self.worker.is_alive():
                     self.worker.terminate()
                     self.worker.join(timeout=1)
+            # After the worker has gone, so a read blocked on a half message has ended
+            # (EOF). A receiver that is still blocked is left behind (daemon thread).
+            if receiver is not None:
+                self.receiver_state = receiver.close()
+                self.counts['receiver_dropped'] = self.receiver_state['dropped']
             # Unconsumed large frames must not keep a queue feeder alive on exit.
             for mailbox in (requests, results):
                 mailbox.cancel_join_thread()
@@ -737,4 +875,6 @@ class RealtimeSession:
                 ('requests_started','frames_completed','result_dropped','requests_expired'),self.worker_counts[:])),
             error=self.snapshot().get('error'), worker_alive=self.worker.is_alive() if self.worker else False,
             actuator=self.actuator_description, motion=list(self.motion_log),
-            motion_evicted=0 if self.motion_evicted is None else self.motion_evicted())
+            motion_evicted=0 if self.motion_evicted is None else self.motion_evicted(),
+            receiver=self.receiver_state,
+            safety=None if self.safety_source is None else self.safety_source())

@@ -1,6 +1,7 @@
 """Aggregation for sustained latency sessions; failed attempts remain in all totals."""
 from collections import Counter
 import numpy as np
+import safety_metrics
 
 
 def distribution(values):
@@ -55,9 +56,12 @@ def summarize_session(row):
             stage_values.setdefault(name+'_cpu_ms',[]).append(value)
     wc=row['worker_counts']
     counters=dict(row['counts'])
-    counters.update(result_mailbox_dropped=wc['result_dropped'],
+    # Result drops happen in the worker's pipe mailbox and, since the receiver thread,
+    # in the receiver's mailbox (receiver_dropped; absent in older runs).
+    dropped=wc['result_dropped']+counters.get('receiver_dropped',0)
+    counters.update(result_mailbox_dropped=dropped,
         worker_requests_expired=wc['requests_expired'],
-        completed_but_unreceived=max(0,wc['frames_completed']-counters['sensor_received']-wc['result_dropped']),
+        completed_but_unreceived=max(0,wc['frames_completed']-counters['sensor_received']-dropped),
         requests_not_started=max(0,counters['captures']-wc['requests_started']-counters['input_dropped']))
     late=late_results(row)
     return dict(id=row['id'],mode=row['mode'],attempts=len(row['attempts']),
@@ -74,4 +78,6 @@ def summarize_session(row):
         late_after_control_stop=sum(f['stop_reason']=='control_overrun' for f in late),
         late_results=late,counters=counters,worker_alive=row['worker_alive'],error=row['error'],
         telemetry_complete=not any(counters[k] for k in ('sensor_rows_evicted','command_rows_evicted','loop_rows_evicted')),
-        diagnostic_spikes_evicted=row['cycle_spikes_evicted'],gc_events_evicted=row['gc_events_evicted'])
+        diagnostic_spikes_evicted=row['cycle_spikes_evicted'],gc_events_evicted=row['gc_events_evicted'],
+        # Clearance, joint-limit margin and speed extremes (REQ-11 to REQ-13); None before they were recorded.
+        safety=row.get('safety'),safety_metrics=None if not row.get('safety') else safety_metrics.evaluate(row['safety']))

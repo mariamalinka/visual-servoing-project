@@ -137,5 +137,33 @@ class PhysicalResponse(unittest.TestCase):
         self.assertEqual(m.physical_lines([dict(label='SIFT', levels=[dict(physical_stops=None)])]), [])
 
 
+
+class SafetyEnvelope(unittest.TestCase):
+    def margin(self, sessions):
+        with patch.object(m, 'trip_phases', return_value=dict(at_start=0, mid_alignment=0)):
+            return m.method_margin('learned', sessions, CONFIG, None)
+
+    def test_a_safety_failure_ends_the_tolerated_range(self):
+        import safety_metrics
+        good = dict(steps=5, min_environment_slack_m=0.003, min_self_slack_m=0.01, min_joint_margin_rad=0.4, peak_command_rad_s=0.35,
+                    peak_speed_rad_s=0.34, limits=dict(max_joint_velocity_rad_s=0.6))
+        bad = dict(good, min_environment_slack_m=-0.001)
+        levels = [session(0, 10), session(25, 10), session(50, 10)]
+        for level, record in zip(levels, (good, good, bad)):
+            level.update(safety=record, safety_metrics=safety_metrics.evaluate(record))
+        r = self.margin(levels)
+        self.assertEqual((r['tolerated_delay_ms'], r['first_failing_delay_ms']), (25, 50))
+        self.assertEqual(m.safety_csv(r['levels'][2])[1], 0)  # environment_clearance_pass
+        text = '\n'.join(m.safety_lines([r]))
+        self.assertIn('**FAIL**', text)
+        self.assertIn('REQ-11', text)
+
+    def test_levels_without_a_record_are_unaffected(self):
+        r = self.margin([session(0, 10), session(25, 10)])
+        self.assertEqual(r['tolerated_delay_ms'], 25)
+        self.assertEqual(m.safety_lines([r]), [])
+        self.assertEqual(set(m.safety_csv(r['levels'][0])), {''})
+
+
 if __name__ == '__main__':
     unittest.main()

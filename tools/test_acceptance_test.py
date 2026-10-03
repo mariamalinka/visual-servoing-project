@@ -247,6 +247,23 @@ class Verdicts(unittest.TestCase):
         self.assertTrue(method['success_ci']['meets_required'])
         self.assertAlmostEqual(method['success_ci']['ci_low'], 0.025 ** (1 / n), places=9)
 
+    def test_a_safety_envelope_violation_fails_the_method(self):
+        evidence = Evidence(self.directory)
+        record = dict(steps=100, min_environment_slack_m=0.004, min_environment_pair=('a', 'b'), min_self_slack_m=0.01, min_joint_margin_rad=0.3,
+                      min_joint_margin_joint=2, peak_command_rad_s=0.35, peak_speed_rad_s=0.34, peak_speed_joint=1,
+                      limits=dict(max_joint_velocity_rad_s=0.6))
+        sessions = copy.deepcopy(evidence.sessions)
+        for s in sessions:
+            bad = s['mode'] == 'learned' and s['phase'] == 'sustained'
+            s['safety'] = dict(record, min_environment_slack_m=-0.002) if bad else record
+            s['safety_metrics'] = t.safety_metrics_of(s['safety'])
+        methods = {mode: t.method_summary(mode, sessions, self.directory, CONFIG, evidence.plan)
+                   for mode in ('natural', 'learned')}
+        self.assertEqual(methods['natural']['verdict'], 'PASS')
+        self.assertEqual(methods['learned']['verdict'], 'FAIL')
+        self.assertTrue(any(f.startswith('REQ-11') for f in methods['learned']['failures']), methods['learned']['failures'])
+        self.assertAlmostEqual(methods['learned']['safety']['min_environment_slack_m'], -0.002)
+
     def test_ten_of_ten_is_not_enough_to_claim_95_percent(self):
         evidence = Evidence(self.directory)
         sessions = copy.deepcopy(evidence.sessions)
@@ -393,6 +410,39 @@ class PhysicalStops(unittest.TestCase):
         for name in ('actuator.py', 'actuator_config.json', 'simulation.py', 'realtime.py'):
             self.assertTrue(t.is_protected(name), name)
         self.assertFalse(t.is_protected('stop_response.py'))  # Analysis only.
+
+
+
+class SafetyEnvelope(unittest.TestCase):
+    RECORD = dict(steps=100, min_environment_slack_m=0.004, min_environment_pair=('a', 'b'), min_self_slack_m=0.01, min_joint_margin_rad=0.3,
+                  min_joint_margin_joint=2, peak_command_rad_s=0.35, peak_speed_rad_s=0.36, peak_speed_joint=1,
+                  limits=dict(max_joint_velocity_rad_s=0.6))
+
+    def test_recorded_metrics_are_judged_and_old_runs_are_not(self):
+        metrics = t.safety_metrics_of(self.RECORD)
+        self.assertEqual([m['passed'] for m in metrics], [True] * 5)
+        self.assertIsNone(t.safety_metrics_of(None))
+
+    def test_report_section_and_csv(self):
+        bad = t.safety_metrics_of(dict(self.RECORD, min_joint_margin_rad=-0.02))
+        good = t.safety_metrics_of(self.RECORD)
+        methods = [dict(label='SIFT', safety_metrics=good), dict(label='Learned GPU', safety_metrics=bad)]
+        sessions = [dict(id='rep-1', mode='natural', phase='repeatability', safety=self.RECORD, safety_metrics=good),
+                    dict(id='old', mode='learned', phase='sustained')]
+        with tempfile.TemporaryDirectory() as folder:
+            lines = t.safety_section(Path(folder), methods, sessions)
+            csv_text = (Path(folder) / 'safety.csv').read_text(encoding='utf-8')
+        text = '\n'.join(lines)
+        self.assertIn('REQ-12', text)
+        self.assertIn('**FAIL**', text)
+        self.assertIn('rep-1', csv_text)
+        self.assertIn('old', csv_text)
+
+    def test_a_violation_is_a_failed_criterion(self):
+        import safety_metrics
+        bad = t.safety_metrics_of(dict(self.RECORD, peak_speed_rad_s=0.65))
+        self.assertEqual(len(safety_metrics.failures(bad)), 1)
+        self.assertIn('REQ-13', safety_metrics.failures(bad)[0])
 
 
 if __name__ == '__main__':

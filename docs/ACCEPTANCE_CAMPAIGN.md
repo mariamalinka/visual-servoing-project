@@ -36,6 +36,11 @@ Every session must meet every criterion:
 | Freshness trips / control deadline misses | 0 / 0 |
 | Unsafe motion / post-stop motion / forbidden contacts | 0 / 0 / 0 |
 | Unlatched stops / worker restarts / runtime errors / telemetry loss | 0 |
+| Clearance above the collision margin, distance to joint limits, peak commanded and measured joint speed (REQ-11 to REQ-13), every physics step | ≥ 0 mm, ≥ 0 rad, ≤ 0.6 rad/s |
+
+The last row applies to sessions that record the safety envelope (since 2026-10-01).
+Older sessions show "not recorded" and keep their verdicts. The report has a
+per-session safety-envelope table.
 
 The success criterion uses the lower bound of the 95% confidence interval, not the
 observed rate; see [Success rates and confidence intervals](STATISTICS.md). A 30-minute

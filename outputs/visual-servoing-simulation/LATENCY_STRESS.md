@@ -62,6 +62,14 @@ and retains perception completed after a watchdog stop. It reports:
 - Whole-session bootstrap intervals and chronological per-session trends.
 - Perception and control stages around every watchdog event and the slowest
   recorded frames/commands.
+- The safety envelope (worst session per method): clearance above the collision
+  margin, distance to the joint limits and peak commanded and measured joint speed,
+  over every physics step, with PASS/FAIL against REQ-11 to REQ-13. Sessions recorded
+  before 2026-10-01 show "not recorded".
+
+Note that `run_latency_stress.py` refuses to run when a production input differs
+from its baseline manifest. Since the actuator model and the safety record changed
+`simulation.py`, a new stress campaign needs a current `--baseline`.
 
 Frames within a session are correlated. Resampling individual frames would
 make uncertainty look too small, so the bootstrap resamples whole sessions.

@@ -132,3 +132,5 @@ The simulated arm has actuator dynamics: a stop zeroes the command at once, and 
 Run **acceptance-test.cmd** (about 30 minutes, on AC power) for the automated SIFT and Learned GPU acceptance test: five starting poses, repeated alignments and a 12-minute reused-worker run per method, ending in a PASS/FAIL report. [Plan, criteria and recorded evidence](docs/ACCEPTANCE_TEST.md).
 
 [Requirements Verification and Safety Traceability](docs/SAFETY_TRACEABILITY.md): each safety and acceptance requirement with its hazard, enforcement, tests, evidence and verification status, including the requirements that are not yet verified.
+
+[Fault injection and the safety envelope](docs/FAULT_INJECTION.md): every acceptance, margin and stress run now records clearance, joint-limit margin and joint speed against their requirements, and **run.cmd --fault-campaign** triggers each safety stop on purpose and reports the reaction.

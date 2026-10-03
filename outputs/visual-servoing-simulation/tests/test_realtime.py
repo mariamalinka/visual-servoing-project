@@ -120,6 +120,107 @@ class LeaseTests(unittest.TestCase):
         self.assertEqual(image.dtype, np.uint8)
 
 
+class ResultReceiverTests(unittest.TestCase):
+    """The receiver thread alone: no sensor worker or rendering (suitable for CI)."""
+
+    def setUp(self):
+        import multiprocessing as mp
+        self.results = mp.get_context('spawn').Queue(1)
+
+    def tearDown(self):
+        self.results.cancel_join_thread()
+        self.results.close()
+
+    def wait_for(self, predicate, seconds=2):
+        deadline = time.perf_counter() + seconds
+        while time.perf_counter() < deadline and not predicate():
+            time.sleep(.005)
+        return predicate()
+
+    def test_forwards_messages_and_keeps_only_the_latest_unread_one(self):
+        from realtime import ResultReceiver
+        receiver = ResultReceiver(self.results)
+        for sequence in (1, 2, 3):
+            receiver._deliver(dict(kind='frame', sequence=sequence))
+        self.assertEqual(receiver.get_nowait()['sequence'], 3)
+        self.assertIsNone(receiver.get_nowait())
+        self.assertEqual(receiver.dropped, 2)
+        receiver.start()
+        self.results.put(dict(kind='frame', sequence=4))
+        self.assertTrue(self.wait_for(lambda: not receiver.local.empty()))
+        message = receiver.get_nowait()
+        self.assertEqual(message['sequence'], 4)
+        self.assertIn('receiver_s', message)
+        state = receiver.close()
+        self.assertEqual((state['ended'], state['stuck_at_close']), ('stopped', False))
+
+    @unittest.skipIf(__import__('sys').platform == 'win32', 'POSIX pipe framing (length header, then bytes)')
+    def test_half_written_message_ends_with_eof_once_every_send_end_is_closed(self):
+        import os, struct
+        from realtime import ResultReceiver
+        receiver = ResultReceiver(self.results).start()
+        os.write(self.results._writer.fileno(), struct.pack('!i', 1000) + b'x' * 100)
+        time.sleep(.2)
+        self.assertTrue(receiver.thread.is_alive())  # Blocked on the missing 900 bytes.
+        self.assertIsNone(receiver.get_nowait())
+        self.results._writer.close()  # The last send end: what the worker's exit does.
+        self.assertTrue(self.wait_for(lambda: not receiver.thread.is_alive()))
+        self.assertEqual(receiver.get_nowait()['kind'], 'pipe_closed')
+        self.assertTrue(receiver.ended.startswith('pipe_closed'))
+        self.assertFalse(receiver.close()['stuck_at_close'])
+
+    def test_pipe_closed_notice_never_displaces_an_unread_error(self):
+        from realtime import ResultReceiver
+        receiver = ResultReceiver(self.results)
+        receiver._deliver(dict(kind='error', traceback='Traceback: sensor failure'))
+        receiver._notify(dict(kind='pipe_closed'))
+        self.assertEqual(receiver.get_nowait()['kind'], 'error')
+
+    def test_a_failing_receiver_reports_its_error_even_over_an_unread_frame(self):
+        from realtime import ResultReceiver
+
+        class Broken:
+            def get(self, timeout=None):
+                raise RuntimeError('cannot unpickle the result')
+
+        receiver = ResultReceiver(Broken())
+        receiver._deliver(dict(kind='frame', sequence=1))  # Unread, as during a long tick.
+        receiver.start()
+        self.assertTrue(self.wait_for(lambda: not receiver.thread.is_alive()))
+        message = receiver.get_nowait()
+        self.assertEqual(message['kind'], 'receiver_error')
+        self.assertIn('cannot unpickle the result', message['traceback'])
+        self.assertEqual(receiver.ended, 'error')
+
+    def test_close_is_bounded_when_the_read_never_returns(self):
+        from realtime import ResultReceiver
+        never = threading.Event()
+
+        class Stuck:
+            def get(self, timeout=None):
+                never.wait()  # A read that cannot finish.
+
+        receiver = ResultReceiver(Stuck()).start()
+        started = time.perf_counter()
+        state = receiver.close(timeout=.2)
+        self.assertLess(time.perf_counter() - started, .5)
+        self.assertTrue(state['stuck_at_close'])
+        never.set()
+
+    def test_worker_error_prefers_the_workers_traceback_then_its_exit_code(self):
+        from realtime import ResultReceiver
+
+        class Exited:
+            exitcode = -9
+            def join(self, timeout=None):
+                pass
+
+        receiver = ResultReceiver(self.results)
+        receiver._deliver(dict(kind='error', traceback='Traceback: sensor failure'))
+        self.assertEqual(receiver.worker_error(Exited()), 'Traceback: sensor failure')
+        self.assertEqual(receiver.worker_error(Exited()), 'Sensor process exited with code -9')
+
+
 class RealtimeProcessTests(unittest.TestCase):
     def wait_state(self, session, predicate, seconds=15):
         deadline = time.perf_counter()+seconds

@@ -1,0 +1,312 @@
+{
+  "id": "margin-natural-125ms",
+  "phase": "margin",
+  "mode": "natural",
+  "pose_ids": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "delay_ms": 125,
+  "attempts": 10,
+  "aligned": 10,
+  "outcomes": {
+    "converged": 10
+  },
+  "stop_reasons": {
+    "converged": 10
+  },
+  "pose_attempts": {
+    "0": 2,
+    "1": 2,
+    "2": 2,
+    "3": 2,
+    "4": 2
+  },
+  "per_pose": {
+    "0": {
+      "attempts": 2,
+      "aligned": 2,
+      "processing_ms": {
+        "count": 36,
+        "mean": 174.67088611112067,
+        "p50": 175.8354000000395,
+        "p95": 184.19697499999188,
+        "p99": 188.12100999999757,
+        "max": 189.2688000000362
+      }
+    },
+    "1": {
+      "attempts": 2,
+      "aligned": 2,
+      "processing_ms": {
+        "count": 32,
+        "mean": 176.02220625000697,
+        "p50": 174.97935000005782,
+        "p95": 190.31219999996551,
+        "p99": 196.61500800001136,
+        "max": 198.09159999999792
+      }
+    },
+    "2": {
+      "attempts": 2,
+      "aligned": 2,
+      "processing_ms": {
+        "count": 39,
+        "mean": 177.4397435897474,
+        "p50": 180.03750000002583,
+        "p95": 190.59776999994256,
+        "p99": 198.18768400002224,
+        "max": 201.46069999998417
+      }
+    },
+    "3": {
+      "attempts": 2,
+      "aligned": 2,
+      "processing_ms": {
+        "count": 36,
+        "mean": 177.37657777777196,
+        "p50": 177.85324999994145,
+        "p95": 189.23922499990908,
+        "p99": 189.90144499995836,
+        "max": 190.09159999995973
+      }
+    },
+    "4": {
+      "attempts": 2,
+      "aligned": 2,
+      "processing_ms": {
+        "count": 36,
+        "mean": 176.65773888889981,
+        "p50": 176.54394999999568,
+        "p95": 188.15882499998793,
+        "p99": 190.47162000001094,
+        "max": 191.17610000000695
+      }
+    }
+  },
+  "duration_s": 59.89260059999992,
+  "worker_pids": [
+    13636
+  ],
+  "worker_executable": "C:\\Users\\marys\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "execution_settings": {
+    "scheduling": {
+      "role": "sensor",
+      "scope": "process",
+      "platform": "nt",
+      "thread_id": 8604,
+      "qos_applied": true,
+      "priority_applied": false,
+      "errors": [],
+      "qos_previous": [
+        0,
+        0
+      ],
+      "qos_requested": [
+        1,
+        0
+      ],
+      "qos_observed": [
+        1,
+        0
+      ]
+    }
+  },
+  "processing_ms": {
+    "count": 179,
+    "mean": 176.45948547486537,
+    "p50": 176.9570000000158,
+    "p95": 189.2933200000357,
+    "p99": 194.37630400003172,
+    "max": 201.46069999998417
+  },
+  "capture_ms": {
+    "count": 248,
+    "mean": 220.73492096774268,
+    "p50": 228.91645000004246,
+    "p95": 245.0849799999787,
+    "p99": 251.21750399999542,
+    "max": 258.05109999998876
+  },
+  "first_processing_ms": {
+    "count": 18,
+    "mean": 174.05979444444912,
+    "p50": 175.41355000003023,
+    "p95": 182.73738499999013,
+    "p99": 185.33899699993867,
+    "max": 185.9893999999258
+  },
+  "later_processing_ms": {
+    "count": 161,
+    "mean": 176.72777391304854,
+    "p50": 177.30229999995117,
+    "p95": 189.51400000003105,
+    "p99": 195.23368000002395,
+    "max": 201.46069999998417
+  },
+  "first_capture_ms": {
+    "count": 24,
+    "mean": 218.91906666666236,
+    "p50": 226.43694999999298,
+    "p95": 238.79599499999244,
+    "p99": 242.16374699994958,
+    "max": 243.07709999993676
+  },
+  "later_capture_ms": {
+    "count": 224,
+    "mean": 220.92947678571562,
+    "p50": 229.10760000002028,
+    "p95": 245.15212499997006,
+    "p99": 251.2863360000017,
+    "max": 258.05109999998876
+  },
+  "first_alignment_s": 4.556341700000075,
+  "first_alignment_converged": true,
+  "later_alignment_s": {
+    "count": 9,
+    "mean": 4.817254055555572,
+    "p50": 4.850867700000094,
+    "p95": 5.046377299999949,
+    "p99": 5.062288819999922,
+    "max": 5.066266699999915
+  },
+  "drift": [
+    {
+      "start_s": 0,
+      "processing_ms": {
+        "count": 179,
+        "mean": 176.45948547486537,
+        "p50": 176.9570000000158,
+        "p95": 189.2933200000357,
+        "p99": 194.37630400003172,
+        "max": 201.46069999998417
+      }
+    }
+  ],
+  "image_error_px": {
+    "count": 10,
+    "mean": 0.15035391181961621,
+    "p50": 0.14918511836399795,
+    "p95": 0.16765502183887562,
+    "p99": 0.16863006429030244,
+    "max": 0.16887382490315916
+  },
+  "position_mm": {
+    "count": 20,
+    "mean": 0.35115907747555386,
+    "p50": 0.3407996428232709,
+    "p95": 0.4591101811380019,
+    "p99": 0.46450785631185043,
+    "max": 0.4658572751053126
+  },
+  "orientation_deg": {
+    "count": 20,
+    "mean": 0.08378399553031654,
+    "p50": 0.08399404216777191,
+    "p95": 0.09349265098936184,
+    "p99": 0.09349265098936416,
+    "max": 0.09349265098936474
+  },
+  "freshness_trips": 151,
+  "stale_stops": 0,
+  "watchdog_pauses": 151,
+  "paused_s": 5.815346900000122,
+  "alignment_time_s": 47.91162820000022,
+  "paused_motion": 0,
+  "control_misses": 0,
+  "unsafe_motion": 0,
+  "post_stop_motion": 0,
+  "contacts": 0,
+  "unlatched_stops": 0,
+  "missing_endpoints": 0,
+  "telemetry_lost": 0,
+  "continuity_gaps": 0,
+  "maximum_control_gap_ms": 5.145799999922929,
+  "runtime_errors": 0,
+  "harness_error": null,
+  "counts": {
+    "captures": 562,
+    "capture_slots": 1752,
+    "busy_capture_skips": 1190,
+    "input_dropped": 0,
+    "transport_dropped": 0,
+    "pending_cancelled": 15,
+    "sensor_received": 562,
+    "sensor_rows_evicted": 0,
+    "command_rows_evicted": 0,
+    "loop_rows_evicted": 0,
+    "stale_results": 0,
+    "obsolete_results": 8,
+    "pre_inference_dropped": 0,
+    "accepted": 248,
+    "control_ticks": 29150,
+    "moving_ticks": 13716,
+    "unsafe_motion_ticks": 0,
+    "contacts": 0,
+    "post_stop_motion_ticks": 0,
+    "control_deadline_misses": 0,
+    "fault_results": 258,
+    "discarded_physics_s": 0.0,
+    "watchdog_pauses": 151,
+    "watchdog_resumes": 151,
+    "paused_s": 5.815346900000122,
+    "paused_motion_ticks": 0
+  },
+  "worker_counts": {
+    "requests_started": 562,
+    "frames_completed": 562,
+    "result_dropped": 0,
+    "requests_expired": 0
+  },
+  "raw_sha256": "d75cb57b279d37ff5cc4c52cfa9c8bb7bdd8afaea5a0cb84fa241d02f68ff827",
+  "samples": {
+    "sensor": 562,
+    "uncached_active": 179,
+    "commands": 248
+  },
+  "environment": {
+    "gpu_samples": 61,
+    "gpu_busy_sm_mhz": null,
+    "gpu_max_temp_c": 47.0,
+    "gpu_max_power_w": 12.81,
+    "limiting_reason_seconds": {
+      "sw_power_cap": 0,
+      "hw_slowdown": 0,
+      "sw_thermal_slowdown": 0,
+      "hw_thermal_slowdown": 0,
+      "hw_power_brake": 0
+    },
+    "throttle_episodes": [],
+    "failed_alignments": 0,
+    "failed_during_throttle": 0,
+    "failed_without_gpu_sample": 0,
+    "slow_frames": 179,
+    "slow_frames_during_throttle": 0,
+    "system_samples": 46,
+    "thermal_zone_max_c": {
+      "\\_TZ.TZ01": 64.1
+    },
+    "min_passive_limit_pct": 100.0,
+    "cpu_pct_max_frequency": {
+      "min": 87.0,
+      "median": 97.0
+    },
+    "gpu_low_clock_seconds": 0,
+    "gpu_busy_seconds": 0,
+    "cpu_low_frequency_samples": 0,
+    "failed_during_gpu_low_clock": 0,
+    "failed_during_cpu_low_frequency": 0,
+    "low_state_episodes": [
+      {
+        "start_s": 59,
+        "duration_s": 30,
+        "state": [
+          "gpu_low_clock"
+        ]
+      }
+    ]
+  }
+}
