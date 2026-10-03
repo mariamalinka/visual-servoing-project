@@ -319,6 +319,33 @@ class TraceabilityTests(unittest.TestCase):
         self.assertTrue(ok, tool.errors)
         self.assertEqual(tool.results['REQ-02'].status, tr.VERIFIED)
 
+    def test_recorded_one_run_per_restart_reading(self):
+        self.p.registry['rules']['consecutive_fresh_acceptance']['interpretation'] = {
+            'same_restart_counts': False, 'decided': '2026-10-03', 'reason': 'procedure: restart before every run'}
+        self.p.fresh_passes(4)
+        self.p.run('20261003-150000', uptime=600, same_boot_as_previous=True)
+        tool = self.generate()  # decided, so no error and no open question
+        self.assertEqual(len(tool.series['literal']), 5)
+        self.assertEqual(len(tool.series['strict']), 4)
+        self.assertFalse(tool.series['satisfied'])
+        self.assertEqual(tool.results['REQ-02'].status, tr.PARTIAL)
+        self.assertFalse(any('ambiguous-rule' in w for w in tool.warnings))
+        self.assertIn('4 of 5 so far', self.p.doc)
+        self.assertIn('5 qualifying runs in total', self.p.doc)
+        self.assertIn('at most one run per restart counts (procedure: restart before every run)', self.p.doc)
+        self.p.run('20261003-160000', uptime=600)  # its own restart
+        tool = self.generate()
+        self.assertTrue(tool.series['satisfied'])
+        self.assertEqual(tool.results['REQ-02'].status, tr.VERIFIED)
+
+    def test_interpretation_values_are_validated(self):
+        self.p.registry['rules']['consecutive_fresh_acceptance']['interpretation'] = {
+            'same_restart_counts': 'no', 'one_per_day': True}
+        tool, ok = self.p.tool(write=True)
+        errors = '\n'.join(tool.errors)
+        self.assertIn('same_restart_counts must be true or false', errors)
+        self.assertIn("unknown interpretation key 'one_per_day'", errors)
+
     def test_non_fresh_failure_inside_the_series_blocks_until_interpreted(self):
         self.p.fresh_passes(2)
         self.p.run('20261003-130000', failures=['control_misses 1'], uptime=7200)

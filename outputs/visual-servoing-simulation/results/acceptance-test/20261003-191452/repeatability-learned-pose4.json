@@ -1,0 +1,371 @@
+{
+  "id": "repeatability-learned-pose4",
+  "phase": "repeatability",
+  "mode": "learned",
+  "pose_ids": [
+    4
+  ],
+  "attempts": 3,
+  "aligned": 3,
+  "outcomes": {
+    "converged": 3
+  },
+  "stop_reasons": {
+    "converged": 3
+  },
+  "pose_attempts": {
+    "4": 3
+  },
+  "per_pose": {
+    "4": {
+      "attempts": 3,
+      "aligned": 3,
+      "processing_ms": {
+        "count": 191,
+        "mean": 37.04390628272461,
+        "p50": 37.56020000002991,
+        "p95": 51.52320000001964,
+        "p99": 54.77912999996306,
+        "max": 57.197000000030584
+      }
+    }
+  },
+  "duration_s": 17.18957180000001,
+  "worker_pids": [
+    26444
+  ],
+  "worker_executable": "C:\\Users\\marys\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "execution_settings": {
+    "device": "cuda",
+    "cpu_threads": 8,
+    "cuda_graph_blocks": 9,
+    "graph_initialization_ms": 40.79980000000205,
+    "image_conversion": "upload_uint8_then_float32",
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "cudnn_allow_tf32": true,
+    "matmul_allow_tf32": false,
+    "scheduling": {
+      "role": "sensor",
+      "scope": "process",
+      "platform": "nt",
+      "thread_id": 27592,
+      "qos_applied": true,
+      "priority_applied": false,
+      "errors": [],
+      "qos_previous": [
+        0,
+        0
+      ],
+      "qos_requested": [
+        1,
+        0
+      ],
+      "qos_observed": [
+        1,
+        0
+      ]
+    }
+  },
+  "processing_ms": {
+    "count": 191,
+    "mean": 37.04390628272461,
+    "p50": 37.56020000002991,
+    "p95": 51.52320000001964,
+    "p99": 54.77912999996306,
+    "max": 57.197000000030584
+  },
+  "capture_ms": {
+    "count": 222,
+    "mean": 86.18759099099044,
+    "p50": 89.28620000003207,
+    "p95": 105.62535000000253,
+    "p99": 110.35424799997371,
+    "max": 111.48509999998168
+  },
+  "first_processing_ms": {
+    "count": 70,
+    "mean": 34.3854885714336,
+    "p50": 34.34470000001966,
+    "p95": 48.64952999999161,
+    "p99": 53.193383000014485,
+    "max": 54.352099999960046
+  },
+  "later_processing_ms": {
+    "count": 121,
+    "mean": 38.581833884297936,
+    "p50": 38.611100000025544,
+    "p95": 52.930300000014086,
+    "p99": 54.92633999999725,
+    "max": 57.197000000030584
+  },
+  "first_capture_ms": {
+    "count": 79,
+    "mean": 84.75178354430031,
+    "p50": 86.4177000000268,
+    "p95": 101.91859000000817,
+    "p99": 108.5684919999585,
+    "max": 110.64219999997249
+  },
+  "later_capture_ms": {
+    "count": 143,
+    "mean": 86.98079930070035,
+    "p50": 90.95339999998941,
+    "p95": 106.04148999998984,
+    "p99": 110.41742799999841,
+    "max": 111.48509999998168
+  },
+  "first_alignment_s": 4.292903200000012,
+  "first_alignment_converged": true,
+  "later_alignment_s": {
+    "count": 2,
+    "mean": 4.1841503999999645,
+    "p50": 4.1841503999999645,
+    "p95": 4.187389229999963,
+    "p99": 4.187677125999962,
+    "max": 4.187749099999962
+  },
+  "drift": [
+    {
+      "start_s": 0,
+      "processing_ms": {
+        "count": 191,
+        "mean": 37.04390628272461,
+        "p50": 37.56020000002991,
+        "p95": 51.52320000001964,
+        "p99": 54.77912999996306,
+        "max": 57.197000000030584
+      }
+    }
+  ],
+  "image_error_px": {
+    "count": 3,
+    "mean": 0.21058426387322068,
+    "p50": 0.20733937079477593,
+    "p95": 0.21675191862796417,
+    "p99": 0.2175885895464698,
+    "max": 0.2177977572760962
+  },
+  "position_mm": {
+    "count": 6,
+    "mean": 0.395445030488051,
+    "p50": 0.4034547452099394,
+    "p95": 0.4354874513055019,
+    "p99": 0.44335144432334167,
+    "max": 0.4453174425778016
+  },
+  "orientation_deg": {
+    "count": 6,
+    "mean": 0.09158370146632165,
+    "p50": 0.08967069032679786,
+    "p95": 0.09616957024800721,
+    "p99": 0.09616957024800835,
+    "max": 0.09616957024800864
+  },
+  "freshness_trips": 0,
+  "stale_stops": 0,
+  "watchdog_pauses": 0,
+  "paused_s": 0.0,
+  "alignment_time_s": 12.661203999999941,
+  "paused_motion": 0,
+  "control_misses": 0,
+  "unsafe_motion": 0,
+  "post_stop_motion": 0,
+  "contacts": 0,
+  "unlatched_stops": 0,
+  "missing_endpoints": 0,
+  "telemetry_lost": 0,
+  "continuity_gaps": 0,
+  "maximum_control_gap_ms": 12.257400000009966,
+  "runtime_errors": 0,
+  "harness_error": null,
+  "counts": {
+    "captures": 329,
+    "capture_slots": 476,
+    "busy_capture_skips": 147,
+    "input_dropped": 0,
+    "transport_dropped": 0,
+    "pending_cancelled": 7,
+    "sensor_received": 329,
+    "sensor_rows_evicted": 0,
+    "command_rows_evicted": 0,
+    "loop_rows_evicted": 0,
+    "stale_results": 0,
+    "obsolete_results": 2,
+    "pre_inference_dropped": 0,
+    "accepted": 222,
+    "control_ticks": 7917,
+    "moving_ticks": 5259,
+    "unsafe_motion_ticks": 0,
+    "contacts": 0,
+    "post_stop_motion_ticks": 0,
+    "control_deadline_misses": 0,
+    "fault_results": 0,
+    "discarded_physics_s": 0.0,
+    "watchdog_pauses": 0,
+    "watchdog_resumes": 0,
+    "paused_s": 0.0,
+    "paused_motion_ticks": 0,
+    "receiver_dropped": 0
+  },
+  "worker_counts": {
+    "requests_started": 329,
+    "frames_completed": 329,
+    "result_dropped": 0,
+    "requests_expired": 0
+  },
+  "raw_sha256": "ff02f0c8a1f7f8191f87c38e8e5416e96ba81279ff215a2459256feafb9c0c55",
+  "samples": {
+    "sensor": 329,
+    "uncached_active": 191,
+    "commands": 222
+  },
+  "actuator": {
+    "stopped_velocity_rad_s": 0.001,
+    "stopped_hold_s": 0.02,
+    "servo_lag_allowance_s": 0.015,
+    "enabled": true,
+    "max_acceleration_rad_s2": 2.0,
+    "max_deceleration_rad_s2": 5.0,
+    "max_jerk_rad_s3": 150.0,
+    "profile": "default",
+    "braking_check": {
+      "ok": true,
+      "equivalent_time_s": 0.10836296296296295,
+      "braking_time_s": 0.12,
+      "max_velocity_rad_s": 0.6,
+      "worst_stop_distance_rad": 0.05601777777777777,
+      "worst_stop_time_s": 0.16933333333333334
+    }
+  },
+  "physical_stops": {
+    "stop": {
+      "count": 3,
+      "moving": 0,
+      "not_recorded": 0,
+      "completed": 0,
+      "interrupted": 0,
+      "other": 0,
+      "stop_clamps": 0,
+      "reasons": [
+        "converged"
+      ],
+      "command_latency_ms": null,
+      "physical_stop_ms": null,
+      "deadline_to_standstill_ms": null,
+      "speed_at_command_rad_s": null,
+      "max_joint_travel_rad": null,
+      "camera_travel_mm": null,
+      "camera_rotation_deg": null,
+      "peak_measured_accel_rad_s2": null,
+      "peak_setpoint_jerk_rad_s3": null
+    }
+  },
+  "safety": {
+    "steps": 8098,
+    "min_environment_slack_m": 0.0029999999999998743,
+    "min_environment_pair": [
+      "pedestal",
+      "upper_arm"
+    ],
+    "min_self_slack_m": 0.008999999999999753,
+    "min_self_pair": [
+      "wrist_roll_link",
+      "tool_link"
+    ],
+    "min_joint_margin_rad": 1.0122909661544428,
+    "min_joint_margin_joint": 4,
+    "peak_command_rad_s": 0.15892204563933374,
+    "peak_speed_rad_s": 0.12546123459108852,
+    "peak_speed_joint": 3,
+    "limits": {
+      "clearance_m": 0.012,
+      "self_clearance_m": 0.006,
+      "collision_guard_enabled": true,
+      "joint_range_rad": [
+        [
+          -2.9670597283903604,
+          2.9670597283903604
+        ],
+        [
+          -1.7453292519943295,
+          1.3962634015954636
+        ],
+        [
+          -0.17453292519943295,
+          2.530727415391778
+        ],
+        [
+          -2.9670597283903604,
+          2.9670597283903604
+        ],
+        [
+          -1.7453292519943295,
+          1.7453292519943295
+        ],
+        [
+          -2.9670597283903604,
+          2.9670597283903604
+        ]
+      ],
+      "max_joint_velocity_rad_s": 0.6
+    }
+  },
+  "safety_metrics": [
+    {
+      "key": "environment_clearance",
+      "requirement": "REQ-11",
+      "description": "Minimum clearance to the environment above its 12 mm margin",
+      "unit": "mm",
+      "value": 2.9999999999998743,
+      "limit": 0.0,
+      "comparison": ">=",
+      "passed": true,
+      "detail": "pedestal / upper_arm"
+    },
+    {
+      "key": "self_clearance",
+      "requirement": "REQ-11",
+      "description": "Minimum clearance between robot parts above its 6 mm margin",
+      "unit": "mm",
+      "value": 8.999999999999753,
+      "limit": 0.0,
+      "comparison": ">=",
+      "passed": true,
+      "detail": "wrist_roll_link / tool_link"
+    },
+    {
+      "key": "joint_margin",
+      "requirement": "REQ-12",
+      "description": "Minimum distance to a joint limit",
+      "unit": "rad",
+      "value": 1.0122909661544428,
+      "limit": 0.0,
+      "comparison": ">=",
+      "passed": true,
+      "detail": "joint 4"
+    },
+    {
+      "key": "command_speed",
+      "requirement": "REQ-13",
+      "description": "Peak commanded joint speed",
+      "unit": "rad/s",
+      "value": 0.15892204563933374,
+      "limit": 0.6,
+      "comparison": "<=",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "key": "measured_speed",
+      "requirement": "REQ-13",
+      "description": "Peak measured joint speed",
+      "unit": "rad/s",
+      "value": 0.12546123459108852,
+      "limit": 0.6,
+      "comparison": "<=",
+      "passed": true,
+      "detail": "joint 3"
+    }
+  ]
+}

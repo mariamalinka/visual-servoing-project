@@ -6,7 +6,11 @@
       "after": "20261003-134526",
       "declared": "2026-10-03",
       "source": "SAFETY_TRACEABILITY.md, pre-declared criterion; fresh restart = FRESH_RESTART_S in tools/run_acceptance_test.py",
-      "interpretation": {}
+      "interpretation": {
+        "same_restart_counts": false,
+        "decided": "2026-10-03",
+        "reason": "decided 2026-10-03: TEST_PROCEDURE.md asks for a restart before every run"
+      }
     }
   },
   "scan": ["acceptance-test", "acceptance", "fault-injection", "margin-test", "stop-response"],
@@ -196,9 +200,12 @@
       ],
       "gaps": [
         {
-          "id": "acceptance-miss-20261003-134526",
-          "reason": "The fresh-restart laptop run 20261003-134526 failed on one SIFT control deadline miss (59.5 ms gap) whose cause was not recorded. Pre-declared criterion (2026-10-03): closed by 5 consecutive fresh-restart passes, or when the cause is found, fixed and re-tested.",
-          "covers": [{"path": "results/acceptance-test/20261003-134526"}],
+          "id": "fresh-restart-misses",
+          "reason": "Fresh-restart laptop runs failed on one SIFT control deadline miss each: 20261003-134526 (59.5 ms gap, cause not recorded) and 20261003-181233 (62.0 ms gap during a 0.5 s slowdown of both the control loop and the sensor worker, source not identified). Pre-declared criterion (2026-10-03): closed by 5 consecutive fresh-restart passes, or when the cause is found, fixed and re-tested.",
+          "covers": [
+            {"path": "results/acceptance-test/20261003-134526"},
+            {"path": "results/acceptance-test/20261003-181233"}
+          ],
           "closed_by": {"rule": "consecutive_fresh_acceptance"}
         }
       ]
@@ -757,9 +764,12 @@
           "reason": "No acceptance-harness test with a pose error above the limit, and no harness test of the 1° limit. The thresholds are illustrative, not a robot specification."
         },
         {
-          "id": "overrun-stop-off-goal-134526",
-          "reason": "In 20261003-134526 the alignment ended by control_overrun (REQ-03) stopped 35.4 mm / 4.49° from the goal; converged alignments were within tolerance.",
-          "covers": [{"path": "results/acceptance-test/20261003-134526"}]
+          "id": "overrun-stops-off-goal",
+          "reason": "Alignments ended by control_overrun (REQ-03) stopped off the goal: 35.4 mm / 4.49° in 20261003-134526 and 5.38 mm / 0.65° in 20261003-181233; converged alignments were within tolerance.",
+          "covers": [
+            {"path": "results/acceptance-test/20261003-134526"},
+            {"path": "results/acceptance-test/20261003-181233"}
+          ]
         }
       ]
     },
@@ -802,9 +812,12 @@
       "evidence": [{"kind": "acceptance_series", "since": "20261002-233959"}],
       "gaps": [
         {
-          "id": "acceptance-miss-20261003-134526",
-          "reason": "The fresh-restart laptop run 20261003-134526 failed on one SIFT control deadline miss (59.5 ms gap) whose cause was not recorded. Pre-declared criterion (2026-10-03): closed by 5 consecutive fresh-restart passes, or when the cause is found, fixed and re-tested.",
-          "covers": [{"path": "results/acceptance-test/20261003-134526"}],
+          "id": "fresh-restart-misses",
+          "reason": "Fresh-restart laptop runs failed on one SIFT control deadline miss each: 20261003-134526 (59.5 ms gap, cause not recorded) and 20261003-181233 (62.0 ms gap during a 0.5 s slowdown of both the control loop and the sensor worker, source not identified). Pre-declared criterion (2026-10-03): closed by 5 consecutive fresh-restart passes, or when the cause is found, fixed and re-tested.",
+          "covers": [
+            {"path": "results/acceptance-test/20261003-134526"},
+            {"path": "results/acceptance-test/20261003-181233"}
+          ],
           "closed_by": {"rule": "consecutive_fresh_acceptance"}
         }
       ]
@@ -962,6 +975,11 @@
         {
           "id": "harness-limits-untested",
           "reason": "No acceptance-harness test that exceeds the p95, p99 or capture limits; results depend on the hardware state."
+        },
+        {
+          "id": "system-slowdown-20261003-181233",
+          "reason": "SIFT processing max 275.6 ms (gate 250 ms) during the same 0.5 s system-wide slowdown that caused the REQ-03 miss in 20261003-181233; source not identified.",
+          "covers": [{"path": "results/acceptance-test/20261003-181233"}]
         },
         {
           "id": "long-run-failed-20260928",

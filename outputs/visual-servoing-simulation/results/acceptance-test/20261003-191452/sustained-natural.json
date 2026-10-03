@@ -1,0 +1,484 @@
+{
+  "id": "sustained-natural",
+  "phase": "sustained",
+  "mode": "natural",
+  "pose_ids": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "attempts": 133,
+  "aligned": 133,
+  "outcomes": {
+    "converged": 133
+  },
+  "stop_reasons": {
+    "converged": 133
+  },
+  "pose_attempts": {
+    "0": 27,
+    "1": 27,
+    "2": 27,
+    "3": 26,
+    "4": 26
+  },
+  "per_pose": {
+    "0": {
+      "attempts": 27,
+      "aligned": 27,
+      "processing_ms": {
+        "count": 1526,
+        "mean": 43.20252018348537,
+        "p50": 44.24445000000787,
+        "p95": 58.62987500000827,
+        "p99": 63.59845000000064,
+        "max": 78.36709999997993
+      }
+    },
+    "1": {
+      "attempts": 27,
+      "aligned": 27,
+      "processing_ms": {
+        "count": 1360,
+        "mean": 44.66590448529422,
+        "p50": 45.32284999999092,
+        "p95": 58.683165000007875,
+        "p99": 65.87530099994638,
+        "max": 76.5599999999722
+      }
+    },
+    "2": {
+      "attempts": 27,
+      "aligned": 27,
+      "processing_ms": {
+        "count": 1560,
+        "mean": 43.47800096153896,
+        "p50": 44.67010000001892,
+        "p95": 58.620270000031375,
+        "p99": 65.5245659999713,
+        "max": 72.85749999994096
+      }
+    },
+    "3": {
+      "attempts": 26,
+      "aligned": 26,
+      "processing_ms": {
+        "count": 1409,
+        "mean": 44.971688573455594,
+        "p50": 45.680999999945016,
+        "p95": 59.991979999995195,
+        "p99": 66.97840000000724,
+        "max": 75.74780000004466
+      }
+    },
+    "4": {
+      "attempts": 26,
+      "aligned": 26,
+      "processing_ms": {
+        "count": 1430,
+        "mean": 45.087557552447926,
+        "p50": 46.017699999993056,
+        "p95": 60.05550000002984,
+        "p99": 66.0452670000325,
+        "max": 70.73550000001205
+      }
+    }
+  },
+  "duration_s": 722.1186448000001,
+  "worker_pids": [
+    7540
+  ],
+  "worker_executable": "C:\\Users\\marys\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "execution_settings": {
+    "scheduling": {
+      "role": "sensor",
+      "scope": "process",
+      "platform": "nt",
+      "thread_id": 2068,
+      "qos_applied": true,
+      "priority_applied": false,
+      "errors": [],
+      "qos_previous": [
+        0,
+        0
+      ],
+      "qos_requested": [
+        1,
+        0
+      ],
+      "qos_observed": [
+        1,
+        0
+      ]
+    }
+  },
+  "processing_ms": {
+    "count": 7285,
+    "mean": 44.246901015785724,
+    "p50": 45.18100000001368,
+    "p95": 59.035839999989996,
+    "p99": 65.706807999984,
+    "max": 78.36709999997993
+  },
+  "capture_ms": {
+    "count": 8723,
+    "mean": 93.71782515189662,
+    "p50": 100.26099999998905,
+    "p95": 115.22264999998127,
+    "p99": 122.49887999999373,
+    "max": 150.02520000001596
+  },
+  "first_processing_ms": {
+    "count": 57,
+    "mean": 42.660135087717926,
+    "p50": 43.66509999999835,
+    "p95": 54.832920000012564,
+    "p99": 63.977483999988166,
+    "max": 67.28069999996933
+  },
+  "later_processing_ms": {
+    "count": 7228,
+    "mean": 44.25941425013823,
+    "p50": 45.18634999999449,
+    "p95": 59.0469499999898,
+    "p99": 65.69801499998619,
+    "max": 78.36709999997993
+  },
+  "first_capture_ms": {
+    "count": 68,
+    "mean": 91.37882647059277,
+    "p50": 97.09684999998558,
+    "p95": 110.74587999999892,
+    "p99": 122.42735500000833,
+    "max": 124.46650000003956
+  },
+  "later_capture_ms": {
+    "count": 8655,
+    "mean": 93.73620203350593,
+    "p50": 100.32639999997173,
+    "p95": 115.23457000002963,
+    "p99": 122.49695999999858,
+    "max": 150.02520000001596
+  },
+  "first_alignment_s": 4.3608160999999654,
+  "first_alignment_converged": true,
+  "later_alignment_s": {
+    "count": 132,
+    "mean": 4.243854600000003,
+    "p50": 4.251958500000001,
+    "p95": 4.4927293650000255,
+    "p99": 4.503978100000016,
+    "max": 4.538848899999948
+  },
+  "drift": [
+    {
+      "start_s": 0,
+      "processing_ms": {
+        "count": 1209,
+        "mean": 44.250151530189925,
+        "p50": 45.216199999970286,
+        "p95": 59.668240000019054,
+        "p99": 65.99734799998943,
+        "max": 78.36709999997993
+      }
+    },
+    {
+      "start_s": 120,
+      "processing_ms": {
+        "count": 1213,
+        "mean": 43.951680544105784,
+        "p50": 44.67139999997016,
+        "p95": 59.41231999991031,
+        "p99": 66.88811199996277,
+        "max": 74.7159999999667
+      }
+    },
+    {
+      "start_s": 240,
+      "processing_ms": {
+        "count": 1218,
+        "mean": 44.65576420361402,
+        "p50": 45.75870000002169,
+        "p95": 58.69535500000324,
+        "p99": 64.88707900003419,
+        "max": 72.85749999994096
+      }
+    },
+    {
+      "start_s": 360,
+      "processing_ms": {
+        "count": 1208,
+        "mean": 44.193732284769084,
+        "p50": 44.948599999997896,
+        "p95": 59.47483999999006,
+        "p99": 65.87641999995869,
+        "max": 74.53269999996337
+      }
+    },
+    {
+      "start_s": 480,
+      "processing_ms": {
+        "count": 1215,
+        "mean": 43.675733004114306,
+        "p50": 44.68840000004093,
+        "p95": 58.63048000003346,
+        "p99": 64.2964700000857,
+        "max": 71.58719999995355
+      }
+    },
+    {
+      "start_s": 600,
+      "processing_ms": {
+        "count": 1217,
+        "mean": 44.746147658173946,
+        "p50": 45.90510000002723,
+        "p95": 58.308519999991404,
+        "p99": 64.08328399999388,
+        "max": 76.5599999999722
+      }
+    },
+    {
+      "start_s": 720,
+      "processing_ms": {
+        "count": 5,
+        "mean": 45.60509999992064,
+        "p50": 45.02479999996467,
+        "p95": 47.362539999994624,
+        "p99": 47.81290800001443,
+        "max": 47.92550000001938
+      }
+    }
+  ],
+  "image_error_px": {
+    "count": 133,
+    "mean": 0.20308842121137527,
+    "p50": 0.2026843929797828,
+    "p95": 0.21275543233825836,
+    "p99": 0.21627212686408148,
+    "max": 0.2187237849583458
+  },
+  "position_mm": {
+    "count": 266,
+    "mean": 0.36664541769567377,
+    "p50": 0.364123611490503,
+    "p95": 0.4513145411534421,
+    "p99": 0.4616429359094865,
+    "max": 0.4634863868697343
+  },
+  "orientation_deg": {
+    "count": 266,
+    "mean": 0.08494979005794194,
+    "p50": 0.08208055038409169,
+    "p95": 0.09522687730214223,
+    "p99": 0.0963099037677886,
+    "max": 0.0966611053889001
+  },
+  "freshness_trips": 0,
+  "stale_stops": 0,
+  "watchdog_pauses": 0,
+  "paused_s": 0.0,
+  "alignment_time_s": 564.5496233000003,
+  "paused_motion": 0,
+  "control_misses": 0,
+  "unsafe_motion": 0,
+  "post_stop_motion": 0,
+  "contacts": 0,
+  "unlatched_stops": 0,
+  "missing_endpoints": 0,
+  "telemetry_lost": 0,
+  "continuity_gaps": 0,
+  "maximum_control_gap_ms": 8.521700000073906,
+  "runtime_errors": 0,
+  "harness_error": null,
+  "counts": {
+    "captures": 13396,
+    "capture_slots": 21208,
+    "busy_capture_skips": 7812,
+    "input_dropped": 0,
+    "transport_dropped": 0,
+    "pending_cancelled": 371,
+    "sensor_received": 13396,
+    "sensor_rows_evicted": 0,
+    "command_rows_evicted": 0,
+    "loop_rows_evicted": 0,
+    "stale_results": 0,
+    "obsolete_results": 126,
+    "pre_inference_dropped": 0,
+    "accepted": 8723,
+    "control_ticks": 350824,
+    "moving_ticks": 233607,
+    "unsafe_motion_ticks": 0,
+    "contacts": 0,
+    "post_stop_motion_ticks": 0,
+    "control_deadline_misses": 0,
+    "fault_results": 0,
+    "discarded_physics_s": 0.0,
+    "watchdog_pauses": 0,
+    "watchdog_resumes": 0,
+    "paused_s": 0.0,
+    "paused_motion_ticks": 0,
+    "receiver_dropped": 0
+  },
+  "worker_counts": {
+    "requests_started": 13396,
+    "frames_completed": 13396,
+    "result_dropped": 0,
+    "requests_expired": 0
+  },
+  "raw_sha256": "41479c97cf40722e3a78e38d7a58ce8667890ca6a61ec8bea304eda8d00a17fe",
+  "samples": {
+    "sensor": 13396,
+    "uncached_active": 7285,
+    "commands": 8723
+  },
+  "actuator": {
+    "stopped_velocity_rad_s": 0.001,
+    "stopped_hold_s": 0.02,
+    "servo_lag_allowance_s": 0.015,
+    "enabled": true,
+    "max_acceleration_rad_s2": 2.0,
+    "max_deceleration_rad_s2": 5.0,
+    "max_jerk_rad_s3": 150.0,
+    "profile": "default",
+    "braking_check": {
+      "ok": true,
+      "equivalent_time_s": 0.10836296296296295,
+      "braking_time_s": 0.12,
+      "max_velocity_rad_s": 0.6,
+      "worst_stop_distance_rad": 0.05601777777777777,
+      "worst_stop_time_s": 0.16933333333333334
+    }
+  },
+  "physical_stops": {
+    "stop": {
+      "count": 133,
+      "moving": 0,
+      "not_recorded": 0,
+      "completed": 0,
+      "interrupted": 0,
+      "other": 0,
+      "stop_clamps": 0,
+      "reasons": [
+        "converged"
+      ],
+      "command_latency_ms": null,
+      "physical_stop_ms": null,
+      "deadline_to_standstill_ms": null,
+      "speed_at_command_rad_s": null,
+      "max_joint_travel_rad": null,
+      "camera_travel_mm": null,
+      "camera_rotation_deg": null,
+      "peak_measured_accel_rad_s2": null,
+      "peak_setpoint_jerk_rad_s3": null
+    }
+  },
+  "safety": {
+    "steps": 360890,
+    "min_environment_slack_m": 0.0029999999999998674,
+    "min_environment_pair": [
+      "pedestal",
+      "upper_arm"
+    ],
+    "min_self_slack_m": 0.008999999999999725,
+    "min_self_pair": [
+      "wrist_roll_link",
+      "tool_link"
+    ],
+    "min_joint_margin_rad": 0.9948376736344997,
+    "min_joint_margin_joint": 1,
+    "peak_command_rad_s": 0.08727783960721197,
+    "peak_speed_rad_s": 0.08493813197993802,
+    "peak_speed_joint": 2,
+    "limits": {
+      "clearance_m": 0.012,
+      "self_clearance_m": 0.006,
+      "collision_guard_enabled": true,
+      "joint_range_rad": [
+        [
+          -2.9670597283903604,
+          2.9670597283903604
+        ],
+        [
+          -1.7453292519943295,
+          1.3962634015954636
+        ],
+        [
+          -0.17453292519943295,
+          2.530727415391778
+        ],
+        [
+          -2.9670597283903604,
+          2.9670597283903604
+        ],
+        [
+          -1.7453292519943295,
+          1.7453292519943295
+        ],
+        [
+          -2.9670597283903604,
+          2.9670597283903604
+        ]
+      ],
+      "max_joint_velocity_rad_s": 0.6
+    }
+  },
+  "safety_metrics": [
+    {
+      "key": "environment_clearance",
+      "requirement": "REQ-11",
+      "description": "Minimum clearance to the environment above its 12 mm margin",
+      "unit": "mm",
+      "value": 2.999999999999867,
+      "limit": 0.0,
+      "comparison": ">=",
+      "passed": true,
+      "detail": "pedestal / upper_arm"
+    },
+    {
+      "key": "self_clearance",
+      "requirement": "REQ-11",
+      "description": "Minimum clearance between robot parts above its 6 mm margin",
+      "unit": "mm",
+      "value": 8.999999999999725,
+      "limit": 0.0,
+      "comparison": ">=",
+      "passed": true,
+      "detail": "wrist_roll_link / tool_link"
+    },
+    {
+      "key": "joint_margin",
+      "requirement": "REQ-12",
+      "description": "Minimum distance to a joint limit",
+      "unit": "rad",
+      "value": 0.9948376736344997,
+      "limit": 0.0,
+      "comparison": ">=",
+      "passed": true,
+      "detail": "joint 1"
+    },
+    {
+      "key": "command_speed",
+      "requirement": "REQ-13",
+      "description": "Peak commanded joint speed",
+      "unit": "rad/s",
+      "value": 0.08727783960721197,
+      "limit": 0.6,
+      "comparison": "<=",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "key": "measured_speed",
+      "requirement": "REQ-13",
+      "description": "Peak measured joint speed",
+      "unit": "rad/s",
+      "value": 0.08493813197993802,
+      "limit": 0.6,
+      "comparison": "<=",
+      "passed": true,
+      "detail": "joint 2"
+    }
+  ]
+}

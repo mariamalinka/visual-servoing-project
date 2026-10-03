@@ -135,3 +135,11 @@
 !/margin-test/20260929-110852/**
 !/margin-test/20260930-225125/**
 **/traces/
+# Fresh-restart acceptance runs of 2026-10-03 evening (pre-declared REQ-03/REQ-19 rule); traces stay local.
+!/acceptance-test/20261003-181233/**
+!/acceptance-test/20261003-184433/**
+!/acceptance-test/20261003-191452/**
+!/acceptance-test/20261003-200656/**
+!/acceptance-test/20261003-231335/**
+!/acceptance-test/20261003-234632/**
+**/traces/

@@ -40,7 +40,17 @@ RESULT_REF = re.compile(r'results/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.*-]+)')
 BARE_RUN = re.compile(r'`(\d{8}-[0-9A-Za-z_.-]+)`')
 SHORTHAND = re.compile(r'`(-\d{6})`')
 SAME_BOOT = timedelta(seconds=120)
-MISSING = object()  # a path element that a record lacks
+MISSING = object()
+READINGS = {  # interpretation keys for the fresh-restart rule, with how a recorded value reads in the page
+    'same_restart_counts': {True: 'several runs after one restart may count',
+                            False: 'at most one run per restart counts'},
+    'requires_ac_and_best_performance': {True: 'counted runs need AC power and Best performance',
+                                         False: 'AC power and power mode are not required'},
+    'non_fresh_failure_breaks_streak': {True: 'a FAIL without a fresh restart resets the count',
+                                        False: 'a FAIL without a fresh restart does not reset the count'},
+    'incomplete_run_breaks_streak': {True: 'an incomplete run resets the count',
+                                     False: 'an incomplete run does not reset the count'},
+}  # a path element that a record lacks
 
 
 @dataclass
@@ -437,12 +447,23 @@ class Traceability:
     # ------------------------------------------------------------------ rules
 
     def fresh_series(self):
-        """The pre-declared consecutive fresh-restart rule, counted under every reading of its wording."""
+        """The pre-declared consecutive fresh-restart rule.
+
+        'raw' lists every fresh-restart PASS in the current streak; 'counted' applies the readings
+        recorded in the registry ('interpretation'), e.g. at most one run per restart. Where no reading
+        is recorded the count is conservative and the open question is reported.
+        """
         rule = self.registry['rules']['consecutive_fresh_acceptance']
         reading = rule.get('interpretation', {})
+        for key, value in reading.items():
+            if key in READINGS and not isinstance(value, bool):
+                self.error('registry', f'interpretation {key} must be true or false, not {value!r}')
+            elif key not in READINGS and key not in ('decided', 'reason'):
+                self.error('registry', f'unknown interpretation key {key!r}')
+        reading = {k: v for k, v in reading.items() if k not in READINGS or isinstance(v, bool)}
         limit = self.fresh_restart_s()
-        literal, strict, ambiguities, boots = [], [], [], []
-        breaks = False
+        literal, strict, ambiguities, boots, counted_boots = [], [], [], [], []
+        breaks = unresolved = False
         for run in self.acceptance_runs().values():
             if run.name <= rule['after'] or run.outcome == 'smoke':
                 continue
@@ -451,7 +472,7 @@ class Traceability:
                     ambiguities.append(f'{run.name} is incomplete; the rule does not say whether that breaks the streak')
                     breaks = True
                 elif reading['incomplete_run_breaks_streak']:
-                    literal, strict, boots = [], [], []
+                    literal, strict, boots, counted_boots = [], [], [], []
                 continue
             fresh = limit is not None and run.uptime_s is not None and run.uptime_s <= limit
             if not fresh:
@@ -461,10 +482,10 @@ class Traceability:
                                            'whether that breaks the streak')
                         breaks = True
                     elif reading['non_fresh_failure_breaks_streak']:
-                        literal, strict, boots = [], [], []
+                        literal, strict, boots, counted_boots = [], [], [], []
                 continue
             if run.outcome == 'fail':
-                literal, strict, boots = [], [], []
+                literal, strict, boots, counted_boots = [], [], [], []
                 continue
             literal.append(run.name)
             counts = True
@@ -472,26 +493,36 @@ class Traceability:
                 if reading.get('requires_ac_and_best_performance') is None:
                     ambiguities.append(f'{run.name} counts by uptime, but AC power / Best performance (REQ-23) '
                                        'was not recorded as met')
+                    unresolved = True
                 counts = reading.get('requires_ac_and_best_performance') is False
-            if run.boot is not None and any(abs(run.boot - b) <= SAME_BOOT for b in boots):
+            if run.boot is None and reading.get('same_restart_counts') is not True:
+                ambiguities.append(f'{run.name}: restart time unknown (no created_utc or uptime), so it cannot '
+                                   'be shown to follow its own restart')
+                counts = False
+            elif run.boot is not None and any(abs(run.boot - b) <= SAME_BOOT for b in counted_boots):
                 if reading.get('same_restart_counts') is None:
                     ambiguities.append(f'{run.name} ran after the same restart as an earlier counted run '
                                        f'(boot {run.boot:%Y-%m-%d %H:%M} UTC); it counts under "≤ 60 min uptime" '
                                        'but not under "one run per restart"')
+                    unresolved = True
                 counts = counts and reading.get('same_restart_counts') is True
             if run.boot is not None:
                 boots.append(run.boot)
             if counts:
                 strict.append(run.name)
+                if run.boot is not None:
+                    counted_boots.append(run.boot)
         n = rule['n']
-        satisfied = len(literal) >= n and len(strict) >= n and not breaks
-        if not satisfied and len(literal) >= n:
+        satisfied = len(strict) >= n and not breaks
+        if not satisfied and len(literal) >= n and (unresolved or breaks):
             self.error('ambiguous-rule', 'the fresh-restart rule is met under one reading but not another '
                        f'({len(literal)} vs {len(strict)} of {n}); record the intended reading in '
                        f'{REGISTRY} rules.consecutive_fresh_acceptance.interpretation')
         for text in ambiguities:
             self.warn('ambiguous-rule', text)
-        return dict(n=n, literal=literal, strict=strict, satisfied=satisfied, ambiguities=ambiguities, limit=limit)
+        decided = {k: v for k, v in reading.items() if k in READINGS}
+        return dict(n=n, literal=literal, strict=strict, satisfied=satisfied, ambiguities=ambiguities, limit=limit,
+                    decided=decided, note=reading.get('reason'))
 
     def gap_closed(self, gap):
         closed = gap.get('closed_by')
@@ -603,10 +634,10 @@ class Traceability:
                    f"{'is' if len(counts[NOT]) == 1 else 'are'} NOT VERIFIED"
                    + (f" ({', '.join(counts[NOT])})." if counts[NOT] else '.'))
         s = self.series
-        streak = (f"{len(s['literal'])} of {s['n']} so far"
-                  + (': ' + ', '.join(f'`{r}`' for r in s['literal']) if s['literal'] else '')
-                  + (f"; {len(s['strict'])} of {s['n']} if each run must follow its own restart"
-                     if len(s['strict']) != len(s['literal']) else ''))
+        streak = (f"{len(s['strict'])} of {s['n']} so far"
+                  + (': ' + ', '.join(f'`{r}`' for r in s['strict']) if s['strict'] else '')
+                  + (f"; {len(s['literal'])} qualifying runs in total: "
+                     + ', '.join(f'`{r}`' for r in s['literal']) if len(s['literal']) != len(s['strict']) else ''))
         limit = s['limit']
         judged = [r for r in self.listed_runs() if r.judged_by_lower_bound and r.outcome in ('pass', 'fail')]
         fresh_pass = [r for r in judged if r.outcome == 'pass' and limit and r.uptime_s is not None and r.uptime_s <= limit]
@@ -648,9 +679,16 @@ class Traceability:
         s = self.series
         rule = self.registry['rules']['consecutive_fresh_acceptance']
         L += ['', f"**Pre-declared fresh-restart rule** (REQ-03, REQ-19): {s['n']} consecutive fresh-restart passes "
-              f"after `{rule['after']}`. Counted by uptime: {len(s['literal'])} "
-              f"({', '.join(s['literal']) or 'none'}). One run per restart, AC power and Best performance: "
-              f"{len(s['strict'])}. Met: {'yes' if s['satisfied'] else 'no'}."]
+              f"after `{rule['after']}`.", '',
+              f"- Fresh-restart passes in the current streak (raw): {len(s['literal'])} "
+              f"({', '.join(s['literal']) or 'none'})",
+              f"- Counted under the rule (independent restarts): {len(s['strict'])} of {s['n']} "
+              f"({', '.join(s['strict']) or 'none'})",
+              f"- Met: {'yes' if s['satisfied'] else 'no'}"]
+        if s['decided']:
+            L.append('- Recorded reading: ' + '; '.join(READINGS[k][v] for k, v in sorted(s['decided'].items())
+                                                        if v in READINGS[k])
+                     + (f" ({s['note']})" if s['note'] else ''))
         if s['ambiguities']:
             L += ['', 'Open questions in the rule, reported and not resolved by the tool:']
             L += [f'- {a}' for a in s['ambiguities']]
