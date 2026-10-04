@@ -106,6 +106,12 @@ The verification, trial and benchmark commands run without the desktop control w
 
 ## Controls
 
+The window groups the controls: run controls top right (Align, Pause, Reset and a separate red STOP),
+camera controls above the wrist camera, and starting poses, joint jogging and settings in three panels
+at the bottom. Toggles show their state (On/Off, Fixed/Adaptive). One status strip under the views shows
+the alignment state, the camera image age against its limit (with a simulated delay), the collision guard
+and the target error. Each button shows its key.
+
 | Control | Result |
 |---|---|
 | V / Target | Switch between ArUco and Picture, using separate saved goals |
@@ -124,7 +130,11 @@ The verification, trial and benchmark commands run without the desktop control w
 | R / Reset | Instantly restore home and reset simulation time |
 | M / Demo | Toggle scripted motion, starting at home |
 | Space / Pause | Pause or resume; cancels active motion commands |
-| Stop | Cancel alignment or demo and command zero velocity |
+| E / STOP | Cancel alignment or demo and command zero velocity |
+| C / Camera delay | Cycle the simulated camera delay (off, 0, 50, 100, 200 ms) |
+| X / Stream | Interrupt or restore the delayed camera stream |
+| U / Obstacle | Add or remove the mapped obstacle column |
+| I / Calibration | Cycle the controller's assumed calibration profile |
 | S | Save a raw camera image and metadata under captures/ |
 | Esc / close window | Exit |
 

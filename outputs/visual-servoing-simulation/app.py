@@ -33,6 +33,14 @@ TEXT = (225, 234, 243)
 MUTED = (151, 169, 188)
 TEAL = (77, 214, 192)
 AMBER = (246, 194, 102)
+PANEL_BG = (22, 29, 40)
+BUTTON = (30, 39, 52)
+BORDER = (42, 52, 66)
+SELECTED = (36, 65, 63)
+TEAL_LIGHT = (127, 230, 214)
+DIM = (110, 123, 140)
+STOP_RED = (201, 58, 46)
+WARN = (232, 162, 58)
 JOINT_NAMES = ["Base yaw", "Shoulder", "Elbow", "Wrist roll", "Wrist pitch", "Tool roll"]
 
 
@@ -40,6 +48,25 @@ def label(canvas: np.ndarray, text: str, x: int, y: int,
           size: float = 0.5, color: tuple = TEXT, weight: int = 1) -> None:
     cv2.putText(canvas, text, (x, y), cv2.FONT_HERSHEY_SIMPLEX, size,
                 color, weight, cv2.LINE_AA)
+
+
+def text_width(text: str, size: float, weight: int = 1) -> int:
+    return cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, size, weight)[0][0]
+
+
+def rounded_rect(canvas: np.ndarray, x: int, y: int, w: int, h: int, color: tuple,
+                 border: tuple | None = None, radius: int = 5) -> None:
+    """Filled rectangle with rounded corners (optionally a 1 px border)."""
+    r = max(0, min(radius, w // 2, h // 2))
+    for c, inset in (((border, 0),) if border is not None else ()) + ((color, 1 if border is not None else 0),):
+        x0, y0, x1, y1, rr = x + inset, y + inset, x + w - 1 - inset, y + h - 1 - inset, max(0, r - inset)
+        if rr == 0:
+            cv2.rectangle(canvas, (x0, y0), (x1, y1), c, -1)
+            continue
+        cv2.rectangle(canvas, (x0 + rr, y0), (x1 - rr, y1), c, -1)
+        cv2.rectangle(canvas, (x0, y0 + rr), (x1, y1 - rr), c, -1)
+        for cx, cy in ((x0 + rr, y0 + rr), (x1 - rr, y0 + rr), (x0 + rr, y1 - rr), (x1 - rr, y1 - rr)):
+            cv2.circle(canvas, (cx, cy), rr, c, -1, cv2.LINE_AA)
 
 
 def random_start_offset(seed=None):
@@ -100,6 +127,7 @@ class Lab:
         self.demo_start = 0.0
         self.pulse_end = 0.0
         self.buttons: list[tuple[tuple[int, int, int, int], str]] = []
+        self.drawn: list[tuple[int, int, int, int]] = []
         self.message = "Jog or load a starting pose, then Align. Lost view [L] demonstrates target recovery."
         self.last_rgb: np.ndarray | None = None
         self.last_image_info = None
@@ -601,39 +629,124 @@ class Lab:
             self.sim.advance(seconds)
         self._handle_collision()
 
-    def button(self, canvas: np.ndarray, rect: tuple[int, int, int, int],
-               text: str, action: str, active: bool = False) -> None:
+    # ------------------------------------------------------------------ drawing helpers
+
+    def button(self, canvas: np.ndarray, rect: tuple[int, int, int, int], text: str, action: str | None,
+               active: bool = False, key: str | None = None, style: str = "normal") -> None:
+        """Draw a button and register its click area. style: normal, primary, stop or disabled.
+
+        `active` marks a switched-on toggle. A disabled button (or action None) is drawn only.
+        """
         x, y, w, h = rect
-        cv2.rectangle(canvas, (x, y), (x+w, y+h), TEAL if active else PANEL, -1)
-        label(canvas, text, x+12, y+h//2+5, color=BG if active else TEXT)
-        self.buttons.append((rect, action))
+        fill, color, key_color = BUTTON, TEXT, MUTED
+        if style == "primary" or (style == "normal" and active):
+            fill, color, key_color = (TEAL, BG, BG) if style == "primary" else (SELECTED, TEAL_LIGHT, TEAL_LIGHT)
+        elif style == "stop":
+            fill, color, key_color = STOP_RED, (255, 255, 255), (255, 255, 255)
+        elif style == "disabled":
+            color, key_color = DIM, DIM
+        elif style == "warn":
+            fill, color, key_color = (58, 42, 20), AMBER, AMBER
+        rounded_rect(canvas, x, y, w, h, fill, border=None if style in ("primary", "stop") or active else BORDER)
+        size = 0.5 if h >= 34 and w >= 140 else 0.46 if h >= 30 else 0.42
+        weight = 2 if style in ("primary", "stop") else 1
+        ty = y + h // 2 + int(10 * size)
+        tx = x + 12
+        if style == "stop":
+            cv2.rectangle(canvas, (x + 14, y + h // 2 - 6), (x + 26, y + h // 2 + 6), color, 2)
+            tx = x + 36
+        if key:
+            label(canvas, text, tx, ty, size, color, weight)
+            kw = text_width(key, 0.36)
+            label(canvas, key, x + w - 10 - kw, ty - 1, 0.36, key_color)
+        else:
+            label(canvas, text, x + (w - text_width(text, size, weight)) // 2, ty, size, color, weight)
+        self.drawn.append(rect)
+        if action is not None and style != "disabled":
+            self.buttons.append((rect, action))
+
+    def segmented(self, canvas, x, y, h, options, key=None, label_size=0.38):
+        """Side-by-side options; the selected one is drawn highlighted and is not clickable.
+
+        options: (text, selected, action) per segment. Returns the right edge.
+        """
+        for text, selected, action in options:
+            w = text_width(text, label_size) + 18
+            rounded_rect(canvas, x, y, w, h, SELECTED if selected else BUTTON, border=BORDER, radius=3)
+            self.drawn.append((x, y, w, h))
+            label(canvas, text, x + 9, y + h // 2 + 4, label_size, TEAL_LIGHT if selected else MUTED)
+            if not selected and action is not None:
+                self.buttons.append(((x, y, w, h), action))
+            x += w
+        if key:
+            label(canvas, key, x + 5, y + h // 2 + 4, 0.34, DIM)
+            x += text_width(key, 0.34) + 5
+        return x
+
+    def status_state(self) -> tuple[str, tuple]:
+        active_state = {"joint_limited": "ALIGNING WITH JOINT LIMITS",
+                        "repositioning": "REPOSITIONING FOR RETRY",
+                        "retry_confirming": "CONFIRMING RETRY",
+                        "realigning": "RETRYING ALIGNMENT",
+                        "checking": "CHECKING CAMERA", "running": "ALIGNING", "waiting": "WAITING FOR TARGET",
+                        "returning": "RETURNING TO LAST VIEW", "scanning": "SEARCHING",
+                        "confirming": "CONFIRMING TARGET"}.get(self.alignment_status, "ALIGNING")
+        if self.paused:
+            return "PAUSED", MUTED
+        if self.aligning:
+            return active_state, TEAL
+        if self.demo:
+            return "DEMO", TEAL
+        if self.alignment_status == "converged":
+            return "CONVERGED", TEAL
+        if self.alignment_status == "idle":
+            return "MANUAL", TEXT
+        return "STOPPED - " + self.alignment_status.replace("_", " "), AMBER
+
+    # ------------------------------------------------------------------ frame
 
     def draw(self) -> np.ndarray:
         canvas = np.full((830, 1200, 3), BG, dtype=np.uint8)
         self.buttons.clear()
-        label(canvas, "Visual Servoing", 24, 36, 0.85, TEAL, 2)
-        gain = self.controller.ibvs.config["gain_per_s"]
-        label(canvas, f"IMAGE-BASED ALIGNMENT / {self.gain_mode.upper()} GAIN {gain:.2f}", 24, 61, 0.44, MUTED)
-        self.button(canvas, (390, 23, 138, 34),
-                    "Auto ON [B]" if self.auto_enabled else "Auto OFF [B]", "auto", self.auto_enabled)
-        self.button(canvas, (542, 23, 114, 34), "Offset [O]", "offset")
-        self.button(canvas, (668, 23, 114, 34), "Align [G]", "align", self.aligning)
-        self.button(canvas, (794, 23, 114, 34), "Reset [R]", "reset")
-        self.button(canvas, (920, 23, 114, 34), "Demo [M]", "demo", self.demo)
-        self.button(canvas, (1046, 23, 130, 34), "Play" if self.paused else "Pause", "pause", self.paused)
+        self.drawn = []  # every control drawn this frame, clickable or not (layout checks)
+        state, state_color = self.status_state()
+
+        # Header: title and the run controls (Stop set apart).
+        label(canvas, "Visual Servoing", 24, 38, 0.85, TEAL, 2)
+        label(canvas, "IMAGE-BASED ALIGNMENT / LAB MODE", 24, 60, 0.4, MUTED)
+        self.button(canvas, (650, 16, 132, 44), "Align", "align", key="G",
+                    style="primary" if not self.aligning else "normal", active=self.aligning)
+        self.button(canvas, (790, 16, 120, 44), "Play" if self.paused else "Pause", "pause", self.paused, key="Space")
+        self.button(canvas, (918, 16, 104, 44), "Reset", "reset", key="R")
+        cv2.line(canvas, (1029, 22), (1029, 54), BORDER, 1)
+        self.button(canvas, (1036, 16, 140, 44), "STOP", "stop", key="E", style="stop")
+
+        # View captions with the camera's own controls.
         matching_view = self.show_matches and self.perception_mode != "aruco"
-        label(canvas, "TEMPLATE / CAMERA MATCHES" if matching_view else "WORLD VIEW", 24, 92, 0.46, MUTED)
-        if self.perception_mode!="aruco":
-            self.button(canvas, (228,73,122,24),
-                        "Learned [K]" if self.perception_mode=="learned" else "SIFT [K]", "matcher",
-                        self.perception_mode=="learned")
-        self.button(canvas, (362, 73, 230, 24),
-                    "Picture [V]" if self.perception_mode != "aruco" else "ArUco [V]", "perception",
-                    self.perception_mode != "aruco")
-        self.button(canvas, (1000, 73, 176, 24), "Matches [F]", "matches", matching_view)
-        label(canvas, "WRIST CAMERA / 640 x 480", 608, 92, 0.46, MUTED)
-        delay_label = "Delay [C]" if self.camera is None else f"{self.camera.config['delay_s']*1000:.0f} ms [C]"
-        self.button(canvas, (870,73,118,24), delay_label, "camera_delay", self.camera is not None)
+        label(canvas, "TEMPLATE / CAMERA MATCHES" if matching_view else "WORLD VIEW", 24, 86, 0.4, MUTED)
+        sim_time = f"{self.sim.data.time:.2f} s"
+        label(canvas, sim_time, 592 - text_width(sim_time, 0.42), 86, 0.42, TEXT)
+        label(canvas, "sim time", 592 - text_width(sim_time, 0.42) - text_width("sim time ", 0.4), 86, 0.4, MUTED)
+        label(canvas, "WRIST CAMERA", 608, 86, 0.4, MUTED)
+        # Camera controls, placed right to left so they never overlap the caption.
+        picture = "disabled" if self.perception_mode == "aruco" else "normal"
+        stream_on = self.camera is not None and self.camera.stream_enabled
+        right = 1176
+        for text, action, active, key, style in (
+                ("Stream" if stream_on or self.camera is None else "No stream", "camera_stream", False, "X",
+                 "disabled" if self.camera is None else "normal" if stream_on else "warn"),
+                ("Matches", "matches", matching_view, "F", picture),
+                ("Learned" if self.perception_mode == "learned" else "SIFT", "matcher",
+                 self.perception_mode == "learned", "K", picture)):
+            w = text_width(text, 0.42) + text_width(key, 0.36) + 34
+            right -= w
+            self.button(canvas, (right, 68, w, 24), text, action, active, key=key, style=style)
+            right -= 6
+        options = [("ArUco", self.perception_mode == "aruco", "perception"),
+                   ("Picture", self.perception_mode != "aruco", "perception")]
+        width = sum(text_width(t, 0.38) + 18 for t, _, _ in options) + text_width("V", 0.34) + 5
+        self.segmented(canvas, right - 2 - width, 68, 24, options, key="V")
+
         frame = None if self.camera is None else self.camera.latest
         rgb = self.sim.image() if frame is None else frame.rgb
         self.last_rgb = rgb
@@ -672,70 +785,167 @@ class Lab:
             y, x = (426-resized.shape[0])//2, (568-resized.shape[1])//2
             world[y:y+resized.shape[0], x:x+resized.shape[1]] = resized
         cv2.drawMarker(annotated, (320, 240), (230, 163, 81), cv2.MARKER_CROSS, 18, 1)
-        canvas[102:528, 24:592] = cv2.resize(world, (568, 426))
-        canvas[102:528, 608:1176] = cv2.resize(annotated, (568, 426))
-        active_state = {"joint_limited": "ALIGNING WITH JOINT LIMITS",
-                        "repositioning": "REPOSITIONING FOR RETRY",
-                        "retry_confirming": "CONFIRMING RETRY",
-                        "realigning": "RETRYING ALIGNMENT",
-                        "checking": "CHECKING CAMERA", "running": "ALIGNING", "waiting": "WAITING FOR TARGET",
-                        "returning": "RETURNING TO LAST VIEW", "scanning": "SEARCHING",
-                        "confirming": "CONFIRMING TARGET"}.get(self.alignment_status, "ALIGNING")
-        state = ("PAUSED" if self.paused else active_state if self.aligning else "DEMO" if self.demo
-                 else self.alignment_status.upper().replace("_", " ") if self.alignment_status != "idle" else "MANUAL")
-        label(canvas, f"{state}   |   simulation time {self.sim.data.time:7.2f} s", 24, 551, 0.45, TEAL)
-        if self.perception_mode != "aruco":
-            if corners is None:
-                message = f"Picture: {observation.reason.replace('_', ' ')} | {observation.inliers} inliers"
-                label(canvas, message, 608, 551, 0.40, AMBER)
-            else:
-                error = np.sqrt(np.mean(np.sum((corners-self.reference)**2,axis=1)))
-                backend = ("Learned GPU" if self.perception.device.type == "cuda" else "Learned CPU") if self.perception_mode == "learned" else "Picture"
-                label(canvas, f"{backend} | {observation.inliers} inliers | error {error:.2f} px | {observation.processing_ms:.0f} ms",
-                      608, 551, 0.42, TEAL)
-        elif corners is None:
-            message = "Marker not detected - finding target" if self.aligning else "Marker not detected - Align [G] can try to recover"
-            label(canvas, message, 608, 551, 0.42, AMBER)
+        canvas[100:526, 24:592] = cv2.resize(world, (568, 426))
+        camera_view = cv2.resize(annotated, (568, 426))
+        now = float(self.sim.data.time)
+        age = None if self.camera is None else self.camera.age_s(now)
+        limit = None if self.camera is None else self.camera.config["max_observation_age_s"]
+        stale = age is not None and age >= limit
+        if self.camera is not None and (stale or not self.camera.stream_enabled):
+            # Dim the last delivered image so it cannot be mistaken for a live view.
+            camera_view = (camera_view * 0.35 + np.array(BG) * 0.65).astype(np.uint8)
+            cv2.rectangle(camera_view, (1, 1), (566, 424), WARN, 2)
+            title = "No new frame"
+            detail = ("Waiting for the first delivered image" if age is None else
+                      f"Last delivered image is {age*1000:.0f} ms old" + ("" if self.camera.stream_enabled else "; stream off"))
+            label(camera_view, title, 284 - text_width(title, 0.6, 2) // 2, 205, 0.6, AMBER, 2)
+            label(camera_view, detail, 284 - text_width(detail, 0.45) // 2, 232, 0.45, TEXT)
+        canvas[100:526, 608:1176] = camera_view
+
+        # Status strip: alignment, camera age, collision guard, target and precision.
+        self.draw_status(canvas, state, state_color, corners, observation, frame, age, limit)
+
+        # Bottom panels.
+        self.draw_start_panel(canvas)
+        self.draw_jog_panel(canvas)
+        self.draw_settings_panel(canvas)
+
+        failed = state_color == AMBER
+        label(canvas, self.message[:150], 24, 820, 0.42, AMBER if failed else MUTED)
+        hint = "S save capture   Esc quit"
+        label(canvas, hint, 1176 - text_width(hint, 0.36), 820, 0.36, DIM)
+        return canvas
+
+    def draw_status(self, canvas, state, state_color, corners, observation, frame, age, limit):
+        x0, y0, h = 24, 536, 66
+        widths = (258, 330, 282, 282)
+        rounded_rect(canvas, x0, y0, 1152, h, BORDER, radius=6)
+        x = x0
+        cells = []
+        for i, w in enumerate(widths):
+            left = x + (0 if i == 0 else 1)
+            right = x + w - (0 if i == len(widths) - 1 else 0)
+            rounded_rect(canvas, left + 1, y0 + 1, right - left - 1, h - 2, PANEL_BG,
+                         radius=5 if i in (0, len(widths) - 1) else 0)
+            cells.append(left + 14)
+            x += w
+        caption = 0.36
+        # Alignment
+        label(canvas, "ALIGNMENT", cells[0], y0 + 20, caption, MUTED)
+        cv2.circle(canvas, (cells[0] + 5, y0 + 43), 5, state_color, -1, cv2.LINE_AA)
+        label(canvas, state[:28], cells[0] + 16, y0 + 48, 0.48 if len(state) < 20 else 0.4, state_color, 1)
+        # Camera image age against the freshness limit
+        cx, cw = cells[1], widths[1] - 28
+        label(canvas, "CAMERA IMAGE AGE", cx, y0 + 20, caption, MUTED)
+        bar_y = y0 + 30
+        rounded_rect(canvas, cx, bar_y, cw, 8, (37, 47, 61), radius=4)
+        if self.camera is None:
+            value, note, color = "live", "no simulated delay (C adds one)", MUTED
+        elif age is None:
+            value, note, color = f"- / {limit*1000:.0f} ms", "waiting for the first delivered image", MUTED
+        else:
+            over = age >= limit
+            color = WARN if over else TEAL
+            value = f"{age*1000:.0f} / {limit*1000:.0f} ms"
+            fill = int(cw * min(age / limit, 1.0))
+            if fill > 0:
+                rounded_rect(canvas, cx, bar_y, max(fill, 8), 8, color, radius=4)
+            note = ("over the limit" if over else "fresh") + f" | frame {frame.sequence}" if frame is not None else ""
+        label(canvas, value, cx + cw - text_width(value, 0.36), y0 + 20, 0.36, AMBER if color == WARN else
+              TEXT if color == TEAL else MUTED)
+        label(canvas, note, cx, y0 + 56, 0.36, MUTED)
+        # Collision guard
+        decision = self.sim.collision.last
+        gx = cells[2]
+        label(canvas, "COLLISION GUARD", gx, y0 + 20, caption, MUTED)
+        warn = decision.status in ("limited", "blocked")
+        status = decision.status.upper()
+        label(canvas, status, gx, y0 + 40, 0.45, AMBER if warn else TEAL, 1)
+        distance = "not measured" if decision.clearance_m is None else f"{decision.clearance_m*1000:.1f} mm"
+        label(canvas, f"clearance {distance}", gx + text_width(status, 0.45) + 10, y0 + 40, 0.4, TEXT)
+        skips = self.controller.blocked_waypoints + (0 if self.controller.startup is None else self.controller.startup.blocked_waypoints)
+        label(canvas, f"detours {self.sim.collision.detours} | skipped {skips}", gx, y0 + 56, 0.36, MUTED)
+        # Target and precision
+        px = cells[3]
+        target = "MARKER 7" if self.perception_mode == "aruco" else (
+            ("LEARNED" if self.perception_mode == "learned" else "SIFT") + " PICTURE")
+        label(canvas, f"TARGET / {target}", px, y0 + 20, caption, MUTED)
+        if corners is None:
+            reason = "not detected" if self.perception_mode == "aruco" else observation.reason.replace("_", " ")
+            label(canvas, reason[:32], px, y0 + 40, 0.42, AMBER)
         else:
             error = np.sqrt(np.mean(np.sum((corners - self.reference)**2, axis=1)))
-            label(canvas, f"Marker 7 visible   |   RMS corner error {error:.2f} px",
-                  608, 551, 0.45, TEAL)
-        if self.camera is not None:
-            age = self.camera.age_s(float(self.sim.data.time))
-            timing = ("Waiting for delivered image" if frame is None else
-                      f"Frame {frame.sequence} | captured {frame.captured_s:.2f}s | age {age*1000:.0f} ms")
-            stream = "ON" if self.camera.stream_enabled else "OFF"
-            label(canvas, f"{timing} | camera {stream} [X]", 608, 566, 0.34, MUTED)
-        cv2.line(canvas, (24, 571), (1176, 571), PANEL, 1)
-        self.button(canvas, (24, 580, 170, 28), "Cold start [N]", "cold_start", self.cold_start_pending)
-        self.button(canvas, (208, 580, 170, 28), "Random [P]", "random_start")
-        self.button(canvas, (392, 580, 200, 28), "Teach image [H]", "teach")
-        self.button(canvas, (608, 580, 238, 28),
-                    "Adaptive gain [T]" if self.gain_mode == "adaptive" else "Fixed gain [T]",
-                    "gain", self.gain_mode == "adaptive")
-        self.button(canvas, (860, 580, 172, 28), "Lost view [L]", "lost_view")
-        self.button(canvas, (1046, 580, 130, 28), "Stop", "stop")
+            text = f"RMS {error:.2f} px"
+            if self.perception_mode != "aruco":
+                text += f" | {observation.inliers} inliers | {observation.processing_ms:.0f} ms"
+            label(canvas, text, px, y0 + 40, 0.42, TEXT)
+        hold = getattr(self.controller.ibvs, "held_seconds", 0.0) or 0.0
+        hold_s = self.sim.config["ibvs"]["success_hold_s"]
+        moving = float(np.abs(self.sim.velocity_command).max()) > 1e-9
+        label(canvas, f"hold {hold:.1f} / {hold_s:g} s | command {'moving' if moving else 'zero'}",
+              px, y0 + 56, 0.36, MUTED)
+
+    def draw_panel(self, canvas, x, y, w, h, title, note=None):
+        rounded_rect(canvas, x, y, w, h, PANEL_BG, border=BORDER, radius=6)
+        label(canvas, title, x + 12, y + 20, 0.36, MUTED)
+        if note:
+            label(canvas, note, x + w - 12 - text_width(note, 0.34), y + 20, 0.34, DIM)
+
+    def draw_start_panel(self, canvas):
+        x, y, w = 24, 612, 296
+        self.draw_panel(canvas, x, y, w, 190, "STARTING POSE")
+        starts = (("Offset", "offset", "O", False), ("Cold start", "cold_start", "N", self.cold_start_pending),
+                  ("Random", "random_start", "P", False), ("Lost view", "lost_view", "L", False),
+                  ("Teach image", "teach", "H", False))
+        bw = (w - 24 - 8) // 2
+        for i, (text, action, key, active) in enumerate(starts):
+            col, row = i % 2, i // 2
+            self.button(canvas, (x + 12 + col * (bw + 8), y + 32 + row * 42, bw, 34), text, action, active, key=key)
+
+    def draw_jog_panel(self, canvas):
+        x, y, w = 336, 612, 524
+        self.draw_panel(canvas, x, y, w, 190, "JOG JOINTS", "1-6 select | A / D jog")
+        col_w = (w - 24 - 16) // 2
         for i, name in enumerate(JOINT_NAMES):
             col, row = i // 3, i % 3
-            x, y = 24 + 584 * col, 615 + 37 * row
+            jx, jy = x + 12 + col * (col_w + 16), y + 34 + row * 46
             color = TEAL if i == self.selected else TEXT
-            label(canvas, f"J{i+1}  {name}", x, y+21, 0.5, color)
-            label(canvas, f"{np.rad2deg(self.sim.data.qpos[i]):+7.1f} deg", x+250, y+21, 0.47, MUTED)
-            self.button(canvas, (x+406, y, 65, 29), "-", f"jog:{i}:-1")
-            self.button(canvas, (x+483, y, 65, 29), "+", f"jog:{i}:1")
-        decision = self.sim.collision.last
-        distance = "not measured" if decision.clearance_m is None else f"{decision.clearance_m*1000:.1f} mm"
-        skips = self.controller.blocked_waypoints + (0 if self.controller.startup is None else self.controller.startup.blocked_waypoints)
-        label(canvas, f"Collision guard: {decision.status.upper()} | clearance {distance} | detours {self.sim.collision.detours} | skipped {skips}",
-              24, 742, 0.40, AMBER if decision.status in ("limited","blocked") else MUTED)
-        self.button(canvas, (1000,725,176,28), "Obstacle [U]", "obstacle", self.sim.obstacle_enabled)
-        label(canvas, f"Calibration assumption: {self.calibration_name}", 24, 774, 0.43,
-              MUTED if self.calibration_name == "nominal" else AMBER)
-        self.button(canvas,(960,758,216,28),"Calibration [I]","calibration",
-                    self.calibration_name != "nominal")
-        label(canvas, self.message, 24, 804, 0.44, MUTED)
-        label(canvas, "I: calibration   U: obstacle   C: delay   X: camera   V: target   K: matcher   B: auto   P: random   N: cold   G: align   1-6: joint   A/D: jog   Space: pause   Esc: quit", 24, 824, 0.37, MUTED)
-        return canvas
+            label(canvas, f"J{i+1}", jx, jy + 21, 0.42, TEAL if i == self.selected else MUTED)
+            label(canvas, name, jx + 28, jy + 21, 0.45, color)
+            angle = f"{np.rad2deg(self.sim.data.qpos[i]):+.1f}"
+            ax = jx + col_w - 76 - 8 - text_width(angle, 0.42) - 6
+            label(canvas, angle, ax, jy + 21, 0.42, TEXT)
+            cv2.circle(canvas, (ax + text_width(angle, 0.42) + 4, jy + 10), 2, TEXT, 1, cv2.LINE_AA)
+            self.button(canvas, (jx + col_w - 76, jy, 36, 32), "-", f"jog:{i}:-1")
+            self.button(canvas, (jx + col_w - 36, jy, 36, 32), "+", f"jog:{i}:1")
+
+    def draw_settings_panel(self, canvas):
+        x, y, w = 876, 612, 300
+        self.draw_panel(canvas, x, y, w, 190, "SETTINGS")
+        gain = self.controller.ibvs.config["gain_per_s"]
+        delay = "Off" if self.camera is None else f"{self.camera.config['delay_s']*1000:.0f} ms"
+        rows = (
+            ("Auto start", "B", [("On", self.auto_enabled, "auto"), ("Off", not self.auto_enabled, "auto")]),
+            (f"Gain {gain:.2f}", "T", [("Fixed", self.gain_mode == "fixed", "gain"),
+                                       ("Adaptive", self.gain_mode == "adaptive", "gain")]),
+            ("Camera delay", "C", ("cycle", delay, "camera_delay", self.camera is not None)),
+            ("Obstacle", "U", [("Off", not self.sim.obstacle_enabled, "obstacle"),
+                               ("On", self.sim.obstacle_enabled, "obstacle")]),
+            ("Calibration", "I", ("cycle", self.calibration_name, "calibration", self.calibration_name != "nominal")),
+            ("Demo loop", "M", [("Off", not self.demo, "demo"), ("On", self.demo, "demo")]),
+        )
+        for i, (name, key, control) in enumerate(rows):
+            ry = y + 32 + i * 26
+            label(canvas, name, x + 12, ry + 15, 0.4, TEXT)
+            label(canvas, key, x + 12 + text_width(name, 0.4) + 6, ry + 15, 0.34, DIM)
+            if isinstance(control, tuple):
+                _, value, action, changed = control
+                text = f"{value} >"
+                bw = text_width(text, 0.38) + 18
+                self.button(canvas, (x + w - 12 - bw, ry, bw, 21), text, action, changed)
+            else:
+                width = sum(text_width(t, 0.38) + 18 for t, _, _ in control)
+                self.segmented(canvas, x + w - 12 - width, ry, 21, control)
 
     def on_mouse(self, event: int, x: int, y: int, flags: int, param: object) -> None:
         if event != cv2.EVENT_LBUTTONDOWN:
@@ -754,7 +964,8 @@ class Lab:
                      "random_start": self.random_start, "perception": self.toggle_perception,
                      "matches": self.toggle_matches, "matcher": self.toggle_matcher,
                      "camera_delay": self.cycle_camera_delay, "obstacle": self.toggle_obstacle,
-                     "calibration": self.cycle_calibration}[action]()
+                     "calibration": self.cycle_calibration,
+                     "camera_stream": self.toggle_camera_stream}[action]()
                 break
 
     def save(self) -> None:
@@ -836,6 +1047,8 @@ class Lab:
                     self.align()
                 elif key == 32:
                     self.toggle_pause()
+                elif key in (ord("e"), ord("E")):
+                    self.stop()
                 elif key in (ord("s"), ord("S")):
                     self.save()
         finally:
