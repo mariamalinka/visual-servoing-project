@@ -112,6 +112,11 @@ at the bottom. Toggles show their state (On/Off, Fixed/Adaptive). One status str
 the alignment state, the camera image age against its limit (with a simulated delay), the collision guard
 and the target error. Each button shows its key.
 
+The window opens as large as the screen allows, drawn at that resolution so text stays sharp. Choose a
+size with `run.cmd --ui-scale 1.5` (1 = the original 1200 x 830, up to 3), or `--ui-scale auto` (default).
+The window can be resized or maximized: the layout is redrawn at the new size and keeps its proportions,
+with background bars filling any extra width or height.
+
 | Control | Result |
 |---|---|
 | V / Target | Switch between ArUco and Picture, using separate saved goals |

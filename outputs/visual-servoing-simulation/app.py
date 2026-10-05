@@ -55,10 +55,10 @@ def text_width(text: str, size: float, weight: int = 1) -> int:
 
 
 def rounded_rect(canvas: np.ndarray, x: int, y: int, w: int, h: int, color: tuple,
-                 border: tuple | None = None, radius: int = 5) -> None:
-    """Filled rectangle with rounded corners (optionally a 1 px border)."""
+                 border: tuple | None = None, radius: int = 5, border_px: int = 1) -> None:
+    """Filled rectangle with rounded corners (optionally with a border)."""
     r = max(0, min(radius, w // 2, h // 2))
-    for c, inset in (((border, 0),) if border is not None else ()) + ((color, 1 if border is not None else 0),):
+    for c, inset in (((border, 0),) if border is not None else ()) + ((color, border_px if border is not None else 0),):
         x0, y0, x1, y1, rr = x + inset, y + inset, x + w - 1 - inset, y + h - 1 - inset, max(0, r - inset)
         if rr == 0:
             cv2.rectangle(canvas, (x0, y0), (x1, y1), c, -1)
@@ -67,6 +67,86 @@ def rounded_rect(canvas: np.ndarray, x: int, y: int, w: int, h: int, color: tupl
         cv2.rectangle(canvas, (x0, y0 + rr), (x1, y1 - rr), c, -1)
         for cx, cy in ((x0 + rr, y0 + rr), (x1 - rr, y0 + rr), (x0 + rr, y1 - rr), (x1 - rr, y1 - rr)):
             cv2.circle(canvas, (cx, cy), rr, c, -1, cv2.LINE_AA)
+
+
+UI_SIZE = (1200, 830)  # base layout in pixels at scale 1
+
+
+class Painter:
+    """Draws the base 1200 x 830 layout scaled by `scale`; every coordinate passed in is a base unit.
+
+    Text is drawn at the scaled size rather than stretched afterwards, so it stays sharp.
+    """
+
+    def __init__(self, canvas: np.ndarray, scale: float):
+        self.canvas, self.s = canvas, scale
+
+    def px(self, value: float) -> int:
+        return int(round(value * self.s))
+
+    def thick(self, weight: int) -> int:
+        # Keep strokes thin until the scale is large enough for a heavier one to read well.
+        return weight if self.s < 1.75 else max(1, int(round(weight * self.s * 0.75)))
+
+    def width(self, text: str, size: float, weight: int = 1) -> float:
+        return text_width(text, size * self.s, self.thick(weight)) / self.s
+
+    def text(self, text: str, x: float, y: float, size: float = 0.5, color: tuple = TEXT, weight: int = 1) -> None:
+        label(self.canvas, text, self.px(x), self.px(y), size * self.s, color, self.thick(weight))
+
+    def scaled(self, rect):
+        x, y, w, h = rect
+        return (self.px(x), self.px(y), self.px(x + w) - self.px(x), self.px(y + h) - self.px(y))
+
+    def rect(self, x, y, w, h, color, border=None, radius=5) -> None:
+        rounded_rect(self.canvas, *self.scaled((x, y, w, h)), color, border=border, radius=self.px(radius),
+                     border_px=max(1, int(self.s)))
+
+    def line(self, p1, p2, color, weight=1) -> None:
+        cv2.line(self.canvas, (self.px(p1[0]), self.px(p1[1])), (self.px(p2[0]), self.px(p2[1])), color,
+                 self.thick(weight), cv2.LINE_AA)
+
+    def circle(self, center, radius, color, weight=-1) -> None:
+        cv2.circle(self.canvas, (self.px(center[0]), self.px(center[1])), max(1, self.px(radius)), color,
+                   weight if weight < 0 else self.thick(weight), cv2.LINE_AA)
+
+    def box(self, p1, p2, color, weight=1) -> None:
+        cv2.rectangle(self.canvas, (self.px(p1[0]), self.px(p1[1])), (self.px(p2[0]), self.px(p2[1])), color,
+                      self.thick(weight))
+
+    def image(self, x, y, w, h, image: np.ndarray) -> None:
+        sx, sy, sw, sh = self.scaled((x, y, w, h))
+        interpolation = cv2.INTER_AREA if sw < image.shape[1] else cv2.INTER_LINEAR
+        self.canvas[sy:sy + sh, sx:sx + sw] = cv2.resize(image, (sw, sh), interpolation=interpolation)
+
+
+def screen_fit_scale() -> float:
+    """Largest UI scale (in 0.05 steps, 1.0 to 3.0) whose window fits the Windows work area.
+
+    Makes the process DPI-aware first, so the scale is measured in real pixels and Windows does not
+    stretch (and blur) the window afterwards. Other platforms keep 1.0.
+    """
+    if sys.platform != "win32":
+        return 1.0
+    import ctypes
+    from ctypes import wintypes
+    try:
+        ctypes.windll.shcore.SetProcessDpiAwareness(2)
+    except (AttributeError, OSError):
+        try:
+            ctypes.windll.user32.SetProcessDPIAware()
+        except (AttributeError, OSError):
+            pass
+    area = wintypes.RECT()
+    if not ctypes.windll.user32.SystemParametersInfoW(0x30, 0, ctypes.byref(area), 0):  # SPI_GETWORKAREA
+        return 1.0
+    return fit_scale(area.right - area.left, area.bottom - area.top)
+
+
+def fit_scale(width: int, height: int) -> float:
+    """Largest scale in 0.05 steps, from 1 to 3, whose window fits a work area of this size."""
+    fit = min((width - 40) / UI_SIZE[0], (height - 80) / UI_SIZE[1])  # room for borders and title bar
+    return float(min(3.0, max(1.0, np.floor(fit * 20 + 1e-9) / 20)))
 
 
 def random_start_offset(seed=None):
@@ -106,7 +186,12 @@ def report_perception_error(mode, exc):
 
 class Lab:
     def __init__(self, sim: Simulation, reference_path=None,
-                 cold_start=False, auto_start=True, perception_mode="aruco", camera_timing=None, calibration=None, precision=True) -> None:
+                 cold_start=False, auto_start=True, perception_mode="aruco", camera_timing=None, calibration=None, precision=True,
+                 ui_scale: float = 1.0) -> None:
+        if not 0.5 <= ui_scale <= 4.0:
+            raise ValueError("ui_scale must be between 0.5 and 4")
+        self.ui_scale = float(ui_scale)
+        self.view_offset = (0, 0)  # where the drawn layout sits inside the window (letterboxing)
         self.sim = sim
         self.precision_settings = load_precision_config()
         self.precision_enabled = bool(precision and self.precision_settings["enabled"])
@@ -637,6 +722,7 @@ class Lab:
 
         `active` marks a switched-on toggle. A disabled button (or action None) is drawn only.
         """
+        p = self.p
         x, y, w, h = rect
         fill, color, key_color = BUTTON, TEXT, MUTED
         if style == "primary" or (style == "normal" and active):
@@ -647,40 +733,41 @@ class Lab:
             color, key_color = DIM, DIM
         elif style == "warn":
             fill, color, key_color = (58, 42, 20), AMBER, AMBER
-        rounded_rect(canvas, x, y, w, h, fill, border=None if style in ("primary", "stop") or active else BORDER)
+        p.rect(x, y, w, h, fill, border=None if style in ("primary", "stop") or active else BORDER)
         size = 0.5 if h >= 34 and w >= 140 else 0.46 if h >= 30 else 0.42
         weight = 2 if style in ("primary", "stop") else 1
         ty = y + h // 2 + int(10 * size)
         tx = x + 12
         if style == "stop":
-            cv2.rectangle(canvas, (x + 14, y + h // 2 - 6), (x + 26, y + h // 2 + 6), color, 2)
+            p.box((x + 14, y + h // 2 - 6), (x + 26, y + h // 2 + 6), color, 2)
             tx = x + 36
         if key:
-            label(canvas, text, tx, ty, size, color, weight)
-            kw = text_width(key, 0.36)
-            label(canvas, key, x + w - 10 - kw, ty - 1, 0.36, key_color)
+            p.text(text, tx, ty, size, color, weight)
+            kw = p.width(key, 0.36)
+            p.text(key, x + w - 10 - kw, ty - 1, 0.36, key_color)
         else:
-            label(canvas, text, x + (w - text_width(text, size, weight)) // 2, ty, size, color, weight)
-        self.drawn.append(rect)
+            p.text(text, x + (w - p.width(text, size, weight)) // 2, ty, size, color, weight)
+        self.drawn.append(p.scaled(rect))
         if action is not None and style != "disabled":
-            self.buttons.append((rect, action))
+            self.buttons.append((p.scaled(rect), action))
 
     def segmented(self, canvas, x, y, h, options, key=None, label_size=0.38):
         """Side-by-side options; the selected one is drawn highlighted and is not clickable.
 
         options: (text, selected, action) per segment. Returns the right edge.
         """
+        p = self.p
         for text, selected, action in options:
-            w = text_width(text, label_size) + 18
-            rounded_rect(canvas, x, y, w, h, SELECTED if selected else BUTTON, border=BORDER, radius=3)
-            self.drawn.append((x, y, w, h))
-            label(canvas, text, x + 9, y + h // 2 + 4, label_size, TEAL_LIGHT if selected else MUTED)
+            w = p.width(text, label_size) + 18
+            p.rect(x, y, w, h, SELECTED if selected else BUTTON, border=BORDER, radius=3)
+            self.drawn.append(p.scaled((x, y, w, h)))
+            p.text(text, x + 9, y + h // 2 + 4, label_size, TEAL_LIGHT if selected else MUTED)
             if not selected and action is not None:
-                self.buttons.append(((x, y, w, h), action))
+                self.buttons.append((p.scaled((x, y, w, h)), action))
             x += w
         if key:
-            label(canvas, key, x + 5, y + h // 2 + 4, 0.34, DIM)
-            x += text_width(key, 0.34) + 5
+            p.text(key, x + 5, y + h // 2 + 4, 0.34, DIM)
+            x += p.width(key, 0.34) + 5
         return x
 
     def status_state(self) -> tuple[str, tuple]:
@@ -706,28 +793,30 @@ class Lab:
     # ------------------------------------------------------------------ frame
 
     def draw(self) -> np.ndarray:
-        canvas = np.full((830, 1200, 3), BG, dtype=np.uint8)
+        p = self.p = Painter(np.full((round(UI_SIZE[1] * self.ui_scale), round(UI_SIZE[0] * self.ui_scale), 3),
+                                     BG, dtype=np.uint8), self.ui_scale)
+        canvas = p.canvas
         self.buttons.clear()
         self.drawn = []  # every control drawn this frame, clickable or not (layout checks)
         state, state_color = self.status_state()
 
         # Header: title and the run controls (Stop set apart).
-        label(canvas, "Visual Servoing", 24, 38, 0.85, TEAL, 2)
-        label(canvas, "IMAGE-BASED ALIGNMENT / LAB MODE", 24, 60, 0.4, MUTED)
+        p.text("Visual Servoing", 24, 38, 0.85, TEAL, 2)
+        p.text("IMAGE-BASED ALIGNMENT / LAB MODE", 24, 60, 0.4, MUTED)
         self.button(canvas, (650, 16, 132, 44), "Align", "align", key="G",
                     style="primary" if not self.aligning else "normal", active=self.aligning)
         self.button(canvas, (790, 16, 120, 44), "Play" if self.paused else "Pause", "pause", self.paused, key="Space")
         self.button(canvas, (918, 16, 104, 44), "Reset", "reset", key="R")
-        cv2.line(canvas, (1029, 22), (1029, 54), BORDER, 1)
+        p.line((1029, 22), (1029, 54), BORDER)
         self.button(canvas, (1036, 16, 140, 44), "STOP", "stop", key="E", style="stop")
 
         # View captions with the camera's own controls.
         matching_view = self.show_matches and self.perception_mode != "aruco"
-        label(canvas, "TEMPLATE / CAMERA MATCHES" if matching_view else "WORLD VIEW", 24, 86, 0.4, MUTED)
+        p.text("TEMPLATE / CAMERA MATCHES" if matching_view else "WORLD VIEW", 24, 86, 0.4, MUTED)
         sim_time = f"{self.sim.data.time:.2f} s"
-        label(canvas, sim_time, 592 - text_width(sim_time, 0.42), 86, 0.42, TEXT)
-        label(canvas, "sim time", 592 - text_width(sim_time, 0.42) - text_width("sim time ", 0.4), 86, 0.4, MUTED)
-        label(canvas, "WRIST CAMERA", 608, 86, 0.4, MUTED)
+        p.text(sim_time, 592 - p.width(sim_time, 0.42), 86, 0.42, TEXT)
+        p.text("sim time", 592 - p.width(sim_time, 0.42) - p.width("sim time ", 0.4), 86, 0.4, MUTED)
+        p.text("WRIST CAMERA", 608, 86, 0.4, MUTED)
         # Camera controls, placed right to left so they never overlap the caption.
         picture = "disabled" if self.perception_mode == "aruco" else "normal"
         stream_on = self.camera is not None and self.camera.stream_enabled
@@ -738,13 +827,13 @@ class Lab:
                 ("Matches", "matches", matching_view, "F", picture),
                 ("Learned" if self.perception_mode == "learned" else "SIFT", "matcher",
                  self.perception_mode == "learned", "K", picture)):
-            w = text_width(text, 0.42) + text_width(key, 0.36) + 34
+            w = p.width(text, 0.42) + p.width(key, 0.36) + 34
             right -= w
             self.button(canvas, (right, 68, w, 24), text, action, active, key=key, style=style)
             right -= 6
         options = [("ArUco", self.perception_mode == "aruco", "perception"),
                    ("Picture", self.perception_mode != "aruco", "perception")]
-        width = sum(text_width(t, 0.38) + 18 for t, _, _ in options) + text_width("V", 0.34) + 5
+        width = sum(p.width(t, 0.38) + 18 for t, _, _ in options) + p.width("V", 0.34) + 5
         self.segmented(canvas, right - 2 - width, 68, 24, options, key="V")
 
         frame = None if self.camera is None else self.camera.latest
@@ -785,22 +874,24 @@ class Lab:
             y, x = (426-resized.shape[0])//2, (568-resized.shape[1])//2
             world[y:y+resized.shape[0], x:x+resized.shape[1]] = resized
         cv2.drawMarker(annotated, (320, 240), (230, 163, 81), cv2.MARKER_CROSS, 18, 1)
-        canvas[100:526, 24:592] = cv2.resize(world, (568, 426))
-        camera_view = cv2.resize(annotated, (568, 426))
+        p.image(24, 100, 568, 426, world)
+        camera_view = annotated
         now = float(self.sim.data.time)
         age = None if self.camera is None else self.camera.age_s(now)
         limit = None if self.camera is None else self.camera.config["max_observation_age_s"]
         stale = age is not None and age >= limit
-        if self.camera is not None and (stale or not self.camera.stream_enabled):
+        no_frame = self.camera is not None and (stale or not self.camera.stream_enabled)
+        if no_frame:
             # Dim the last delivered image so it cannot be mistaken for a live view.
             camera_view = (camera_view * 0.35 + np.array(BG) * 0.65).astype(np.uint8)
-            cv2.rectangle(camera_view, (1, 1), (566, 424), WARN, 2)
+        p.image(608, 100, 568, 426, camera_view)
+        if no_frame:
+            p.box((609, 101), (1174, 524), WARN, 2)
             title = "No new frame"
             detail = ("Waiting for the first delivered image" if age is None else
                       f"Last delivered image is {age*1000:.0f} ms old" + ("" if self.camera.stream_enabled else "; stream off"))
-            label(camera_view, title, 284 - text_width(title, 0.6, 2) // 2, 205, 0.6, AMBER, 2)
-            label(camera_view, detail, 284 - text_width(detail, 0.45) // 2, 232, 0.45, TEXT)
-        canvas[100:526, 608:1176] = camera_view
+            p.text(title, 892 - p.width(title, 0.6, 2) / 2, 305, 0.6, AMBER, 2)
+            p.text(detail, 892 - p.width(detail, 0.45) / 2, 332, 0.45, TEXT)
 
         # Status strip: alignment, camera age, collision guard, target and precision.
         self.draw_status(canvas, state, state_color, corners, observation, frame, age, limit)
@@ -811,34 +902,35 @@ class Lab:
         self.draw_settings_panel(canvas)
 
         failed = state_color == AMBER
-        label(canvas, self.message[:150], 24, 820, 0.42, AMBER if failed else MUTED)
+        p.text(self.message[:150], 24, 820, 0.42, AMBER if failed else MUTED)
         hint = "S save capture   Esc quit"
-        label(canvas, hint, 1176 - text_width(hint, 0.36), 820, 0.36, DIM)
+        p.text(hint, 1176 - p.width(hint, 0.36), 820, 0.36, DIM)
         return canvas
 
     def draw_status(self, canvas, state, state_color, corners, observation, frame, age, limit):
+        p = self.p
         x0, y0, h = 24, 536, 66
         widths = (258, 330, 282, 282)
-        rounded_rect(canvas, x0, y0, 1152, h, BORDER, radius=6)
+        p.rect(x0, y0, 1152, h, BORDER, radius=6)
         x = x0
         cells = []
         for i, w in enumerate(widths):
             left = x + (0 if i == 0 else 1)
             right = x + w - (0 if i == len(widths) - 1 else 0)
-            rounded_rect(canvas, left + 1, y0 + 1, right - left - 1, h - 2, PANEL_BG,
+            p.rect(left + 1, y0 + 1, right - left - 1, h - 2, PANEL_BG,
                          radius=5 if i in (0, len(widths) - 1) else 0)
             cells.append(left + 14)
             x += w
         caption = 0.36
         # Alignment
-        label(canvas, "ALIGNMENT", cells[0], y0 + 20, caption, MUTED)
-        cv2.circle(canvas, (cells[0] + 5, y0 + 43), 5, state_color, -1, cv2.LINE_AA)
-        label(canvas, state[:28], cells[0] + 16, y0 + 48, 0.48 if len(state) < 20 else 0.4, state_color, 1)
+        p.text("ALIGNMENT", cells[0], y0 + 20, caption, MUTED)
+        p.circle((cells[0] + 5, y0 + 43), 5, state_color)
+        p.text(state[:28], cells[0] + 16, y0 + 48, 0.48 if len(state) < 20 else 0.4, state_color, 1)
         # Camera image age against the freshness limit
         cx, cw = cells[1], widths[1] - 28
-        label(canvas, "CAMERA IMAGE AGE", cx, y0 + 20, caption, MUTED)
+        p.text("CAMERA IMAGE AGE", cx, y0 + 20, caption, MUTED)
         bar_y = y0 + 30
-        rounded_rect(canvas, cx, bar_y, cw, 8, (37, 47, 61), radius=4)
+        p.rect(cx, bar_y, cw, 8, (37, 47, 61), radius=4)
         if self.camera is None:
             value, note, color = "live", "no simulated delay (C adds one)", MUTED
         elif age is None:
@@ -849,47 +941,48 @@ class Lab:
             value = f"{age*1000:.0f} / {limit*1000:.0f} ms"
             fill = int(cw * min(age / limit, 1.0))
             if fill > 0:
-                rounded_rect(canvas, cx, bar_y, max(fill, 8), 8, color, radius=4)
+                p.rect(cx, bar_y, max(fill, 8), 8, color, radius=4)
             note = ("over the limit" if over else "fresh") + f" | frame {frame.sequence}" if frame is not None else ""
-        label(canvas, value, cx + cw - text_width(value, 0.36), y0 + 20, 0.36, AMBER if color == WARN else
+        p.text(value, cx + cw - p.width(value, 0.36), y0 + 20, 0.36, AMBER if color == WARN else
               TEXT if color == TEAL else MUTED)
-        label(canvas, note, cx, y0 + 56, 0.36, MUTED)
+        p.text(note, cx, y0 + 56, 0.36, MUTED)
         # Collision guard
         decision = self.sim.collision.last
         gx = cells[2]
-        label(canvas, "COLLISION GUARD", gx, y0 + 20, caption, MUTED)
+        p.text("COLLISION GUARD", gx, y0 + 20, caption, MUTED)
         warn = decision.status in ("limited", "blocked")
         status = decision.status.upper()
-        label(canvas, status, gx, y0 + 40, 0.45, AMBER if warn else TEAL, 1)
+        p.text(status, gx, y0 + 40, 0.45, AMBER if warn else TEAL, 1)
         distance = "not measured" if decision.clearance_m is None else f"{decision.clearance_m*1000:.1f} mm"
-        label(canvas, f"clearance {distance}", gx + text_width(status, 0.45) + 10, y0 + 40, 0.4, TEXT)
+        p.text(f"clearance {distance}", gx + p.width(status, 0.45) + 10, y0 + 40, 0.4, TEXT)
         skips = self.controller.blocked_waypoints + (0 if self.controller.startup is None else self.controller.startup.blocked_waypoints)
-        label(canvas, f"detours {self.sim.collision.detours} | skipped {skips}", gx, y0 + 56, 0.36, MUTED)
+        p.text(f"detours {self.sim.collision.detours} | skipped {skips}", gx, y0 + 56, 0.36, MUTED)
         # Target and precision
         px = cells[3]
         target = "MARKER 7" if self.perception_mode == "aruco" else (
             ("LEARNED" if self.perception_mode == "learned" else "SIFT") + " PICTURE")
-        label(canvas, f"TARGET / {target}", px, y0 + 20, caption, MUTED)
+        p.text(f"TARGET / {target}", px, y0 + 20, caption, MUTED)
         if corners is None:
             reason = "not detected" if self.perception_mode == "aruco" else observation.reason.replace("_", " ")
-            label(canvas, reason[:32], px, y0 + 40, 0.42, AMBER)
+            p.text(reason[:32], px, y0 + 40, 0.42, AMBER)
         else:
             error = np.sqrt(np.mean(np.sum((corners - self.reference)**2, axis=1)))
             text = f"RMS {error:.2f} px"
             if self.perception_mode != "aruco":
                 text += f" | {observation.inliers} inliers | {observation.processing_ms:.0f} ms"
-            label(canvas, text, px, y0 + 40, 0.42, TEXT)
+            p.text(text, px, y0 + 40, 0.42, TEXT)
         hold = getattr(self.controller.ibvs, "held_seconds", 0.0) or 0.0
         hold_s = self.sim.config["ibvs"]["success_hold_s"]
         moving = float(np.abs(self.sim.velocity_command).max()) > 1e-9
-        label(canvas, f"hold {hold:.1f} / {hold_s:g} s | command {'moving' if moving else 'zero'}",
+        p.text(f"hold {hold:.1f} / {hold_s:g} s | command {'moving' if moving else 'zero'}",
               px, y0 + 56, 0.36, MUTED)
 
     def draw_panel(self, canvas, x, y, w, h, title, note=None):
-        rounded_rect(canvas, x, y, w, h, PANEL_BG, border=BORDER, radius=6)
-        label(canvas, title, x + 12, y + 20, 0.36, MUTED)
+        p = self.p
+        p.rect(x, y, w, h, PANEL_BG, border=BORDER, radius=6)
+        p.text(title, x + 12, y + 20, 0.36, MUTED)
         if note:
-            label(canvas, note, x + w - 12 - text_width(note, 0.34), y + 20, 0.34, DIM)
+            p.text(note, x + w - 12 - p.width(note, 0.34), y + 20, 0.34, DIM)
 
     def draw_start_panel(self, canvas):
         x, y, w = 24, 612, 296
@@ -903,6 +996,7 @@ class Lab:
             self.button(canvas, (x + 12 + col * (bw + 8), y + 32 + row * 42, bw, 34), text, action, active, key=key)
 
     def draw_jog_panel(self, canvas):
+        p = self.p
         x, y, w = 336, 612, 524
         self.draw_panel(canvas, x, y, w, 190, "JOG JOINTS", "1-6 select | A / D jog")
         col_w = (w - 24 - 16) // 2
@@ -910,16 +1004,17 @@ class Lab:
             col, row = i // 3, i % 3
             jx, jy = x + 12 + col * (col_w + 16), y + 34 + row * 46
             color = TEAL if i == self.selected else TEXT
-            label(canvas, f"J{i+1}", jx, jy + 21, 0.42, TEAL if i == self.selected else MUTED)
-            label(canvas, name, jx + 28, jy + 21, 0.45, color)
+            p.text(f"J{i+1}", jx, jy + 21, 0.42, TEAL if i == self.selected else MUTED)
+            p.text(name, jx + 28, jy + 21, 0.45, color)
             angle = f"{np.rad2deg(self.sim.data.qpos[i]):+.1f}"
-            ax = jx + col_w - 76 - 8 - text_width(angle, 0.42) - 6
-            label(canvas, angle, ax, jy + 21, 0.42, TEXT)
-            cv2.circle(canvas, (ax + text_width(angle, 0.42) + 4, jy + 10), 2, TEXT, 1, cv2.LINE_AA)
+            ax = jx + col_w - 76 - 8 - p.width(angle, 0.42) - 6
+            p.text(angle, ax, jy + 21, 0.42, TEXT)
+            p.circle((ax + p.width(angle, 0.42) + 4, jy + 10), 2, TEXT, 1)
             self.button(canvas, (jx + col_w - 76, jy, 36, 32), "-", f"jog:{i}:-1")
             self.button(canvas, (jx + col_w - 36, jy, 36, 32), "+", f"jog:{i}:1")
 
     def draw_settings_panel(self, canvas):
+        p = self.p
         x, y, w = 876, 612, 300
         self.draw_panel(canvas, x, y, w, 190, "SETTINGS")
         gain = self.controller.ibvs.config["gain_per_s"]
@@ -936,20 +1031,40 @@ class Lab:
         )
         for i, (name, key, control) in enumerate(rows):
             ry = y + 32 + i * 26
-            label(canvas, name, x + 12, ry + 15, 0.4, TEXT)
-            label(canvas, key, x + 12 + text_width(name, 0.4) + 6, ry + 15, 0.34, DIM)
+            p.text(name, x + 12, ry + 15, 0.4, TEXT)
+            p.text(key, x + 12 + p.width(name, 0.4) + 6, ry + 15, 0.34, DIM)
             if isinstance(control, tuple):
                 _, value, action, changed = control
                 text = f"{value} >"
-                bw = text_width(text, 0.38) + 18
+                bw = p.width(text, 0.38) + 18
                 self.button(canvas, (x + w - 12 - bw, ry, bw, 21), text, action, changed)
             else:
-                width = sum(text_width(t, 0.38) + 18 for t, _, _ in control)
+                width = sum(p.width(t, 0.38) + 18 for t, _, _ in control)
                 self.segmented(canvas, x + w - 12 - width, ry, 21, control)
+
+    def frame_for_window(self, width: int, height: int) -> np.ndarray:
+        """The layout drawn to fit a window of this size, centred with background bars.
+
+        The layout keeps its proportions at any window size: it is redrawn at the largest scale that
+        fits (so text stays sharp) and the rest of the window is filled, never stretched.
+        """
+        fit = min(width / UI_SIZE[0], height / UI_SIZE[1])
+        self.ui_scale = float(min(4.0, max(0.5, np.floor(fit * 100) / 100)))
+        canvas = self.draw()
+        h, w = canvas.shape[:2]
+        if w > width or h > height:  # window smaller than the minimum scale: show the layout as is
+            self.view_offset = (0, 0)
+            return canvas
+        frame = np.full((height, width, 3), BG, dtype=np.uint8)
+        x, y = (width - w) // 2, (height - h) // 2
+        frame[y:y + h, x:x + w] = canvas
+        self.view_offset = (x, y)
+        return frame
 
     def on_mouse(self, event: int, x: int, y: int, flags: int, param: object) -> None:
         if event != cv2.EVENT_LBUTTONDOWN:
             return
+        x, y = x - self.view_offset[0], y - self.view_offset[1]
         for (bx, by, w, h), action in self.buttons:
             if bx <= x <= bx+w and by <= y <= by+h:
                 if action.startswith("jog:"):
@@ -993,15 +1108,19 @@ class Lab:
         self.message = "Saved raw wrist.png and camera.json in captures/."
 
     def run(self) -> None:
-        cv2.namedWindow(WINDOW, cv2.WINDOW_NORMAL | cv2.WINDOW_KEEPRATIO)
-        cv2.resizeWindow(WINDOW, 1200, 830)
+        # The window may be resized freely; every frame is drawn at the window's own size (see
+        # frame_for_window), so the image is never stretched out of proportion.
+        cv2.namedWindow(WINDOW, cv2.WINDOW_NORMAL)
+        cv2.resizeWindow(WINDOW, round(UI_SIZE[0] * self.ui_scale), round(UI_SIZE[1] * self.ui_scale))
         cv2.setMouseCallback(WINDOW, self.on_mouse)
         period = 1 / self.sim.config["camera_hz"]
         try:
             while True:
                 start = time.perf_counter()
                 self.advance(period)
-                cv2.imshow(WINDOW, cv2.cvtColor(self.draw(), cv2.COLOR_RGB2BGR))
+                _, _, width, height = cv2.getWindowImageRect(WINDOW)
+                frame = (self.frame_for_window(width, height) if width > 0 and height > 0 else self.draw())
+                cv2.imshow(WINDOW, cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
                 key = cv2.waitKeyEx(max(1, int((period - (time.perf_counter()-start))*1000)))
                 if key == 27 or cv2.getWindowProperty(WINDOW, cv2.WND_PROP_VISIBLE) < 1:
                     break
@@ -1070,6 +1189,8 @@ def main() -> None:
                         help="Assumed controller calibration; rendering and collision geometry stay fixed")
     parser.add_argument("--obstacle", action="store_true", help="Enable the mapped obstacle column for collision-aware search")
     parser.add_argument("--manual", action="store_true", help="Start with Auto OFF and wait for Align")
+    parser.add_argument("--ui-scale", default="auto",
+                        help="Window scale: a number from 1 to 3 (1 = 1200 x 830), or 'auto' to fill the screen (default)")
     parser.add_argument("--camera-delay-ms", type=float, help="Enable timestamped camera delivery with this simulated delay")
     parser.add_argument("--max-camera-age-ms", type=float, default=250, help="Stop if observation age reaches this bound (default: 250 ms)")
     parser.add_argument("--stale-resume-ms", type=float, default=2000, help="--realtime only: after a freshness trip, hold at zero velocity and resume on fresh images for up to this long (default: 2000 ms; 0 = stop, same as --watchdog-stop)")
@@ -1086,6 +1207,16 @@ def main() -> None:
             parser.error(str(exc))
     if args.watchdog_stop:
         args.stale_resume_ms = 0
+    if args.ui_scale == "auto":
+        # The realtime runtime has its own window and does not use this scale.
+        ui_scale = 1.0 if args.snapshot or args.realtime else screen_fit_scale()
+    else:
+        try:
+            ui_scale = float(args.ui_scale)
+        except ValueError:
+            parser.error("--ui-scale must be a number or 'auto'")
+        if not 1.0 <= ui_scale <= 3.0:
+            parser.error("--ui-scale must be between 1 and 3")
     timing = None
     if args.camera_delay_ms is not None:
         timing = dict(load_camera_timing(args.camera_delay_ms/1000), max_observation_age_s=args.max_camera_age_ms/1000)
@@ -1121,7 +1252,8 @@ def main() -> None:
             parser.error(str(exc))
         lab = Lab(sim, cold_start=args.cold_start or args.random_start, auto_start=not args.manual,
                   perception_mode="learned" if args.learned else "natural" if args.natural else "aruco", camera_timing=timing,
-                  calibration=calibration_profiles()[args.calibration_profile],precision=not args.legacy_stop)
+                  calibration=calibration_profiles()[args.calibration_profile],precision=not args.legacy_stop,
+                  ui_scale=ui_scale)
         if args.manual and (args.cold_start or args.random_start):
             lab.message = "Starting pose loaded without a remembered view. Click Align [G] when ready."
         if args.snapshot:
