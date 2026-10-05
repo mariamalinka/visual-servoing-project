@@ -6,6 +6,8 @@ with optional SuperPoint + LightGlue matching on CPU or NVIDIA GPU.
 
 ![Robot aligning from visual feedback](outputs/visual-servoing-simulation/results/alignment/alignment.gif)
 
+**[Project report](docs/PROJECT_REPORT.md)**: a one-page overview, then the full account of what was built, the problems found, how they were fixed, and what remains open.
+
 ## What it does
 
 - Aligns an ArUco marker or one known flat photograph with a taught image.

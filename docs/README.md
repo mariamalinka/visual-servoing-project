@@ -2,6 +2,7 @@
 
 ## Start here
 
+- [Project report: overview, problems, fixes and open issues](PROJECT_REPORT.md)
 - [Run the simulator and learn its controls](../outputs/visual-servoing-simulation/README.md)
 - [Understand the source and control mathematics](../outputs/visual-servoing-simulation/CODE_GUIDE.md)
 - [Install and troubleshoot Learned matching](../outputs/visual-servoing-simulation/LEARNED_MATCHING.md)
