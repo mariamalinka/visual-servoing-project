@@ -22,6 +22,13 @@ jobs:
           architecture: x64
           cache: pip
           cache-dependency-path: outputs/visual-servoing-simulation/requirements.txt
+      - name: Install software OpenGL (Mesa) for headless rendering
+        uses: ssciwr/setup-mesa-dist-win@v3
+        with:
+          python-version: "3.12"
+          architecture: x64
+          cache: pip
+          cache-dependency-path: outputs/visual-servoing-simulation/requirements.txt
       - name: Check repository contents and documentation
         run: python -B tools/check_repository.py
       - name: Verify acceptance failure gates
