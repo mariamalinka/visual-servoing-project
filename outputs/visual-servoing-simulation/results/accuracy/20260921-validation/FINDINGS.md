@@ -68,7 +68,7 @@ accuracy claims, statistical reliability bounds or an ISO repeatability test.
 Physical acceptance failures remain in the saved data; no controller tuning was
 performed to make this validation pass.
 
-[Verification evidence](VERIFICATION.md) · [Method and usage](../../../PHYSICAL_ACCURACY.md)
+[Verification evidence](VERIFICATION.md)
 
 Reproduce from the original repository root:
 

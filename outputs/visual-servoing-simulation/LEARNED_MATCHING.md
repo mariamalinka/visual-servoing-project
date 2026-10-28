@@ -125,7 +125,6 @@ controller/search regressions. [Complete test log](results/learned/full-test-sui
 
 The RTX 3050 check measured **55–57 ms** per picture versus **425–437 ms** on CPU
 (about **8x faster**), and all **162 tests passed**.
-[Timing details, alignment results and evidence](LEARNED_PERFORMANCE.md).
 
 The default device setting is **auto**. It uses the NVIDIA GPU when the installed
 PyTorch runtime and driver support CUDA, and CPU otherwise. The camera status

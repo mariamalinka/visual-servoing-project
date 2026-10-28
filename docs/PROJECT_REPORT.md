@@ -524,15 +524,15 @@ count once toward the five-in-a-row rule.
 | Topic | Document |
 |---|---|
 | Requirements, hazards, status | [Safety traceability](SAFETY_TRACEABILITY.md) |
-| Acceptance plan and records | [Acceptance test](ACCEPTANCE_TEST.md), [test procedure](TEST_PROCEDURE.md) |
+| Acceptance plan and records | [Test procedure](TEST_PROCEDURE.md), [acceptance runs](../outputs/visual-servoing-simulation/results/acceptance-test/) |
 | Fault injection | [Fault injection](FAULT_INJECTION.md) |
-| Watchdog decision, margin | [Watchdog decision](WATCHDOG_DECISION.md), [margin test](MARGIN_TEST.md) |
+| Watchdog decision, margin | [Watchdog decision](WATCHDOG_DECISION.md), [margin runs](../outputs/visual-servoing-simulation/results/margin-test/) |
 | Actuator and stopping | [Actuator model](ACTUATOR_MODEL.md) |
 | Statistics | [Statistics](STATISTICS.md) |
-| Controller and code | [Code guide](../outputs/visual-servoing-simulation/CODE_GUIDE.md), [comparison](../outputs/visual-servoing-simulation/COMPARISON.md), [adaptive gain](../outputs/visual-servoing-simulation/ADAPTIVE_GAIN.md) |
-| Search, recovery, limits, collision | [Recovery](../outputs/visual-servoing-simulation/RECOVERY.md), [startup search](../outputs/visual-servoing-simulation/STARTUP_SEARCH.md), [joint limits](../outputs/visual-servoing-simulation/JOINT_LIMITS.md), [coverage](../outputs/visual-servoing-simulation/SEARCH_COVERAGE.md), [collision-aware motion](../outputs/visual-servoing-simulation/COLLISION_AWARE.md) |
-| Perception | [Alignment fix](../outputs/visual-servoing-simulation/ALIGNMENT_FIX.md), [natural image](../outputs/visual-servoing-simulation/NATURAL_IMAGE.md), [learned matching](../outputs/visual-servoing-simulation/LEARNED_MATCHING.md), [learned performance](../outputs/visual-servoing-simulation/LEARNED_PERFORMANCE.md) |
-| Accuracy | [Physical accuracy](../outputs/visual-servoing-simulation/PHYSICAL_ACCURACY.md), [precision stopping](../outputs/visual-servoing-simulation/PRECISION_STOPPING.md) |
-| Timing and runtime | [Runtime](../outputs/visual-servoing-simulation/REALTIME_CONTROL.md), [perception latency](../outputs/visual-servoing-simulation/PERCEPTION_LATENCY.md), [latency stress](../outputs/visual-servoing-simulation/LATENCY_STRESS.md), [camera delay](../outputs/visual-servoing-simulation/CAMERA_DELAY.md), [camera robustness](../outputs/visual-servoing-simulation/CAMERA_ROBUSTNESS.md) |
+| Controller | [Comparison](../outputs/visual-servoing-simulation/COMPARISON.md), [benchmark](../outputs/visual-servoing-simulation/results/benchmark/), [adaptive gain](../outputs/visual-servoing-simulation/results/gain/) |
+| Search, recovery, limits, collision | [Recovery](../outputs/visual-servoing-simulation/results/recovery/), [startup search](../outputs/visual-servoing-simulation/results/startup/), [joint limits](../outputs/visual-servoing-simulation/results/joint-limits/), [coverage](../outputs/visual-servoing-simulation/results/search-coverage/), [collision](../outputs/visual-servoing-simulation/results/collision/) |
+| Perception | [Natural image](../outputs/visual-servoing-simulation/results/natural-image/), [learned matching](../outputs/visual-servoing-simulation/LEARNED_MATCHING.md), [learned runs](../outputs/visual-servoing-simulation/results/learned/) |
+| Accuracy | [Precision stopping](../outputs/visual-servoing-simulation/PRECISION_STOPPING.md), [accuracy runs](../outputs/visual-servoing-simulation/results/accuracy/) |
+| Timing and runtime | [Latency](../outputs/visual-servoing-simulation/results/latency/), [camera delay](../outputs/visual-servoing-simulation/results/camera-delay/), [camera robustness](../outputs/visual-servoing-simulation/results/robustness/) |
 
 Figures are generated from the saved results by `tools/report_figures.py`.

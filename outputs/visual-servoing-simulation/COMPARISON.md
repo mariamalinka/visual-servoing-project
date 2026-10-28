@@ -2,7 +2,7 @@
 
 Completed 200 identical randomized starting poses per method: **600 static trials**, plus **3 separate target-movement demonstrations**. The RNG seed is 20260906.
 
-[Full generated report](results/comparison/20260907-005242-736914-n200-seed20260906/REPORT.md) | [Code explained](CODE_GUIDE.md) | [All trial rows](results/comparison/20260907-005242-736914-n200-seed20260906/trials.csv)
+[Full generated report](results/comparison/20260907-005242-736914-n200-seed20260906/REPORT.md) | [All trial rows](results/comparison/20260907-005242-736914-n200-seed20260906/trials.csv)
 
 | Method | Successful / all starts | Successful / initially detected | Median completion time* | Median final image error* |
 |---|---:|---:|---:|---:|
@@ -51,8 +51,6 @@ This is one controlled example per method, kept separate from the randomized suc
 - **compare_controllers.py / run_comparison_trial()** runs the observe/move loop, records every frame and checks success after stopping.
 - **analyze_comparison.py / analyze()** validates paired trials and regenerates statistics, tables and plots.
 - **tests/test_baselines.py** checks geometry, open-loop independence from later images, limits and actual simulated behavior.
-
-Start with [the illustrated code walkthrough](CODE_GUIDE.md) for explanations of the important functions and equations.
 
 ## Run it
 

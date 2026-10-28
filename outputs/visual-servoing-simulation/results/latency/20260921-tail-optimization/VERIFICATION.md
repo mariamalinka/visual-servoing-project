@@ -8,7 +8,7 @@ The original 277.5 ms SIFT and 227.5 ms Learned frames lacked internal stage tra
 
 A replay of 86 captured poses compared refinement schedules. The selected 8-iteration half-resolution plus 12-iteration full-resolution schedule preserved the original 1e-6 ECC epsilon and quality gates. Replay refinement maxima fell from 220.1 to 67.2 ms for SIFT and from 287.4 to 75.4 ms for Learned; maximum corner changes relative to the old algorithm were 0.0327 and 0.0231 px. A single-resolution shortcut shifted a Learned corner by about 0.6 px and was rejected. [Replay measurements](refinement-probe.json).
 
-SIFT coordinate conversion and duplicate filtering are vectorized. Learned gathers matched points and scores on the GPU and transfers one compact array to the CPU. The goal pyramid and mask kernel are prepared once, and redundant RGB caching is reduced. The runtime skips busy capture slots, keeps bounded mailboxes, and rejects expired copied requests before expensive work. No image resolution, feature limit, confidence gate or stopping tolerance was relaxed. [Implementation details](../../../PERCEPTION_LATENCY.md).
+SIFT coordinate conversion and duplicate filtering are vectorized. Learned gathers matched points and scores on the GPU and transfers one compact array to the CPU. The goal pyramid and mask kernel are prepared once, and redundant RGB caching is reduced. The runtime skips busy capture slots, keeps bounded mailboxes, and rejects expired copied requests before expensive work. No image resolution, feature limit, confidence gate or stopping tolerance was relaxed. Implementation details.
 
 ## Freshness and overload
 

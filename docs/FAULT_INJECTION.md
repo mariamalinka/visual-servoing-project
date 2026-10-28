@@ -388,7 +388,7 @@ REQ-24 hazard.
 
 The 40 further isolated kills and the final campaign's 5 did not hit that moment.
 
-**The fix** (`realtime.py` `ResultReceiver`; [realtime control](../outputs/visual-servoing-simulation/REALTIME_CONTROL.md)):
+**The fix** (`realtime.py` `ResultReceiver`; realtime control):
 - **Receiver thread.** It is the only reader of the results pipe. It forwards whole
   messages to a one-item, latest-wins mailbox, which the control loop reads without
   blocking.

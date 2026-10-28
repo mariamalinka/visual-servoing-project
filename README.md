@@ -51,18 +51,16 @@ environments, saved references and existing workflows keep working.
 
 To experiment with delayed feedback, run `run.cmd --learned --camera-delay-ms 100`.
 Use **C** to change delay and **X** to interrupt camera capture.
-Run `run.cmd --robustness` for the [automated delay, jitter and loss experiment](outputs/visual-servoing-simulation/CAMERA_ROBUSTNESS.md).
-[Camera timing model and controls](outputs/visual-servoing-simulation/CAMERA_DELAY.md).
+Run `run.cmd --robustness` for the automated delay, jitter and loss experiment.
 
 To try obstacle-aware search, run **run.cmd --obstacle --cold-start --camera-delay-ms 100**.
-Press **U** to toggle the column. [Collision controls and validation](outputs/visual-servoing-simulation/COLLISION_AWARE.md).
+Press **U** to toggle the column.
 
 Run **run.cmd --accuracy-study** to compare pixel convergence with physical pose error.
 Press **I** to cycle calibration assumptions in the app.
 The default [precision stopping](outputs/visual-servoing-simulation/PRECISION_STOPPING.md)
 refines the image near the goal and checks sensitivity to remaining camera motion.
 Use `--legacy-stop` to compare the original 1 px rule.
-[Physical accuracy and calibration sensitivity](outputs/visual-servoing-simulation/PHYSICAL_ACCURACY.md).
 
 ## Explore the project
 
@@ -71,7 +69,7 @@ Use `--legacy-stop` to compare the original 1 px rule.
 | [outputs/visual-servoing-simulation/](outputs/visual-servoing-simulation/) | Application source, configuration, scene and launchers |
 | [tests/](outputs/visual-servoing-simulation/tests/) | Mathematics, perception, recovery and integration checks |
 | [assets/](outputs/visual-servoing-simulation/assets/) and [reference/](outputs/visual-servoing-simulation/reference/) | Required target images and saved image goals |
-| [docs/](docs/README.md) | Documentation and experiment index |
+| [docs/](docs/PROJECT_REPORT.md) | Project report, safety traceability and test procedure |
 | [results/](outputs/visual-servoing-simulation/results/README.md) | Selected reports, plots and reproducibility metadata |
 | [tools/](tools/) | Repository validation and independent geometry analysis |
 | [.github/workflows/](.github/workflows/) | Automated repository and control-mathematics checks |
@@ -94,7 +92,7 @@ including Learned GPU alignment and CPU fallback.
 [Collision and regression evidence](outputs/visual-servoing-simulation/results/collision/20260920-validation/VERIFICATION.md). On the tested RTX 3050 laptop, GPU picture matching
 takes approximately **55–57 ms per image**, about **8 times faster** than the paired
 CPU measurement. These are measured inference timings, not a promise of a
-30 Hz application loop. [Timing and alignment evidence](outputs/visual-servoing-simulation/LEARNED_PERFORMANCE.md).
+30 Hz application loop.
 
 ~~~powershell
 .\run.cmd --verify
@@ -104,23 +102,19 @@ CPU measurement. These are measured inference timings, not a promise of a
 
 Benchmarks write new local results. Reports and a small representative alignment
 trace are included in Git; bulk per-trial traces are generated locally.
-[Experiments and reproduction](docs/README.md#experiments).
 
 ## Real-time mode
 
 Run **run.cmd --realtime --learned --max-camera-age-ms 400** for wall-clock control with rendering and matching in a separate process. Press **O**, then **G** to align. The original 250 ms app default remains available; the explicit 400 ms budget includes processing and the interval between results. Run **run.cmd --latency-study** to measure alignment, transport and blocked-camera behavior.
 
-[Runtime, controls and timing limits](outputs/visual-servoing-simulation/REALTIME_CONTROL.md).
 
-[Perception tail latency and the 50 ms transport comparison](outputs/visual-servoing-simulation/PERCEPTION_LATENCY.md).
 
-[Sustained latency testing and spike diagnostics](outputs/visual-servoing-simulation/LATENCY_STRESS.md).
 
 The simulated arm has actuator dynamics: a stop zeroes the command at once, and the arm then brakes within assumed acceleration and jerk limits. Run **run.cmd --stop-response** to measure stopping time, stopping distance and pause/resume behaviour; `--actuator ideal` switches the model off. [Actuator model, assumptions and results](docs/ACTUATOR_MODEL.md) (simulation only, not real-robot data).
 
 ## Acceptance test
 
-Run **acceptance-test.cmd** (about 30 minutes, on AC power) for the automated SIFT and Learned GPU acceptance test: five starting poses, repeated alignments and a 12-minute reused-worker run per method, ending in a PASS/FAIL report. [Plan, criteria and recorded evidence](docs/ACCEPTANCE_TEST.md).
+Run **acceptance-test.cmd** (about 30 minutes, on AC power) for the automated SIFT and Learned GPU acceptance test: five starting poses, repeated alignments and a 12-minute reused-worker run per method, ending in a PASS/FAIL report.
 
 [Requirements Verification and Safety Traceability](docs/SAFETY_TRACEABILITY.md): each safety and acceptance requirement with its hazard, enforcement, tests, evidence and verification status, including the requirements that are not yet verified.
 
@@ -132,7 +126,6 @@ The photograph matcher recognizes one known planar target. Collision checks use
 known scene geometry and a bounded local planner. Simulation playback can be
 slower than real time.
 Pixel alignment does not establish physical positioning accuracy.
-[Controller details and limitations](outputs/visual-servoing-simulation/README.md).
 
 For development commands and the policy for generated files, see
 [CONTRIBUTING.md](CONTRIBUTING.md).

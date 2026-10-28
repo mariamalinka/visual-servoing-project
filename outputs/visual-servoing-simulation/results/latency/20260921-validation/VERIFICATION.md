@@ -31,4 +31,4 @@ repeatable under arbitrary host load.
 
 ![Measured command age and worker-stall response](latency-and-watchdog.png)
 
-[Per-trial outcomes](REPORT.md) and [runtime/controls](../../../REALTIME_CONTROL.md).
+[Per-trial outcomes](REPORT.md).

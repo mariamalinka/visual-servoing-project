@@ -24,8 +24,7 @@ runtime and downloaded models.
 
 ## Experiments
 
-The [camera robustness experiment](outputs/visual-servoing-simulation/CAMERA_ROBUSTNESS.md)
-runs with `run.cmd --robustness`. Use `--plan-only`, `--resume`, and `--report-only`
+The camera robustness experiment runs with `run.cmd --robustness`. Use `--plan-only`, `--resume`, and `--report-only`
 for unattended runs and report regeneration.
 
 Run a study before invoking its report-only command on a fresh checkout. The
@@ -56,7 +55,6 @@ pretrained weights retain their upstream license terms.
 
 The cleanup removes generated files from the next committed tree and preserves
 local copies. Existing commits still contain the old environment and cache.
-See [repository maintenance](docs/REPOSITORY.md) for the remaining history issue.
 
 ## Collision regression
 
@@ -64,4 +62,3 @@ Run **run.cmd --collision-study** for deterministic alignment, cold-search and
 recovery cases with a mapped column and delayed feedback. This uses rendering;
 the full local test suite also checks collision geometry and physical braking.
 It is separate from the smaller CI mathematics/transport contract subset.
-[Collision design and scope](outputs/visual-servoing-simulation/COLLISION_AWARE.md).

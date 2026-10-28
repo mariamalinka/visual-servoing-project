@@ -114,5 +114,5 @@ It uses a bounded crop and iteration count, but no real-time wall-clock guarante
 delay still excludes host inference/rendering time.
 
 The original precision accuracy campaign used the earlier 45-iteration refinement.
-[Current tail-latency optimization and validation](PERCEPTION_LATENCY.md) document
+The current version uses
 the bounded pyramid replacement; image and pose stopping thresholds are unchanged.

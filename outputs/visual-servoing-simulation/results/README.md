@@ -25,7 +25,7 @@ what is included in Git. New experiment directories are local by default.
 | Search coverage | [Coarse and refined scans](search-coverage/20260913-020201-974031/REPORT.md) |
 | Natural image | [ArUco and SIFT](natural-image/20260913-112323-280057/REPORT.md) |
 | Learned matching | [SIFT and Learned](learned/20260913-162607-253226/REPORT.md) |
-| GPU performance | [Paired measurements and actual alignment](../LEARNED_PERFORMANCE.md) |
+| GPU performance | Paired measurements and actual alignment |
 
 The single-run [alignment trace](alignment/trace.csv) is retained as a small,
 complete example. Required baseline plans, manifests, trial outcomes and saved
