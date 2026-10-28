@@ -58,8 +58,6 @@ GPU clock-limit episodes of 2 s or more (time after the session's worker was rea
 Freshness watchdog 400 ms, control deadline 50 ms, transport delay 50 ms (production values, asserted before the run). Production files were not modified.
 Gates: 100% alignment; processing p95/p99/max <= 150/175/250 ms; capture-to-command p99/max <= 250/400 ms; 0 freshness trips, 0 deadline misses, 0 unsafe/post-stop motion; <= 2 mm / 1 deg; later/first p99 <= 1.5x.
 
-- Python: `C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe` (venv `C:\Users\marys\Documents\Codex\2026-09-06\visual-servoing-project\outputs\visual-servoing-simulation\.venv`)
-- Sensor worker executable: `C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe`
 - CUDA GPU: NVIDIA GeForce RTX 3050 6GB Laptop GPU (cuda:0, UUID e148b270-8b60-34ee-4cc6-7ac0cdbc9758, driver 577.02)
 - Versions: Python 3.12.14, torch 2.13.0+cu126, CUDA 12.6, cuDNN 91002, mujoco 3.12.0, OpenCV 5.0.0.93, numpy 2.5.2, Windows-11-10.0.26200-SP0
 - Versus validated baseline `20260926-base-executable-settings`: source/config/model files identical; runtime versions identical

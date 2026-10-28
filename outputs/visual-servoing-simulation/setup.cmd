@@ -6,8 +6,6 @@ py -3.12 --version >nul 2>nul
 if not errorlevel 1 goto pylauncher
 python --version >nul 2>nul
 if not errorlevel 1 goto pythonpath
-set "VSERVO_BOOTSTRAP=%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
-if exist "%VSERVO_BOOTSTRAP%" goto bundled
 echo Python was not found. Install Python 3.12 from python.org, then run setup.cmd again.
 pause
 exit /b 1
@@ -19,9 +17,6 @@ goto install
 python -m venv .venv
 if errorlevel 1 goto failure
 goto install
-:bundled
-"%VSERVO_BOOTSTRAP%" -m venv .venv
-if errorlevel 1 goto failure
 :install
 ".venv\Scripts\python.exe" -m pip install --disable-pip-version-check -r requirements.txt
 if errorlevel 1 goto failure

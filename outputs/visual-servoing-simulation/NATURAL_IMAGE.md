@@ -184,8 +184,8 @@ their --analyze option, or use their saved source snapshots for exact replays.
 
 ## Picture asset and method sources
 
-The botanical still-life photograph was generated using Codex's **built-in image
-generation tool**. [Source photograph](assets/natural-target-source.png),
+The botanical still-life photograph is a synthetic, AI-generated image.
+[Source photograph](assets/natural-target-source.png),
 [384-pixel canonical target](assets/natural-target.png),
 [MuJoCo board texture](assets/natural-board.png), and
 [exact generation prompt and processing metadata](assets/natural-target-source.json)

@@ -319,7 +319,7 @@ def write_report(directory, status, reason, margins, manifest, config):
           'evidence, not a guarantee (see the confidence intervals).',
           *physical_lines(margins),
           rat.power_mode_line(manifest), rat.baseline_line(manifest.get('baseline_check') or {}),
-          f"- Python `{(manifest.get('python') or {}).get('windows_executable')}`, CUDA GPU "
+          f"- CUDA GPU "
           f"{(manifest.get('selected_cuda_gpu') or {}).get('name', 'n/a')}.", '',
           'Per-level data: `margin.csv` (for plotting) and `margin.json`; per-session evidence in `margin-*.json` and `traces/`.']
     (directory / 'REPORT.md').write_text('\n'.join(L) + '\n', encoding='utf-8')

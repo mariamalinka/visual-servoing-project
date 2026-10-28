@@ -55,6 +55,6 @@ Procedure: `docs/TEST_PROCEDURE.md`. Conditions this run could check:
 - Each level has 10 alignments over 5 poses on a fresh worker; a 100% level is limited evidence, not a guarantee.
 - Windows power mode at every session start: Best performance
 - Versus validated baseline `20260926-base-executable-settings`: source/config/model files changed: app.py, realtime.py, realtime_app.py; runtime versions identical; approved change to `realtime.py`: freshness watchdog hold-and-resume (RuntimeConfig.stale_resume_s, default 0 = original stop)
-- Python `C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe`, CUDA GPU NVIDIA GeForce RTX 3050 6GB Laptop GPU.
+- CUDA GPU NVIDIA GeForce RTX 3050 6GB Laptop GPU.
 
 Per-level data: `margin.csv` (for plotting) and `margin.json`; per-session evidence in `margin-*.json` and `traces/`.

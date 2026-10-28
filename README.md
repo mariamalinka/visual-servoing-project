@@ -106,18 +106,7 @@ Benchmarks write new local results. Reports and a small representative alignment
 trace are included in Git; bulk per-trial traces are generated locally.
 [Experiments and reproduction](docs/README.md#experiments).
 
-## Scope
-
-The photograph matcher recognizes one known planar target. Collision checks use
-known scene geometry and a bounded local planner. Simulation playback can be
-slower than real time.
-Pixel alignment does not establish physical positioning accuracy.
-[Controller details and limitations](outputs/visual-servoing-simulation/README.md).
-
-For development commands and the policy for generated files, see
-[CONTRIBUTING.md](CONTRIBUTING.md).
-
-## Actual camera processing latency
+## Real-time mode
 
 Run **run.cmd --realtime --learned --max-camera-age-ms 400** for wall-clock control with rendering and matching in a separate process. Press **O**, then **G** to align. The original 250 ms app default remains available; the explicit 400 ms budget includes processing and the interval between results. Run **run.cmd --latency-study** to measure alignment, transport and blocked-camera behavior.
 
@@ -136,3 +125,14 @@ Run **acceptance-test.cmd** (about 30 minutes, on AC power) for the automated SI
 [Requirements Verification and Safety Traceability](docs/SAFETY_TRACEABILITY.md): each safety and acceptance requirement with its hazard, enforcement, tests, evidence and verification status, including the requirements that are not yet verified.
 
 [Fault injection and the safety envelope](docs/FAULT_INJECTION.md): every acceptance, margin and stress run now records clearance, joint-limit margin and joint speed against their requirements, and **run.cmd --fault-campaign** triggers each safety stop on purpose and reports the reaction.
+
+## Scope
+
+The photograph matcher recognizes one known planar target. Collision checks use
+known scene geometry and a bounded local planner. Simulation playback can be
+slower than real time.
+Pixel alignment does not establish physical positioning accuracy.
+[Controller details and limitations](outputs/visual-servoing-simulation/README.md).
+
+For development commands and the policy for generated files, see
+[CONTRIBUTING.md](CONTRIBUTING.md).

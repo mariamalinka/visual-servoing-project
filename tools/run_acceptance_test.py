@@ -971,9 +971,6 @@ def write_report(directory, status, reason, methods, sessions, manifest, config,
           f"0 unsafe/post-stop motion; clearance, joint-limit margin and joint speed within REQ-11 to REQ-13 "
           f"(when recorded); <= {c['position_mm']:g} mm / {c['orientation_deg']:g} deg; later/first p99 <= {c['later_to_first_p99_ratio']:g}x.",
           '',
-          f"- Python: `{manifest.get('python', {}).get('windows_executable') or manifest.get('python', {}).get('executable')}` "
-          f"(venv `{manifest.get('python', {}).get('prefix')}`)",
-          f"- Sensor worker executable: `{', '.join(sorted({s.get('worker_executable') or '?' for s in sessions})) or 'n/a'}`",
           f"- CUDA GPU: {gpu.get('name', 'n/a')} (cuda:{gpu.get('cuda_index', '?')}, UUID {gpu.get('uuid', '?')}, "
           f"driver {(gpu.get('nvidia_smi') or {}).get('driver', '?')})",
           f"- Versions: Python {env.get('python', '?').split()[0]}, torch {env.get('torch')}, CUDA {manifest.get('cuda_probe', {}).get('torch_cuda')}, "

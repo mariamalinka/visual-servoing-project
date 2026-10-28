@@ -58,8 +58,6 @@ Procedure: `docs/TEST_PROCEDURE.md`. Conditions this run could check:
 Freshness watchdog 400 ms, control deadline 50 ms, transport delay 50 ms (production values, asserted before the run). Protected production files match the validated baseline except reviewed changes listed in `tools/approved_changes.json`: `realtime.py` (freshness watchdog hold-and-resume, default on (stale_resume_s = 2 s; 0 = original stop)).
 Gates: 100% alignment; processing p95/p99/max <= 150/175/250 ms; capture-to-command p99/max <= 250/400 ms; 0 alignments ended by the watchdog, paused <= 5% of alignment time, 0 deadline misses, 0 unsafe/post-stop motion; <= 2 mm / 1 deg; later/first p99 <= 1.5x.
 
-- Python: `C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe` (venv `C:\Users\marys\Documents\Codex\2026-09-06\visual-servoing-project\outputs\visual-servoing-simulation\.venv`)
-- Sensor worker executable: `C:\Users\marys\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe`
 - CUDA GPU: NVIDIA GeForce RTX 3050 6GB Laptop GPU (cuda:0, UUID e148b270-8b60-34ee-4cc6-7ac0cdbc9758, driver 577.02)
 - Versions: Python 3.12.14, torch 2.13.0+cu126, CUDA 12.6, cuDNN 91002, mujoco 3.12.0, OpenCV 5.0.0.93, numpy 2.5.2, Windows-11-10.0.26200-SP0
 - Versus validated baseline `20260926-base-executable-settings`: source/config/model files changed: app.py, realtime.py, realtime_app.py, run_latency_stress.py, run_latency_study.py; runtime versions identical; approved change to `realtime.py`: freshness watchdog hold-and-resume, default on (stale_resume_s = 2 s; 0 = original stop)
